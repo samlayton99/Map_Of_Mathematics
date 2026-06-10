@@ -1,0 +1,15 @@
+# Lean build cache (regenerable, multi-GB)
+.lake/
+**/.lake/
+
+# External clone: Mathematics in Lean tutorial (upstream leanprover-community)
+learning/lean/tutorial/
+
+# Compiled artifacts
+*.dSYM/
+learning/cpp/cpp_intro
+
+# Python / OS noise
+__pycache__/
+*.pyc
+.DS_Store
