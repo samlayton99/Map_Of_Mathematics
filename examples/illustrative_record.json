@@ -1,0 +1,54 @@
+{
+  "status": "illustrative-not-normative",
+  "environment": {
+    "id": "env:example",
+    "lean_version": "PIN_DURING_GATE_0",
+    "mathlib_revision": "PIN_DURING_GATE_0",
+    "fingerprint": "sha256:placeholder"
+  },
+  "expressions": {
+    "expr:P": {
+      "kind": "const",
+      "name": "P"
+    },
+    "expr:Q": {
+      "kind": "const",
+      "name": "Q"
+    },
+    "expr:P_to_Q": {
+      "kind": "forall",
+      "domain": "expr:P",
+      "body": "expr:Q"
+    },
+    "expr:goal_Q": {
+      "kind": "ref",
+      "target": "expr:Q"
+    }
+  },
+  "declarations": {},
+  "states": {
+    "state:0": {
+      "environment": "env:example",
+      "context": [
+        {
+          "local_id": "f",
+          "type": "expr:P_to_Q"
+        },
+        {
+          "local_id": "h",
+          "type": "expr:P"
+        }
+      ],
+      "target": "expr:goal_Q"
+    }
+  },
+  "transitions": {
+    "transition:0": {
+      "before": "state:0",
+      "action_source_text": "exact f h",
+      "after": [],
+      "outcome": "success",
+      "trust": "observed"
+    }
+  }
+}
