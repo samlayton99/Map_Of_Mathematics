@@ -1,2 +1,4 @@
 import Mathrecord.Frontend
-import Mathrecord.Gate0
+import Mathrecord.Record
+import Mathrecord.Extract
+import Mathrecord.Validate

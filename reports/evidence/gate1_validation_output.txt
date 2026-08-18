@@ -1,0 +1,58 @@
+== determinism ==
+byte-identical: two clean extractions of corpus/Adversarial.lean
+
+== validate adversarial ==
+[PASS] coverage:no-silent-loss  env=54 stored=53 unsupported=1
+[PASS] roundtrip:decode-equals-original  ok=53 fail=[]
+[PASS] kernel:stored-defs-theorems-recheck  ok=45 fail=[]
+[PASS] meta:other-kinds-typecheck  ok=8 fail=[]
+[PASS] deps:recomputable-from-stored  ok=53 fail=[]
+[PASS] states:context-and-target-wellformed  checked=13 skipped(mvars)=0 fail=[]
+[PASS] states:sid-fixpoint-after-decode  ok=13 fail=[]
+[PASS] transitions:branching-state-observed  
+[PASS] transitions:closing-step-observed  
+[PASS] alt-proofs:same-statement-distinct-proofs  typeEq=true valueEq=false
+[PASS] unsupported:sorry-classified-loudly  unsupported=#[Corpus.hasSorry]
+[PASS] states:local-let-preserved  
+[PASS] decls:universe-polymorphism-preserved  
+[PASS] decls:kind-coverage  missing=[]
+exit=0
+
+== validate renamed ==
+[PASS] coverage:no-silent-loss  env=54 stored=53 unsupported=1
+[PASS] roundtrip:decode-equals-original  ok=53 fail=[]
+[PASS] kernel:stored-defs-theorems-recheck  ok=45 fail=[]
+[PASS] meta:other-kinds-typecheck  ok=8 fail=[]
+[PASS] deps:recomputable-from-stored  ok=53 fail=[]
+[PASS] states:context-and-target-wellformed  checked=13 skipped(mvars)=0 fail=[]
+[PASS] states:sid-fixpoint-after-decode  ok=13 fail=[]
+[PASS] transitions:branching-state-observed  
+[PASS] transitions:closing-step-observed  
+[PASS] alt-proofs:same-statement-distinct-proofs  typeEq=true valueEq=false
+[PASS] unsupported:sorry-classified-loudly  unsupported=#[Corpus.hasSorry]
+[PASS] states:local-let-preserved  
+[PASS] decls:universe-polymorphism-preserved  
+[PASS] decls:kind-coverage  missing=[]
+exit=0
+
+== validate failing ==
+[PASS] coverage:no-silent-loss  env=1 stored=0 unsupported=1
+[PASS] roundtrip:decode-equals-original  ok=0 fail=[]
+[PASS] kernel:stored-defs-theorems-recheck  ok=0 fail=[]
+[PASS] meta:other-kinds-typecheck  ok=0 fail=[]
+[PASS] deps:recomputable-from-stored  ok=0 fail=[]
+[PASS] states:context-and-target-wellformed  checked=2 skipped(mvars)=0 fail=[]
+[PASS] states:sid-fixpoint-after-decode  ok=2 fail=[]
+[PASS] failing:error-event-recorded  failures=1
+[PASS] failing:prior-transitions-still-observed  transitions=12
+[PASS] failing:failed-theorem-not-stored-as-fact  decls=#[]
+exit=0
+
+== alpha invariance ==
+[PASS] alpha:decl-sids-invariant-under-renaming  paired=53 ok=53 fail=[]
+[PASS] alpha:state-sids-invariant-under-renaming  paired=13 ok=13 fail=[]
+exit=0
+
+== programmatic transition spike (from records/adversarial.json) ==
+  skip -> success | afterCount: 1 | diag: ''
+  done -> failure | afterCount: 0 | diag: 'unsolved goals\nn : Nat\n⊢ n + 1 > 0'

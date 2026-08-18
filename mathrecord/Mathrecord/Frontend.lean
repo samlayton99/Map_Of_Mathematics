@@ -22,7 +22,7 @@ def processFile (path : System.FilePath) : IO ProcessedFile := do
   let inputCtx := Parser.mkInputContext input fileName
   let (header, parserState, messages) ← Parser.parseHeader inputCtx
   let (env, messages) ← Elab.processHeader header {} messages inputCtx
-  let env := env.setMainModule `Gate0SpikeMain
+  let env := env.setMainModule (Name.mkSimple (path.fileStem.getD "Main"))
   let cmdState := Command.mkState env messages {}
   let cmdState := { cmdState with infoState := { cmdState.infoState with enabled := true } }
   let s ← Elab.IO.processCommands inputCtx parserState cmdState

@@ -1,0 +1,19 @@
+declaration : Corpus.letTactic
+kind        : theorem  levelParams: []
+module      : Adversarial  reducibility: semireducible
+span        : {"end":{"col":22,"line":32},"start":{"col":0,"line":29}}
+trust       : lean-exact
+
+exact statement (structural; [names] are display-only):
+  (pi [n] default (const Nat) (app (app (app (app (const GT.gt) (const Nat)) (const instLTNat)) (app (app (app (app (app … …) (const Nat)) (app (app … …) (const instAddNat))) (bvar 0)) (app (app (app (const OfNat.ofNat) (const Nat)) (lit nat 1)) (app (const instOfNatNat) (lit nat 1))))) (app (app (app (const OfNat.ofNat) (const Nat)) (lit nat 0)) (app (const instOfNatNat) (lit nat 0)))))
+
+body/proof term (structural, depth-limited):
+  (lam [n] default (const Nat) (let [m] (const Nat) := (app (app (app … …) (bvar 0)) (app (app … …) (app … …))) in (app (app (const id) (app … …)) (app (const Nat.succ_pos) (bvar 1)))))
+
+direct references (value): #[Nat, HAdd.hAdd, instHAdd, instAddNat, OfNat.ofNat, instOfNatNat, id, GT.gt, instLTNat, Nat.succ_pos]
+direct references (type):  #[Nat, GT.gt, instLTNat, HAdd.hAdd, instHAdd, instAddNat, OfNat.ofNat, instOfNatNat]
+
+one local state (s0 of 3 recorded):
+  [0] [letTactic] default : (pi [n] default (const Nat) (app (app (app (app … …) (const instLTNat)) (app (app … …) (app … …))) (app (app (app … …) (lit nat 0)) (app (const instOfNatNat) (lit nat 0)))))
+  [1] [n] default : (const Nat)
+  ⊢ (app (app (app (app (const GT.gt) (const Nat)) (const instLTNat)) (app (app (app (app … …) (app … …)) (lvar 1)) (app (app (app … …) (lit nat 1)) (app (const instOfNatNat) (lit nat 1))))) (app (app (app (const OfNat.ofNat) (const Nat)) (lit nat 0)) (app (const instOfNatNat) (lit nat 0))))
