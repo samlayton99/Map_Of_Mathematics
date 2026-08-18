@@ -1,0 +1,16 @@
+===== FailingProof processed FIRST in this process =====
+  [error] ⟨8, 2⟩: Type mismatch
+  Nat.succ_ne_zero n
+has type
+  n.succ ≠ 0
+but is expected to have type
+  0 + n = n
+  TacticInfo nodes: 33
+  step kind=Lean.Parser.Term.byTactic before=[_uniq.80] after=[_uniq.87]
+  step kind=by before=[_uniq.80] after=[_uniq.87]
+  step kind=Lean.Parser.Tactic.tacticSeq before=[_uniq.80] after=[_uniq.87]
+  step kind=Lean.Parser.Tactic.tacticSeq1Indented before=[_uniq.80] after=[_uniq.87]
+  step kind=Lean.Parser.Tactic.rwSeq before=[_uniq.80] after=[_uniq.87]
+  step kind=Lean.Parser.Tactic.paren before=[_uniq.80] after=[_uniq.87]
+  step kind=Lean.Parser.Tactic.tacticSeq before=[_uniq.80] after=[_uniq.87]
+  step kind=Lean.Parser.Tactic.tacticSeq1Indented before=[_uniq.80] after=[_uniq.87]

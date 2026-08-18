@@ -1,0 +1,95 @@
+===== A. environment =====
+lean version: 4.33.0 githash: d8b18978322de05a8f3dba51ef03cf5461676c17
+mainModule: Gate0SpikeMain
+direct imports: #[Init, Init]
+module count: 631
+errors in file: 0
+
+===== B–F. declarations =====
+
+== decl Gate0Spike.double kind=def levelParams=[]
+  module: Gate0SpikeMain
+  type:  (forallE n def (const Nat []) (const Nat []))
+  typeDeps:  #[Nat]
+  value: (lam n def (const Nat []) (app (app (app … …) (bvar 0)) (bvar 0)))
+  valueDeps: #[Nat, HAdd.hAdd, instHAdd, instAddNat]
+  reducibility: Lean.ReducibilityStatus.semireducible
+  sourceRange: ⟨5, 0⟩-⟨6, 35⟩
+
+== decl Gate0Spike.double_eq_two_mul kind=theorem levelParams=[]
+  module: Gate0SpikeMain
+  type:  (forallE n def (const Nat []) (app (app (app (const Eq [(succ 0)]) (const Nat [])) (app (const Gate0Spike.double []) (bvar 0))) (app (app (app (app … …) (app … …)) (app (app … …) (app … …))) (bvar 0))))
+  typeDeps:  #[Nat, Eq, Gate0Spike.double, HMul.hMul, instHMul, instMulNat, OfNat.ofNat, instOfNatNat]
+  value: (lam n def (const Nat []) (app (app (const id [0]) (app … …)) (app (app … …) (app … …))))
+  valueDeps: #[Nat, id, Eq, Gate0Spike.double, HMul.hMul, instHMul, instMulNat, OfNat.ofNat, instOfNatNat, Eq.mpr, HAdd.hAdd, instHAdd, instAddNat, congrArg, Nat.two_mul, Eq.refl]
+  reducibility: Lean.ReducibilityStatus.semireducible
+  sourceRange: ⟨8, 0⟩-⟨11, 18⟩
+
+== decl Gate0Spike.exists_gt kind=theorem levelParams=[]
+  module: Gate0SpikeMain
+  type:  (forallE n def (const Nat []) (app (app (const Exists [(succ 0)]) (const Nat [])) (lam m def (const Nat []) (app (app (app … …) (bvar 1)) (bvar 0)))))
+  typeDeps:  #[Nat, Exists, LT.lt, instLTNat]
+  value: (lam n def (const Nat []) (letE m nondep=false (const Nat []) (app (app … …) (app … …)) (app (app … …) (app … …))))
+  valueDeps: #[Nat, HAdd.hAdd, instHAdd, instAddNat, OfNat.ofNat, instOfNatNat, Exists.intro, LT.lt, instLTNat, Nat.lt_succ_self]
+  reducibility: Lean.ReducibilityStatus.semireducible
+  sourceRange: ⟨13, 0⟩-⟨18, 26⟩
+
+== decl Gate0Spike.add_comm_spike kind=theorem levelParams=[]
+  module: Gate0SpikeMain
+  type:  (forallE a def (const Nat []) (forallE b def (const Nat []) (app (app (app (const Eq [(succ 0)]) (const Nat [])) (app (app … …) (bvar 0))) (app (app (app … …) (bvar 0)) (bvar 1)))))
+  typeDeps:  #[Nat, Eq, HAdd.hAdd, instHAdd, instAddNat]
+  value: (lam a def (const Nat []) (lam b def (const Nat []) (app (app … …) (bvar 0))))
+  valueDeps: #[Nat, Nat.add_comm]
+  reducibility: Lean.ReducibilityStatus.semireducible
+  sourceRange: ⟨20, 0⟩-⟨22, 18⟩
+
+===== G. local proof states (from InfoTrees, exact) =====
+TacticInfo nodes found: 48
+
+  -- state BEFORE `refine ⟨m, ?_⟩` (inside exists_gt):
+  goal mvar=_uniq.176 (userName=[anonymous])
+    [1] cdecl fv=_uniq.175 user=n bi=def type=(const Nat [])
+    ⊢ target: (app (app (const Exists [(succ 0)]) (const Nat [])) (lam m def (const Nat []) (app (app (app … …) (fvar _uniq.175)) (bvar 0))))
+  -- goals after: [_uniq.239]
+
+  -- state BEFORE `refine ⟨m, ?_⟩` (inside exists_gt):
+  goal mvar=_uniq.239 (userName=[anonymous])
+    [1] cdecl fv=_uniq.175 user=n bi=def type=(const Nat [])
+    [2] ldecl fv=_uniq.238 user=m nonDep=false type=(mvar _uniq.178) value=(app (app (app … …) (fvar _uniq.175)) (app (app … …) (mvar _uniq.185)))
+    ⊢ target: (mdata (app (app (const Exists [(succ 0)]) (const Nat [])) (lam m def (const Nat []) (app (app … …) (bvar 0)))))
+  -- goals after: [_uniq.255]
+
+===== H1. observed transitions (InfoTree tactic steps) =====
+  step kind=Lean.Parser.Term.byTactic before=[_uniq.148] after=[]
+  step kind=by before=[_uniq.148] after=[]
+  step kind=Lean.Parser.Tactic.tacticSeq before=[_uniq.148] after=[]
+  step kind=Lean.Parser.Tactic.tacticSeq1Indented before=[_uniq.148] after=[]
+  step kind=Lean.Parser.Tactic.unfold before=[_uniq.148] after=[_uniq.149]
+  step kind=Lean.Parser.Tactic.rwSeq before=[_uniq.149] after=[]
+  step kind=Lean.Parser.Tactic.paren before=[_uniq.149] after=[]
+  step kind=Lean.Parser.Tactic.tacticSeq before=[_uniq.149] after=[]
+  step kind=Lean.Parser.Tactic.tacticSeq1Indented before=[_uniq.149] after=[]
+  step kind=Lean.Parser.Tactic.rewriteSeq before=[_uniq.149] after=[_uniq.154]
+  step kind=null before=[_uniq.149] after=[_uniq.149]
+  step kind=null before=[_uniq.149] after=[_uniq.154]
+
+===== H2. programmatic transition spike (Elab.runTactic) =====
+  SUCCESS action=decide before=_uniq.24 after=[] (empty = closed)
+  FAILURE captured (exception, state preserved): before=_uniq.38
+    diagnostic (display-only): Type mismatch
+  Nat.zero
+has type
+  Nat
+of sort `Type` but is expected to have type
+  1 + 1 = 2
+of sort `Prop`
+
+===== I. kernel re-check of stored proof term =====
+  KERNEL OK: Gate0Spike.double_eq_two_mul value re-checked as Gate0Spike.double_eq_two_mul_recheck
+  negative control OK: kernel rejected mistyped decl
+
+===== H3. failing action in a source file =====
+  error at ⟨6, 25⟩: unexpected token '+'; expected ':=', 'where' or '|'
+  TacticInfo nodes still recorded in failing file: 0
+
+Gate 0 spike complete.

@@ -1,0 +1,11 @@
+name = "mathrecord"
+version = "0.1.0"
+defaultTargets = ["Mathrecord", "gate0"]
+
+[[lean_lib]]
+name = "Mathrecord"
+
+[[lean_exe]]
+name = "gate0"
+root = "Mathrecord.Gate0"
+supportInterpreter = true
