@@ -1,0 +1,40 @@
+{
+ "degree_by_stratum": {
+  "shallow_mean": 13.94,
+  "shallow_median": 2.0,
+  "shallow_out_deg_zero_frac": 1.0,
+  "stored_mean": 20.68,
+  "stored_median": 15.0,
+  "stored_out_deg_zero_frac": 0.0041
+ },
+ "edges_typed_rows": 44366,
+ "edges_unique_pairs": 31287,
+ "is_dag": true,
+ "largest_component_frac": 1.0,
+ "multi_file_nodes": 369,
+ "nodes_p3_evaluated": 2827,
+ "nodes_shallow": 1951,
+ "nodes_stored": 1711,
+ "nodes_stored_unevaluated": 835,
+ "nodes_total": 3662,
+ "nontrivial_sccs": 0,
+ "occurrences_total": 640860,
+ "p3_any_prevalence": {
+  "evaluated_all": 0.3764,
+  "evaluated_shallow": 0.3444,
+  "evaluated_stored": 0.4475
+ },
+ "p3_class_prevalence_evaluated": {
+  "coercion": 1,
+  "eq-machinery": 19,
+  "generated": 102,
+  "internal-detail": 363,
+  "logic-core": 15,
+  "recursor": 10,
+  "structure-projection": 229,
+  "typeclass-instance": 533
+ },
+ "pagerank_rank_correlation_stored_subgraph": 0.9231,
+ "scc_examples": [],
+ "weakly_connected_components": 1
+}

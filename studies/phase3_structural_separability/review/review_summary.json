@@ -1,0 +1,69 @@
+{
+ "A": {
+  "best_view_counts": {
+   "M_global_pagerank": 4,
+   "M_hybrid": 9,
+   "M_local_salience": 1,
+   "M_multiplicity": 2,
+   "M_p2_order": 1,
+   "M_p4_route": 7
+  },
+  "fidelity_mean": {
+   "M_combined": 2.79,
+   "M_global_pagerank": 3.42,
+   "M_hybrid": 4.17,
+   "M_local_salience": 2.46,
+   "M_multiplicity": 2.21,
+   "M_p2_order": 2.29,
+   "M_p3_filter": 3.25,
+   "M_p4_route": 3.96
+  },
+  "n": 24,
+  "usefulness_mean": {
+   "M_combined": 2.71,
+   "M_global_pagerank": 3.29,
+   "M_hybrid": 4.04,
+   "M_local_salience": 2.38,
+   "M_multiplicity": 2.12,
+   "M_p2_order": 2.21,
+   "M_p3_filter": 3.17,
+   "M_p4_route": 3.88
+  }
+ },
+ "B": {
+  "best_view_counts": {
+   "M_global_pagerank": 5,
+   "M_hybrid": 10,
+   "M_local_salience": 2,
+   "M_multiplicity": 2,
+   "M_p2_order": 1,
+   "M_p4_route": 4
+  },
+  "fidelity_mean": {
+   "M_combined": 2.75,
+   "M_global_pagerank": 3.33,
+   "M_hybrid": 4.17,
+   "M_local_salience": 2.5,
+   "M_multiplicity": 2.12,
+   "M_p2_order": 2.38,
+   "M_p3_filter": 3.33,
+   "M_p4_route": 3.96
+  },
+  "n": 24,
+  "usefulness_mean": {
+   "M_combined": 2.75,
+   "M_global_pagerank": 3.38,
+   "M_hybrid": 4.17,
+   "M_local_salience": 2.5,
+   "M_multiplicity": 2.12,
+   "M_p2_order": 2.38,
+   "M_p3_filter": 3.33,
+   "M_p4_route": 3.96
+  }
+ },
+ "agreement": {
+  "n_pairs": 192,
+  "p": 1.7929922868325297e-113,
+  "spearman": 0.966
+ }
+}

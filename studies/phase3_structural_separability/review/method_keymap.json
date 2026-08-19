@@ -1,0 +1,245 @@
+{
+ "map": {
+  "Bool.involutive_not": {
+   "V1": "M_global_pagerank",
+   "V2": "M_combined",
+   "V3": "M_local_salience",
+   "V4": "M_p4_route",
+   "V5": "M_p3_filter",
+   "V6": "M_p2_order",
+   "V7": "M_hybrid",
+   "V8": "M_multiplicity"
+  },
+  "DistribLattice.le_sup_inf": {
+   "V1": "M_p4_route",
+   "V2": "M_p3_filter",
+   "V3": "M_combined",
+   "V4": "M_multiplicity",
+   "V5": "M_p2_order",
+   "V6": "M_local_salience",
+   "V7": "M_global_pagerank",
+   "V8": "M_hybrid"
+  },
+  "Function.Bijective.existsUnique_iff": {
+   "V1": "M_p4_route",
+   "V2": "M_multiplicity",
+   "V3": "M_p3_filter",
+   "V4": "M_local_salience",
+   "V5": "M_hybrid",
+   "V6": "M_combined",
+   "V7": "M_global_pagerank",
+   "V8": "M_p2_order"
+  },
+  "Function.Injective.isPartialInv": {
+   "V1": "M_combined",
+   "V2": "M_local_salience",
+   "V3": "M_p3_filter",
+   "V4": "M_multiplicity",
+   "V5": "M_p2_order",
+   "V6": "M_global_pagerank",
+   "V7": "M_p4_route",
+   "V8": "M_hybrid"
+  },
+  "Function.LeftInverse.comp": {
+   "V1": "M_multiplicity",
+   "V2": "M_global_pagerank",
+   "V3": "M_p2_order",
+   "V4": "M_p3_filter",
+   "V5": "M_local_salience",
+   "V6": "M_p4_route",
+   "V7": "M_combined",
+   "V8": "M_hybrid"
+  },
+  "IsClosed.and": {
+   "V1": "M_multiplicity",
+   "V2": "M_p4_route",
+   "V3": "M_global_pagerank",
+   "V4": "M_p3_filter",
+   "V5": "M_hybrid",
+   "V6": "M_combined",
+   "V7": "M_p2_order",
+   "V8": "M_local_salience"
+  },
+  "Lattice.ext": {
+   "V1": "M_global_pagerank",
+   "V2": "M_p3_filter",
+   "V3": "M_combined",
+   "V4": "M_p2_order",
+   "V5": "M_hybrid",
+   "V6": "M_local_salience",
+   "V7": "M_multiplicity",
+   "V8": "M_p4_route"
+  },
+  "Nat.Coprime.symmetric": {
+   "V1": "M_local_salience",
+   "V2": "M_global_pagerank",
+   "V3": "M_p4_route",
+   "V4": "M_p2_order",
+   "V5": "M_p3_filter",
+   "V6": "M_multiplicity",
+   "V7": "M_hybrid",
+   "V8": "M_combined"
+  },
+  "Nat.eq_one_of_dvd_coprimes": {
+   "V1": "M_p2_order",
+   "V2": "M_global_pagerank",
+   "V3": "M_multiplicity",
+   "V4": "M_p3_filter",
+   "V5": "M_p4_route",
+   "V6": "M_local_salience",
+   "V7": "M_combined",
+   "V8": "M_hybrid"
+  },
+  "Nat.pow_sub_one_gcd_pow_sub_one": {
+   "V1": "M_p2_order",
+   "V2": "M_p3_filter",
+   "V3": "M_multiplicity",
+   "V4": "M_combined",
+   "V5": "M_local_salience",
+   "V6": "M_p4_route",
+   "V7": "M_global_pagerank",
+   "V8": "M_hybrid"
+  },
+  "Nat.pow_sub_one_mod_pow_sub_one": {
+   "V1": "M_combined",
+   "V2": "M_multiplicity",
+   "V3": "M_hybrid",
+   "V4": "M_local_salience",
+   "V5": "M_p2_order",
+   "V6": "M_p3_filter",
+   "V7": "M_p4_route",
+   "V8": "M_global_pagerank"
+  },
+  "Real.abs_log_mul_self_lt": {
+   "V1": "M_local_salience",
+   "V2": "M_hybrid",
+   "V3": "M_p4_route",
+   "V4": "M_global_pagerank",
+   "V5": "M_combined",
+   "V6": "M_p2_order",
+   "V7": "M_multiplicity",
+   "V8": "M_p3_filter"
+  },
+  "Real.le_exp_of_log_le": {
+   "V1": "M_hybrid",
+   "V2": "M_p2_order",
+   "V3": "M_global_pagerank",
+   "V4": "M_p4_route",
+   "V5": "M_local_salience",
+   "V6": "M_p3_filter",
+   "V7": "M_combined",
+   "V8": "M_multiplicity"
+  },
+  "Real.one_sub_inv_le_log_of_pos": {
+   "V1": "M_p4_route",
+   "V2": "M_local_salience",
+   "V3": "M_multiplicity",
+   "V4": "M_combined",
+   "V5": "M_global_pagerank",
+   "V6": "M_p3_filter",
+   "V7": "M_hybrid",
+   "V8": "M_p2_order"
+  },
+  "Real.range_log": {
+   "V1": "M_global_pagerank",
+   "V2": "M_local_salience",
+   "V3": "M_p4_route",
+   "V4": "M_p3_filter",
+   "V5": "M_combined",
+   "V6": "M_multiplicity",
+   "V7": "M_hybrid",
+   "V8": "M_p2_order"
+  },
+  "TopologicalSpace.ext_iff": {
+   "V1": "M_local_salience",
+   "V2": "M_global_pagerank",
+   "V3": "M_p3_filter",
+   "V4": "M_multiplicity",
+   "V5": "M_combined",
+   "V6": "M_p4_route",
+   "V7": "M_hybrid",
+   "V8": "M_p2_order"
+  },
+  "add_one_zsmul": {
+   "V1": "M_p4_route",
+   "V2": "M_combined",
+   "V3": "M_local_salience",
+   "V4": "M_multiplicity",
+   "V5": "M_global_pagerank",
+   "V6": "M_p2_order",
+   "V7": "M_p3_filter",
+   "V8": "M_hybrid"
+  },
+  "additive_of_isTotal": {
+   "V1": "M_p4_route",
+   "V2": "M_combined",
+   "V3": "M_multiplicity",
+   "V4": "M_p2_order",
+   "V5": "M_hybrid",
+   "V6": "M_global_pagerank",
+   "V7": "M_p3_filter",
+   "V8": "M_local_salience"
+  },
+  "isClosed_sInter": {
+   "V1": "M_multiplicity",
+   "V2": "M_combined",
+   "V3": "M_p2_order",
+   "V4": "M_hybrid",
+   "V5": "M_p4_route",
+   "V6": "M_p3_filter",
+   "V7": "M_global_pagerank",
+   "V8": "M_local_salience"
+  },
+  "limUnder_of_not_tendsto": {
+   "V1": "M_p2_order",
+   "V2": "M_p4_route",
+   "V3": "M_multiplicity",
+   "V4": "M_combined",
+   "V5": "M_global_pagerank",
+   "V6": "M_hybrid",
+   "V7": "M_p3_filter",
+   "V8": "M_local_salience"
+  },
+  "pow_iterate": {
+   "V1": "M_hybrid",
+   "V2": "M_p4_route",
+   "V3": "M_p3_filter",
+   "V4": "M_global_pagerank",
+   "V5": "M_p2_order",
+   "V6": "M_multiplicity",
+   "V7": "M_combined",
+   "V8": "M_local_salience"
+  },
+  "sup_eq_and_inf_eq_iff": {
+   "V1": "M_multiplicity",
+   "V2": "M_p3_filter",
+   "V3": "M_local_salience",
+   "V4": "M_p2_order",
+   "V5": "M_hybrid",
+   "V6": "M_p4_route",
+   "V7": "M_global_pagerank",
+   "V8": "M_combined"
+  },
+  "sup_left_idem": {
+   "V1": "M_local_salience",
+   "V2": "M_p4_route",
+   "V3": "M_multiplicity",
+   "V4": "M_combined",
+   "V5": "M_hybrid",
+   "V6": "M_p3_filter",
+   "V7": "M_p2_order",
+   "V8": "M_global_pagerank"
+  },
+  "zpow_mul": {
+   "V1": "M_global_pagerank",
+   "V2": "M_p2_order",
+   "V3": "M_p4_route",
+   "V4": "M_combined",
+   "V5": "M_hybrid",
+   "V6": "M_local_salience",
+   "V7": "M_p3_filter",
+   "V8": "M_multiplicity"
+  }
+ },
+ "note": "do not show to reviewers before responses are collected"
+}

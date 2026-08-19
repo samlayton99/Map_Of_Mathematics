@@ -1,0 +1,34 @@
+{
+ "degree_only": {
+  "bal_acc": 0.5927,
+  "brier": 0.2458,
+  "f1": 0.5734,
+  "n_folds": 6,
+  "pr_auc": 0.5907,
+  "roc_auc": 0.6928
+ },
+ "p1_weighted_strict": {
+  "bal_acc": 0.6124,
+  "brier": 0.277,
+  "f1": 0.5198,
+  "n_folds": 6,
+  "pr_auc": 0.5565,
+  "roc_auc": 0.6765
+ },
+ "p2_simple_strict": {
+  "bal_acc": 0.6724,
+  "brier": 0.2254,
+  "f1": 0.6148,
+  "n_folds": 6,
+  "pr_auc": 0.6348,
+  "roc_auc": 0.7571
+ },
+ "strict_without_community": {
+  "bal_acc": 0.599,
+  "brier": 0.2673,
+  "f1": 0.5263,
+  "n_folds": 6,
+  "pr_auc": 0.5876,
+  "roc_auc": 0.6911
+ }
+}

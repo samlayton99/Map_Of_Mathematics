@@ -1,0 +1,106 @@
+{
+ "topology_machinery_p3_unclassified": [
+  {
+   "name": "Function.Injective.lattice",
+   "prob": 0.874,
+   "kind": "def"
+  },
+  {
+   "name": "LE.mk",
+   "prob": 0.838,
+   "kind": "constructor"
+  },
+  {
+   "name": "Lattice.mk",
+   "prob": 0.833,
+   "kind": "constructor"
+  },
+  {
+   "name": "Preorder.mk",
+   "prob": 0.828,
+   "kind": "constructor"
+  },
+  {
+   "name": "SemilatticeInf.mk",
+   "prob": 0.802,
+   "kind": "constructor"
+  },
+  {
+   "name": "SemilatticeSup.mk",
+   "prob": 0.772,
+   "kind": "constructor"
+  },
+  {
+   "name": "PartialOrder.mk",
+   "prob": 0.763,
+   "kind": "constructor"
+  },
+  {
+   "name": "True",
+   "prob": 0.758,
+   "kind": "inductive"
+  },
+  {
+   "name": "Lean.Grind.nestedProof",
+   "prob": 0.747,
+   "kind": "axiom"
+  },
+  {
+   "name": "Iff",
+   "prob": 0.74,
+   "kind": "inductive"
+  }
+ ],
+ "p3_machinery_topology_content": [
+  {
+   "name": "Real.expPartialHomeomorph._proof_1",
+   "prob": 0.095,
+   "kind": "theorem"
+  },
+  {
+   "name": "OrderDual.instDistribLattice",
+   "prob": 0.122,
+   "kind": "def"
+  },
+  {
+   "name": "OrderDual.instSemilatticeInf",
+   "prob": 0.129,
+   "kind": "def"
+  },
+  {
+   "name": "ULift.instSemilatticeInf",
+   "prob": 0.13,
+   "kind": "def"
+  },
+  {
+   "name": "OrderDual.instSemilatticeSup",
+   "prob": 0.156,
+   "kind": "def"
+  },
+  {
+   "name": "Pi.instSemilatticeInf",
+   "prob": 0.172,
+   "kind": "def"
+  },
+  {
+   "name": "_private.Basic.0.Function.apply_update._proof_1",
+   "prob": 0.179,
+   "kind": "theorem"
+  },
+  {
+   "name": "_private.Basic.0.Function.update_idem._proof_1",
+   "prob": 0.184,
+   "kind": "theorem"
+  },
+  {
+   "name": "ULift.instSemilatticeSup",
+   "prob": 0.185,
+   "kind": "def"
+  },
+  {
+   "name": "Real.instArchimedean",
+   "prob": 0.193,
+   "kind": "axiom"
+  }
+ ]
+}

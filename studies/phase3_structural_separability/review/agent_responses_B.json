@@ -1,0 +1,199 @@
+{
+  "reviewer_type": "reasoning agent",
+  "reviewer_id": "reviewer-B/claude-agent",
+  "prompt_version": "p3-review-v1",
+  "per_proof": {
+    "Bool.involutive_not": {
+      "part1_usefulness": {"V1": 5, "V2": 5, "V3": 5, "V4": 5, "V5": 5, "V6": 5, "V7": 5, "V8": 5},
+      "part1_best_view": "V1",
+      "part2_fidelity": {"V1": 5, "V2": 5, "V3": 5, "V4": 5, "V5": 5, "V6": 5, "V7": 5, "V8": 5},
+      "missing_moves": "None. The proof is exactly the single term `Bool.not_not`, which every view lists.",
+      "confidence": 5,
+      "rationale": "All eight views are identical (single candidate `Bool.not_not`), so they are rated equally. The proof is a direct application of that lemma, so the certificate is perfect."
+    },
+    "DistribLattice.le_sup_inf": {
+      "part1_usefulness": {"V1": 2, "V2": 2, "V3": 2, "V4": 2, "V5": 2, "V6": 2, "V7": 2, "V8": 2},
+      "part1_best_view": "V1",
+      "part2_fidelity": {"V1": 2, "V2": 2, "V3": 2, "V4": 2, "V5": 2, "V6": 2, "V7": 2, "V8": 2},
+      "missing_moves": "Not applicable: Part 2 contains no proof body. This is a structure field (the defining axiom of DistribLattice), not a proved theorem.",
+      "confidence": 2,
+      "rationale": "All views are identical (single candidate `DistribLattice`), so rated equally. Naming the class itself conveys only that this is the class's defining axiom; there is no proof to certify, so the packet is degenerate and both scores are low."
+    },
+    "Function.Bijective.existsUnique_iff": {
+      "part1_usefulness": {"V1": 4, "V2": 1, "V3": 4, "V4": 2, "V5": 4, "V6": 3, "V7": 3, "V8": 3},
+      "part1_best_view": "V5",
+      "part2_fidelity": {"V1": 4, "V2": 1, "V3": 4, "V4": 2, "V5": 4, "V6": 3, "V7": 3, "V8": 3},
+      "missing_moves": "No view captures the witness extraction (obtaining x from hf.surjective y and reusing surjectivity in the reverse direction), the `simpa [hx]` transport of p along f x = y, the substitution hx.symm ▸ combined with the uniqueness hypothesis, or the closing `congr_arg f` step. The private match_n and generic Eq/Exists entries add noise without conveying these moves.",
+      "confidence": 4,
+      "rationale": "The proof pivots on Bijective.surjective (used twice, for witnesses) and Bijective.injective (for uniqueness). V1/V3/V5 list both and are the strongest; V6/V8 list only surjective; V4 lists neither; V2 is pure logical glue (Eq.mpr, Eq.rec, And.intro) and useless. V5 front-loads both key lemmas with the least private-name noise."
+    },
+    "Function.Injective.isPartialInv": {
+      "part1_usefulness": {"V1": 4, "V2": 5, "V3": 3, "V4": 2, "V5": 2, "V6": 3, "V7": 4, "V8": 5},
+      "part1_best_view": "V2",
+      "part2_fidelity": {"V1": 4, "V2": 5, "V3": 3, "V4": 2, "V5": 2, "V6": 3, "V7": 4, "V8": 5},
+      "missing_moves": "No view captures the local definitional unfolding `have hpi : partialInv f b = dite ... := rfl` (the key representation change from partialInv to an if-then-else), the `injection ... / subst` step on Option.some, or the explicit witness ⟨_, rfl⟩ for ∃ a', f a' = f a in the reverse direction.",
+      "confidence": 4,
+      "rationale": "The proof's real moves are: unfold partialInv to a dite, case split on ∃ a, f a = b, discharge with dif_pos/dif_neg, then Classical.choose_spec plus injectivity. V2 and V8 list Injective, partialInv, dif_pos, dif_neg, and choose_spec — essentially the whole skeleton. V1/V7 miss one of these; V3-V6 are dominated by statement-level or generic names."
+    },
+    "Function.LeftInverse.comp": {
+      "part1_usefulness": {"V1": 2, "V2": 2, "V3": 2, "V4": 2, "V5": 2, "V6": 2, "V7": 2, "V8": 2},
+      "part1_best_view": "V1",
+      "part2_fidelity": {"V1": 2, "V2": 2, "V3": 2, "V4": 2, "V5": 2, "V6": 2, "V7": 2, "V8": 2},
+      "missing_moves": "The entire proof is two rewrites with the LOCAL hypotheses hf (i a) and hh a after unfolding composition; no global declaration list can show this, and none of the views convey it. Everything listed (Eq.mpr, congrArg, id, Eq.refl) is rewriting glue.",
+      "confidence": 4,
+      "rationale": "All eight views contain the same six declarations in different orders, so they are rated equally. Only Function.LeftInverse is subject matter, and it is already in the statement; the certificate carries essentially no proof-specific information for this hypothesis-driven proof."
+    },
+    "IsClosed.and": {
+      "part1_usefulness": {"V1": 4, "V2": 4, "V3": 4, "V4": 4, "V5": 4, "V6": 4, "V7": 4, "V8": 4},
+      "part1_best_view": "V1",
+      "part2_fidelity": {"V1": 4, "V2": 4, "V3": 4, "V4": 4, "V5": 4, "V6": 4, "V7": 4, "V8": 4},
+      "missing_moves": "Essentially none: the proof is the single application of IsClosed.inter. The implicit reading of {x | p x} predicates as sets (hinted by Set.ofPred) is the only silent step.",
+      "confidence": 5,
+      "rationale": "All views are identical sets {TopologicalSpace, IsClosed.inter, Set.ofPred}, rated equally. IsClosed.inter IS the proof, so fidelity is high; the two companion names are mild dilution rather than information."
+    },
+    "Lattice.ext": {
+      "part1_usefulness": {"V1": 5, "V2": 3, "V3": 4, "V4": 2, "V5": 4, "V6": 3, "V7": 2, "V8": 4},
+      "part1_best_view": "V1",
+      "part2_fidelity": {"V1": 5, "V2": 3, "V3": 4, "V4": 2, "V5": 4, "V6": 3, "V7": 2, "V8": 4},
+      "missing_moves": "No view conveys the closing `congr` step (componentwise structure equality after destructing both Lattice instances) or that the single hypothesis H is fed to BOTH SemilatticeSup.ext and SemilatticeInf.ext. The cases-on-structures move is only weakly signaled by Lattice.casesOn / Lattice.mk.",
+      "confidence": 4,
+      "rationale": "The proof destructs both lattices and reduces to SemilatticeSup.ext and SemilatticeInf.ext. Views listing both ext lemmas (V1, V3, V5, V8) are genuinely informative; V1 adds Lattice.casesOn, capturing the case-analysis skeleton best. V2/V6 list only SemilatticeSup.ext; V4/V7 list neither and are typeclass-projection noise."
+    },
+    "Nat.Coprime.symmetric": {
+      "part1_usefulness": {"V1": 5, "V2": 5, "V3": 5, "V4": 5, "V5": 5, "V6": 5, "V7": 5, "V8": 5},
+      "part1_best_view": "V1",
+      "part2_fidelity": {"V1": 5, "V2": 5, "V3": 5, "V4": 5, "V5": 5, "V6": 5, "V7": 5, "V8": 5},
+      "missing_moves": "None. The declaration is a deprecated alias for Coprime.stdSymm, which every view names.",
+      "confidence": 5,
+      "rationale": "All eight views are identical (single candidate `Nat.Coprime.stdSymm`), so rated equally. The alias target is the complete content of this declaration."
+    },
+    "Nat.eq_one_of_dvd_coprimes": {
+      "part1_usefulness": {"V1": 1, "V2": 3, "V3": 1, "V4": 5, "V5": 5, "V6": 1, "V7": 1, "V8": 5},
+      "part1_best_view": "V5",
+      "part2_fidelity": {"V1": 1, "V2": 3, "V3": 1, "V4": 5, "V5": 5, "V6": 1, "V7": 1, "V8": 5},
+      "missing_moves": "For the strong views, little is missing: the proof is exactly the chain coprime_iff_isRelPrime → apply to the two divisibility hypotheses → isUnit_iff_dvd_one → dvd_one. The order of chaining and the application of the IsRelPrime property to hka/hkb are the only silent parts.",
+      "confidence": 5,
+      "rationale": "Key lemmas are Nat.coprime_iff_isRelPrime, isUnit_iff_dvd_one, Nat.dvd_one. V4, V5, V8 list all three (V5 front-loads them); V2 has the coprime/IsRelPrime bridge plus the IsUnit concept but misses the two dvd_one lemmas; V1/V3/V6/V7 are pure statement-level and instance noise (OfNat.ofNat, Nat.instDvd) with zero proof content."
+    },
+    "Nat.pow_sub_one_gcd_pow_sub_one": {
+      "part1_usefulness": {"V1": 2, "V2": 2, "V3": 2, "V4": 2, "V5": 2, "V6": 2, "V7": 2, "V8": 2},
+      "part1_best_view": "V1",
+      "part2_fidelity": {"V1": 2, "V2": 2, "V3": 2, "V4": 2, "V5": 2, "V6": 2, "V7": 2, "V8": 2},
+      "missing_moves": "Everything substantive is missing: the b = 0 base case, the termination bound c % b < b via mod_lt, the pivotal rewrite chain gcd_rec / pow_sub_one_mod_pow_sub_one / recursive self-call / gcd_rec backwards. The Euclidean-algorithm mirroring (gcd recursion transported through a^n - 1) is invisible.",
+      "confidence": 4,
+      "rationale": "All views are identical: {Nat, pow_sub_one_gcd_pow_sub_one._unary, PSigma.mk}, rated equally. The _unary/PSigma names signal only that this is a well-founded recursive proof; the mathematically load-bearing lemmas (gcd_rec and the companion mod theorem) appear in no view."
+    },
+    "Nat.pow_sub_one_mod_pow_sub_one": {
+      "part1_usefulness": {"V1": 2, "V2": 1, "V3": 4, "V4": 1, "V5": 2, "V6": 3, "V7": 4, "V8": 1},
+      "part1_best_view": "V3",
+      "part2_fidelity": {"V1": 2, "V2": 1, "V3": 4, "V4": 1, "V5": 2, "V6": 3, "V7": 4, "V8": 1},
+      "missing_moves": "No view captures the heart of the proof: the `suffices` identity a^(c-b+b) - 1 = a^(c-b) * (a^b - 1) + (a^(c-b) - 1) (the telescoping/geometric-factor step) or the recursive self-call after add_mod_right. The c < b branch's Nat.sub_lt_sub_iff_right / Nat.pow_lt_pow_iff_right comparison is also absent everywhere. V7 alone shows the four-way case-split skeleton (eq_zero_or_pos, eq_or_lt_of_le, lt_or_ge) but has no arithmetic; V3 alone shows real mod-arithmetic rewrites (mod_self, mod_eq_of_lt, add_mod_right, mul_add_one) but no case structure.",
+      "confidence": 4,
+      "rationale": "This is a genuinely intricate WF-recursive proof. V3 (arithmetic rewrite lemmas plus WellFounded.Nat.fix) is the most useful to a reader; V7 (case-split combinators) is a close second. V6 signals recursion plus one case split. V1/V5 are recursion plus notation; V2/V4/V8 are pure instance and notation noise (V8 does not contain a single proof-relevant name)."
+    },
+    "Real.abs_log_mul_self_lt": {
+      "part1_usefulness": {"V1": 2, "V2": 5, "V3": 4, "V4": 5, "V5": 2, "V6": 1, "V7": 1, "V8": 3},
+      "part1_best_view": "V2",
+      "part2_fidelity": {"V1": 2, "V2": 5, "V3": 4, "V4": 4, "V5": 2, "V6": 1, "V7": 1, "V8": 3},
+      "missing_moves": "No view names the pivotal instantiation trick — applying log_le_sub_one_of_pos at 1/x rather than x — nor lt_div_iff₀, le_inv_comm₀, or abs_of_nonneg, which carry the division/absolute-value bookkeeping. The linarith glue between the two `replace` steps is naturally invisible.",
+      "confidence": 4,
+      "rationale": "Load-bearing lemmas: log_le_sub_one_of_pos, log_div, log_inv, log_one, log_nonneg, mul_nonneg, abs_neg. V2 lists precisely these with zero noise — the standout view. V4 is nearly as good but trades abs_neg/mul_nonneg for a private simp lemma and typeclass noise (hence part2 4). V3 has the key lemma plus sign reasoning diluted by linarith internals. V6/V7 are pure instance/rawCast noise."
+    },
+    "Real.le_exp_of_log_le": {
+      "part1_usefulness": {"V1": 5, "V2": 1, "V3": 3, "V4": 5, "V5": 2, "V6": 5, "V7": 2, "V8": 1},
+      "part1_best_view": "V4",
+      "part2_fidelity": {"V1": 5, "V2": 1, "V3": 3, "V4": 5, "V5": 2, "V6": 5, "V7": 2, "V8": 1},
+      "missing_moves": "Nothing significant beyond the top views: the sign case-split is named by le_or_gt, the nonpositive branch by exp_nonneg and le.trans, and the positive branch by log_le_iff_le_exp. Only the fact that positivity hx is what unlocks the iff is implicit.",
+      "confidence": 5,
+      "rationale": "A short two-branch proof. V1, V4, V6 list all four load-bearing names (le_or_gt, exp_nonneg, log_le_iff_le_exp, le.trans) and fully certify it; V3 has the main iff but drops the case split and exp_nonneg; V5/V7 keep only glue (Or.casesOn, le.trans); V2/V8 are order-instance noise."
+    },
+    "Real.one_sub_inv_le_log_of_pos": {
+      "part1_usefulness": {"V1": 5, "V2": 1, "V3": 1, "V4": 1, "V5": 3, "V6": 5, "V7": 5, "V8": 1},
+      "part1_best_view": "V7",
+      "part2_fidelity": {"V1": 5, "V2": 1, "V3": 1, "V4": 1, "V5": 3, "V6": 5, "V7": 5, "V8": 1},
+      "missing_moves": "The instantiation trick — applying log_le_sub_one_of_pos at x⁻¹ and flipping with log_inv — is only implicit in the good views (via the pairing of inv_pos and log_inv with the main bound); no view states it directly, but the four names together let a reader reconstruct it.",
+      "confidence": 5,
+      "rationale": "One-line simpa proof whose content is log_le_sub_one_of_pos (inv_pos.2 hx) rearranged via log_inv and add_comm. V1, V6, V7 list all four; V5 has the bound and log_inv buried in typeclass-projection noise; V2/V3/V4/V8 are pure statement-and-instance noise."
+    },
+    "Real.range_log": {
+      "part1_usefulness": {"V1": 5, "V2": 5, "V3": 5, "V4": 5, "V5": 5, "V6": 5, "V7": 5, "V8": 5},
+      "part1_best_view": "V1",
+      "part2_fidelity": {"V1": 5, "V2": 5, "V3": 5, "V4": 5, "V5": 5, "V6": 5, "V7": 5, "V8": 5},
+      "missing_moves": "None. The proof is log_surjective.range_eq and every view lists both Real.log_surjective and Function.Surjective.range_eq.",
+      "confidence": 5,
+      "rationale": "All views are identical sets, rated equally. The two named lemmas are the complete proof."
+    },
+    "TopologicalSpace.ext_iff": {
+      "part1_usefulness": {"V1": 3, "V2": 4, "V3": 3, "V4": 2, "V5": 3, "V6": 4, "V7": 4, "V8": 2},
+      "part1_best_view": "V2",
+      "part2_fidelity": {"V1": 3, "V2": 4, "V3": 3, "V4": 2, "V5": 3, "V6": 4, "V7": 4, "V8": 2},
+      "missing_moves": "The forward direction's substitution h ▸ Iff.rfl (transporting IsOpen along the topology equality) is captured by no view except weakly through Eq.rec/Iff.rfl. The reverse direction's `ext` tactic reduces to TopologicalSpace.ext, which the better views do name.",
+      "confidence": 4,
+      "rationale": "The only load-bearing global name is TopologicalSpace.ext (backing the ext tactic). V2/V6/V7 lead with it (V2 also pairs Iff.rfl and Eq.rec, matching both directions); V1/V3/V5 include it buried among statement-level names; V4/V8 omit it entirely and are statement noise."
+    },
+    "add_one_zsmul": {
+      "part1_usefulness": {"V1": 4, "V2": 1, "V3": 1, "V4": 1, "V5": 2, "V6": 2, "V7": 1, "V8": 5},
+      "part1_best_view": "V8",
+      "part2_fidelity": {"V1": 4, "V2": 1, "V3": 1, "V4": 1, "V5": 2, "V6": 2, "V7": 1, "V8": 5},
+      "missing_moves": "The packet is truncated: Part 2 shows only the @[to_additive add_one_zsmul] attribute line with no proof body, so fidelity is judged against the proof structure the strong views imply (an Int case split ofNat/negSucc using negSucc_zsmul, succ_nsmul', natCast/ofNat_zsmul, and neg_add cancellation). The case split itself is signaled only by the private match_1 in V2/V5/V6, which the lemma-rich views drop.",
+      "confidence": 2,
+      "rationale": "V8 lists a coherent, fully substantive lemma set (neg_zsmul, negSucc_zsmul, ofNat_zsmul, succ_nsmul', neg_add_cancel(_right), Int.negSucc_eq) that reads like a real proof outline; V1 is similar with some simp-glue. V5/V6 have one real lemma each amid typeclass noise; V2/V3/V4/V7 are notation/instance noise. Confidence lowered because the source proof is not visible in the packet."
+    },
+    "additive_of_isTotal": {
+      "part1_usefulness": {"V1": 5, "V2": 5, "V3": 5, "V4": 5, "V5": 5, "V6": 5, "V7": 5, "V8": 5},
+      "part1_best_view": "V1",
+      "part2_fidelity": {"V1": 5, "V2": 5, "V3": 5, "V4": 5, "V5": 5, "V6": 5, "V7": 5, "V8": 5},
+      "missing_moves": "None. The declaration is a deprecated alias for additive_of_total, which every view names.",
+      "confidence": 5,
+      "rationale": "All eight views are identical (single candidate `additive_of_total`), rated equally; the alias target is the entire content."
+    },
+    "isClosed_sInter": {
+      "part1_usefulness": {"V1": 2, "V2": 2, "V3": 2, "V4": 5, "V5": 5, "V6": 2, "V7": 3, "V8": 2},
+      "part1_best_view": "V4",
+      "part2_fidelity": {"V1": 2, "V2": 2, "V3": 2, "V4": 5, "V5": 5, "V6": 2, "V7": 3, "V8": 2},
+      "missing_moves": "No view names isOpen_compl_iff — the representation change from closedness to openness of the complement that drives the whole simpa. V4/V5 capture everything else (compl_sInter, sUnion_image, isOpen_biUnion).",
+      "confidence": 4,
+      "rationale": "The proof is: pass to complements, turn the complement of an sInter into a union (compl_sInter, sUnion_image), and apply isOpen_biUnion. V4 and V5 list exactly these plus congruence glue — excellent certificates. V7 has isOpen_biUnion plus a private simp lemma; V1 gestures at complements/unions with only statement-level names; V2/V3/V6/V8 are statement noise."
+    },
+    "limUnder_of_not_tendsto": {
+      "part1_usefulness": {"V1": 2, "V2": 3, "V3": 1, "V4": 2, "V5": 3, "V6": 5, "V7": 2, "V8": 2},
+      "part1_best_view": "V6",
+      "part2_fidelity": {"V1": 2, "V2": 3, "V3": 1, "V4": 2, "V5": 3, "V6": 5, "V7": 2, "V8": 2},
+      "missing_moves": "The essential use of the LOCAL negated hypothesis h to discharge dif_neg is visible only through dif_neg itself (V2, V6). No view shows the initial simp_rw [Tendsto] normalization of h.",
+      "confidence": 4,
+      "rationale": "The proof unfolds limUnder → lim → Classical.epsilon → Classical.strongIndefiniteDescription and closes with dif_neg h. V6 lists exactly this chain — a near-perfect certificate. V5 has the classical-choice machinery but no dif_neg or limUnder; V2 has dif_neg amid simp glue; the rest are statement-level (V3 even drifts into irrelevant filter-order structure)."
+    },
+    "pow_iterate": {
+      "part1_usefulness": {"V1": 2, "V2": 2, "V3": 2, "V4": 2, "V5": 2, "V6": 2, "V7": 2, "V8": 2},
+      "part1_best_view": "V1",
+      "part2_fidelity": {"V1": 2, "V2": 2, "V3": 2, "V4": 2, "V5": 2, "V6": 2, "V7": 2, "V8": 2},
+      "missing_moves": "The two lemmas that carry the induction step — Nat.pow_succ' and pow_mul — appear in no view, nor does the funext/ext move that reduces function equality to pointwise equality. The recursion is signaled only by Nat.brecOn.",
+      "confidence": 4,
+      "rationale": "All views are near-identical mixtures of statement-level names (Nat.iterate, HPow, Monoid) and the recursion marker Nat.brecOn; V2/V4 add the internal pow_iterate._f. None contains the actual mathematical content of the induction step, so all are weak and rated equally."
+    },
+    "sup_eq_and_inf_eq_iff": {
+      "part1_usefulness": {"V1": 1, "V2": 3, "V3": 1, "V4": 1, "V5": 4, "V6": 4, "V7": 4, "V8": 1},
+      "part1_best_view": "V5",
+      "part2_fidelity": {"V1": 1, "V2": 3, "V3": 1, "V4": 1, "V5": 4, "V6": 4, "V7": 4, "V8": 1},
+      "missing_moves": "The packet is truncated: both the statement and Part 2 show only the @[to_dual] attribute, so the source proof is not visible. Judged against the proof the strong views imply (a simp argument via sup_of_le_left / inf_of_le_left, sup_idem / inf_idem, and_self), the antisymmetry-style reasoning connecting the sup and inf equations is captured by no view beyond the lemma names.",
+      "confidence": 2,
+      "rationale": "V5, V6, V7 list a coherent substantive set (inf_eq_sup, sup_idem, inf_idem, sup_of_le_left, inf_of_le_left) that plausibly reconstructs the argument; V2 has sup_of_le_left plus simp glue; V1/V3/V4/V8 are pure statement/notation projections. Confidence lowered because the source proof is missing from the packet."
+    },
+    "sup_left_idem": {
+      "part1_usefulness": {"V1": 1, "V2": 3, "V3": 1, "V4": 4, "V5": 3, "V6": 3, "V7": 1, "V8": 4},
+      "part1_best_view": "V8",
+      "part2_fidelity": {"V1": 1, "V2": 3, "V3": 1, "V4": 4, "V5": 3, "V6": 3, "V7": 1, "V8": 4},
+      "missing_moves": "The proof is `by simp`; the actual closing combination — sup_of_le_right applied with le_sup_left (a ≤ a ⊔ b) — is fully named only in V8 and V4 (via le_sup_left._simp_1). Views without sup_of_le_right convey nothing beyond the statement.",
+      "confidence": 4,
+      "rationale": "V8 and V4 name both sup_of_le_right and the le_sup_left simp-form, which together are exactly how simp closes this goal. V2/V5/V6 have sup_of_le_right diluted with of_eq_true/congrFun' glue. V1/V3/V7 are pure Eq.trans/of_eq_true/notation noise with zero mathematical content."
+    },
+    "zpow_mul": {
+      "part1_usefulness": {"V1": 3, "V2": 2, "V3": 5, "V4": 2, "V5": 5, "V6": 1, "V7": 3, "V8": 1},
+      "part1_best_view": "V5",
+      "part2_fidelity": {"V1": 3, "V2": 2, "V3": 5, "V4": 2, "V5": 5, "V6": 1, "V7": 3, "V8": 1},
+      "missing_moves": "The explicit four-way case split on Int constructors (ofNat/negSucc × ofNat/negSucc) is only hinted through the Int.*_mul_* lemma names; no view states it structurally (the private match_1 in V1/V2 gestures at it). The inv_inj step used to cancel inverses in two branches appears only in V1 and V3.",
+      "confidence": 5,
+      "rationale": "The proof is four rewrite chains built from zpow_natCast, zpow_negSucc, pow_mul, inv_pow, inv_inv, zpow_neg and the three Int.negSucc multiplication lemmas. V5 and V3 list essentially this complete set — excellent certificates. V1 has zpow_neg/inv_pow/inv_inj amid typeclass noise; V7 has zpow_natCast/pow_mul plus statement names; V2/V4/V6/V8 are notation and instance noise."
+    }
+  }
+}

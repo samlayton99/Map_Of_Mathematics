@@ -1,0 +1,102 @@
+{
+ "seed": 20260819,
+ "criteria": "4/file: smallest+largest term proof, smallest+largest tactic proof (by proof-term size, name tiebreak), random fill",
+ "proofs": [
+  {
+   "file": "Algebra_Group_Basic",
+   "decl": "additive_of_isTotal"
+  },
+  {
+   "file": "Algebra_Group_Basic",
+   "decl": "add_one_zsmul"
+  },
+  {
+   "file": "Algebra_Group_Basic",
+   "decl": "pow_iterate"
+  },
+  {
+   "file": "Algebra_Group_Basic",
+   "decl": "zpow_mul"
+  },
+  {
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "decl": "Real.range_log"
+  },
+  {
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "decl": "Real.one_sub_inv_le_log_of_pos"
+  },
+  {
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "decl": "Real.le_exp_of_log_le"
+  },
+  {
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "decl": "Real.abs_log_mul_self_lt"
+  },
+  {
+   "file": "Data_Nat_GCD_Basic",
+   "decl": "Nat.Coprime.symmetric"
+  },
+  {
+   "file": "Data_Nat_GCD_Basic",
+   "decl": "Nat.eq_one_of_dvd_coprimes"
+  },
+  {
+   "file": "Data_Nat_GCD_Basic",
+   "decl": "Nat.pow_sub_one_gcd_pow_sub_one"
+  },
+  {
+   "file": "Data_Nat_GCD_Basic",
+   "decl": "Nat.pow_sub_one_mod_pow_sub_one"
+  },
+  {
+   "file": "Logic_Function_Basic",
+   "decl": "Bool.involutive_not"
+  },
+  {
+   "file": "Logic_Function_Basic",
+   "decl": "Function.Bijective.existsUnique_iff"
+  },
+  {
+   "file": "Logic_Function_Basic",
+   "decl": "Function.LeftInverse.comp"
+  },
+  {
+   "file": "Logic_Function_Basic",
+   "decl": "Function.Injective.isPartialInv"
+  },
+  {
+   "file": "Order_Lattice",
+   "decl": "DistribLattice.le_sup_inf"
+  },
+  {
+   "file": "Order_Lattice",
+   "decl": "sup_eq_and_inf_eq_iff"
+  },
+  {
+   "file": "Order_Lattice",
+   "decl": "sup_left_idem"
+  },
+  {
+   "file": "Order_Lattice",
+   "decl": "Lattice.ext"
+  },
+  {
+   "file": "Topology_Basic",
+   "decl": "IsClosed.and"
+  },
+  {
+   "file": "Topology_Basic",
+   "decl": "isClosed_sInter"
+  },
+  {
+   "file": "Topology_Basic",
+   "decl": "TopologicalSpace.ext_iff"
+  },
+  {
+   "file": "Topology_Basic",
+   "decl": "limUnder_of_not_tendsto"
+  }
+ ]
+}
