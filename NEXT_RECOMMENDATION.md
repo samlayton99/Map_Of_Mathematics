@@ -1,4 +1,8 @@
-# Next Recommendation
+# Next Recommendation (SUPERSEDED — historical)
+
+> **Status 2026-08-18 (later same day): SUPERSEDED** by the Balanced Research Handoff v5 (`handoff/`) — see `decisions/ADR-0002-characterize-before-committing-to-map-ontology.md`. The current stage is a candidate-representation study (Phase 2A/2B), not generic dynamic traces. This document is preserved unchanged below as historical evidence of the Gate 1 decision.
+
+---
 
 **Proceed to dynamic traces (Gate 2).**
 
