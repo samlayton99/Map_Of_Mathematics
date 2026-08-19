@@ -29,6 +29,6 @@ for f in "${FILES[@]}"; do
     continue
   fi
   echo "== studying $f -> $out"
-  /usr/bin/time lake env "$BIN" study "$f" "$out"
+  /usr/bin/time lake env "$BIN" study "$f" "$out" --mathlib
 done
 echo "corpus study complete: $(ls "$OUT" | wc -l) files in $OUT"

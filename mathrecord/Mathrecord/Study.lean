@@ -281,9 +281,13 @@ def appOccJson (a : AppOcc) : Json :=
     ("path", Json.str a.path),
     ("trust", Json.str "deterministic-derived")]
 
+/-- Options mirroring Mathlib's `leanOptions` (lakefile.lean, tag v4.33.0). -/
+def mathlibOptions : Options :=
+  (Options.empty.setBool `autoImplicit false).set `maxSynthPendingDepth (3 : Nat)
+
 /-- Run the study on one file. -/
-def studyFile (path : System.FilePath) : IO Json := do
-  let raw ← runExtraction path false
+def studyFile (path : System.FilePath) (opts : Options := {}) : IO Json := do
+  let raw ← runExtraction path false opts
   let env := raw.pf.env
   let record ← assembleRecord path raw
   let mut encSt := raw.encSt
@@ -397,6 +401,7 @@ def studyFile (path : System.FilePath) : IO Json := do
 
   return Json.mkObj [
     ("schema", Json.str "mathrecord-study-0.1"),
+    ("unsupportedStates", Json.arr raw.work.unsupportedStates),
     ("record", record),
     ("expressionsExtended", Json.arr encSt.nodes),
     ("referencedDecls", Json.arr refDecls),

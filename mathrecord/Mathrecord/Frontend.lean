@@ -15,15 +15,17 @@ structure ProcessedFile where
   messages : MessageLog
   fileName : String
 
-/-- Elaborate `path` and capture environment, info trees, and messages. -/
-def processFile (path : System.FilePath) : IO ProcessedFile := do
+/-- Elaborate `path` and capture environment, info trees, and messages.
+`opts` mirrors the project's `leanOptions` (e.g. Mathlib's `autoImplicit false`)
+so elaboration matches the corpus project's own build semantics. -/
+def processFile (path : System.FilePath) (opts : Options := {}) : IO ProcessedFile := do
   let input ← IO.FS.readFile path
   let fileName := path.toString
   let inputCtx := Parser.mkInputContext input fileName
   let (header, parserState, messages) ← Parser.parseHeader inputCtx
-  let (env, messages) ← Elab.processHeader header {} messages inputCtx
+  let (env, messages) ← Elab.processHeader header opts messages inputCtx
   let env := env.setMainModule (Name.mkSimple (path.fileStem.getD "Main"))
-  let cmdState := Command.mkState env messages {}
+  let cmdState := Command.mkState env messages opts
   let cmdState := { cmdState with infoState := { cmdState.infoState with enabled := true } }
   let s ← Elab.IO.processCommands inputCtx parserState cmdState
   return {

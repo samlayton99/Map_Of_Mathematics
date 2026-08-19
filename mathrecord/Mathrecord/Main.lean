@@ -160,8 +160,9 @@ unsafe def main (args : List String) : IO UInt32 := do
     if mode == "failing" then
       results := results ++ (← validateFailingAssertions rec)
     printResults results
-  | ["study", file, out] => do
-    let json ← Study.studyFile file
+  | ["study", file, out] | ["study", file, out, "--mathlib"] => do
+    let opts := if args.contains "--mathlib" then Study.mathlibOptions else {}
+    let json ← Study.studyFile file opts
     IO.FS.writeFile out (json.pretty ++ "\n")
     IO.println s!"studied {file} -> {out}"
     return 0

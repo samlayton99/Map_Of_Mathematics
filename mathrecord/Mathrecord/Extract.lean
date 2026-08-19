@@ -85,6 +85,9 @@ structure StWork where
   mvarToState : Std.HashMap MVarId String := {}   -- first materialization wins
   transitions : Array Json := #[]
   stateMeta   : Array (MVarId × ContextInfo × MetavarContext) := #[]  -- for spike
+  /-- states that could not be represented, classified loudly (never silent) -/
+  unsupportedStates : Array Json := #[]
+  failedMVars : Std.HashMap MVarId Bool := {}
 
 /-- Syntax kinds that are structural glue rather than proof actions. -/
 def glueKinds : List Name :=
@@ -103,12 +106,29 @@ partial def collectTacticInfos (t : InfoTree) (ctx? : Option ContextInfo := none
     | _, _ => rest
   | .hole _ => []
 
-/-- Materialize one local state from (mctx, goal mvar). Returns state id. -/
+/-- Materialize one local state from (mctx, goal mvar). Returns state id.
+On unrepresentable content (e.g. fvars outside the goal's own context from
+delayed assignments) classifies the state loudly instead of failing the file. -/
 def materializeState (ctx : ContextInfo) (mctx : MetavarContext) (g : MVarId)
     (fileMap : FileMap) (stx : Syntax) : StateT StWork EncM (Option String) := do
+  try
+    materializeStateCore ctx mctx g fileMap stx
+  catch e =>
+    modify fun w => { w with
+      failedMVars := w.failedMVars.insert g true
+      unsupportedStates := w.unsupportedStates.push <| Json.mkObj [
+        ("decl", Json.str (toString (ctx.parentDecl?.getD Name.anonymous))),
+        ("reason", Json.str (toString e)),
+        ("src", spanJsonOfStx fileMap stx)] }
+    return none
+where
+  materializeStateCore (ctx : ContextInfo) (mctx : MetavarContext) (g : MVarId)
+      (fileMap : FileMap) (stx : Syntax) : StateT StWork EncM (Option String) := do
   let w ← get
   if let some sid := w.mvarToState.get? g then
     return some sid
+  if w.failedMVars.contains g then
+    return none
   let some md := mctx.findDecl? g | return none
   -- ordered context: build fvar ordinal map first
   let mut fvarOrd : Std.HashMap FVarId Nat := {}
@@ -283,8 +303,9 @@ structure RawExtraction where
   storedNames : Array Name
 
 /-- Run the full extraction pass (declarations, states, transitions, failures). -/
-def runExtraction (path : System.FilePath) (spike : Bool) : IO RawExtraction := do
-  let pf ← Mathrecord.processFile path
+def runExtraction (path : System.FilePath) (spike : Bool) (opts : Options := {}) :
+    IO RawExtraction := do
+  let pf ← Mathrecord.processFile path opts
   let fileMap := FileMap.ofString (← IO.FS.readFile path)
   -- declarations: everything defined in this file (constants.map₂), sorted
   let localDecls := pf.env.constants.map₂.toList
