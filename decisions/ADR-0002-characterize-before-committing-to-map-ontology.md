@@ -1,6 +1,6 @@
 # ADR-0002: Characterize candidate representations before committing to a map ontology
 
-Date: 2026-08-18. Status: accepted. Supersedes the recommendation in `NEXT_RECOMMENDATION.md` (Gate 1, same date).
+Date: 2026-08-18. Status: accepted. Supersedes the Gate 1 recommendation (now `reports/NEXT_RECOMMENDATION_gate1_superseded.md`).
 
 ## Context
 
@@ -15,6 +15,6 @@ Dynamic traces are not rejected — deferred. The Gate 2 entry conditions listed
 ## Consequences
 
 - The exact MathRecord core (ADR-0001) is unchanged and remains the substrate; all projections are computed views over it with provenance and trust classes.
-- `NEXT_RECOMMENDATION.md` carries a supersession banner; content preserved as history.
+- `reports/NEXT_RECOMMENDATION_gate1_superseded.md` carries a supersession banner; content preserved as history.
 - The v2 handoff documents are archived (`archive/handoff_v2/`); `handoff/00`–`10` are current authority, `handoff/11`–`15` are a non-authoritative research notebook.
 - This run ends with exactly one of: select a representation and proceed to a navigation experiment; run another bounded study; or stop the map-centered program while preserving MathRecord as tooling.

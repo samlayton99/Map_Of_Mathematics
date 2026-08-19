@@ -119,6 +119,20 @@ def main():
                       (", ".join(f"`{x}` ({c})" for x, c in infra) or "(none)") + "\n")
             md.append("## P4 — named application spine (top of tree)  [deterministic-derived]\n")
             md.append(render_apps_tree(d["p4_apps"] if isinstance(d["p4_apps"], list) else []) + "\n")
+            md.append("## P4-route — Prop-resulting spines with domain heads  [derived filter of P4]\n")
+            apps_all = d["p4_apps"] if isinstance(d["p4_apps"], list) else []
+            route = [a for a in apps_all
+                     if a["resultIsProp"] and not (a["head"] in ref and ref[a["head"]]["classification"])]
+            if route:
+                seen = []
+                for a in route:
+                    line = f"- `{a['head']}` ({a['nArgs']} args) : {a['resultHead']} (depth {a['depth']})"
+                    if line not in seen:
+                        seen.append(line)
+                md.append("\n".join(seen[:25]) +
+                          (f"\n  ... ({len(route)} occurrences total)" if len(route) > 25 else "") + "\n")
+            else:
+                md.append("(none)\n")
             md.append("## P5 — source-level use events  [observed]\n")
             if evs:
                 for e in sorted(evs, key=lambda e: json.dumps(e.get("src"), sort_keys=True)):

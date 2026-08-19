@@ -83,6 +83,10 @@ def main():
             body_infra = [n for n in body if n in infra]
             apps = d["p4_apps"] if isinstance(d["p4_apps"], list) else []
             named_app_heads = sorted({a["head"] for a in apps})
+            # P4' — candidate "route" view: Prop-resulting spines with
+            # unclassified (domain) heads. Deterministic filter of P4.
+            route = [a for a in apps if a["resultIsProp"] and a["head"] not in infra]
+            route_heads = sorted({a["head"] for a in route})
             evs = events_by_decl.get(d["name"], [])
             attributed = [a["decl"] for e in evs for a in e["attributions"]]
             style = classify_style(d["name"], events_by_decl, None)
@@ -96,6 +100,8 @@ def main():
                 "p2_domain": len(body) - len(body_infra),
                 "p4_apps": len(apps),
                 "p4_heads": len(named_app_heads),
+                "p4route_apps": len(route),
+                "p4route_heads": len(route_heads),
                 "p4_resultOkFrac": (sum(1 for a in apps if a["resultOk"]) / len(apps)) if apps else None,
                 "p4_complete": d["p4_completeness"] == "complete",
                 "p5_events": len(evs),
@@ -139,6 +145,8 @@ def main():
                 "p2_bodyInfraFrac": med("p2_bodyInfraFrac"),
                 "p2_domain": med("p2_domain"),
                 "p4_apps": med("p4_apps"),
+                "p4route_apps": med("p4route_apps"),
+                "p4route_heads": med("p4route_heads"),
                 "p4_resultOkFrac": med("p4_resultOkFrac"),
                 "compression_p2": med("compression_p2"),
                 "compression_p4": med("compression_p4"),
@@ -177,14 +185,15 @@ def main():
           f"referenced shallow decls: {summary['referencedShallowDecls']}, "
           f"total backing declarations: {summary['totalBackingDecls']}\n")
     hdr = ("| file | stored | showcase | styles | ref-infra% | P2 med (infra%) | P4 med apps | "
-           "P5 ev (attr) | P5⊆P2 | P4⊆P2 | c(P2) | c(P4) |")
+           "P4route med (heads) | P5 ev (attr) | P5⊆P2 | P4⊆P2 | c(P2) | c(P4) |")
     print(hdr)
-    print("|" + "---|" * 12)
+    print("|" + "---|" * 13)
     for fname, r in report.items():
         m = r["medians"]
         sty = ",".join(f"{k}:{v}" for k, v in sorted(r["styles"].items()))
         print(f"| {fname} | {r['declsStored']} | {r['showcaseCandidates']} | {sty} | "
               f"{r['referencedInfraFrac']} | {m['p2_body']} ({m['p2_bodyInfraFrac']}) | {m['p4_apps']} | "
+              f"{m['p4route_apps']} ({m['p4route_heads']}) | "
               f"{r['useEvents']} ({r['useEventsAttributed']}) | {m['p5_in_p2']} | {m['p4_heads_in_p2']} | "
               f"{m['compression_p2']} | {m['compression_p4']} |")
 

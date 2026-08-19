@@ -4,8 +4,9 @@ Research program: determine which representation of formal (Lean) mathematics, i
 
 ## State
 
-- **Gates 0–1 (done, PASS):** exact Lean-backed record (E,X,D,S + T spike) validated on an adversarial corpus. Evidence: `reports/`, `SCHEMA.md`, `LEAN_REPRESENTATION_AUDIT.md`. Code: `mathrecord/`.
-- **Phase 2A/2B (current):** bounded real-Mathlib candidate-representation study + use-event feasibility. Authority: `handoff/00`–`10`. Direction summary: `docs/CURRENT_RESEARCH_DIRECTION.md`.
+- **Gates 0–1 (PASS):** exact Lean-backed record (E,X,D,S + T spike) validated on an adversarial corpus. Evidence: `reports/`, `SCHEMA.md`, `LEAN_REPRESENTATION_AUDIT.md`. Code: `mathrecord/`.
+- **Phase 2A/2B (executed):** six-file Mathlib candidate-representation study + use-event feasibility. Results: `reports/REPRESENTATION_CHARACTERIZATION.md`, `reports/USE_EVENT_FEASIBILITY.md`, `reports/HONEST_ASSESSMENT.md`. Recommendation: `NEXT_RECOMMENDATION.md` (another bounded study: human review of `review/`).
+- Authority: `handoff/00`–`10`. Direction: `docs/CURRENT_RESEARCH_DIRECTION.md`.
 
 ## Layout
 
@@ -17,4 +18,4 @@ Research program: determine which representation of formal (Lean) mathematics, i
 - `sources/` — ecosystem audit, vision conversation source.
 - `archive/` — superseded handoffs (v2) and pre-project material.
 
-`NEXT_RECOMMENDATION.md` at root is the superseded Gate 1 recommendation (banner marks it historical).
+Superseded Gate 1 recommendation: `reports/NEXT_RECOMMENDATION_gate1_superseded.md`.

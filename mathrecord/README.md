@@ -8,6 +8,7 @@ lake build
 ./.lake/build/bin/mathrecord validate corpus/Adversarial.lean records/adversarial.json adversarial
 ./.lake/build/bin/mathrecord alpha    records/adversarial.json records/adversarial_renamed.json
 ./.lake/build/bin/mathrecord inspect  records/adversarial.json Corpus.letTactic
+./.lake/build/bin/mathrecord study  <file.lean> out.json --mathlib   # Phase 2 projections
 ./.lake/build/bin/gate0 spikes                # Gate 0 audit spike
 ```
 

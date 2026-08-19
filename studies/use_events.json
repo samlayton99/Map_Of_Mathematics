@@ -1,0 +1,788 @@
+{
+ "ambiguity": {
+  "multi": 238,
+  "one": 311,
+  "zero": 211
+ },
+ "byRole": {
+  "apply": {
+   "attributed": 22,
+   "events": 23,
+   "rate": 0.957
+  },
+  "cases": {
+   "attributed": 8,
+   "events": 17,
+   "rate": 0.471
+  },
+  "constructor": {
+   "attributed": 0,
+   "events": 3,
+   "rate": 0.0
+  },
+  "exact": {
+   "attributed": 93,
+   "events": 112,
+   "rate": 0.83
+  },
+  "induction": {
+   "attributed": 6,
+   "events": 6,
+   "rate": 1.0
+  },
+  "refine": {
+   "attributed": 44,
+   "events": 100,
+   "rate": 0.44
+  },
+  "rewrite": {
+   "attributed": 254,
+   "events": 254,
+   "rate": 1.0
+  },
+  "rw": {
+   "attributed": 0,
+   "events": 29,
+   "rate": 0.0
+  },
+  "simp": {
+   "attributed": 118,
+   "events": 208,
+   "rate": 0.567
+  },
+  "simp_all": {
+   "attributed": 1,
+   "events": 5,
+   "rate": 0.2
+  },
+  "unfold": {
+   "attributed": 3,
+   "events": 3,
+   "rate": 1.0
+  }
+ },
+ "manualPrecisionSample": [
+  {
+   "actionText": "apply le_antisymm",
+   "attributions": [
+    "le_antisymm"
+   ],
+   "decl": "sup_comm",
+   "file": "Order_Lattice",
+   "role": "apply",
+   "src": {
+    "end": {
+     "col": 66,
+     "line": 238
+    },
+    "start": {
+     "col": 49,
+     "line": 238
+    }
+   }
+  },
+  {
+   "actionText": "apply le_trans (mul_le_mul_of_nonneg_right _ (le_of_not_gt hx0)) exp_one_mul_le_exp",
+   "attributions": [
+    "le_trans"
+   ],
+   "decl": "Real.two_mul_le_exp",
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "role": "apply",
+   "src": {
+    "end": {
+     "col": 87,
+     "line": 90
+    },
+    "start": {
+     "col": 4,
+     "line": 90
+    }
+   }
+  },
+  {
+   "actionText": "apply e.injective.semilatticeInf",
+   "attributions": [
+    "Function.Injective.semilatticeInf"
+   ],
+   "decl": "Equiv.semilatticeInf",
+   "file": "Order_Lattice",
+   "role": "apply",
+   "src": {
+    "end": {
+     "col": 34,
+     "line": 1036
+    },
+    "start": {
+     "col": 2,
+     "line": 1036
+    }
+   }
+  },
+  {
+   "actionText": "apply le_inf",
+   "attributions": [
+    "le_inf"
+   ],
+   "decl": "Lattice.mk'",
+   "file": "Order_Lattice",
+   "role": "apply",
+   "src": {
+    "end": {
+     "col": 18,
+     "line": 404
+    },
+    "start": {
+     "col": 6,
+     "line": 404
+    }
+   }
+  },
+  {
+   "actionText": "cases PartialOrder.ext H",
+   "attributions": [
+    "PartialOrder.ext"
+   ],
+   "decl": "SemilatticeSup.ext",
+   "file": "Order_Lattice",
+   "role": "cases",
+   "src": {
+    "end": {
+     "col": 26,
+     "line": 326
+    },
+    "start": {
+     "col": 2,
+     "line": 326
+    }
+   }
+  },
+  {
+   "actionText": "cases hn with\n      | inl hn => simp [hn.symm]\n      | inr hn =>\n          have : (1 : \u211d) \u2264 -n := by rw [\u2190 neg_zero, \u2190 l",
+   "attributions": [
+    "Or.inl",
+    "Or.inr"
+   ],
+   "decl": "Real.log_intCast_nonneg",
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "role": "cases",
+   "src": {
+    "end": {
+     "col": 31,
+     "line": 247
+    },
+    "start": {
+     "col": 6,
+     "line": 242
+    }
+   }
+  },
+  {
+   "actionText": "cases SemilatticeSup.ext H",
+   "attributions": [
+    "SemilatticeSup.ext"
+   ],
+   "decl": "Lattice.ext",
+   "file": "Order_Lattice",
+   "role": "cases",
+   "src": {
+    "end": {
+     "col": 28,
+     "line": 458
+    },
+    "start": {
+     "col": 2,
+     "line": 458
+    }
+   }
+  },
+  {
+   "actionText": "cases SemilatticeInf.ext H",
+   "attributions": [
+    "SemilatticeInf.ext"
+   ],
+   "decl": "Lattice.ext",
+   "file": "Order_Lattice",
+   "role": "cases",
+   "src": {
+    "end": {
+     "col": 28,
+     "line": 459
+    },
+    "start": {
+     "col": 2,
+     "line": 459
+    }
+   }
+  },
+  {
+   "actionText": "exact isOpen_iUnion (Bool.forall_bool.2 \u27e8h\u2082, h\u2081\u27e9)",
+   "attributions": [
+    "isOpen_iUnion"
+   ],
+   "decl": "IsOpen.union",
+   "file": "Topology_Basic",
+   "role": "exact",
+   "src": {
+    "end": {
+     "col": 73,
+     "line": 81
+    },
+    "start": {
+     "col": 24,
+     "line": 81
+    }
+   }
+  },
+  {
+   "actionText": "exact  mod_cast  (   of_decide_eq_true h\u2082\n     :  _  )",
+   "attributions": [
+    "cast"
+   ],
+   "decl": "Mathlib.Meta.Positivity.log_nz_of_isRat_neg",
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "role": "exact",
+   "src": {
+    "end": {
+     "col": 73,
+     "line": 639
+    },
+    "start": {
+     "col": 38,
+     "line": 639
+    }
+   }
+  },
+  {
+   "actionText": "exact e.apply_symm_apply _",
+   "attributions": [
+    "Equiv.apply_symm_apply"
+   ],
+   "decl": "Equiv.distribLattice",
+   "file": "Order_Lattice",
+   "role": "exact",
+   "src": {
+    "end": {
+     "col": 90,
+     "line": 1047
+    },
+    "start": {
+     "col": 64,
+     "line": 1047
+    }
+   }
+  },
+  {
+   "actionText": "exact e.apply_symm_apply _",
+   "attributions": [
+    "Equiv.apply_symm_apply"
+   ],
+   "decl": "Equiv.semilatticeSup",
+   "file": "Order_Lattice",
+   "role": "exact",
+   "src": {
+    "end": {
+     "col": 90,
+     "line": 1030
+    },
+    "start": {
+     "col": 64,
+     "line": 1030
+    }
+   }
+  },
+  {
+   "actionText": "induction n with\n  | zero => simp\n  | succ n ih =>\n    rcases eq_or_ne x 0 with (rfl | hx)\n    \u00b7 simp\n    \u00b7 rw [pow_succ",
+   "attributions": [
+    "Nat.zero",
+    "Nat.succ"
+   ],
+   "decl": "Real.log_pow",
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "role": "induction",
+   "src": {
+    "end": {
+     "col": 87,
+     "line": 294
+    },
+    "start": {
+     "col": 2,
+     "line": 289
+    }
+   }
+  },
+  {
+   "actionText": "induction n with\n  | zero => rwa [zpow_zero]\n  | succ n ih =>\n    rw [zpow_add_one]\n    exact h_mul _ ih\n  | pred n ih =",
+   "attributions": [
+    "Int.succ",
+    "Int.pred"
+   ],
+   "decl": "zpow_induction_right",
+   "file": "Algebra_Group_Basic",
+   "role": "induction",
+   "src": {
+    "end": {
+     "col": 20,
+     "line": 895
+    },
+    "start": {
+     "col": 2,
+     "line": 888
+    }
+   }
+  },
+  {
+   "actionText": "induction n with\n  | zero => rwa [zpow_zero]\n  | succ n ih =>\n    rw [Int.add_comm, zpow_add, zpow_one]\n    exact h_mul ",
+   "attributions": [
+    "Int.succ",
+    "Int.pred"
+   ],
+   "decl": "zpow_induction_left",
+   "file": "Algebra_Group_Basic",
+   "role": "induction",
+   "src": {
+    "end": {
+     "col": 20,
+     "line": 878
+    },
+    "start": {
+     "col": 2,
+     "line": 871
+    }
+   }
+  },
+  {
+   "actionText": "induction l with\n  | nil => simp\n  | cons a l ih =>\n    simp_all only [ne_eq, mem_cons, or_true, not_false_eq_true, fora",
+   "attributions": [
+    "List.nil",
+    "List.cons"
+   ],
+   "decl": "Real.log_list_prod",
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "role": "induction",
+   "src": {
+    "end": {
+     "col": 44,
+     "line": 398
+    },
+    "start": {
+     "col": 2,
+     "line": 392
+    }
+   }
+  },
+  {
+   "actionText": "refine  if  h._@.Basic.2330553057._hygCtx._hyg.74  :  ?  m  then  ?  pos  else  ?  neg",
+   "attributions": [
+    "dite"
+   ],
+   "decl": "Nat.pow_sub_one_mod_pow_sub_one",
+   "file": "Data_Nat_GCD_Basic",
+   "role": "refine",
+   "src": {
+    "end": {
+     "col": 33,
+     "line": 47
+    },
+    "start": {
+     "col": 24,
+     "line": 47
+    }
+   }
+  },
+  {
+   "actionText": "refine Asymptotics.isLittleO_of_tendsto' ?_\n    <| Tendsto.div_atTop (a := c) (by simp) tendsto_log_atTop",
+   "attributions": [
+    "Asymptotics.isLittleO_of_tendsto'"
+   ],
+   "decl": "Real.isLittleO_const_log_atTop",
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "role": "refine",
+   "src": {
+    "end": {
+     "col": 61,
+     "line": 455
+    },
+    "start": {
+     "col": 2,
+     "line": 454
+    }
+   }
+  },
+  {
+   "actionText": "refine \u27e8fun h \u21a6 ?_, ?_\u27e9",
+   "attributions": [
+    "Iff.intro"
+   ],
+   "decl": "inf_eq_and_sup_eq_iff",
+   "file": "Order_Lattice",
+   "role": "refine",
+   "src": {
+    "end": {
+     "col": 25,
+     "line": 431
+    },
+    "start": {
+     "col": 2,
+     "line": 431
+    }
+   }
+  },
+  {
+   "actionText": "refine  if hx0  : x < 0 then  ?  pos  else  ?  neg",
+   "attributions": [
+    "dite"
+   ],
+   "decl": "Real.two_mul_le_exp",
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "role": "refine",
+   "src": {
+    "end": {
+     "col": 22,
+     "line": 87
+    },
+    "start": {
+     "col": 2,
+     "line": 87
+    }
+   }
+  },
+  {
+   "actionText": "rewrite  [ \u2190 inf_le_sup.ge_iff_eq, sup_le_inf ]",
+   "attributions": [
+    "LE.le.ge_iff_eq",
+    "sup_le_inf"
+   ],
+   "decl": "inf_eq_sup",
+   "file": "Order_Lattice",
+   "role": "rewrite",
+   "src": {
+    "end": {
+     "col": 86,
+     "line": 416
+    },
+    "start": {
+     "col": 47,
+     "line": 416
+    }
+   }
+  },
+  {
+   "actionText": "rewrite  [ \u2190 pow_add, Nat.add_comm, Nat.sub_add_cancel h ]",
+   "attributions": [
+    "pow_add",
+    "Nat.add_comm",
+    "Nat.sub_add_cancel"
+   ],
+   "decl": "pow_mul_pow_sub",
+   "file": "Algebra_Group_Basic",
+   "role": "rewrite",
+   "src": {
+    "end": {
+     "col": 52,
+     "line": 152
+    },
+    "start": {
+     "col": 2,
+     "line": 152
+    }
+   }
+  },
+  {
+   "actionText": "rewrite  [ add_comm, coprime_add_self_right ]",
+   "attributions": [
+    "add_comm",
+    "Nat.coprime_add_self_right"
+   ],
+   "decl": "Nat.coprime_self_add_right",
+   "file": "Data_Nat_GCD_Basic",
+   "role": "rewrite",
+   "src": {
+    "end": {
+     "col": 39,
+     "line": 113
+    },
+    "start": {
+     "col": 2,
+     "line": 113
+    }
+   }
+  },
+  {
+   "actionText": "rewrite  [ Int.add_comm, zpow_add, zpow_one ]",
+   "attributions": [
+    "Int.add_comm",
+    "zpow_add",
+    "zpow_one"
+   ],
+   "decl": "mul_self_zpow",
+   "file": "Algebra_Group_Basic",
+   "role": "rewrite",
+   "src": {
+    "end": {
+     "col": 39,
+     "line": 822
+    },
+    "start": {
+     "col": 2,
+     "line": 822
+    }
+   }
+  },
+  {
+   "actionText": "simp [HasFiniteMulSupport, HasFiniteSupport, H]",
+   "attributions": [
+    "Function.HasFiniteMulSupport",
+    "Function.HasFiniteSupport",
+    "Function.HasFiniteMulSupport",
+    "Function.HasFiniteSupport"
+   ],
+   "decl": "Real.log_finprod",
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "role": "simp",
+   "src": {
+    "end": {
+     "col": 51,
+     "line": 425
+    },
+    "start": {
+     "col": 4,
+     "line": 425
+    }
+   }
+  },
+  {
+   "actionText": "simp only [inv_div]",
+   "attributions": [
+    "inv_div",
+    "inv_div"
+   ],
+   "decl": "div_eq_div_iff_comm",
+   "file": "Algebra_Group_Basic",
+   "role": "simp",
+   "src": {
+    "end": {
+     "col": 46,
+     "line": 403
+    },
+    "start": {
+     "col": 27,
+     "line": 403
+    }
+   }
+  },
+  {
+   "actionText": "simp [curry_update]",
+   "attributions": [
+    "Function.curry_update",
+    "Function.curry_update"
+   ],
+   "decl": "Function.uncurry_update_update",
+   "file": "Logic_Function_Basic",
+   "role": "simp",
+   "src": {
+    "end": {
+     "col": 21,
+     "line": 982
+    },
+    "start": {
+     "col": 2,
+     "line": 982
+    }
+   }
+  },
+  {
+   "actionText": "simp only [mul_assoc, div_eq_mul_inv]",
+   "attributions": [
+    "mul_assoc",
+    "div_eq_mul_inv",
+    "mul_assoc",
+    "div_eq_mul_inv"
+   ],
+   "decl": "mul_div",
+   "file": "Algebra_Group_Basic",
+   "role": "simp",
+   "src": {
+    "end": {
+     "col": 97,
+     "line": 332
+    },
+    "start": {
+     "col": 60,
+     "line": 332
+    }
+   }
+  },
+  {
+   "actionText": "simp_all only [ne_eq, mem_cons, or_true, not_false_eq_true, forall_const, forall_eq_or_imp,\n      prod_cons, map_cons, s",
+   "attributions": [
+    "ne_eq",
+    "List.mem_cons",
+    "or_true",
+    "not_false_eq_true",
+    "forall_const",
+    "forall_eq_or_imp",
+    "List.prod_cons",
+    "List.map_cons",
+    "List.sum_cons",
+    "ne_eq",
+    "List.mem_cons",
+    "or_true",
+    "not_false_eq_true",
+    "forall_const",
+    "forall_eq_or_imp",
+    "List.prod_cons",
+    "List.map_cons",
+    "List.sum_cons"
+   ],
+   "decl": "Real.log_list_prod",
+   "file": "Analysis_SpecialFunctions_Log_Basic",
+   "role": "simp_all",
+   "src": {
+    "end": {
+     "col": 36,
+     "line": 396
+    },
+    "start": {
+     "col": 4,
+     "line": 395
+    }
+   }
+  },
+  {
+   "actionText": "unfold maxDefault",
+   "attributions": [
+    "maxDefault"
+   ],
+   "decl": "sup_eq_maxDefault",
+   "file": "Order_Lattice",
+   "role": "unfold",
+   "src": {
+    "end": {
+     "col": 19,
+     "line": 586
+    },
+    "start": {
+     "col": 2,
+     "line": 586
+    }
+   }
+  },
+  {
+   "actionText": "unfold extend",
+   "attributions": [
+    "Function.extend"
+   ],
+   "decl": "Function.extend_def",
+   "file": "Logic_Function_Basic",
+   "role": "unfold",
+   "src": {
+    "end": {
+     "col": 15,
+     "line": 838
+    },
+    "start": {
+     "col": 2,
+     "line": 838
+    }
+   }
+  },
+  {
+   "actionText": "unfold minDefault",
+   "attributions": [
+    "minDefault"
+   ],
+   "decl": "inf_eq_minDefault",
+   "file": "Order_Lattice",
+   "role": "unfold",
+   "src": {
+    "end": {
+     "col": 19,
+     "line": 593
+    },
+    "start": {
+     "col": 2,
+     "line": 593
+    }
+   }
+  }
+ ],
+ "overall": {
+  "attributedEvents": 549,
+  "attributionRate": 0.722,
+  "coverageAllTheorems": 0.271,
+  "coverageTacticTheorems": 0.825,
+  "events": 760,
+  "tacticTheorems": 366,
+  "theorems": 1115,
+  "theoremsWithAttributedEvent": 302
+ },
+ "perFile": {
+  "Algebra_Group_Basic": {
+   "attrRate": 0.701,
+   "attributedEvents": 164,
+   "events": 234,
+   "familyShareOfTacticNodes": 0.193,
+   "nonFamilyTacticNodes": 979,
+   "tacticTheorems": 164,
+   "theorems": 441,
+   "theoremsWithAttributedEvent": 118,
+   "unsupportedStates": 0
+  },
+  "Analysis_SpecialFunctions_Log_Basic": {
+   "attrRate": 0.772,
+   "attributedEvents": 142,
+   "events": 184,
+   "familyShareOfTacticNodes": 0.162,
+   "nonFamilyTacticNodes": 950,
+   "tacticTheorems": 68,
+   "theorems": 114,
+   "theoremsWithAttributedEvent": 67,
+   "unsupportedStates": 5
+  },
+  "Data_Nat_GCD_Basic": {
+   "attrRate": 0.797,
+   "attributedEvents": 55,
+   "events": 69,
+   "familyShareOfTacticNodes": 0.155,
+   "nonFamilyTacticNodes": 377,
+   "tacticTheorems": 35,
+   "theorems": 52,
+   "theoremsWithAttributedEvent": 30,
+   "unsupportedStates": 2
+  },
+  "Logic_Function_Basic": {
+   "attrRate": 0.723,
+   "attributedEvents": 73,
+   "events": 101,
+   "familyShareOfTacticNodes": 0.184,
+   "nonFamilyTacticNodes": 448,
+   "tacticTheorems": 46,
+   "theorems": 243,
+   "theoremsWithAttributedEvent": 42,
+   "unsupportedStates": 1
+  },
+  "Order_Lattice": {
+   "attrRate": 0.61,
+   "attributedEvents": 83,
+   "events": 136,
+   "familyShareOfTacticNodes": 0.142,
+   "nonFamilyTacticNodes": 825,
+   "tacticTheorems": 41,
+   "theorems": 219,
+   "theoremsWithAttributedEvent": 34,
+   "unsupportedStates": 0
+  },
+  "Topology_Basic": {
+   "attrRate": 0.889,
+   "attributedEvents": 32,
+   "events": 36,
+   "familyShareOfTacticNodes": 0.279,
+   "nonFamilyTacticNodes": 93,
+   "tacticTheorems": 12,
+   "theorems": 46,
+   "theoremsWithAttributedEvent": 11,
+   "unsupportedStates": 0
+  }
+ }
+}

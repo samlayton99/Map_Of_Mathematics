@@ -26,7 +26,9 @@ open Lean Elab Meta Mathrecord Mathrecord.Extract
 
 def eqMachinery : List Name :=
   [``Eq.mpr, ``Eq.mp, ``Eq.rec, ``Eq.ndrec, ``congrArg, ``congrFun, ``congr,
-   ``Eq.trans, ``Eq.symm, ``Eq.refl, ``rfl, ``id, ``Eq.subst]
+   ``Eq.trans, ``Eq.symm, ``Eq.refl, ``rfl, ``id, ``Eq.subst,
+   `congr_arg, `congr_fun, ``propext, ``funext, ``Trans.trans, `Eq.comm,
+   `eq_comm, ``cast]
 
 def logicCore : List Name :=
   [``And.intro, ``And.left, ``And.right, ``Or.inl, ``Or.inr, ``Or.elim,

@@ -1,26 +1,23 @@
-# Next Recommendation (SUPERSEDED — historical)
+# Next Recommendation — Phase 2A/2B (2026-08-18)
 
-> **Status 2026-08-18 (later same day): SUPERSEDED** by the Balanced Research Handoff v5 (`handoff/`) — see `decisions/ADR-0002-characterize-before-committing-to-map-ontology.md`. The current stage is a candidate-representation study (Phase 2A/2B), not generic dynamic traces. This document is preserved unchanged below as historical evidence of the Gate 1 decision.
+**Run another bounded representation study** (Outcome 2 of `handoff/00` §15) — specifically, the human-review pass over the already-built 76-proof bundle, plus two classified attribution-gap fixes. Exactly one recommendation, per protocol.
 
----
+## Why not Outcome 1 (select and proceed)
 
-**Proceed to dynamic traces (Gate 2).**
+Every *technical* criterion for selection is met, and a front-runner exists: the hybrid of **P3-filtered support + P4-route skeleton + P5 use events** is recoverable across the heterogeneous corpus, deterministic (byte-identical reruns), style-covering (P4-route works on the 76% of proofs that are term-mode, P5 covers 82.5% of tactic proofs with exact states), compressive (median 1–4 route steps vs 10⁲–10⁴-node terms), mutually consistent (P5 ⊆ P4-heads ⊆ P2 containment 1.0), and provenance-complete. But the pre-registered decision rules (`handoff/06` §3–4) make human review a hard gate for "more useful than raw dependency output", and **no human review was performed in this run**. Recommending selection now would be exactly the construction-equals-success error the handoff warns against.
 
-One recommendation, per protocol. Not "revise the object": every Gate 1 acceptance criterion passed without weakening, and the revisions listed below are additive hardening inside the same object, not changes to its shape. Not "abandon/wrap": the live audit (2026-08-18) found no maintained tool that provides exact serialized declarations + exact local states + transitions under one fingerprinted identity — the closest (Pantograph: interaction protocol, v4.31-pinned; lean4export: kernel declarations only; REPL/ntp-toolkit: pretty-printed states) each miss a load-bearing part, and the validated layer is small enough (~1.2k lines over Lean's own objects) that wrapping would cost more than it saves.
+## Why not Outcome 3 (stop)
 
-## Evidence base
+None of the stop signals fired: the candidate views are not mere dependency restatements (P4-route adds order/nesting/relation labels that P2 lacks; P5 adds roles and exact before/after states); recovery required no heavy semantic reconstruction (everything is deterministic extraction); use-event coverage is high-precision and honestly partial rather than too poor (32/32 manual precision, 82.5% tactic-theorem coverage, all gaps classified).
 
-- E, X, D, S validated on an adversarial corpus: kernel re-check from stored bytes (45 decls), exact round-trips (53), rebuilt-context well-formedness (13 states), byte-identical determinism, alpha-invariant identity (53 decls + 13 states). `reports/GATE_1.md`.
-- Transition access proven three ways: InfoTree observation (32 transitions incl. branching `[s8]→[s9,s10]` and closing steps), programmatic execution on a recorded state (`skip` success / `done` failure with diagnostic), and in-file failure capture with prior states intact.
+## The smallest experiment that resolves the uncertainty
 
-## Gate 2 entry conditions (fold in before or during)
+1. **Human review** of `review/` (76 stratified proofs, worksheet included): one or ideally two mathematically competent reviewers rate P2/P3/P4-route/P5 per proof. This directly decides "useful vs noise", "does order matter", "does expansion help", and where natural-language tagging is indispensable.
+2. **Fix the two classified attribution gaps** before the next measurement so they don't contaminate it: rewrite-rule TermInfo inside structure-literal proofs (follow delayed-assignment InfoTree branches), and case-alternative vs eliminator attribution for `cases`/`induction`.
+3. Optionally re-measure P5 coverage after the fixes (one command; the pipeline is deterministic).
 
-1. Normalize T: derive the logical branch tree from nested syntax observations (the `induction ... with` case shows syntax nesting ≠ branch structure); one canonical transition per logical step, nesting kept as provenance.
-2. Failure semantics: a transition recorder must treat Lean's error-recovery path (`sorryAx`-admitted goal + logged error) as failure — already demonstrated in the spike; make it the recorder's invariant.
-3. Represent mvar-carrying states fully (per-state mvar declaration table) so no state is check-skipped.
-4. Replace 64-bit fingerprint hashes with SHA-256 before any corpus larger than toys.
-5. Keep one-file-per-process isolation until the double-`importModules` parser corruption is resolved upstream.
+Then re-enter the decision with human evidence. If review favors the hybrid, the pre-specified next step is the controlled navigation experiment of `handoff/06` §7 — `(Γ, A) ↦ rank useful declarations` against text/flat-dependency baselines with module holdouts. If review says the views are noise, Outcome 3 becomes the honest choice and MathRecord remains exact tooling.
 
-## Risk to carry forward
+## Evidence
 
-Gate 1 establishes faithfulness only. It says nothing about usefulness (Gate 4) or learning value (Gate 5); do not let the clean pass inflate claims beyond "the tested Lean-native record is exact for the pinned environment".
+`reports/REPRESENTATION_CHARACTERIZATION.md`, `reports/USE_EVENT_FEASIBILITY.md`, `reports/HONEST_ASSESSMENT.md`, datasets `studies/` (regenerable via `analysis/run_corpus.sh`), review bundle `review/`. Negative/limiting findings are recorded and count as results: algebraic-domain support is up to 71% infrastructure; automation and structure-literal elaboration lose attribution; conceptual grouping is absent from every purely formal view.
