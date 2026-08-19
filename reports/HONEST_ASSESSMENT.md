@@ -1,5 +1,8 @@
 # Honest Assessment — Phase 2A/2B (required by handoff/00 §14)
 
+> *Erratum 2026-08-19: three claims in the Phase 2 reports are corrected in [`PHASE2_ERRATA.md`](PHASE2_ERRATA.md) (non-universal P5-in-P2 containment; 68.9% term-proof fraction; 61.4% P4 result-inference success). Body below unchanged.*
+
+
 Date: 2026-08-18. Every answer is labeled per the evidence language of `handoff/02` §E.
 
 **1. Which projections are exact?** P0 (record expression graph) and P1 (reference occurrences with paths) are lean-exact. States and transitions backing P5 are lean-exact/observed. [reproduced evidence]

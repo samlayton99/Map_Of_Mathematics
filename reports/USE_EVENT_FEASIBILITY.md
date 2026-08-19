@@ -1,5 +1,8 @@
 # Phase 2B — Contextual Use-Event Feasibility
 
+> *Erratum 2026-08-19: three claims in the Phase 2 reports are corrected in [`PHASE2_ERRATA.md`](PHASE2_ERRATA.md) (non-universal P5-in-P2 containment; 68.9% term-proof fraction; 61.4% P4 result-inference success). Body below unchanged.*
+
+
 Date: 2026-08-18. Data: `studies/use_events.json` (from the same six-file corpus). Events are observed elaborator data; attribution is via resolved `TermInfo` expressions, never parsed display text.
 
 ## What was measured

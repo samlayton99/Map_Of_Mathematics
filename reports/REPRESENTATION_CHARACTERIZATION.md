@@ -1,5 +1,8 @@
 # Phase 2A — Representation Characterization
 
+> *Erratum 2026-08-19: three claims in the Phase 2 reports are corrected in [`PHASE2_ERRATA.md`](PHASE2_ERRATA.md) (non-universal P5-in-P2 containment; 68.9% term-proof fraction; 61.4% P4 result-inference success). Body below unchanged.*
+
+
 Date: 2026-08-18. Corpus: 6 Mathlib files (v4.33.0), six areas — see `docs/CORPUS_SELECTION.md`. Definitions: `docs/REPRESENTATION_DEFINITIONS.md`. Data: `studies/*.study.json` (310MB, regenerate deterministically with `analysis/run_corpus.sh`), aggregates in `studies/characterization.json`. Claim labels per `handoff/02` §E.
 
 ## Corpus scale (implementation result)
