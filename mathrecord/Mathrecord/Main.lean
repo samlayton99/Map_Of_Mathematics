@@ -1,5 +1,6 @@
 import Mathrecord.Extract
 import Mathrecord.Validate
+import Mathrecord.Study
 
 /-! MathRecord CLI.
 
@@ -159,6 +160,11 @@ unsafe def main (args : List String) : IO UInt32 := do
     if mode == "failing" then
       results := results ++ (← validateFailingAssertions rec)
     printResults results
+  | ["study", file, out] => do
+    let json ← Study.studyFile file
+    IO.FS.writeFile out (json.pretty ++ "\n")
+    IO.println s!"studied {file} -> {out}"
+    return 0
   | ["alpha", a, b] => alpha a b
   | ["inspect", recordPath, declName] => inspect recordPath declName
   | _ => do

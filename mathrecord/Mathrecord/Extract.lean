@@ -269,8 +269,21 @@ def envJson (pf : ProcessedFile) : Json :=
     ("extractor", Json.str extractorVersion),
     ("fingerprint", Json.str fingerprint)]
 
-/-- Extract one file into a record. -/
-def extractFile (path : System.FilePath) (spike : Bool) : IO Json := do
+/-- All artifacts of one extraction pass, for reuse by `extract` and `study`. -/
+structure RawExtraction where
+  pf : ProcessedFile
+  fileMap : FileMap
+  encSt : EncState
+  declJsons : Array Json
+  unsupported : Array Json
+  work : StWork
+  failures : Array Json
+  progSpike : Array Json
+  /-- names of stored declarations, in stored order -/
+  storedNames : Array Name
+
+/-- Run the full extraction pass (declarations, states, transitions, failures). -/
+def runExtraction (path : System.FilePath) (spike : Bool) : IO RawExtraction := do
   let pf ← Mathrecord.processFile path
   let fileMap := FileMap.ofString (← IO.FS.readFile path)
   -- declarations: everything defined in this file (constants.map₂), sorted
@@ -352,18 +365,28 @@ def extractFile (path : System.FilePath) (spike : Bool) : IO Json := do
         ("trust", Json.str "observed")]
   -- programmatic spike
   let progSpike ← if spike then programmaticSpike pf work else pure #[]
+  let storedNames ← IO.ofExcept <| declJsons.mapM fun d =>
+    (d.getObjValAs? String "name").map (·.toName)
+  return { pf, fileMap, encSt, declJsons, unsupported, work, failures, progSpike, storedNames }
+
+/-- Assemble the Gate-1 record JSON (byte-compatible with the validated format). -/
+def assembleRecord (path : System.FilePath) (raw : RawExtraction) : IO Json := do
   let sourceText ← IO.FS.readFile path
   return Json.mkObj [
     ("schema", Json.str "mathrecord-0.1"),
     ("source", Json.mkObj [("file", Json.str path.toString),
                            ("contentHash", Json.str (hex64 sourceText))]),
-    ("environment", envJson pf),
-    ("expressions", Json.arr encSt.nodes),
-    ("declarations", Json.arr declJsons),
-    ("states", Json.arr work.states),
-    ("transitions", Json.arr work.transitions),
-    ("programmaticTransitions", Json.arr progSpike),
-    ("failures", Json.arr failures),
-    ("unsupported", Json.arr unsupported)]
+    ("environment", envJson raw.pf),
+    ("expressions", Json.arr raw.encSt.nodes),
+    ("declarations", Json.arr raw.declJsons),
+    ("states", Json.arr raw.work.states),
+    ("transitions", Json.arr raw.work.transitions),
+    ("programmaticTransitions", Json.arr raw.progSpike),
+    ("failures", Json.arr raw.failures),
+    ("unsupported", Json.arr raw.unsupported)]
+
+/-- Extract one file into a record. -/
+def extractFile (path : System.FilePath) (spike : Bool) : IO Json := do
+  assembleRecord path (← runExtraction path spike)
 
 end Mathrecord.Extract
