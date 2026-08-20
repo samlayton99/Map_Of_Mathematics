@@ -1,0 +1,1083 @@
+{
+ "note": "Phase 5 geometry, pre-registered questions. Projections are masks over one incidence table; nothing is rebuilt.",
+ "n_declarations": 771129,
+ "n_artifacts": 747644,
+ "n_incidences": 18721317,
+ "Q1_1_projections": [
+  {
+   "projection": "P1 full support",
+   "incidences": 18721317,
+   "hyperedges_nonempty": 747605,
+   "hyperedges_empty": 39,
+   "distinct_decls": 546576,
+   "size_mean": 25.04,
+   "p50": 16.0,
+   "p90": 55.0,
+   "p99": 142.0,
+   "p100": 699.0
+  },
+  {
+   "projection": "P2 load-bearing",
+   "incidences": 8485349,
+   "hyperedges_nonempty": 728753,
+   "hyperedges_empty": 18891,
+   "distinct_decls": 502906,
+   "size_mean": 11.64,
+   "p50": 6.0,
+   "p90": 28.0,
+   "p99": 72.0,
+   "p100": 401.0
+  },
+  {
+   "projection": "P3 claims",
+   "incidences": 2924084,
+   "hyperedges_nonempty": 519600,
+   "hyperedges_empty": 228044,
+   "distinct_decls": 360595,
+   "size_mean": 5.63,
+   "p50": 2.0,
+   "p90": 13.0,
+   "p99": 41.0,
+   "p100": 231.0
+  },
+  {
+   "projection": "P4 V8 boundary",
+   "incidences": 1573630,
+   "hyperedges_nonempty": 462505,
+   "hyperedges_empty": 285139,
+   "distinct_decls": 347492,
+   "size_mean": 3.4,
+   "p50": 2.0,
+   "p90": 7.0,
+   "p99": 25.0,
+   "p100": 176.0
+  },
+  {
+   "projection": "P5 proof-introduced",
+   "incidences": 3163125,
+   "hyperedges_nonempty": 621200,
+   "hyperedges_empty": 126444,
+   "distinct_decls": 487423,
+   "size_mean": 5.09,
+   "p50": 2.0,
+   "p90": 11.0,
+   "p99": 43.0,
+   "p100": 193.0
+  },
+  {
+   "projection": "P6 statement-world",
+   "incidences": 5322224,
+   "hyperedges_nonempty": 597702,
+   "hyperedges_empty": 149942,
+   "distinct_decls": 104016,
+   "size_mean": 8.9,
+   "p50": 5.0,
+   "p90": 21.0,
+   "p99": 54.0,
+   "p100": 279.0
+  },
+  {
+   "projection": "P8 definition layer",
+   "incidences": 1641088,
+   "hyperedges_nonempty": 200886,
+   "hyperedges_empty": 546758,
+   "distinct_decls": 201796,
+   "size_mean": 8.17,
+   "p50": 5.0,
+   "p90": 18.0,
+   "p99": 51.0,
+   "p100": 197.0
+  }
+ ],
+ "Q1_1_topk": [
+  {
+   "k": 1,
+   "incidences": 462505,
+   "hyperedges": 462505,
+   "size_mean": 1.0
+  },
+  {
+   "k": 2,
+   "incidences": 709619,
+   "hyperedges": 462505,
+   "size_mean": 1.53
+  },
+  {
+   "k": 4,
+   "incidences": 991923,
+   "hyperedges": 462505,
+   "size_mean": 2.14
+  },
+  {
+   "k": 8,
+   "incidences": 1253430,
+   "hyperedges": 462505,
+   "size_mean": 2.71
+  },
+  {
+   "k": 16,
+   "incidences": 1437530,
+   "hyperedges": 462505,
+   "size_mean": 3.11
+  }
+ ],
+ "Q1_3_glue_only_landmarks": [
+  {
+   "name": "Eq",
+   "p1_citations": 301634,
+   "p4_citations": 0,
+   "p4_rank": 600056
+  },
+  {
+   "name": "OfNat.ofNat",
+   "p1_citations": 194333,
+   "p4_citations": 0,
+   "p4_rank": 600046
+  },
+  {
+   "name": "Nat",
+   "p1_citations": 190566,
+   "p4_citations": 0,
+   "p4_rank": 600049
+  },
+  {
+   "name": "congrArg",
+   "p1_citations": 165600,
+   "p4_citations": 0,
+   "p4_rank": 600040
+  },
+  {
+   "name": "Eq.refl",
+   "p1_citations": 157872,
+   "p4_citations": 0,
+   "p4_rank": 600028
+  },
+  {
+   "name": "id",
+   "p1_citations": 138494,
+   "p4_citations": 0,
+   "p4_rank": 600036
+  },
+  {
+   "name": "Membership.mem",
+   "p1_citations": 119260,
+   "p4_citations": 0,
+   "p4_rank": 600054
+  },
+  {
+   "name": "Eq.trans",
+   "p1_citations": 113877,
+   "p4_citations": 0,
+   "p4_rank": 600013
+  },
+  {
+   "name": "instOfNatNat",
+   "p1_citations": 113077,
+   "p4_citations": 0,
+   "p4_rank": 600053
+  },
+  {
+   "name": "DFunLike.coe",
+   "p1_citations": 101151,
+   "p4_citations": 0,
+   "p4_rank": 599987
+  },
+  {
+   "name": "Set",
+   "p1_citations": 98281,
+   "p4_citations": 0,
+   "p4_rank": 600079
+  },
+  {
+   "name": "Eq.mpr",
+   "p1_citations": 94476,
+   "p4_citations": 0,
+   "p4_rank": 600044
+  },
+  {
+   "name": "Eq.symm",
+   "p1_citations": 94110,
+   "p4_citations": 0,
+   "p4_rank": 600481
+  },
+  {
+   "name": "True",
+   "p1_citations": 89126,
+   "p4_citations": 0,
+   "p4_rank": 600018
+  },
+  {
+   "name": "LE.le",
+   "p1_citations": 88472,
+   "p4_citations": 0,
+   "p4_rank": 600087
+  },
+  {
+   "name": "of_eq_true",
+   "p1_citations": 86791,
+   "p4_citations": 0,
+   "p4_rank": 600017
+  },
+  {
+   "name": "HAdd.hAdd",
+   "p1_citations": 85418,
+   "p4_citations": 0,
+   "p4_rank": 600067
+  },
+  {
+   "name": "instHAdd",
+   "p1_citations": 85339,
+   "p4_citations": 0,
+   "p4_rank": 600069
+  },
+  {
+   "name": "propext",
+   "p1_citations": 83721,
+   "p4_citations": 0,
+   "p4_rank": 600031
+  },
+  {
+   "name": "congrFun'",
+   "p1_citations": 80231,
+   "p4_citations": 0,
+   "p4_rank": 600016
+  },
+  {
+   "name": "CategoryTheory.Category",
+   "p1_citations": 80000,
+   "p4_citations": 0,
+   "p4_rank": 600154
+  },
+  {
+   "name": "PartialOrder.toPreorder",
+   "p1_citations": 75735,
+   "p4_citations": 0,
+   "p4_rank": 600057
+  },
+  {
+   "name": "CategoryTheory.Category.toCategoryStruct",
+   "p1_citations": 75367,
+   "p4_citations": 0,
+   "p4_rank": 599760
+  },
+  {
+   "name": "Zero.toOfNat0",
+   "p1_citations": 72045,
+   "p4_citations": 0,
+   "p4_rank": 599971
+  },
+  {
+   "name": "Quiver.Hom",
+   "p1_citations": 71234,
+   "p4_citations": 0,
+   "p4_rank": 599764
+  },
+  {
+   "name": "CategoryTheory.CategoryStruct.toQuiver",
+   "p1_citations": 71017,
+   "p4_citations": 0,
+   "p4_rank": 599765
+  },
+  {
+   "name": "CommSemiring.toSemiring",
+   "p1_citations": 68316,
+   "p4_citations": 0,
+   "p4_rank": 600074
+  },
+  {
+   "name": "Semiring.toNonAssocSemiring",
+   "p1_citations": 68209,
+   "p4_citations": 0,
+   "p4_rank": 600177
+  },
+  {
+   "name": "Bool",
+   "p1_citations": 66641,
+   "p4_citations": 0,
+   "p4_rank": 600142
+  },
+  {
+   "name": "AddMonoid.toAddZeroClass",
+   "p1_citations": 64522,
+   "p4_citations": 0,
+   "p4_rank": 599981
+  },
+  {
+   "name": "And",
+   "p1_citations": 63967,
+   "p4_citations": 0,
+   "p4_rank": 600033
+  },
+  {
+   "name": "eq_self",
+   "p1_citations": 63032,
+   "p4_citations": 0,
+   "p4_rank": 599758
+  },
+  {
+   "name": "Preorder.toLE",
+   "p1_citations": 60755,
+   "p4_citations": 0,
+   "p4_rank": 600058
+  },
+  {
+   "name": "LT.lt",
+   "p1_citations": 60736,
+   "p4_citations": 0,
+   "p4_rank": 600048
+  },
+  {
+   "name": "Not",
+   "p1_citations": 60337,
+   "p4_citations": 0,
+   "p4_rank": 600014
+  },
+  {
+   "name": "AddZeroClass.toAddZero",
+   "p1_citations": 59525,
+   "p4_citations": 0,
+   "p4_rank": 599978
+  },
+  {
+   "name": "Set.instMembership",
+   "p1_citations": 56731,
+   "p4_citations": 0,
+   "p4_rank": 599939
+  },
+  {
+   "name": "congr",
+   "p1_citations": 54581,
+   "p4_citations": 0,
+   "p4_rank": 600019
+  },
+  {
+   "name": "SetLike.instMembership",
+   "p1_citations": 54340,
+   "p4_citations": 0,
+   "p4_rank": 600045
+  },
+  {
+   "name": "HMul.hMul",
+   "p1_citations": 52153,
+   "p4_citations": 0,
+   "p4_rank": 599796
+  },
+  {
+   "name": "instHMul",
+   "p1_citations": 51678,
+   "p4_citations": 0,
+   "p4_rank": 599787
+  },
+  {
+   "name": "AddCommGroup.toAddCommMonoid",
+   "p1_citations": 48262,
+   "p4_citations": 0,
+   "p4_rank": 600171
+  },
+  {
+   "name": "instAddNat",
+   "p1_citations": 47214,
+   "p4_citations": 0,
+   "p4_rank": 600063
+  },
+  {
+   "name": "Eq.ndrec",
+   "p1_citations": 46621,
+   "p4_citations": 0,
+   "p4_rank": 599808
+  },
+  {
+   "name": "Semiring.toMonoid",
+   "p1_citations": 45626,
+   "p4_citations": 0,
+   "p4_rank": 599973
+  },
+  {
+   "name": "Int",
+   "p1_citations": 45599,
+   "p4_citations": 0,
+   "p4_rank": 599874
+  },
+  {
+   "name": "CategoryTheory.Functor.obj",
+   "p1_citations": 44884,
+   "p4_citations": 0,
+   "p4_rank": 600186
+  },
+  {
+   "name": "Exists",
+   "p1_citations": 44879,
+   "p4_citations": 0,
+   "p4_rank": 599896
+  },
+  {
+   "name": "MulZeroClass.toZero",
+   "p1_citations": 44403,
+   "p4_citations": 0,
+   "p4_rank": 599997
+  },
+  {
+   "name": "rfl",
+   "p1_citations": 44399,
+   "p4_citations": 0,
+   "p4_rank": 600005
+  },
+  {
+   "name": "Bool.true",
+   "p1_citations": 44377,
+   "p4_citations": 0,
+   "p4_rank": 600120
+  },
+  {
+   "name": "AddZero.toZero",
+   "p1_citations": 44036,
+   "p4_citations": 0,
+   "p4_rank": 599974
+  },
+  {
+   "name": "Prod",
+   "p1_citations": 43437,
+   "p4_citations": 0,
+   "p4_rank": 600671
+  },
+  {
+   "name": "TopologicalSpace",
+   "p1_citations": 42728,
+   "p4_citations": 0,
+   "p4_rank": 600650
+  },
+  {
+   "name": "Eq.mp",
+   "p1_citations": 42477,
+   "p4_citations": 0,
+   "p4_rank": 599784
+  },
+  {
+   "name": "List",
+   "p1_citations": 41887,
+   "p4_citations": 0,
+   "p4_rank": 599727
+  },
+  {
+   "name": "CategoryTheory.Functor",
+   "p1_citations": 41839,
+   "p4_citations": 0,
+   "p4_rank": 600198
+  },
+  {
+   "name": "CommRing.toCommSemiring",
+   "p1_citations": 41827,
+   "p4_citations": 0,
+   "p4_rank": 600068
+  },
+  {
+   "name": "AddCommMonoid.toAddMonoid",
+   "p1_citations": 40869,
+   "p4_citations": 0,
+   "p4_rank": 599967
+  },
+  {
+   "name": "Real",
+   "p1_citations": 40711,
+   "p4_citations": 0,
+   "p4_rank": 600539
+  },
+  {
+   "name": "CategoryTheory.CategoryStruct.comp",
+   "p1_citations": 40274,
+   "p4_citations": 0,
+   "p4_rank": 599761
+  },
+  {
+   "name": "One.toOfNat1",
+   "p1_citations": 40177,
+   "p4_citations": 0,
+   "p4_rank": 600029
+  },
+  {
+   "name": "Module",
+   "p1_citations": 40048,
+   "p4_citations": 0,
+   "p4_rank": 599994
+  },
+  {
+   "name": "AddGroup.toSubNegMonoid",
+   "p1_citations": 39072,
+   "p4_citations": 0,
+   "p4_rank": 600157
+  },
+  {
+   "name": "Subtype",
+   "p1_citations": 36838,
+   "p4_citations": 0,
+   "p4_rank": 600165
+  },
+  {
+   "name": "CommRing",
+   "p1_citations": 36791,
+   "p4_citations": 0,
+   "p4_rank": 600088
+  },
+  {
+   "name": "RingHom.id",
+   "p1_citations": 35254,
+   "p4_citations": 0,
+   "p4_rank": 600178
+  },
+  {
+   "name": "HSub.hSub",
+   "p1_citations": 34983,
+   "p4_citations": 0,
+   "p4_rank": 599785
+  },
+  {
+   "name": "instHSub",
+   "p1_citations": 34943,
+   "p4_citations": 0,
+   "p4_rank": 599806
+  },
+  {
+   "name": "Field.toSemifield",
+   "p1_citations": 34844,
+   "p4_citations": 0,
+   "p4_rank": 599873
+  },
+  {
+   "name": "Ring.toSemiring",
+   "p1_citations": 34684,
+   "p4_citations": 0,
+   "p4_rank": 599816
+  },
+  {
+   "name": "Option",
+   "p1_citations": 34628,
+   "p4_citations": 0,
+   "p4_rank": 599852
+  },
+  {
+   "name": "DivisionSemiring.toSemiring",
+   "p1_citations": 33949,
+   "p4_citations": 0,
+   "p4_rank": 600554
+  },
+  {
+   "name": "Semiring.toAddCommMonoid",
+   "p1_citations": 33857,
+   "p4_citations": 0,
+   "p4_rank": 599815
+  },
+  {
+   "name": "Module.toDistribMulAction",
+   "p1_citations": 33845,
+   "p4_citations": 0,
+   "p4_rank": 599969
+  },
+  {
+   "name": "MulOneClass.toMulOne",
+   "p1_citations": 33768,
+   "p4_citations": 0,
+   "p4_rank": 600034
+  },
+  {
+   "name": "List.nil",
+   "p1_citations": 33668,
+   "p4_citations": 0,
+   "p4_rank": 600127
+  },
+  {
+   "name": "Semifield.toDivisionSemiring",
+   "p1_citations": 33386,
+   "p4_citations": 0,
+   "p4_rank": 600216
+  },
+  {
+   "name": "Ne",
+   "p1_citations": 32875,
+   "p4_citations": 0,
+   "p4_rank": 599976
+  },
+  {
+   "name": "AddCommGroup.toAddGroup",
+   "p1_citations": 32788,
+   "p4_citations": 0,
+   "p4_rank": 600168
+  },
+  {
+   "name": "instMulZeroClassOfSemiring",
+   "p1_citations": 31467,
+   "p4_citations": 0,
+   "p4_rank": 600024
+  },
+  {
+   "name": "SubNegMonoid.toAddMonoid",
+   "p1_citations": 31454,
+   "p4_citations": 0,
+   "p4_rank": 600185
+  },
+  {
+   "name": "instLTNat",
+   "p1_citations": 31028,
+   "p4_citations": 0,
+   "p4_rank": 600047
+  },
+  {
+   "name": "Unit",
+   "p1_citations": 30926,
+   "p4_citations": 0,
+   "p4_rank": 600288
+  },
+  {
+   "name": "Distrib.toMul",
+   "p1_citations": 30920,
+   "p4_citations": 0,
+   "p4_rank": 600156
+  },
+  {
+   "name": "Iff",
+   "p1_citations": 30804,
+   "p4_citations": 0,
+   "p4_rank": 600051
+  },
+  {
+   "name": "UniformSpace.toTopologicalSpace",
+   "p1_citations": 30371,
+   "p4_citations": 0,
+   "p4_rank": 600548
+  },
+  {
+   "name": "List.cons",
+   "p1_citations": 30210,
+   "p4_citations": 0,
+   "p4_rank": 600093
+  },
+  {
+   "name": "Neg.neg",
+   "p1_citations": 29510,
+   "p4_citations": 0,
+   "p4_rank": 599798
+  },
+  {
+   "name": "Subtype.val",
+   "p1_citations": 29180,
+   "p4_citations": 0,
+   "p4_rank": 600201
+  },
+  {
+   "name": "EquivLike.toFunLike",
+   "p1_citations": 28573,
+   "p4_citations": 0,
+   "p4_rank": 599962
+  },
+  {
+   "name": "instDistribOfSemiring",
+   "p1_citations": 28559,
+   "p4_citations": 0,
+   "p4_rank": 600161
+  },
+  {
+   "name": "PseudoMetricSpace.toUniformSpace",
+   "p1_citations": 28496,
+   "p4_citations": 0,
+   "p4_rank": 599881
+  },
+  {
+   "name": "False",
+   "p1_citations": 28423,
+   "p4_citations": 0,
+   "p4_rank": 600022
+  },
+  {
+   "name": "Semiring",
+   "p1_citations": 28411,
+   "p4_citations": 0,
+   "p4_rank": 599972
+  },
+  {
+   "name": "Monoid.toMulOneClass",
+   "p1_citations": 28249,
+   "p4_citations": 0,
+   "p4_rank": 600041
+  },
+  {
+   "name": "Finset",
+   "p1_citations": 28088,
+   "p4_citations": 0,
+   "p4_rank": 600055
+  },
+  {
+   "name": "SubtractionMonoid.toSubNegZeroMonoid",
+   "p1_citations": 27613,
+   "p4_citations": 0,
+   "p4_rank": 599803
+  },
+  {
+   "name": "SubNegZeroMonoid.toNegZeroClass",
+   "p1_citations": 26875,
+   "p4_citations": 0,
+   "p4_rank": 599802
+  },
+  {
+   "name": "CategoryTheory.Functor.category",
+   "p1_citations": 26850,
+   "p4_citations": 0,
+   "p4_rank": 599127
+  }
+ ],
+ "Q1_3_persistent_landmarks": [
+  {
+   "name": "eq_of_heq",
+   "p4_citations": 13119,
+   "p1_citations": 13132
+  },
+  {
+   "name": "Or.casesOn",
+   "p4_citations": 9620,
+   "p1_citations": 9620
+  },
+  {
+   "name": "of_decide_eq_true",
+   "p4_citations": 8035,
+   "p1_citations": 8035
+  },
+  {
+   "name": "CategoryTheory.Category.comp_id",
+   "p4_citations": 5977,
+   "p1_citations": 5977
+  },
+  {
+   "name": "CategoryTheory.Category.id_comp",
+   "p4_citations": 5001,
+   "p1_citations": 5001
+  },
+  {
+   "name": "le_of_le_of_eq",
+   "p4_citations": 4970,
+   "p1_citations": 4970
+  },
+  {
+   "name": "Int.sub_nonneg_of_le",
+   "p4_citations": 4918,
+   "p1_citations": 4918
+  },
+  {
+   "name": "mul_one",
+   "p4_citations": 4781,
+   "p1_citations": 4781
+  },
+  {
+   "name": "Lean.Omega.Int.sub_congr",
+   "p4_citations": 4725,
+   "p1_citations": 4725
+  },
+  {
+   "name": "Lean.Omega.Int.add_congr",
+   "p4_citations": 4506,
+   "p1_citations": 4506
+  },
+  {
+   "name": "Nat.ne_of_beq_eq_false",
+   "p4_citations": 4435,
+   "p1_citations": 4435
+  },
+  {
+   "name": "heq_of_eq",
+   "p4_citations": 4424,
+   "p1_citations": 4425
+  },
+  {
+   "name": "Int.add_one_le_of_lt",
+   "p4_citations": 4392,
+   "p1_citations": 4392
+  },
+  {
+   "name": "Decidable.byContradiction",
+   "p4_citations": 4077,
+   "p1_citations": 4100
+  },
+  {
+   "name": "add_zero",
+   "p4_citations": 3935,
+   "p1_citations": 3935
+  },
+  {
+   "name": "Lean.Omega.Int.ofNat_lt_of_lt",
+   "p4_citations": 3746,
+   "p1_citations": 3746
+  },
+  {
+   "name": "noConfusion_of_Nat",
+   "p4_citations": 3719,
+   "p1_citations": 3719
+  },
+  {
+   "name": "zero_add",
+   "p4_citations": 3568,
+   "p1_citations": 3568
+  },
+  {
+   "name": "one_mul",
+   "p4_citations": 3566,
+   "p1_citations": 3566
+  },
+  {
+   "name": "ite_congr",
+   "p4_citations": 3508,
+   "p1_citations": 3508
+  },
+  {
+   "name": "ite_cond_eq_true",
+   "p4_citations": 3348,
+   "p1_citations": 3348
+  },
+  {
+   "name": "Lean.Omega.Int.ofNat_le_of_le",
+   "p4_citations": 3104,
+   "p1_citations": 3104
+  },
+  {
+   "name": "Or.elim",
+   "p4_citations": 3002,
+   "p1_citations": 3002
+  },
+  {
+   "name": "Nat.cast_one",
+   "p4_citations": 2993,
+   "p1_citations": 2993
+  },
+  {
+   "name": "if_neg",
+   "p4_citations": 2797,
+   "p1_citations": 2797
+  },
+  {
+   "name": "mul_comm",
+   "p4_citations": 2791,
+   "p1_citations": 2791
+  },
+  {
+   "name": "Finset.sum_congr",
+   "p4_citations": 2790,
+   "p1_citations": 2790
+  },
+  {
+   "name": "if_pos",
+   "p4_citations": 2769,
+   "p1_citations": 2769
+  },
+  {
+   "name": "Nat.ToInt.natCast_ofNat",
+   "p4_citations": 2748,
+   "p1_citations": 2748
+  },
+  {
+   "name": "MulZeroClass.mul_zero",
+   "p4_citations": 2698,
+   "p1_citations": 2698
+  }
+ ],
+ "Q2_1_depth_gaps": [
+  {
+   "projection": "P1 full support",
+   "mean": 70.2,
+   "p1": 1.0,
+   "p25": 18.0,
+   "p50": 55.0,
+   "p75": 100.0,
+   "p99": 279.0,
+   "p100": 346.0
+  },
+  {
+   "projection": "P2 load-bearing",
+   "mean": 61.1,
+   "p1": 1.0,
+   "p25": 13.0,
+   "p50": 44.0,
+   "p75": 88.0,
+   "p99": 272.0,
+   "p100": 346.0
+  },
+  {
+   "projection": "P4 V8 boundary",
+   "mean": 47.68,
+   "p1": 1.0,
+   "p25": 2.0,
+   "p50": 22.0,
+   "p75": 69.0,
+   "p99": 268.0,
+   "p100": 341.0
+  },
+  {
+   "projection": "P5 proof-introduced",
+   "mean": 39.42,
+   "p1": 1.0,
+   "p25": 4.0,
+   "p50": 23.0,
+   "p75": 59.0,
+   "p99": 184.0,
+   "p100": 343.0
+  }
+ ],
+ "Q2_2_p99_span": 242.0,
+ "Q2_2_examples": [
+  {
+   "thm": "CompletelyPositiveMap.mk.inj",
+   "span": 341
+  },
+  {
+   "thm": "CompletelyPositiveMap.instFunLike._proof_1",
+   "span": 340
+  },
+  {
+   "thm": "CompletelyPositiveMap.instLinearMapClassComplex",
+   "span": 340
+  },
+  {
+   "thm": "CompletelyPositiveMap.map_cstarMatrix_nonneg",
+   "span": 340
+  },
+  {
+   "thm": "CompletelyPositiveMap.mk.noConfusion",
+   "span": 339
+  },
+  {
+   "thm": "CompletelyPositiveMap.noConfusion",
+   "span": 339
+  },
+  {
+   "thm": "NumberField.Ideal.tendsto_norm_le_div_atTop",
+   "span": 337
+  },
+  {
+   "thm": "CStarMatrix.instCStarAlgebra._proof_6",
+   "span": 337
+  },
+  {
+   "thm": "CStarMatrix.instCStarAlgebra._proof_4",
+   "span": 337
+  },
+  {
+   "thm": "CStarMatrix.instCStarAlgebra._proof_7",
+   "span": 337
+  },
+  {
+   "thm": "CStarMatrix.instCStarAlgebra._proof_5",
+   "span": 337
+  },
+  {
+   "thm": "CStarMatrix.instCStarAlgebra._proof_8",
+   "span": 337
+  },
+  {
+   "thm": "CStarMatrix.instCStarAlgebra._proof_3",
+   "span": 337
+  },
+  {
+   "thm": "CompletelyPositiveMap.instCompletelyPositiveMapClass",
+   "span": 337
+  },
+  {
+   "thm": "NumberField.Ideal.tendsto_norm_le_div_atTop\u2080",
+   "span": 336
+  },
+  {
+   "thm": "NumberField.Ideal.tendsto_norm_le_and_mk_eq_div_atTop",
+   "span": 335
+  },
+  {
+   "thm": "NumberField.tendsto_sub_one_mul_dedekindZeta_nhdsGT",
+   "span": 334
+  },
+  {
+   "thm": "NonUnitalStarAlgHomClass.instCompletelyPositiveMapClass",
+   "span": 334
+  },
+  {
+   "thm": "NumberField.mixedEmbedding.fundamentalCone.card_isPrincipal_dvd_norm_le",
+   "span": 334
+  },
+  {
+   "thm": "CStarMatrix.instCStarRing",
+   "span": 333
+  },
+  {
+   "thm": "OrderHomClass.of_map_cstarMatrix_nonneg",
+   "span": 333
+  },
+  {
+   "thm": "CompletelyPositiveMapClass.toCompletelyPositiveLinearMap",
+   "span": 333
+  },
+  {
+   "thm": "CStarMatrix.instNormedRing._proof_2",
+   "span": 333
+  },
+  {
+   "thm": "CompletelyPositiveMapClass.instOrderHomClass",
+   "span": 333
+  },
+  {
+   "thm": "CStarMatrix.instNonUnitalNormedRing._proof_2",
+   "span": 332
+  },
+  {
+   "thm": "CStarMatrix.instNonUnitalNormedRing._proof_1",
+   "span": 331
+  },
+  {
+   "thm": "NumberField.mixedEmbedding.fundamentalCone.volume_normLeOne",
+   "span": 330
+  },
+  {
+   "thm": "NumberField.mixedEmbedding.fundamentalCone.integerSetEquivNorm_apply_fst",
+   "span": 330
+  },
+  {
+   "thm": "NumberField.mixedEmbedding.fundamentalCone.volume_interior_eq_volume_closure",
+   "span": 329
+  },
+  {
+   "thm": "NumberField.mixedEmbedding.fundamentalCone.idealSetEquiv_symm_apply",
+   "span": 329
+  },
+  {
+   "thm": "NumberField.mixedEmbedding.fundamentalCone.idealSetEquivNorm._proof_5",
+   "span": 329
+  },
+  {
+   "thm": "NumberField.mixedEmbedding.fundamentalCone.subset_interior_normLeOne",
+   "span": 329
+  },
+  {
+   "thm": "ModularForm.sturm_bound_levelOne",
+   "span": 329
+  },
+  {
+   "thm": "ModularForm.instFiniteDimensionalComplexRangeSpecialLinearGroupFinOfNatNatIntGeneralLinearGroupRealMapGL",
+   "span": 328
+  },
+  {
+   "thm": "ModularForm.sturm_bound_levelOne_nat",
+   "span": 328
+  },
+  {
+   "thm": "NumberField.mixedEmbedding.fundamentalCone.normAtAllPlaces_normLeOne_eq_image",
+   "span": 328
+  },
+  {
+   "thm": "NumberField.mixedEmbedding.fundamentalCone.idealSetEquivNorm._proof_4",
+   "span": 328
+  },
+  {
+   "thm": "NumberField.mixedEmbedding.fundamentalCone.logMap_expMapBasis",
+   "span": 327
+  },
+  {
+   "thm": "_private.Mathlib.Analysis.CStarAlgebra.CStarMatrix.0.CStarMatrix.uniformity_eq_aux",
+   "span": 327
+  },
+  {
+   "thm": "ModularForm.dimension_level_one",
+   "span": 327
+  }
+ ]
+}
