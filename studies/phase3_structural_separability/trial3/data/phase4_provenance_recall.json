@@ -1,0 +1,92 @@
+{
+ "extraction_misses_(refs_absent_from_kernel_term)": 15,
+ "frac_perfect": 0.724,
+ "loss_examples": [
+  {
+   "decl": "norm_mul_sub_norm_div_le_two_mul",
+   "lost": "tsub_le_iff_right",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "norm_mul_sub_norm_div_le_two_mul",
+   "lost": "tsub_le_iff_left",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "norm_mul_sub_norm_div_le_two_mul",
+   "lost": "norm_add_sub_norm_sub_le_two_mul",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "lost": "Filter.eventually_pure",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "lost": "ProbabilityTheory.Kernel.const_apply",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Nat.pow_of_pow_add_prime",
+   "lost": "exists_prop",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "toIcoMod_eq_add_fract_mul",
+   "lost": "Int.self_sub_floor",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "norm_pow_natAbs",
+   "lost": "norm_natAbs_smul",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Ideal.span_singleton_mul_le_iff",
+   "lost": "SetLike.le_def",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Ideal.span_singleton_mul_le_iff",
+   "lost": "Ideal.mem_span_singleton_mul",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "csSup_union_le",
+   "lost": "csSup_of_not_bddAbove",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "csSup_union_le",
+   "lost": "bddAbove_union",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "csSup_union_le",
+   "lost": "csSup_union",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "csSup_union_le",
+   "lost": "le_csInf_union",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "norm_lt_of_mem_ball'",
+   "lost": "norm_lt_of_mem_ball",
+   "why": "not-in-term"
+  }
+ ],
+ "loss_taxonomy": {
+  "background-slot": 0,
+  "not-in-term": 15,
+  "not-prop-flag": 0
+ },
+ "mean_recall": 0.859,
+ "median_recall": 1.0,
+ "n_evaluated": 29,
+ "n_files": 40,
+ "n_prov_decls": 4522,
+ "note": "ground truth = elaborator-resolved source identifiers (Prop-valued), independent of our extraction"
+}

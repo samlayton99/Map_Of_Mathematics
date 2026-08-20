@@ -1,0 +1,263 @@
+{
+ "note": "coverage + sample of the machine-generated display-label map; the full map (24MB) is a derived artifact, regenerate with src/parent_labels.py",
+ "n_machine_generated_claims": 239625,
+ "coverage": {
+  "attribution": 108188,
+  "unresolved": 54977,
+  "def-user": 42651,
+  "stmt-subject": 33809
+ },
+ "resolved_fraction": 0.7706,
+ "sample": {
+  "CategoryTheory.GradedObject.mapBifunctorComp\u2082\u2083MapObjIso.congr_simp": {
+   "rule": "stmt-subject",
+   "parent": "CategoryTheory.GradedObject.mapBifunctorComp\u2082\u2083MapObjIso",
+   "coverage": 0.93
+  },
+  "LinearPMap.adjointDomainMkCLMExtend._proof_4": {
+   "rule": "attribution",
+   "parent": "IsTopologicalAddGroup.toContinuousAdd"
+  },
+  "GradedAlgHom.instUnique._proof_1": {
+   "rule": "def-user",
+   "parent": "GradedAlgHom.instUnique"
+  },
+  "_private.Mathlib.Order.Bounds.Basic.0.upperBounds_prod._simp_1_1": {
+   "rule": "attribution",
+   "parent": "Prod.le_def"
+  },
+  "MulHom.instMul._proof_1": {
+   "rule": "def-user",
+   "parent": "MulHom.instMul"
+  },
+  "_private.Std.Data.Internal.List.Associative.0.Std.Internal.List.Const.minKey?_alterKey_eq_self._simp_1_3": {
+   "rule": "attribution",
+   "parent": "Option.isSome_eq_false_iff"
+  },
+  "_private.Mathlib.Data.Fin.Parity.0.Fin.even_succAbove_add_predAbove._simp_1_2": {
+   "rule": "attribution",
+   "parent": "Nat.not_even_iff_odd"
+  },
+  "_private.Init.Data.String.Lemmas.Pattern.Basic.0.String.Slice.Pattern.Model.isLongestMatch_iff.match_1_3": {
+   "rule": "stmt-subject",
+   "parent": "String.Slice.Pattern.Model.IsMatch",
+   "coverage": 0.75
+  },
+  "_private.Mathlib.RingTheory.AlgebraicIndependent.TranscendenceBasis.0.AlgebraicIndependent.matroid_spanning_iff._simp_1_3": {
+   "rule": "attribution",
+   "parent": "Set.subset_univ"
+  },
+  "Path.Homotopy.transRefl._proof_2": {
+   "rule": "def-user",
+   "parent": "Path.Homotopy.transRefl"
+  },
+  "WithZero.one_lt_coe._simp_1": {
+   "rule": "attribution",
+   "parent": "WithZero.one_lt_coe"
+  },
+  "List.toByteArray.loop.induct_unfolding": {
+   "rule": "stmt-subject",
+   "parent": "List.toByteArray.loop",
+   "coverage": 0.67
+  },
+  "_private.Mathlib.Analysis.SpecialFunctions.Complex.Analytic.0.hasFPowerSeriesAt_clog_one._simp_1_2": {
+   "rule": "attribution",
+   "parent": "three_ne_zero"
+  },
+  "LieModule.chainTop._proof_1": {
+   "rule": "attribution",
+   "parent": "LieModule.genWeightSpace_nsmul_add_ne_bot_of_le"
+  },
+  "CategoryTheory.Limits.BinaryCofan.isColimitMk._proof_1": {
+   "rule": "def-user",
+   "parent": "CategoryTheory.Limits.BinaryCofan.isColimitMk"
+  },
+  "Cardinal.ofNat_lt_lift_iff._simp_1": {
+   "rule": "attribution",
+   "parent": "Cardinal.ofNat_lt_lift_iff"
+  },
+  "Equiv.Set.sumDiffSubset.congr_simp": {
+   "rule": "stmt-subject",
+   "parent": "Equiv.Set.sumDiffSubset",
+   "coverage": 1.0
+  },
+  "PFun.mem_dom._simp_1": {
+   "rule": "attribution",
+   "parent": "PFun.mem_dom"
+  },
+  "instGroupUniformFun._proof_5": {
+   "rule": "attribution",
+   "parent": "inv_mul_cancel"
+  },
+  "LinearMap.BilinForm.tensorDistrib._proof_4": {
+   "rule": "attribution",
+   "parent": "LinearMap.instSMulCommClass"
+  },
+  "UInt16.toUInt32._proof_2": {
+   "rule": "def-user",
+   "parent": "UInt16.toUInt32"
+  },
+  "Prod.instAddCommSemigroup.eq_1": {
+   "rule": "stmt-subject",
+   "parent": "Prod.instAddCommSemigroup",
+   "coverage": 1.0
+  },
+  "_private.Std.Data.DTreeMap.Internal.Zipper.0.Std.DTreeMap.Internal.RxoIterator.step.eq_1": {
+   "rule": "stmt-subject",
+   "parent": "Std.DTreeMap.Internal.RxoIterator.step",
+   "coverage": 1.0
+  },
+  "_private.Mathlib.Analysis.Normed.Operator.ContinuousAlgEquiv.0.instOrderIsoClassContinuousLinearMapIdOfNonUnitalAlgEquivClassOfStarHomClassOfContinuousMapClass._simp_2": {
+   "rule": "attribution",
+   "parent": "ContinuousLinearMap.le_def"
+  },
+  "HomologicalComplex\u2082.flipEquivalenceUnitIso._proof_1": {
+   "rule": "def-user",
+   "parent": "HomologicalComplex\u2082.flipEquivalenceUnitIso"
+  },
+  "AddOpposite.instSemiring._proof_11": {
+   "rule": "attribution",
+   "parent": "NonAssocSemiring.natCast_succ"
+  },
+  "Hyperreal.instLinearOrder._proof_24": {
+   "rule": "def-user",
+   "parent": "Hyperreal.instLinearOrder"
+  },
+  "HomogeneousLocalization.instSMulNat._proof_1": {
+   "rule": "attribution",
+   "parent": "IsScalarTower.right"
+  },
+  "_private.Init.Data.Slice.Array.Lemmas.0.Subarray.toArray_mkSlice_rco._simp_1_1": {
+   "rule": "attribution",
+   "parent": "Subarray.toArray_toList"
+  },
+  "CategoryTheory.Under.mapPushoutAdj._proof_2": {
+   "rule": "attribution",
+   "parent": "CategoryTheory.Under.w"
+  },
+  "Std.ExtHashMap.alter_eq_empty_iff._simp_1": {
+   "rule": "attribution",
+   "parent": "Std.ExtHashMap.alter_eq_empty_iff"
+  },
+  "Subsemiring.sumSq._proof_2": {
+   "rule": "attribution",
+   "parent": "NonUnitalSubsemiring.mul_mem'"
+  },
+  "OpenNormalSubgroup.instCoeSubgroup.eq_1": {
+   "rule": "stmt-subject",
+   "parent": "OpenNormalSubgroup.instCoeSubgroup",
+   "coverage": 0.8
+  },
+  "CategoryTheory.Oplax.StrongTrans.Modification.id._proof_2": {
+   "rule": "def-user",
+   "parent": "CategoryTheory.Oplax.StrongTrans.Modification.id"
+  },
+  "CategoryTheory.ShortComplex.HomologyData.ofEpiMonoFactorisation.leftHomologyData._proof_1": {
+   "rule": "def-user",
+   "parent": "CategoryTheory.ShortComplex.HomologyData.ofEpiMonoFactorisation.leftHomologyData"
+  },
+  "Filter.not_eventually._simp_2": {
+   "rule": "attribution",
+   "parent": "Filter.not_eventually"
+  },
+  "TensorProduct.gradedComm._proof_3": {
+   "rule": "attribution",
+   "parent": "DirectSum.instSMulCommClass"
+  },
+  "HomologicalComplex.xNextIsoSelf._proof_2": {
+   "rule": "def-user",
+   "parent": "HomologicalComplex.xNextIsoSelf"
+  },
+  "Std.Sat.AIG.RefVec.ite._proof_8": {
+   "rule": "attribution",
+   "parent": "Decidable.byContradiction"
+  },
+  "_private.Mathlib.Combinatorics.SetFamily.LYM.0.Finset.local_lubell_yamamoto_meshalkin_inequality_div._simp_1_1": {
+   "rule": "attribution",
+   "parent": "mul_eq_mul_left_iff"
+  },
+  "Dyadic.ble.eq_2": {
+   "rule": "stmt-subject",
+   "parent": "Dyadic.ble",
+   "coverage": 1.0
+  },
+  "HahnSeries.mem_cardSuppLTSubfield._simp_1": {
+   "rule": "attribution",
+   "parent": "HahnSeries.mem_cardSuppLTSubfield"
+  },
+  "_private.Mathlib.Analysis.Calculus.LineDeriv.Basic.0.lineDifferentiableWithinAt_univ._simp_1_3": {
+   "rule": "attribution",
+   "parent": "differentiableWithinAt_univ"
+  },
+  "Ultrafilter.eventually_not._simp_1": {
+   "rule": "attribution",
+   "parent": "Ultrafilter.eventually_not"
+  },
+  "PSigma.Lex.preorder._proof_4": {
+   "rule": "def-user",
+   "parent": "PSigma.Lex.preorder"
+  },
+  "totallyBounded_union._simp_1": {
+   "rule": "attribution",
+   "parent": "totallyBounded_union"
+  },
+  "_private.Mathlib.NumberTheory.FLT.Three.0.FermatLastTheoremForThreeGen.Solution.Z.congr_simp": {
+   "rule": "stmt-subject",
+   "parent": "_private.Mathlib.NumberTheory.FLT.Three.0.FermatLastTheoremForThreeGen.Solution.Z",
+   "coverage": 1.0
+  },
+  "IsLocallyClosed.eq_1": {
+   "rule": "stmt-subject",
+   "parent": "IsLocallyClosed",
+   "coverage": 1.0
+  },
+  "AddGroupNorm.mk.injEq": {
+   "rule": "attribution",
+   "parent": "eq_of_heq"
+  },
+  "WeakDual.CharacterSpace.homeoEval._proof_2": {
+   "rule": "attribution",
+   "parent": "SeparatelyContinuousMul.to_continuousSMul"
+  },
+  "_private.Init.Data.String.Lemmas.Pattern.Find.Pred.0.String.find?_bool_eq_some_iff._simp_1_1": {
+   "rule": "attribution",
+   "parent": "Option.map_eq_some_iff"
+  },
+  "QuotientGroup.leftRel_eq_top._simp_2": {
+   "rule": "attribution",
+   "parent": "QuotientGroup.leftRel_eq_top"
+  },
+  "Group.rootableByNatOfRootableByInt._proof_1": {
+   "rule": "def-user",
+   "parent": "Group.rootableByNatOfRootableByInt"
+  },
+  "_private.Mathlib.AlgebraicGeometry.Sites.EtalePoint.0.AlgebraicGeometry.Scheme.isConservativeFamilyOfPoints_pointSmallEtale'._simp_1_2": {
+   "rule": "attribution",
+   "parent": "Set.mem_range"
+  },
+  "Submodule.quotEquivOfEq._proof_6": {
+   "rule": "def-user",
+   "parent": "Submodule.quotEquivOfEq"
+  },
+  "_private.Mathlib.Probability.ProductMeasure.0.MeasureTheory.Measure.map_piSingleton._simp_1_7": {
+   "rule": "attribution",
+   "parent": "Finset.mem_singleton"
+  },
+  "_private.Mathlib.RingTheory.LaurentSeries.0.LaurentSeries.powerSeries_ext_subring._simp_1_4": {
+   "rule": "attribution",
+   "parent": "Subring.mem_map"
+  },
+  "_private.Init.Data.Array.Sort.Lemmas.0.Array.mergeSort_perm._simp_1_1": {
+   "rule": "attribution",
+   "parent": "Array.perm_iff_toList_perm"
+  },
+  "TensorProduct.tensorQuotMapSMulEquivTensorQuot._proof_5": {
+   "rule": "attribution",
+   "parent": "IsScalarTower.left"
+  },
+  "Equiv.image._proof_2": {
+   "rule": "attribution",
+   "parent": "Equiv.symm_apply_apply"
+  }
+ }
+}
