@@ -1,0 +1,60 @@
+{
+ "V4hist": {
+  "definitional_verdicts": 457,
+  "no_content": 0.0391,
+  "top1_cause_when_machinery": {
+   "generated": 86,
+   "glue": 76,
+   "instance": 5,
+   "self-helper": 5,
+   "tactic": 15
+  },
+  "top1_deep": 0.9457,
+  "top1_mid": 0.8997,
+  "top1_nonmachinery_proxy": 0.9013,
+  "top1_shallow": 0.8486,
+  "top1_single_use_rate": 0.0011,
+  "top2_nonmachinery_proxy": 0.9382
+ },
+ "V5p": {
+  "definitional_verdicts": 246,
+  "no_content": 0.1482,
+  "top1_cause_when_machinery": {
+   "generated": 82,
+   "glue": 277,
+   "instance": 5,
+   "other": 2,
+   "self-helper": 118,
+   "tactic": 6
+  },
+  "top1_deep": 0.8562,
+  "top1_mid": 0.7742,
+  "top1_nonmachinery_proxy": 0.7672,
+  "top1_shallow": 0.6637,
+  "top1_single_use_rate": 0.199,
+  "top2_nonmachinery_proxy": 0.8138
+ },
+ "V5pz": {
+  "definitional_verdicts": 252,
+  "no_content": 0.1353,
+  "top1_cause_when_machinery": {
+   "generated": 91,
+   "glue": 285,
+   "instance": 6,
+   "other": 2,
+   "self-helper": 5,
+   "tactic": 15
+  },
+  "top1_deep": 0.8866,
+  "top1_mid": 0.8258,
+  "top1_nonmachinery_proxy": 0.8075,
+  "top1_shallow": 0.7018,
+  "top1_single_use_rate": 0.0,
+  "top2_nonmachinery_proxy": 0.8428
+ },
+ "binder_fallback_rows": 57741,
+ "dev_seed": 20260819,
+ "holdout_seed": 20260821,
+ "kind_vs_pr_disagreements": 20113,
+ "note": "top1_nonmachinery_proxy = agreement with an automated machinery-labeling proxy, NOT semantic precision"
+}
