@@ -1,0 +1,34 @@
+{
+ "auc": 0.6207156529900284,
+ "anchors": {
+  "Nat.add_comm": 11,
+  "Nat.gcd_comm": 26,
+  "norm_add_le": 10,
+  "Real.exp": 116,
+  "Real.exp_log": 135,
+  "MeasureTheory.integral_add": 208,
+  "dist_triangle": 2,
+  "Real.instAdd": 2
+ },
+ "move_p5": 0.225,
+ "route_cov": 0.8,
+ "skip_roots": [
+  "Lean",
+  "Std",
+  "Array",
+  "List.Internal",
+  "Int.Internal",
+  "Nat.ToInt",
+  "_aux",
+  "String",
+  "Char",
+  "UInt",
+  "USize",
+  "ByteArray",
+  "Thunk",
+  "Task",
+  "IO",
+  "EStateM",
+  "ShareCommon"
+ ]
+}

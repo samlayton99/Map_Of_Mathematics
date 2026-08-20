@@ -1,0 +1,361 @@
+{
+ "auc_combo_all5": 0.6446,
+ "auc_combo_depth_size": 0.6404,
+ "auc_per_class": {
+  "coercion": {
+   "copillars": 0.367,
+   "depth": 0.955,
+   "directDeps": 0.925,
+   "logTreeSize": 0.96,
+   "relDepth": 0.698
+  },
+  "generated": {
+   "copillars": 0.423,
+   "depth": 0.74,
+   "directDeps": 0.705,
+   "logTreeSize": 0.746,
+   "relDepth": 0.665
+  },
+  "internal-detail": {
+   "copillars": 0.474,
+   "depth": 0.615,
+   "directDeps": 0.585,
+   "logTreeSize": 0.622,
+   "relDepth": 0.555
+  },
+  "recursor": {
+   "copillars": 0.151,
+   "depth": 0.795,
+   "directDeps": 0.726,
+   "logTreeSize": 0.792,
+   "relDepth": 0.812
+  },
+  "structure-projection": {
+   "copillars": 0.417,
+   "depth": 0.932,
+   "directDeps": 0.935,
+   "logTreeSize": 0.935,
+   "relDepth": 0.891
+  },
+  "typeclass-instance": {
+   "copillars": 0.471,
+   "depth": 0.56,
+   "directDeps": 0.636,
+   "logTreeSize": 0.566,
+   "relDepth": 0.384
+  }
+ },
+ "auc_single_full_population": {
+  "copillars": 0.4573,
+  "depth": 0.6375,
+  "directDeps": 0.6101,
+  "logTreeSize": 0.643,
+  "relDepth": 0.5601
+ },
+ "constants": 771129,
+ "corpus_primary_grouped_auc": {
+  "depth_size_rel_alone": 0.5846,
+  "typed_plus_depth_size_rel": 0.7383,
+  "typed_track_alone": 0.7268
+ },
+ "critical_paths": {
+  "Nat.gcd_comm": [
+   "Nat.gcd_comm (d=32)",
+   "Nat.gcd_dvd_right (d=31)",
+   "Nat.gcd_dvd (d=30)",
+   "Nat.gcd_rec (d=29)",
+   "Nat.gcd_zero_right (d=28)",
+   "Nat.gcd_zero_left (d=27)",
+   "_private.Init.Data.Nat.Gcd.0.Nat.gcd.eq_1 (d=26)",
+   "_private.Init.Data.Nat.Gcd.0.Nat.gcd.eq_def (d=25)",
+   "_private.Init.Data.Nat.Gcd.0.Nat.gcd._unary.eq_def (d=24)",
+   "Nat.gcd._unary (d=23)",
+   "_private.Init.Data.Nat.Gcd.0.Nat.gcd._unary._proof_1 (d=22)",
+   "Nat.mod_lt (d=21)",
+   "Nat.instMod (d=20)",
+   "Nat.mod (d=19)",
+   "Nat.modCore (d=18)",
+   "Nat.modCore.go (d=17)",
+   "Nat.modCore.go._f (d=16)",
+   "Nat.div_rec_fuel_lemma (d=15)"
+  ],
+  "Real.exp_log": [
+   "Real.exp_log (d=164)",
+   "Real.exp_log_eq_abs (d=163)",
+   "Real.log_of_ne_zero (d=162)",
+   "Real.expOrderIso (d=161)",
+   "Real.expOrderIso._proof_5 (d=160)",
+   "Real.continuous_exp (d=159)",
+   "Complex.continuous_ofReal (d=158)",
+   "Complex.ofRealLI (d=157)",
+   "NormedSpace.complexToReal (d=156)",
+   "Real.instRCLike (d=155)",
+   "Real.instRCLike._proof_12 (d=154)",
+   "Real.denselyNormedField (d=153)",
+   "Real.denselyNormedField._proof_1 (d=152)",
+   "Real.denselyNormedField._proof_3 (d=151)",
+   "Real.normedField (d=150)",
+   "Real.normedField._proof_8 (d=149)",
+   "Real.normedAddCommGroup (d=148)",
+   "Real.normedAddCommGroup._proof_1 (d=147)"
+  ],
+  "norm_add_le": [
+   "norm_add_le (d=95)",
+   "Real.instLE (d=94)",
+   "_private.Mathlib.Data.Real.Basic.0.Real.le (d=93)",
+   "Real.wrapped._@.Mathlib.Data.Real.Basic.702802587._hygCtx._hyg.8 (d=92)",
+   "_private.Mathlib.Data.Real.Basic.0.Real.wrapped._proof_1._@.Mathlib.Data.Real.Basic.702802587._hygCtx._hyg.8 (d=91)",
+   "Real.definition._@.Mathlib.Data.Real.Basic.702802587._hygCtx._hyg.8 (d=90)",
+   "Real.instLT (d=89)",
+   "_private.Mathlib.Data.Real.Basic.0.Real.lt (d=88)",
+   "Real.wrapped._@.Mathlib.Data.Real.Basic.1175651576._hygCtx._hyg.8 (d=87)",
+   "_private.Mathlib.Data.Real.Basic.0.Real.wrapped._proof_1._@.Mathlib.Data.Real.Basic.1175651576._hygCtx._hyg.8 (d=86)",
+   "Real.definition._@.Mathlib.Data.Real.Basic.1175651576._hygCtx._hyg.8 (d=85)",
+   "Real.definition.match_1._@.Mathlib.Data.Real.Basic.1138242547._hygCtx._hyg.8 (d=84)",
+   "Real.casesOn (d=83)",
+   "Real.rec (d=82)",
+   "Real.ofCauchy (d=81)",
+   "Rat.instIsStrictOrderedRing (d=80)",
+   "Rat.instIsOrderedAddMonoid (d=79)",
+   "Rat.instPreorder (d=78)"
+  ]
+ },
+ "move_id_median_p_at_5": {
+  "depth": 0.2,
+  "depth_top5_vs_route_overlap": 0.709,
+  "logTreeSize": 0.225,
+  "phase3_reference": {
+   "M_global_pagerank": 0.2,
+   "M_p4_route": 0.4,
+   "others": 0.0
+  },
+  "relDepth": 0.1
+ },
+ "move_id_per_proof": [
+  {
+   "decl": "Function.Bijective.existsUnique_iff",
+   "depth_p_at_5": 0.2,
+   "depth_top5_route_overlap": 1.0,
+   "logTreeSize_p_at_5": 0.2,
+   "n_cands": 16,
+   "relDepth_p_at_5": 0.0
+  },
+  {
+   "decl": "Function.Injective.isPartialInv",
+   "depth_p_at_5": 0.4,
+   "depth_top5_route_overlap": 0.4,
+   "logTreeSize_p_at_5": 0.4,
+   "n_cands": 30,
+   "relDepth_p_at_5": 0.0
+  },
+  {
+   "decl": "Function.LeftInverse.comp",
+   "depth_p_at_5": 0.0,
+   "depth_top5_route_overlap": 0.0,
+   "logTreeSize_p_at_5": 0.0,
+   "n_cands": 6,
+   "relDepth_p_at_5": 0.0
+  },
+  {
+   "decl": "IsClosed.and",
+   "depth_p_at_5": 0.333,
+   "depth_top5_route_overlap": 1.0,
+   "logTreeSize_p_at_5": 0.333,
+   "n_cands": 3,
+   "relDepth_p_at_5": 0.333
+  },
+  {
+   "decl": "Lattice.ext",
+   "depth_p_at_5": 0.4,
+   "depth_top5_route_overlap": 0.75,
+   "logTreeSize_p_at_5": 0.4,
+   "n_cands": 29,
+   "relDepth_p_at_5": 0.4
+  },
+  {
+   "decl": "Nat.eq_one_of_dvd_coprimes",
+   "depth_p_at_5": 0.2,
+   "depth_top5_route_overlap": 0.667,
+   "logTreeSize_p_at_5": 0.2,
+   "n_cands": 22,
+   "relDepth_p_at_5": 0.2
+  },
+  {
+   "decl": "Nat.pow_sub_one_gcd_pow_sub_one",
+   "depth_p_at_5": 0.0,
+   "depth_top5_route_overlap": 0.0,
+   "logTreeSize_p_at_5": 0.0,
+   "n_cands": 3,
+   "relDepth_p_at_5": 0.0
+  },
+  {
+   "decl": "Nat.pow_sub_one_mod_pow_sub_one",
+   "depth_p_at_5": 0.2,
+   "depth_top5_route_overlap": 1.0,
+   "logTreeSize_p_at_5": 0.2,
+   "n_cands": 157,
+   "relDepth_p_at_5": 0.2
+  },
+  {
+   "decl": "Real.abs_log_mul_self_lt",
+   "depth_p_at_5": 1.0,
+   "depth_top5_route_overlap": 0.8,
+   "logTreeSize_p_at_5": 1.0,
+   "n_cands": 219,
+   "relDepth_p_at_5": 0.0
+  },
+  {
+   "decl": "Real.le_exp_of_log_le",
+   "depth_p_at_5": 0.0,
+   "depth_top5_route_overlap": 0.5,
+   "logTreeSize_p_at_5": 0.0,
+   "n_cands": 22,
+   "relDepth_p_at_5": 0.0
+  },
+  {
+   "decl": "Real.one_sub_inv_le_log_of_pos",
+   "depth_p_at_5": 0.2,
+   "depth_top5_route_overlap": 0.4,
+   "logTreeSize_p_at_5": 0.2,
+   "n_cands": 75,
+   "relDepth_p_at_5": 0.0
+  },
+  {
+   "decl": "Real.range_log",
+   "depth_p_at_5": 0.25,
+   "depth_top5_route_overlap": 1.0,
+   "logTreeSize_p_at_5": 0.25,
+   "n_cands": 4,
+   "relDepth_p_at_5": 0.25
+  },
+  {
+   "decl": "TopologicalSpace.ext_iff",
+   "depth_p_at_5": 0.2,
+   "depth_top5_route_overlap": 1.0,
+   "logTreeSize_p_at_5": 0.2,
+   "n_cands": 11,
+   "relDepth_p_at_5": 0.2
+  },
+  {
+   "decl": "add_one_zsmul",
+   "depth_p_at_5": 0.0,
+   "depth_top5_route_overlap": 0.6,
+   "logTreeSize_p_at_5": 0.0,
+   "n_cands": 61,
+   "relDepth_p_at_5": 0.0
+  },
+  {
+   "decl": "isClosed_sInter",
+   "depth_p_at_5": 0.2,
+   "depth_top5_route_overlap": 0.6,
+   "logTreeSize_p_at_5": 0.4,
+   "n_cands": 23,
+   "relDepth_p_at_5": 0.2
+  },
+  {
+   "decl": "limUnder_of_not_tendsto",
+   "depth_p_at_5": 0.8,
+   "depth_top5_route_overlap": 0.0,
+   "logTreeSize_p_at_5": 0.6,
+   "n_cands": 35,
+   "relDepth_p_at_5": 0.8
+  },
+  {
+   "decl": "pow_iterate",
+   "depth_p_at_5": 0.0,
+   "depth_top5_route_overlap": 0.0,
+   "logTreeSize_p_at_5": 0.0,
+   "n_cands": 12,
+   "relDepth_p_at_5": 0.0
+  },
+  {
+   "decl": "sup_eq_and_inf_eq_iff",
+   "depth_p_at_5": 0.6,
+   "depth_top5_route_overlap": 1.0,
+   "logTreeSize_p_at_5": 0.6,
+   "n_cands": 39,
+   "relDepth_p_at_5": 0.6
+  },
+  {
+   "decl": "sup_left_idem",
+   "depth_p_at_5": 0.4,
+   "depth_top5_route_overlap": 0.75,
+   "logTreeSize_p_at_5": 0.6,
+   "n_cands": 15,
+   "relDepth_p_at_5": 0.4
+  },
+  {
+   "decl": "zpow_mul",
+   "depth_p_at_5": 1.0,
+   "depth_top5_route_overlap": 1.0,
+   "logTreeSize_p_at_5": 0.8,
+   "n_cands": 50,
+   "relDepth_p_at_5": 0.0
+  }
+ ],
+ "quadrants_theorems": {
+  "deep|large": {
+   "examples": [
+    "Algebra.PreSubmersivePresentation.mk.sizeOf_spec",
+    "RingHom.IsIntegral.quotient",
+    "Polynomial.hom_eval\u2082"
+   ],
+   "n": 167486,
+   "p3_frac": 0.324
+  },
+  "deep|mid-size": {
+   "examples": [
+    "MonoidHom.FixedPointFree.orderOf_ne_two_of_involutive",
+    "MonoidHom.FixedPointFree.coe_eq_inv_of_involutive",
+    "Filter.Tendsto.bddBelow_range_of_cofinite"
+   ],
+   "n": 11856,
+   "p3_frac": 0.358
+  },
+  "mid-depth|large": {
+   "examples": [
+    "DirectedSystem.rTensor",
+    "TensorProduct.AlgebraTensorModule.curry_apply",
+    "TensorProduct.AlgebraTensorModule.curry_injective"
+   ],
+   "n": 10290,
+   "p3_frac": 0.251
+  },
+  "mid-depth|mid-size": {
+   "examples": [
+    "Nat.one_mem_properDivisors_iff_one_lt",
+    "Nat.mem_properDivisors",
+    "ZFSet.singleton_inj"
+   ],
+   "n": 158339,
+   "p3_frac": 0.463
+  },
+  "mid-depth|small": {
+   "examples": [
+    "IsStrictOrderedRing.toCharZero",
+    "Multiset.zero_ne_singleton",
+    "DFinsupp.coe_smul"
+   ],
+   "n": 8137,
+   "p3_frac": 0.504
+  },
+  "shallow|mid-size": {
+   "examples": [
+    "RingHomSurjective.ids",
+    "Nat.mod_add_div",
+    "Nat.mul_div_right"
+   ],
+   "n": 7576,
+   "p3_frac": 0.551
+  },
+  "shallow|small": {
+   "examples": [
+    "congrArg",
+    "Iff.rfl",
+    "and_iff_right"
+   ],
+   "n": 169636,
+   "p3_frac": 0.609
+  }
+ }
+}
