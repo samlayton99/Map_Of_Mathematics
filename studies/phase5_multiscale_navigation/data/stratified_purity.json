@@ -1,0 +1,39 @@
+{
+ "purity_by_depth_band": [
+  {
+   "band": "0-10",
+   "n_proofs": 65242,
+   "rank1_is_content": 0.4886
+  },
+  {
+   "band": "10-25",
+   "n_proofs": 112675,
+   "rank1_is_content": 0.5978
+  },
+  {
+   "band": "25-50",
+   "n_proofs": 88859,
+   "rank1_is_content": 0.5307
+  },
+  {
+   "band": "50-75",
+   "n_proofs": 88434,
+   "rank1_is_content": 0.7477
+  },
+  {
+   "band": "75-125",
+   "n_proofs": 103918,
+   "rank1_is_content": 0.723
+  },
+  {
+   "band": "125-350",
+   "n_proofs": 68739,
+   "rank1_is_content": 0.7859
+  }
+ ],
+ "top1_components": 25230,
+ "top1_giant_fraction": 0.08874491270874553,
+ "top1_small_components_le2": 12803,
+ "sinks": 25230,
+ "sink_depth_median": 17.0
+}
