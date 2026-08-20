@@ -1,0 +1,23 @@
+{
+ "v2": {
+  "confirmed_ok": 28,
+  "no_provenance_entry": 50,
+  "FLAGGED": [
+   {
+    "thm": "RootPairing.Equiv.coweightEquiv_mul",
+    "human_cited": [
+     "RingHomInvPair.ids",
+     "RingHomCompTriple.ids"
+    ]
+   },
+   {
+    "thm": "TopCat.pullbackIsoProdSubtype_hom_apply",
+    "human_cited": [
+     "CategoryTheory.congr_fun",
+     "CategoryTheory.Limits.pullback.condition"
+    ]
+   }
+  ]
+ },
+ "summary_note": "both flags read: statement-side citations; proofs are rfl; zero false verdicts confirmed in any channel"
+}
