@@ -1,0 +1,243 @@
+{
+ "note": "Phase 5 persistence. Centrality on the bipartite incidence; no clique expansion (ADR-0005).",
+ "registered_prediction": "P3->P4 more stable than P2->P3",
+ "prediction_verdict": "CONFIRMED",
+ "centrality_persistence": [
+  {
+   "from": "P1",
+   "to": "P2",
+   "spearman_top1000_union": -0.1216,
+   "top1000_overlap": 0.383
+  },
+  {
+   "from": "P2",
+   "to": "P3",
+   "spearman_top1000_union": -0.3839,
+   "top1000_overlap": 0.24
+  },
+  {
+   "from": "P3",
+   "to": "P4",
+   "spearman_top1000_union": 0.2076,
+   "top1000_overlap": 0.647
+  },
+  {
+   "from": "P4",
+   "to": "top16",
+   "spearman_top1000_union": 0.9991,
+   "top1000_overlap": 0.993
+  },
+  {
+   "from": "top16",
+   "to": "top4",
+   "spearman_top1000_union": 0.9237,
+   "top1000_overlap": 0.927
+  },
+  {
+   "from": "top4",
+   "to": "top1",
+   "spearman_top1000_union": 0.0256,
+   "top1000_overlap": 0.483
+  }
+ ],
+ "components": [
+  {
+   "projection": "P1",
+   "components_over_touched_nodes": 2,
+   "touched_nodes": 771054,
+   "giant_fraction": 1.0
+  },
+  {
+   "projection": "P2",
+   "components_over_touched_nodes": 569,
+   "touched_nodes": 763027,
+   "giant_fraction": 0.9978
+  },
+  {
+   "projection": "P3",
+   "components_over_touched_nodes": 1934,
+   "touched_nodes": 548509,
+   "giant_fraction": 0.9882
+  },
+  {
+   "projection": "P4",
+   "components_over_touched_nodes": 8024,
+   "touched_nodes": 514560,
+   "giant_fraction": 0.9601
+  },
+  {
+   "projection": "top16",
+   "components_over_touched_nodes": 8096,
+   "touched_nodes": 513709,
+   "giant_fraction": 0.9593
+  },
+  {
+   "projection": "top4",
+   "components_over_touched_nodes": 8884,
+   "touched_nodes": 506445,
+   "giant_fraction": 0.9525
+  },
+  {
+   "projection": "top1",
+   "components_over_touched_nodes": 25230,
+   "touched_nodes": 487735,
+   "giant_fraction": 0.0887
+  }
+ ],
+ "top20_by_projection": {
+  "P1": [
+   "Eq",
+   "Nat",
+   "Eq.refl",
+   "CategoryTheory.Category",
+   "Set",
+   "outParam",
+   "OfNat.ofNat",
+   "Eq.rec",
+   "rfl",
+   "propext",
+   "Semiring",
+   "Membership.mem",
+   "instOfNatNat",
+   "CategoryTheory.CategoryStruct",
+   "Preorder",
+   "LE",
+   "id",
+   "False",
+   "List",
+   "congrArg"
+  ],
+  "P2": [
+   "Eq.refl",
+   "Eq.rec",
+   "rfl",
+   "OfNat.ofNat",
+   "propext",
+   "Eq",
+   "Eq.symm",
+   "id",
+   "DFunLike.coe",
+   "congrArg",
+   "HAdd.hAdd",
+   "Membership.mem",
+   "Iff.intro",
+   "Eq.trans",
+   "Eq.mpr",
+   "LE.le",
+   "of_eq_true",
+   "HMul.hMul",
+   "Eq.ndrec",
+   "Nat"
+  ],
+  "P3": [
+   "rfl",
+   "congrArg",
+   "propext",
+   "Eq.symm",
+   "Eq.trans",
+   "of_eq_true",
+   "congrFun'",
+   "trivial",
+   "Iff.rfl",
+   "eq_true",
+   "Exists.casesOn",
+   "eq_self",
+   "Iff.refl",
+   "Iff.mpr",
+   "congr",
+   "eq_of_heq",
+   "Iff.mp",
+   "funext",
+   "Nat.ne_of_beq_eq_false",
+   "Subtype.property"
+  ],
+  "P4": [
+   "eq_of_heq",
+   "Or.casesOn",
+   "noConfusion_of_Nat",
+   "Quot.ind",
+   "Nat.ne_of_beq_eq_false",
+   "DFunLike.coe_injective",
+   "of_decide_eq_true",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux",
+   "heq_of_eq",
+   "CategoryTheory.Category.comp_id",
+   "Quot.inductionOn",
+   "Nat.ne_of_beq_eq_false._f",
+   "CategoryTheory.Category.id_comp",
+   "DFunLike.ext",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux._f",
+   "_private.Init.Prelude.0.Nat.ne_of_beq_eq_false.match_1_1",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux.match_1_1",
+   "ite_congr",
+   "Subsingleton.elim",
+   "Nonempty.casesOn"
+  ],
+  "top16": [
+   "eq_of_heq",
+   "Or.casesOn",
+   "noConfusion_of_Nat",
+   "Quot.ind",
+   "Nat.ne_of_beq_eq_false",
+   "DFunLike.coe_injective",
+   "of_decide_eq_true",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux",
+   "heq_of_eq",
+   "CategoryTheory.Category.comp_id",
+   "Quot.inductionOn",
+   "Nat.ne_of_beq_eq_false._f",
+   "CategoryTheory.Category.id_comp",
+   "DFunLike.ext",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux._f",
+   "_private.Init.Prelude.0.Nat.ne_of_beq_eq_false.match_1_1",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux.match_1_1",
+   "ite_congr",
+   "Subsingleton.elim",
+   "Nonempty.casesOn"
+  ],
+  "top4": [
+   "eq_of_heq",
+   "Or.casesOn",
+   "noConfusion_of_Nat",
+   "Quot.ind",
+   "Nat.ne_of_beq_eq_false",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux",
+   "DFunLike.coe_injective",
+   "Quot.inductionOn",
+   "heq_of_eq",
+   "Nat.ne_of_beq_eq_false._f",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux._f",
+   "DFunLike.ext",
+   "CategoryTheory.Category.comp_id",
+   "CategoryTheory.Category.id_comp",
+   "_private.Init.Prelude.0.Nat.ne_of_beq_eq_false.match_1_1",
+   "of_decide_eq_true",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux.match_1_1",
+   "Subsingleton.elim",
+   "Nonempty.casesOn",
+   "ite_congr"
+  ],
+  "top1": [
+   "eq_of_heq",
+   "Int.sub_nonneg_of_le",
+   "Int.add_le_add_right",
+   "Int.add_assoc",
+   "noConfusion_of_Nat",
+   "Int.le.intro",
+   "Int.add_le_add_left",
+   "Std.DTreeMap.Internal.Impl.WF.ordered",
+   "_private.Init.Data.Int.Lemmas.0.Int.add_assoc.aux2",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux",
+   "Std.DTreeMap.Internal.Impl.ordered_inter",
+   "Int.subNatNat_add_negSucc",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux._f",
+   "Nat.ne_of_beq_eq_false",
+   "Std.DTreeMap.Internal.Impl.ordered_filter",
+   "Int.subNatNat_sub",
+   "_private.Init.Prelude.0.noConfusion_of_Nat.aux.match_1_1",
+   "Nat.ne_of_beq_eq_false._f",
+   "Std.DTreeMap.Internal.Impl.ordered_filterMap",
+   "Int.subNatNat_add_add"
+  ]
+ }
+}

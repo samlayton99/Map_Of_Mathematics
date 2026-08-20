@@ -1,0 +1,4 @@
+# Derived incidence arrays: regenerable from the dump by src/build_incidence.py
+# (18.7M incidences, ~134MB). Builders and reports are versioned; data is not.
+data/*.npz
+data/names.json
