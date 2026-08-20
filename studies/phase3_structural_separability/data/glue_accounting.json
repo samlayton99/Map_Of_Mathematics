@@ -1,0 +1,390 @@
+{
+ "20260826": {
+  "cell_class_mix": {
+   "A1": {
+    "logic-core": 1,
+    "structure-projection": 4
+   },
+   "A2": {
+    "structure-projection": 1
+   },
+   "A3": {},
+   "N1": {
+    "structure-projection": 15
+   },
+   "N2": {
+    "eq-machinery": 14,
+    "logic-core": 2,
+    "structure-projection": 3
+   },
+   "T": {
+    "eq-machinery": 1112,
+    "logic-core": 142,
+    "structure-projection": 181
+   },
+   "V": {}
+  },
+  "cell_top_constants": {
+   "A1": [
+    [
+     "Classical.byContradiction",
+     1
+    ],
+    [
+     "Finpartition.bot_notMem",
+     1
+    ],
+    [
+     "IsCentralScalar.op_smul_eq_smul",
+     1
+    ],
+    [
+     "SMulMemClass.smul_mem",
+     1
+    ],
+    [
+     "CategoryTheory.EnrichedFunctor.map_comp",
+     1
+    ]
+   ],
+   "A2": [
+    [
+     "CategoryTheory.Functor.WellOrderInductionData.Extension.map_zero",
+     1
+    ]
+   ],
+   "A3": [],
+   "N1": [
+    [
+     "CategoryTheory.NatTrans.naturality",
+     2
+    ],
+    [
+     "WeierstrassCurve.IsCharThreeJNeZeroNF.a\u2081",
+     1
+    ],
+    [
+     "Matroid.IsNonloop.not_isLoop",
+     1
+    ],
+    [
+     "CategoryTheory.Adjunction.right_triangle_components",
+     1
+    ],
+    [
+     "MeasureTheory.Measure.IsAddRightInvariant.map_add_right_eq_self",
+     1
+    ],
+    [
+     "MeasureTheory.MeasurePreserving.map_eq",
+     1
+    ],
+    [
+     "ModelWithCorners.nonempty_interior'",
+     1
+    ],
+    [
+     "CategoryTheory.MonoidalCategory.whiskerLeft_id",
+     1
+    ]
+   ],
+   "N2": [
+    [
+     "congrArg",
+     5
+    ],
+    [
+     "Eq.symm",
+     3
+    ],
+    [
+     "rfl",
+     2
+    ],
+    [
+     "Iff.mpr",
+     2
+    ],
+    [
+     "Subtype.property",
+     1
+    ],
+    [
+     "Eq.trans",
+     1
+    ],
+    [
+     "CategoryTheory.Category.id_comp",
+     1
+    ],
+    [
+     "CategoryTheory.Category.comp_id",
+     1
+    ]
+   ],
+   "T": [
+    [
+     "congrArg",
+     478
+    ],
+    [
+     "Eq.trans",
+     204
+    ],
+    [
+     "Eq.symm",
+     144
+    ],
+    [
+     "congr",
+     140
+    ],
+    [
+     "propext",
+     60
+    ],
+    [
+     "Iff.mpr",
+     58
+    ],
+    [
+     "funext",
+     42
+    ],
+    [
+     "Iff.mp",
+     38
+    ]
+   ],
+   "V": []
+  },
+  "cells": {
+   "A1": 5,
+   "A2": 1,
+   "N1": 15,
+   "N2": 19,
+   "T": 1435
+  },
+  "funnel_totals": {
+   "bgdrop_content": 1906,
+   "bgdrop_generated": 119,
+   "bgdrop_glue": 759,
+   "bgdrop_instance": 18255,
+   "bgdrop_other": 6005,
+   "bgdrop_tactic": 108,
+   "claimdrop_content": 4416,
+   "claimdrop_generated": 235,
+   "claimdrop_glue": 5654,
+   "claimdrop_instance": 56,
+   "claimdrop_other": 2441,
+   "claimdrop_self-helper": 8,
+   "claimdrop_tactic": 67,
+   "claims": 9178,
+   "load_bearing": 22055,
+   "raw_refs": 49207,
+   "verdict_by_definition": 154,
+   "verdict_empty": 125
+  },
+  "glue_in_top10_total": 1475,
+  "glue_share_of_slots": 0.2254,
+  "n_scored": 1191,
+  "n_verdict": 279,
+  "residual_unaccounted": 0,
+  "top10_composition": {
+   "content": 4224,
+   "generated": 438,
+   "glue": 1475,
+   "instance": 12,
+   "self-helper": 295,
+   "tactic": 100
+  },
+  "top10_slots": 6544
+ },
+ "20260827": {
+  "cell_class_mix": {
+   "A1": {
+    "structure-projection": 8
+   },
+   "A2": {},
+   "A3": {},
+   "N1": {
+    "structure-projection": 18
+   },
+   "N2": {
+    "eq-machinery": 10,
+    "logic-core": 1
+   },
+   "T": {
+    "eq-machinery": 1104,
+    "logic-core": 155,
+    "structure-projection": 137
+   },
+   "V": {}
+  },
+  "cell_top_constants": {
+   "A1": [
+    [
+     "LinearMap.BilinForm.IsSymm.eq",
+     1
+    ],
+    [
+     "SupHomClass.map_sup",
+     1
+    ],
+    [
+     "HasFTaylorSeriesUpToOn.zero_eq",
+     1
+    ],
+    [
+     "HasFTaylorSeriesUpToOn.cont",
+     1
+    ],
+    [
+     "HasFTaylorSeriesUpToOn.fderivWithin",
+     1
+    ],
+    [
+     "CategoryTheory.ComposableArrows.Exact.exact",
+     1
+    ],
+    [
+     "CategoryTheory.ComonadHom.app_\u03b5",
+     1
+    ],
+    [
+     "CategoryTheory.MonoidalCategory.MonoidalLeftAction.leftUnitor_actionHom",
+     1
+    ]
+   ],
+   "A2": [],
+   "A3": [],
+   "N1": [
+    [
+     "ZeroMemClass.zero_mem",
+     1
+    ],
+    [
+     "MeasureTheory.IsProbabilityMeasure.measure_univ",
+     1
+    ],
+    [
+     "VAddCommClass.vadd_comm",
+     1
+    ],
+    [
+     "LawfulFunctor.id_map",
+     1
+    ],
+    [
+     "LawfulMonad.bind_pure_comp",
+     1
+    ],
+    [
+     "DFunLike.coe_injective",
+     1
+    ],
+    [
+     "CompactExhaustion.subset_interior_succ'",
+     1
+    ],
+    [
+     "String.Pos.Raw.IsValid.le_rawEndPos",
+     1
+    ]
+   ],
+   "N2": [
+    [
+     "Eq.symm",
+     4
+    ],
+    [
+     "rfl",
+     4
+    ],
+    [
+     "congrArg",
+     2
+    ],
+    [
+     "Iff.mp",
+     1
+    ]
+   ],
+   "T": [
+    [
+     "congrArg",
+     483
+    ],
+    [
+     "Eq.trans",
+     198
+    ],
+    [
+     "Eq.symm",
+     142
+    ],
+    [
+     "congr",
+     122
+    ],
+    [
+     "propext",
+     60
+    ],
+    [
+     "funext",
+     58
+    ],
+    [
+     "Iff.mp",
+     48
+    ],
+    [
+     "Iff.mpr",
+     44
+    ]
+   ],
+   "V": []
+  },
+  "cells": {
+   "A1": 8,
+   "N1": 18,
+   "N2": 11,
+   "T": 1396
+  },
+  "funnel_totals": {
+   "bgdrop_content": 1882,
+   "bgdrop_generated": 111,
+   "bgdrop_glue": 742,
+   "bgdrop_instance": 19056,
+   "bgdrop_other": 5919,
+   "bgdrop_tactic": 95,
+   "claimdrop_content": 4479,
+   "claimdrop_generated": 227,
+   "claimdrop_glue": 5766,
+   "claimdrop_instance": 63,
+   "claimdrop_other": 2523,
+   "claimdrop_self-helper": 3,
+   "claimdrop_tactic": 98,
+   "claims": 9678,
+   "load_bearing": 22837,
+   "raw_refs": 50642,
+   "verdict_by_definition": 154,
+   "verdict_empty": 145
+  },
+  "glue_in_top10_total": 1433,
+  "glue_share_of_slots": 0.2167,
+  "n_scored": 1173,
+  "n_verdict": 299,
+  "residual_unaccounted": 0,
+  "top10_composition": {
+   "content": 4312,
+   "generated": 425,
+   "glue": 1433,
+   "instance": 14,
+   "self-helper": 335,
+   "tactic": 95
+  },
+  "top10_slots": 6614
+ }
+}

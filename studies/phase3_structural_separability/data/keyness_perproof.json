@@ -1,0 +1,1718 @@
+[
+ {
+  "i": 0,
+  "decl": "NNRat.cast_strictMono",
+  "depth": 77,
+  "bad": false,
+  "zoom": [
+   4,
+   4,
+   5
+  ],
+  "zoom_t1": [
+   "yes",
+   "partial",
+   "partial"
+  ],
+  "ranked": [
+   4,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "yes",
+   "partial",
+   "partial"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "NNRat.cast_def: unfold the cast as num/den, then cross-multiply (div_lt_div_iff\u2080 + Nat.cast_lt) so the goal becomes exactly NNRat.lt_def",
+   "NNRat.cast_def - write the cast as num/den in K, cross-multiply with div_lt_div_iff\u2080, and the resulting Nat inequality is NNRat.lt_def",
+   "NNRat.cast_def (cast = num/den) plus div_lt_div_iff\u2080 to cross-multiply, reducing the inequality to Nat.cast_lt / NNRat.lt_def"
+  ],
+  "best": [
+   "zoom",
+   "ranked",
+   "zoom"
+  ]
+ },
+ {
+  "i": 1,
+  "decl": "Complex.I_mul_im",
+  "depth": 95,
+  "bad": false,
+  "zoom": [
+   4,
+   3,
+   4
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   4,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "partial",
+   "partial",
+   "no"
+  ],
+  "key_moves": [
+   "Complex.mul_im (expand the imaginary part of a product; the rest is 1*x and 0*x arithmetic)",
+   "Complex.mul_im (together with I.re = 0, I.im = 1)",
+   "Complex.mul_im (im of a product), specialised at I"
+  ],
+  "best": [
+   "ranked",
+   "ranked",
+   "ranked"
+  ]
+ },
+ {
+  "i": 2,
+  "decl": "isCyclotomicExtension_iff_eq_adjoin",
+  "depth": 135,
+  "bad": false,
+  "zoom": [
+   5,
+   5,
+   5
+  ],
+  "zoom_t1": [
+   "partial",
+   "partial",
+   "partial"
+  ],
+  "ranked": [
+   4,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "no",
+   "no",
+   "partial"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "partial",
+   "partial",
+   "no"
+  ],
+  "key_moves": [
+   "IsCyclotomicExtension.iff_adjoin_eq_top (the roots generate C), transported along the inclusion C.val via AlgHom.map_adjoin / Algebra.map_top / Subalgebra.range_val",
+   "IsCyclotomicExtension.iff_adjoin_eq_top, transported out of C along Subalgebra.map C.val via AlgHom.map_adjoin",
+   "IsCyclotomicExtension.iff_adjoin_eq_top, pushed through the inclusion C.val via AlgHom.map_adjoin and Subalgebra.range_val"
+  ],
+  "best": [
+   "zoom",
+   "zoom",
+   "zoom"
+  ]
+ },
+ {
+  "i": 3,
+  "decl": "AddGroupFilterBasis.t2Space_iff_sInter_subset",
+  "depth": 92,
+  "bad": false,
+  "zoom": [
+   5,
+   5,
+   5
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   3,
+   3,
+   3
+  ],
+  "ranked_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "partial",
+   "yes",
+   "partial"
+  ],
+  "key_moves": [
+   "GroupFilterBasis.t2Space_iff (T2 for the basis topology is the sInter criterion), leaving only the trivial inclusion {1} \u2286 \u22c2\u2080 from F.one via subset_antisymm_iff",
+   "GroupFilterBasis.t2Space_iff (T2 \u2194 \u22c2\u2080 F.sets = {1}); the reverse inclusion is trivial from F.one",
+   "GroupFilterBasis.t2Space_iff (T2 for the basis topology is \u22c2\u2080 F.sets = {1}); the reverse inclusion is free since 1 lies in every basis set"
+  ],
+  "best": [
+   "zoom",
+   "zoom",
+   "zoom"
+  ]
+ },
+ {
+  "i": 4,
+  "decl": "ExpGrowth.expGrowthSup_sum",
+  "depth": 175,
+  "bad": false,
+  "zoom": [
+   4,
+   4,
+   4
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "partial"
+  ],
+  "ranked": [
+   5,
+   5,
+   5
+  ],
+  "ranked_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "prov": [
+   4,
+   4,
+   4
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   3,
+   4,
+   4
+  ],
+  "applied_t1": [
+   "partial",
+   "partial",
+   "partial"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "partial",
+   "no"
+  ],
+  "key_moves": [
+   "ExpGrowth.expGrowthSup_add (expGrowthSup of a two-term sum is the max), pushed along Finset.induction_on",
+   "ExpGrowth.expGrowthSup_add - expGrowthSup turns a sum into a sup; Finset.induction_on is the scaffolding",
+   "ExpGrowth.expGrowthSup_add (expGrowthSup of a sum is the sup), fed through Finset.induction_on"
+  ],
+  "best": [
+   "ranked",
+   "ranked",
+   "ranked"
+  ]
+ },
+ {
+  "i": 5,
+  "decl": "MulMemClass.mul_right_mem_add_closure",
+  "depth": 64,
+  "bad": false,
+  "zoom": [
+   4,
+   4,
+   4
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "partial"
+  ],
+  "ranked": [
+   5,
+   5,
+   4
+  ],
+  "ranked_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "prov": [
+   4,
+   4,
+   4
+  ],
+  "prov_t1": [
+   "partial",
+   "no",
+   "no"
+  ],
+  "applied": [
+   3,
+   3,
+   3
+  ],
+  "applied_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "partial",
+   "no"
+  ],
+  "key_moves": [
+   "AddSubmonoid.closure_induction: induct on membership in the additive closure; right multiplication by b is additive (add_mul) and stays in S (mul_mem)",
+   "AddSubmonoid.closure_induction on a \u2208 closure S; the three cases are mul_mem, zero_mul and add_mul",
+   "AddSubmonoid.closure_induction on a \u2208 closure S, with mul_mem on generators and add_mul in the additive step"
+  ],
+  "best": [
+   "ranked",
+   "ranked",
+   "ranked"
+  ]
+ },
+ {
+  "i": 6,
+  "decl": "BoxIntegral.Prepartition.coe_eq_of_mem_split_of_lt_mem",
+  "depth": 135,
+  "bad": false,
+  "zoom": [
+   5,
+   4,
+   4
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   5,
+   5,
+   5
+  ],
+  "ranked_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "prov": [
+   4,
+   4,
+   3
+  ],
+  "prov_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "applied": [
+   3,
+   2,
+   3
+  ],
+  "applied_t1": [
+   "partial",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "BoxIntegral.Prepartition.mem_split_iff': J is one of the two split pieces, and h\u2083 (x < y i) kills the wrong disjunct via Or.resolve_left",
+   "BoxIntegral.Prepartition.mem_split_iff' - J is one of the two halves, and x < y i rules out the lower one",
+   "BoxIntegral.Prepartition.mem_split_iff' (J is one of the two half-boxes), then Or.resolve_left kills the lower half using x < y i"
+  ],
+  "best": [
+   "ranked",
+   "ranked",
+   "ranked"
+  ]
+ },
+ {
+  "i": 7,
+  "decl": "Algebra.IsAlgebraic.trdeg_le_cardinalMk",
+  "depth": 142,
+  "bad": false,
+  "zoom": [
+   5,
+   5,
+   5
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   4,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "yes",
+   "partial",
+   "partial"
+  ],
+  "prov": [
+   3,
+   3,
+   3
+  ],
+  "prov_t1": [
+   "yes",
+   "partial",
+   "partial"
+  ],
+  "applied": [
+   3,
+   3,
+   3
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "Translate transcendence degree into the algebraic matroid (AlgebraicIndependent.matroid_cRank_eq / matroid_spanning_iff) and apply Matroid.Spanning.cRank_le_cardinalMk",
+   "Matroid.Spanning.cRank_le_cardinalMk, reached by translating trdeg into matroid rank (matroid_cRank_eq / matroid_spanning_iff)",
+   "Recast trdeg as matroid rank (AlgebraicIndependent.matroid_cRank_eq / matroid_spanning_iff) and apply Matroid.Spanning.cRank_le_cardinalMk"
+  ],
+  "best": [
+   "zoom",
+   "zoom",
+   "zoom"
+  ]
+ },
+ {
+  "i": 8,
+  "decl": "WfDvdMonoid.not_isUnit_iff_exists_factors_eq",
+  "depth": 25,
+  "bad": false,
+  "zoom": [
+   3,
+   4,
+   4
+  ],
+  "zoom_t1": [
+   "no",
+   "partial",
+   "partial"
+  ],
+  "ranked": [
+   3,
+   3,
+   3
+  ],
+  "ranked_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "prov": [
+   3,
+   3,
+   3
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "partial",
+   "no"
+  ],
+  "key_moves": [
+   "WfDvdMonoid.exists_factors (a = u * prod of irreducibles), then absorb the unit into one factor using Associated.irreducible and Multiset.prod_erase",
+   "WfDvdMonoid.exists_factors (a = u * \u220f irreducibles), then absorb the unit into one factor (Associated.irreducible with Multiset.prod_erase)",
+   "WfDvdMonoid.exists_factors (a = (f.prod) * u with all factors irreducible), then absorb the unit u into one chosen factor (Associated.irreducible) and repair the product with Multiset.prod_erase/prod_cons"
+  ],
+  "best": [
+   "prov",
+   "zoom",
+   "zoom"
+  ]
+ },
+ {
+  "i": 9,
+  "decl": "CategoryTheory.GrpObj.mulRight_one",
+  "depth": 35,
+  "bad": false,
+  "zoom": [
+   3,
+   4,
+   4
+  ],
+  "zoom_t1": [
+   "no",
+   "partial",
+   "partial"
+  ],
+  "ranked": [
+   4,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "no",
+   "no",
+   "partial"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "partial"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "partial",
+   "no"
+  ],
+  "key_moves": [
+   "CategoryTheory.MonObj.lift_comp_one_right (the right unit law), after reducing the iso equality to its underlying morphism",
+   "CategoryTheory.MonObj.lift_comp_one_right (the unit axiom of the monoid object), after reducing the iso to its hom",
+   "CategoryTheory.MonObj.lift_comp_one_right (right unit law of the monoid object), after Iso.ext reduces to the hom component"
+  ],
+  "best": [
+   "ranked",
+   "zoom",
+   "ranked"
+  ]
+ },
+ {
+  "i": 10,
+  "decl": "iteratedDeriv_vcomp_three",
+  "depth": 190,
+  "bad": false,
+  "zoom": [
+   5,
+   5,
+   5
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   4,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "prov": [
+   5,
+   4,
+   4
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   2,
+   2,
+   2
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "iteratedDerivWithin_vcomp_three specialised to s = univ (via iteratedDerivWithin_univ / iteratedFDerivWithin_univ / derivWithin_univ / fderivWithin_univ)",
+   "iteratedDerivWithin_vcomp_three - specialize the within-a-set Faa di Bruno statement to univ",
+   "iteratedDerivWithin_vcomp_three specialised to univ (the within-set Faa di Bruno statement), after rewriting away the univ restrictions"
+  ],
+  "best": [
+   "zoom",
+   "zoom",
+   "zoom"
+  ]
+ },
+ {
+  "i": 11,
+  "decl": "Function.support_eq_empty_iff",
+  "depth": 22,
+  "bad": true,
+  "zoom": [
+   2,
+   2,
+   2
+  ],
+  "zoom_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "ranked": [
+   2,
+   2,
+   2
+  ],
+  "ranked_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   1,
+   1,
+   1
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   2,
+   2,
+   2
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "Function.support_eq_empty_iff composed with coeff_fun_eq_zero_iff (a series is zero iff all its coefficients vanish)",
+   "Function.support_eq_empty_iff composed with coeff_fun_eq_zero_iff",
+   "Function.support_eq_empty_iff composed with coeff_fun_eq_zero_iff (support empty iff all coefficients vanish iff the series is 0)"
+  ],
+  "best": [
+   "ranked",
+   "zoom",
+   "zoom"
+  ]
+ },
+ {
+  "i": 12,
+  "decl": "CategoryTheory.MonoidalCategory.MonoidalRightAction.actionHomLeft_tensor",
+  "depth": 7,
+  "bad": false,
+  "zoom": [
+   4,
+   3,
+   4
+  ],
+  "zoom_t1": [
+   "no",
+   "no",
+   "partial"
+  ],
+  "ranked": [
+   4,
+   3,
+   3
+  ],
+  "ranked_t1": [
+   "partial",
+   "partial",
+   "partial"
+  ],
+  "prov": [
+   5,
+   5,
+   5
+  ],
+  "prov_t1": [
+   "partial",
+   "partial",
+   "partial"
+  ],
+  "applied": [
+   2,
+   1,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "MonoidalRightAction.actionAssocIso_hom_naturality (naturality of the action associator), after rewriting the whiskering as actionHom of an identity (actionHom_id)",
+   "actionAssocIso_hom_naturality (naturality of the action associator), after rewriting f \u22b5 x through actionHom_id",
+   "MonoidalRightAction.actionAssocIso_hom_naturality (naturality of the action associator), after rewriting f \u22b5\u1d63 x as an actionHom with identity via actionHom_id"
+  ],
+  "best": [
+   "prov",
+   "prov",
+   "prov"
+  ]
+ },
+ {
+  "i": 13,
+  "decl": "LinearMap.toSpanSingleton_add",
+  "depth": 27,
+  "bad": false,
+  "zoom": [
+   3,
+   3,
+   3
+  ],
+  "zoom_t1": [
+   "no",
+   "partial",
+   "partial"
+  ],
+  "ranked": [
+   3,
+   3,
+   3
+  ],
+  "ranked_t1": [
+   "partial",
+   "partial",
+   "no"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   4,
+   2,
+   3
+  ],
+  "applied_t1": [
+   "partial",
+   "no",
+   "partial"
+  ],
+  "moveset": [
+   3,
+   2,
+   2
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "LinearMap.toSpanSingleton_add transported through coercion injectivity; underneath it is just smul_add checked on the generator (ext_ring)",
+   "coe_inj applied to LinearMap.toSpanSingleton_add - reduce to the bare linear-map lemma, whose content is smul_add",
+   "coe_inj reduces to LinearMap.toSpanSingleton_add, whose content is smul_add (r \u2022 (x+y) = r\u2022x + r\u2022y) checked on the generator by ext_ring"
+  ],
+  "best": [
+   "applied",
+   "zoom",
+   "applied"
+  ]
+ },
+ {
+  "i": 14,
+  "decl": "HasStrictDerivAt.finsetProd",
+  "depth": 182,
+  "bad": true,
+  "zoom": [
+   4,
+   4,
+   4
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   5,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   2,
+   2
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "Reduce to the already-proved primed/`fun_` version of finsetProd by convert, with Finset.prod_apply to move the product past function application",
+   "Reduce to the pointwise sibling lemma (finsetProd' / fun_finsetProd) by convert, then Finset.prod_apply",
+   "Reduce to the pointwise/primed version (fun_finsetProd, i.e. finsetProd') and match it up with Finset.prod_apply"
+  ],
+  "best": [
+   "ranked",
+   "ranked",
+   "ranked"
+  ]
+ },
+ {
+  "i": 15,
+  "decl": "MvPowerSeries.antidiagonal_dominant",
+  "depth": 106,
+  "bad": false,
+  "zoom": [
+   5,
+   4,
+   4
+  ],
+  "zoom_t1": [
+   "yes",
+   "partial",
+   "partial"
+  ],
+  "ranked": [
+   5,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "yes",
+   "partial",
+   "partial"
+  ],
+  "prov": [
+   4,
+   4,
+   4
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   3,
+   3,
+   3
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "IsNonarchimedean.apply_sum_eq_of_lt: for a nonarchimedean value, a sum with one strictly dominant term has that term's value, applied to coeff_mul's antidiagonal sum",
+   "IsNonarchimedean.apply_sum_eq_of_lt - with one strictly dominant term, the valuation of the antidiagonal sum (coeff_mul) is that term's",
+   "IsNonarchimedean.apply_sum_eq_of_lt: in a nonarchimedean valuation a sum with one strictly dominant term takes that term's value, applied to the coeff_mul expansion"
+  ],
+  "best": [
+   "ranked",
+   "ranked",
+   "ranked"
+  ]
+ },
+ {
+  "i": 16,
+  "decl": "SimpleGraph.neighborSet_sum_inr",
+  "depth": 33,
+  "bad": false,
+  "zoom": [
+   4,
+   4,
+   4
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   4,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "SimpleGraph.sum_adj: adjacency in G \u2295g H only holds within a side, so the cross cases collapse and the neighbours of inr w are exactly Sum.inr of H-neighbours",
+   "SimpleGraph.sum_adj - in the sum graph an inr vertex is adjacent only to inr vertices, through H's adjacency",
+   "SimpleGraph.sum_adj: in the disjoint sum only same-side vertices are adjacent, so the inl case is vacuous"
+  ],
+  "best": [
+   "ranked",
+   "ranked",
+   "zoom"
+  ]
+ },
+ {
+  "i": 17,
+  "decl": "IsCovariantDerivativeOn.congr_of_eventuallyEq",
+  "depth": 167,
+  "bad": false,
+  "zoom": [
+   5,
+   5,
+   5
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   3,
+   2,
+   2
+  ],
+  "ranked_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   4,
+   4,
+   4
+  ],
+  "applied_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "Reduce eventual equality to equality on an open neighbourhood (Filter.eventually_iff_exists_mem plus mem_nhds_iff) and apply the congr_of_eqOn version after restricting the chart domain (mono)",
+   "Extract an open neighborhood on which f = g (Filter.Eventually.exists_mem / mem_nhds_iff) and apply the eqOn version, congr_of_eqOn",
+   "IsCovariantDerivativeOn.congr_of_eqOn: shrink the eventual equality to an open neighbourhood (mem_nhds_iff / eventually_iff_exists_mem) and apply the eqOn version"
+  ],
+  "best": [
+   "zoom",
+   "zoom",
+   "zoom"
+  ]
+ },
+ {
+  "i": 18,
+  "decl": "uniformity_dist_of_mem_uniformity",
+  "depth": 55,
+  "bad": false,
+  "zoom": [
+   5,
+   5,
+   4
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   4,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "prov": [
+   4,
+   3,
+   3
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   4,
+   4,
+   4
+  ],
+  "applied_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "moveset": [
+   2,
+   2,
+   2
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "Filter.HasBasis.eq_biInf applied to the basis of D-balls that hypothesis H supplies",
+   "Filter.HasBasis.eq_biInf - the hypothesis H says the sets {p | D p.1 p.2 < \u03b5} form a basis of U",
+   "Filter.HasBasis.eq_biInf: exhibit the D-balls as a basis of U, so U is the biInf of the corresponding principal filters"
+  ],
+  "best": [
+   "zoom",
+   "zoom",
+   "zoom"
+  ]
+ },
+ {
+  "i": 19,
+  "decl": "AddMonoidAlgebra.supDegree_single",
+  "depth": 69,
+  "bad": false,
+  "zoom": [
+   4,
+   4,
+   4
+  ],
+  "zoom_t1": [
+   "partial",
+   "partial",
+   "partial"
+  ],
+  "ranked": [
+   4,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "partial",
+   "partial",
+   "partial"
+  ],
+  "prov": [
+   4,
+   4,
+   3
+  ],
+  "prov_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "AddMonoidAlgebra.supDegree_single_ne_zero for the r \u2260 0 branch, with single a 0 = 0 forcing \u22a5 in the other branch",
+   "AddMonoidAlgebra.supDegree_single_ne_zero for the r \u2260 0 branch; the r = 0 branch collapses via single_zero",
+   "Case split on r = 0: the nonzero branch is supDegree_single_ne_zero, the zero branch is single_zero with empty support giving \u22a5"
+  ],
+  "best": [
+   "ranked",
+   "ranked",
+   "ranked"
+  ]
+ },
+ {
+  "i": 20,
+  "decl": "Pell.modEq_of_xn_modEq",
+  "depth": 56,
+  "bad": false,
+  "zoom": [
+   5,
+   5,
+   5
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   1,
+   1,
+   1
+  ],
+  "ranked_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "prov": [
+   3,
+   3,
+   3
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   1,
+   1,
+   1
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "Pell.xn_modEq_x4n_add (x is 4n-periodic modulo x_n) to replace j by j % 4n, then Pell.eq_of_xn_modEq' to pin down the residue",
+   "Pell.eq_of_xn_modEq' combined with the 4n-periodicity xn_modEq_x4n_add",
+   "Pell.eq_of_xn_modEq' applied after reducing j mod 4n, using the periodicity xn_modEq_x4n_add (x_{j+4nq} \u2261 x_j mod x_n)"
+  ],
+  "best": [
+   "zoom",
+   "zoom",
+   "zoom"
+  ]
+ },
+ {
+  "i": 21,
+  "decl": "Module.Projective.of_split",
+  "depth": 78,
+  "bad": true,
+  "zoom": [
+   4,
+   4,
+   4
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   4,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   3,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   2,
+   2
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "Module.projective_lifting_property: the splitting provides the lift, which is exactly the universal lifting characterisation of projectivity",
+   "Module.projective_lifting_property - lift the identity along the split surjection",
+   "Module.projective_lifting_property: lift the identity along the split surjection using the given splitting"
+  ],
+  "best": [
+   "ranked",
+   "ranked",
+   "ranked"
+  ]
+ },
+ {
+  "i": 22,
+  "decl": "CochainComplex.HomComplex.Cocycle.toSingleMk_postcomp",
+  "depth": 71,
+  "bad": false,
+  "zoom": [
+   5,
+   5,
+   5
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "ranked": [
+   4,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "partial",
+   "partial",
+   "partial"
+  ],
+  "prov": [
+   4,
+   4,
+   3
+  ],
+  "prov_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "partial"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "CochainComplex.HomComplex.Cochain.toSingleMk_postcomp, reached by applying injectivity of toSingleEquiv to drop from cocycles to the underlying cochains",
+   "Cochain.toSingleMk_postcomp - push the equality down to the underlying cochain by injectivity of toSingleEquiv",
+   "Apply injectivity of toSingleEquiv (Cocycle.ext / AddEquiv.injective) to reduce to the cochain-level Cochain.toSingleMk_postcomp"
+  ],
+  "best": [
+   "zoom",
+   "zoom",
+   "zoom"
+  ]
+ },
+ {
+  "i": 23,
+  "decl": "Finset.le_prod_nonempty_of_submultiplicative_on_pred",
+  "depth": 59,
+  "bad": false,
+  "zoom": [
+   4,
+   4,
+   5
+  ],
+  "zoom_t1": [
+   "partial",
+   "partial",
+   "yes"
+  ],
+  "ranked": [
+   4,
+   3,
+   3
+  ],
+  "ranked_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "prov": [
+   1,
+   1,
+   1
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   2,
+   2,
+   2
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "key_moves": [
+   "Multiset.le_prod_nonempty_of_submultiplicative_on_pred applied to s.val.map g, with nonemptiness and the predicate transported by forall_mem_map_iff",
+   "Multiset.le_prod_nonempty_of_submultiplicative_on_pred - the Finset statement is the Multiset one applied to s.val.map g",
+   "Multiset.le_prod_nonempty_of_submultiplicative_on_pred: transfer the Finset statement to the multiset image (nonempty via ne_empty, hypotheses via forall_mem_map_iff)"
+  ],
+  "best": [
+   "zoom",
+   "zoom",
+   "zoom"
+  ]
+ },
+ {
+  "i": 24,
+  "decl": "Equiv.Perm.cycleOf_mul_of_apply_right_eq_self",
+  "depth": 36,
+  "bad": false,
+  "zoom": [
+   5,
+   4,
+   5
+  ],
+  "zoom_t1": [
+   "partial",
+   "partial",
+   "partial"
+  ],
+  "ranked": [
+   5,
+   4,
+   4
+  ],
+  "ranked_t1": [
+   "partial",
+   "partial",
+   "partial"
+  ],
+  "prov": [
+   4,
+   4,
+   4
+  ],
+  "prov_t1": [
+   "yes",
+   "yes",
+   "yes"
+  ],
+  "applied": [
+   3,
+   3,
+   3
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   3,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "partial",
+   "partial",
+   "no"
+  ],
+  "key_moves": [
+   "Equiv.Perm.zpow_apply_eq_self_of_apply_eq_self with Commute.mul_zpow: since g fixes x and commutes with f, (f*g)^k x = f^k x, so the two cycles agree",
+   "Equiv.Perm.zpow_apply_eq_self_of_apply_eq_self with Commute.mul_zpow: since g fixes x, (f*g)^z x = f^z x, so the two cycles agree",
+   "zpow_apply_eq_self_of_apply_eq_self with Commute.mul_zpow: since g fixes x, (f*g)^z x = f^z x, so the SameCycle relations and hence cycleOf agree"
+  ],
+  "best": [
+   "ranked",
+   "ranked",
+   "zoom"
+  ]
+ },
+ {
+  "i": 25,
+  "decl": "exists_compact_closed_between",
+  "depth": 87,
+  "bad": false,
+  "zoom": [
+   5,
+   4,
+   4
+  ],
+  "zoom_t1": [
+   "yes",
+   "yes",
+   "partial"
+  ],
+  "ranked": [
+   5,
+   5,
+   5
+  ],
+  "ranked_t1": [
+   "yes",
+   "yes",
+   "partial"
+  ],
+  "prov": [
+   3,
+   2,
+   2
+  ],
+  "prov_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "applied": [
+   4,
+   3,
+   3
+  ],
+  "applied_t1": [
+   "no",
+   "no",
+   "no"
+  ],
+  "moveset": [
+   4,
+   3,
+   3
+  ],
+  "moveset_t1": [
+   "partial",
+   "partial",
+   "no"
+  ],
+  "key_moves": [
+   "Take the closure of the compact set from exists_compact_between: IsCompact.closure keeps it compact and IsCompact.closure_subset_of_isOpen keeps it inside U",
+   "exists_compact_between, then replace L by its closure (IsCompact.closure, IsCompact.closure_subset_of_isOpen)",
+   "exists_compact_between gives a compact L with K \u2286 interior L \u2286 L \u2286 U; take closure L, still compact (IsCompact.closure) and still inside U (IsCompact.closure_subset_of_isOpen)"
+  ],
+  "best": [
+   "ranked",
+   "ranked",
+   "ranked"
+  ]
+ }
+]

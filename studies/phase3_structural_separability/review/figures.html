@@ -1,0 +1,108 @@
+<title>MathMap Exact Accounting</title>
+<style>
+body{font:15px/1.5 -apple-system,'Segoe UI',sans-serif;color:#1a1a1a;background:#f7f7f5;margin:0}
+main{max-width:960px;margin:0 auto;padding:24px 18px 80px}
+h1{font-size:1.4rem} h2{font-size:1.15rem;margin-top:34px;border-bottom:2px solid #2456a4;padding-bottom:4px}
+h3{font-size:1rem;margin-top:22px}
+table{border-collapse:collapse;font-size:.85rem;margin:10px 0;background:#fff}
+th,td{border:1px solid #d8d8d2;padding:4px 8px;text-align:left;vertical-align:top}
+th{background:#eef1f6}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+code{font:.82em ui-monospace,Menlo,monospace;color:#555}
+.note{color:#666;font-size:.85rem}
+.good{color:#0a7a4b;font-weight:600}.bad{color:#a33;font-weight:600}
+.wrap{overflow-x:auto}
+</style><main>
+<h1>MathMap: Exact Accounting — Funnel, Glue, Keyness</h1>
+<p class="note">All numbers generated directly from committed result files (2026-08-19). No hand transcription.</p>
+<h2>1. The pipeline funnel: what is thrown away, what is let in</h2>
+<p>Per 1,500 random theorems (sample seed 20260826; second sample within 2% everywhere). Totals across all proofs:</p>
+<table><tr><th>stage</th><th class=n>refs</th><th>share</th><th>what was removed, by label</th></tr>
+<tr><td><b>raw proof-term references</b></td><td class=n>49,207</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#2456a4;width:260px;height:14px;border-radius:3px"></div></div></td><td>—</td></tr>
+<tr><td><b>load-bearing occurrences</b> (applied / explicit arg / let)</td><td class=n>22,055</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#2456a4;width:116px;height:14px;border-radius:3px"></div></div></td><td>background slots removed: instances 18,255, constructors+types 6,005, side-condition facts 1,906, glue 759</td></tr>
+<tr><td><b>claims</b> (Prop-valued, not ctor/recursor)</td><td class=n>9,178</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#2456a4;width:48px;height:14px;border-radius:3px"></div></div></td><td>non-claims removed: glue-defs 5,654 (rfl-family etc.), Type-valued defs 4,416 (concepts like Real.log — not steps), other 2,441</td></tr>
+<tr><td><b>verdicts</b></td><td class=n>279</td><td></td><td>proofs ruled 'holds by definition/logic' (154 all-bookkeeping + 125 empty) — correct answers, not lists</td></tr>
+<tr><td><b>scored move lists</b></td><td class=n>1191</td><td></td><td>top-10 slots analyzed below: 6,544</td></tr></table>
+<p><b>Intuition:</b> of every ~41 references in a proof term, ~22 sit in background slots
+(instance bureaucracy dominates: 83%% of background drops), ~11 are load-bearing non-claims
+(objects, definitional glue), and ~8 survive as claim-moves. Nothing is deleted from the record —
+these are view filters over preserved occurrence roles.</p>
+<h2>2. Glue in the top-10: the 100% accounting</h2>
+<p>Every glue-labeled item in every top-10 list falls in exactly one cell of an exhaustive partition. <b>Residual unaccounted: 0 in both samples.</b></p>
+<table><tr><th>cell</th><th>meaning</th><th class=n>seed ...26</th><th class=n>seed ...27</th><th>top constants (seed 26)</th><th>verdict</th></tr>
+<tr><td><b>T</b></td><td>tail — ranked BELOW the first real lemma</td><td class=n>1435</td><td class=n>1396</td><td><code>congrArg (478), Eq.trans (204), Eq.symm (144), congr (140)</code></td><td>benign: correctly demoted plumbing at list bottoms</td></tr>
+<tr><td><b>A1</b></td><td>above content, has rare vocabulary, new to statement</td><td class=n>5</td><td class=n>8</td><td><code>Classical.byContradiction (1), Finpartition.bot_notMem (1), IsCentralScalar.op_smul_eq_smul (1), SMulMemClass.smul_mem (1)</code></td><td>read individually: mostly interface lemmas and byContradiction — arguably real moves mislabeled glue by the proxy</td></tr>
+<tr><td><b>A2</b></td><td>above content, in statement cone, deep</td><td class=n>1</td><td class=n>0</td><td><code>CategoryTheory.Functor.WellOrderInductionData.Extension.map_zero (1)</code></td><td>single occurrence</td></tr>
+<tr><td><b>A3</b></td><td>above content, bookkeeping</td><td class=n>0</td><td class=n>0</td><td><code></code></td><td>cannot occur unless content is also bookkeeping (sort groups); zero observed</td></tr>
+<tr><td><b>N1</b></td><td>list has no proxy-content; item has rare vocabulary</td><td class=n>15</td><td class=n>18</td><td><code>CategoryTheory.NatTrans.naturality (2), WeierstrassCurve.IsCharThreeJNeZeroNF.a₁ (1), Matroid.IsNonloop.not_isLoop (1), CategoryTheory.Adjunction.right_triangle_components (1)</code></td><td>interface-only proofs: the move IS the interface fact (naturality, zero_mem) — proxy mislabel</td></tr>
+<tr><td><b>N2</b></td><td>list has no proxy-content; item is bookkeeping</td><td class=n>19</td><td class=n>11</td><td><code>congrArg (5), Eq.symm (3), rfl (2), Iff.mpr (2)</code></td><td>stray plumbing in thin lists</td></tr>
+<tr><th>total glue</th><th></th><th class=n>1475</th><th class=n>1433</th><th colspan=2>= 22.5% / 21.7% of all top-10 slots; <span class=good>residual 0 / 0</span></th></tr></table>
+<p><b>Reading:</b> 97.3%% of top-10 glue is tail (cell T: congrArg, Eq.trans, Eq.symm, congr, propext —
+demoted below the real lemmas, visible only because top-10 is deeper than most proofs' content).
+Above-content glue is 6 and 8 occurrences per ~1,200 scored proofs
+(0.5%% of proofs) — individually enumerated, mostly interface lemmas the diagnosis proxy mislabels.
+The remaining cells (N1/N2, ~30 occurrences) are interface-only proofs where the proxy denies the interface fact is content.</p>
+<h3>Top-10 slot composition (seed 26)</h3><table><tr><th>label</th><th class=n>slots</th><th>share</th></tr>
+<tr><td>content</td><td class=n>4,224</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#2456a4;width:167px;height:14px;border-radius:3px"></div></div> 64.5%</td></tr>
+<tr><td>glue</td><td class=n>1,475</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#2456a4;width:58px;height:14px;border-radius:3px"></div></div> 22.5%</td></tr>
+<tr><td>generated</td><td class=n>438</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#2456a4;width:17px;height:14px;border-radius:3px"></div></div> 6.7%</td></tr>
+<tr><td>self-helper</td><td class=n>295</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#2456a4;width:11px;height:14px;border-radius:3px"></div></div> 4.5%</td></tr>
+<tr><td>tactic</td><td class=n>100</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#2456a4;width:3px;height:14px;border-radius:3px"></div></div> 1.5%</td></tr>
+<tr><td>instance</td><td class=n>12</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#2456a4;width:2px;height:14px;border-radius:3px"></div></div> 0.2%</td></tr>
+</table>
+<h2>3. Precision and recall, stated exactly</h2>
+<table>
+<tr><th>metric</th><th class=n>value</th><th>what it literally is</th><th>what it is NOT</th></tr>
+<tr><td>top-1 non-machinery proxy (V5v, round 5 holdout)</td><td class=n>91.6%</td><td>rank-1 item is not flagged by the automated machinery-labeling proxy; fresh 2,400-theorem sample, run once</td><td>not semantic keyness (that is section 4)</td></tr>
+<tr><td>same, matched denominator vs historical</td><td class=n>91.79% vs 91.63%</td><td>both systems scored on the SAME 1,899 proofs</td><td></td></tr>
+<tr><td>recall vs elaborator-resolved human citations</td><td class=n>mean 85.9%, median 100%</td><td>ground truth never touches our extraction (n=29, small)</td><td>not term-level recall</td></tr>
+<tr><td>recall of citations that reach the kernel term</td><td class=n>100%</td><td>ALL 15 losses were elaboration-erased before extraction; position/claims filters lost 0</td><td></td></tr>
+</table>
+<p><b>Intuition:</b> what the pipeline lets in wrongly: ~0.5%% of proofs get an above-content glue item at a top position,
+plus tail plumbing below the real moves (visible, demoted). What it throws away wrongly: nothing measurable at the
+kernel level; the ~14%% loss is elaboration erasing citations before any extraction exists, recoverable only via the
+provenance sidecar.</p>
+<h2>4. Keyness panel: exactly what the Opus raters found</h2>
+<table><tr><th>view</th><th class=n>mean rating (1-5)</th><th></th><th class=n>top-1 = key move</th><th class=n>exact or partial</th><th class=n>best-view votes (of 69)</th></tr>
+<tr><td>zoom (ranking + containers opened)</td><td class=n>4.33</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#0a7a4b;width:225px;height:14px;border-radius:3px"></div></div></td><td class=n>56.5%</td><td class=n>92.8%</td><td class=n>35</td></tr>
+<tr><td>flat certified ranking</td><td class=n>3.8</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#0a7a4b;width:197px;height:14px;border-radius:3px"></div></div></td><td class=n>37.7%</td><td class=n>71.0%</td><td class=n>28</td></tr>
+<tr><td>human source citations</td><td class=n>2.61</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#0a7a4b;width:135px;height:14px;border-radius:3px"></div></div></td><td class=n>18.8%</td><td class=n>27.5%</td><td class=n>4</td></tr>
+<tr><td>applied-frequency order</td><td class=n>2.54</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#0a7a4b;width:132px;height:14px;border-radius:3px"></div></div></td><td class=n>13.0%</td><td class=n>24.6%</td><td class=n>2</td></tr>
+<tr><td>unordered move set</td><td class=n>2.81</td><td><div style="background:#e8e8e2;width:260px;height:14px;border-radius:3px"><div style="background:#0a7a4b;width:146px;height:14px;border-radius:3px"></div></div></td><td class=n>1.4%</td><td class=n>21.7%</td><td class=n>0</td></tr>
+</table><p>Rater best-view unanimity: 74%. Three briefs excluded for verified source-pasting collisions (11, 14, 21; marked X below).</p>
+<h3>Per-proof table (mean of 3 raters; t1 = did the view's first item match the rater's independently named key move: Y/p/.)</h3><div class=wrap>
+<table><tr><th>#</th><th>theorem</th><th class=n>depth</th><th class=n>zoom</th><th class=n>ranked</th><th class=n>prov</th><th class=n>applied</th><th class=n>set</th><th>zoom t1</th><th>ranked t1</th><th>best votes</th></tr>
+<tr><td>0</td><td><code>NNRat.cast_strictMono</code></td><td class=n>77</td><td class=n>4.3</td><td class=n>4.0</td><td class=n>1.0</td><td class=n>2.0</td><td class=n>3.0</td><td>Ypp</td><td>Ypp</td><td>zrz</td></tr>
+<tr><td>1</td><td><code>Complex.I_mul_im</code></td><td class=n>95</td><td class=n>3.7</td><td class=n>4.0</td><td class=n>1.0</td><td class=n>2.0</td><td class=n>3.0</td><td>YYY</td><td>YYY</td><td>rrr</td></tr>
+<tr><td>2</td><td><code>isCyclotomicExtension_iff_eq_adjoin</code></td><td class=n>135</td><td class=n>5.0</td><td class=n>4.0</td><td class=n>1.0</td><td class=n>2.0</td><td class=n>3.0</td><td>ppp</td><td>..p</td><td>zzz</td></tr>
+<tr><td>3</td><td><code>AddGroupFilterBasis.t2Space_iff_sInter_subset</code></td><td class=n>92</td><td class=n>5.0</td><td class=n>3.0</td><td class=n>1.0</td><td class=n>2.0</td><td class=n>3.0</td><td>YYY</td><td>...</td><td>zzz</td></tr>
+<tr><td>4</td><td><code>ExpGrowth.expGrowthSup_sum</code></td><td class=n>175</td><td class=n>4.0</td><td class=n>5.0</td><td class=n>4.0</td><td class=n>3.7</td><td class=n>3.0</td><td>YYp</td><td>YYY</td><td>rrr</td></tr>
+<tr><td>5</td><td><code>MulMemClass.mul_right_mem_add_closure</code></td><td class=n>64</td><td class=n>4.0</td><td class=n>4.7</td><td class=n>4.0</td><td class=n>3.0</td><td class=n>3.0</td><td>YYp</td><td>YYY</td><td>rrr</td></tr>
+<tr><td>6</td><td><code>BoxIntegral.Prepartition.coe_eq_of_mem_split_of_lt_m</code></td><td class=n>135</td><td class=n>4.3</td><td class=n>5.0</td><td class=n>3.7</td><td class=n>2.7</td><td class=n>3.0</td><td>YYY</td><td>YYY</td><td>rrr</td></tr>
+<tr><td>7</td><td><code>Algebra.IsAlgebraic.trdeg_le_cardinalMk</code></td><td class=n>142</td><td class=n>5.0</td><td class=n>4.0</td><td class=n>3.0</td><td class=n>3.0</td><td class=n>3.0</td><td>YYY</td><td>Ypp</td><td>zzz</td></tr>
+<tr><td>8</td><td><code>WfDvdMonoid.not_isUnit_iff_exists_factors_eq</code></td><td class=n>25</td><td class=n>3.7</td><td class=n>3.0</td><td class=n>3.0</td><td class=n>2.0</td><td class=n>3.0</td><td>.pp</td><td>...</td><td>pzz</td></tr>
+<tr><td>9</td><td><code>CategoryTheory.GrpObj.mulRight_one</code></td><td class=n>35</td><td class=n>3.7</td><td class=n>4.0</td><td class=n>1.0</td><td class=n>2.0</td><td class=n>3.0</td><td>.pp</td><td>..p</td><td>rzr</td></tr>
+<tr><td>10</td><td><code>iteratedDeriv_vcomp_three</code></td><td class=n>190</td><td class=n>5.0</td><td class=n>4.0</td><td class=n>4.3</td><td class=n>2.0</td><td class=n>2.0</td><td>YYY</td><td>YYY</td><td>zzz</td></tr>
+<tr style="color:#999"><td>11 X</td><td><code>Function.support_eq_empty_iff</code></td><td class=n>22</td><td class=n>2.0</td><td class=n>2.0</td><td class=n>1.0</td><td class=n>1.0</td><td class=n>2.0</td><td>...</td><td>...</td><td>rzz</td></tr>
+<tr><td>12</td><td><code>CategoryTheory.MonoidalCategory.MonoidalRightAction.</code></td><td class=n>7</td><td class=n>3.7</td><td class=n>3.3</td><td class=n>5.0</td><td class=n>1.7</td><td class=n>3.0</td><td>..p</td><td>ppp</td><td>ppp</td></tr>
+<tr><td>13</td><td><code>LinearMap.toSpanSingleton_add</code></td><td class=n>27</td><td class=n>3.0</td><td class=n>3.0</td><td class=n>1.0</td><td class=n>3.0</td><td class=n>2.3</td><td>.pp</td><td>pp.</td><td>aza</td></tr>
+<tr style="color:#999"><td>14 X</td><td><code>HasStrictDerivAt.finsetProd</code></td><td class=n>182</td><td class=n>4.0</td><td class=n>4.3</td><td class=n>1.0</td><td class=n>2.0</td><td class=n>2.3</td><td>YYY</td><td>YYY</td><td>rrr</td></tr>
+<tr><td>15</td><td><code>MvPowerSeries.antidiagonal_dominant</code></td><td class=n>106</td><td class=n>4.3</td><td class=n>4.3</td><td class=n>4.0</td><td class=n>3.0</td><td class=n>3.0</td><td>Ypp</td><td>Ypp</td><td>rrr</td></tr>
+<tr><td>16</td><td><code>SimpleGraph.neighborSet_sum_inr</code></td><td class=n>33</td><td class=n>4.0</td><td class=n>4.0</td><td class=n>1.0</td><td class=n>2.0</td><td class=n>3.0</td><td>YYY</td><td>YYY</td><td>rrz</td></tr>
+<tr><td>17</td><td><code>IsCovariantDerivativeOn.congr_of_eventuallyEq</code></td><td class=n>167</td><td class=n>5.0</td><td class=n>2.3</td><td class=n>1.0</td><td class=n>4.0</td><td class=n>3.0</td><td>YYY</td><td>...</td><td>zzz</td></tr>
+<tr><td>18</td><td><code>uniformity_dist_of_mem_uniformity</code></td><td class=n>55</td><td class=n>4.7</td><td class=n>4.0</td><td class=n>3.3</td><td class=n>4.0</td><td class=n>2.0</td><td>YYY</td><td>YYY</td><td>zzz</td></tr>
+<tr><td>19</td><td><code>AddMonoidAlgebra.supDegree_single</code></td><td class=n>69</td><td class=n>4.0</td><td class=n>4.0</td><td class=n>3.7</td><td class=n>2.0</td><td class=n>3.0</td><td>ppp</td><td>ppp</td><td>rrr</td></tr>
+<tr><td>20</td><td><code>Pell.modEq_of_xn_modEq</code></td><td class=n>56</td><td class=n>5.0</td><td class=n>1.0</td><td class=n>3.0</td><td class=n>2.0</td><td class=n>1.0</td><td>YYY</td><td>...</td><td>zzz</td></tr>
+<tr style="color:#999"><td>21 X</td><td><code>Module.Projective.of_split</code></td><td class=n>78</td><td class=n>4.0</td><td class=n>4.0</td><td class=n>1.0</td><td class=n>2.3</td><td class=n>2.3</td><td>YYY</td><td>YYY</td><td>rrr</td></tr>
+<tr><td>22</td><td><code>CochainComplex.HomComplex.Cocycle.toSingleMk_postcom</code></td><td class=n>71</td><td class=n>5.0</td><td class=n>4.0</td><td class=n>3.7</td><td class=n>2.0</td><td class=n>3.0</td><td>YYY</td><td>ppp</td><td>zzz</td></tr>
+<tr><td>23</td><td><code>Finset.le_prod_nonempty_of_submultiplicative_on_pred</code></td><td class=n>59</td><td class=n>4.3</td><td class=n>3.3</td><td class=n>1.0</td><td class=n>2.0</td><td class=n>3.0</td><td>ppY</td><td>...</td><td>zzz</td></tr>
+<tr><td>24</td><td><code>Equiv.Perm.cycleOf_mul_of_apply_right_eq_self</code></td><td class=n>36</td><td class=n>4.7</td><td class=n>4.3</td><td class=n>4.0</td><td class=n>3.0</td><td class=n>3.0</td><td>ppp</td><td>ppp</td><td>rrz</td></tr>
+<tr><td>25</td><td><code>exists_compact_closed_between</code></td><td class=n>87</td><td class=n>4.3</td><td class=n>5.0</td><td class=n>2.3</td><td class=n>3.3</td><td class=n>3.3</td><td>YYp</td><td>YYp</td><td>rrr</td></tr>
+</table></div>
+<h3>Notable rows</h3><ul>
+<li><b>#20 Pell.modEq_of_xn_modEq</b>: flat ranking 1.0 (failed), zoom 5.0 with unanimous exact key-move match — the proof's substance lives inside a once-used helper; opening containers is what explains it.</li>
+<li><b>#17 IsCovariantDerivativeOn.congr...</b>: same pattern (ranked 2.3, zoom 5.0 unanimous).</li>
+<li><b>#12 (depth 7)</b>: the shallow floor in person — the human's source citations win (5.0); structure has little room at depth 7.</li>
+<li><b>Key-move consensus</b>: on nearly every clean proof all three raters independently named the same lemma (e.g. NNRat.cast_def three times, AddSubmonoid.closure_induction three times) — the ground truth is real, not rater noise.</li>
+<li>prov scores of 1.0 include proofs where the sidecar view was empty for that declaration; treat prov's mean as a lower bound.</li></ul>
+</main>
