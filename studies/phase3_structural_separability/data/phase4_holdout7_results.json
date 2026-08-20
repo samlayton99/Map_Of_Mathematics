@@ -1,0 +1,46 @@
+{
+ "V6": {
+  "definitional_verdicts": 477,
+  "no_content": 0.0176,
+  "top1_cause_when_machinery": {
+   "generated": 58,
+   "glue": 32,
+   "instance": 2,
+   "self-helper": 1,
+   "tactic": 20
+  },
+  "top1_deep": 0.9555,
+  "top1_mid": 0.9362,
+  "top1_nonmachinery_proxy": 0.9397,
+  "top1_shallow": 0.9229,
+  "top1_single_use_rate": 0.0,
+  "top2_nonmachinery_proxy": 0.9648
+ },
+ "V7": {
+  "definitional_verdicts": 477,
+  "no_content": 0.0176,
+  "top1_cause_when_machinery": {
+   "generated": 58,
+   "glue": 32,
+   "instance": 2,
+   "self-helper": 1,
+   "tactic": 20
+  },
+  "top1_deep": 0.9555,
+  "top1_mid": 0.9362,
+  "top1_nonmachinery_proxy": 0.9397,
+  "top1_shallow": 0.9229,
+  "top1_single_use_rate": 0.0,
+  "top2_nonmachinery_proxy": 0.9648
+ },
+ "binder_fallback_rows": 57741,
+ "dev_seed": 20260819,
+ "holdout_seed": 20260829,
+ "kind_vs_pr_disagreements": 20113,
+ "matched_denominator": {
+  "V6_top1_matched": 0.9397,
+  "V7_top1_matched": 0.9397,
+  "n_both_live": 1874
+ },
+ "note": "top1_nonmachinery_proxy = agreement with an automated machinery-labeling proxy, NOT semantic precision"
+}

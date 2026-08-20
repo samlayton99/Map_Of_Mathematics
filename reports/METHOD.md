@@ -44,4 +44,11 @@ Constants: the measured 2% line, 3 attribution hops, 8 zoom opens,
 "unresolvable slot counts as kept" (conservative). Nothing else.
 
 Certified: 94.84% top-1 non-machinery proxy, fresh pre-registered sample,
-run once (data/phase4_holdout6_results.json).
+run once (data/phase4_holdout6_results.json); replication on a further
+fresh sample: 93.97% (round 7, data/phase4_holdout7_results.json — which
+also falsified an author-written-priority sort key: it provably cannot
+fire on automation-heavy proofs, where nothing is author-written).
+
+Verdict certification: "holds by definition" outputs are now positively
+checkable by the kernel (`mathrecord defcheck`: are the statement's sides
+definitionally equal?). On the audited sample: 58/80 kernel-certified.
