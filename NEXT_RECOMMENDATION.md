@@ -1,5 +1,7 @@
 # Next Recommendation — Phase 3 results (2026-08-19)
 
+**Update 2026-08-19 (full-library cone study, `studies/phase3_structural_separability/reports/CONES_REPORT.md`):** the recommended user review should include a third view per proof — the proof-introduced set N(T) = A_P \ A_S ranked by depth (name-free, zero training; recovers 77.5% of the P4-route skeleton, vs 70.8% for raw depth). Established alongside: depth ≈ log prerequisite volume (depth/cone-size/tree-size are one coordinate, Spearman ≥ 0.98, so "combine depth and size" is a dead end); relDepth is a construction-vs-assertion axis (defs 7, instances 9, theorems 2); 35% of theorems are pure interface (proof no deeper than statement); reuse-count marks glue, not importance. The rest of this document stands.
+
 **Adopt topology as a calibrated soft infrastructure prior and diagnostic — not a primary map signal — and run the small decisive follow-up: fix the two mechanical blockers, then collect the prepared 12-proof user review.**
 
 Per the pre-registered decision rules (`handoff/phase3/core/02`): **Question A succeeded, Question B failed in its strict form** → "retain topology as an infrastructure diagnostic".

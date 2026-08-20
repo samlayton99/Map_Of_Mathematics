@@ -1,0 +1,858 @@
+{
+ "interface_stats": {
+  "frac_unclassified_thms_relDepth_leq_0": 0.3475,
+  "frac_unclassified_thms_relDepth_leq_2": 0.5063
+ },
+ "move_id_median": {
+  "depth": 0.2,
+  "new_depth": 0.225,
+  "route_depth": 0.708,
+  "route_new_depth": 0.775,
+  "users_asc": 0.225,
+  "users_desc": 0.0
+ },
+ "move_id_per_proof": [
+  {
+   "decl": "Function.Bijective.existsUnique_iff",
+   "depth_p_at_5": 0.2,
+   "depth_route_overlap": 1.0,
+   "n_cands": 16,
+   "n_new": 11,
+   "new_depth_p_at_5": 0.2,
+   "new_depth_route_overlap": 1.0,
+   "users_asc_p_at_5": 0.2,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "Function.Injective.isPartialInv",
+   "depth_p_at_5": 0.4,
+   "depth_route_overlap": 0.4,
+   "n_cands": 30,
+   "n_new": 9,
+   "new_depth_p_at_5": 0.6,
+   "new_depth_route_overlap": 0.6,
+   "users_asc_p_at_5": 0.6,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "Function.LeftInverse.comp",
+   "depth_p_at_5": 0.0,
+   "depth_route_overlap": 0.0,
+   "n_cands": 6,
+   "n_new": 4,
+   "new_depth_p_at_5": 0.0,
+   "new_depth_route_overlap": 0.0,
+   "users_asc_p_at_5": 0.0,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "IsClosed.and",
+   "depth_p_at_5": 0.333,
+   "depth_route_overlap": 1.0,
+   "n_cands": 3,
+   "n_new": 1,
+   "new_depth_p_at_5": 0.333,
+   "new_depth_route_overlap": 1.0,
+   "users_asc_p_at_5": 0.333,
+   "users_desc_p_at_5": 0.333
+  },
+  {
+   "decl": "Lattice.ext",
+   "depth_p_at_5": 0.4,
+   "depth_route_overlap": 0.75,
+   "n_cands": 29,
+   "n_new": 12,
+   "new_depth_p_at_5": 0.4,
+   "new_depth_route_overlap": 0.75,
+   "users_asc_p_at_5": 0.4,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "Nat.eq_one_of_dvd_coprimes",
+   "depth_p_at_5": 0.2,
+   "depth_route_overlap": 0.667,
+   "n_cands": 22,
+   "n_new": 15,
+   "new_depth_p_at_5": 0.4,
+   "new_depth_route_overlap": 1.0,
+   "users_asc_p_at_5": 0.4,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "Nat.pow_sub_one_gcd_pow_sub_one",
+   "depth_p_at_5": 0.0,
+   "depth_route_overlap": 0.0,
+   "n_cands": 3,
+   "n_new": 1,
+   "new_depth_p_at_5": 0.0,
+   "new_depth_route_overlap": 0.0,
+   "users_asc_p_at_5": 0.0,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "Nat.pow_sub_one_mod_pow_sub_one",
+   "depth_p_at_5": 0.2,
+   "depth_route_overlap": 1.0,
+   "n_cands": 157,
+   "n_new": 104,
+   "new_depth_p_at_5": 0.2,
+   "new_depth_route_overlap": 1.0,
+   "users_asc_p_at_5": 1.0,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "Real.abs_log_mul_self_lt",
+   "depth_p_at_5": 1.0,
+   "depth_route_overlap": 0.8,
+   "n_cands": 219,
+   "n_new": 9,
+   "new_depth_p_at_5": 1.0,
+   "new_depth_route_overlap": 0.8,
+   "users_asc_p_at_5": 1.0,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "Real.le_exp_of_log_le",
+   "depth_p_at_5": 0.0,
+   "depth_route_overlap": 0.5,
+   "n_cands": 22,
+   "n_new": 2,
+   "new_depth_p_at_5": 0.0,
+   "new_depth_route_overlap": 0.5,
+   "users_asc_p_at_5": 0.2,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "Real.one_sub_inv_le_log_of_pos",
+   "depth_p_at_5": 0.2,
+   "depth_route_overlap": 0.4,
+   "n_cands": 75,
+   "n_new": 5,
+   "new_depth_p_at_5": 0.2,
+   "new_depth_route_overlap": 0.4,
+   "users_asc_p_at_5": 0.2,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "Real.range_log",
+   "depth_p_at_5": 0.25,
+   "depth_route_overlap": 1.0,
+   "n_cands": 4,
+   "n_new": 1,
+   "new_depth_p_at_5": 0.25,
+   "new_depth_route_overlap": 1.0,
+   "users_asc_p_at_5": 0.25,
+   "users_desc_p_at_5": 0.25
+  },
+  {
+   "decl": "TopologicalSpace.ext_iff",
+   "depth_p_at_5": 0.2,
+   "depth_route_overlap": 1.0,
+   "n_cands": 11,
+   "n_new": 6,
+   "new_depth_p_at_5": 0.2,
+   "new_depth_route_overlap": 1.0,
+   "users_asc_p_at_5": 0.2,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "add_one_zsmul",
+   "depth_p_at_5": 0.0,
+   "depth_route_overlap": 0.6,
+   "n_cands": 61,
+   "n_new": 36,
+   "new_depth_p_at_5": 0.0,
+   "new_depth_route_overlap": 0.8,
+   "users_asc_p_at_5": 0.2,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "isClosed_sInter",
+   "depth_p_at_5": 0.2,
+   "depth_route_overlap": 0.6,
+   "n_cands": 23,
+   "n_new": 17,
+   "new_depth_p_at_5": 0.2,
+   "new_depth_route_overlap": 0.6,
+   "users_asc_p_at_5": 0.2,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "limUnder_of_not_tendsto",
+   "depth_p_at_5": 0.8,
+   "depth_route_overlap": 0.0,
+   "n_cands": 35,
+   "n_new": 3,
+   "new_depth_p_at_5": 1.0,
+   "new_depth_route_overlap": 0.75,
+   "users_asc_p_at_5": 0.6,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "pow_iterate",
+   "depth_p_at_5": 0.0,
+   "depth_route_overlap": 0.0,
+   "n_cands": 12,
+   "n_new": 1,
+   "new_depth_p_at_5": 0.0,
+   "new_depth_route_overlap": 0.0,
+   "users_asc_p_at_5": 0.0,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "sup_eq_and_inf_eq_iff",
+   "depth_p_at_5": 0.6,
+   "depth_route_overlap": 1.0,
+   "n_cands": 39,
+   "n_new": 26,
+   "new_depth_p_at_5": 0.6,
+   "new_depth_route_overlap": 1.0,
+   "users_asc_p_at_5": 0.6,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "sup_left_idem",
+   "depth_p_at_5": 0.4,
+   "depth_route_overlap": 0.75,
+   "n_cands": 15,
+   "n_new": 11,
+   "new_depth_p_at_5": 0.4,
+   "new_depth_route_overlap": 0.75,
+   "users_asc_p_at_5": 0.0,
+   "users_desc_p_at_5": 0.0
+  },
+  {
+   "decl": "zpow_mul",
+   "depth_p_at_5": 1.0,
+   "depth_route_overlap": 1.0,
+   "n_cands": 50,
+   "n_new": 33,
+   "new_depth_p_at_5": 1.0,
+   "new_depth_route_overlap": 1.0,
+   "users_asc_p_at_5": 1.0,
+   "users_desc_p_at_5": 0.0
+  }
+ ],
+ "move_id_reference": {
+  "phase3_M_p4_route_p_at_5": 0.4,
+  "prev_depth_p_at_5": 0.2
+ },
+ "n_roots": 524,
+ "reviewed_cones": [
+  {
+   "A_P": 18,
+   "A_S": 13,
+   "N": 6,
+   "N_deeper_than_stmt": 1,
+   "N_deepest": [
+    "Bool.not_not (d=6)",
+    "Eq.ndrec (d=3)",
+    "Eq.symm (d=3)",
+    "rfl (d=2)",
+    "Eq.rec (d=2)",
+    "Eq.refl (d=1)"
+   ],
+   "N_max_depth": 6,
+   "decl": "Bool.involutive_not",
+   "depth": 7,
+   "share_new": 0.3333,
+   "stmtDepth": 6
+  },
+  {
+   "A_P": 1,
+   "A_S": 23,
+   "N": 0,
+   "decl": "DistribLattice.le_sup_inf",
+   "depth": 1,
+   "share_new": 0.0,
+   "stmtDepth": 3
+  },
+  {
+   "A_P": 30,
+   "A_S": 8,
+   "N": 22,
+   "N_deeper_than_stmt": 11,
+   "N_deepest": [
+    "Eq.mpr (d=4)",
+    "_private.Mathlib.Logic.Function.Basic.0.Function.Bijective.existsUnique_iff.match_1_3 (d=4)",
+    "_private.Mathlib.Logic.Function.Basic.0.Function.Bijective.existsUnique_iff.match_1_5 (d=4)",
+    "congr_arg (d=4)",
+    "_private.Mathlib.Logic.Function.Basic.0.Function.Bijective.existsUnique_iff.match_1_1 (d=4)",
+    "congrArg (d=3)",
+    "And.casesOn (d=3)",
+    "Function.Bijective.injective (d=3)"
+   ],
+   "N_max_depth": 4,
+   "decl": "Function.Bijective.existsUnique_iff",
+   "depth": 5,
+   "share_new": 0.7333,
+   "stmtDepth": 3
+  },
+  {
+   "A_P": 150,
+   "A_S": 110,
+   "N": 41,
+   "N_deeper_than_stmt": 0,
+   "N_deepest": [
+    "noConfusion_of_Nat (d=9)",
+    "_private.Init.Prelude.0.noConfusion_of_Nat.aux (d=8)",
+    "_private.Init.Prelude.0.noConfusion_of_Nat.aux._f (d=7)",
+    "dif_neg (d=6)",
+    "Option.some.noConfusion (d=6)",
+    "dif_pos (d=6)",
+    "Nat.beq (d=6)",
+    "heq_of_eq (d=5)"
+   ],
+   "N_max_depth": 9,
+   "decl": "Function.Injective.isPartialInv",
+   "depth": 13,
+   "share_new": 0.2733,
+   "stmtDepth": 13
+  },
+  {
+   "A_P": 9,
+   "A_S": 3,
+   "N": 7,
+   "N_deeper_than_stmt": 5,
+   "N_deepest": [
+    "Eq.mpr (d=4)",
+    "congrArg (d=3)",
+    "Eq.symm (d=3)",
+    "rfl (d=2)",
+    "Eq.rec (d=2)",
+    "Eq.refl (d=1)",
+    "id (d=0)"
+   ],
+   "N_max_depth": 4,
+   "decl": "Function.LeftInverse.comp",
+   "depth": 5,
+   "share_new": 0.7778,
+   "stmtDepth": 2
+  },
+  {
+   "A_P": 1479,
+   "A_S": 5,
+   "N": 1474,
+   "N_deeper_than_stmt": 1136,
+   "N_deepest": [
+    "IsClosed.inter (d=61)",
+    "IsOpen.union (d=60)",
+    "Set.union_eq_iUnion (d=59)",
+    "Set.instCompleteAtomicBooleanAlgebra (d=58)",
+    "Set.instCompleteAtomicBooleanAlgebra._proof_1 (d=57)",
+    "Set.instCompleteAtomicBooleanAlgebra._proof_9 (d=57)",
+    "Set.instCompleteAtomicBooleanAlgebra._proof_11 (d=57)",
+    "Set.instCompleteAtomicBooleanAlgebra._proof_2 (d=57)"
+   ],
+   "N_max_depth": 61,
+   "decl": "IsClosed.and",
+   "depth": 62,
+   "share_new": 0.9966,
+   "stmtDepth": 2
+  },
+  {
+   "A_P": 174,
+   "A_S": 20,
+   "N": 154,
+   "N_deeper_than_stmt": 44,
+   "N_deepest": [
+    "SemilatticeInf.ext (d=15)",
+    "SemilatticeSup.ext (d=15)",
+    "PartialOrder.ext (d=14)",
+    "Preorder.toLE_injective (d=13)",
+    "_private.Mathlib.Order.Basic.0.Preorder.toLE_injective.match_1_1 (d=12)",
+    "Preorder.casesOn (d=11)",
+    "Preorder.rec (d=10)",
+    "Preorder.mk (d=9)"
+   ],
+   "N_max_depth": 15,
+   "decl": "Lattice.ext",
+   "depth": 16,
+   "share_new": 0.8851,
+   "stmtDepth": 4
+  },
+  {
+   "A_P": 482,
+   "A_S": 239,
+   "N": 243,
+   "N_deeper_than_stmt": 12,
+   "N_deepest": [
+    "Nat.Coprime.stdSymm (d=34)",
+    "Nat.Coprime.symm (d=33)",
+    "Nat.gcd_comm (d=32)",
+    "Nat.gcd_dvd_left (d=31)",
+    "Nat.gcd_dvd_right (d=31)",
+    "Nat.dvd_gcd (d=30)",
+    "Nat.gcd_dvd (d=30)",
+    "Nat.gcd_rec (d=29)"
+   ],
+   "N_max_depth": 34,
+   "decl": "Nat.Coprime.symmetric",
+   "depth": 35,
+   "share_new": 0.5041,
+   "stmtDepth": 26
+  },
+  {
+   "A_P": 614,
+   "A_S": 253,
+   "N": 361,
+   "N_deeper_than_stmt": 12,
+   "N_deepest": [
+    "Nat.coprime_iff_isRelPrime (d=33)",
+    "_private.Mathlib.Data.Nat.GCD.Basic.0.Nat.coprime_iff_isRelPrime._simp_1_4 (d=32)",
+    "Nat.dvd_gcd_iff (d=31)",
+    "Nat.dvd_gcd (d=30)",
+    "Nat.gcd_dvd (d=30)",
+    "Nat.gcd_rec (d=29)",
+    "Nat.gcd_zero_right (d=28)",
+    "Nat.gcd_zero_left (d=27)"
+   ],
+   "N_max_depth": 33,
+   "decl": "Nat.eq_one_of_dvd_coprimes",
+   "depth": 34,
+   "share_new": 0.5879,
+   "stmtDepth": 26
+  },
+  {
+   "A_P": 1708,
+   "A_S": 359,
+   "N": 1349,
+   "N_deeper_than_stmt": 244,
+   "N_deepest": [
+    "Nat.pow_sub_one_gcd_pow_sub_one._unary (d=49)",
+    "Nat.pow_sub_one_mod_pow_sub_one (d=48)",
+    "Nat.sub_lt_sub_iff_right (d=47)",
+    "_private.Init.Data.Nat.Lemmas.0.Nat.sub_lt_sub_iff_right._proof_1_1 (d=46)",
+    "Lean.Omega.LinearCombo.coordinate_eval_4 (d=45)",
+    "Lean.Omega.LinearCombo.coordinate_eval_2 (d=45)",
+    "Lean.Omega.LinearCombo.coordinate_eval_0 (d=45)",
+    "Lean.Omega.LinearCombo.coordinate_eval_6 (d=45)"
+   ],
+   "N_max_depth": 49,
+   "decl": "Nat.pow_sub_one_gcd_pow_sub_one",
+   "depth": 50,
+   "share_new": 0.7898,
+   "stmtDepth": 25
+  },
+  {
+   "A_P": 1706,
+   "A_S": 301,
+   "N": 1405,
+   "N_deeper_than_stmt": 313,
+   "N_deepest": [
+    "Nat.sub_lt_sub_iff_right (d=47)",
+    "_private.Init.Data.Nat.Lemmas.0.Nat.sub_lt_sub_iff_right._proof_1_1 (d=46)",
+    "Lean.Omega.LinearCombo.coordinate_eval_2 (d=45)",
+    "Lean.Omega.LinearCombo.coordinate_eval_0 (d=45)",
+    "Lean.Omega.LinearCombo.coordinate_eval_1 (d=45)",
+    "Lean.Omega.LinearCombo.coordinate_eval_4 (d=45)",
+    "Lean.Omega.LinearCombo.coordinate_eval_6 (d=45)",
+    "Lean.Omega.tidy_sat (d=45)"
+   ],
+   "N_max_depth": 47,
+   "decl": "Nat.pow_sub_one_mod_pow_sub_one",
+   "depth": 48,
+   "share_new": 0.8236,
+   "stmtDepth": 21
+  },
+  {
+   "A_P": 15754,
+   "A_S": 15725,
+   "N": 29,
+   "N_deeper_than_stmt": 10,
+   "N_deepest": [
+    "Real.log_nonneg (d=168)",
+    "Real.log_nonneg_iff (d=167)",
+    "Real.log_neg_iff (d=166)",
+    "Real.log_one (d=165)",
+    "Real.log_lt_log_iff (d=165)",
+    "Real.log_le_sub_one_of_pos (d=165)",
+    "Real.log_inv (d=164)",
+    "Real.log_div (d=164)"
+   ],
+   "N_max_depth": 168,
+   "decl": "Real.abs_log_mul_self_lt",
+   "depth": 169,
+   "share_new": 0.0018,
+   "stmtDepth": 163
+  },
+  {
+   "A_P": 15733,
+   "A_S": 15725,
+   "N": 8,
+   "N_deeper_than_stmt": 3,
+   "N_deepest": [
+    "Real.log_le_iff_le_exp (d=165)",
+    "Real.exp_log (d=164)",
+    "Real.exp_log_eq_abs (d=163)",
+    "Real.log_of_ne_zero (d=162)",
+    "Real.coe_expOrderIso_apply (d=162)",
+    "Real.exp_le_exp (d=149)",
+    "Real.exp_nonneg (d=148)",
+    "Subtype.coe_mk (d=3)"
+   ],
+   "N_max_depth": 165,
+   "decl": "Real.le_exp_of_log_le",
+   "depth": 166,
+   "share_new": 0.0005,
+   "stmtDepth": 163
+  },
+  {
+   "A_P": 15742,
+   "A_S": 15725,
+   "N": 17,
+   "N_deeper_than_stmt": 4,
+   "N_deepest": [
+    "Real.log_le_sub_one_of_pos (d=165)",
+    "Real.log_inv (d=164)",
+    "Real.exp_log (d=164)",
+    "Real.exp_log_eq_abs (d=163)",
+    "Real.log_zero (d=162)",
+    "Real.coe_expOrderIso_apply (d=162)",
+    "Real.log_of_ne_zero (d=162)",
+    "Real.exp_eq_exp (d=150)"
+   ],
+   "N_max_depth": 165,
+   "decl": "Real.one_sub_inv_le_log_of_pos",
+   "depth": 166,
+   "share_new": 0.0011,
+   "stmtDepth": 163
+  },
+  {
+   "A_P": 15733,
+   "A_S": 15725,
+   "N": 8,
+   "N_deeper_than_stmt": 4,
+   "N_deepest": [
+    "Real.log_surjective (d=166)",
+    "Real.log_exp (d=165)",
+    "Real.exp_log (d=164)",
+    "Real.exp_log_eq_abs (d=163)",
+    "Real.log_of_ne_zero (d=162)",
+    "Real.coe_expOrderIso_apply (d=162)",
+    "Real.exp_injective (d=149)",
+    "Subtype.coe_mk (d=3)"
+   ],
+   "N_max_depth": 166,
+   "decl": "Real.range_log",
+   "depth": 167,
+   "share_new": 0.0005,
+   "stmtDepth": 163
+  },
+  {
+   "A_P": 55,
+   "A_S": 6,
+   "N": 49,
+   "N_deeper_than_stmt": 18,
+   "N_deepest": [
+    "TopologicalSpace.ext (d=10)",
+    "_private.Mathlib.Topology.Basic.0.TopologicalSpace.ext.match_1_1 (d=9)",
+    "TopologicalSpace.casesOn (d=8)",
+    "TopologicalSpace.rec (d=7)",
+    "TopologicalSpace.mk (d=6)",
+    "Set.sUnion (d=5)",
+    "Set.instInter (d=5)",
+    "Set.inter (d=4)"
+   ],
+   "N_max_depth": 10,
+   "decl": "TopologicalSpace.ext_iff",
+   "depth": 11,
+   "share_new": 0.8909,
+   "stmtDepth": 3
+  },
+  {
+   "A_P": 453,
+   "A_S": 88,
+   "N": 365,
+   "N_deeper_than_stmt": 58,
+   "N_deepest": [
+    "Int.neg_add (d=27)",
+    "Int.add_left_cancel (d=26)",
+    "_private.Init.Data.Int.Lemmas.0.Int.add_left_cancel._simp_1_1 (d=25)",
+    "Int.neg_add_cancel_right (d=25)",
+    "Int.add_assoc (d=24)",
+    "_private.Init.Data.Int.Lemmas.0.Int.add_assoc.aux2 (d=23)",
+    "_private.Init.Data.Int.Lemmas.0.Int.add_assoc.aux1 (d=22)",
+    "Int.add_right_neg (d=22)"
+   ],
+   "N_max_depth": 27,
+   "decl": "add_one_zsmul",
+   "depth": 28,
+   "share_new": 0.8057,
+   "stmtDepth": 12
+  },
+  {
+   "A_P": 77,
+   "A_S": 31,
+   "N": 46,
+   "N_deeper_than_stmt": 2,
+   "N_deepest": [
+    "additive_of_total (d=7)",
+    "additive_of_symm_of_total (d=6)",
+    "And.symm (d=5)",
+    "and_imp (d=5)",
+    "forall_congr (d=5)",
+    "Eq.mpr (d=4)",
+    "_private.Init.SimpLemmas.0.and_imp.match_1_1 (d=4)",
+    "funext (d=4)"
+   ],
+   "N_max_depth": 7,
+   "decl": "additive_of_isTotal",
+   "depth": 8,
+   "share_new": 0.5974,
+   "stmtDepth": 6
+  },
+  {
+   "A_P": 1458,
+   "A_S": 15,
+   "N": 1443,
+   "N_deeper_than_stmt": 575,
+   "N_deepest": [
+    "Set.compl_sInter (d=62)",
+    "Set.sUnion_eq_compl_sInter_compl (d=61)",
+    "Set.compl_sUnion (d=60)",
+    "Set.sUnion_image (d=59)",
+    "Set.sInter_image (d=59)",
+    "Set.instCompleteAtomicBooleanAlgebra (d=58)",
+    "Set.instCompleteAtomicBooleanAlgebra._proof_5 (d=57)",
+    "Set.instCompleteAtomicBooleanAlgebra._proof_2 (d=57)"
+   ],
+   "N_max_depth": 62,
+   "decl": "isClosed_sInter",
+   "depth": 63,
+   "share_new": 0.9897,
+   "stmtDepth": 6
+  },
+  {
+   "A_P": 250,
+   "A_S": 246,
+   "N": 4,
+   "N_deeper_than_stmt": 0,
+   "N_deepest": [
+    "dif_neg (d=6)",
+    "_private.Init.Core.0.dif_neg.match_1_1 (d=5)",
+    "eq_self (d=4)",
+    "congrFun' (d=3)"
+   ],
+   "N_max_depth": 6,
+   "decl": "limUnder_of_not_tendsto",
+   "depth": 21,
+   "share_new": 0.016,
+   "stmtDepth": 21
+  },
+  {
+   "A_P": 154,
+   "A_S": 49,
+   "N": 105,
+   "N_deeper_than_stmt": 10,
+   "N_deepest": [
+    "pow_iterate._f (d=17)",
+    "Nat.pow_succ' (d=16)",
+    "Nat.mul_comm (d=15)",
+    "Nat.mul_comm._f (d=14)",
+    "pow_mul (d=13)",
+    "Nat.succ_mul (d=13)",
+    "Nat.zero_mul (d=12)",
+    "Nat.pow_succ (d=12)"
+   ],
+   "N_max_depth": 17,
+   "decl": "pow_iterate",
+   "depth": 18,
+   "share_new": 0.6818,
+   "stmtDepth": 12
+  },
+  {
+   "A_P": 129,
+   "A_S": 30,
+   "N": 99,
+   "N_deeper_than_stmt": 37,
+   "N_deepest": [
+    "inf_eq_sup (d=10)",
+    "sup_le_inf (d=9)",
+    "sup_idem (d=9)",
+    "inf_idem (d=9)",
+    "inf_of_le_left (d=8)",
+    "sup_of_le_left (d=8)",
+    "_private.Mathlib.Order.Lattice.0.sup_le_inf._simp_1_2 (d=8)",
+    "_private.Mathlib.Order.Lattice.0.sup_le_inf._simp_1_1 (d=7)"
+   ],
+   "N_max_depth": 10,
+   "decl": "sup_eq_and_inf_eq_iff",
+   "depth": 11,
+   "share_new": 0.7674,
+   "stmtDepth": 4
+  },
+  {
+   "A_P": 75,
+   "A_S": 7,
+   "N": 68,
+   "N_deeper_than_stmt": 27,
+   "N_deepest": [
+    "sup_of_le_right (d=8)",
+    "sup_eq_right (d=7)",
+    "sup_le_iff._simp_3 (d=6)",
+    "le_antisymm_iff (d=6)",
+    "Std.le_refl._simp_1 (d=6)",
+    "sup_le_iff (d=5)",
+    "Std.le_refl (d=5)",
+    "le_of_eq (d=5)"
+   ],
+   "N_max_depth": 8,
+   "decl": "sup_left_idem",
+   "depth": 9,
+   "share_new": 0.9067,
+   "stmtDepth": 3
+  },
+  {
+   "A_P": 219,
+   "A_S": 59,
+   "N": 160,
+   "N_deeper_than_stmt": 7,
+   "N_deepest": [
+    "inv_pow (d=13)",
+    "pow_mul (d=13)",
+    "Int.negSucc_mul_ofNat (d=12)",
+    "Int.ofNat_mul_negSucc (d=12)",
+    "Int.negSucc_mul_negSucc (d=12)",
+    "pow_mul._f (d=12)",
+    "inv_pow._f (d=12)",
+    "pow_add (d=11)"
+   ],
+   "N_max_depth": 13,
+   "decl": "zpow_mul",
+   "depth": 14,
+   "share_new": 0.7306,
+   "stmtDepth": 12
+  }
+ ],
+ "role_signatures": {
+  "coercion": {
+   "auc_depth": 0.009,
+   "auc_directDeps": 0.042,
+   "auc_logTreeSize": 0.007,
+   "auc_log_directUsers": 0.543,
+   "auc_relDepth": 0.316,
+   "auc_stmtDepth": 0.016,
+   "median_depth": 3.0,
+   "median_directDeps": 2.0,
+   "median_logTreeSize": 0.81,
+   "median_log_directUsers": 0.69,
+   "median_relDepth": 0.0,
+   "median_stmtDepth": 2.0,
+   "n": 110
+  },
+  "generated": {
+   "auc_depth": 0.207,
+   "auc_directDeps": 0.234,
+   "auc_logTreeSize": 0.201,
+   "auc_log_directUsers": 0.437,
+   "auc_relDepth": 0.348,
+   "auc_stmtDepth": 0.228,
+   "median_depth": 11.0,
+   "median_directDeps": 9.0,
+   "median_logTreeSize": 2.92,
+   "median_log_directUsers": 0.69,
+   "median_relDepth": 0.0,
+   "median_stmtDepth": 7.0,
+   "n": 95465
+  },
+  "internal-detail": {
+   "auc_depth": 0.335,
+   "auc_directDeps": 0.359,
+   "auc_logTreeSize": 0.328,
+   "auc_log_directUsers": 0.478,
+   "auc_relDepth": 0.464,
+   "auc_stmtDepth": 0.308,
+   "median_depth": 28.0,
+   "median_directDeps": 13.0,
+   "median_logTreeSize": 5.72,
+   "median_log_directUsers": 0.69,
+   "median_relDepth": 1.0,
+   "median_stmtDepth": 15.0,
+   "n": 297988
+  },
+  "recursor": {
+   "auc_depth": 0.16,
+   "auc_directDeps": 0.217,
+   "auc_logTreeSize": 0.16,
+   "auc_log_directUsers": 0.773,
+   "auc_relDepth": 0.199,
+   "auc_stmtDepth": 0.206,
+   "median_depth": 5.0,
+   "median_directDeps": 8.0,
+   "median_logTreeSize": 1.89,
+   "median_log_directUsers": 1.39,
+   "median_relDepth": 0.0,
+   "median_stmtDepth": 5.0,
+   "n": 6913
+  },
+  "structure-projection": {
+   "auc_depth": 0.038,
+   "auc_directDeps": 0.038,
+   "auc_logTreeSize": 0.038,
+   "auc_log_directUsers": 0.785,
+   "auc_relDepth": 0.117,
+   "auc_stmtDepth": 0.148,
+   "median_depth": 1.0,
+   "median_directDeps": 1.0,
+   "median_logTreeSize": 0.3,
+   "median_log_directUsers": 1.61,
+   "median_relDepth": 0.0,
+   "median_stmtDepth": 3.0,
+   "n": 15056
+  },
+  "typeclass-instance": {
+   "auc_depth": 0.393,
+   "auc_directDeps": 0.313,
+   "auc_logTreeSize": 0.387,
+   "auc_log_directUsers": 0.619,
+   "auc_relDepth": 0.635,
+   "auc_stmtDepth": 0.267,
+   "median_depth": 35.0,
+   "median_directDeps": 12.0,
+   "median_logTreeSize": 7.49,
+   "median_log_directUsers": 1.1,
+   "median_relDepth": 9.0,
+   "median_stmtDepth": 11.0,
+   "n": 42904
+  },
+  "unclassified_defs": {
+   "median_depth": 32.0,
+   "median_directDeps": 12.0,
+   "median_logTreeSize": 6.83,
+   "median_log_directUsers": 1.39,
+   "median_relDepth": 7.0,
+   "median_stmtDepth": 8.0,
+   "n": 72280
+  },
+  "unclassified_theorems": {
+   "median_depth": 64.0,
+   "median_directDeps": 23.0,
+   "median_logTreeSize": 11.43,
+   "median_log_directUsers": 0.69,
+   "median_relDepth": 2.0,
+   "median_stmtDepth": 45.0,
+   "n": 287483
+  }
+ },
+ "sample_cone_stats": {
+  "A_P_percentiles": {
+   "10": 117.70000000000002,
+   "50": 2023.0,
+   "90": 16422.3
+  },
+  "frac_with_empty_N": 0.19,
+  "share_new_percentiles": {
+   "10": 0.0,
+   "50": 0.1197,
+   "90": 0.8711
+  }
+ },
+ "seed": 20260819,
+ "what_depth_measures": {
+  "sharing_factor_median": 8.23,
+  "spearman_coneSize_vs_logTreeSize": 0.98,
+  "spearman_depth_vs_logTreeSize": 0.992,
+  "spearman_depth_vs_log_coneSize": 0.98
+ }
+}
