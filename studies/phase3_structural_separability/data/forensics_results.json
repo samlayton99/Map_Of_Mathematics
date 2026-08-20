@@ -1,0 +1,3559 @@
+{
+ "broken_rate_top2_noncontent": {
+  "depth_only": 0.0824,
+  "new_depth": 0.0833,
+  "new_depth_expand": 0.0657
+ },
+ "by_depth_tercile": {
+  "deep": {
+   "depth_range": [
+    81,
+    323
+   ],
+   "n": 781,
+   "top1_content": 0.871,
+   "top2_content": 0.941
+  },
+  "mid": {
+   "depth_range": [
+    34,
+    80
+   ],
+   "n": 783,
+   "top1_content": 0.845,
+   "top2_content": 0.909
+  },
+  "shallow": {
+   "depth_range": [
+    2,
+    33
+   ],
+   "n": 791,
+   "top1_content": 0.661,
+   "top2_content": 0.8
+  }
+ },
+ "by_domain": {
+  "AlgebraicGeometry": {
+   "n": 29,
+   "top1_content": 0.724,
+   "top2_content": 0.828
+  },
+  "CategoryTheory": {
+   "n": 232,
+   "top1_content": 0.78,
+   "top2_content": 0.862
+  },
+  "Filter": {
+   "n": 23,
+   "top1_content": 0.87,
+   "top2_content": 0.913
+  },
+  "Finset": {
+   "n": 36,
+   "top1_content": 0.778,
+   "top2_content": 0.917
+  },
+  "Int": {
+   "n": 25,
+   "top1_content": 0.8,
+   "top2_content": 0.84
+  },
+  "Lean": {
+   "n": 30,
+   "top1_content": 0.067,
+   "top2_content": 0.133
+  },
+  "LinearMap": {
+   "n": 23,
+   "top1_content": 0.696,
+   "top2_content": 0.87
+  },
+  "List": {
+   "n": 56,
+   "top1_content": 0.714,
+   "top2_content": 0.839
+  },
+  "MeasureTheory": {
+   "n": 70,
+   "top1_content": 0.886,
+   "top2_content": 0.929
+  },
+  "Nat": {
+   "n": 43,
+   "top1_content": 0.744,
+   "top2_content": 0.814
+  },
+  "Polynomial": {
+   "n": 39,
+   "top1_content": 0.872,
+   "top2_content": 0.974
+  },
+  "Set": {
+   "n": 55,
+   "top1_content": 0.818,
+   "top2_content": 0.945
+  },
+  "SimpleGraph": {
+   "n": 25,
+   "top1_content": 0.76,
+   "top2_content": 0.88
+  },
+  "Std": {
+   "n": 183,
+   "top1_content": 0.896,
+   "top2_content": 0.945
+  }
+ },
+ "exemplar_counts": {
+  "generated": 68,
+  "glue": 44,
+  "instance": 92,
+  "other": 5,
+  "self-helper": 56,
+  "tactic": 10
+ },
+ "exemplars": [
+  {
+   "decl": "Finset.map_inl_subset_iff_subset_toLeft",
+   "depth": 59,
+   "depth_only_fcr": 5,
+   "domain": "Finset",
+   "n_cands": 26,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 4,
+   "top8": [
+    {
+     "cat": "self-helper",
+     "d": 58,
+     "name": "_private.Mathlib.Data.Finset.Sum.0.Finset.map_inl_subset_iff_subset_toLeft._simp_1_2",
+     "new": true
+    },
+    {
+     "cat": "generated",
+     "d": 55,
+     "name": "Finset.empty_subset._simp_1",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 37,
+     "name": "_private.Mathlib.Data.Finset.Sum.0.Finset.map_inl_subset_iff_subset_toLeft._simp_1_1",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 35,
+     "name": "Finset.disjSum",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 26,
+     "name": "Finset.toRight",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 25,
+     "name": "Finset.instEmptyCollection",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "EmptyCollection.emptyCollection",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 54,
+     "name": "Finset.instPartialOrder",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "PowerSeries.order_eq",
+   "depth": 72,
+   "depth_only_fcr": 3,
+   "domain": "PowerSeries",
+   "n_cands": 80,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 17,
+   "top8": [
+    {
+     "cat": "self-helper",
+     "d": 71,
+     "name": "PowerSeries.order_eq_top._simp_1",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 70,
+     "name": "_private.Mathlib.RingTheory.PowerSeries.Order.0.PowerSeries.order_eq._simp_1_1",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 28,
+     "name": "instLinearOrderedAddCommMonoidWithTopENat",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 28,
+     "name": "instIsOrderedRingENat",
+     "new": true
+    },
+    {
+     "cat": "generated",
+     "d": 28,
+     "name": "Nat.cast_lt._simp_1",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 27,
+     "name": "instCommSemiringENat",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 24,
+     "name": "instLinearOrderENat",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 23,
+     "name": "instPreorderENat",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "SimpleGraph.edgeSet_subset_compl_diagSet",
+   "depth": 60,
+   "depth_only_fcr": 1,
+   "domain": "SimpleGraph",
+   "n_cands": 30,
+   "new_depth_expand_fcr": 2,
+   "new_depth_fcr": 4,
+   "top8": [
+    {
+     "cat": "self-helper",
+     "d": 58,
+     "name": "_private.Mathlib.Combinatorics.SimpleGraph.Basic.0.SimpleGraph.edgeSet_subset_compl_diagSet._simp_1_1",
+     "new": true
+    },
+    {
+     "cat": "generated",
+     "d": 58,
+     "name": "Sym2.disjoint_diagSet_fromRel._simp_1",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "SimpleGraph.loopless",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 59,
+     "name": "SimpleGraph.edgeSet",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 56,
+     "name": "Set.instBooleanAlgebra",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 53,
+     "name": "BooleanAlgebra.toBiheytingAlgebra",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 15,
+     "name": "Sym2.diagSet",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 14,
+     "name": "Sym2.fromRel",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "isCoveringMap_iff_isCoveringMapOn_univ",
+   "depth": 67,
+   "depth_only_fcr": 1,
+   "domain": "isCoveringMap_iff_isCoveringMapOn_univ",
+   "n_cands": 23,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 3,
+   "top8": [
+    {
+     "cat": "self-helper",
+     "d": 9,
+     "name": "_private.Mathlib.Topology.Covering.Basic.0.isCoveringMap_iff_isCoveringMapOn_univ._simp_1_4",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 4,
+     "name": "_private.Mathlib.Topology.Covering.Basic.0.isCoveringMap_iff_isCoveringMapOn_univ._simp_1_3",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 66,
+     "name": "IsCoveringMapOn",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 65,
+     "name": "IsEvenlyCovered",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 64,
+     "name": "instTopologicalSpaceSubtype",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 5,
+     "name": "forall_congr",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 4,
+     "name": "Set.Elem",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 4,
+     "name": "iff_self",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Stream'.Seq.length_le_iff'",
+   "depth": 23,
+   "depth_only_fcr": 3,
+   "domain": "Stream'",
+   "n_cands": 35,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 3,
+   "top8": [
+    {
+     "cat": "self-helper",
+     "d": 22,
+     "name": "_private.Mathlib.Data.Seq.Basic.0.Stream'.Seq.length_le_iff'._simp_1_2",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 20,
+     "name": "Nat.instPreorder",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 10,
+     "name": "Stream'.Seq.le_stable",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 6,
+     "name": "_private.Mathlib.Data.Seq.Basic.0.Stream'.Seq.length_le_iff'._simp_1_3",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 5,
+     "name": "exists_prop_congr",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 4,
+     "name": "Iff.of_eq",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 3,
+     "name": "le_rfl",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 18,
+     "name": "Stream'.Seq.length",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "mapClusterPt_iff_ultrafilter",
+   "depth": 77,
+   "depth_only_fcr": 5,
+   "domain": "mapClusterPt_iff_ultrafilter",
+   "n_cands": 42,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 5,
+   "top8": [
+    {
+     "cat": "self-helper",
+     "d": 76,
+     "name": "_private.Mathlib.Topology.Ultrafilter.0.mapClusterPt_iff_ultrafilter._simp_1_5",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 66,
+     "name": "_private.Mathlib.Topology.Ultrafilter.0.mapClusterPt_iff_ultrafilter._simp_1_2",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 66,
+     "name": "_private.Mathlib.Topology.Ultrafilter.0.mapClusterPt_iff_ultrafilter._simp_1_1",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 62,
+     "name": "_private.Mathlib.Topology.Ultrafilter.0.mapClusterPt_iff_ultrafilter._simp_1_3",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 58,
+     "name": "Filter.comap",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 50,
+     "name": "Filter.instCompleteLatticeFilter",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 9,
+     "name": "CompleteLattice.toConditionallyCompleteLattice",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 6,
+     "name": "inf_comm",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "AlgebraicGeometry.StructureSheaf.const_eq_const_of_smul_eq_smul",
+   "depth": 82,
+   "depth_only_fcr": 1,
+   "domain": "AlgebraicGeometry",
+   "n_cands": 66,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 4,
+   "top8": [
+    {
+     "cat": "self-helper",
+     "d": 22,
+     "name": "_private.Mathlib.AlgebraicGeometry.StructureSheaf.0.AlgebraicGeometry.StructureSheaf.const_eq_const_of_smul_eq_smul._simp_1_1",
+     "new": true
+    },
+    {
+     "cat": "generated",
+     "d": 7,
+     "name": "exists_const._simp_1",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 4,
+     "name": "One.instNonempty",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 81,
+     "name": "AlgebraicGeometry.StructureSheaf.const",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 80,
+     "name": "AlgebraicGeometry.StructureSheaf.isLocallyFraction",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 76,
+     "name": "AlgebraicGeometry.StructureSheaf.Localizations",
+     "new": false
+    },
+    {
+     "cat": "generated",
+     "d": 75,
+     "name": "AlgebraicGeometry.StructureSheaf.Localizations._proof_1",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 74,
+     "name": "PrimeSpectrum.basicOpen",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "List.Perm.eq_of_pairwise",
+   "depth": 20,
+   "depth_only_fcr": null,
+   "domain": "List",
+   "n_cands": 8,
+   "new_depth_expand_fcr": 4,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "self-helper",
+     "d": 19,
+     "name": "List.Perm.eq_of_pairwise._f",
+     "new": true
+    },
+    {
+     "cat": "generated",
+     "d": 5,
+     "name": "List.brecOn",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "List.instMembership",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "Membership.mem",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "List.Perm",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "List.Pairwise",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Eq",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "List",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Order.IsSuccPrelimit.withTopCoe",
+   "depth": 20,
+   "depth_only_fcr": 6,
+   "domain": "Order",
+   "n_cands": 27,
+   "new_depth_expand_fcr": 3,
+   "new_depth_fcr": 4,
+   "top8": [
+    {
+     "cat": "generated",
+     "d": 19,
+     "name": "WithTop.coe_covBy_coe._simp_2",
+     "new": true
+    },
+    {
+     "cat": "generated",
+     "d": 8,
+     "name": "not_top_covBy._simp_2",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 6,
+     "name": "_private.Mathlib.Order.SuccPred.Limit.0.Order.IsSuccPrelimit.withTopCoe._simp_1_1",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 3,
+     "name": "true_and",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 16,
+     "name": "WithTop.instPreorder",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 13,
+     "name": "WithTop.instOrderTop",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 5,
+     "name": "forall_congr",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 4,
+     "name": "Eq.mpr",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Lean.Doc.Inline.math.inj",
+   "depth": 14,
+   "depth_only_fcr": null,
+   "domain": "Lean",
+   "n_cands": 8,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "generated",
+     "d": 13,
+     "name": "Lean.Doc.Inline.math.noConfusion",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "And.intro",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 1,
+     "name": "Lean.Doc.Inline.math",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 0,
+     "name": "Lean.Doc.MathMode",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "And",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 0,
+     "name": "Lean.Doc.Inline",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "String",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Eq",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Mathlib.Tactic.Polynomial.PolynomialExt.mk.inj",
+   "depth": 15,
+   "depth_only_fcr": null,
+   "domain": "Mathlib",
+   "n_cands": 6,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "generated",
+     "d": 14,
+     "name": "Mathlib.Tactic.Polynomial.PolynomialExt.mk.noConfusion",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 9,
+     "name": "Mathlib.Tactic.Polynomial.PolynomialExt.mk",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 8,
+     "name": "Lean.Meta.MetaM",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 0,
+     "name": "Lean.Expr",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 0,
+     "name": "Mathlib.Tactic.Polynomial.PolynomialExt",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Eq",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "EReal.forall",
+   "depth": 6,
+   "depth_only_fcr": 4,
+   "domain": "EReal",
+   "n_cands": 13,
+   "new_depth_expand_fcr": 8,
+   "new_depth_fcr": 8,
+   "top8": [
+    {
+     "cat": "generated",
+     "d": 5,
+     "name": "EReal.rec",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "And.right",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "And.left",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "And.intro",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "Iff.intro",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 4,
+     "name": "instTopEReal",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "instBotEReal",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 3,
+     "name": "Real.toEReal",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Lean.Server.FileWorker.EditableDocumentCore.mk.inj",
+   "depth": 8,
+   "depth_only_fcr": null,
+   "domain": "Lean",
+   "n_cands": 13,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "generated",
+     "d": 7,
+     "name": "Lean.Server.FileWorker.EditableDocumentCore.mk.noConfusion",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "And.intro",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 2,
+     "name": "Lean.Server.FileWorker.EditableDocumentCore.mk",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 1,
+     "name": "Lean.Language.Lean.InitialSnapshot",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 0,
+     "name": "Lean.AsyncList",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 0,
+     "name": "Lean.Server.Snapshots.Snapshot",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "And",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 0,
+     "name": "Lean.Server.FileWorker.DiagnosticsState",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "slope_comm",
+   "depth": 47,
+   "depth_only_fcr": 2,
+   "domain": "slope_comm",
+   "n_cands": 73,
+   "new_depth_expand_fcr": 3,
+   "new_depth_fcr": 3,
+   "top8": [
+    {
+     "cat": "generated",
+     "d": 46,
+     "name": "slope.eq_1",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 15,
+     "name": "NonUnitalNonAssocRing.toHasDistribNeg",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 13,
+     "name": "neg_smul",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 13,
+     "name": "neg_inv",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 12,
+     "name": "AddCommGroup.toDivisionAddCommMonoid",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 12,
+     "name": "smul_neg",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 12,
+     "name": "neg_vsub_eq_vsub_rev",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 11,
+     "name": "AddGroup.toSubtractionMonoid",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "CategoryTheory.ComposableArrows.Precomp.map_id",
+   "depth": 55,
+   "depth_only_fcr": 1,
+   "domain": "CategoryTheory",
+   "n_cands": 39,
+   "new_depth_expand_fcr": 8,
+   "new_depth_fcr": 4,
+   "top8": [
+    {
+     "cat": "generated",
+     "d": 47,
+     "name": "CategoryTheory.ComposableArrows.Precomp.map_succ_succ._proof_4",
+     "new": true
+    },
+    {
+     "cat": "generated",
+     "d": 47,
+     "name": "CategoryTheory.ComposableArrows.Precomp.map_succ_succ._proof_2",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "CategoryTheory.Functor.map_id",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 54,
+     "name": "CategoryTheory.ComposableArrows.Precomp.map",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 53,
+     "name": "CategoryTheory.ComposableArrows.Precomp.obj",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 53,
+     "name": "CategoryTheory.ComposableArrows.left",
+     "new": false
+    },
+    {
+     "cat": "generated",
+     "d": 51,
+     "name": "CategoryTheory.ComposableArrows.map'._proof_6",
+     "new": false
+    },
+    {
+     "cat": "generated",
+     "d": 51,
+     "name": "CategoryTheory.ComposableArrows.obj'._proof_2",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Function.self_mem_periodicOrbit",
+   "depth": 70,
+   "depth_only_fcr": 4,
+   "domain": "Function",
+   "n_cands": 16,
+   "new_depth_expand_fcr": 4,
+   "new_depth_fcr": 4,
+   "top8": [
+    {
+     "cat": "generated",
+     "d": 69,
+     "name": "Function.exists_iterate_apply_eq_of_mem_periodicPts._simp_1",
+     "new": true
+    },
+    {
+     "cat": "generated",
+     "d": 66,
+     "name": "Function.mem_periodicOrbit_iff._simp_1",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 62,
+     "name": "Cycle.instMembership",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 61,
+     "name": "Function.periodicOrbit",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 60,
+     "name": "Cycle",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 8,
+     "name": "Function.periodicPts",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 6,
+     "name": "Nat.iterate",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 4,
+     "name": "of_eq_true",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "LieSubmodule.mem_carrier",
+   "depth": 8,
+   "depth_only_fcr": 19,
+   "domain": "LieSubmodule",
+   "n_cands": 21,
+   "new_depth_expand_fcr": 19,
+   "new_depth_fcr": 19,
+   "top8": [
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "Iff.rfl",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 7,
+     "name": "LieSubmodule.toSubmodule",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 6,
+     "name": "LieSubmodule",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 5,
+     "name": "AddCommGroup.toAddCommMonoid",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 5,
+     "name": "CommRing.toCommSemiring",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 5,
+     "name": "AddMonoid.toAddZeroClass",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "Submodule.toAddSubmonoid",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "Set.instMembership",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Std.Do.Spec.UnfoldLift.set",
+   "depth": 6,
+   "depth_only_fcr": null,
+   "domain": "Std",
+   "n_cands": 6,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "rfl",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 5,
+     "name": "instMonadStateOfOfMonadLift",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "MonadStateOf.set",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "MonadStateOf",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "MonadLift",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "PUnit",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Part.mul_def",
+   "depth": 12,
+   "depth_only_fcr": null,
+   "domain": "Part",
+   "n_cands": 6,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "rfl",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 11,
+     "name": "Part.instMul",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "instHMul",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "HMul.hMul",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Part",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Mul",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "AddUnits.add_neg_cancel_right",
+   "depth": 8,
+   "depth_only_fcr": 7,
+   "domain": "AddUnits",
+   "n_cands": 23,
+   "new_depth_expand_fcr": 3,
+   "new_depth_fcr": 3,
+   "top8": [
+    {
+     "cat": "glue",
+     "d": 4,
+     "name": "Eq.mpr",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "congrArg",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 3,
+     "name": "AddUnits.add_neg",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 2,
+     "name": "add_assoc",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 2,
+     "name": "add_zero",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "Eq.refl",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 0,
+     "name": "id",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 7,
+     "name": "AddUnits.instNeg",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "SkewMonoidAlgebra.coeff_ofCoeff",
+   "depth": 6,
+   "depth_only_fcr": null,
+   "domain": "SkewMonoidAlgebra",
+   "n_cands": 8,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "rfl",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 5,
+     "name": "AddMonoid.toAddZeroClass",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 2,
+     "name": "SkewMonoidAlgebra.ofCoeff",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "SkewMonoidAlgebra.coeff",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 1,
+     "name": "AddZero.toZero",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "Finsupp",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 1,
+     "name": "AddZeroClass.toAddZero",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "AddMonoid",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "UInt32.toBitVec_toInt32",
+   "depth": 4,
+   "depth_only_fcr": 2,
+   "domain": "UInt32",
+   "n_cands": 8,
+   "new_depth_expand_fcr": 3,
+   "new_depth_fcr": 3,
+   "top8": [
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "rfl",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "instOfNatNat",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 2,
+     "name": "UInt32.toInt32",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "OfNat.ofNat",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 2,
+     "name": "Int32.toBitVec",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "BitVec",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "UInt32",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Nat",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Language.one_def",
+   "depth": 5,
+   "depth_only_fcr": 5,
+   "domain": "Language",
+   "n_cands": 5,
+   "new_depth_expand_fcr": 5,
+   "new_depth_fcr": 5,
+   "top8": [
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "rfl",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 4,
+     "name": "Language.instOne",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "One.toOfNat1",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "OfNat.ofNat",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 1,
+     "name": "Language",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Std.Internal.Do.WPMonad.wp_set_MonadState_apply_eq",
+   "depth": 5,
+   "depth_only_fcr": 3,
+   "domain": "Std",
+   "n_cands": 10,
+   "new_depth_expand_fcr": 4,
+   "new_depth_fcr": 4,
+   "top8": [
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "Eq.refl",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 4,
+     "name": "instMonadStateOfMonadStateOf",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "Std.Internal.Do.instWPOfWPMonad",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 3,
+     "name": "Std.Internal.Do.WP.wp",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "MonadState.set",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "Std.Internal.Do.WPMonad",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "MonadStateOf",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Std.Internal.Do.Assertion",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Matrix.isHermitian_add_transpose_self",
+   "depth": 19,
+   "depth_only_fcr": 3,
+   "domain": "Matrix",
+   "n_cands": 7,
+   "new_depth_expand_fcr": 3,
+   "new_depth_fcr": 3,
+   "top8": [
+    {
+     "cat": "instance",
+     "d": 18,
+     "name": "Matrix.instStarAddMonoid",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 13,
+     "name": "Matrix.addCommMonoid",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 6,
+     "name": "IsSelfAdjoint.add_star_self",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 1,
+     "name": "AddCommMonoid.toAddMonoid",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "StarAddMonoid",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "AddCommMonoid",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 0,
+     "name": "Matrix",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "cfc_re_id",
+   "depth": 160,
+   "depth_only_fcr": 12,
+   "domain": "cfc_re_id",
+   "n_cands": 212,
+   "new_depth_expand_fcr": 6,
+   "new_depth_fcr": 6,
+   "top8": [
+    {
+     "cat": "instance",
+     "d": 159,
+     "name": "instCommCStarAlgebraComplex",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 156,
+     "name": "Complex.instRCLike",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 144,
+     "name": "IsBoundedSMul.toUniformContinuousConstSMul",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 138,
+     "name": "CommCStarAlgebra.toNonUnitalCommCStarAlgebra",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 136,
+     "name": "NonUnitalCommCStarAlgebra.toNonUnitalCStarAlgebra",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 113,
+     "name": "realPart_apply_coe",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 112,
+     "name": "Complex.re_eq_add_conj",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 97,
+     "name": "cfc_id'",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "UInt64.toBitVec_zero",
+   "depth": 26,
+   "depth_only_fcr": null,
+   "domain": "UInt64",
+   "n_cands": 8,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "instance",
+     "d": 25,
+     "name": "UInt64.instOfNat",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "instOfNatNat",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "OfNat.ofNat",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "rfl",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "BitVec",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "UInt64.toBitVec",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Nat",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "UInt64",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "antivaryOn_neg_right",
+   "depth": 17,
+   "depth_only_fcr": 4,
+   "domain": "antivaryOn_neg_right",
+   "n_cands": 58,
+   "new_depth_expand_fcr": 4,
+   "new_depth_fcr": 4,
+   "top8": [
+    {
+     "cat": "instance",
+     "d": 16,
+     "name": "IsOrderedCancelAddMonoid.toAddLeftReflectLT",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 15,
+     "name": "IsLeftCancelAdd.addLeftReflectLE_of_addLeftReflectLT",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 14,
+     "name": "AddCommGroup.toAddCancelCommMonoid",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 14,
+     "name": "neg_lt_neg_iff",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 13,
+     "name": "IsOrderedAddMonoid.toIsOrderedCancelAddMonoid",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 13,
+     "name": "AddGroup.addLeftReflectLE_of_addLeftMono",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 7,
+     "name": "IsRightCancelAdd.addRightStrictMono_of_addRightMono",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 7,
+     "name": "instIsRightCancelAddOfAddRightReflectLE",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "Filter.tendsto_inf",
+   "depth": 51,
+   "depth_only_fcr": 3,
+   "domain": "Filter",
+   "n_cands": 22,
+   "new_depth_expand_fcr": 2,
+   "new_depth_fcr": 5,
+   "top8": [
+    {
+     "cat": "instance",
+     "d": 50,
+     "name": "Filter.instCompleteLatticeFilter",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 6,
+     "name": "_private.Mathlib.Order.Filter.Tendsto.0.Filter.tendsto_inf._simp_1_2",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 1,
+     "name": "CompleteLattice.toLattice",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 47,
+     "name": "Filter.instInf",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 13,
+     "name": "Filter.Tendsto",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 12,
+     "name": "Filter.instPartialOrder",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 8,
+     "name": "Filter.map",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 4,
+     "name": "iff_self",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "convex_Iio",
+   "depth": 18,
+   "depth_only_fcr": 4,
+   "domain": "convex_Iio",
+   "n_cands": 87,
+   "new_depth_expand_fcr": 4,
+   "new_depth_fcr": 4,
+   "top8": [
+    {
+     "cat": "instance",
+     "d": 17,
+     "name": "PosSMulStrictMono.toPosSMulMono",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 16,
+     "name": "IsOrderedCancelAddMonoid.toAddLeftReflectLT",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 15,
+     "name": "IsLeftCancelAdd.addLeftReflectLE_of_addLeftReflectLT",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 14,
+     "name": "LE.le.eq_or_lt",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 12,
+     "name": "Convex.combo_self",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 8,
+     "name": "Module.toMulActionWithZero",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 7,
+     "name": "IsOrderedCancelAddMonoid.toIsCancelAdd",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 7,
+     "name": "IsRightCancelAdd.addRightStrictMono_of_addRightMono",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "CategoryTheory.Limits.preservesFiniteCoproducts_of_reflects_of_preserves",
+   "depth": 61,
+   "depth_only_fcr": 5,
+   "domain": "CategoryTheory",
+   "n_cands": 15,
+   "new_depth_expand_fcr": 5,
+   "new_depth_fcr": 5,
+   "top8": [
+    {
+     "cat": "instance",
+     "d": 60,
+     "name": "Finite.of_fintype",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 55,
+     "name": "Fin.fintype",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 36,
+     "name": "CategoryTheory.Limits.instReflectsColimitsOfShapeDiscreteOfReflectsFiniteCoproductsOfFinite",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 36,
+     "name": "CategoryTheory.Limits.instPreservesColimitsOfShapeDiscreteOfFiniteOfPreservesFiniteCoproducts",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 31,
+     "name": "CategoryTheory.Limits.preservesColimitsOfShape_of_reflects_of_preserves",
+     "new": true
+    },
+    {
+     "cat": "other",
+     "d": 11,
+     "name": "CategoryTheory.Limits.PreservesFiniteCoproducts.mk",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 10,
+     "name": "CategoryTheory.discreteCategory",
+     "new": true
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "Fin",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "Fin.val_le_of_le",
+   "depth": 4,
+   "depth_only_fcr": null,
+   "domain": "Fin",
+   "n_cands": 4,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "instLEFin",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "Fin",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "LE.le",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Nat",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Lean.Meta.Grind.Arith.Linear.RingIneqCnstr.brecOn.eq",
+   "depth": 7,
+   "depth_only_fcr": null,
+   "domain": "Lean",
+   "n_cands": 12,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "tactic",
+     "d": 4,
+     "name": "Lean.Meta.Grind.Arith.Linear.RingIneqCnstr.casesOn",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "Eq.refl",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 6,
+     "name": "Lean.Meta.Grind.Arith.Linear.RingIneqCnstr.brecOn",
+     "new": false
+    },
+    {
+     "cat": "self-helper",
+     "d": 5,
+     "name": "Lean.Meta.Grind.Arith.Linear.RingIneqCnstr.brecOn.go",
+     "new": false
+    },
+    {
+     "cat": "self-helper",
+     "d": 4,
+     "name": "Lean.Meta.Grind.Arith.Linear.RingIneqCnstrProof.below",
+     "new": false
+    },
+    {
+     "cat": "self-helper",
+     "d": 4,
+     "name": "Lean.Meta.Grind.Arith.Linear.RingIneqCnstr.below",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 1,
+     "name": "Lean.Meta.Grind.Arith.Linear.RingIneqCnstr.mk",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 0,
+     "name": "Lean.Meta.Grind.Arith.Linear.RingIneqCnstr",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Lean.Grind.ToInt.mul_congr.wr",
+   "depth": 50,
+   "depth_only_fcr": null,
+   "domain": "Lean",
+   "n_cands": 22,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "tactic",
+     "d": 49,
+     "name": "Lean.Grind.IntInterval.wrap_eq_self_iff",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 48,
+     "name": "Lean.Grind.ToInt.mul_congr.ww",
+     "new": true
+    },
+    {
+     "cat": "generated",
+     "d": 47,
+     "name": "_private.Init.Grind.ToIntLemmas.0.Lean.Grind.ToInt.isNonempty",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 19,
+     "name": "Lean.Grind.IntInterval.instMembershipInt",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 18,
+     "name": "Lean.Grind.IntInterval.nonEmpty",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "Eq.mp",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "Membership.mem",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 2,
+     "name": "Lean.Grind.ToInt.toInt_mem",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "Lean.Order.coind_monotone_forall",
+   "depth": 8,
+   "depth_only_fcr": null,
+   "domain": "Lean",
+   "n_cands": 7,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "tactic",
+     "d": 7,
+     "name": "Lean.Order.monotone_apply",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 6,
+     "name": "Lean.Order.instOrderPi",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 3,
+     "name": "Lean.Order.ReverseImplicationOrder.instOrder",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 2,
+     "name": "Lean.Order.monotone",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 1,
+     "name": "Lean.Order.PartialOrder.rel",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 0,
+     "name": "Lean.Order.PartialOrder",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 0,
+     "name": "Lean.Order.ReverseImplicationOrder",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Lean.Order.PreservesSup.upperAdjoint_le",
+   "depth": 10,
+   "depth_only_fcr": null,
+   "domain": "Lean",
+   "n_cands": 18,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "tactic",
+     "d": 9,
+     "name": "Lean.Order.sup_le",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 4,
+     "name": "Eq.mpr",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "congrArg",
+     "new": true
+    },
+    {
+     "cat": "generated",
+     "d": 3,
+     "name": "And.casesOn",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "Eq.symm",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "Eq.ndrec",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 2,
+     "name": "Lean.Order.PreservesSup.map_sup",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 0,
+     "name": "id",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "Lean.Grind.smul_nat_eq_mul",
+   "depth": 12,
+   "depth_only_fcr": 7,
+   "domain": "Lean",
+   "n_cands": 19,
+   "new_depth_expand_fcr": 7,
+   "new_depth_fcr": 7,
+   "top8": [
+    {
+     "cat": "tactic",
+     "d": 11,
+     "name": "Lean.Grind.Semiring.toNatModule",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 4,
+     "name": "Eq.mpr",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "congrArg",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "instHMul",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "instHSMul",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "HMul.hMul",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 2,
+     "name": "Nat.cast",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "HSMul.hSMul",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Lean.Grind.CommRing.le_norm_expr",
+   "depth": 64,
+   "depth_only_fcr": 21,
+   "domain": "Lean",
+   "n_cands": 49,
+   "new_depth_expand_fcr": 25,
+   "new_depth_fcr": 25,
+   "top8": [
+    {
+     "cat": "tactic",
+     "d": 63,
+     "name": "Lean.Grind.CommRing.Expr.denote_toPoly",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 56,
+     "name": "Lean.Grind.CommRing.Poly.denote",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 52,
+     "name": "Lean.Grind.CommRing.Expr.toPoly_k_eq_toPoly",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 51,
+     "name": "Lean.Grind.CommRing.Expr.toPoly",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 13,
+     "name": "Lean.Grind.CommRing.Poly.beq'_eq",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 6,
+     "name": "Lean.Grind.OrderedAdd.sub_nonneg_iff",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 5,
+     "name": "Lean.Grind.Ring.toAddCommGroup",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 3,
+     "name": "Lean.Grind.OrderedRing.toOrderedAdd",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "Lean.Grind.CommRing.OfCommSemiring.instCommutativeHAdd",
+   "depth": 4,
+   "depth_only_fcr": null,
+   "domain": "Lean",
+   "n_cands": 7,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "tactic",
+     "d": 1,
+     "name": "Lean.Grind.Semiring.add_comm",
+     "new": true
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "Std.Commutative.mk",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "instHAdd",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "HAdd.hAdd",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 1,
+     "name": "Lean.Grind.CommSemiring.toSemiring",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 1,
+     "name": "Lean.Grind.Semiring.toAdd",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 0,
+     "name": "Lean.Grind.CommSemiring",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Lean.Order.CompleteLattice.ofProp_apply_2",
+   "depth": 15,
+   "depth_only_fcr": 6,
+   "domain": "Lean",
+   "n_cands": 13,
+   "new_depth_expand_fcr": 3,
+   "new_depth_fcr": 3,
+   "top8": [
+    {
+     "cat": "tactic",
+     "d": 14,
+     "name": "Lean.Order.CompleteLattice.ofProp_apply",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 13,
+     "name": "Lean.Order.ofProp_prop_eq",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 4,
+     "name": "eq_self",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "congrFun",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 3,
+     "name": "congrFun'",
+     "new": true
+    },
+    {
+     "cat": "tactic",
+     "d": 12,
+     "name": "Lean.Order.instCompleteLatticePi",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 12,
+     "name": "Lean.Order.CompleteLattice.ofProp",
+     "new": false
+    },
+    {
+     "cat": "tactic",
+     "d": 7,
+     "name": "Lean.Order.instCompleteLatticeProp_std",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "CategoryTheory.Pseudofunctor.DescentDataAsCoalgebra.Hom.mk.congr_simp",
+   "depth": 45,
+   "depth_only_fcr": 15,
+   "domain": "CategoryTheory",
+   "n_cands": 43,
+   "new_depth_expand_fcr": 15,
+   "new_depth_fcr": 15,
+   "top8": [
+    {
+     "cat": "other",
+     "d": 44,
+     "name": "CategoryTheory.Pseudofunctor.DescentDataAsCoalgebra.Hom.mk",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 43,
+     "name": "CategoryTheory.Pseudofunctor.DescentDataAsCoalgebra.obj",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 43,
+     "name": "CategoryTheory.Pseudofunctor.DescentDataAsCoalgebra.hom",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 43,
+     "name": "CategoryTheory.Pseudofunctor.DescentDataAsCoalgebra.Hom",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 42,
+     "name": "CategoryTheory.Pseudofunctor.DescentDataAsCoalgebra",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 41,
+     "name": "CategoryTheory.Bicategory.Adj.inst",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 29,
+     "name": "CategoryTheory.Cat.bicategory",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 14,
+     "name": "CategoryTheory.locallyDiscreteBicategory",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Rack.PreEnvelGroupRel.refl",
+   "depth": 3,
+   "depth_only_fcr": null,
+   "domain": "Rack",
+   "n_cands": 4,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "other",
+     "d": 2,
+     "name": "Rack.PreEnvelGroupRel'.refl",
+     "new": true
+    },
+    {
+     "cat": "other",
+     "d": 2,
+     "name": "Rack.PreEnvelGroupRel.rel",
+     "new": true
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Rack",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Rack.PreEnvelGroup",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "CategoryTheory.GrothendieckTopology.mk.congr_simp",
+   "depth": 23,
+   "depth_only_fcr": 3,
+   "domain": "CategoryTheory",
+   "n_cands": 26,
+   "new_depth_expand_fcr": 3,
+   "new_depth_fcr": 3,
+   "top8": [
+    {
+     "cat": "other",
+     "d": 22,
+     "name": "CategoryTheory.GrothendieckTopology.mk",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 21,
+     "name": "CategoryTheory.Sieve.instCompleteLattice",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 7,
+     "name": "CategoryTheory.Sieve.pullback",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "Eq.ndrec",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "Set.instMembership",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "Eq.rec",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "Membership.mem",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 2,
+     "name": "OrderTop.toTop",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "AddSubgroup.normal_addSubgroupOf_iff",
+   "depth": 23,
+   "depth_only_fcr": 1,
+   "domain": "AddSubgroup",
+   "n_cands": 31,
+   "new_depth_expand_fcr": 3,
+   "new_depth_fcr": 3,
+   "top8": [
+    {
+     "cat": "other",
+     "d": 17,
+     "name": "AddSubgroup.Normal.mk",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "AddSubgroup.Normal.conj_mem",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 22,
+     "name": "AddSubgroup.addSubgroupOf",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 22,
+     "name": "AddSubgroup.instPartialOrder",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 18,
+     "name": "AddSubgroup.toAddGroup",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 16,
+     "name": "AddSubgroup.instSetLike",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 11,
+     "name": "AddGroup.toSubtractionMonoid",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 9,
+     "name": "SubtractionMonoid.toSubNegZeroMonoid",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "NonarchAddGroupSeminorm.mk.congr_simp",
+   "depth": 96,
+   "depth_only_fcr": null,
+   "domain": "NonarchAddGroupSeminorm",
+   "n_cands": 27,
+   "new_depth_expand_fcr": null,
+   "new_depth_fcr": null,
+   "top8": [
+    {
+     "cat": "other",
+     "d": 95,
+     "name": "NonarchAddGroupSeminorm.mk",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 94,
+     "name": "Real.instLE",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 89,
+     "name": "Real.instMax",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 85,
+     "name": "Real.instZero",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 11,
+     "name": "AddGroup.toSubtractionMonoid",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 9,
+     "name": "SubtractionMonoid.toSubNegZeroMonoid",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 5,
+     "name": "SubNegZeroMonoid.toNegZeroClass",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "instHAdd",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "PresheafOfModules.Submodule.\u03b9_app_hom_apply",
+   "depth": 44,
+   "depth_only_fcr": 1,
+   "domain": "PresheafOfModules",
+   "n_cands": 31,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 43,
+     "name": "PresheafOfModules.Submodule.\u03b9",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 39,
+     "name": "PresheafOfModules.Submodule.toPresheafOfModules",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 39,
+     "name": "PresheafOfModules.presheaf",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 28,
+     "name": "ModuleCat.Hom.hom",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 23,
+     "name": "PresheafOfModules.Hom.app",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 22,
+     "name": "PresheafOfModules.Submodule",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 21,
+     "name": "PresheafOfModules",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 20,
+     "name": "LinearMap.instFunLike",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "SemiconjBy.inv_right_iff\u2080",
+   "depth": 20,
+   "depth_only_fcr": 1,
+   "domain": "SemiconjBy",
+   "n_cands": 18,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 19,
+     "name": "SemiconjBy.inv_right\u2080",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 1,
+     "name": "InvolutiveInv.toInv",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 16,
+     "name": "GroupWithZero.toDivisionMonoid",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 9,
+     "name": "DivisionMonoid.toDivInvOneMonoid",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 5,
+     "name": "MonoidWithZero.toMulZeroOneClass",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 5,
+     "name": "MulZeroOneClass.toMulZeroClass",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 5,
+     "name": "DivInvOneMonoid.toInvOneClass",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 4,
+     "name": "SemiconjBy",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "ENNReal.biInf_le_nhds",
+   "depth": 126,
+   "depth_only_fcr": 1,
+   "domain": "ENNReal",
+   "n_cands": 68,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 125,
+     "name": "ENNReal.nhds_of_ne_top",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 122,
+     "name": "ENNReal.instLinearOrderedAddCommMonoidWithTop",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 110,
+     "name": "ENNReal.instIsOrderedRing",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 110,
+     "name": "ENNReal.instCommSemiring",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 105,
+     "name": "ENNReal.instNontrivial",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 104,
+     "name": "ENNReal.instOne",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 97,
+     "name": "ENNReal.instTop",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 97,
+     "name": "_private.Mathlib.Topology.Instances.ENNReal.Lemmas.0.ENNReal.biInf_le_nhds.match_1_1",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "Int.add_neg_mul_emod_self_right",
+   "depth": 36,
+   "depth_only_fcr": 1,
+   "domain": "Int",
+   "n_cands": 19,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 35,
+     "name": "Int.add_mul_emod_self_right",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 26,
+     "name": "Int.neg_mul_eq_neg_mul",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 4,
+     "name": "Eq.mpr",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 0,
+     "name": "id",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 22,
+     "name": "Int.instMod",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 11,
+     "name": "Int.instAdd",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 11,
+     "name": "Int.instMul",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 7,
+     "name": "Int.instNegInt",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "OneHom.coe_copy",
+   "depth": 11,
+   "depth_only_fcr": 1,
+   "domain": "OneHom",
+   "n_cands": 7,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 10,
+     "name": "OneHom.copy",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 8,
+     "name": "OneHom.funLike",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "DFunLike.coe",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "rfl",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "OneHom",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "One",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Eq",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Subtype.map_injective",
+   "depth": 8,
+   "depth_only_fcr": 1,
+   "domain": "Subtype",
+   "n_cands": 7,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 7,
+     "name": "Subtype.coe_injective",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 5,
+     "name": "Subtype.coind_injective",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 2,
+     "name": "Function.Injective.comp",
+     "new": true
+    },
+    {
+     "cat": "generated",
+     "d": 3,
+     "name": "Subtype.map._proof_1",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "Subtype.val",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 1,
+     "name": "Function.Injective",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Subtype",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Submonoid.LocalizationMap.mk'_mul_cancel_right",
+   "depth": 25,
+   "depth_only_fcr": 1,
+   "domain": "Submonoid",
+   "n_cands": 35,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 24,
+     "name": "Submonoid.LocalizationMap.mul_mk'_one_eq_mk'",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 20,
+     "name": "Submonoid.LocalizationMap.instMonoidHomClass",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 20,
+     "name": "Submonoid.LocalizationMap.mk'_self'",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 20,
+     "name": "Submonoid.LocalizationMap.mk'",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 19,
+     "name": "Submonoid.LocalizationMap.instFunLike",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 10,
+     "name": "Submonoid.instSetLike",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 6,
+     "name": "Submonoid.LocalizationMap",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 5,
+     "name": "Monoid.toMulOneClass",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "QuasispectrumRestricts.nnreal_iff",
+   "depth": 120,
+   "depth_only_fcr": 1,
+   "domain": "QuasispectrumRestricts",
+   "n_cands": 83,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 119,
+     "name": "SpectrumRestricts.nnreal_iff",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 109,
+     "name": "NNReal.instSemifield",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 97,
+     "name": "NNReal.instIsScalarTowerOfReal",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 49,
+     "name": "quasispectrumRestricts_iff_spectrumRestricts_inr",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 46,
+     "name": "Unitization.quasispectrum_eq_spectrum_inr'",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 45,
+     "name": "SpectrumRestricts",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 27,
+     "name": "Unitization.instRing",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 25,
+     "name": "Unitization.instAlgebra",
+     "new": true
+    }
+   ]
+  },
+  {
+   "decl": "Function.locallyFinsuppWithin.mk_of_mem_addSubgroup_toFun",
+   "depth": 70,
+   "depth_only_fcr": 1,
+   "domain": "Function",
+   "n_cands": 18,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 69,
+     "name": "Function.locallyFinsuppWithin.mk_of_mem_addSubgroup",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 67,
+     "name": "Function.locallyFinsuppWithin.addSubgroup",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 29,
+     "name": "Function.locallyFinsuppWithin.instFunLike",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 16,
+     "name": "AddSubgroup.instSetLike",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 14,
+     "name": "Pi.addGroup",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 11,
+     "name": "AddGroup.toSubtractionMonoid",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 9,
+     "name": "SubtractionMonoid.toSubNegZeroMonoid",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 5,
+     "name": "SubNegZeroMonoid.toNegZeroClass",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "ModuleCat.restrictScalarsComp'_hom_app",
+   "depth": 37,
+   "depth_only_fcr": 1,
+   "domain": "ModuleCat",
+   "n_cands": 20,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 36,
+     "name": "ModuleCat.restrictScalarsComp'",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 32,
+     "name": "ModuleCat.restrictScalars",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 25,
+     "name": "ModuleCat.moduleCategory",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 19,
+     "name": "CategoryTheory.Functor.category",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 18,
+     "name": "RingHom.comp",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 15,
+     "name": "CategoryTheory.Functor.comp",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 10,
+     "name": "Semiring.toNonAssocSemiring",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 3,
+     "name": "CategoryTheory.NatTrans.app",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Complex.tan_eq_one_sub_tan_half_sq_div_one_add_tan_half_sq",
+   "depth": 196,
+   "depth_only_fcr": 1,
+   "domain": "Complex",
+   "n_cands": 52,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 195,
+     "name": "Complex.tan_two_mul",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 104,
+     "name": "Complex.instCharZero",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 24,
+     "name": "mul_div_cancel\u2080",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 141,
+     "name": "Complex.tan",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 111,
+     "name": "Complex.instField",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 108,
+     "name": "Complex.instDivInvMonoid",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 103,
+     "name": "Complex.instSemiring",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 99,
+     "name": "Complex.addGroupWithOne",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Algebra.isAlgebraic_adjoin_of_nonempty",
+   "depth": 130,
+   "depth_only_fcr": 1,
+   "domain": "Algebra",
+   "n_cands": 29,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 129,
+     "name": "Algebra.isAlgebraic_adjoin_iff",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 105,
+     "name": "IsAlgebraic.nontrivial",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 68,
+     "name": "Algebra.subset_adjoin",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 48,
+     "name": "isDomain_iff_noZeroDivisors_and_nontrivial",
+     "new": true
+    },
+    {
+     "cat": "self-helper",
+     "d": 5,
+     "name": "_private.Mathlib.RingTheory.Algebraic.Integral.0.Algebra.isAlgebraic_adjoin_of_nonempty.match_1_1",
+     "new": true
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "IsDomain",
+     "new": true
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Nontrivial",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 103,
+     "name": "Subalgebra.IsAlgebraic",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Int64.mul_zero",
+   "depth": 28,
+   "depth_only_fcr": 2,
+   "domain": "Int64",
+   "n_cands": 14,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 26,
+     "name": "BitVec.mul_zero",
+     "new": true
+    },
+    {
+     "cat": "content",
+     "d": 9,
+     "name": "Int64.toBitVec_inj",
+     "new": true
+    },
+    {
+     "cat": "glue",
+     "d": 1,
+     "name": "Iff.mp",
+     "new": true
+    },
+    {
+     "cat": "instance",
+     "d": 27,
+     "name": "instMulInt64",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 25,
+     "name": "Int64.instOfNat",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "instOfNatNat",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "instHMul",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "HMul.hMul",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "MeasureTheory.Measure.inv_def",
+   "depth": 190,
+   "depth_only_fcr": 1,
+   "domain": "MeasureTheory",
+   "n_cands": 5,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 189,
+     "name": "MeasureTheory.Measure.inv",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "rfl",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 1,
+     "name": "MeasureTheory.Measure",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "MeasurableSpace",
+     "new": false
+    },
+    {
+     "cat": "other",
+     "d": 0,
+     "name": "Inv",
+     "new": false
+    }
+   ]
+  },
+  {
+   "decl": "Std.ExtDHashMap.Const.get_insertManyIfNewUnit_list",
+   "depth": 73,
+   "depth_only_fcr": 1,
+   "domain": "Std",
+   "n_cands": 19,
+   "new_depth_expand_fcr": 1,
+   "new_depth_fcr": 1,
+   "top8": [
+    {
+     "cat": "content",
+     "d": 72,
+     "name": "Std.ExtDHashMap.Const.insertManyIfNewUnit",
+     "new": false
+    },
+    {
+     "cat": "content",
+     "d": 71,
+     "name": "Std.ExtDHashMap.Const.get",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 69,
+     "name": "Std.ExtDHashMap.instMembershipOfEquivBEqOfLawfulHashable",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 14,
+     "name": "List.instForIn'InferInstanceMembershipOfMonad",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 4,
+     "name": "instForInOfForIn'",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "List.instMembership",
+     "new": false
+    },
+    {
+     "cat": "instance",
+     "d": 3,
+     "name": "Id.instMonad",
+     "new": false
+    },
+    {
+     "cat": "glue",
+     "d": 2,
+     "name": "Membership.mem",
+     "new": false
+    }
+   ]
+  }
+ ],
+ "first_content_rank": {
+  "depth_only": {
+   "no_content_in_cands": 0.0365,
+   "rank1": 0.7707,
+   "rank2": 0.1134,
+   "rank3": 0.0327,
+   "rank4plus": 0.0467
+  },
+  "new_depth": {
+   "no_content_in_cands": 0.0365,
+   "rank1": 0.7919,
+   "rank2": 0.0913,
+   "rank3": 0.0323,
+   "rank4plus": 0.048
+  },
+  "new_depth_expand": {
+   "no_content_in_cands": 0.0331,
+   "rank1": 0.8217,
+   "rank2": 0.082,
+   "rank3": 0.0263,
+   "rank4plus": 0.0369
+  }
+ },
+ "n_analyzed": 2355,
+ "seed": 20260819,
+ "top1_cause_when_noncontent": {
+  "depth_only": {
+   "generated": 94,
+   "glue": 12,
+   "instance": 253,
+   "other": 6,
+   "self-helper": 78,
+   "tactic": 11
+  },
+  "new_depth": {
+   "generated": 100,
+   "glue": 41,
+   "instance": 158,
+   "other": 9,
+   "self-helper": 86,
+   "tactic": 10
+  },
+  "new_depth_expand": {
+   "generated": 113,
+   "glue": 42,
+   "instance": 160,
+   "other": 9,
+   "self-helper": 4,
+   "tactic": 14
+  }
+ }
+}
