@@ -1,0 +1,5337 @@
+{
+ "Function.Bijective.existsUnique_iff": {
+  "all_cands": [
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "congr_arg",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.symm",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Function.Bijective.injective",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Function.Bijective.surjective",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "Eq.rec",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "And.intro",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Exists.intro",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Iff.intro",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "id",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "Function.Bijective",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "ExistsUnique",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "And",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Exists",
+    "new": false
+   }
+  ],
+  "depth": 5,
+  "file": "Logic/Function/Basic.lean",
+  "moves": [
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "congr_arg",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.symm",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Function.Bijective.injective",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Function.Bijective.surjective",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "Eq.rec",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "And.intro",
+    "new": true
+   }
+  ],
+  "n_cands": 16,
+  "route": [
+   "Function.Bijective.injective",
+   "Function.Bijective.surjective"
+  ],
+  "source": "theorem Bijective.existsUnique_iff {f : \u03b1 \u2192 \u03b2} (hf : Bijective f) {p : \u03b2 \u2192 Prop} :\n    (\u2203! y, p y) \u2194 \u2203! x, p (f x) :=\n  \u27e8fun \u27e8y, hpy, hy\u27e9 \u21a6\n    let \u27e8x, hx\u27e9 := hf.surjective y\n    \u27e8x, by simpa [hx], fun z (hz : p (f z)) \u21a6 hf.injective <| hx.symm \u25b8 hy _ hz\u27e9,\n    fun \u27e8x, hpx, hx\u27e9 \u21a6\n    \u27e8f x, hpx, fun y hy \u21a6\n      let \u27e8z, hz\u27e9 := hf.surjective y\n      hz \u25b8 congr_arg f (hx _ (by simpa [hz]))\u27e9\u27e9",
+  "stmt_depth": 3
+ },
+ "Function.Injective.isPartialInv": {
+  "all_cands": [
+   {
+    "depth": 9,
+    "name": "noConfusion_of_Nat",
+    "new": true
+   },
+   {
+    "depth": 6,
+    "name": "Option.some.noConfusion",
+    "new": true
+   },
+   {
+    "depth": 6,
+    "name": "dif_neg",
+    "new": true
+   },
+   {
+    "depth": 6,
+    "name": "dif_pos",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Option.ctorIdx",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "congr_arg",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "eq_of_heq",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.mp",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "HEq",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "Function.partialInv",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "Classical.propDecidable",
+    "new": false
+   },
+   {
+    "depth": 7,
+    "name": "Classical.choose",
+    "new": false
+   },
+   {
+    "depth": 7,
+    "name": "Classical.choose_spec",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "dite",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Eq.ndrec",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Eq.trans",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "Eq.rec",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "False.elim",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "rfl",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Exists.intro",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Function.Injective",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Iff.intro",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Not",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Option.none",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Option.some",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Exists",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Iff",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Option",
+    "new": false
+   }
+  ],
+  "depth": 13,
+  "file": "Logic/Function/Basic.lean",
+  "moves": [
+   {
+    "depth": 9,
+    "name": "noConfusion_of_Nat",
+    "new": true
+   },
+   {
+    "depth": 6,
+    "name": "Option.some.noConfusion",
+    "new": true
+   },
+   {
+    "depth": 6,
+    "name": "dif_neg",
+    "new": true
+   },
+   {
+    "depth": 6,
+    "name": "dif_pos",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Option.ctorIdx",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "congr_arg",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "eq_of_heq",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.mp",
+    "new": true
+   }
+  ],
+  "n_cands": 30,
+  "route": [
+   "Classical.choose_spec",
+   "dif_neg",
+   "dif_pos",
+   "eq_of_heq",
+   "noConfusion_of_Nat"
+  ],
+  "source": "theorem Injective.isPartialInv {\u03b1 \u03b2} {f : \u03b1 \u2192 \u03b2} (I : Injective f) : IsPartialInv f (partialInv f)\n  | a, b =>\n  \u27e8fun h =>\n    open scoped Classical in\n    have hpi : partialInv f b = if h : \u2203 a, f a = b then some (Classical.choose h) else none :=\n      rfl\n    if h' : \u2203 a, f a = b\n    then by rw [hpi, dif_pos h'] at h\n            injection h with h\n            subst h\n            apply Classical.choose_spec h'\n    else by rw [hpi, dif_neg h'] at h; contradiction,\n  fun e => e \u25b8 have h : \u2203 a', f a' = f a := \u27e8_, rfl\u27e9\n              (dif_pos h).trans (congr_arg _ (I <| Classical.choose_spec h))\u27e9",
+  "stmt_depth": 13
+ },
+ "Function.LeftInverse.comp": {
+  "all_cands": [
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Eq.refl",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "id",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Function.LeftInverse",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   }
+  ],
+  "depth": 5,
+  "file": "Logic/Function/Basic.lean",
+  "moves": [
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Eq.refl",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "id",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Function.LeftInverse",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   }
+  ],
+  "n_cands": 6,
+  "route": [],
+  "source": "theorem LeftInverse.comp {f : \u03b1 \u2192 \u03b2} {g : \u03b2 \u2192 \u03b1} {h : \u03b2 \u2192 \u03b3} {i : \u03b3 \u2192 \u03b2} (hf : LeftInverse f g)\n    (hh : LeftInverse h i) : LeftInverse (h \u2218 f) (g \u2218 i) :=\n  fun a \u21a6 show h (f (g (i a))) = a by rw [hf (i a), hh a]",
+  "stmt_depth": 2
+ },
+ "IsClosed.and": {
+  "all_cands": [
+   {
+    "depth": 61,
+    "name": "IsClosed.inter",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Set.ofPred",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "TopologicalSpace",
+    "new": false
+   }
+  ],
+  "depth": 62,
+  "file": "Topology/Basic.lean",
+  "moves": [
+   {
+    "depth": 61,
+    "name": "IsClosed.inter",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Set.ofPred",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "TopologicalSpace",
+    "new": false
+   }
+  ],
+  "n_cands": 3,
+  "route": [
+   "IsClosed.inter"
+  ],
+  "source": "@[closedness .]\ntheorem IsClosed.and :\n    IsClosed { x | p\u2081 x } \u2192 IsClosed { x | p\u2082 x } \u2192 IsClosed { x | p\u2081 x \u2227 p\u2082 x } :=\n  IsClosed.inter\n\n/-!",
+  "stmt_depth": 2
+ },
+ "Lattice.ext": {
+  "all_cands": [
+   {
+    "depth": 15,
+    "name": "SemilatticeInf.ext",
+    "new": true
+   },
+   {
+    "depth": 15,
+    "name": "SemilatticeSup.ext",
+    "new": true
+   },
+   {
+    "depth": 7,
+    "name": "SemilatticeInf.mk.noConfusion",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Lattice.casesOn",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "eq_of_heq",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.casesOn",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.ndrec",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.symm",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "Lattice.mk",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Eq.refl",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "HEq.refl",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "HEq",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Lattice.toSemilatticeInf",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LE.le",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Lattice.inf",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Lattice.inf_le_left",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Lattice.inf_le_right",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Lattice.le_inf",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Lattice.toSemilatticeSup",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "PartialOrder.toPreorder",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Preorder.toLE",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "SemilatticeInf.toPartialOrder",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "SemilatticeSup.toPartialOrder",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Iff",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Lattice",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "PartialOrder",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "SemilatticeInf",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "SemilatticeSup",
+    "new": false
+   }
+  ],
+  "depth": 16,
+  "file": "Order/Lattice.lean",
+  "moves": [
+   {
+    "depth": 15,
+    "name": "SemilatticeInf.ext",
+    "new": true
+   },
+   {
+    "depth": 15,
+    "name": "SemilatticeSup.ext",
+    "new": true
+   },
+   {
+    "depth": 7,
+    "name": "SemilatticeInf.mk.noConfusion",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Lattice.casesOn",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "eq_of_heq",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.casesOn",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.ndrec",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.symm",
+    "new": true
+   }
+  ],
+  "n_cands": 29,
+  "route": [
+   "HEq.refl",
+   "SemilatticeInf.ext",
+   "SemilatticeSup.ext",
+   "eq_of_heq"
+  ],
+  "source": "@[to_dual self]\ntheorem Lattice.ext {\u03b1} {A B : Lattice \u03b1} (H : \u2200 x y : \u03b1, (haveI := A; x \u2264 y) \u2194 x \u2264 y) :\n    A = B := by\n  cases A\n  cases B\n  cases SemilatticeSup.ext H\n  cases SemilatticeInf.ext H\n  congr",
+  "stmt_depth": 4
+ },
+ "Nat.eq_one_of_dvd_coprimes": {
+  "all_cands": [
+   {
+    "depth": 33,
+    "name": "Nat.coprime_iff_isRelPrime",
+    "new": true
+   },
+   {
+    "depth": 19,
+    "name": "Nat.dvd_one",
+    "new": true
+   },
+   {
+    "depth": 18,
+    "name": "Nat.instMonoid",
+    "new": true
+   },
+   {
+    "depth": 17,
+    "name": "Nat.instCommMonoid",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "isUnit_iff_dvd_one",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "IsRelPrime",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "Monoid.toMulOneClass",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "semigroupDvd",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "IsUnit",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "One.toOfNat1",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "CommMonoid.toMonoid",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Iff.mp",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Monoid.toSemigroup",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "MulOne.toOne",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "MulOneClass.toMulOne",
+    "new": true
+   },
+   {
+    "depth": 25,
+    "name": "Nat.Coprime",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "Nat.instDvd",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instOfNatNat",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "OfNat.ofNat",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Dvd.dvd",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Nat",
+    "new": false
+   }
+  ],
+  "depth": 34,
+  "file": "Data/Nat/GCD/Basic.lean",
+  "moves": [
+   {
+    "depth": 33,
+    "name": "Nat.coprime_iff_isRelPrime",
+    "new": true
+   },
+   {
+    "depth": 19,
+    "name": "Nat.dvd_one",
+    "new": true
+   },
+   {
+    "depth": 18,
+    "name": "Nat.instMonoid",
+    "new": true
+   },
+   {
+    "depth": 17,
+    "name": "Nat.instCommMonoid",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "isUnit_iff_dvd_one",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "IsRelPrime",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "Monoid.toMulOneClass",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "semigroupDvd",
+    "new": true
+   }
+  ],
+  "n_cands": 22,
+  "route": [
+   "Nat.coprime_iff_isRelPrime",
+   "Nat.dvd_one",
+   "isUnit_iff_dvd_one"
+  ],
+  "source": "/-- If `k:\u2115` divides coprime `a` and `b` then `k = 1` -/\ntheorem eq_one_of_dvd_coprimes {a b k : \u2115} (h_ab_coprime : Coprime a b) (hka : k \u2223 a)\n    (hkb : k \u2223 b) : k = 1 :=\n  dvd_one.mp (isUnit_iff_dvd_one.mp <| coprime_iff_isRelPrime.mp h_ab_coprime hka hkb)",
+  "stmt_depth": 26
+ },
+ "Nat.pow_sub_one_gcd_pow_sub_one": {
+  "all_cands": [
+   {
+    "depth": 49,
+    "name": "Nat.pow_sub_one_gcd_pow_sub_one._unary",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "PSigma.mk",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Nat",
+    "new": false
+   }
+  ],
+  "depth": 50,
+  "file": "Data/Nat/GCD/Basic.lean",
+  "moves": [
+   {
+    "depth": 49,
+    "name": "Nat.pow_sub_one_gcd_pow_sub_one._unary",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "PSigma.mk",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Nat",
+    "new": false
+   }
+  ],
+  "n_cands": 3,
+  "route": [],
+  "source": "@[simp]\ntheorem pow_sub_one_gcd_pow_sub_one (a b c : \u2115) :\n    gcd (a ^ b - 1) (a ^ c - 1) = a ^ gcd b c - 1 := by\n  rcases eq_zero_or_pos b with rfl | hb\n  \u00b7 simp\n  replace hb : c % b < b := mod_lt c hb\n  rw [gcd_rec, pow_sub_one_mod_pow_sub_one, pow_sub_one_gcd_pow_sub_one, \u2190 gcd_rec]\n\n/-! ### `lcm` and divisibility -/",
+  "stmt_depth": 25
+ },
+ "Nat.pow_sub_one_mod_pow_sub_one": {
+  "all_cands": [
+   {
+    "depth": 47,
+    "name": "Nat.sub_lt_sub_iff_right",
+    "new": true
+   },
+   {
+    "depth": 45,
+    "name": "Lean.Omega.LinearCombo.coordinate_eval_1",
+    "new": true
+   },
+   {
+    "depth": 45,
+    "name": "Lean.Omega.LinearCombo.coordinate_eval_2",
+    "new": true
+   },
+   {
+    "depth": 45,
+    "name": "Lean.Omega.LinearCombo.coordinate_eval_6",
+    "new": true
+   },
+   {
+    "depth": 45,
+    "name": "Lean.Omega.tidy_sat",
+    "new": true
+   },
+   {
+    "depth": 40,
+    "name": "Lean.Omega.combo_sat'",
+    "new": true
+   },
+   {
+    "depth": 35,
+    "name": "Lean.Omega.Constraint.not_sat'_of_isImpossible",
+    "new": true
+   },
+   {
+    "depth": 34,
+    "name": "Lean.Omega.Constraint.addEquality_sat",
+    "new": true
+   },
+   {
+    "depth": 34,
+    "name": "Lean.Omega.Constraint.combine_sat'",
+    "new": true
+   },
+   {
+    "depth": 31,
+    "name": "Lean.Omega.Constraint.isImpossible",
+    "new": true
+   },
+   {
+    "depth": 31,
+    "name": "Lean.Omega.LinearCombo.sub_eval",
+    "new": true
+   },
+   {
+    "depth": 29,
+    "name": "Lean.Omega.Constraint.addInequality_sat",
+    "new": true
+   },
+   {
+    "depth": 29,
+    "name": "Lean.Omega.LinearCombo.add_eval",
+    "new": true
+   },
+   {
+    "depth": 29,
+    "name": "Nat.add_mod",
+    "new": true
+   },
+   {
+    "depth": 28,
+    "name": "Int.sub_nonneg_of_le",
+    "new": true
+   },
+   {
+    "depth": 28,
+    "name": "Lean.Omega.Int.ofNat_lt_of_lt",
+    "new": true
+   },
+   {
+    "depth": 28,
+    "name": "Nat.mod_mod",
+    "new": true
+   },
+   {
+    "depth": 27,
+    "name": "Lean.Omega.Int.ofNat_le_of_le",
+    "new": true
+   },
+   {
+    "depth": 27,
+    "name": "Nat.mul_mod",
+    "new": true
+   },
+   {
+    "depth": 24,
+    "name": "Int.sub_eq_zero_of_eq",
+    "new": true
+   },
+   {
+    "depth": 24,
+    "name": "Nat.add_mod_right",
+    "new": true
+   },
+   {
+    "depth": 24,
+    "name": "Nat.mod_self",
+    "new": true
+   },
+   {
+    "depth": 23,
+    "name": "Nat.mod_eq_of_lt",
+    "new": true
+   },
+   {
+    "depth": 23,
+    "name": "Nat.mod_zero",
+    "new": true
+   },
+   {
+    "depth": 21,
+    "name": "Nat.instMonoidWithZero",
+    "new": true
+   },
+   {
+    "depth": 21,
+    "name": "Nat.pow_lt_pow_iff_right",
+    "new": true
+   },
+   {
+    "depth": 21,
+    "name": "Nat.zero_mod",
+    "new": true
+   },
+   {
+    "depth": 20,
+    "name": "Nat.one_le_pow",
+    "new": true
+   },
+   {
+    "depth": 19,
+    "name": "Nat.instLinearOrder",
+    "new": true
+   },
+   {
+    "depth": 18,
+    "name": "Int.add_one_le_of_lt",
+    "new": true
+   },
+   {
+    "depth": 17,
+    "name": "Lean.Omega.Int.ofNat_sub_dichotomy",
+    "new": true
+   },
+   {
+    "depth": 17,
+    "name": "Lean.Omega.LinearCombo.instSub",
+    "new": true
+   },
+   {
+    "depth": 17,
+    "name": "Nat.instMulZeroClass",
+    "new": true
+   },
+   {
+    "depth": 16,
+    "name": "Lean.Omega.LinearCombo.eval",
+    "new": true
+   },
+   {
+    "depth": 16,
+    "name": "Nat.instAddMonoid",
+    "new": true
+   },
+   {
+    "depth": 16,
+    "name": "Nat.sub_add_cancel",
+    "new": true
+   },
+   {
+    "depth": 15,
+    "name": "Int.instLEInt",
+    "new": true
+   },
+   {
+    "depth": 15,
+    "name": "Lean.Omega.LinearCombo.instAdd",
+    "new": true
+   },
+   {
+    "depth": 15,
+    "name": "Nat.le_of_not_lt",
+    "new": true
+   },
+   {
+    "depth": 14,
+    "name": "Lean.Omega.Int.sub_congr",
+    "new": true
+   },
+   {
+    "depth": 14,
+    "name": "Nat.add_sub_assoc",
+    "new": true
+   },
+   {
+    "depth": 14,
+    "name": "Nat.sub_eq_zero_of_le",
+    "new": true
+   },
+   {
+    "depth": 13,
+    "name": "Int.instSub",
+    "new": true
+   },
+   {
+    "depth": 13,
+    "name": "WellFounded.Nat.fix",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "Lean.Omega.Int.add_congr",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "Nat.sub_self",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "zero_pow_eq",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "Int.instAdd",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "Int.instMul",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "Nat.eq_or_lt_of_le",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "Nat.eq_zero_or_pos",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "instDecidableEqNat",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "pow_add",
+    "new": true
+   },
+   {
+    "depth": 10,
+    "name": "Nat.mul_add_one",
+    "new": true
+   },
+   {
+    "depth": 9,
+    "name": "lt_or_ge",
+    "new": true
+   },
+   {
+    "depth": 9,
+    "name": "one_pow",
+    "new": true
+   },
+   {
+    "depth": 8,
+    "name": "Lean.Omega.LinearCombo.coordinate",
+    "new": true
+   },
+   {
+    "depth": 7,
+    "name": "Decidable.byContradiction",
+    "new": true
+   },
+   {
+    "depth": 7,
+    "name": "Int.instNegInt",
+    "new": true
+   },
+   {
+    "depth": 7,
+    "name": "Nat.zero_le._simp_1",
+    "new": true
+   },
+   {
+    "depth": 7,
+    "name": "of_decide_eq_true",
+    "new": true
+   },
+   {
+    "depth": 6,
+    "name": "if_neg",
+    "new": true
+   },
+   {
+    "depth": 6,
+    "name": "if_pos",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "AddMonoid.toAddZeroClass",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "Decidable.decide",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "Monoid.toMulOneClass",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "MonoidWithZero.toMulZeroOneClass",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "MulZeroOneClass.toMulZeroClass",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "Or.elim",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Lean.Omega.LinearCombo.mk",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Or.casesOn",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Zero.toOfNat0",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "instOfNat",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "le_of_le_of_eq",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "GT.gt",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "Lean.Omega.Constraint.mk",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "Nat.cast",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "instNatCastInt",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "pow_zero",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "zero_add",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "AddZero.toAdd",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "AddZero.toZero",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "AddZeroClass.toAddZero",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "And.left",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "And.right",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Lean.Omega.Coeffs.ofList",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "LinearOrder.toPartialOrder",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "MulOne.toMul",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "MulOne.toOne",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "MulOneClass.toMulOne",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "MulZeroClass.mul_zero",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "MulZeroClass.toMul",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "MulZeroClass.toZero",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "MulZeroOneClass.toMulOneClass",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Neg.neg",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Option.none",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Option.some",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "PartialOrder.toPreorder",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Preorder.toLE",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Preorder.toLT",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "Int",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "InvImage",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "Lean.Omega.LinearCombo",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "Or",
+    "new": true
+   },
+   {
+    "depth": 20,
+    "name": "Nat.instMod",
+    "new": false
+   },
+   {
+    "depth": 18,
+    "name": "Nat.instMonoid",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "Nat.decLt",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "instNatPowNat",
+    "new": false
+   },
+   {
+    "depth": 9,
+    "name": "instMulNat",
+    "new": false
+   },
+   {
+    "depth": 8,
+    "name": "instSubNat",
+    "new": false
+   },
+   {
+    "depth": 7,
+    "name": "instAddNat",
+    "new": false
+   },
+   {
+    "depth": 7,
+    "name": "instDecidableEqBool",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "dite",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "ite",
+    "new": false
+   },
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": false
+   },
+   {
+    "depth": 4,
+    "name": "eq_self",
+    "new": false
+   },
+   {
+    "depth": 4,
+    "name": "of_eq_true",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Eq.ndrec",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Eq.symm",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Eq.trans",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "One.toOfNat1",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "congr",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "congrFun'",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHAdd",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHMod",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHMul",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHPow",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHSub",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instLTNat",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instOfNatNat",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HAdd.hAdd",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HMod.hMod",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HMul.hMul",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HPow.hPow",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HSub.hSub",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "NPow.toPow",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "OfNat.ofNat",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "instLENat",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "instPowNat",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Bool.true",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Eq.refl",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LE.le",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LT.lt",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "List.cons",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "List.nil",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Monoid.toNPow",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Nat.succ",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Not",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "propext",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "And",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Bool",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "False",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Nat",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "True",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "id",
+    "new": false
+   }
+  ],
+  "depth": 48,
+  "file": "Data/Nat/GCD/Basic.lean",
+  "moves": [
+   {
+    "depth": 47,
+    "name": "Nat.sub_lt_sub_iff_right",
+    "new": true
+   },
+   {
+    "depth": 45,
+    "name": "Lean.Omega.LinearCombo.coordinate_eval_1",
+    "new": true
+   },
+   {
+    "depth": 45,
+    "name": "Lean.Omega.LinearCombo.coordinate_eval_2",
+    "new": true
+   },
+   {
+    "depth": 45,
+    "name": "Lean.Omega.LinearCombo.coordinate_eval_6",
+    "new": true
+   },
+   {
+    "depth": 45,
+    "name": "Lean.Omega.tidy_sat",
+    "new": true
+   },
+   {
+    "depth": 40,
+    "name": "Lean.Omega.combo_sat'",
+    "new": true
+   },
+   {
+    "depth": 35,
+    "name": "Lean.Omega.Constraint.not_sat'_of_isImpossible",
+    "new": true
+   },
+   {
+    "depth": 34,
+    "name": "Lean.Omega.Constraint.addEquality_sat",
+    "new": true
+   }
+  ],
+  "n_cands": 157,
+  "route": [
+   "Decidable.byContradiction",
+   "Int.add_one_le_of_lt",
+   "Int.sub_eq_zero_of_eq",
+   "Int.sub_nonneg_of_le",
+   "Lean.Omega.Constraint.addEquality_sat",
+   "Lean.Omega.Constraint.addInequality_sat",
+   "Lean.Omega.Constraint.combine_sat'",
+   "Lean.Omega.Constraint.not_sat'_of_isImpossible",
+   "Lean.Omega.Int.add_congr",
+   "Lean.Omega.Int.ofNat_le_of_le",
+   "Lean.Omega.Int.ofNat_lt_of_lt",
+   "Lean.Omega.Int.ofNat_sub_dichotomy",
+   "Lean.Omega.Int.sub_congr",
+   "Lean.Omega.LinearCombo.add_eval",
+   "Lean.Omega.LinearCombo.coordinate_eval_1",
+   "Lean.Omega.LinearCombo.coordinate_eval_2",
+   "Lean.Omega.LinearCombo.coordinate_eval_6",
+   "Lean.Omega.LinearCombo.sub_eval",
+   "Lean.Omega.combo_sat'",
+   "Lean.Omega.tidy_sat",
+   "Nat.add_mod",
+   "Nat.add_mod_right",
+   "Nat.add_sub_assoc",
+   "Nat.eq_or_lt_of_le",
+   "Nat.eq_zero_or_pos",
+   "Nat.le_of_not_lt",
+   "Nat.mod_eq_of_lt",
+   "Nat.mod_mod",
+   "Nat.mod_self",
+   "Nat.mod_zero",
+   "Nat.mul_add_one",
+   "Nat.mul_mod",
+   "Nat.one_le_pow",
+   "Nat.pow_lt_pow_iff_right",
+   "Nat.sub_add_cancel",
+   "Nat.sub_eq_zero_of_le",
+   "Nat.sub_lt_sub_iff_right",
+   "Nat.sub_self",
+   "Nat.zero_mod",
+   "WellFounded.Nat.fix",
+   "congrFun'",
+   "dite",
+   "eq_self",
+   "if_neg",
+   "if_pos",
+   "le_of_le_of_eq",
+   "lt_or_ge",
+   "of_decide_eq_true",
+   "of_eq_true",
+   "one_pow",
+   "pow_add",
+   "pow_zero",
+   "zero_add",
+   "zero_pow_eq"
+  ],
+  "source": "@[simp]\ntheorem pow_sub_one_mod_pow_sub_one (a b c : \u2115) : (a ^ c - 1) % (a ^ b - 1) = a ^ (c % b) - 1 := by\n  rcases eq_zero_or_pos a with rfl | ha0\n  \u00b7 simp [zero_pow_eq]; split_ifs <;> simp\n  rcases Nat.eq_or_lt_of_le ha0 with rfl | ha1\n  \u00b7 simp\n  rcases eq_zero_or_pos b with rfl | hb0\n  \u00b7 simp\n  rcases lt_or_ge c b with h | h\n  \u00b7 rw [mod_eq_of_lt, mod_eq_of_lt h]\n    rwa [Nat.sub_lt_sub_iff_right (one_le_pow c a ha0), Nat.pow_lt_pow_iff_right ha1]\n  \u00b7 suffices a ^ (c - b + b) - 1 = a ^ (c - b) * (a ^ b - 1) + (a ^ (c - b) - 1) by\n      rw [\u2190 Nat.sub_add_cancel h, add_mod_right, this, add_mod, mul_mod, mod_self,\n        mul_zero, zero_mod, zero_add, mod_mod, pow_sub_one_mod_pow_sub_one]\n    rw [\u2190 Nat.add_sub_assoc (one_le_pow (c - b) a ha0), \u2190 mul_add_one, pow_add,\n      Nat.sub_add_cancel (one_le_pow b a ha0)]",
+  "stmt_depth": 21
+ },
+ "Real.abs_log_mul_self_lt": {
+  "all_cands": [
+   {
+    "depth": 168,
+    "name": "Real.log_nonneg",
+    "new": true
+   },
+   {
+    "depth": 165,
+    "name": "Real.log_le_sub_one_of_pos",
+    "new": true
+   },
+   {
+    "depth": 165,
+    "name": "Real.log_one",
+    "new": true
+   },
+   {
+    "depth": 164,
+    "name": "Real.log_div",
+    "new": true
+   },
+   {
+    "depth": 164,
+    "name": "Real.log_inv",
+    "new": true
+   },
+   {
+    "depth": 45,
+    "name": "Mathlib.Tactic.Ring.Common.inv_mul",
+    "new": true
+   },
+   {
+    "depth": 26,
+    "name": "Mathlib.Tactic.Linarith.zero_lt_one",
+    "new": true
+   },
+   {
+    "depth": 23,
+    "name": "le_inv_comm\u2080",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Mathlib.Tactic.Linarith.without_one_mul",
+    "new": true
+   },
+   {
+    "depth": 162,
+    "name": "Real.log",
+    "new": false
+   },
+   {
+    "depth": 109,
+    "name": "Real.instFloorRing",
+    "new": false
+   },
+   {
+    "depth": 105,
+    "name": "Real.linearOrder",
+    "new": false
+   },
+   {
+    "depth": 104,
+    "name": "Real.instIsOrderedRing",
+    "new": false
+   },
+   {
+    "depth": 104,
+    "name": "Real.lattice",
+    "new": false
+   },
+   {
+    "depth": 103,
+    "name": "Real.instField",
+    "new": false
+   },
+   {
+    "depth": 103,
+    "name": "Real.instIsStrictOrderedRing",
+    "new": false
+   },
+   {
+    "depth": 102,
+    "name": "Real.instIsOrderedAddMonoid",
+    "new": false
+   },
+   {
+    "depth": 102,
+    "name": "Real.instZeroLEOneClass",
+    "new": false
+   },
+   {
+    "depth": 101,
+    "name": "Real.instPreorder",
+    "new": false
+   },
+   {
+    "depth": 100,
+    "name": "Real.partialOrder",
+    "new": false
+   },
+   {
+    "depth": 97,
+    "name": "Real.instDivInvMonoid",
+    "new": false
+   },
+   {
+    "depth": 95,
+    "name": "Real.instAddCommMonoid",
+    "new": false
+   },
+   {
+    "depth": 94,
+    "name": "Real.instAddCommGroup",
+    "new": false
+   },
+   {
+    "depth": 94,
+    "name": "Real.instAddGroup",
+    "new": false
+   },
+   {
+    "depth": 94,
+    "name": "Real.instAddMonoid",
+    "new": false
+   },
+   {
+    "depth": 94,
+    "name": "Real.instLE",
+    "new": false
+   },
+   {
+    "depth": 94,
+    "name": "Real.semiring",
+    "new": false
+   },
+   {
+    "depth": 93,
+    "name": "Real.instCommSemiring",
+    "new": false
+   },
+   {
+    "depth": 93,
+    "name": "Real.instRing",
+    "new": false
+   },
+   {
+    "depth": 92,
+    "name": "Real.commRing",
+    "new": false
+   },
+   {
+    "depth": 90,
+    "name": "Real.instSub",
+    "new": false
+   },
+   {
+    "depth": 89,
+    "name": "Real.instInv",
+    "new": false
+   },
+   {
+    "depth": 89,
+    "name": "Real.instLT",
+    "new": false
+   },
+   {
+    "depth": 89,
+    "name": "Real.instMul",
+    "new": false
+   },
+   {
+    "depth": 89,
+    "name": "Real.instNeg",
+    "new": false
+   },
+   {
+    "depth": 85,
+    "name": "Real.instOne",
+    "new": false
+   },
+   {
+    "depth": 85,
+    "name": "Real.instZero",
+    "new": false
+   },
+   {
+    "depth": 49,
+    "name": "FloorRing.toFloorSemiring",
+    "new": false
+   },
+   {
+    "depth": 45,
+    "name": "Mathlib.Tactic.Ring.Common.div_congr",
+    "new": false
+   },
+   {
+    "depth": 45,
+    "name": "Mathlib.Tactic.Ring.Common.div_pf",
+    "new": false
+   },
+   {
+    "depth": 45,
+    "name": "Mathlib.Tactic.Ring.Common.inv_single",
+    "new": false
+   },
+   {
+    "depth": 44,
+    "name": "Field.toDivisionRing",
+    "new": false
+   },
+   {
+    "depth": 44,
+    "name": "Field.toSemifield",
+    "new": false
+   },
+   {
+    "depth": 44,
+    "name": "Semifield.toDivisionSemiring",
+    "new": false
+   },
+   {
+    "depth": 37,
+    "name": "FloorSemiring.instCharZero",
+    "new": false
+   },
+   {
+    "depth": 25,
+    "name": "Nat.instCommSemiring",
+    "new": false
+   },
+   {
+    "depth": 23,
+    "name": "Mathlib.Meta.NormNum.isInt_add",
+    "new": false
+   },
+   {
+    "depth": 20,
+    "name": "Mathlib.Tactic.Ring.Common.atom_pf",
+    "new": false
+   },
+   {
+    "depth": 20,
+    "name": "lt_div_iff\u2080",
+    "new": false
+   },
+   {
+    "depth": 19,
+    "name": "Mathlib.Meta.NormNum.isNat_mul",
+    "new": false
+   },
+   {
+    "depth": 19,
+    "name": "Mathlib.Tactic.Linarith.add_lt_of_neg_of_le",
+    "new": false
+   },
+   {
+    "depth": 18,
+    "name": "Mathlib.Meta.NormNum.isNNRat_inv_pos",
+    "new": false
+   },
+   {
+    "depth": 17,
+    "name": "CommGroupWithZero.toDivisionCommMonoid",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "GroupWithZero.toDivisionMonoid",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "Mathlib.Meta.NormNum.IsNNRat.to_isNat",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "Mathlib.Tactic.CancelDenoms.sub_subst",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "Mathlib.Tactic.Linarith.sub_nonpos_of_le",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "Mathlib.Tactic.Ring.Common.neg_mul",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "MulPosReflectLE.toMulPosReflectLT",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "PosMulReflectLE.toPosMulReflectLT",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "abs_of_nonneg",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "neg_neg_of_pos",
+    "new": false
+   },
+   {
+    "depth": 15,
+    "name": "Mathlib.Meta.NormNum.IsInt.to_isNat",
+    "new": false
+   },
+   {
+    "depth": 15,
+    "name": "Mathlib.Meta.NormNum.IsInt.to_raw_eq",
+    "new": false
+   },
+   {
+    "depth": 15,
+    "name": "Mathlib.Meta.NormNum.isInt_neg",
+    "new": false
+   },
+   {
+    "depth": 15,
+    "name": "NonUnitalNonAssocRing.toHasDistribNeg",
+    "new": false
+   },
+   {
+    "depth": 14,
+    "name": "MulPosStrictMono.toMulPosReflectLE",
+    "new": false
+   },
+   {
+    "depth": 14,
+    "name": "PosMulStrictMono.toPosMulReflectLE",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "Mathlib.Meta.NormNum.IsNat.to_isNNRat",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "Mathlib.Tactic.Ring.Common.add_overlap_pf_zero",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "Mathlib.Tactic.Ring.Common.neg_add",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "Mathlib.Tactic.Ring.Common.neg_congr",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "Mathlib.Tactic.Ring.Common.neg_zero",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "Mathlib.Tactic.Ring.Common.sub_pf",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "abs_neg",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "AddCommGroup.toDivisionAddCommMonoid",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Meta.NormNum.IsInt.of_raw",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Meta.NormNum.IsNat.to_isInt",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.Common.add_congr",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.Common.add_mul",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.Common.add_pf_add_gt",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.Common.add_pf_add_lt",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.Common.add_pf_add_zero",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.Common.add_pf_zero_add",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.Common.mul_add",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.Common.mul_congr",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.Common.mul_pf_right",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.Common.mul_zero",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.Common.zero_mul",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.cast_pos",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Mathlib.Tactic.Ring.cast_zero",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "NeZero.charZero_one",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "abs",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "AddGroup.toSubtractionMonoid",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "Int.rawCast",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "Mathlib.Meta.NormNum.instAddMonoidWithOne",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "Mathlib.Meta.NormNum.instAddMonoidWithOne'",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "Mathlib.Tactic.Ring.Common.sub_congr",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "instDistribOfSemiring",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "instMulZeroClassOfSemiring",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "instMulZeroOneClassOfSemiring",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "AddGroupWithOne.toAddGroup",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "CommRing.toNonUnitalCommRing",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "DivisionSemiring.toGroupWithZero",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "GroupWithZero.toDivInvMonoid",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "NonAssocSemiring.toAddCommMonoidWithOne",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "Ring.toAddCommGroup",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "Ring.toAddGroupWithOne",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "Semifield.toCommGroupWithZero",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "Semiring.toNonAssocSemiring",
+    "new": false
+   },
+   {
+    "depth": 9,
+    "name": "DivisionMonoid.toDivInvOneMonoid",
+    "new": false
+   },
+   {
+    "depth": 9,
+    "name": "SubtractionMonoid.toSubNegZeroMonoid",
+    "new": false
+   },
+   {
+    "depth": 8,
+    "name": "lt_of_not_ge",
+    "new": false
+   },
+   {
+    "depth": 7,
+    "name": "Mathlib.Meta.NormNum.IsNat.to_raw_eq",
+    "new": false
+   },
+   {
+    "depth": 7,
+    "name": "one_div",
+    "new": false
+   },
+   {
+    "depth": 7,
+    "name": "zero_sub",
+    "new": false
+   },
+   {
+    "depth": 6,
+    "name": "IsOrderedAddMonoid.toAddLeftMono",
+    "new": false
+   },
+   {
+    "depth": 6,
+    "name": "LT.lt.ne'",
+    "new": false
+   },
+   {
+    "depth": 6,
+    "name": "Nat.cast_one",
+    "new": false
+   },
+   {
+    "depth": 6,
+    "name": "mul_nonneg",
+    "new": false
+   },
+   {
+    "depth": 6,
+    "name": "zero_lt_one",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "AddMonoid.toAddZeroClass",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "DivInvOneMonoid.toInvOneClass",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "Int.negOfNat",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "Mathlib.Tactic.Linarith.lt_irrefl",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "MonoidWithZero.toMulZeroOneClass",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "MulZeroOneClass.toMulZeroClass",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "NonUnitalCommRing.toNonUnitalNonAssocCommRing",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "NonUnitalNonAssocRing.toNonUnitalNonAssocSemiring",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "NonUnitalNonAssocSemiring.toDistrib",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "SubNegZeroMonoid.toNegZeroClass",
+    "new": false
+   },
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": false
+   },
+   {
+    "depth": 4,
+    "name": "LT.lt.le",
+    "new": false
+   },
+   {
+    "depth": 4,
+    "name": "Mathlib.Meta.NormNum.IsNat.of_raw",
+    "new": false
+   },
+   {
+    "depth": 4,
+    "name": "Mathlib.Meta.NormNum.isNat_ofNat",
+    "new": false
+   },
+   {
+    "depth": 4,
+    "name": "Mathlib.Tactic.Ring.of_eq",
+    "new": false
+   },
+   {
+    "depth": 4,
+    "name": "one_ne_zero",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Eq.mp",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Eq.symm",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Eq.trans",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Nat.rawCast",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "One.toOfNat1",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Zero.toOfNat0",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHAdd",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHDiv",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHMul",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHPow",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHSub",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "neg_mul",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "Eq.rec",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HAdd.hAdd",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HDiv.hDiv",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HMul.hMul",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HPow.hPow",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HSub.hSub",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HasDistribNeg.toInvolutiveNeg",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "IsOrderedRing.toPosMulMono",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "IsStrictOrderedRing.toMulPosStrictMono",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "IsStrictOrderedRing.toPosMulStrictMono",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "NPow.toPow",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "Nat.cast_zero",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "OfNat.ofNat",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "inv_one",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "rfl",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddCommMonoidWithOne.toAddMonoidWithOne",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddGroup.toSubNegMonoid",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddGroupWithOne.toAddMonoidWithOne",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddMonoid.toAddSemigroup",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddMonoidWithOne.toOne",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddSemigroup.toAdd",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddZero.toZero",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddZeroClass.toAddZero",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "CommRing.toRing",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "CommSemiring.toSemiring",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Distrib.toAdd",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Distrib.toMul",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "DivInvMonoid.toDiv",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "DivInvMonoid.toInv",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "DivisionCommMonoid.toDivisionMonoid",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "DivisionRing.toRing",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "DivisionSemiring.toSemiring",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Eq.refl",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "GroupWithZero.toMonoidWithZero",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Int.ofNat",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Inv.inv",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "InvOneClass.toInv",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "InvOneClass.toOne",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "InvolutiveNeg.toNeg",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LE.le",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LT.lt",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LinearOrder.toPartialOrder",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Monoid.toNPow",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "MulZeroClass.toMul",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "MulZeroClass.toZero",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "MulZeroOneClass.toMulOneClass",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Neg.neg",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "NegZeroClass.toNeg",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "NonUnitalNonAssocCommRing.toNonUnitalNonAssocRing",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "PartialOrder.toPreorder",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Preorder.toLE",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Preorder.toLT",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Ring.toSemiring",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Semiring.toMonoid",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "SubNegMonoid.toAddMonoid",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "SubNegMonoid.toNeg",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "SubNegMonoid.toSub",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "SubtractionCommMonoid.toSubtractionMonoid",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "propext",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "AddMonoidWithOne",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Int",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Mul",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Nat",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Real",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Ring",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "id",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "inferInstance",
+    "new": false
+   }
+  ],
+  "depth": 169,
+  "file": "Analysis/SpecialFunctions/Log/Basic.lean",
+  "moves": [
+   {
+    "depth": 168,
+    "name": "Real.log_nonneg",
+    "new": true
+   },
+   {
+    "depth": 165,
+    "name": "Real.log_le_sub_one_of_pos",
+    "new": true
+   },
+   {
+    "depth": 165,
+    "name": "Real.log_one",
+    "new": true
+   },
+   {
+    "depth": 164,
+    "name": "Real.log_div",
+    "new": true
+   },
+   {
+    "depth": 164,
+    "name": "Real.log_inv",
+    "new": true
+   },
+   {
+    "depth": 45,
+    "name": "Mathlib.Tactic.Ring.Common.inv_mul",
+    "new": true
+   },
+   {
+    "depth": 26,
+    "name": "Mathlib.Tactic.Linarith.zero_lt_one",
+    "new": true
+   },
+   {
+    "depth": 23,
+    "name": "le_inv_comm\u2080",
+    "new": true
+   }
+  ],
+  "n_cands": 219,
+  "route": [
+   "LT.lt.le",
+   "LT.lt.ne'",
+   "Mathlib.Meta.NormNum.IsInt.of_raw",
+   "Mathlib.Meta.NormNum.IsInt.to_isNat",
+   "Mathlib.Meta.NormNum.IsInt.to_raw_eq",
+   "Mathlib.Meta.NormNum.IsNNRat.to_isNat",
+   "Mathlib.Meta.NormNum.IsNat.of_raw",
+   "Mathlib.Meta.NormNum.IsNat.to_isInt",
+   "Mathlib.Meta.NormNum.IsNat.to_isNNRat",
+   "Mathlib.Meta.NormNum.IsNat.to_raw_eq",
+   "Mathlib.Meta.NormNum.isInt_add",
+   "Mathlib.Meta.NormNum.isInt_neg",
+   "Mathlib.Meta.NormNum.isNNRat_inv_pos",
+   "Mathlib.Meta.NormNum.isNat_mul",
+   "Mathlib.Meta.NormNum.isNat_ofNat",
+   "Mathlib.Tactic.CancelDenoms.sub_subst",
+   "Mathlib.Tactic.Linarith.add_lt_of_neg_of_le",
+   "Mathlib.Tactic.Linarith.lt_irrefl",
+   "Mathlib.Tactic.Linarith.sub_nonpos_of_le",
+   "Mathlib.Tactic.Linarith.without_one_mul",
+   "Mathlib.Tactic.Linarith.zero_lt_one",
+   "Mathlib.Tactic.Ring.Common.add_congr",
+   "Mathlib.Tactic.Ring.Common.add_mul",
+   "Mathlib.Tactic.Ring.Common.add_overlap_pf_zero",
+   "Mathlib.Tactic.Ring.Common.add_pf_add_gt",
+   "Mathlib.Tactic.Ring.Common.add_pf_add_lt",
+   "Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero",
+   "Mathlib.Tactic.Ring.Common.add_pf_add_zero",
+   "Mathlib.Tactic.Ring.Common.add_pf_zero_add",
+   "Mathlib.Tactic.Ring.Common.atom_pf",
+   "Mathlib.Tactic.Ring.Common.div_congr",
+   "Mathlib.Tactic.Ring.Common.div_pf",
+   "Mathlib.Tactic.Ring.Common.inv_mul",
+   "Mathlib.Tactic.Ring.Common.inv_single",
+   "Mathlib.Tactic.Ring.Common.mul_add",
+   "Mathlib.Tactic.Ring.Common.mul_congr",
+   "Mathlib.Tactic.Ring.Common.mul_pf_right",
+   "Mathlib.Tactic.Ring.Common.mul_zero",
+   "Mathlib.Tactic.Ring.Common.neg_add",
+   "Mathlib.Tactic.Ring.Common.neg_congr",
+   "Mathlib.Tactic.Ring.Common.neg_mul",
+   "Mathlib.Tactic.Ring.Common.neg_zero",
+   "Mathlib.Tactic.Ring.Common.sub_congr",
+   "Mathlib.Tactic.Ring.Common.sub_pf",
+   "Mathlib.Tactic.Ring.Common.zero_mul",
+   "Mathlib.Tactic.Ring.cast_pos",
+   "Mathlib.Tactic.Ring.cast_zero",
+   "Mathlib.Tactic.Ring.of_eq",
+   "Nat.cast_one",
+   "Nat.cast_zero",
+   "Real.log_div",
+   "Real.log_inv",
+   "Real.log_le_sub_one_of_pos",
+   "Real.log_nonneg",
+   "abs_neg",
+   "abs_of_nonneg",
+   "inv_one",
+   "le_inv_comm\u2080",
+   "lt_div_iff\u2080",
+   "lt_of_not_ge",
+   "mul_nonneg",
+   "neg_mul",
+   "neg_neg_of_pos",
+   "one_div",
+   "one_ne_zero",
+   "zero_lt_one",
+   "zero_sub"
+  ],
+  "source": "/-- Bound for `|log x * x|` in the interval `(0, 1]`. -/\ntheorem abs_log_mul_self_lt (x : \u211d) (h1 : 0 < x) (h2 : x \u2264 1) : |log x * x| < 1 := by\n  have : 0 < 1 / x := by simpa only [one_div, inv_pos] using h1\n  replace := log_le_sub_one_of_pos this\n  replace : log (1 / x) < 1 / x := by linarith\n  rw [log_div one_ne_zero h1.ne', log_one, zero_sub, lt_div_iff\u2080 h1] at this\n  have aux : 0 \u2264 -log x * x := by\n    refine mul_nonneg ?_ h1.le\n    rw [\u2190 log_inv]\n    apply log_nonneg\n    rw [\u2190 le_inv_comm\u2080 h1 zero_lt_one, inv_one]\n    exact h2\n  rw [\u2190 abs_of_nonneg aux, neg_mul, abs_neg] at this\n  exact this",
+  "stmt_depth": 163
+ },
+ "Real.le_exp_of_log_le": {
+  "all_cands": [
+   {
+    "depth": 165,
+    "name": "Real.log_le_iff_le_exp",
+    "new": true
+   },
+   {
+    "depth": 148,
+    "name": "Real.exp_nonneg",
+    "new": true
+   },
+   {
+    "depth": 162,
+    "name": "Real.log",
+    "new": false
+   },
+   {
+    "depth": 140,
+    "name": "Real.exp",
+    "new": false
+   },
+   {
+    "depth": 105,
+    "name": "Real.linearOrder",
+    "new": false
+   },
+   {
+    "depth": 101,
+    "name": "Real.instPreorder",
+    "new": false
+   },
+   {
+    "depth": 94,
+    "name": "Real.instLE",
+    "new": false
+   },
+   {
+    "depth": 85,
+    "name": "Real.instZero",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "le_or_gt",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "LE.le.trans",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Or.casesOn",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Zero.toOfNat0",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "OfNat.ofNat",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Iff.mp",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LE.le",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LT.lt",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LinearOrder.toPartialOrder",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "PartialOrder.toPreorder",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Preorder.toLE",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Preorder.toLT",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Or",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Real",
+    "new": false
+   }
+  ],
+  "depth": 166,
+  "file": "Analysis/SpecialFunctions/Log/Basic.lean",
+  "moves": [
+   {
+    "depth": 165,
+    "name": "Real.log_le_iff_le_exp",
+    "new": true
+   },
+   {
+    "depth": 148,
+    "name": "Real.exp_nonneg",
+    "new": true
+   },
+   {
+    "depth": 162,
+    "name": "Real.log",
+    "new": false
+   },
+   {
+    "depth": 140,
+    "name": "Real.exp",
+    "new": false
+   },
+   {
+    "depth": 105,
+    "name": "Real.linearOrder",
+    "new": false
+   },
+   {
+    "depth": 101,
+    "name": "Real.instPreorder",
+    "new": false
+   },
+   {
+    "depth": 94,
+    "name": "Real.instLE",
+    "new": false
+   },
+   {
+    "depth": 85,
+    "name": "Real.instZero",
+    "new": false
+   }
+  ],
+  "n_cands": 22,
+  "route": [
+   "LE.le.trans",
+   "Real.exp_nonneg",
+   "Real.log_le_iff_le_exp",
+   "le_or_gt"
+  ],
+  "source": "/-- One direction of `Real.log_le_iff_le_exp` without positivity assumption. -/\nlemma le_exp_of_log_le (h : log x \u2264 y) : x \u2264 exp y := by\n  rcases le_or_gt x 0 with hx | hx\n  \u00b7 exact hx.trans <| exp_nonneg y\n  \u00b7 exact (log_le_iff_le_exp hx).mp h",
+  "stmt_depth": 163
+ },
+ "Real.one_sub_inv_le_log_of_pos": {
+  "all_cands": [
+   {
+    "depth": 165,
+    "name": "Real.log_le_sub_one_of_pos",
+    "new": true
+   },
+   {
+    "depth": 164,
+    "name": "Real.log_inv",
+    "new": true
+   },
+   {
+    "depth": 17,
+    "name": "neg_le_sub_iff_le_add._simp_1",
+    "new": true
+   },
+   {
+    "depth": 15,
+    "name": "AddGroup.toOrderedSub",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "tsub_le_iff_right._simp_1",
+    "new": true
+   },
+   {
+    "depth": 162,
+    "name": "Real.log",
+    "new": false
+   },
+   {
+    "depth": 105,
+    "name": "Real.linearOrder",
+    "new": false
+   },
+   {
+    "depth": 103,
+    "name": "Real.instField",
+    "new": false
+   },
+   {
+    "depth": 103,
+    "name": "Real.instIsStrictOrderedRing",
+    "new": false
+   },
+   {
+    "depth": 102,
+    "name": "Real.instIsOrderedAddMonoid",
+    "new": false
+   },
+   {
+    "depth": 101,
+    "name": "Real.instPreorder",
+    "new": false
+   },
+   {
+    "depth": 100,
+    "name": "Real.partialOrder",
+    "new": false
+   },
+   {
+    "depth": 96,
+    "name": "Real.instAddCommSemigroup",
+    "new": false
+   },
+   {
+    "depth": 95,
+    "name": "Real.instAddCommMonoid",
+    "new": false
+   },
+   {
+    "depth": 94,
+    "name": "Real.instAddCommGroup",
+    "new": false
+   },
+   {
+    "depth": 94,
+    "name": "Real.instAddGroup",
+    "new": false
+   },
+   {
+    "depth": 94,
+    "name": "Real.instLE",
+    "new": false
+   },
+   {
+    "depth": 94,
+    "name": "Real.semiring",
+    "new": false
+   },
+   {
+    "depth": 90,
+    "name": "Real.instSub",
+    "new": false
+   },
+   {
+    "depth": 89,
+    "name": "Real.instAdd",
+    "new": false
+   },
+   {
+    "depth": 89,
+    "name": "Real.instInv",
+    "new": false
+   },
+   {
+    "depth": 89,
+    "name": "Real.instLT",
+    "new": false
+   },
+   {
+    "depth": 89,
+    "name": "Real.instNeg",
+    "new": false
+   },
+   {
+    "depth": 85,
+    "name": "Real.instOne",
+    "new": false
+   },
+   {
+    "depth": 85,
+    "name": "Real.instZero",
+    "new": false
+   },
+   {
+    "depth": 44,
+    "name": "Field.toSemifield",
+    "new": false
+   },
+   {
+    "depth": 44,
+    "name": "Semifield.toDivisionSemiring",
+    "new": false
+   },
+   {
+    "depth": 17,
+    "name": "inv_pos",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "GroupWithZero.toDivisionMonoid",
+    "new": false
+   },
+   {
+    "depth": 16,
+    "name": "PosMulReflectLE.toPosMulReflectLT",
+    "new": false
+   },
+   {
+    "depth": 14,
+    "name": "PosMulStrictMono.toPosMulReflectLE",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "instMulZeroClassOfSemiring",
+    "new": false
+   },
+   {
+    "depth": 10,
+    "name": "DivisionSemiring.toGroupWithZero",
+    "new": false
+   },
+   {
+    "depth": 9,
+    "name": "DivisionMonoid.toDivInvOneMonoid",
+    "new": false
+   },
+   {
+    "depth": 6,
+    "name": "IsOrderedAddMonoid.toAddLeftMono",
+    "new": false
+   },
+   {
+    "depth": 6,
+    "name": "covariant_swap_add_of_covariant_add",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "AddCommSemigroup.toAddCommMagma",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "AddMonoid.toAddZeroClass",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "DivInvOneMonoid.toInvOneClass",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "MonoidWithZero.toMulZeroOneClass",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "MulZeroOneClass.toMulZeroClass",
+    "new": false
+   },
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Eq.mp",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Eq.trans",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "One.toOfNat1",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Zero.toOfNat0",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "congrFun'",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHAdd",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHSub",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HAdd.hAdd",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HSub.hSub",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "IsStrictOrderedRing.toPosMulStrictMono",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "OfNat.ofNat",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "add_comm",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddCommGroup.toAddGroup",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddCommMagma.toAdd",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddGroup.toSubNegMonoid",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddZero.toAdd",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddZeroClass.toAddZero",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "GroupWithZero.toMonoidWithZero",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Iff.mpr",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Inv.inv",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "InvOneClass.toInv",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LE.le",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LT.lt",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "MulZeroClass.toMul",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "MulZeroClass.toZero",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Neg.neg",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "PartialOrder.toPreorder",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Preorder.toLT",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "SubNegMonoid.toAddMonoid",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Real",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "id",
+    "new": false
+   }
+  ],
+  "depth": 166,
+  "file": "Analysis/SpecialFunctions/Log/Basic.lean",
+  "moves": [
+   {
+    "depth": 165,
+    "name": "Real.log_le_sub_one_of_pos",
+    "new": true
+   },
+   {
+    "depth": 164,
+    "name": "Real.log_inv",
+    "new": true
+   },
+   {
+    "depth": 17,
+    "name": "neg_le_sub_iff_le_add._simp_1",
+    "new": true
+   },
+   {
+    "depth": 15,
+    "name": "AddGroup.toOrderedSub",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "tsub_le_iff_right._simp_1",
+    "new": true
+   },
+   {
+    "depth": 162,
+    "name": "Real.log",
+    "new": false
+   },
+   {
+    "depth": 105,
+    "name": "Real.linearOrder",
+    "new": false
+   },
+   {
+    "depth": 103,
+    "name": "Real.instField",
+    "new": false
+   }
+  ],
+  "n_cands": 75,
+  "route": [
+   "Real.log_inv",
+   "Real.log_le_sub_one_of_pos",
+   "add_comm",
+   "congrFun'",
+   "inv_pos"
+  ],
+  "source": "lemma one_sub_inv_le_log_of_pos (hx : 0 < x) : 1 - x\u207b\u00b9 \u2264 log x := by\n  simpa [add_comm] using log_le_sub_one_of_pos (inv_pos.2 hx)",
+  "stmt_depth": 163
+ },
+ "Real.range_log": {
+  "all_cands": [
+   {
+    "depth": 166,
+    "name": "Real.log_surjective",
+    "new": true
+   },
+   {
+    "depth": 162,
+    "name": "Real.log",
+    "new": false
+   },
+   {
+    "depth": 23,
+    "name": "Function.Surjective.range_eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Real",
+    "new": false
+   }
+  ],
+  "depth": 167,
+  "file": "Analysis/SpecialFunctions/Log/Basic.lean",
+  "moves": [
+   {
+    "depth": 166,
+    "name": "Real.log_surjective",
+    "new": true
+   },
+   {
+    "depth": 162,
+    "name": "Real.log",
+    "new": false
+   },
+   {
+    "depth": 23,
+    "name": "Function.Surjective.range_eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Real",
+    "new": false
+   }
+  ],
+  "n_cands": 4,
+  "route": [
+   "Function.Surjective.range_eq"
+  ],
+  "source": "@[simp]\ntheorem range_log : range log = univ :=\n  log_surjective.range_eq",
+  "stmt_depth": 163
+ },
+ "TopologicalSpace.ext_iff": {
+  "all_cands": [
+   {
+    "depth": 10,
+    "name": "TopologicalSpace.ext",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "funext",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Iff.rfl",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "Eq.rec",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Iff.intro",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "propext",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "IsOpen",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Iff",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Set",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "TopologicalSpace",
+    "new": false
+   }
+  ],
+  "depth": 11,
+  "file": "Topology/Basic.lean",
+  "moves": [
+   {
+    "depth": 10,
+    "name": "TopologicalSpace.ext",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "funext",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Iff.rfl",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "Eq.rec",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Iff.intro",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "propext",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "IsOpen",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   }
+  ],
+  "n_cands": 11,
+  "route": [
+   "TopologicalSpace.ext"
+  ],
+  "source": "protected theorem TopologicalSpace.ext_iff {t t' : TopologicalSpace X} :\n    t = t' \u2194 \u2200 s, IsOpen[t] s \u2194 IsOpen[t'] s :=\n  \u27e8fun h _ => h \u25b8 Iff.rfl, fun h => by ext; exact h _\u27e9",
+  "stmt_depth": 3
+ },
+ "add_one_zsmul": {
+  "all_cands": [
+   {
+    "depth": 27,
+    "name": "Int.neg_add",
+    "new": true
+   },
+   {
+    "depth": 25,
+    "name": "Int.neg_add_cancel_right",
+    "new": true
+   },
+   {
+    "depth": 21,
+    "name": "Int.add_left_neg",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "AddGroup.toSubtractionMonoid",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "neg_zsmul",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "succ_nsmul'",
+    "new": true
+   },
+   {
+    "depth": 10,
+    "name": "negSucc_zsmul",
+    "new": true
+   },
+   {
+    "depth": 10,
+    "name": "ofNat_zsmul",
+    "new": true
+   },
+   {
+    "depth": 9,
+    "name": "SubtractionMonoid.toSubNegZeroMonoid",
+    "new": true
+   },
+   {
+    "depth": 9,
+    "name": "natCast_zsmul",
+    "new": true
+   },
+   {
+    "depth": 8,
+    "name": "one_nsmul",
+    "new": true
+   },
+   {
+    "depth": 7,
+    "name": "Int.instNegInt",
+    "new": true
+   },
+   {
+    "depth": 6,
+    "name": "neg_add_cancel_right",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "SubNegZeroMonoid.toNegZeroClass",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "eq_self",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "of_eq_true",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.trans",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Int.negSucc_eq",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congr",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrFun'",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "NSMul.toSMul",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "Nat.cast",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "instNatCastInt",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "neg_add_cancel",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "neg_add_rev",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "succ_nsmul",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "zero_nsmul",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "AddMonoid.toNSMul",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Neg.neg",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "NegZeroClass.toNeg",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "SubNegMonoid.toNeg",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "SubtractionMonoid.toSubNegMonoid",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "True",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "id",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "Int.instAdd",
+    "new": false
+   },
+   {
+    "depth": 7,
+    "name": "instAddNat",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "AddMonoid.toAddZeroClass",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Zero.toOfNat0",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHAdd",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHSMul",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instOfNat",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instOfNatNat",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HAdd.hAdd",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HSMul.hSMul",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "OfNat.ofNat",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "ZSMul.toSMul",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddGroup.toSubNegMonoid",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddZero.toAdd",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddZero.toZero",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "AddZeroClass.toAddZero",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Int.negSucc",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Nat.succ",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "SubNegMonoid.toAddMonoid",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "SubNegMonoid.toZSMul",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Unit",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "AddGroup",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Int",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Nat",
+    "new": false
+   }
+  ],
+  "depth": 28,
+  "file": "Algebra/Group/Basic.lean",
+  "moves": [
+   {
+    "depth": 27,
+    "name": "Int.neg_add",
+    "new": true
+   },
+   {
+    "depth": 25,
+    "name": "Int.neg_add_cancel_right",
+    "new": true
+   },
+   {
+    "depth": 21,
+    "name": "Int.add_left_neg",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "AddGroup.toSubtractionMonoid",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "neg_zsmul",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "succ_nsmul'",
+    "new": true
+   },
+   {
+    "depth": 10,
+    "name": "negSucc_zsmul",
+    "new": true
+   },
+   {
+    "depth": 10,
+    "name": "ofNat_zsmul",
+    "new": true
+   }
+  ],
+  "n_cands": 61,
+  "route": [
+   "Int.add_left_neg",
+   "Int.negSucc_eq",
+   "Int.neg_add",
+   "Int.neg_add_cancel_right",
+   "congrFun'",
+   "eq_self",
+   "natCast_zsmul",
+   "negSucc_zsmul",
+   "neg_add_cancel",
+   "neg_add_cancel_right",
+   "neg_add_rev",
+   "neg_zsmul",
+   "ofNat_zsmul",
+   "of_eq_true",
+   "one_nsmul",
+   "succ_nsmul",
+   "succ_nsmul'",
+   "zero_nsmul"
+  ],
+  "source": "-- add_one_zsmul is auto-generated by @[to_additive] from zpow_add_one;\n-- the human-written proof is the multiplicative version below.\n@[to_additive add_one_zsmul]\nlemma zpow_add_one (a : G) : \u2200 n : \u2124, a ^ (n + 1) = a ^ n * a\n  | (n : \u2115) => by simp only [\u2190 Int.natCast_succ, zpow_natCast, pow_succ]\n  | -1 => by simp [Int.add_left_neg]\n  | .negSucc (n + 1) => by\n    rw [zpow_negSucc, pow_succ', mul_inv_rev, inv_mul_cancel_right]\n    rw [Int.negSucc_eq, Int.neg_add, Int.neg_add_cancel_right]\n    exact zpow_negSucc _ _",
+  "stmt_depth": 12
+ },
+ "isClosed_sInter": {
+  "all_cands": [
+   {
+    "depth": 62,
+    "name": "Set.compl_sInter",
+    "new": true
+   },
+   {
+    "depth": 59,
+    "name": "Set.sUnion_image",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "isOpen_biUnion",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "Set.iUnion",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "Set.sUnion",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "forall_congr",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Set.image",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Set.instCompl",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.trans",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "implies_congr",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "IsOpen",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Compl.compl",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Eq.refl",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "id",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "Set.sInter",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Set.instMembership",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "Membership.mem",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "IsClosed",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Set",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "TopologicalSpace",
+    "new": false
+   }
+  ],
+  "depth": 63,
+  "file": "Topology/Basic.lean",
+  "moves": [
+   {
+    "depth": 62,
+    "name": "Set.compl_sInter",
+    "new": true
+   },
+   {
+    "depth": 59,
+    "name": "Set.sUnion_image",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "isOpen_biUnion",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "Set.iUnion",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "Set.sUnion",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "forall_congr",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Set.image",
+    "new": true
+   }
+  ],
+  "n_cands": 23,
+  "route": [
+   "Set.compl_sInter",
+   "Set.sUnion_image",
+   "forall_congr",
+   "implies_congr",
+   "isOpen_biUnion"
+  ],
+  "source": "@[closedness .]\ntheorem isClosed_sInter {s : Set (Set X)} : (\u2200 t \u2208 s, IsClosed t) \u2192 IsClosed (\u22c2\u2080 s) := by\n  simpa only [\u2190 isOpen_compl_iff, compl_sInter, sUnion_image] using isOpen_biUnion",
+  "stmt_depth": 6
+ },
+ "limUnder_of_not_tendsto": {
+  "all_cands": [
+   {
+    "depth": 6,
+    "name": "dif_neg",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "eq_self",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrFun'",
+    "new": true
+   },
+   {
+    "depth": 20,
+    "name": "Filter.limUnder",
+    "new": false
+   },
+   {
+    "depth": 19,
+    "name": "Filter.lim",
+    "new": false
+   },
+   {
+    "depth": 18,
+    "name": "nhds",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "Classical.epsilon",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "Filter.Tendsto",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Classical.strongIndefiniteDescription",
+    "new": false
+   },
+   {
+    "depth": 12,
+    "name": "Filter.instPartialOrder",
+    "new": false
+   },
+   {
+    "depth": 11,
+    "name": "Classical.propDecidable",
+    "new": false
+   },
+   {
+    "depth": 8,
+    "name": "Filter.map",
+    "new": false
+   },
+   {
+    "depth": 7,
+    "name": "Classical.strongIndefiniteDescription._proof_1",
+    "new": false
+   },
+   {
+    "depth": 6,
+    "name": "Classical.indefiniteDescription",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "dite",
+    "new": false
+   },
+   {
+    "depth": 4,
+    "name": "of_eq_true",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Classical.strongIndefiniteDescription._proof_2",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "Eq.trans",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Classical.choice",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LE.le",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Not",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "PartialOrder.toPreorder",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Preorder.toLE",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Subtype.mk",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Subtype.val",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Decidable",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Exists",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Filter",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Nonempty",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Subtype",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "TopologicalSpace",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "True",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "id",
+    "new": false
+   }
+  ],
+  "depth": 21,
+  "file": "Topology/Basic.lean",
+  "moves": [
+   {
+    "depth": 6,
+    "name": "dif_neg",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "eq_self",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrFun'",
+    "new": true
+   },
+   {
+    "depth": 20,
+    "name": "Filter.limUnder",
+    "new": false
+   },
+   {
+    "depth": 19,
+    "name": "Filter.lim",
+    "new": false
+   },
+   {
+    "depth": 18,
+    "name": "nhds",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "Classical.epsilon",
+    "new": false
+   },
+   {
+    "depth": 13,
+    "name": "Filter.Tendsto",
+    "new": false
+   }
+  ],
+  "n_cands": 35,
+  "route": [
+   "congrFun'",
+   "dif_neg",
+   "eq_self",
+   "of_eq_true"
+  ],
+  "source": "theorem limUnder_of_not_tendsto [hX : Nonempty X] {f : Filter \u03b1} {g : \u03b1 \u2192 X}\n    (h : \u00ac \u2203 x, Tendsto g f (\ud835\udcdd x)) :\n    limUnder f g = Classical.choice hX := by\n  simp_rw [Tendsto] at h\n  simp_rw [limUnder, lim, Classical.epsilon, Classical.strongIndefiniteDescription, dif_neg h]",
+  "stmt_depth": 21
+ },
+ "pow_iterate": {
+  "all_cands": [
+   {
+    "depth": 17,
+    "name": "pow_iterate._f",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "instNatPowNat",
+    "new": false
+   },
+   {
+    "depth": 6,
+    "name": "Nat.iterate",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "Nat.brecOn",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHPow",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HPow.hPow",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "NPow.toPow",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "instPowNat",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Monoid.toNPow",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Monoid",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Nat",
+    "new": false
+   }
+  ],
+  "depth": 18,
+  "file": "Algebra/Group/Basic.lean",
+  "moves": [
+   {
+    "depth": 17,
+    "name": "pow_iterate._f",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "instNatPowNat",
+    "new": false
+   },
+   {
+    "depth": 6,
+    "name": "Nat.iterate",
+    "new": false
+   },
+   {
+    "depth": 5,
+    "name": "Nat.brecOn",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHPow",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HPow.hPow",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "NPow.toPow",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "instPowNat",
+    "new": false
+   }
+  ],
+  "n_cands": 12,
+  "route": [],
+  "source": "@[to_additive, simp]\nlemma pow_iterate (k : \u2115) : \u2200 n : \u2115, (fun x : M \u21a6 x ^ k)^[n] = (\u00b7 ^ k ^ n)\n  | 0 => by ext; simp\n  | n + 1 => by ext; simp [pow_iterate, Nat.pow_succ', pow_mul]",
+  "stmt_depth": 12
+ },
+ "sup_eq_and_inf_eq_iff": {
+  "all_cands": [
+   {
+    "depth": 10,
+    "name": "inf_eq_sup",
+    "new": true
+   },
+   {
+    "depth": 9,
+    "name": "inf_idem",
+    "new": true
+   },
+   {
+    "depth": 9,
+    "name": "sup_idem",
+    "new": true
+   },
+   {
+    "depth": 8,
+    "name": "inf_of_le_left",
+    "new": true
+   },
+   {
+    "depth": 8,
+    "name": "sup_of_le_left",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "of_eq_true",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "And.casesOn",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.mp",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.ndrec",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.symm",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.trans",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Std.ge_refl",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congr",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrFun'",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "eq_true",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "instReflGe",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "and_self",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "And.intro",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "And.left",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "And.right",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Iff.intro",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Iff.mp",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "SemilatticeInf.toPartialOrder",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "id",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Lattice.toSemilatticeInf",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "SemilatticeInf.toMin",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "SemilatticeSup.toMax",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "LE.le",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Lattice.toSemilatticeSup",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Max.max",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Min.min",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "PartialOrder.toPreorder",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Preorder.toLE",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "SemilatticeSup.toPartialOrder",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "And",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Lattice",
+    "new": false
+   }
+  ],
+  "depth": 11,
+  "file": "Order/Lattice.lean",
+  "moves": [
+   {
+    "depth": 10,
+    "name": "inf_eq_sup",
+    "new": true
+   },
+   {
+    "depth": 9,
+    "name": "inf_idem",
+    "new": true
+   },
+   {
+    "depth": 9,
+    "name": "sup_idem",
+    "new": true
+   },
+   {
+    "depth": 8,
+    "name": "inf_of_le_left",
+    "new": true
+   },
+   {
+    "depth": 8,
+    "name": "sup_of_le_left",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "of_eq_true",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "And.casesOn",
+    "new": true
+   }
+  ],
+  "n_cands": 39,
+  "route": [
+   "Std.ge_refl",
+   "and_self",
+   "congrFun'",
+   "eq_true",
+   "inf_eq_sup",
+   "inf_idem",
+   "inf_of_le_left",
+   "of_eq_true",
+   "sup_idem",
+   "sup_of_le_left"
+  ],
+  "source": "-- sup_eq_and_inf_eq_iff is auto-generated by @[to_dual] from inf_eq_and_sup_eq_iff;\n-- the human-written proof is the dual version below.\n@[to_dual]\nlemma inf_eq_and_sup_eq_iff : a \u2293 b = c \u2227 a \u2294 b = c \u2194 a = c \u2227 b = c := by\n  refine \u27e8fun h \u21a6 ?_, ?_\u27e9\n  \u00b7 obtain rfl := sup_eq_inf.1 (h.2.trans h.1.symm)\n    simpa using h\n  \u00b7 rintro \u27e8rfl, rfl\u27e9\n    exact \u27e8inf_idem _, sup_idem _\u27e9\n\n/-!",
+  "stmt_depth": 4
+ },
+ "sup_left_idem": {
+  "all_cands": [
+   {
+    "depth": 8,
+    "name": "sup_of_le_right",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "eq_self",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "of_eq_true",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.trans",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrFun'",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "LE.le",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "PartialOrder.toPreorder",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Preorder.toLE",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "SemilatticeSup.toPartialOrder",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "True",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "SemilatticeSup.toMax",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Max.max",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "SemilatticeSup",
+    "new": false
+   }
+  ],
+  "depth": 9,
+  "file": "Order/Lattice.lean",
+  "moves": [
+   {
+    "depth": 8,
+    "name": "sup_of_le_right",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "eq_self",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "of_eq_true",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.trans",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrFun'",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "LE.le",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "PartialOrder.toPreorder",
+    "new": true
+   }
+  ],
+  "n_cands": 15,
+  "route": [
+   "congrFun'",
+   "eq_self",
+   "of_eq_true",
+   "sup_of_le_right"
+  ],
+  "source": "@[to_dual]\ntheorem sup_left_idem (a b : \u03b1) : a \u2294 (a \u2294 b) = a \u2294 b := by simp",
+  "stmt_depth": 3
+ },
+ "zpow_mul": {
+  "all_cands": [
+   {
+    "depth": 13,
+    "name": "inv_pow",
+    "new": true
+   },
+   {
+    "depth": 13,
+    "name": "pow_mul",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "Int.negSucc_mul_negSucc",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "Int.negSucc_mul_ofNat",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "Int.ofNat_mul_negSucc",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "zpow_neg",
+    "new": true
+   },
+   {
+    "depth": 10,
+    "name": "zpow_negSucc",
+    "new": true
+   },
+   {
+    "depth": 9,
+    "name": "DivisionMonoid.toDivInvOneMonoid",
+    "new": true
+   },
+   {
+    "depth": 9,
+    "name": "zpow_natCast",
+    "new": true
+   },
+   {
+    "depth": 7,
+    "name": "Int.instNegInt",
+    "new": true
+   },
+   {
+    "depth": 7,
+    "name": "instAddNat",
+    "new": true
+   },
+   {
+    "depth": 7,
+    "name": "inv_inj",
+    "new": true
+   },
+   {
+    "depth": 5,
+    "name": "DivInvOneMonoid.toInvOneClass",
+    "new": true
+   },
+   {
+    "depth": 4,
+    "name": "Eq.mpr",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "DivisionMonoid.toInvolutiveInv",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "Eq.symm",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "congrArg",
+    "new": true
+   },
+   {
+    "depth": 3,
+    "name": "instHAdd",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "HAdd.hAdd",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "NPow.toPow",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "Nat.cast",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "instNatCastInt",
+    "new": true
+   },
+   {
+    "depth": 2,
+    "name": "inv_inv",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "DivInvMonoid.toInv",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "DivInvMonoid.toMonoid",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Eq.refl",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Inv.inv",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "InvOneClass.toInv",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "InvolutiveInv.toInv",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Monoid.toNPow",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "Neg.neg",
+    "new": true
+   },
+   {
+    "depth": 1,
+    "name": "propext",
+    "new": true
+   },
+   {
+    "depth": 0,
+    "name": "id",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "Int.instMul",
+    "new": false
+   },
+   {
+    "depth": 9,
+    "name": "instMulNat",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHMul",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instHPow",
+    "new": false
+   },
+   {
+    "depth": 3,
+    "name": "instOfNatNat",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HMul.hMul",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "HPow.hPow",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "OfNat.ofNat",
+    "new": false
+   },
+   {
+    "depth": 2,
+    "name": "ZPow.toPow",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "DivInvMonoid.toZPow",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "DivisionMonoid.toDivInvMonoid",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Int.negSucc",
+    "new": false
+   },
+   {
+    "depth": 1,
+    "name": "Nat.succ",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "DivisionMonoid",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Eq",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Int",
+    "new": false
+   },
+   {
+    "depth": 0,
+    "name": "Nat",
+    "new": false
+   }
+  ],
+  "depth": 14,
+  "file": "Algebra/Group/Basic.lean",
+  "moves": [
+   {
+    "depth": 13,
+    "name": "inv_pow",
+    "new": true
+   },
+   {
+    "depth": 13,
+    "name": "pow_mul",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "Int.negSucc_mul_negSucc",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "Int.negSucc_mul_ofNat",
+    "new": true
+   },
+   {
+    "depth": 12,
+    "name": "Int.ofNat_mul_negSucc",
+    "new": true
+   },
+   {
+    "depth": 11,
+    "name": "zpow_neg",
+    "new": true
+   },
+   {
+    "depth": 10,
+    "name": "zpow_negSucc",
+    "new": true
+   },
+   {
+    "depth": 9,
+    "name": "DivisionMonoid.toDivInvOneMonoid",
+    "new": true
+   }
+  ],
+  "n_cands": 50,
+  "route": [
+   "Int.negSucc_mul_negSucc",
+   "Int.negSucc_mul_ofNat",
+   "Int.ofNat_mul_negSucc",
+   "inv_inj",
+   "inv_inv",
+   "inv_pow",
+   "pow_mul",
+   "zpow_natCast",
+   "zpow_neg",
+   "zpow_negSucc"
+  ],
+  "source": "@[to_additive mul_zsmul'] lemma zpow_mul (a : \u03b1) : \u2200 m n : \u2124, a ^ (m * n) = (a ^ m) ^ n\n  | (m : \u2115), (n : \u2115) => by\n    rw [zpow_natCast, zpow_natCast, \u2190 pow_mul, \u2190 zpow_natCast]\n    rfl\n  | (m : \u2115), .negSucc n => by\n    rw [zpow_natCast, zpow_negSucc, \u2190 pow_mul, Int.ofNat_mul_negSucc, zpow_neg, inv_inj,\n      \u2190 zpow_natCast]\n  | .negSucc m, (n : \u2115) => by\n    rw [zpow_natCast, zpow_negSucc, \u2190 inv_pow, \u2190 pow_mul, Int.negSucc_mul_ofNat, zpow_neg, inv_pow,\n      inv_inj, \u2190 zpow_natCast]\n  | .negSucc m, .negSucc n => by\n    rw [zpow_negSucc, zpow_negSucc, Int.negSucc_mul_negSucc, inv_pow, inv_inv, \u2190 pow_mul, \u2190\n      zpow_natCast]\n    rfl",
+  "stmt_depth": 12
+ }
+}
