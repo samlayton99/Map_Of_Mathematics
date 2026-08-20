@@ -1,0 +1,31 @@
+=== centrality per projection (bipartite PageRank) ===
+  P1     top: Eq, Nat, Eq.refl, CategoryTheory.Category, Set
+  P2     top: Eq.refl, Eq.rec, rfl, OfNat.ofNat, propext
+  P3     top: rfl, congrArg, propext, Eq.symm, Eq.trans
+  P4     top: eq_of_heq, Or.casesOn, noConfusion_of_Nat, Quot.ind, Nat.ne_of_beq_eq_false
+  top16  top: eq_of_heq, Or.casesOn, noConfusion_of_Nat, Quot.ind, Nat.ne_of_beq_eq_false
+  top4   top: eq_of_heq, Or.casesOn, noConfusion_of_Nat, Quot.ind, Nat.ne_of_beq_eq_false
+  top1   top: eq_of_heq, Int.sub_nonneg_of_le, Int.add_le_add_right, Int.add_assoc, noConfusion_of_Nat
+
+=== Q1.2 centrality persistence between adjacent projections ===
+  (Spearman over the union of each pair's top-1000 by PageRank)
+     P1 -> P2     spearman=-0.1216   top-1000 overlap= 38.3%
+     P2 -> P3     spearman=-0.3839   top-1000 overlap= 24.0%
+     P3 -> P4     spearman= 0.2076   top-1000 overlap= 64.7%
+     P4 -> top16  spearman= 0.9991   top-1000 overlap= 99.3%
+  top16 -> top4   spearman= 0.9237   top-1000 overlap= 92.7%
+   top4 -> top1   spearman= 0.0256   top-1000 overlap= 48.3%
+
+  REGISTERED PREDICTION: P3->P4 more stable than P2->P3
+  P2->P3 = -0.3839, P3->P4 = 0.2076  ==> CONFIRMED
+
+=== weak components per projection ===
+  P1     touched=771,054  components=      2  giant=100.00%
+  P2     touched=763,027  components=    569  giant= 99.78%
+  P3     touched=548,509  components=  1,934  giant= 98.82%
+  P4     touched=514,560  components=  8,024  giant= 96.01%
+  top16  touched=513,709  components=  8,096  giant= 95.93%
+  top4   touched=506,445  components=  8,884  giant= 95.25%
+  top1   touched=487,735  components= 25,230  giant=  8.87%
+
+written data/persistence_results.json

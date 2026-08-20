@@ -1,0 +1,10 @@
+components of size 2-3: 16,367 of 25,230 total
+  of 4000 sampled small components:
+    ALL members share one stem (a lemma + its own compiler twin): 29.3%
+    contain at least one machine-generated node:                  76.1%
+
+  size 2-3 components: 16,367 (64.9% of all components)
+  if twin-pairs merged into their parent, components drop by roughly
+    4,799 -> leaving ~20,431
+
+[exited with code 0]

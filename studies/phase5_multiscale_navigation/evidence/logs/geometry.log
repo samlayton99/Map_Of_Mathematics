@@ -1,0 +1,92 @@
+=== Q1.1 geometry across projections ===
+  P1 full support          inc=18,721,317  edges= 747,605  empty=     39  decls=546,576  size p50=16 p90=55 p99=142 max=699
+  P2 load-bearing          inc= 8,485,349  edges= 728,753  empty= 18,891  decls=502,906  size p50=6 p90=28 p99=72 max=401
+  P3 claims                inc= 2,924,084  edges= 519,600  empty=228,044  decls=360,595  size p50=2 p90=13 p99=41 max=231
+  P4 V8 boundary           inc= 1,573,630  edges= 462,505  empty=285,139  decls=347,492  size p50=2 p90=7 p99=25 max=176
+  P5 proof-introduced      inc= 3,163,125  edges= 621,200  empty=126,444  decls=487,423  size p50=2 p90=11 p99=43 max=193
+  P6 statement-world       inc= 5,322,224  edges= 597,702  empty=149,942  decls=104,016  size p50=5 p90=21 p99=54 max=279
+  P8 definition layer      inc= 1,641,088  edges= 200,886  empty=546,758  decls=201,796  size p50=5 p90=18 p99=51 max=197
+
+  top-k over P4 (frozen order: deeper first):
+    k=1   inc=  462,505  edges= 462,505  mean size=1.00
+    k=2   inc=  709,619  edges= 462,505  mean size=1.53
+    k=4   inc=  991,923  edges= 462,505  mean size=2.14
+    k=8   inc=1,253,430  edges= 462,505  mean size=2.71
+    k=16  inc=1,437,530  edges= 462,505  mean size=3.11
+
+=== Q1.3 landmarks that exist only in glue-rich views ===
+  top-100 by P1 citation count that fall below rank 1000 in P4: 100
+    Eq                                             P1= 301,634  P4=      0  P4 rank=600,056
+    OfNat.ofNat                                    P1= 194,333  P4=      0  P4 rank=600,046
+    Nat                                            P1= 190,566  P4=      0  P4 rank=600,049
+    congrArg                                       P1= 165,600  P4=      0  P4 rank=600,040
+    Eq.refl                                        P1= 157,872  P4=      0  P4 rank=600,028
+    id                                             P1= 138,494  P4=      0  P4 rank=600,036
+    Membership.mem                                 P1= 119,260  P4=      0  P4 rank=600,054
+    Eq.trans                                       P1= 113,877  P4=      0  P4 rank=600,013
+    instOfNatNat                                   P1= 113,077  P4=      0  P4 rank=600,053
+    DFunLike.coe                                   P1= 101,151  P4=      0  P4 rank=599,987
+    Set                                            P1=  98,281  P4=      0  P4 rank=600,079
+    Eq.mpr                                         P1=  94,476  P4=      0  P4 rank=600,044
+    Eq.symm                                        P1=  94,110  P4=      0  P4 rank=600,481
+    True                                           P1=  89,126  P4=      0  P4 rank=600,018
+    LE.le                                          P1=  88,472  P4=      0  P4 rank=600,087
+    of_eq_true                                     P1=  86,791  P4=      0  P4 rank=600,017
+    HAdd.hAdd                                      P1=  85,418  P4=      0  P4 rank=600,067
+    instHAdd                                       P1=  85,339  P4=      0  P4 rank=600,069
+    propext                                        P1=  83,721  P4=      0  P4 rank=600,031
+    congrFun'                                      P1=  80,231  P4=      0  P4 rank=600,016
+
+  survives both (top-20 by P4):
+    eq_of_heq                                      P4=  13,119  P1=   13,132
+    Or.casesOn                                     P4=   9,620  P1=    9,620
+    of_decide_eq_true                              P4=   8,035  P1=    8,035
+    CategoryTheory.Category.comp_id                P4=   5,977  P1=    5,977
+    CategoryTheory.Category.id_comp                P4=   5,001  P1=    5,001
+    le_of_le_of_eq                                 P4=   4,970  P1=    4,970
+    Int.sub_nonneg_of_le                           P4=   4,918  P1=    4,918
+    mul_one                                        P4=   4,781  P1=    4,781
+    Lean.Omega.Int.sub_congr                       P4=   4,725  P1=    4,725
+    Lean.Omega.Int.add_congr                       P4=   4,506  P1=    4,506
+    Nat.ne_of_beq_eq_false                         P4=   4,435  P1=    4,435
+    heq_of_eq                                      P4=   4,424  P1=    4,425
+    Int.add_one_le_of_lt                           P4=   4,392  P1=    4,392
+    Decidable.byContradiction                      P4=   4,077  P1=    4,100
+    add_zero                                       P4=   3,935  P1=    3,935
+    Lean.Omega.Int.ofNat_lt_of_lt                  P4=   3,746  P1=    3,746
+    noConfusion_of_Nat                             P4=   3,719  P1=    3,719
+    zero_add                                       P4=   3,568  P1=    3,568
+    one_mul                                        P4=   3,566  P1=    3,566
+    ite_congr                                      P4=   3,508  P1=    3,508
+
+=== Q2.1 citation depth gaps ===
+  P1 full support          mean=  70.20  p1=     1 p50=   55 p99=  279 max=  346
+  P2 load-bearing          mean=  61.10  p1=     1 p50=   44 p99=  272 max=  346
+  P4 V8 boundary           mean=  47.68  p1=     1 p50=   22 p99=  268 max=  341
+  P5 proof-introduced      mean=  39.42  p1=     1 p50=   23 p99=  184 max=  343
+
+=== Q2.2 proofs with unusually large depth span (>p99) ===
+  p99 depth span = 242; 4,663 artifacts at or above
+    span= 341  CompletelyPositiveMap.mk.inj
+    span= 340  CompletelyPositiveMap.instFunLike._proof_1
+    span= 340  CompletelyPositiveMap.instLinearMapClassComplex
+    span= 340  CompletelyPositiveMap.map_cstarMatrix_nonneg
+    span= 339  CompletelyPositiveMap.mk.noConfusion
+    span= 339  CompletelyPositiveMap.noConfusion
+    span= 337  NumberField.Ideal.tendsto_norm_le_div_atTop
+    span= 337  CStarMatrix.instCStarAlgebra._proof_6
+    span= 337  CStarMatrix.instCStarAlgebra._proof_4
+    span= 337  CStarMatrix.instCStarAlgebra._proof_7
+    span= 337  CStarMatrix.instCStarAlgebra._proof_5
+    span= 337  CStarMatrix.instCStarAlgebra._proof_8
+    span= 337  CStarMatrix.instCStarAlgebra._proof_3
+    span= 337  CompletelyPositiveMap.instCompletelyPositiveMapClass
+    span= 336  NumberField.Ideal.tendsto_norm_le_div_atTop₀
+
+=== Q3.1 direct vs filtered citation counts (theorem artifacts) ===
+  P1 full support          mean=  28.54  p50=   18 p90=   62  zero=      0 (0.0%)
+  P2 load-bearing          mean=  12.83  p50=    6 p90=   31  zero=  5,445 (1.0%)
+  P3 claims                mean=   5.25  p50=    2 p90=   13  zero= 68,219 (12.8%)
+  P4 V8 boundary           mean=   2.75  p50=    1 p90=    7  zero=116,581 (21.9%)
+
+written data/geometry_results.json

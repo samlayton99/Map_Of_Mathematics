@@ -1,0 +1,36 @@
+base incidences (load-bearing): 8,485,349
+PREREQUISITE Spearman(depth(T), |citations|) = 0.3514
+  (mechanism-1 stratification fires only if this is strongly positive)
+weights: mean=1.235 p50=0.666 p99=7.399
+backbone edges (one per proof, T0+): 728,753
+distinct declaration edges: 8,485,349
+backbone as distinct edges: 728,753
+z: p50=9.09 p90=414.59 p99=2088.22 max=3236.8
+
+=== slider: every level is a PREFIX of one sorted array ===
+                 level        edges comps(+root)     giant   comps(math)    giant
+         backbone only      728,753          64   99.98%      34,337    6.44%
+           top 5% by z      728,753          64   99.98%      34,337    6.44%
+          top 10% by z      848,534          25   99.99%      22,471   88.08%
+          top 25% by z    2,121,337           1  100.00%       1,716   98.90%
+          top 50% by z    4,242,674           1  100.00%         895   99.66%
+          top 75% by z    6,364,011           1  100.00%         598   99.77%
+         top 100% by z    8,485,349           1  100.00%         569   99.78%
+
+nested (edges monotone): True
+backbone edges that would pass the top-25% filter anyway: 91.0%
+
+=== definitions and constructions in the structure ===
+  cited declarations that are definitions/constructions: 4,853,062 of 8,485,349 edges (57.2%)
+  BACKBONE edges whose cited endpoint is a definition: 252,874 (34.7%)
+  distinct definitions present as nodes: 140,008
+
+=== backbone composition by depth of the citing theorem ===
+  depth   0-10   edges=130,039  cited is content:  27.7%
+  depth  10-25   edges=148,294  cited is content:  54.9%
+  depth  25-50   edges=129,184  cited is content:  50.9%
+  depth  50-75   edges=103,109  cited is content:  75.2%
+  depth  75-125  edges=132,525  cited is content:  66.7%
+  depth 125-350  edges= 85,602  cited is content:  70.2%
+
+written data/backbone_results.json and data/filtration.npz

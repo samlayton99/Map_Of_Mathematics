@@ -1,0 +1,137 @@
+
+==========================================================================
+A. FULL load-bearing graph -- nothing filtered. Are there genuine islands?
+==========================================================================
+  components: 569   sizes: max=761,386 p50=3 min=2
+  size<=2: 243 (42.7%)   size>=100: 1
+
+  --- the 18 largest components ---
+  #0   n=761,386  depth~ 34  gen=39.6%  CategoryTheory.Limits                purity= 1.7%
+  #1   n=     54  depth~  2  gen= 1.9%  Lean.Parser                          purity=100.0%
+  #2   n=     19  depth~  2  gen= 5.3%  ReprAtom.mk                          purity=10.5%
+  #3   n=     11  depth~ 22  gen=90.9%  SubsemiringClass.toSubmonoidClass    purity= 9.1%
+  #4   n=     10  depth~  8  gen=90.0%  IsSemitopologicalSemiring.toSepara   purity=10.0%
+  #5   n=      9  depth~ 13  gen=22.2%  OrderDual.instAddLeftCancelMonoid    purity=11.1%
+  #6   n=      9  depth~  8  gen=88.9%  MonadSatisfying.instStateRefT'       purity=22.2%
+  #7   n=      9  depth~ 11  gen=88.9%  NonUnitalSubringClass.toNonUnitalS   purity=11.1%
+  #8   n=      8  depth~  6  gen=25.0%  RestrictedProduct.instRingCoeOfSub   purity=12.5%
+  #9   n=      8  depth~  9  gen=87.5%  NonUnitalRingHomClass.toAddMonoidH   purity=12.5%
+  #10  n=      7  depth~ 11  gen=85.7%  NonUnitalSubsemiringClass.toAddSub   purity=14.3%
+  #11  n=      7  depth~  5  gen=85.7%  CategoryTheory.WideSubcategory       purity=42.9%
+  #12  n=      7  depth~ 57  gen=85.7%  ZeroAtInftyContinuousMapClass.toCo   purity=14.3%
+          ZeroAtInftyContinuousMapClass.toContinuousMapClass
+          ZeroAtInftyContinuousMap.comp._proof_1
+          ZeroAtInftyContinuousMap.ContinuousMap.liftZeroAtInfty._proof_5
+          ZeroAtInftyContinuousMap.instNeg._proof_2
+  #13  n=      7  depth~  2  gen=85.7%  UsesSetNotationForOrder.mk           purity=28.6%
+          Set.instUsesSetNotationForOrder
+          Finset.instUsesSetNotationForOrder
+          UsesSetNotationForOrder.mk
+          Class.instUsesSetNotationForOrder
+  #14  n=      7  depth~  9  gen=85.7%  List.Perm                            purity=42.9%
+          EquivBEq.toReflBEq
+          _private.Batteries.Data.List.Perm.0.List.Subperm.idxInj_injective._proof_1_2
+          _private.Batteries.Data.List.Perm.0.List.Perm.idxBij_leftInverse_idxBij_symm._proof_1_1
+          _private.Batteries.Data.List.Perm.0.List.Perm.idxBij_rightInverse_idxBij_symm._proof_1_1
+  #15  n=      7  depth~  2  gen=14.3%  AddRightCancelMonoid.toIsRightCanc   purity=14.3%
+          AddRightCancelMonoid.toIsRightCancelAdd
+          Colex.instAddRightCancelMonoid._proof_1
+          AddOpposite.instAddCancelMonoid._proof_1
+          OrderDual.instAddRightCancelMonoid._proof_1
+  #16  n=      6  depth~  4  gen=33.3%  RestrictedProduct.instAddCommGroup   purity=16.7%
+          RestrictedProduct.instAddCommGroupCoeOfAddSubgroupClass._proof_4
+          AddSubgroupClass.toNegMemClass
+          AddSubgroupClass.toAddGroup._proof_7
+          HomogeneousLocalization.instSub._proof_1
+  #17  n=      6  depth~ 23  gen=50.0%  Lean.PrefixTreeNode                  purity=100.0%
+          Lean.PrefixTreeNode.WellFormed.brecOn
+          Lean.PrefixTreeNode.WellFormed.below.insertWff
+          Lean.PrefixTreeNode.WellFormed.below.emptyWff
+          Lean.PrefixTreeNode.WellFormed.rec
+
+  outside the giant component: 1,641 declarations, 21.3% machine-generated, median depth 5
+  their areas:
+    CategoryTheory.Limits                         120
+    CategoryTheory.MorphismProperty               109
+    Lean.Parser                                    56
+    CategoryTheory.ObjectProperty                  40
+    Order.Group                                    28
+    CategoryTheory.Functor                         23
+    CategoryTheory.Bicategory                      14
+    FirstOrder.Language                            10
+    Lean.Lsp                                       10
+    CategoryTheory.Enriched                         9
+    Lean.Meta                                       9
+    Lean.PrefixTreeNode                             8
+
+==========================================================================
+B. TOP-1 under the frozen V8 ranking -- 25,230 components. Artifact or finding?
+==========================================================================
+  components: 25,230   sizes: max=43,284 p50=2 min=2
+  size<=2: 12,803 (50.7%)   size>=100: 459
+
+  --- the 18 largest components ---
+  #0   n= 43,284  depth~ 58  gen=34.5%  Std.DTreeMap                         purity=10.2%
+  #1   n= 13,358  depth~ 21  gen=42.2%  Std.Internal                         purity= 3.7%
+  #2   n= 12,922  depth~ 18  gen=51.3%  CategoryTheory.Limits                purity= 2.1%
+  #3   n=  9,507  depth~ 20  gen=38.9%  AlgebraicGeometry.Scheme             purity= 2.9%
+  #4   n=  7,338  depth~ 80  gen=20.4%  Affine.Simplex                       purity= 1.0%
+  #5   n=  5,683  depth~166  gen=28.1%  CochainComplex.HomComplex            purity= 1.1%
+  #6   n=  5,448  depth~107  gen=22.5%  TopologicalSpace.Opens               purity= 0.8%
+  #7   n=  5,282  depth~ 79  gen=20.4%  MeasureTheory.Measure                purity= 1.3%
+  #8   n=  5,275  depth~ 32  gen=38.4%  CategoryTheory.Limits                purity=28.2%
+  #9   n=  5,146  depth~ 53  gen=36.8%  CategoryTheory.Abelian               purity= 7.2%
+  #10  n=  5,024  depth~ 88  gen=24.7%  MeasureTheory.Measure                purity= 4.2%
+  #11  n=  4,862  depth~ 40  gen=39.5%  Module.Basis                         purity= 0.9%
+  #12  n=  4,328  depth~ 26  gen=26.5%  CategoryTheory.Functor               purity= 3.9%
+          Classical.propDecidable
+          linearOrderOfSTO
+          Classical.choose_spec
+          eq_or_ne
+  #13  n=  4,283  depth~ 59  gen=38.6%  Filter.Germ                          purity= 3.0%
+          Quot.ind
+          Con.commGroup._proof_1
+          Quotient.mk''_surjective
+          Ordinal.instLinearOrder
+  #14  n=  4,201  depth~ 29  gen=99.9%  0.Lean                               purity= 6.1%
+          Nat.decEq
+          _private.Std.Http.Server.Connection.0.Std.Http.Server.Connection.pollNextEvent._sparseCa
+          _private.Lean.Elab.PreDefinition.WF.GuessLex.0.Lean.Elab.WF.GuessLex.withRecApps.loop._s
+          Lean.KVMap.instValueString._sparseCasesOn_1
+  #15  n=  3,791  depth~259  gen= 4.5%  MeasureTheory.Measure                purity= 3.2%
+          ProbabilityTheory.IsGaussianProcess.hasGaussianLaw_eval
+          dist_integral_mulExpNegMulSq_comp_le
+          abs_setIntegral_mulExpNegMulSq_comp_sub_le_mul_measure
+          integral_mulExpNegMulSq_comp_eq
+  #16  n=  3,692  depth~ 28  gen=40.2%  CategoryTheory.Limits                purity= 3.0%
+          Module.Free.instFaithfulSMulOfNontrivial
+          CompHausLike.preregular
+          MonoidAlgebra.addCommGroup
+          MonoidAlgebra.instAddCommMonoid
+  #17  n=  3,493  depth~195  gen=14.2%  NumberField.InfinitePlace            purity= 4.1%
+          Real.contDiffAt_rpow_of_ne
+          contDiffAt_snd
+          ContDiffAt.log
+          contDiffAt_const
+
+  --- coherence of components (are they real areas?) ---
+  400 components of size>=5: namespace purity mean=41.2% median=32.5%
+    single-area components (purity>=80%): 20.0%
+    machine-generated fraction: mean=39.4% median=37.5%
+    components that are >=80% machine-generated: 10.8%
+
+  --- a sample of SMALL components (size 2-4) ---
+    [3] selfAdjoint.isSelfAdjoint._simp_1 | selfAdjoint.star_val_eq | selfAdjoint.isSelfAdjoint
+    [2] AddCommGrpCat.uliftFunctorFullyFaithful._pro | AddCommGrpCat.uliftFunctorFullyFaithful
+    [2] Filter.Germ.coe_vadd'._simp_1 | Filter.Germ.coe_vadd'
+    [2] Set.ofPred_top | Set.setOf_top
+    [3] HomotopyCategory.instEssSurjHomologicalCompl | CategoryTheory.Preadditive.RightFreyd.instEs | CategoryTheory.Quotient.essSurj_functor
+    [3] Set.domRestrict_eq | _private.Mathlib.Topology.UniformSpace.Ascol | Set.restrict_eq
+    [3] _private.Batteries.Recycling.RBTree.Lemmas.0 | RBTree.RBNode.Path.zoom_del._unary | RBTree.RBNode.Path.zoom_del
+    [2] minimalFor_eq_iff | minimalFor_eq_iff._simp_2
+    [2] Classical.inhabited_of_exists._proof_1 | Classical.inhabited_of_exists
+    [2] WithZero.coe_add | WithZero.coe_add._simp_1
+    [3] _private.Mathlib.RingTheory.HahnSeries.Addit | AddOpposite.op_add | _private.Mathlib.RingTheory.HahnSeries.Addit
+    [2] SemilatSupCat.instLargeCategory._proof_3 | SupBotHom.comp_assoc
+
+written data/island_forensics.json

@@ -1,0 +1,666 @@
+{
+ "full_graph": {
+  "components": 569,
+  "largest": [
+   {
+    "rank": 0,
+    "size": 761386,
+    "dominant_namespace": "CategoryTheory.Limits",
+    "namespace_purity": 0.017,
+    "median_depth": 34,
+    "machine_generated_frac": 0.396,
+    "theorem_frac": 0.699,
+    "sample": [
+     "Nat.one_mem_properDivisors_iff_one_lt",
+     "Finset",
+     "Membership.mem",
+     "instOfNatNat"
+    ]
+   },
+   {
+    "rank": 1,
+    "size": 54,
+    "dominant_namespace": "Lean.Parser",
+    "namespace_purity": 1.0,
+    "median_depth": 2,
+    "machine_generated_frac": 0.019,
+    "theorem_frac": 0.0,
+    "sample": [
+     "Lean.Parser.Category.Aesop.builder_option",
+     "Lean.Parser.Category.mk",
+     "Lean.Parser.Category.rintroPat",
+     "Lean.Parser.Category.attr"
+    ]
+   },
+   {
+    "rank": 2,
+    "size": 19,
+    "dominant_namespace": "ReprAtom.mk",
+    "namespace_purity": 0.105,
+    "median_depth": 2,
+    "machine_generated_frac": 0.053,
+    "theorem_frac": 0.0,
+    "sample": [
+     "instReprAtomUSize",
+     "ReprAtom.mk",
+     "instReprAtomInt32",
+     "instReprAtomInt8"
+    ]
+   },
+   {
+    "rank": 3,
+    "size": 11,
+    "dominant_namespace": "SubsemiringClass.toSubmonoidClass",
+    "namespace_purity": 0.091,
+    "median_depth": 22,
+    "machine_generated_frac": 0.909,
+    "theorem_frac": 1.0,
+    "sample": [
+     "SubsemiringClass.toSubmonoidClass",
+     "SubsemiringClass.toSemiring._proof_7",
+     "Algebra.adjoin.powerBasisAux._proof_4",
+     "IntermediateField.instMulSemiringActionSubtypeMem._proof_1"
+    ]
+   },
+   {
+    "rank": 4,
+    "size": 10,
+    "dominant_namespace": "IsSemitopologicalSemiring.toSeparatelyContinuousMul",
+    "namespace_purity": 0.1,
+    "median_depth": 8,
+    "machine_generated_frac": 0.9,
+    "theorem_frac": 1.0,
+    "sample": [
+     "IsSemitopologicalSemiring.toSeparatelyContinuousMul",
+     "Subalgebra.commSemiringTopologicalClosure._proof_1",
+     "NonUnitalSubsemiring.topologicalClosure._proof_1",
+     "NonUnitalStarSubalgebra.nonUnitalCommRingTopologicalClosure._proof_2"
+    ]
+   },
+   {
+    "rank": 5,
+    "size": 9,
+    "dominant_namespace": "OrderDual.instAddLeftCancelMonoid",
+    "namespace_purity": 0.111,
+    "median_depth": 13,
+    "machine_generated_frac": 0.222,
+    "theorem_frac": 1.0,
+    "sample": [
+     "OrderDual.instAddLeftCancelMonoid._proof_1",
+     "AddLeftCancelMonoid.toIsLeftCancelAdd",
+     "Matrix.instAddCancelCommMonoid._proof_1",
+     "Lex.instAddLeftCancelMonoid._proof_1"
+    ]
+   },
+   {
+    "rank": 6,
+    "size": 9,
+    "dominant_namespace": "MonadSatisfying.instStateRefT'",
+    "namespace_purity": 0.222,
+    "median_depth": 8,
+    "machine_generated_frac": 0.889,
+    "theorem_frac": 1.0,
+    "sample": [
+     "LawfulApplicative.toLawfulFunctor",
+     "MonadSatisfying.instStateT._proof_1",
+     "MonadSatisfying.instId._proof_2",
+     "MonadSatisfying.instStateRefT'._proof_2"
+    ]
+   },
+   {
+    "rank": 7,
+    "size": 9,
+    "dominant_namespace": "NonUnitalSubringClass.toNonUnitalSubsemiringClass",
+    "namespace_purity": 0.111,
+    "median_depth": 11,
+    "machine_generated_frac": 0.889,
+    "theorem_frac": 1.0,
+    "sample": [
+     "NonUnitalSubringClass.toNonUnitalSubsemiringClass",
+     "StarSubalgebra.cstarAlgebra._proof_2",
+     "NonUnitalSubalgebra.unitizationAlgEquiv._proof_1",
+     "StarSubalgebra.commCStarAlgebra._proof_3"
+    ]
+   },
+   {
+    "rank": 8,
+    "size": 8,
+    "dominant_namespace": "RestrictedProduct.instRingCoeOfSubringClass",
+    "namespace_purity": 0.125,
+    "median_depth": 6,
+    "machine_generated_frac": 0.25,
+    "theorem_frac": 1.0,
+    "sample": [
+     "RestrictedProduct.instRingCoeOfSubringClass._proof_1",
+     "AddSubmonoidClass.toAddMemClass",
+     "AddSubmonoidClass.toAddMonoid._proof_5",
+     "RestrictedProduct.instAddMonoidCoeOfAddSubmonoidClass._proof_1"
+    ]
+   },
+   {
+    "rank": 9,
+    "size": 8,
+    "dominant_namespace": "NonUnitalRingHomClass.toAddMonoidHomClass",
+    "namespace_purity": 0.125,
+    "median_depth": 9,
+    "machine_generated_frac": 0.875,
+    "theorem_frac": 1.0,
+    "sample": [
+     "NonUnitalRingHomClass.toAddMonoidHomClass",
+     "NonUnitalRingHom.eqLocus._proof_2",
+     "NonUnitalRingHom.inverse._proof_1",
+     "NonUnitalSubring.comap._proof_2"
+    ]
+   },
+   {
+    "rank": 10,
+    "size": 7,
+    "dominant_namespace": "NonUnitalSubsemiringClass.toAddSubmonoidClass",
+    "namespace_purity": 0.143,
+    "median_depth": 11,
+    "machine_generated_frac": 0.857,
+    "theorem_frac": 1.0,
+    "sample": [
+     "NonUnitalSubsemiringClass.toAddSubmonoidClass",
+     "NonUnitalStarSubalgebra.module'._proof_1",
+     "SubalgebraClass.toAlgebra._proof_5",
+     "NonUnitalSubalgebra.instModule'._proof_1"
+    ]
+   },
+   {
+    "rank": 11,
+    "size": 7,
+    "dominant_namespace": "CategoryTheory.WideSubcategory",
+    "namespace_purity": 0.429,
+    "median_depth": 5,
+    "machine_generated_frac": 0.857,
+    "theorem_frac": 1.0,
+    "sample": [
+     "CategoryTheory.WideSubcategory.instMonoidalCategoryStruct._proof_1",
+     "CategoryTheory.MorphismProperty.IsMonoidal.toIsMultiplicative",
+     "Stoch._proof_1",
+     "CategoryTheory.MorphismProperty.instComonObjWideSubcategoryOfIsStableUnderComonoidObj._proof_1"
+    ]
+   },
+   {
+    "rank": 12,
+    "size": 7,
+    "dominant_namespace": "ZeroAtInftyContinuousMapClass.toContinuousMapClass",
+    "namespace_purity": 0.143,
+    "median_depth": 57,
+    "machine_generated_frac": 0.857,
+    "theorem_frac": 1.0,
+    "sample": [
+     "ZeroAtInftyContinuousMapClass.toContinuousMapClass",
+     "ZeroAtInftyContinuousMap.comp._proof_1",
+     "ZeroAtInftyContinuousMap.ContinuousMap.liftZeroAtInfty._proof_5",
+     "ZeroAtInftyContinuousMap.instNeg._proof_2"
+    ]
+   },
+   {
+    "rank": 13,
+    "size": 7,
+    "dominant_namespace": "UsesSetNotationForOrder.mk",
+    "namespace_purity": 0.286,
+    "median_depth": 2,
+    "machine_generated_frac": 0.857,
+    "theorem_frac": 0.0,
+    "sample": [
+     "Set.instUsesSetNotationForOrder",
+     "Finset.instUsesSetNotationForOrder",
+     "UsesSetNotationForOrder.mk",
+     "Class.instUsesSetNotationForOrder"
+    ]
+   },
+   {
+    "rank": 14,
+    "size": 7,
+    "dominant_namespace": "List.Perm",
+    "namespace_purity": 0.429,
+    "median_depth": 9,
+    "machine_generated_frac": 0.857,
+    "theorem_frac": 1.0,
+    "sample": [
+     "EquivBEq.toReflBEq",
+     "_private.Batteries.Data.List.Perm.0.List.Subperm.idxInj_injective._proof_1_2",
+     "_private.Batteries.Data.List.Perm.0.List.Perm.idxBij_leftInverse_idxBij_symm._proof_1_1",
+     "_private.Batteries.Data.List.Perm.0.List.Perm.idxBij_rightInverse_idxBij_symm._proof_1_1"
+    ]
+   },
+   {
+    "rank": 15,
+    "size": 7,
+    "dominant_namespace": "AddRightCancelMonoid.toIsRightCancelAdd",
+    "namespace_purity": 0.143,
+    "median_depth": 2,
+    "machine_generated_frac": 0.143,
+    "theorem_frac": 1.0,
+    "sample": [
+     "AddRightCancelMonoid.toIsRightCancelAdd",
+     "Colex.instAddRightCancelMonoid._proof_1",
+     "AddOpposite.instAddCancelMonoid._proof_1",
+     "OrderDual.instAddRightCancelMonoid._proof_1"
+    ]
+   },
+   {
+    "rank": 16,
+    "size": 6,
+    "dominant_namespace": "RestrictedProduct.instAddCommGroupCoeOfAddSubgroupClass",
+    "namespace_purity": 0.167,
+    "median_depth": 4,
+    "machine_generated_frac": 0.333,
+    "theorem_frac": 1.0,
+    "sample": [
+     "RestrictedProduct.instAddCommGroupCoeOfAddSubgroupClass._proof_4",
+     "AddSubgroupClass.toNegMemClass",
+     "AddSubgroupClass.toAddGroup._proof_7",
+     "HomogeneousLocalization.instSub._proof_1"
+    ]
+   },
+   {
+    "rank": 17,
+    "size": 6,
+    "dominant_namespace": "Lean.PrefixTreeNode",
+    "namespace_purity": 1.0,
+    "median_depth": 23,
+    "machine_generated_frac": 0.5,
+    "theorem_frac": 0.167,
+    "sample": [
+     "Lean.PrefixTreeNode.WellFormed.brecOn",
+     "Lean.PrefixTreeNode.WellFormed.below.insertWff",
+     "Lean.PrefixTreeNode.WellFormed.below.emptyWff",
+     "Lean.PrefixTreeNode.WellFormed.rec"
+    ]
+   }
+  ],
+  "outside_giant": {
+   "n": 1641,
+   "machine_generated_frac": 0.213,
+   "median_depth": 5,
+   "areas": [
+    {
+     "area": "CategoryTheory.Limits",
+     "n": 120
+    },
+    {
+     "area": "CategoryTheory.MorphismProperty",
+     "n": 109
+    },
+    {
+     "area": "Lean.Parser",
+     "n": 56
+    },
+    {
+     "area": "CategoryTheory.ObjectProperty",
+     "n": 40
+    },
+    {
+     "area": "Order.Group",
+     "n": 28
+    },
+    {
+     "area": "CategoryTheory.Functor",
+     "n": 23
+    },
+    {
+     "area": "CategoryTheory.Bicategory",
+     "n": 14
+    },
+    {
+     "area": "FirstOrder.Language",
+     "n": 10
+    },
+    {
+     "area": "Lean.Lsp",
+     "n": 10
+    },
+    {
+     "area": "CategoryTheory.Enriched",
+     "n": 9
+    },
+    {
+     "area": "Lean.Meta",
+     "n": 9
+    },
+    {
+     "area": "Lean.PrefixTreeNode",
+     "n": 8
+    },
+    {
+     "area": "Order.GroupWithZero",
+     "n": 7
+    },
+    {
+     "area": "CategoryTheory.HomRel",
+     "n": 6
+    },
+    {
+     "area": "Lex.0",
+     "n": 6
+    },
+    {
+     "area": "PurelyInseparable.AdjoinPthRoots",
+     "n": 6
+    },
+    {
+     "area": "Order.Ring",
+     "n": 6
+    },
+    {
+     "area": "CategoryTheory.Presieve",
+     "n": 6
+    },
+    {
+     "area": "MeasureTheory.Measure",
+     "n": 6
+    },
+    {
+     "area": "Std.Identity",
+     "n": 5
+    },
+    {
+     "area": "Std.LeftIdentity",
+     "n": 5
+    },
+    {
+     "area": "Std.LawfulLeftIdentity",
+     "n": 5
+    },
+    {
+     "area": "CategoryTheory.IsUniversallyEffectiveEquivalenceRelation",
+     "n": 5
+    },
+    {
+     "area": "RBTree.RBNode",
+     "n": 5
+    },
+    {
+     "area": "CategoryTheory.IsUniversallyEffectiveEquivalenceRelationCategory",
+     "n": 5
+    }
+   ]
+  }
+ },
+ "top1_graph": {
+  "components": 25230,
+  "largest": [
+   {
+    "rank": 0,
+    "size": 43284,
+    "dominant_namespace": "Std.DTreeMap",
+    "namespace_purity": 0.102,
+    "median_depth": 58,
+    "machine_generated_frac": 0.345,
+    "theorem_frac": 0.959,
+    "sample": [
+     "_private.Std.Data.DTreeMap.Internal.Balancing.0.Std.DTreeMap.Internal.Impl.balanceL._proof_13",
+     "_private.Std.Data.DTreeMap.Internal.Balancing.0.Std.DTreeMap.Internal.Impl.balanceL._proof_12",
+     "Int.instAddCommGroup",
+     "zpow_add\u2080"
+    ]
+   },
+   {
+    "rank": 1,
+    "size": 13358,
+    "dominant_namespace": "Std.Internal",
+    "namespace_purity": 0.037,
+    "median_depth": 21,
+    "machine_generated_frac": 0.422,
+    "theorem_frac": 0.895,
+    "sample": [
+     "Finset.instSetLike",
+     "Matrix.PosSemidef.zero",
+     "noConfusion_of_Nat",
+     "_private.Init.Data.List.Nat.TakeDrop.0.List.getElem?_drop._simp_1_1"
+    ]
+   },
+   {
+    "rank": 2,
+    "size": 12922,
+    "dominant_namespace": "CategoryTheory.Limits",
+    "namespace_purity": 0.021,
+    "median_depth": 18,
+    "machine_generated_frac": 0.513,
+    "theorem_frac": 0.714,
+    "sample": [
+     "SchwartzMap.mk.inj",
+     "eq_of_heq",
+     "MeasureTheory.Measure.instFunLike",
+     "Function.locallyFinsuppWithin.instFunLike"
+    ]
+   },
+   {
+    "rank": 3,
+    "size": 9507,
+    "dominant_namespace": "AlgebraicGeometry.Scheme",
+    "namespace_purity": 0.029,
+    "median_depth": 20,
+    "machine_generated_frac": 0.389,
+    "theorem_frac": 0.939,
+    "sample": [
+     "false_or",
+     "contravariant_lt_of_covariant_le",
+     "IsChain.image_relEmbedding_iff",
+     "IsChain.image"
+    ]
+   },
+   {
+    "rank": 4,
+    "size": 7338,
+    "dominant_namespace": "Affine.Simplex",
+    "namespace_purity": 0.01,
+    "median_depth": 80,
+    "machine_generated_frac": 0.204,
+    "theorem_frac": 0.953,
+    "sample": [
+     "Matrix.PosSemidef.conjTranspose_mul_mul_same",
+     "MonoidHom.FixedPointFree.orderOf_ne_two_of_involutive",
+     "MonoidHom.FixedPointFree.coe_eq_inv_of_involutive",
+     "Finsupp.curry._proof_4"
+    ]
+   },
+   {
+    "rank": 5,
+    "size": 5683,
+    "dominant_namespace": "CochainComplex.HomComplex",
+    "namespace_purity": 0.011,
+    "median_depth": 166,
+    "machine_generated_frac": 0.281,
+    "theorem_frac": 0.961,
+    "sample": [
+     "AddGroup.toSubtractionMonoid",
+     "add_neg_cancel_comm_assoc",
+     "Complex.IsExpCmpFilter.isLittleO_cpow_mul_exp",
+     "sub_pos"
+    ]
+   },
+   {
+    "rank": 6,
+    "size": 5448,
+    "dominant_namespace": "TopologicalSpace.Opens",
+    "namespace_purity": 0.008,
+    "median_depth": 107,
+    "machine_generated_frac": 0.225,
+    "theorem_frac": 0.946,
+    "sample": [
+     "Asymptotics.IsBigO.trans_tendsto",
+     "instOrderTopologyReal",
+     "IsOpen.nhdsSet_eq",
+     "nhdsSet_eq_principal_iff"
+    ]
+   },
+   {
+    "rank": 7,
+    "size": 5282,
+    "dominant_namespace": "MeasureTheory.Measure",
+    "namespace_purity": 0.013,
+    "median_depth": 79,
+    "machine_generated_frac": 0.204,
+    "theorem_frac": 0.963,
+    "sample": [
+     "Asymptotics.superpolynomialDecay_iff_zpow_tendsto_zero",
+     "Filter.Tendsto.inv_tendsto_atTop",
+     "Filter.Eventually.exists",
+     "nhdsGT_neBot"
+    ]
+   },
+   {
+    "rank": 8,
+    "size": 5275,
+    "dominant_namespace": "CategoryTheory.Limits",
+    "namespace_purity": 0.282,
+    "median_depth": 32,
+    "machine_generated_frac": 0.384,
+    "theorem_frac": 0.861,
+    "sample": [
+     "CategoryTheory.IsMonHom.monoidHom._proof_2",
+     "CategoryTheory.Hom.monoid",
+     "CategoryTheory.CartesianMonoidalCategory.lift_map_assoc",
+     "CompHausLike.instFinitaryExtensiveOfHasExplicitPullbacksOfInclusions"
+    ]
+   },
+   {
+    "rank": 9,
+    "size": 5146,
+    "dominant_namespace": "CategoryTheory.Abelian",
+    "namespace_purity": 0.072,
+    "median_depth": 53,
+    "machine_generated_frac": 0.368,
+    "theorem_frac": 0.955,
+    "sample": [
+     "dite_cond_eq_false",
+     "OrderDual.instLinearOrder",
+     "ite_cond_eq_true",
+     "ite_congr"
+    ]
+   },
+   {
+    "rank": 10,
+    "size": 5024,
+    "dominant_namespace": "MeasureTheory.Measure",
+    "namespace_purity": 0.042,
+    "median_depth": 88,
+    "machine_generated_frac": 0.247,
+    "theorem_frac": 0.934,
+    "sample": [
+     "linearIndependent_equiv",
+     "MeasureTheory.ae",
+     "Finset.sum_ite_eq",
+     "Fintype.sum_extend_by_zero"
+    ]
+   },
+   {
+    "rank": 11,
+    "size": 4862,
+    "dominant_namespace": "Module.Basis",
+    "namespace_purity": 0.009,
+    "median_depth": 40,
+    "machine_generated_frac": 0.395,
+    "theorem_frac": 0.9,
+    "sample": [
+     "_private.Mathlib.LinearAlgebra.DFinsupp.0.DFinsupp.mker_mapRangeAddMonoidHom._simp_1_1",
+     "DFinsupp.ext_iff",
+     "Finsupp.smulZeroClass",
+     "LinearMap.instFunLike"
+    ]
+   },
+   {
+    "rank": 12,
+    "size": 4328,
+    "dominant_namespace": "CategoryTheory.Functor",
+    "namespace_purity": 0.039,
+    "median_depth": 26,
+    "machine_generated_frac": 0.265,
+    "theorem_frac": 0.905,
+    "sample": [
+     "Classical.propDecidable",
+     "linearOrderOfSTO",
+     "Classical.choose_spec",
+     "eq_or_ne"
+    ]
+   },
+   {
+    "rank": 13,
+    "size": 4283,
+    "dominant_namespace": "Filter.Germ",
+    "namespace_purity": 0.03,
+    "median_depth": 59,
+    "machine_generated_frac": 0.386,
+    "theorem_frac": 0.893,
+    "sample": [
+     "Quot.ind",
+     "Con.commGroup._proof_1",
+     "Quotient.mk''_surjective",
+     "Ordinal.instLinearOrder"
+    ]
+   },
+   {
+    "rank": 14,
+    "size": 4201,
+    "dominant_namespace": "0.Lean",
+    "namespace_purity": 0.061,
+    "median_depth": 29,
+    "machine_generated_frac": 0.999,
+    "theorem_frac": 0.001,
+    "sample": [
+     "Nat.decEq",
+     "_private.Std.Http.Server.Connection.0.Std.Http.Server.Connection.pollNextEvent._sparseCasesOn_1",
+     "_private.Lean.Elab.PreDefinition.WF.GuessLex.0.Lean.Elab.WF.GuessLex.withRecApps.loop._sparseCasesOn_1",
+     "Lean.KVMap.instValueString._sparseCasesOn_1"
+    ]
+   },
+   {
+    "rank": 15,
+    "size": 3791,
+    "dominant_namespace": "MeasureTheory.Measure",
+    "namespace_purity": 0.032,
+    "median_depth": 259,
+    "machine_generated_frac": 0.045,
+    "theorem_frac": 0.99,
+    "sample": [
+     "ProbabilityTheory.IsGaussianProcess.hasGaussianLaw_eval",
+     "dist_integral_mulExpNegMulSq_comp_le",
+     "abs_setIntegral_mulExpNegMulSq_comp_sub_le_mul_measure",
+     "integral_mulExpNegMulSq_comp_eq"
+    ]
+   },
+   {
+    "rank": 16,
+    "size": 3692,
+    "dominant_namespace": "CategoryTheory.Limits",
+    "namespace_purity": 0.03,
+    "median_depth": 28,
+    "machine_generated_frac": 0.402,
+    "theorem_frac": 0.872,
+    "sample": [
+     "Module.Free.instFaithfulSMulOfNontrivial",
+     "CompHausLike.preregular",
+     "MonoidAlgebra.addCommGroup",
+     "MonoidAlgebra.instAddCommMonoid"
+    ]
+   },
+   {
+    "rank": 17,
+    "size": 3493,
+    "dominant_namespace": "NumberField.InfinitePlace",
+    "namespace_purity": 0.041,
+    "median_depth": 195,
+    "machine_generated_frac": 0.142,
+    "theorem_frac": 0.953,
+    "sample": [
+     "Real.contDiffAt_rpow_of_ne",
+     "contDiffAt_snd",
+     "ContDiffAt.log",
+     "contDiffAt_const"
+    ]
+   }
+  ],
+  "coherence": {
+   "n_sampled": 400,
+   "namespace_purity_mean": 0.412,
+   "single_area_frac": 0.2,
+   "machine_generated_mean": 0.394,
+   "mostly_generated_frac": 0.107
+  }
+ }
+}

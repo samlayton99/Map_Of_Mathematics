@@ -1,0 +1,46 @@
+=== A. rank-1 composition by depth band (theorem artifacts) ===
+  depth   0-10   proofs= 65,242  rank-1 is content:  48.9%
+  depth  10-25   proofs=112,675  rank-1 is content:  59.8%
+  depth  25-50   proofs= 88,859  rank-1 is content:  53.1%
+  depth  50-75   proofs= 88,434  rank-1 is content:  74.8%
+  depth  75-125  proofs=103,918  rank-1 is content:  72.3%
+  depth 125-350  proofs= 68,739  rank-1 is content:  78.6%
+
+=== B. components of the top-1 graph ===
+  touched nodes 487,735, components 25,230
+  size distribution: max=43,284 p99=186 p50=2 min=2
+  singletons+pairs: 12,803 components (50.7%)
+
+=== C. are the shards shallow or deep? ===
+  giant component: 43,284 nodes, median depth 58
+  everything else: 444,451 nodes, median depth 49
+    depth   0-10 :  50,514 nodes,   0.7% in the giant component
+    depth  10-25 : 101,062 nodes,   1.1% in the giant component
+    depth  25-50 :  82,931 nodes,  13.0% in the giant component
+    depth  50-75 :  85,665 nodes,  22.1% in the giant component
+    depth  75-125: 100,182 nodes,  11.6% in the giant component
+    depth 125-350:  67,381 nodes,   0.7% in the giant component
+
+=== D. sinks: where top-1 chains stop ===
+  sinks (no outgoing top-1 edge): 25,230
+  sink depth: p50=17 p90=98
+  most common sink roots:
+    CategoryTheory                3,060
+    _private                      2,869
+    Lean                          1,681
+    Std                             796
+    Set                             395
+    AlgebraicGeometry               319
+    List                            311
+    MeasureTheory                   273
+    Mathlib                         267
+    SimpleGraph                     205
+    Aesop                           193
+    LinearMap                       188
+
+=== E. how much evidence reconnects it? ===
+  top-2: edges=709,619 components=10,805 giant=93.73%
+  top-3: edges=873,615 components=9,407 giant=94.78%
+  top-4: edges=991,923 components=8,884 giant=95.25%
+
+written data/stratified_purity.json
