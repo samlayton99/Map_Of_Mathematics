@@ -1,0 +1,1409 @@
+{
+ "apparatus_count": 92,
+ "V6": {
+  "verdicts": {
+   "definitional": 277,
+   "empty": 204
+  },
+  "top1_nonmachinery_proxy": 0.9349,
+  "top1_extended_grader": 0.9312,
+  "no_content": 0.024,
+  "top1_cause_when_machinery": {
+   "generated": 46,
+   "glue": 52,
+   "tactic": 21,
+   "other": 1,
+   "instance": 1,
+   "self-helper": 1
+  },
+  "top1_cause_extended": {
+   "generated": 46,
+   "glue": 53,
+   "tactic": 27,
+   "other": 1,
+   "instance": 1,
+   "self-helper": 1
+  },
+  "n_live": 1874
+ },
+ "V8": {
+  "verdicts": {
+   "definitional": 277,
+   "empty": 204
+  },
+  "top1_nonmachinery_proxy": 0.9301,
+  "top1_extended_grader": 0.929,
+  "no_content": 0.0256,
+  "top1_cause_when_machinery": {
+   "generated": 53,
+   "glue": 52,
+   "tactic": 12,
+   "other": 1,
+   "instance": 1,
+   "self-helper": 12
+  },
+  "top1_cause_extended": {
+   "generated": 53,
+   "glue": 53,
+   "tactic": 13,
+   "other": 1,
+   "instance": 1,
+   "self-helper": 12
+  },
+  "n_live": 1874,
+  "atomic_capsule_top1": 18,
+  "top1_extended_capsule_as_verdict": 0.9386
+ },
+ "ledger_cases_v8": [
+  {
+   "thm": "spectrum.resolvent_sub_resolvent",
+   "verdict": null,
+   "top1_atomic_capsule": true,
+   "top5": [
+    [
+     "_private.Mathlib.Algebra.Algebra.Spectrum.Basic.0.spectrum.resolvent_sub_resolvent._abel_1_1",
+     "self-helper"
+    ],
+    [
+     "spectrum.resolvent_eq",
+     "content"
+    ],
+    [
+     "mul_sub",
+     "content"
+    ],
+    [
+     "sub_mul",
+     "content"
+    ],
+    [
+     "IsUnit.unit_spec",
+     "content"
+    ]
+   ]
+  },
+  {
+   "thm": "Lean.Grind.CommRing.not_le_norm",
+   "verdict": null,
+   "top1_atomic_capsule": false,
+   "top5": [
+    [
+     "Lean.Grind.CommRing.Expr.denote_toPoly",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.CommRing.Expr.toPoly_k_eq_toPoly",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.LinearOrder.lt_of_not_le",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.CommRing.Poly.beq'_eq",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.OrderedAdd.add_lt_left",
+     "tactic"
+    ]
+   ]
+  },
+  {
+   "thm": "Int.ediv_lt_natAbs_self_of_lt_neg_one_of_lt_neg_one",
+   "verdict": null,
+   "top1_atomic_capsule": true,
+   "top5": [
+    [
+     "_private.Init.Data.Int.DivMod.Lemmas.0.Int.ediv_lt_natAbs_self_of_lt_neg_one_of_lt_neg_one._proof_1_7",
+     "self-helper"
+    ],
+    [
+     "_private.Init.Data.Int.DivMod.Lemmas.0.Int.ediv_lt_natAbs_self_of_lt_neg_one_of_lt_neg_one._proof_1_5",
+     "self-helper"
+    ],
+    [
+     "_private.Init.Data.Int.DivMod.Lemmas.0.Int.ediv_lt_natAbs_self_of_lt_neg_one_of_lt_neg_one._proof_1_1",
+     "self-helper"
+    ],
+    [
+     "_private.Init.Data.Int.DivMod.Lemmas.0.Int.ediv_lt_natAbs_self_of_lt_neg_one_of_lt_neg_one._proof_1_4",
+     "self-helper"
+    ],
+    [
+     "_private.Init.Data.Int.DivMod.Lemmas.0.Int.ediv_lt_natAbs_self_of_lt_neg_one_of_lt_neg_one._proof_1_2",
+     "self-helper"
+    ]
+   ]
+  },
+  {
+   "thm": "Lean.Grind.CommRing.Poly.denote_combineC",
+   "verdict": null,
+   "top1_atomic_capsule": false,
+   "top5": [
+    [
+     "Lean.Grind.IsCharP.intCast_emod",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.CommRing.Poly.combineC._unary.induct_unfolding",
+     "generated"
+    ],
+    [
+     "Lean.Grind.CommRing.Mon.eq_of_grevlex",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.CommRing.Poly.addConstC.induct_unfolding",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.AddCommMonoid.add_left_comm",
+     "tactic"
+    ]
+   ]
+  },
+  {
+   "thm": "Set.image_prodMk_subset_prod_left",
+   "verdict": null,
+   "top1_atomic_capsule": false,
+   "top5": [
+    [
+     "Set.subset_def",
+     "content"
+    ],
+    [
+     "Set.mem_prod",
+     "content"
+    ],
+    [
+     "Set.mem_image",
+     "content"
+    ],
+    [
+     "Lean.Grind.eq_false_of_imp_eq_false",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.eq_true_of_imp_eq_false",
+     "tactic"
+    ]
+   ]
+  },
+  {
+   "thm": "Int32.le_or_lt",
+   "verdict": null,
+   "top1_atomic_capsule": true,
+   "top5": [
+    [
+     "_private.Init.Data.SInt.Lemmas.0.Int32.lt_or_le._proof_1_3",
+     "generated"
+    ],
+    [
+     "_private.Init.Data.SInt.Lemmas.0.Int32.lt_or_le._simp_1_2",
+     "generated"
+    ],
+    [
+     "_private.Init.Data.SInt.Lemmas.0.Int32.lt_or_le._simp_1_1",
+     "generated"
+    ],
+    [
+     "Decidable.byContradiction",
+     "content"
+    ],
+    [
+     "congr",
+     "glue"
+    ]
+   ]
+  },
+  {
+   "thm": "CategoryTheory.ComposableArrows.hom_ext_succ",
+   "verdict": null,
+   "top1_atomic_capsule": false,
+   "top5": [
+    [
+     "CategoryTheory.congr_app",
+     "content"
+    ],
+    [
+     "Decidable.byContradiction",
+     "content"
+    ],
+    [
+     "_private.Mathlib.CategoryTheory.ComposableArrows.Basic.0.CategoryTheory.ComposableArrows.hom_ext_succ._proof_1_1",
+     "self-helper"
+    ],
+    [
+     "CategoryTheory.NatTrans.ext'",
+     "content"
+    ],
+    [
+     "funext",
+     "glue"
+    ]
+   ]
+  },
+  {
+   "thm": "Nat.add_eq_three_iff",
+   "verdict": null,
+   "top1_atomic_capsule": false,
+   "top5": [
+    [
+     "Decidable.byContradiction",
+     "content"
+    ],
+    [
+     "_private.Init.Data.Nat.Lemmas.0.Nat.add_eq_three_iff._proof_1_1",
+     "self-helper"
+    ]
+   ]
+  },
+  {
+   "thm": "Int.lcm_eq_zero_iff",
+   "verdict": null,
+   "top1_atomic_capsule": true,
+   "top5": [
+    [
+     "_private.Init.Data.Int.Gcd.0.Int.eq_zero_of_lcm_eq_zero._proof_1_1",
+     "generated"
+    ],
+    [
+     "Int.lcm_ne_zero",
+     "content"
+    ],
+    [
+     "Int.lcm_zero",
+     "content"
+    ],
+    [
+     "Int.zero_lcm",
+     "content"
+    ],
+    [
+     "Decidable.byContradiction",
+     "content"
+    ]
+   ]
+  },
+  {
+   "thm": "Int.toNat_eq_zero",
+   "verdict": null,
+   "top1_atomic_capsule": true,
+   "top5": [
+    [
+     "_private.Init.Data.Int.LemmasAux.0.Int.toNat_eq_zero._proof_1_1",
+     "self-helper"
+    ],
+    [
+     "Decidable.byContradiction",
+     "content"
+    ]
+   ]
+  },
+  {
+   "thm": "UInt8.lt_or_le",
+   "verdict": null,
+   "top1_atomic_capsule": true,
+   "top5": [
+    [
+     "_private.Init.Data.UInt.Lemmas.0.UInt8.lt_or_le._proof_1_3",
+     "self-helper"
+    ],
+    [
+     "UInt8.le_iff_toNat_le",
+     "content"
+    ],
+    [
+     "UInt8.lt_iff_toNat_lt",
+     "content"
+    ],
+    [
+     "Decidable.byContradiction",
+     "content"
+    ],
+    [
+     "congrArg",
+     "glue"
+    ]
+   ]
+  },
+  {
+   "thm": "Std.Tactic.BVDecide.LRAT.Internal.Clause.sat_iff_exists",
+   "verdict": null,
+   "top1_atomic_capsule": false,
+   "top5": [
+    [
+     "List.any_eq",
+     "content"
+    ],
+    [
+     "decide_eq_true_eq",
+     "content"
+    ],
+    [
+     "Decidable.decide.congr_simp",
+     "content"
+    ],
+    [
+     "Lean.Grind.of_forall_eq_false",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.forall_forall_or",
+     "tactic"
+    ]
+   ]
+  },
+  {
+   "thm": "Lean.Grind.Ring.OfSemiring.add_assoc",
+   "verdict": null,
+   "top1_atomic_capsule": false,
+   "top5": [
+    [
+     "Lean.Data.AC.Context.eq_of_norm",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.Ring.OfSemiring.instCommutativeHAdd",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.Ring.OfSemiring.instAssociativeHAdd",
+     "tactic"
+    ],
+    [
+     "Quot.sound",
+     "other"
+    ],
+    [
+     "Quot.ind",
+     "other"
+    ]
+   ]
+  },
+  {
+   "thm": "List.orderedInsert_length",
+   "verdict": null,
+   "top1_atomic_capsule": true,
+   "top5": [
+    [
+     "_private.Mathlib.Data.List.Sort.0.List.orderedInsert_length._proof_1_2",
+     "self-helper"
+    ],
+    [
+     "_private.Mathlib.Data.List.Sort.0.List.orderedInsert_length._proof_1_1",
+     "self-helper"
+    ]
+   ]
+  },
+  {
+   "thm": "Mathlib.Tactic.Module.NF.eq_cons_const",
+   "verdict": null,
+   "top1_atomic_capsule": false,
+   "top5": [
+    [
+     "Mathlib.Tactic.Module.NF.eval_cons",
+     "tactic"
+    ],
+    [
+     "zero_smul",
+     "content"
+    ],
+    [
+     "zero_add",
+     "content"
+    ],
+    [
+     "of_eq_true",
+     "content"
+    ],
+    [
+     "eq_self",
+     "content"
+    ]
+   ]
+  },
+  {
+   "thm": "PNat.XgcdType.finish_isSpecial",
+   "verdict": null,
+   "top1_atomic_capsule": false,
+   "top5": [
+    [
+     "Mathlib.Meta.NormNum.isNat_mul",
+     "content"
+    ],
+    [
+     "Mathlib.Tactic.Ring.Common.add_pf_add_gt",
+     "tactic"
+    ],
+    [
+     "Mathlib.Tactic.Ring.Common.add_congr",
+     "tactic"
+    ],
+    [
+     "Mathlib.Tactic.Ring.Common.add_mul",
+     "tactic"
+    ],
+    [
+     "Mathlib.Tactic.Ring.Common.add_pf_add_lt",
+     "tactic"
+    ]
+   ]
+  },
+  {
+   "thm": "Lean.Grind.CommRing.d_normEq0",
+   "verdict": null,
+   "top1_atomic_capsule": false,
+   "top5": [
+    [
+     "Lean.Grind.CommRing.Poly.normEq0_eq",
+     "tactic"
+    ],
+    [
+     "Lean.Grind.CommRing.Poly.beq'_eq",
+     "tactic"
+    ],
+    [
+     "Bool.and_eq_true",
+     "content"
+    ],
+    [
+     "Bool.and'_eq_and",
+     "content"
+    ],
+    [
+     "and_imp._simp_1",
+     "generated"
+    ]
+   ]
+  }
+ ],
+ "rank1_diffs": [
+  {
+   "thm": "Nat.ofDigits_append",
+   "v6": "Mathlib.Tactic.Ring.Common.atom_pf",
+   "v6_cat": "tactic",
+   "v8": "Mathlib.Meta.NormNum.isNat_mul",
+   "v8_atomic": false,
+   "v8_cat": "content"
+  },
+  {
+   "thm": "exists_lt_pow_of_lt_one",
+   "v6": "Nat.Internal.Linear.ExprCnstr.eq_false_of_isUnsat",
+   "v6_cat": "content",
+   "v8": "_private.Mathlib.Algebra.Order.Group.DenselyOrdered.0.exists_pow_lt_of_one_lt._proof_1_3",
+   "v8_atomic": true,
+   "v8_cat": "generated"
+  },
+  {
+   "thm": "FloorSemiring.eventually_mul_pow_lt_factorial_sub",
+   "v6": "Lean.Grind.CommRing.norm_int",
+   "v6_cat": "tactic",
+   "v8": "_private.Mathlib.Order.Filter.AtTopBot.Finite.0.Nat.eventually_pow_lt_factorial_sub._proof_1_4",
+   "v8_atomic": true,
+   "v8_cat": "generated"
+  },
+  {
+   "thm": "Nat.even_iff",
+   "v6": "Int.Internal.Linear.eq_norm_expr",
+   "v6_cat": "content",
+   "v8": "_private.Mathlib.Algebra.Group.Nat.Even.0.Nat.even_iff._proof_1_4",
+   "v8_atomic": true,
+   "v8_cat": "self-helper"
+  },
+  {
+   "thm": "Nat.ratSqrt_mem_Ioc",
+   "v6": "Nat.realSqrt_lt_ratSqrt_add_inv_prec",
+   "v6_cat": "content",
+   "v8": "_private.Mathlib.Analysis.Rat.NatSqrt.Real.0.Nat.ratSqrt_mem_Ioc._proof_1_1",
+   "v8_atomic": true,
+   "v8_cat": "self-helper"
+  },
+  {
+   "thm": "Fin.val_add_one_of_lt'",
+   "v6": "Int.Internal.Linear.le_norm_expr",
+   "v6_cat": "content",
+   "v8": "_private.Mathlib.Data.Fin.Basic.0.Fin.val_add_one_of_lt'._proof_1_1",
+   "v8_atomic": true,
+   "v8_cat": "self-helper"
+  },
+  {
+   "thm": "CategoryTheory.ComposableArrows.homMk\u2082_app_zero",
+   "v6": "Int.Internal.Linear.le_norm_expr",
+   "v6_cat": "content",
+   "v8": "CategoryTheory.ComposableArrows.map'._proof_6",
+   "v8_atomic": false,
+   "v8_cat": "generated"
+  },
+  {
+   "thm": "Nat.induct_rcc_left",
+   "v6": "Lean.Omega.LinearCombo.coordinate_eval_4",
+   "v6_cat": "tactic",
+   "v8": "_private.Init.Data.Range.Polymorphic.NatLemmas.0.Nat.induct_rcc_left._proof_1_3",
+   "v8_atomic": true,
+   "v8_cat": "self-helper"
+  },
+  {
+   "thm": "Array.setIfInBounds_append_right",
+   "v6": "Lean.Omega.LinearCombo.coordinate_eval_0",
+   "v6_cat": "tactic",
+   "v8": "_private.Init.Data.Array.Lemmas.0.Array.setIfInBounds_append_right._proof_1_1",
+   "v8_atomic": true,
+   "v8_cat": "self-helper"
+  },
+  {
+   "thm": "Int64.le_or_lt",
+   "v6": "Lean.Omega.LinearCombo.coordinate_eval_0",
+   "v6_cat": "tactic",
+   "v8": "_private.Init.Data.SInt.Lemmas.0.Int64.lt_or_le._proof_1_3",
+   "v8_atomic": true,
+   "v8_cat": "generated"
+  },
+  {
+   "thm": "Std.Tactic.BVDecide.BVExpr.bitblast.blastShiftRight.go_le_size",
+   "v6": "Std.Tactic.BVDecide.BVExpr.bitblast.blastShiftRight.go.eq_def",
+   "v6_cat": "generated",
+   "v8": "Std.Tactic.BVDecide.BVExpr.bitblast.blastShiftRight.go_le_size._unary",
+   "v8_atomic": true,
+   "v8_cat": "self-helper"
+  },
+  {
+   "thm": "SimplexCategoryGenRel.exists_normal_form_P_\u03c3",
+   "v6": "SimplexCategoryGenRel.standard\u03c3_cons",
+   "v6_cat": "content",
+   "v8": "_private.Mathlib.AlgebraicTopology.SimplexCategory.GeneratorsRelations.NormalForms.0.SimplexCategoryGenRel.standard\u03c3_simplicialInsert._proof_1_25",
+   "v8_atomic": true,
+   "v8_cat": "generated"
+  },
+  {
+   "thm": "List.ext_getElem?_iff'",
+   "v6": "Lean.Grind.CommRing.le_norm_expr",
+   "v6_cat": "tactic",
+   "v8": "_private.Mathlib.Data.List.Basic.0.List.ext_getElem?'._proof_1_3",
+   "v8_atomic": true,
+   "v8_cat": "generated"
+  },
+  {
+   "thm": "Monoid.CoprodI.NeWord.toList_getLast?",
+   "v6": "Lean.Grind.CommRing.le_norm_expr",
+   "v6_cat": "tactic",
+   "v8": "_private.Mathlib.Data.List.Basic.0.List.mem_getLast?_append_of_mem_getLast?._proof_1_7",
+   "v8_atomic": true,
+   "v8_cat": "generated"
+  },
+  {
+   "thm": "Real.Angle.toReal_add_eq_toReal_add_toReal",
+   "v6": "Real.Angle.toReal_add_of_sign_pos_sign_neg",
+   "v6_cat": "content",
+   "v8": "_private.Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle.0.Real.Angle.toReal_add_of_sign_eq_neg_sign._proof_1_2",
+   "v8_atomic": true,
+   "v8_cat": "generated"
+  },
+  {
+   "thm": "Int.min_assoc",
+   "v6": "Lean.Omega.LinearCombo.coordinate_eval_2",
+   "v6_cat": "tactic",
+   "v8": "_private.Init.Data.Int.LemmasAux.0.Int.min_assoc._proof_1_1",
+   "v8_atomic": true,
+   "v8_cat": "self-helper"
+  },
+  {
+   "thm": "IsPredArchimedean.findAtom_eq_bot",
+   "v6": "Nat.ToInt.toNat_nonneg",
+   "v6_cat": "content",
+   "v8": "_private.Mathlib.Order.SuccPred.Tree.0.IsPredArchimedean.findAtom_eq_bot._proof_1_1",
+   "v8_atomic": true,
+   "v8_cat": "self-helper"
+  },
+  {
+   "thm": "BitVec.cpopNatRec_eq",
+   "v6": "Lean.Omega.LinearCombo.coordinate_eval_2",
+   "v6_cat": "tactic",
+   "v8": "_private.Init.Data.BitVec.Lemmas.0.BitVec.cpopNatRec_eq._proof_1_1",
+   "v8_atomic": true,
+   "v8_cat": "self-helper"
+  },
+  {
+   "thm": "List.IsPrefix.idxOf_le",
+   "v6": "List.idxOf_append",
+   "v6_cat": "content",
+   "v8": "_private.Mathlib.Data.List.Basic.0.List.IsPrefix.idxOf_le._proof_1_1",
+   "v8_atomic": true,
+   "v8_cat": "self-helper"
+  },
+  {
+   "thm": "converges_of_monotone_of_bounded",
+   "v6": "Int.Internal.Linear.eq_norm_expr",
+   "v6_cat": "content",
+   "v8": "_private.Mathlib.Order.Monotone.Basic.0.converges_of_monotone_of_bounded._proof_1_1",
+   "v8_atomic": true,
+   "v8_cat": "self-helper"
+  }
+ ],
+ "capsule_cost": {
+  "n_atomic_capsules": 70,
+  "n_with_clean_content": 60,
+  "cases": [
+   {
+    "thm": "CategoryTheory.InjectiveResolution.extMk_eq_zero_iff",
+    "capsule": "_private.Mathlib.CategoryTheory.Abelian.Injective.Ext.0.CategoryTheory.InjectiveResolution.extMk_eq_zero_iff._proof_1_3",
+    "hidden_clean": [
+     "Nat.ToInt.add_congr",
+     "Nat.ToInt.natCast_ofNat",
+     "Nat.ToInt.of_eq"
+    ]
+   },
+   {
+    "thm": "CategoryTheory.InjectiveResolution.extMk_eq_zero_iff",
+    "capsule": "_private.Mathlib.CategoryTheory.Abelian.Injective.Ext.0.CategoryTheory.InjectiveResolution.extMk._proof_2",
+    "hidden_clean": [
+     "Nat.ToInt.add_congr",
+     "Nat.ToInt.natCast_ofNat",
+     "Nat.ToInt.of_eq"
+    ]
+   },
+   {
+    "thm": "summable_pow_mul_cexp",
+    "capsule": "_private.Mathlib.NumberTheory.ModularForms.EisensteinSeries.QExpansion.0.summable_pow_mul_cexp._proof_1_4",
+    "hidden_clean": [
+     "iteratedDerivWithin_zero",
+     "Complex.ofReal_one",
+     "smul_eq_mul",
+     "Pi.smul_apply"
+    ]
+   },
+   {
+    "thm": "InformationTheory.kraft_mcmillan_inequality",
+    "capsule": "_private.Mathlib.InformationTheory.Coding.KraftMcMillan.0.InformationTheory.kraft_mcmillan_inequality._proof_1_2",
+    "hidden_clean": [
+     "Finset.sum_congr"
+    ]
+   },
+   {
+    "thm": "AlgebraicGeometry.Scheme.Hom.toNormalization_normalizationPullback_fst",
+    "capsule": "AlgebraicGeometry.Scheme.Hom.normalizationPullback._proof_3",
+    "hidden_clean": [
+     "CategoryTheory.Limits.limit.lift_\u03c0"
+    ]
+   },
+   {
+    "thm": "FormalMultilinearSeries.compChangeOfVariables_sum",
+    "capsule": "_private.Mathlib.Analysis.Analytic.Composition.0.FormalMultilinearSeries.compChangeOfVariables_sum._proof_1_6",
+    "hidden_clean": [
+     "Nat.ToInt.lt_eq",
+     "Sigma.snd.hcongr_3",
+     "Composition.blocks.hcongr_2",
+     "Composition.blocksFun.hcongr_3",
+     "FormalMultilinearSeries.compChangeOfVariables_length"
+    ]
+   },
+   {
+    "thm": "Real.arcosh_eq_zero_iff",
+    "capsule": "_private.Mathlib.Analysis.SpecialFunctions.Arcosh.0.Real.arcosh_eq_zero_iff._proof_1_1",
+    "hidden_clean": [
+     "Real.sqrt_one",
+     "Real.sq_sqrt'",
+     "Real.sqrt_zero",
+     "max_def"
+    ]
+   },
+   {
+    "thm": "SSet.StrictSegal.quasicategory",
+    "capsule": "_private.Mathlib.AlgebraicTopology.Quasicategory.StrictSegal.0.SSet.StrictSegal.quasicategory._proof_1_5",
+    "hidden_clean": [
+     "Nat.ToInt.add_congr",
+     "Nat.ToInt.natCast_ofNat",
+     "Nat.ToInt.le_eq",
+     "Nat.Simproc.add_le_add_le",
+     "of_decide_eq_true"
+    ]
+   },
+   {
+    "thm": "SSet.StrictSegal.quasicategory",
+    "capsule": "_private.Mathlib.AlgebraicTopology.SimplicialSet.StrictSegal.0.SSet.Truncated.StrictSegal.spine_\u03b4_arrow_eq._proof_7",
+    "hidden_clean": [
+     "Nat.ToInt.of_le",
+     "of_decide_eq_true",
+     "Nat.Simproc.add_le_add_le"
+    ]
+   },
+   {
+    "thm": "SSet.StrictSegal.quasicategory",
+    "capsule": "_private.Mathlib.AlgebraicTopology.Quasicategory.StrictSegal.0.SSet.StrictSegal.quasicategory._proof_1_3",
+    "hidden_clean": [
+     "Int.natCast_add",
+     "Int.add_one_le_of_lt",
+     "Fin.val_add_one_le_of_lt",
+     "Int.natCast_nonneg",
+     "of_decide_eq_true",
+     "le_of_le_of_eq"
+    ]
+   },
+   {
+    "thm": "SSet.StrictSegal.quasicategory",
+    "capsule": "_private.Mathlib.AlgebraicTopology.SimplexCategory.Basic.0.SimplexCategory.mkOfSucc_\u03b4_eq._proof_1",
+    "hidden_clean": [
+     "Nat.ToInt.of_le",
+     "of_decide_eq_true",
+     "Nat.Simproc.add_le_add_le"
+    ]
+   },
+   {
+    "thm": "SSet.StrictSegal.quasicategory",
+    "capsule": "_private.Mathlib.AlgebraicTopology.Quasicategory.StrictSegal.0.SSet.StrictSegal.quasicategory._proof_1_6",
+    "hidden_clean": [
+     "Nat.Simproc.add_le_add_ge",
+     "Nat.ToInt.add_congr",
+     "Nat.ToInt.natCast_ofNat",
+     "Nat.ToInt.le_eq",
+     "of_decide_eq_true"
+    ]
+   },
+   {
+    "thm": "Int8.toNatClampNeg_ofIntClamp_of_lt",
+    "capsule": "_private.Init.Data.SInt.Lemmas.0.Int8.toNatClampNeg_ofIntClamp_of_lt._proof_1_4",
+    "hidden_clean": [
+     "Int.add_one_le_of_lt",
+     "of_decide_eq_true",
+     "le_of_le_of_eq",
+     "Int.sub_nonneg_of_le"
+    ]
+   },
+   {
+    "thm": "Int8.toNatClampNeg_ofIntClamp_of_lt",
+    "capsule": "_private.Init.Data.SInt.Lemmas.0.Int8.toNatClampNeg_ofIntClamp_of_lt._proof_1_3",
+    "hidden_clean": [
+     "Int.add_one_le_of_lt",
+     "of_decide_eq_true",
+     "le_of_le_of_eq",
+     "Int.sub_nonneg_of_le"
+    ]
+   },
+   {
+    "thm": "MeasureTheory.integral2_divergence_prod_of_hasFDerivAt_off_countable",
+    "capsule": "_private.Mathlib.MeasureTheory.Integral.DivergenceTheorem.0.MeasureTheory.integral2_divergence_prod_of_hasFDerivAt_off_countable._abel_1_1",
+    "hidden_clean": [
+     "neg_zero",
+     "Mathlib.Meta.NormNum.IsNat.to_eq",
+     "Mathlib.Meta.NormNum.isNat_ofNat",
+     "Mathlib.Meta.NormNum.isInt_neg",
+     "Mathlib.Meta.NormNum.IsInt.to_isNat",
+     "add_zero"
+    ]
+   },
+   {
+    "thm": "MeasureTheory.integral2_divergence_prod_of_hasFDerivAt_off_countable",
+    "capsule": "_private.Mathlib.MeasureTheory.Integral.DivergenceTheorem.0.MeasureTheory.integral2_divergence_prod_of_hasFDerivAt_off_countable._abel_1_2",
+    "hidden_clean": [
+     "neg_zero",
+     "Mathlib.Meta.NormNum.IsNat.to_eq",
+     "Mathlib.Meta.NormNum.isNat_ofNat",
+     "Mathlib.Meta.NormNum.isInt_neg",
+     "Mathlib.Meta.NormNum.IsInt.to_isNat",
+     "add_zero"
+    ]
+   },
+   {
+    "thm": "FiniteField.isSquare_two_iff",
+    "capsule": "_private.Mathlib.NumberTheory.LegendreSymbol.QuadraticChar.GaussSum.0.FiniteField.isSquare_two_iff._proof_1_2",
+    "hidden_clean": [
+     "Nat.ToInt.natCast_ofNat",
+     "Int.Nonneg.toPoly",
+     "Nat.ToInt.of_diseq",
+     "Nat.ToInt.of_eq",
+     "Nat.ToInt.mod_congr",
+     "Int.Nonneg.mod"
+    ]
+   },
+   {
+    "thm": "FiniteField.isSquare_two_iff",
+    "capsule": "_private.Mathlib.NumberTheory.LegendreSymbol.QuadraticChar.GaussSum.0.FiniteField.isSquare_two_iff._proof_1_1",
+    "hidden_clean": [
+     "Nat.ToInt.natCast_ofNat",
+     "Nat.ToInt.mod_congr",
+     "Nat.ToInt.of_eq"
+    ]
+   },
+   {
+    "thm": "Array.range'_append",
+    "capsule": "_private.Init.Data.Array.Range.0.Array.range'_append._proof_1_3",
+    "hidden_clean": [
+     "Int.natCast_add",
+     "Int.add_one_le_of_lt",
+     "Nat.lt_or_gt_of_ne",
+     "Int.sub_eq_zero_of_eq",
+     "Int.natCast_mul",
+     "of_decide_eq_true"
+    ]
+   },
+   {
+    "thm": "Nat.even_iff",
+    "capsule": "_private.Mathlib.Algebra.Group.Nat.Even.0.Nat.even_iff._proof_1_4",
+    "hidden_clean": [
+     "Nat.ToInt.natCast_ofNat",
+     "Nat.ToInt.mod_congr",
+     "Nat.ToInt.of_diseq",
+     "Nat.ToInt.mul_congr",
+     "Nat.ToInt.div_congr",
+     "Nat.ToInt.of_eq"
+    ]
+   },
+   {
+    "thm": "Nat.ratSqrt_mem_Ioc",
+    "capsule": "_private.Mathlib.Analysis.Rat.NatSqrt.Real.0.Nat.ratSqrt_mem_Ioc._proof_1_1",
+    "hidden_clean": [
+     "Nat.realSqrt_lt_ratSqrt_add_inv_prec",
+     "Nat.ratSqrt_le_realSqrt",
+     "Set.mem_Ioc"
+    ]
+   },
+   {
+    "thm": "Nat.Ico_filter_modEq_cast",
+    "capsule": "_private.Mathlib.Data.Int.CardIntervalMod.0.Nat.Ico_filter_modEq_cast._proof_1_8",
+    "hidden_clean": [
+     "Int.add_one_le_of_lt",
+     "Int.natCast_nonneg",
+     "of_decide_eq_true",
+     "le_of_le_of_eq",
+     "Int.sub_nonneg_of_le"
+    ]
+   },
+   {
+    "thm": "Nat.image_sub_const_Ico",
+    "capsule": "_private.Mathlib.Order.Interval.Finset.Nat.0.Nat.image_sub_const_Ico._proof_1_4",
+    "hidden_clean": [
+     "Nat.ToInt.add_congr",
+     "Nat.ToInt.natCast_ofNat",
+     "ite_congr",
+     "Nat.ToInt.of_le"
+    ]
+   },
+   {
+    "thm": "Nat.image_sub_const_Ico",
+    "capsule": "_private.Mathlib.Order.Interval.Finset.Nat.0.Nat.image_sub_const_Ico._proof_1_3",
+    "hidden_clean": [
+     "Nat.ToInt.add_congr",
+     "Nat.ToInt.natCast_ofNat",
+     "Nat.ToInt.of_diseq",
+     "Nat.ToInt.toNat_nonneg",
+     "Nat.ToInt.of_le",
+     "ite_congr"
+    ]
+   },
+   {
+    "thm": "Nat.toArray_roc_add_add_eq_append",
+    "capsule": "_private.Init.Data.Range.Polymorphic.NatLemmas.0.Nat.toArray_roc_add_add_eq_append._proof_1_2",
+    "hidden_clean": [
+     "Int.natCast_add",
+     "Int.add_one_le_of_lt",
+     "Int.natCast_nonneg",
+     "of_decide_eq_true",
+     "le_of_le_of_eq",
+     "Int.sub_nonneg_of_le"
+    ]
+   },
+   {
+    "thm": "Nat.toArray_roc_add_add_eq_append",
+    "capsule": "_private.Init.Data.Range.Polymorphic.NatLemmas.0.Nat.toArray_roc_add_add_eq_append._proof_1_1",
+    "hidden_clean": [
+     "Int.natCast_add",
+     "Int.add_one_le_of_lt",
+     "Int.natCast_nonneg",
+     "of_decide_eq_true",
+     "le_of_le_of_eq",
+     "Int.sub_nonneg_of_le"
+    ]
+   },
+   {
+    "thm": "Affine.Simplex.ExcenterExists.affineSpan_faceOpposite_eq_orthRadius",
+    "capsule": "_private.Mathlib.Geometry.Euclidean.Incenter.0.Affine.Simplex.ExcenterExists.affineSpan_faceOpposite_eq_orthRadius._proof_1_2",
+    "hidden_clean": [
+     "Nat.ToInt.add_congr",
+     "Nat.ToInt.natCast_ofNat",
+     "Nat.ToInt.of_diseq",
+     "ite_congr",
+     "Nat.ToInt.toNat_nonneg"
+    ]
+   },
+   {
+    "thm": "Char.isLower_toLower_eq_isAlpha",
+    "capsule": "_private.Batteries.Data.Char.AsciiCasing.0.Char.isLower_toLower_eq_isAlpha._proof_1_6",
+    "hidden_clean": [
+     "Int.natCast_add",
+     "of_decide_eq_true",
+     "le_of_le_of_eq",
+     "Int.sub_nonneg_of_le"
+    ]
+   },
+   {
+    "thm": "String.Slice.Pos.next_eq_nextFast",
+    "capsule": "_private.Init.Data.String.Basic.0.String.Slice.Pos.next_eq_nextFast._proof_1_7",
+    "hidden_clean": [
+     "Int.natCast_add",
+     "Int.add_one_le_of_lt",
+     "Nat.lt_or_gt_of_ne",
+     "Int.sub_eq_zero_of_eq",
+     "String.Slice.Pos.str_ne_endPos",
+     "Int.natCast_nonneg"
+    ]
+   },
+   {
+    "thm": "Finsupp.multinomial_eq_of_support_subset",
+    "capsule": "_private.Mathlib.Data.Nat.Choose.Multinomial.0.Finsupp.multinomial_eq_of_support_subset._proof_1_2",
+    "hidden_clean": [
+     "Nat.ToInt.natCast_ofNat",
+     "Nat.ToInt.of_not_le",
+     "Finsupp.mem_support_iff",
+     "Nat.ToInt.of_eq",
+     "Nat.factorial_eq_one"
+    ]
+   },
+   {
+    "thm": "Fin.val_add_one_of_lt'",
+    "capsule": "_private.Mathlib.Data.Fin.Basic.0.Fin.val_add_one_of_lt'._proof_1_1",
+    "hidden_clean": [
+     "Nat.ToInt.add_congr",
+     "Nat.ToInt.natCast_ofNat",
+     "Nat.ToInt.of_le",
+     "Nat.ToInt.finVal"
+    ]
+   },
+   {
+    "thm": "Vector.getElem_eq_getElem_reverse",
+    "capsule": "_private.Init.Data.Vector.Lemmas.0.Vector.getElem_eq_getElem_reverse._proof_1_1",
+    "hidden_clean": [
+     "Int.natCast_add",
+     "Int.add_one_le_of_lt",
+     "Nat.lt_or_gt_of_ne",
+     "Int.sub_eq_zero_of_eq",
+     "Int.natCast_nonneg",
+     "of_decide_eq_true"
+    ]
+   },
+   {
+    "thm": "BitVec.toNat_cpop_append",
+    "capsule": "_private.Init.Data.BitVec.Lemmas.0.BitVec.toNat_cpop_append._proof_1_1",
+    "hidden_clean": [
+     "Int.natCast_add",
+     "Int.add_one_le_of_lt",
+     "Nat.lt_or_gt_of_ne",
+     "of_decide_eq_true",
+     "le_of_le_of_eq",
+     "Int.sub_nonneg_of_le"
+    ]
+   },
+   {
+    "thm": "Nat.induct_rcc_left",
+    "capsule": "_private.Init.Data.Range.Polymorphic.NatLemmas.0.Nat.induct_rcc_left._proof_1_3",
+    "hidden_clean": [
+     "Int.natCast_add",
+     "Int.add_one_le_of_lt",
+     "Nat.lt_or_gt_of_ne",
+     "Int.sub_eq_zero_of_eq",
+     "Int.natCast_nonneg",
+     "of_decide_eq_true"
+    ]
+   },
+   {
+    "thm": "Nat.induct_rcc_left",
+    "capsule": "_private.Init.Data.Range.Polymorphic.NatLemmas.0.Nat.induct_rcc_left._proof_1_2",
+    "hidden_clean": [
+     "Int.natCast_add",
+     "Int.add_one_le_of_lt",
+     "Int.sub_eq_zero_of_eq",
+     "Int.natCast_nonneg",
+     "of_decide_eq_true",
+     "le_of_le_of_eq"
+    ]
+   },
+   {
+    "thm": "Nat.induct_rcc_left",
+    "capsule": "_private.Init.Data.Range.Polymorphic.NatLemmas.0.Nat.induct_rcc_left._proof_1_1",
+    "hidden_clean": [
+     "Int.natCast_add",
+     "Int.add_one_le_of_lt",
+     "Int.sub_eq_zero_of_eq",
+     "of_decide_eq_true",
+     "le_of_le_of_eq",
+     "Int.sub_nonneg_of_le"
+    ]
+   },
+   {
+    "thm": "Polynomial.coeff_bernoulli",
+    "capsule": "_private.Mathlib.NumberTheory.BernoulliPolynomials.0.Polynomial.coeff_bernoulli._proof_1_2",
+    "hidden_clean": [
+     "ite_congr",
+     "Nat.ToInt.toNat_nonneg",
+     "Finset.mem_range",
+     "Nat.ToInt.le_eq",
+     "Nat.ToInt.of_not_le",
+     "Nat.Simproc.add_le_add_le"
+    ]
+   },
+   {
+    "thm": "Polynomial.coeff_bernoulli",
+    "capsule": "_private.Mathlib.NumberTheory.BernoulliPolynomials.0.Polynomial.coeff_bernoulli._proof_1_5",
+    "hidden_clean": [
+     "Nat.ToInt.add_congr",
+     "Nat.ToInt.natCast_ofNat",
+     "Nat.ToInt.toNat_nonneg",
+     "Nat.ToInt.le_eq",
+     "Nat.ToInt.of_le",
+     "Nat.ToInt.of_eq"
+    ]
+   },
+   {
+    "thm": "Polynomial.coeff_bernoulli",
+    "capsule": "_private.Mathlib.NumberTheory.BernoulliPolynomials.0.Polynomial.coeff_bernoulli._proof_1_3",
+    "hidden_clean": [
+     "Nat.ToInt.of_diseq",
+     "Nat.ToInt.le_eq",
+     "Nat.ToInt.of_eq",
+     "Nat.Simproc.add_le_add_le",
+     "ite_congr",
+     "of_decide_eq_true"
+    ]
+   },
+   {
+    "thm": "toIcoMod_eq_toIcoMod",
+    "capsule": "_private.Mathlib.Algebra.Order.ToIntervalMod.0.toIcoMod_eq_toIcoMod._abel_1_1",
+    "hidden_clean": [
+     "neg_zero",
+     "Mathlib.Meta.NormNum.IsNat.to_eq",
+     "Mathlib.Meta.NormNum.isNat_ofNat",
+     "Mathlib.Meta.NormNum.isInt_neg",
+     "Mathlib.Meta.NormNum.IsInt.to_isNat",
+     "Mathlib.Meta.NormNum.isInt_add"
+    ]
+   }
+  ]
+ },
+ "parent_labels": [
+  {
+   "gen": "AlgebraicGeometry.Scheme.Pullback.pullbackP1Iso._proof_2",
+   "rule": "def-user",
+   "parent": "AlgebraicGeometry.Scheme.Pullback.pullbackP1Iso"
+  },
+  {
+   "gen": "Array.mem_push._simp_1",
+   "rule": "attribution",
+   "parent": "Array.mem_push"
+  },
+  {
+   "gen": "BitVec.add_right_eq_self._simp_1",
+   "rule": "attribution",
+   "parent": "BitVec.add_right_eq_self"
+  },
+  {
+   "gen": "Cardinal.ofENat_le_ofENat._simp_1",
+   "rule": "attribution",
+   "parent": "Cardinal.ofENat_le_ofENat"
+  },
+  {
+   "gen": "CategoryTheory.Abelian.SpectralObject.cokernelSequenceCyclesEIso._proof_5",
+   "rule": "attribution",
+   "parent": "CategoryTheory.ShortComplex.toCycles_comp_homology\u03c0"
+  },
+  {
+   "gen": "CategoryTheory.Bicategory.Prod.swap._proof_9",
+   "rule": "def-user",
+   "parent": "CategoryTheory.Bicategory.Prod.swap"
+  },
+  {
+   "gen": "CategoryTheory.ExponentiableMorphism.pushforwardId.eq_1",
+   "rule": "stmt-subject(0.92)",
+   "parent": "CategoryTheory.ExponentiableMorphism.pushforwardId"
+  },
+  {
+   "gen": "CategoryTheory.InjectiveResolution.descHomotopyZeroOne._proof_1",
+   "rule": "def-user",
+   "parent": "CategoryTheory.InjectiveResolution.descHomotopyZeroOne"
+  },
+  {
+   "gen": "CategoryTheory.Pseudofunctor.Grothendieck.mapIdIso._proof_1",
+   "rule": "def-user",
+   "parent": "CategoryTheory.Pseudofunctor.Grothendieck.mapIdIso"
+  },
+  {
+   "gen": "CategoryTheory.SmallObject.functorialFactorizationData._proof_5",
+   "rule": "attribution",
+   "parent": "CategoryTheory.SmallObject.objMap_comp"
+  },
+  {
+   "gen": "CategoryTheory.WithInitial.equivComma._proof_4",
+   "rule": "def-user",
+   "parent": "CategoryTheory.WithInitial.equivComma"
+  },
+  {
+   "gen": "Equiv.sigmaFiberFromRel._proof_4",
+   "rule": "attribution",
+   "parent": "Std.Symm.comap"
+  },
+  {
+   "gen": "Filter.eventually_bot._simp_1",
+   "rule": "attribution",
+   "parent": "Filter.eventually_bot"
+  },
+  {
+   "gen": "Filter.frequently_true_iff_neBot._simp_1",
+   "rule": "attribution",
+   "parent": "Filter.frequently_true_iff_neBot"
+  },
+  {
+   "gen": "Finset.mem_pimage._simp_1",
+   "rule": "attribution",
+   "parent": "Finset.mem_pimage"
+  },
+  {
+   "gen": "Finset.notMem_empty._simp_1",
+   "rule": "attribution",
+   "parent": "Finset.notMem_empty"
+  },
+  {
+   "gen": "Finsupp.mem_neLocus._simp_1",
+   "rule": "attribution",
+   "parent": "Finsupp.mem_neLocus"
+  },
+  {
+   "gen": "FirstOrder.Language.BoundedFormula.realize_liftAt_one_self._simp_1",
+   "rule": "attribution",
+   "parent": "FirstOrder.Language.BoundedFormula.realize_liftAt_one_self"
+  },
+  {
+   "gen": "Int.negSucc_not_nonneg._simp_1",
+   "rule": "attribution",
+   "parent": "Int.negSucc_not_nonneg"
+  },
+  {
+   "gen": "LE.le.eq_1",
+   "rule": "UNRESOLVED",
+   "parent": null
+  },
+  {
+   "gen": "Lean.Grind.AC.Seq.brecOn.eq",
+   "rule": "stmt-subject(1.00)",
+   "parent": "Lean.Grind.AC.Seq.brecOn"
+  },
+  {
+   "gen": "List.Nat.mem_antidiagonal._simp_1",
+   "rule": "attribution",
+   "parent": "List.Nat.mem_antidiagonal"
+  },
+  {
+   "gen": "List.attachWith_toArray._proof_1",
+   "rule": "attribution",
+   "parent": "List.mem_toArray"
+  },
+  {
+   "gen": "List.getElem_toArray._proof_1",
+   "rule": "attribution",
+   "parent": "List.size_toArray"
+  },
+  {
+   "gen": "List.mapFinIdx_eq_nil_iff._simp_1",
+   "rule": "attribution",
+   "parent": "List.mapFinIdx_eq_nil_iff"
+  },
+  {
+   "gen": "List.mem_toFinset._simp_1",
+   "rule": "attribution",
+   "parent": "List.mem_toFinset"
+  },
+  {
+   "gen": "List.replaceF.eq_2",
+   "rule": "UNRESOLVED",
+   "parent": null
+  },
+  {
+   "gen": "List.toFinset_eq_empty_iff._simp_1",
+   "rule": "attribution",
+   "parent": "List.toFinset_eq_empty_iff"
+  },
+  {
+   "gen": "Matroid.Dep.eq_1",
+   "rule": "stmt-subject(1.00)",
+   "parent": "Matroid.Dep"
+  },
+  {
+   "gen": "MeasurableSet.univ._simp_1",
+   "rule": "attribution",
+   "parent": "MeasurableSet.univ"
+  },
+  {
+   "gen": "Metric.mem_closedBall._simp_1",
+   "rule": "attribution",
+   "parent": "Metric.mem_closedBall"
+  },
+  {
+   "gen": "MulAction.mem_aestabilizer._simp_2",
+   "rule": "attribution",
+   "parent": "MulAction.mem_aestabilizer"
+  },
+  {
+   "gen": "Nat.succ_ne_self._simp_1",
+   "rule": "UNRESOLVED",
+   "parent": null
+  },
+  {
+   "gen": "OrdinalApprox.lfpApprox.eq_1",
+   "rule": "stmt-subject(1.00)",
+   "parent": "OrdinalApprox.lfpApprox"
+  },
+  {
+   "gen": "PFun.mem_preimage._simp_1",
+   "rule": "attribution",
+   "parent": "PFun.mem_preimage"
+  },
+  {
+   "gen": "PrincipalSeg.le_iff_le._simp_1",
+   "rule": "attribution",
+   "parent": "PrincipalSeg.le_iff_le"
+  },
+  {
+   "gen": "QuotientGroup.subsingleton_iff._simp_2",
+   "rule": "attribution",
+   "parent": "QuotientGroup.subsingleton_iff"
+  },
+  {
+   "gen": "SSet.PtSimplex._proof_1",
+   "rule": "attribution",
+   "parent": "SSet.Subcomplex.mem_ofSimplex_obj"
+  },
+  {
+   "gen": "SSet.relativeCellComplexOfMono._proof_3",
+   "rule": "attribution",
+   "parent": "OrderHom.monotone"
+  },
+  {
+   "gen": "Set.mem_iUnion._simp_1",
+   "rule": "attribution",
+   "parent": "Set.mem_iUnion"
+  },
+  {
+   "gen": "Set.mem_prod._simp_1",
+   "rule": "attribution",
+   "parent": "Set.mem_prod"
+  },
+  {
+   "gen": "SetRel.mem_id._simp_1",
+   "rule": "attribution",
+   "parent": "SetRel.mem_id"
+  },
+  {
+   "gen": "SimpleGraph.bot_adj._simp_1",
+   "rule": "attribution",
+   "parent": "SimpleGraph.bot_adj"
+  },
+  {
+   "gen": "Std.DTreeMap.Internal.Impl.insertIfNew!.eq_1",
+   "rule": "stmt-subject(1.00)",
+   "parent": "Std.DTreeMap.Internal.Impl.insertIfNew!"
+  },
+  {
+   "gen": "Std.HashMap.not_mem_empty._simp_1",
+   "rule": "attribution",
+   "parent": "Std.HashMap.not_mem_empty"
+  },
+  {
+   "gen": "Std.Sat.AIG.RefVec.ite.go.eq_def",
+   "rule": "UNRESOLVED",
+   "parent": null
+  },
+  {
+   "gen": "Stream'.Seq.take.eq_2",
+   "rule": "stmt-subject(0.50)",
+   "parent": "Stream'.Seq.destruct"
+  },
+  {
+   "gen": "String.Slice.Pos.skip?_bool_eq_some_iff._simp_1",
+   "rule": "attribution",
+   "parent": "String.Slice.Pos.skip?_bool_eq_some_iff"
+  },
+  {
+   "gen": "Subgroup.mem_inf._simp_2",
+   "rule": "attribution",
+   "parent": "Subgroup.mem_inf"
+  },
+  {
+   "gen": "Submodule.mem_iInf._simp_1",
+   "rule": "attribution",
+   "parent": "Submodule.mem_iInf"
+  },
+  {
+   "gen": "Submodule.mem_one._simp_1",
+   "rule": "attribution",
+   "parent": "Submodule.mem_one"
+  },
+  {
+   "gen": "Vector.flatMap_mk._proof_1",
+   "rule": "UNRESOLVED",
+   "parent": null
+  },
+  {
+   "gen": "Vector.mem_append._simp_1",
+   "rule": "attribution",
+   "parent": "Vector.mem_append"
+  },
+  {
+   "gen": "WeierstrassCurve.Projective.Point.toAffine.eq_1",
+   "rule": "stmt-subject(1.00)",
+   "parent": "WeierstrassCurve.Projective.Point.toAffine"
+  },
+  {
+   "gen": "WeierstrassCurve.ofJ.eq_1",
+   "rule": "stmt-subject(1.00)",
+   "parent": "WeierstrassCurve.ofJ"
+  },
+  {
+   "gen": "abs_nonneg._simp_1",
+   "rule": "attribution",
+   "parent": "abs_nonneg"
+  },
+  {
+   "gen": "beq_iff_eq._simp_1",
+   "rule": "attribution",
+   "parent": "beq_iff_eq"
+  },
+  {
+   "gen": "countableSupClosure_eq_self._simp_2",
+   "rule": "attribution",
+   "parent": "countableSupClosure_eq_self"
+  },
+  {
+   "gen": "exists_const._simp_1",
+   "rule": "UNRESOLVED",
+   "parent": null
+  },
+  {
+   "gen": "forall_const._simp_1",
+   "rule": "UNRESOLVED",
+   "parent": null
+  },
+  {
+   "gen": "iSup_eq_bot._simp_2",
+   "rule": "attribution",
+   "parent": "iSup_eq_bot"
+  },
+  {
+   "gen": "instCoeTCLatticeHomOfLatticeHomClass._proof_2",
+   "rule": "attribution",
+   "parent": "InfHomClass.map_inf"
+  },
+  {
+   "gen": "mul_eq_mul_left_iff._simp_1",
+   "rule": "attribution",
+   "parent": "mul_eq_mul_left_iff"
+  },
+  {
+   "gen": "toIocMod.eq_1",
+   "rule": "stmt-subject(1.00)",
+   "parent": "toIocMod"
+  },
+  {
+   "gen": "uniformConcaveOn_zero._simp_1",
+   "rule": "attribution",
+   "parent": "uniformConcaveOn_zero"
+  }
+ ]
+}

@@ -2,7 +2,42 @@
 
 State of the system and complete evidence inventory, prepared before the second adversarial review. Everything below is committed; file references inline.
 
-## The certified system (V6)
+## Update 2026-08-20: V8 certified (round 9), automation junk halved
+
+Two items from the "open, declared" list below are now closed by
+implementation, and one round was falsified honestly along the way.
+
+**The apparatus measure (closes open item 4).** A concept is apparatus when
+proofs cite it > 200 times AND > 20x the number of human theorem statements
+that mention it (inherited down the definition graph). 102 concepts qualify;
+all are decision-procedure encoding vocabulary. An item is machinery for T
+when an ingredient is apparatus and no ingredient appears in T's statement
+(goal-relevant apparatus is spared). Machinery ranks below real moves; an
+all-machinery list yields "discharged by automation". Certified round 9
+(seed 20260831, run once): V8 94.80 raw / 94.52 stricter-grader vs V6 94.38 /
+93.18 same sample; tactic-internal rank-1 blames 18 -> 13; 2 real moves lost
+in 1,826. Residual true junk ~0.44%, all logic-shaped bridge lemmas.
+
+It names nothing, and the longevity argument is mechanical rather than
+empirical: a procedure must encode goals into private vocabulary and prove
+denotation lemmas about it, so that vocabulary is heavily cited and barely
+stated. An omega replacement is caught with no edit.
+
+**Machine-generated display labels (closes the multi-parent item).** 77.1%
+of 239,625 machine-generated claims now resolve to what they are part of
+(attribution / definition-user / statement-subject). Unresolved ones keep
+raw names. Display only; the record is unchanged.
+
+**Round 8 (seed 20260830) was FALSIFIED by its own declared bar** and is
+reported as such: "bare proposition" was tested as "mentions no constants",
+which predicates over abstract types also satisfy, so `Function.Injective`
+was misfiled and real moves collapsed into definitional verdicts (31 vs a
+ceiling of 5). Fixed by reading arity from the kernel; re-run on a fresh
+seed as round 9. Two capsule-atomization designs and an audience test were
+also falsified on dev data and do not ship. The falsification chain is now
+eleven designs long.
+
+## The certified system (V6, superseded by V8 above)
 
 Substrate: position-aware occurrence roles (dump v5, adds `gen` flag), exact Prop check, claims = Prop ∧ kind ∉ {constructor, recursor}, single-use as attribute with zoom display, bookkeeping-aware verdicts, and **forwarder attribution**: a machine-generated constant (gen = no source declaration range — recorded environment fact) whose own substantive move-set is exactly one non-bookkeeping claim P is displayed and scored as P. Human-named corollaries are never dissolved (gen=false gates it).
 

@@ -8,6 +8,17 @@ One JSONL row per constant:
   pr            the constant's type is genuinely proposition-valued
                 (kernel check via `Meta.isProp`, NOT the kind proxy)
   prf           true when the Prop check fell back to the kind proxy
+  ps            the constant IS a proposition or a predicate: its type,
+                after telescoping binders, is the sort `Prop` (Sort 0).
+                Distinguishes propositional vocabulary (`True`, `Even`,
+                `Membership.mem`) from DATA vocabulary (`Nat`, `Finset`,
+                `Lean.Omega.Constraint`) — a kernel sort fact, no names.
+  psf           true when the sort check fell back (defaults ps := false)
+  ar            arity: number of binders the type telescopes through. With
+                `ps` this separates BARE propositions (ps, ar = 0: `True`,
+                `False`) from PREDICATES (ps, ar > 0: `Function.Injective`,
+                `Even`) -- a distinction "mentions no constants" gets wrong,
+                because a predicate over abstract types mentions none.
   vo            per value-dep (aligned with `v`) an 8-vector of occurrence
                 counts by ROLE (counts are over distinct shared subterm
                 occurrences — DAG multiplicity, not tree multiplicity):
@@ -169,6 +180,7 @@ def depDump (path : System.FilePath) (out : System.FilePath) : IO Unit := do
   let act : CoreM Unit := do
     let mut count := 0
     let mut propFallbacks := 0
+    let mut sortFallbacks := 0
     let mut kindPropDisagree := 0
     for (n, ci) in env.constants.toList do
       let isInst ← Meta.isInstance n
@@ -184,6 +196,19 @@ def depDump (path : System.FilePath) (out : System.FilePath) : IO Unit := do
       catch _ => pure (kindIsThm, true)
       if prFell then propFallbacks := propFallbacks + 1
       if isPr != kindIsThm && !prFell then kindPropDisagree := kindPropDisagree + 1
+      -- sort check: does the constant's type telescope to `Prop` (Sort 0)?
+      -- true for propositions and predicates, false for data types and
+      -- data-valued functions. Kernel fact; independent of naming.
+      let (isPs, arity, psFell) ← try
+        let b ← Core.withCurrHeartbeats <|
+          (Meta.forallTelescopeReducing ci.type fun xs body => do
+            let body ← Meta.whnfR body
+            match body with
+            | .sort u => pure (u.isZero, xs.size)
+            | _ => pure (false, xs.size)).run'
+        pure (b.1, b.2, false)
+      catch _ => pure (false, 0, true)
+      if psFell then sortFallbacks := sortFallbacks + 1
       let (vdeps, voJson, bf, hb, rt) ← match ci.value? (allowOpaque := true) with
         | some v => do
           let vdeps := v.getUsedConstantsAsSet.toArray
@@ -219,8 +244,14 @@ def depDump (path : System.FilePath) (out : System.FilePath) : IO Unit := do
         ("vo", voJson),
         ("hb", toJson (hb.map toString)),
         ("rt", toJson (rt.map toString))]
+      if isPs then
+        fields := fields ++ [("ps", Json.bool true)]
+      if arity > 0 then
+        fields := fields ++ [("ar", Json.num arity)]
       if prFell then
         fields := fields ++ [("prf", Json.bool true)]
+      if psFell then
+        fields := fields ++ [("psf", Json.bool true)]
       -- machine-generated flag: no source declaration range (recorded env
       -- fact: the elaborator logs ranges for human-written declarations)
       if (← Lean.findDeclarationRanges? n).isNone then
@@ -233,7 +264,7 @@ def depDump (path : System.FilePath) (out : System.FilePath) : IO Unit := do
       count := count + 1
       if count % 50000 == 0 then
         IO.println s!"  {count} constants dumped"
-    IO.println s!"done: {count} constants; prop-check fallbacks {propFallbacks}; kind/prop disagreements {kindPropDisagree}"
+    IO.println s!"done: {count} constants; prop-check fallbacks {propFallbacks}; sort-check fallbacks {sortFallbacks}; kind/prop disagreements {kindPropDisagree}"
   let (_, _) ← act.toIO coreCtx { env }
   h.flush
 

@@ -1,6 +1,6 @@
-# THE METHOD (V6) — complete, reproducible, no jargon
+# THE METHOD (V8) — complete, reproducible, no jargon
 
-## The seven definitions everything uses
+## The nine definitions everything uses
 
 1. Entry: any named thing in compiled Mathlib (771,129). Each has a statement
    (what it asserts / what kind of object it is) and usually a body (proof or
@@ -15,11 +15,26 @@
    definitions mention; repeat to closure. "What stating T already needs."
 5. Logic-only: measure every concept's commonness = fraction of all theorem
    statements mentioning it; >2% = everywhere-words (measured, not chosen:
-   equality, naturals, sets, <=, membership). An entry is logic-only if its
-   statement mentions no concept under the 2% line.
+   equality, naturals, sets, <=, membership). An entry's ingredients are the
+   concepts in its statement under the 2% line. An entry is logic-only if it
+   has no ingredients, or all of them are bare propositions (def. 8).
 6. Machine-generated: no recorded source-file location (Lean logs locations
    for human-written declarations only; verified to separate cleanly).
 7. Used-once: exactly one entry in the library mentions it in a body.
+8. Bare proposition: a concept that IS a proposition rather than one ABOUT
+   something -- Lean's own sort test says its statement is `Prop`, and it
+   takes no arguments. Exactly five exist in Mathlib (True, False, UnivLE,
+   FermatLastTheorem, RiemannHypothesis). A predicate like `Function.Injective`
+   is Prop-sorted but takes arguments, so it is not bare.
+9. Apparatus: a concept that is used far more than it is stated. Count, per
+   concept, (a) how many human theorem statements mention it, inherited down
+   the definition graph (a statement about Ring states everything Ring's
+   definition contains), and (b) how many proofs in the library cite a claim
+   having it as an ingredient. Apparatus = not bare, under the 2% line,
+   (b) > 200, and (b) > 20x(a+1). This is what a decision procedure's private
+   vocabulary looks like: 102 concepts, all of them encoding machinery
+   (omega's Constraint and Coeffs, grind's Poly, NormNum's IsNat, the
+   internal linear-arithmetic types). Nothing is named; the test is a ratio.
 
 ## The recipe for one theorem T
 
@@ -33,21 +48,48 @@
    1-2 on ITS body, drop logic-only results; if exactly one claim remains,
    replace the item by it (a derived form proves itself from its original,
    so the original is in its body). Up to 3 hops, never revisit.
-4. Verdict: if the list is empty or entirely logic-only, output
-   "holds by definition/logic" and stop.
-5. Rank by three keys: (i) non-logic-only first; (ii) NOT in T's
-   statement-world first; (iii) deeper first.
-6. Zoom (display): while the top item is used-once and unopened, replace it
+4. Mark machinery: an item is machinery for T when one of its ingredients is
+   apparatus (def. 9) AND none of its ingredients appear in T's own
+   statement. The second half is what keeps the measure honest -- a theorem
+   ABOUT omega's Constraint keeps its constraint lemmas as real moves.
+5. Verdict: if every item is logic-only or machinery, output "holds by
+   definition/logic" (all logic-only) or "discharged by automation" and stop.
+6. Rank by three keys: (i) items that are neither logic-only nor machinery
+   first; (ii) NOT in T's statement-world first; (iii) deeper first.
+7. Zoom (display): while the top item is used-once and unopened, replace it
    by its own kept-claims (name kept as group label), re-sort; max 8 opens.
+8. Label (display only): a machine-generated item is shown as what it is
+   part of -- the single substantive claim in its own proof, else the single
+   definition whose construction cites it, else the subject of its own
+   statement. Unresolved ones keep their raw name. The record is unchanged.
 
-Constants: the measured 2% line, 3 attribution hops, 8 zoom opens,
-"unresolvable slot counts as kept" (conservative). Nothing else.
+Constants: the measured 2% line, the apparatus thresholds (200 uses, 20x
+ratio), 3 attribution hops, 8 zoom opens, "unresolvable slot counts as kept"
+(conservative). Nothing else.
 
-Certified: 94.84% top-1 non-machinery proxy, fresh pre-registered sample,
-run once (data/phase4_holdout6_results.json); replication on a further
-fresh sample: 93.97% (round 7, data/phase4_holdout7_results.json — which
-also falsified an author-written-priority sort key: it provably cannot
-fire on automation-heavy proofs, where nothing is author-written).
+Certified (round 9, seed 20260831, run once, data/phase4_holdout9_results.json):
+V8 = 94.80% top-1 non-machinery proxy / 94.52% under a stricter grader,
+against V6's 94.38 / 93.18 on the same sample; tactic-internal rank-1 blames
+cut 18 -> 13; real moves lost to the new rule: 2 in 1,826. Earlier rounds:
+V6 certified 94.84 (round 6), replicated 93.97 (round 7).
+
+Round 8 (seed 20260830) ran this same design and was FALSIFIED by its own
+declared bar: "bare proposition" was tested as "mentions no constants",
+which a predicate over abstract types also satisfies, so `Function.Injective`
+and `Nonempty` were misfiled as bare and real moves ("an equivalence is
+injective") collapsed into definitional verdicts -- 31 such losses against a
+ceiling of 5. The extractor now reads arity from the kernel telescope
+(dump v7 field `ar`) and round 9 re-ran the corrected spec on a fresh seed.
+
+Longevity of the apparatus measure: it names nothing and knows nothing about
+omega, grind, or any particular tactic. It measures a relation -- used far
+more than stated -- that any decision procedure must exhibit, because a
+procedure works by encoding goals into its own vocabulary and proving
+denotation lemmas about that vocabulary, which is therefore cited by
+thousands of proofs and stated in almost no theorems. A replacement for
+omega would be caught the day it lands, with no edit. Per ADR-0004 the
+MEANING is fixed; the 102 concepts it currently selects are a level-2
+library-relative value that legitimately changes as the library changes.
 
 Verdict certification: "holds by definition" outputs are now positively
 checkable by the kernel (`mathrecord defcheck`: are the statement's sides
