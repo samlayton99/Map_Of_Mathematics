@@ -117,8 +117,30 @@ def main():
           f"recursive-elims {len(rec_of_recursive)}+{len(wrap_recursive)}w", flush=True)
 
     core_ids = {k: {idx[x] for x in v if x in idx} for k, v in CORE.items()}
-    IND = rec_of_recursive | wrap_recursive | core_ids["wf"]
+    # wrapper-closure for well-founded fix: small defs built purely from
+    # fix operators and recursors (e.g. WellFounded.Nat.fix)
+    # recursion-combinator closure: a def whose body's HEAD is a recursion
+    # combinator (wf fix or a recursive-inductive recursor) is itself one
+    # (WellFounded.Nat.fix -> fix.go -> Nat.rec). Two rounds.
+    fixlike = set(core_ids["wf"]) | rec_of_recursive
+    for _ in range(2):
+        added = False
+        for i in range(n):
+            if i not in fixlike and kinds[i] == "def" and rts[i] and rts[i][0] in fixlike:
+                fixlike.add(i)
+                added = True
+        if not added:
+            break
+    IND = fixlike | wrap_recursive
     CAS = multi_rec | wrap_multi
+    # by-contradiction proper: the classical double-negation eliminators;
+    # False-handling constants count only when the GOAL is not itself a
+    # negation (proofs of Not-statements handle False inherently)
+    bycontra = {idx[x] for x in ("Classical.byContradiction",
+                                 "Decidable.byContradiction") if x in idx}
+    false_ops = {idx[x] for x in ("absurd", "False.elim", "False.rec", "Not.elim")
+                 if x in idx}
+    not_id = idx.get("Not")
 
     def chain(r):
         out = list(rts[r])
@@ -135,10 +157,12 @@ def main():
     def tags(r):
         ch = chain(r)
         t = set()
-        for k in ("contradiction", "choice", "contrapositive",
-                  "extensionality", "computation"):
+        for k in ("choice", "contrapositive", "extensionality", "computation"):
             if ch & core_ids[k]:
                 t.add(k)
+        goal_is_negation = not_id is not None and not_id in set(deps_t[r])
+        if (ch & bycontra) or ((ch & false_ops) and not goal_is_negation):
+            t.add("contradiction")
         if ch & IND:
             t.add("induction")
         if ch & CAS:

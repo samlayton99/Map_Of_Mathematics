@@ -1,0 +1,266 @@
+{
+ "anchor_strategies": {
+  "Function.Injective.isPartialInv": {
+   "chain": [
+    "_private.Mathlib.Logic.Function.Basic.0.Function.Injective.isPartialInv.match_1_1",
+    "Iff.intro",
+    "Eq.rec"
+   ],
+   "tags": []
+  },
+  "List.length_append": {
+   "chain": [
+    "List.rec"
+   ],
+   "tags": [
+    "case_split",
+    "induction"
+   ]
+  },
+  "Nat.exists_infinite_primes": {
+   "chain": [
+    "Exists.intro",
+    "And.intro"
+   ],
+   "tags": []
+  },
+  "Nat.gcd_comm": {
+   "chain": [
+    "Nat.dvd_antisymm",
+    "Nat.dvd_gcd",
+    "Nat.gcd_dvd_left"
+   ],
+   "tags": []
+  },
+  "Nat.pow_sub_one_gcd_pow_sub_one": {
+   "chain": [
+    "PSigma.mk",
+    "Nat.pow_sub_one_gcd_pow_sub_one._unary",
+    "WellFounded.Nat.fix",
+    "PSigma.casesOn"
+   ],
+   "tags": [
+    "induction"
+   ]
+  },
+  "Nat.sqrt_lt": {
+   "chain": [
+    "iff_self",
+    "LE.le",
+    "of_eq_true",
+    "Not",
+    "Eq.trans"
+   ],
+   "tags": []
+  },
+  "Real.exp_log": {
+   "chain": [
+    "Eq.mpr",
+    "abs_of_pos"
+   ],
+   "tags": []
+  },
+  "Real.range_log": {
+   "chain": [
+    "Real.log_surjective",
+    "Exists.intro",
+    "Function.Surjective.range_eq",
+    "Real.log_exp"
+   ],
+   "tags": []
+  },
+  "limUnder_of_not_tendsto": {
+   "chain": [
+    "of_eq_true",
+    "id"
+   ],
+   "tags": []
+  },
+  "pow_iterate": {
+   "chain": [
+    "Nat.brecOn",
+    "Nat.casesOn",
+    "_private.Mathlib.Algebra.Group.Basic.0.pow_iterate.match_1_1",
+    "pow_iterate._f"
+   ],
+   "tags": [
+    "case_split",
+    "induction"
+   ]
+  },
+  "zpow_mul": {
+   "chain": [
+    "Eq.mpr",
+    "_private.Mathlib.Algebra.Group.Basic.0.zpow_mul.match_1_1",
+    "Int.casesOn"
+   ],
+   "tags": [
+    "case_split",
+    "induction"
+   ]
+  }
+ },
+ "n_sampled_theorems": 40000,
+ "strategy_rates": {
+  "case_split": 0.0396,
+  "choice": 0.0019,
+  "computation": 0.0018,
+  "contradiction": 0.0296,
+  "contrapositive": 0.001,
+  "extensionality": 0.1033,
+  "induction": 0.0242
+ },
+ "validation": {
+  "case_split": {
+   "fn": 128,
+   "fn_examples": [
+    "Associated.neg_left",
+    "Set.Ico_mul_Icc_subset'",
+    "CategoryTheory.PreOneHypercover.inv_hom_h\u2080",
+    "WeierstrassCurve.ofJ_j",
+    "AlgebraicGeometry.Scheme.PartialMap.equiv_iff_of_isSeparated",
+    "PresheafOfModules.toPresheaf_map_sheafificationHomEquiv_def"
+   ],
+   "fp": 38,
+   "fp_examples": [
+    "Part.mem_ofOption",
+    "Ordinal.veblenWith_veblenWith_eq_veblenWith_iff",
+    "Nat.pred_ne_self",
+    "Matrix.IsAdjMatrix.compl_compl",
+    "Fin2.ofFin_toFin",
+    "AddCircle.finite_torsion"
+   ],
+   "precision_vs_source": 0.465,
+   "recall_vs_source": 0.205,
+   "tn": 1228,
+   "tp": 33
+  },
+  "choice": {
+   "fn": 8,
+   "fn_examples": [
+    "EReal.exp_add",
+    "List.Forall\u2082.length_eq",
+    "Finset.local_lubell_yamamoto_meshalkin_inequality_div",
+    "Module.Finite.of_pi",
+    "VectorField.mpullbackWithin_mlieBracketWithin_of_isSymmSndFDerivWithinAt",
+    "IsConjRoot.trans"
+   ],
+   "fp": 5,
+   "fp_examples": [
+    "hallMatchingsOn.nonempty",
+    "MeasureTheory.AEStronglyMeasurable.stronglyMeasurable_mk",
+    "ContractingWith.efixedPoint_isFixedPt'",
+    "ProbabilityTheory.IsAEKolmogorovProcess.IsKolmogorovProcess_mk",
+    "ContinuousLinearMap.nonlinearRightInverseOfSurjective_nnnorm_pos"
+   ],
+   "precision_vs_source": 0.0,
+   "recall_vs_source": 0.0,
+   "tn": 1414,
+   "tp": 0
+  },
+  "computation": {
+   "fn": 4,
+   "fn_examples": [
+    "EuclideanGeometry.right_ne_of_oangle_sign_eq_one",
+    "EReal.neg_eq_zero_iff",
+    "Nat.size_pow",
+    "Affine.Triangle.sbtw_touchpoint_singleton"
+   ],
+   "fp": 0,
+   "fp_examples": [],
+   "precision_vs_source": 0.0,
+   "recall_vs_source": 0.0,
+   "tn": 1423,
+   "tp": 0
+  },
+  "contradiction": {
+   "fn": 4,
+   "fn_examples": [
+    "Nat.add_factorial_succ_le_factorial_add_succ",
+    "Stream'.mem_append_stream_left",
+    "Real.geom_mean_lt_arith_mean_weighted_iff_of_pos",
+    "Rat.ne_of_lt"
+   ],
+   "fp": 20,
+   "fp_examples": [
+    "Finset.notMem_sdiff_of_mem_right",
+    "Ordinal.veblenWith_veblenWith_eq_veblenWith_iff",
+    "Matrix.IsAdjMatrix.compl_compl",
+    "Finset.intervalGapsWithin_le_fst",
+    "Finset.intervalGapsWithin_snd_le",
+    "LinearOrderedCommGroup.Subgroup.genLTOne_unique"
+   ],
+   "precision_vs_source": 0.091,
+   "recall_vs_source": 0.333,
+   "tn": 1401,
+   "tp": 2
+  },
+  "contrapositive": {
+   "fn": 13,
+   "fn_examples": [
+    "Finset.ne_insert_of_notMem",
+    "MvPolynomial.uniqueFactorizationMonoid",
+    "charpoly_leftMulMatrix",
+    "Pell.eq_pow_of_pell",
+    "SimpleGraph.Subgraph.deleteEdges_coe_eq",
+    "Finset.intervalGapsWithin_snd_le"
+   ],
+   "fp": 1,
+   "fp_examples": [
+    "MeasureTheory.Measure.restrict.neZero"
+   ],
+   "precision_vs_source": 0.0,
+   "recall_vs_source": 0.0,
+   "tn": 1413,
+   "tp": 0
+  },
+  "extensionality": {
+   "fn": 103,
+   "fn_examples": [
+    "CategoryTheory.PreOneHypercover.inv_hom_h\u2080",
+    "CochainComplex.HomComplex.Cochain.shift_v'",
+    "CoalgCat.MonoidalCategoryAux.associator_hom_toLinearMap",
+    "SimpleGraph.isBipartiteWith_neighborFinset",
+    "ProbabilityTheory.support_gaussianPDF",
+    "Submodule.comap_zero"
+   ],
+   "fp": 5,
+   "fp_examples": [
+    "HahnModule.add_smul",
+    "inhomogeneousCochains.d_eq",
+    "CategoryTheory.Functor.isZero",
+    "CategoryTheory.NatIso.op_isoWhiskerLeft",
+    "CategoryTheory.skeleton_skeletal"
+   ],
+   "precision_vs_source": 0.75,
+   "recall_vs_source": 0.127,
+   "tn": 1304,
+   "tp": 15
+  },
+  "induction": {
+   "fn": 13,
+   "fn_examples": [
+    "Module.Basis.orientation_eq_or_eq_neg",
+    "Polynomial.X_pow_smul_rTensor_monomial",
+    "TopCat.Presheaf.app_isIso_of_stalkFunctor_map_iso",
+    "edist_le_Ico_sum_edist",
+    "HahnModule.add_smul",
+    "Real.posLog_prod"
+   ],
+   "fp": 26,
+   "fp_examples": [
+    "Int.lcm_dvd_lcm_mul_right_right",
+    "Int.testBit_bitwise",
+    "Fin.succ_zero_eq_one'",
+    "Nat.pred_ne_self",
+    "extDeriv_apply_vectorField_of_pairwise_commute",
+    "Equiv.Perm.IsCycle.of_zpow"
+   ],
+   "precision_vs_source": 0.297,
+   "recall_vs_source": 0.458,
+   "tn": 1377,
+   "tp": 11
+  }
+ },
+ "validation_n": 1427
+}
