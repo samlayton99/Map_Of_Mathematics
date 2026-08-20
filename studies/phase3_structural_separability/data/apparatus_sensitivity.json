@@ -1,0 +1,122 @@
+[
+ {
+  "lambda": 10,
+  "floor": 50,
+  "n_apparatus": 216,
+  "top1_extended": 0.9339,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 10,
+  "floor": 200,
+  "n_apparatus": 139,
+  "top1_extended": 0.9339,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 10,
+  "floor": 500,
+  "n_apparatus": 89,
+  "top1_extended": 0.9339,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 15,
+  "floor": 50,
+  "n_apparatus": 183,
+  "top1_extended": 0.9339,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 15,
+  "floor": 200,
+  "n_apparatus": 120,
+  "top1_extended": 0.9339,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 15,
+  "floor": 500,
+  "n_apparatus": 76,
+  "top1_extended": 0.9339,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 20,
+  "floor": 50,
+  "n_apparatus": 157,
+  "top1_extended": 0.9339,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 20,
+  "floor": 200,
+  "n_apparatus": 102,
+  "top1_extended": 0.9339,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 20,
+  "floor": 500,
+  "n_apparatus": 66,
+  "top1_extended": 0.9339,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 30,
+  "floor": 50,
+  "n_apparatus": 125,
+  "top1_extended": 0.9333,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 30,
+  "floor": 200,
+  "n_apparatus": 89,
+  "top1_extended": 0.9333,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 30,
+  "floor": 500,
+  "n_apparatus": 58,
+  "top1_extended": 0.9333,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 50,
+  "floor": 50,
+  "n_apparatus": 103,
+  "top1_extended": 0.9333,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 50,
+  "floor": 200,
+  "n_apparatus": 77,
+  "top1_extended": 0.9333,
+  "tactic_blames": 20,
+  "verdicts": 245
+ },
+ {
+  "lambda": 50,
+  "floor": 500,
+  "n_apparatus": 53,
+  "top1_extended": 0.9333,
+  "tactic_blames": 20,
+  "verdicts": 245
+ }
+]

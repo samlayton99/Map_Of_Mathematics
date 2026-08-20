@@ -1,0 +1,114 @@
+[
+ {
+  "top1": 0.9344,
+  "tactic": 20,
+  "glue": 56,
+  "verdicts": 245,
+  "n_live": 1905,
+  "config": "V8 full"
+ },
+ {
+  "top1": 0.8863,
+  "tactic": 20,
+  "glue": 49,
+  "verdicts": 222,
+  "n_live": 1944,
+  "config": "-position filter"
+ },
+ {
+  "top1": 0.9034,
+  "tactic": 32,
+  "glue": 105,
+  "verdicts": 53,
+  "n_live": 2298,
+  "config": "-claims filter"
+ },
+ {
+  "top1": 0.826,
+  "tactic": 23,
+  "glue": 295,
+  "verdicts": 0,
+  "n_live": 2150,
+  "config": "-logic-only demotion"
+ },
+ {
+  "top1": 0.9307,
+  "tactic": 26,
+  "glue": 56,
+  "verdicts": 245,
+  "n_live": 1905,
+  "config": "-apparatus demotion"
+ },
+ {
+  "top1": 0.9113,
+  "tactic": 20,
+  "glue": 55,
+  "verdicts": 245,
+  "n_live": 1906,
+  "config": "-attribution"
+ },
+ {
+  "top1": 0.9288,
+  "tactic": 12,
+  "glue": 44,
+  "verdicts": 245,
+  "n_live": 1911,
+  "config": "-zoom"
+ },
+ {
+  "top1": 0.9286,
+  "tactic": 20,
+  "glue": 54,
+  "verdicts": 245,
+  "n_live": 1905,
+  "config": "-statement-world key"
+ },
+ {
+  "top1": 0.9055,
+  "tactic": 21,
+  "glue": 113,
+  "verdicts": 245,
+  "n_live": 1905,
+  "config": "-depth key"
+ },
+ {
+  "top1": 0.7707,
+  "tactic": 15,
+  "glue": 23,
+  "verdicts": 0,
+  "n_live": 2355,
+  "config": "depth only (no filters, no tiers)"
+ },
+ {
+  "top1": 0.7282,
+  "tactic": 17,
+  "glue": 244,
+  "verdicts": 0,
+  "n_live": 2171,
+  "config": "claims+depth only"
+ },
+ {
+  "top1": 0.7639,
+  "tactic": 17,
+  "glue": 276,
+  "verdicts": 0,
+  "n_live": 2156,
+  "config": "position+claims+depth"
+ },
+ {
+  "top1": 0.7723,
+  "tactic": 16,
+  "glue": 277,
+  "verdicts": 0,
+  "n_live": 2156,
+  "config": "position+claims+stmtworld+depth (V4-like)"
+ },
+ {
+  "top1": 0.8697,
+  "tactic": 13,
+  "glue": 42,
+  "verdicts": 245,
+  "n_live": 1911,
+  "config": "position+claims+logic+stmtworld+depth (V5v-like)"
+ }
+]
