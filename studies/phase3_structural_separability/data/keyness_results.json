@@ -1,0 +1,83 @@
+{
+ "all_26_including_flagged": {
+  "best_view_votes": {
+   "applied": 2,
+   "moveset": 0,
+   "prov": 4,
+   "ranked": 35,
+   "zoom": 37
+  },
+  "mean_rating": {
+   "applied": 2.45,
+   "moveset": 2.74,
+   "prov": 2.42,
+   "ranked": 3.76,
+   "zoom": 4.22
+  },
+  "top1_yes": {
+   "applied": 9,
+   "moveset": 1,
+   "prov": 13,
+   "ranked": 32,
+   "zoom": 45
+  },
+  "top1_yes_or_partial_rate": {
+   "applied": 0.218,
+   "moveset": 0.192,
+   "prov": 0.244,
+   "ranked": 0.705,
+   "zoom": 0.897
+  },
+  "top1_yes_rate": {
+   "applied": 0.115,
+   "moveset": 0.013,
+   "prov": 0.167,
+   "ranked": 0.41,
+   "zoom": 0.577
+  },
+  "unanimity": 0.731
+ },
+ "excluded_for_source_collision": [
+  "proof_11",
+  "proof_14",
+  "proof_21"
+ ],
+ "primary_(23_clean_proofs)": {
+  "best_view_votes": {
+   "applied": 2,
+   "moveset": 0,
+   "prov": 4,
+   "ranked": 28,
+   "zoom": 35
+  },
+  "mean_rating": {
+   "applied": 2.54,
+   "moveset": 2.81,
+   "prov": 2.61,
+   "ranked": 3.8,
+   "zoom": 4.33
+  },
+  "top1_yes": {
+   "applied": 9,
+   "moveset": 1,
+   "prov": 13,
+   "ranked": 26,
+   "zoom": 39
+  },
+  "top1_yes_or_partial_rate": {
+   "applied": 0.246,
+   "moveset": 0.217,
+   "prov": 0.275,
+   "ranked": 0.71,
+   "zoom": 0.928
+  },
+  "top1_yes_rate": {
+   "applied": 0.13,
+   "moveset": 0.014,
+   "prov": 0.188,
+   "ranked": 0.377,
+   "zoom": 0.565
+  },
+  "unanimity": 0.739
+ }
+}

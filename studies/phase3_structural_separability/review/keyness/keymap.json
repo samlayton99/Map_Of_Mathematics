@@ -1,0 +1,324 @@
+{
+ "proof_0": {
+  "decl": "NNRat.cast_strictMono",
+  "map": {
+   "A": "moveset",
+   "B": "zoom",
+   "C": "prov",
+   "D": "ranked",
+   "E": "applied"
+  },
+  "traits": [],
+  "depth": 77
+ },
+ "proof_1": {
+  "decl": "Complex.I_mul_im",
+  "map": {
+   "A": "zoom",
+   "B": "ranked",
+   "C": "prov",
+   "D": "moveset",
+   "E": "applied"
+  },
+  "traits": [],
+  "depth": 95
+ },
+ "proof_2": {
+  "decl": "isCyclotomicExtension_iff_eq_adjoin",
+  "map": {
+   "A": "zoom",
+   "B": "moveset",
+   "C": "prov",
+   "D": "applied",
+   "E": "ranked"
+  },
+  "traits": [
+   "witness"
+  ],
+  "depth": 135
+ },
+ "proof_3": {
+  "decl": "AddGroupFilterBasis.t2Space_iff_sInter_subset",
+  "map": {
+   "A": "zoom",
+   "B": "moveset",
+   "C": "prov",
+   "D": "ranked",
+   "E": "applied"
+  },
+  "traits": [],
+  "depth": 92
+ },
+ "proof_4": {
+  "decl": "ExpGrowth.expGrowthSup_sum",
+  "map": {
+   "A": "prov",
+   "B": "applied",
+   "C": "moveset",
+   "D": "ranked",
+   "E": "zoom"
+  },
+  "traits": [],
+  "depth": 175
+ },
+ "proof_5": {
+  "decl": "MulMemClass.mul_right_mem_add_closure",
+  "map": {
+   "A": "ranked",
+   "B": "prov",
+   "C": "zoom",
+   "D": "moveset",
+   "E": "applied"
+  },
+  "traits": [],
+  "depth": 64
+ },
+ "proof_6": {
+  "decl": "BoxIntegral.Prepartition.coe_eq_of_mem_split_of_lt_mem",
+  "map": {
+   "A": "moveset",
+   "B": "zoom",
+   "C": "applied",
+   "D": "ranked",
+   "E": "prov"
+  },
+  "traits": [],
+  "depth": 135
+ },
+ "proof_7": {
+  "decl": "Algebra.IsAlgebraic.trdeg_le_cardinalMk",
+  "map": {
+   "A": "zoom",
+   "B": "applied",
+   "C": "prov",
+   "D": "moveset",
+   "E": "ranked"
+  },
+  "traits": [],
+  "depth": 142
+ },
+ "proof_8": {
+  "decl": "WfDvdMonoid.not_isUnit_iff_exists_factors_eq",
+  "map": {
+   "A": "moveset",
+   "B": "applied",
+   "C": "prov",
+   "D": "zoom",
+   "E": "ranked"
+  },
+  "traits": [
+   "witness"
+  ],
+  "depth": 25
+ },
+ "proof_9": {
+  "decl": "CategoryTheory.GrpObj.mulRight_one",
+  "map": {
+   "A": "ranked",
+   "B": "moveset",
+   "C": "zoom",
+   "D": "prov",
+   "E": "applied"
+  },
+  "traits": [],
+  "depth": 35
+ },
+ "proof_10": {
+  "decl": "iteratedDeriv_vcomp_three",
+  "map": {
+   "A": "prov",
+   "B": "moveset",
+   "C": "ranked",
+   "D": "applied",
+   "E": "zoom"
+  },
+  "traits": [],
+  "depth": 190
+ },
+ "proof_11": {
+  "decl": "Function.support_eq_empty_iff",
+  "map": {
+   "A": "prov",
+   "B": "moveset",
+   "C": "ranked",
+   "D": "zoom",
+   "E": "applied"
+  },
+  "traits": [],
+  "depth": 22
+ },
+ "proof_12": {
+  "decl": "CategoryTheory.MonoidalCategory.MonoidalRightAction.actionHomLeft_tensor",
+  "map": {
+   "A": "moveset",
+   "B": "ranked",
+   "C": "prov",
+   "D": "zoom",
+   "E": "applied"
+  },
+  "traits": [],
+  "depth": 7
+ },
+ "proof_13": {
+  "decl": "LinearMap.toSpanSingleton_add",
+  "map": {
+   "A": "zoom",
+   "B": "moveset",
+   "C": "applied",
+   "D": "ranked",
+   "E": "prov"
+  },
+  "traits": [],
+  "depth": 27
+ },
+ "proof_14": {
+  "decl": "HasStrictDerivAt.finsetProd",
+  "map": {
+   "A": "zoom",
+   "B": "applied",
+   "C": "moveset",
+   "D": "ranked",
+   "E": "prov"
+  },
+  "traits": [],
+  "depth": 182
+ },
+ "proof_15": {
+  "decl": "MvPowerSeries.antidiagonal_dominant",
+  "map": {
+   "A": "applied",
+   "B": "prov",
+   "C": "zoom",
+   "D": "ranked",
+   "E": "moveset"
+  },
+  "traits": [],
+  "depth": 106
+ },
+ "proof_16": {
+  "decl": "SimpleGraph.neighborSet_sum_inr",
+  "map": {
+   "A": "applied",
+   "B": "moveset",
+   "C": "zoom",
+   "D": "ranked",
+   "E": "prov"
+  },
+  "traits": [],
+  "depth": 33
+ },
+ "proof_17": {
+  "decl": "IsCovariantDerivativeOn.congr_of_eventuallyEq",
+  "map": {
+   "A": "ranked",
+   "B": "applied",
+   "C": "prov",
+   "D": "zoom",
+   "E": "moveset"
+  },
+  "traits": [],
+  "depth": 167
+ },
+ "proof_18": {
+  "decl": "uniformity_dist_of_mem_uniformity",
+  "map": {
+   "A": "prov",
+   "B": "ranked",
+   "C": "zoom",
+   "D": "applied",
+   "E": "moveset"
+  },
+  "traits": [
+   "witness"
+  ],
+  "depth": 55
+ },
+ "proof_19": {
+  "decl": "AddMonoidAlgebra.supDegree_single",
+  "map": {
+   "A": "zoom",
+   "B": "applied",
+   "C": "moveset",
+   "D": "ranked",
+   "E": "prov"
+  },
+  "traits": [],
+  "depth": 69
+ },
+ "proof_20": {
+  "decl": "Pell.modEq_of_xn_modEq",
+  "map": {
+   "A": "prov",
+   "B": "zoom",
+   "C": "ranked",
+   "D": "applied",
+   "E": "moveset"
+  },
+  "traits": [],
+  "depth": 56
+ },
+ "proof_21": {
+  "decl": "Module.Projective.of_split",
+  "map": {
+   "A": "prov",
+   "B": "zoom",
+   "C": "moveset",
+   "D": "ranked",
+   "E": "applied"
+  },
+  "traits": [],
+  "depth": 78
+ },
+ "proof_22": {
+  "decl": "CochainComplex.HomComplex.Cocycle.toSingleMk_postcomp",
+  "map": {
+   "A": "prov",
+   "B": "zoom",
+   "C": "applied",
+   "D": "moveset",
+   "E": "ranked"
+  },
+  "traits": [],
+  "depth": 71
+ },
+ "proof_23": {
+  "decl": "Finset.le_prod_nonempty_of_submultiplicative_on_pred",
+  "map": {
+   "A": "zoom",
+   "B": "applied",
+   "C": "prov",
+   "D": "moveset",
+   "E": "ranked"
+  },
+  "traits": [],
+  "depth": 59
+ },
+ "proof_24": {
+  "decl": "Equiv.Perm.cycleOf_mul_of_apply_right_eq_self",
+  "map": {
+   "A": "prov",
+   "B": "applied",
+   "C": "zoom",
+   "D": "moveset",
+   "E": "ranked"
+  },
+  "traits": [
+   "automation"
+  ],
+  "depth": 36
+ },
+ "proof_25": {
+  "decl": "exists_compact_closed_between",
+  "map": {
+   "A": "applied",
+   "B": "prov",
+   "C": "ranked",
+   "D": "moveset",
+   "E": "zoom"
+  },
+  "traits": [
+   "witness"
+  ],
+  "depth": 87
+ }
+}

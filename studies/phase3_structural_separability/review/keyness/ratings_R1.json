@@ -1,0 +1,184 @@
+{
+  "proof_0": {
+    "key_move": "NNRat.cast_def: unfold the cast as num/den, then cross-multiply (div_lt_div_iff₀ + Nat.cast_lt) so the goal becomes exactly NNRat.lt_def",
+    "ratings": {"A": 3, "B": 4, "C": 1, "D": 4, "E": 2},
+    "top1_is_key": {"A": "no", "B": "yes", "C": "no", "D": "yes", "E": "no"},
+    "best_view": "B",
+    "notes": "B and D carry the same four real lemmas; E buries div_lt_div_iff₀ under casting trivia and C is empty."
+  },
+  "proof_1": {
+    "key_move": "Complex.mul_im (expand the imaginary part of a product; the rest is 1*x and 0*x arithmetic)",
+    "ratings": {"A": 4, "B": 4, "C": 1, "D": 3, "E": 2},
+    "top1_is_key": {"A": "yes", "B": "yes", "C": "no", "D": "partial", "E": "no"},
+    "best_view": "B",
+    "notes": "One-line simp proof with a single substantive lemma, so a view is useful exactly insofar as it puts Complex.mul_im first."
+  },
+  "proof_2": {
+    "key_move": "IsCyclotomicExtension.iff_adjoin_eq_top (the roots generate C), transported along the inclusion C.val via AlgHom.map_adjoin / Algebra.map_top / Subalgebra.range_val",
+    "ratings": {"A": 5, "B": 3, "C": 1, "D": 2, "E": 4},
+    "top1_is_key": {"A": "partial", "B": "partial", "C": "no", "D": "no", "E": "no"},
+    "best_view": "A",
+    "notes": "C is pure simp-normalisation trivia (ne_eq, exists_prop, and_imp) and is actively misleading about what the proof does."
+  },
+  "proof_3": {
+    "key_move": "GroupFilterBasis.t2Space_iff (T2 for the basis topology is the sInter criterion), leaving only the trivial inclusion {1} ⊆ ⋂₀ from F.one via subset_antisymm_iff",
+    "ratings": {"A": 5, "B": 3, "C": 1, "D": 3, "E": 2},
+    "top1_is_key": {"A": "yes", "B": "partial", "C": "no", "D": "no", "E": "no"},
+    "best_view": "A",
+    "notes": "D expands the T2 criterion into its internals (closure_singleton, t1Space) without ever naming the criterion itself."
+  },
+  "proof_4": {
+    "key_move": "ExpGrowth.expGrowthSup_add (expGrowthSup of a two-term sum is the max), pushed along Finset.induction_on",
+    "ratings": {"A": 4, "B": 3, "C": 3, "D": 5, "E": 4},
+    "top1_is_key": {"A": "no", "B": "partial", "C": "no", "D": "yes", "E": "yes"},
+    "best_view": "D",
+    "notes": "A has exactly the right ten lemmas but ranks the key one last."
+  },
+  "proof_5": {
+    "key_move": "AddSubmonoid.closure_induction: induct on membership in the additive closure; right multiplication by b is additive (add_mul) and stays in S (mul_mem)",
+    "ratings": {"A": 5, "B": 4, "C": 4, "D": 3, "E": 3},
+    "top1_is_key": {"A": "yes", "B": "partial", "C": "yes", "D": "no", "E": "yes"},
+    "best_view": "A",
+    "notes": ""
+  },
+  "proof_6": {
+    "key_move": "BoxIntegral.Prepartition.mem_split_iff': J is one of the two split pieces, and h₃ (x < y i) kills the wrong disjunct via Or.resolve_left",
+    "ratings": {"A": 3, "B": 5, "C": 3, "D": 5, "E": 4},
+    "top1_is_key": {"A": "no", "B": "yes", "C": "partial", "D": "yes", "E": "yes"},
+    "best_view": "D",
+    "notes": "E is correct but truncated to two items, dropping the contradiction step."
+  },
+  "proof_7": {
+    "key_move": "Translate transcendence degree into the algebraic matroid (AlgebraicIndependent.matroid_cRank_eq / matroid_spanning_iff) and apply Matroid.Spanning.cRank_le_cardinalMk",
+    "ratings": {"A": 5, "B": 3, "C": 3, "D": 3, "E": 4},
+    "top1_is_key": {"A": "yes", "B": "no", "C": "yes", "D": "no", "E": "yes"},
+    "best_view": "A",
+    "notes": "C ranks well but omits Matroid.Spanning.cRank_le_cardinalMk, the lemma that actually closes the proof."
+  },
+  "proof_8": {
+    "key_move": "WfDvdMonoid.exists_factors (a = u * prod of irreducibles), then absorb the unit into one factor using Associated.irreducible and Multiset.prod_erase",
+    "ratings": {"A": 3, "B": 2, "C": 3, "D": 3, "E": 3},
+    "top1_is_key": {"A": "no", "B": "no", "C": "no", "D": "no", "E": "no"},
+    "best_view": "C",
+    "notes": "No view leads with WfDvdMonoid.exists_factors, and only A mentions the unit-absorption trick (Associated.irreducible) while omitting exists_factors entirely."
+  },
+  "proof_9": {
+    "key_move": "CategoryTheory.MonObj.lift_comp_one_right (the right unit law), after reducing the iso equality to its underlying morphism",
+    "ratings": {"A": 4, "B": 3, "C": 3, "D": 1, "E": 2},
+    "top1_is_key": {"A": "no", "B": "no", "C": "no", "D": "no", "E": "no"},
+    "best_view": "A",
+    "notes": "The proof is `ext; simp`, so every view leads with ext/unfolding plumbing rather than the unit law."
+  },
+  "proof_10": {
+    "key_move": "iteratedDerivWithin_vcomp_three specialised to s = univ (via iteratedDerivWithin_univ / iteratedFDerivWithin_univ / derivWithin_univ / fderivWithin_univ)",
+    "ratings": {"A": 5, "B": 2, "C": 4, "D": 2, "E": 5},
+    "top1_is_key": {"A": "no", "B": "no", "C": "yes", "D": "no", "E": "yes"},
+    "best_view": "E",
+    "notes": "A and E are the only views that reveal the four *_univ specialisations instead of leaving them as opaque private simp names."
+  },
+  "proof_11": {
+    "key_move": "Function.support_eq_empty_iff composed with coeff_fun_eq_zero_iff (a series is zero iff all its coefficients vanish)",
+    "ratings": {"A": 1, "B": 2, "C": 2, "D": 2, "E": 1},
+    "top1_is_key": {"A": "no", "B": "no", "C": "no", "D": "no", "E": "no"},
+    "best_view": "C",
+    "notes": "No view names either lemma of the one-line `.trans` proof; all of them show only the unfolded guts of support_eq_empty_iff, so none is genuinely useful."
+  },
+  "proof_12": {
+    "key_move": "MonoidalRightAction.actionAssocIso_hom_naturality (naturality of the action associator), after rewriting the whiskering as actionHom of an identity (actionHom_id)",
+    "ratings": {"A": 3, "B": 4, "C": 5, "D": 4, "E": 2},
+    "top1_is_key": {"A": "no", "B": "partial", "C": "partial", "D": "no", "E": "no"},
+    "best_view": "C",
+    "notes": "E omits the naturality lemma altogether and leads with congr plumbing."
+  },
+  "proof_13": {
+    "key_move": "LinearMap.toSpanSingleton_add transported through coercion injectivity; underneath it is just smul_add checked on the generator (ext_ring)",
+    "ratings": {"A": 3, "B": 3, "C": 4, "D": 3, "E": 1},
+    "top1_is_key": {"A": "no", "B": "no", "C": "partial", "D": "partial", "E": "no"},
+    "best_view": "C",
+    "notes": "No view mentions coe_inj or the LinearMap-level lemma; they all show the underlying ext_ring + smul_add argument instead."
+  },
+  "proof_14": {
+    "key_move": "Reduce to the already-proved primed/`fun_` version of finsetProd by convert, with Finset.prod_apply to move the product past function application",
+    "ratings": {"A": 4, "B": 2, "C": 3, "D": 5, "E": 1},
+    "top1_is_key": {"A": "yes", "B": "no", "C": "no", "D": "yes", "E": "no"},
+    "best_view": "D",
+    "notes": ""
+  },
+  "proof_15": {
+    "key_move": "IsNonarchimedean.apply_sum_eq_of_lt: for a nonarchimedean value, a sum with one strictly dominant term has that term's value, applied to coeff_mul's antidiagonal sum",
+    "ratings": {"A": 3, "B": 4, "C": 5, "D": 5, "E": 3},
+    "top1_is_key": {"A": "no", "B": "no", "C": "yes", "D": "yes", "E": "no"},
+    "best_view": "D",
+    "notes": "C usefully expands the private grind-generated side proof; B leads with `rfl`."
+  },
+  "proof_16": {
+    "key_move": "SimpleGraph.sum_adj: adjacency in G ⊕g H only holds within a side, so the cross cases collapse and the neighbours of inr w are exactly Sum.inr of H-neighbours",
+    "ratings": {"A": 2, "B": 3, "C": 4, "D": 4, "E": 1},
+    "top1_is_key": {"A": "no", "B": "no", "C": "yes", "D": "yes", "E": "no"},
+    "best_view": "D",
+    "notes": "A omits sum_adj entirely and shows only ext/iff plumbing."
+  },
+  "proof_17": {
+    "key_move": "Reduce eventual equality to equality on an open neighbourhood (Filter.eventually_iff_exists_mem plus mem_nhds_iff) and apply the congr_of_eqOn version after restricting the chart domain (mono)",
+    "ratings": {"A": 3, "B": 4, "C": 1, "D": 5, "E": 3},
+    "top1_is_key": {"A": "no", "B": "yes", "C": "no", "D": "yes", "E": "no"},
+    "best_view": "D",
+    "notes": "A expands into the HasMFDerivAt internals of congr_of_eqOn without naming the eqOn lemma that is actually invoked."
+  },
+  "proof_18": {
+    "key_move": "Filter.HasBasis.eq_biInf applied to the basis of D-balls that hypothesis H supplies",
+    "ratings": {"A": 4, "B": 4, "C": 5, "D": 4, "E": 2},
+    "top1_is_key": {"A": "no", "B": "yes", "C": "yes", "D": "yes", "E": "no"},
+    "best_view": "C",
+    "notes": "A names the real rewrite lemmas rather than private simp handles but ranks eq_biInf last; C both leads with it and unfolds the privates."
+  },
+  "proof_19": {
+    "key_move": "AddMonoidAlgebra.supDegree_single_ne_zero for the r ≠ 0 branch, with single a 0 = 0 forcing ⊥ in the other branch",
+    "ratings": {"A": 4, "B": 2, "C": 3, "D": 4, "E": 4},
+    "top1_is_key": {"A": "partial", "B": "no", "C": "no", "D": "partial", "E": "yes"},
+    "best_view": "D",
+    "notes": "B drops supDegree_single_ne_zero, the only real lemma; E is a single correct item but omits the zero branch."
+  },
+  "proof_20": {
+    "key_move": "Pell.xn_modEq_x4n_add (x is 4n-periodic modulo x_n) to replace j by j % 4n, then Pell.eq_of_xn_modEq' to pin down the residue",
+    "ratings": {"A": 3, "B": 5, "C": 1, "D": 2, "E": 1},
+    "top1_is_key": {"A": "no", "B": "yes", "C": "no", "D": "no", "E": "no"},
+    "best_view": "B",
+    "notes": "C is dominated by omega/grind internals (Int.Internal.Linear.*) and E drops both Pell lemmas, leaving only ModEq bookkeeping."
+  },
+  "proof_21": {
+    "key_move": "Module.projective_lifting_property: the splitting provides the lift, which is exactly the universal lifting characterisation of projectivity",
+    "ratings": {"A": 1, "B": 4, "C": 3, "D": 4, "E": 3},
+    "top1_is_key": {"A": "no", "B": "yes", "C": "no", "D": "yes", "E": "no"},
+    "best_view": "D",
+    "notes": "The displayed Lean source is FormallySmooth.of_split rather than Module.Projective.of_split, so I judged the views against the theorem they all clearly track."
+  },
+  "proof_22": {
+    "key_move": "CochainComplex.HomComplex.Cochain.toSingleMk_postcomp, reached by applying injectivity of toSingleEquiv to drop from cocycles to the underlying cochains",
+    "ratings": {"A": 4, "B": 5, "C": 2, "D": 3, "E": 4},
+    "top1_is_key": {"A": "yes", "B": "yes", "C": "no", "D": "no", "E": "partial"},
+    "best_view": "B",
+    "notes": "C omits the cochain-level lemma, so it shows only the injectivity wrapper and no mathematical content."
+  },
+  "proof_23": {
+    "key_move": "Multiset.le_prod_nonempty_of_submultiplicative_on_pred applied to s.val.map g, with nonemptiness and the predicate transported by forall_mem_map_iff",
+    "ratings": {"A": 4, "B": 2, "C": 1, "D": 3, "E": 4},
+    "top1_is_key": {"A": "partial", "B": "no", "C": "no", "D": "no", "E": "no"},
+    "best_view": "A",
+    "notes": "A is the only view that also exposes the List-level submultiplicativity underneath the Multiset lemma."
+  },
+  "proof_24": {
+    "key_move": "Equiv.Perm.zpow_apply_eq_self_of_apply_eq_self with Commute.mul_zpow: since g fixes x and commutes with f, (f*g)^k x = f^k x, so the two cycles agree",
+    "ratings": {"A": 4, "B": 3, "C": 5, "D": 3, "E": 5},
+    "top1_is_key": {"A": "yes", "B": "no", "C": "partial", "D": "partial", "E": "partial"},
+    "best_view": "E",
+    "notes": "A is a crisp three-item list led by the key lemma but omits Commute.mul_zpow, the half that uses the commuting hypothesis."
+  },
+  "proof_25": {
+    "key_move": "Take the closure of the compact set from exists_compact_between: IsCompact.closure keeps it compact and IsCompact.closure_subset_of_isOpen keeps it inside U",
+    "ratings": {"A": 4, "B": 3, "C": 5, "D": 4, "E": 5},
+    "top1_is_key": {"A": "no", "B": "no", "C": "yes", "D": "partial", "E": "yes"},
+    "best_view": "C",
+    "notes": "B keeps exists_compact_between but drops both closure lemmas, which are where the regularity argument lives."
+  }
+}

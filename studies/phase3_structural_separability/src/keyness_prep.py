@@ -143,13 +143,25 @@ def main():
     sidx = build_source_index()
 
     def source_of(r):
+        """Resolve by shortname, then verify the block is THIS declaration:
+        score candidates by token overlap with the decl's own dependency
+        shortnames (kills shortname collisions across namespaces)."""
         short = names[r].split(".")[-1]
-        for pth, ln in sidx.get(short, []):
+        depshorts = {names[d].split(".")[-1] for d in set(deps_v[r]) | set(deps_t[r])}
+        depshorts.discard(short)
+        best, bestscore = (None, None), -1
+        for pth, ln in sidx.get(short, [])[:6]:
             b = decl_block(pth, ln)
-            if b and re.search(r"(theorem|lemma) " + re.escape(short) + r"(?!['\w])",
-                               b.splitlines()[0]):
-                return pth, b
-        return None, None
+            if not (b and re.search(r"(theorem|lemma) " + re.escape(short) + r"(?!['\w])",
+                                    b.splitlines()[0])):
+                continue
+            toks = set(re.findall(r"[A-Za-z_][A-Za-z0-9_']*", b))
+            score = len(toks & depshorts)
+            if score > bestscore:
+                best, bestscore = (pth, b), score
+        if bestscore < 2:
+            return None, None
+        return best
 
     def traits(r):
         cs = cands(r)
