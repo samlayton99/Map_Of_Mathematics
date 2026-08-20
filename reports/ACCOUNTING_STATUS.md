@@ -14,7 +14,7 @@ family). Same-sample V6 baseline: 94.38 / 93.18. Markers:
 |---|---|---|---|---|
 | machine-generated, several claims inside | 43 | OK-mislabel (mostly; ledger-read) | multi-parent derivations; attribution cannot pick one | **display label IMPLEMENTED** (src/parent_labels.py): 77.1% of 239,625 machine-generated claims now resolve to what they are part of (attribution 108k / definition-user 43k / statement-subject 34k); the rest keep their raw name |
 | grader-stamped glue | 42 | 2/3 OK-mislabel (interface facts, byContradiction), 1/3 OK-by-owner-ruling (thin lists) | grader stamps structure fields / logic ops | none needed (grader work ruled out) |
-| automation internals | 13 | NOT OK, but **halved** (1.1% -> 0.71%, and 5 of the 13 are correct answers on theorems that are themselves part of a tactic's own development, leaving ~0.44% true junk) | tactic certificates are genuine claims | **apparatus measure IMPLEMENTED and CERTIFIED** (round 9); residual is logic-shaped bridge lemmas (`Lean.Grind.forall_forall_or`, `Lean.Omega.Int.lt_of_not_le`) whose statements contain no apparatus vocabulary because they restate pure logic — the measure cannot see them and arguably should not: they are real, shallow facts, so what is left is a depth/generality ranking question, not a machinery question |
+| automation internals | 13 | NOT OK, halved (1.1% -> 0.71%; 5 of the 13 are correct answers on theorems inside a tactic's own development, leaving ~0.44% true junk) | tactic certificates are genuine claims | **apparatus measure IMPLEMENTED and CERTIFIED** (round 9). Residual taxonomy CORRECTED after adversarial review — the earlier claim that all of it is "logic-shaped bridge lemmas the measure should not see" was FALSE. Diagnosed by ingredient: (a) `Mathlib.Tactic.Abel.subst_into_negg` on `DoldKan.Q_succ` — its only non-universal ingredient is `NegZeroClass.toNeg` (ratio 1.2), i.e. a tactic's substitution lemma stated in ordinary algebraic vocabulary, carrying no apparatus fingerprint at all: a STRUCTURAL blind spot no threshold fixes; (b) `Mathlib.Tactic.FieldSimp.NF.pow_eq_eval` on a Weierstrass-curve theorem — it does carry `FieldSimp.NF` ingredients at ratios 18.2 and 32.2, and is missed only because `NF.instPowNat` has 129 uses against the 200 floor: a THRESHOLD miss, catchable by lowering the floor; (c) genuine logic restatements (`Lean.Grind.forall_forall_or`, `Lean.Omega.Int.lt_of_not_le`) which are real shallow facts and a ranking question |
 | Prop-typed instances | 1 | OK-mislabel (read: real facts) | grader | none needed |
 | own compiled helpers | 1 | OK (zoom opens) | kept by design | implemented |
 
@@ -35,6 +35,16 @@ stated in almost no theorems. Any replacement for omega exhibits the same
 signature the day it lands.
 
 Cost, measured: 2 real moves lost in 1,826 proofs (bar was 5).
+
+Threshold sensitivity, and its limit: on the dev sample, sweeping the ratio
+10x-50x and the floor 50-500 (apparatus set 53 to 216 concepts) leaves top-1
+within 0.06 points and the tactic-blame and verdict counts identical
+(data/apparatus_sensitivity.json). That invariance is SAMPLE-SPECIFIC and was
+over-read: on the certified seed, case (b) above is decided by the 200 floor.
+The correct statement is that the thresholds are not load-bearing for the
+concepts that carry the effect (ratios 100-2400x), while boundary concepts
+near the floor do change individual outcomes. The sweep has not been run on
+the certified seed.
 
 ## Falsifications this round (recorded, not hidden)
 
