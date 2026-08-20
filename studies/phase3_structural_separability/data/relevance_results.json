@@ -1,0 +1,644 @@
+{
+ "V4": {
+  "cause": {
+   "generated": 85,
+   "glue": 75,
+   "instance": 1,
+   "self-helper": 5,
+   "tactic": 24
+  },
+  "definitional": 407,
+  "top1_content": 0.9025,
+  "top1_deep": 0.9459,
+  "top1_mid": 0.9146,
+  "top1_shallow": 0.8339,
+  "top2_content": 0.942
+ },
+ "V5": {
+  "cause": {
+   "generated": 83,
+   "glue": 81,
+   "instance": 1,
+   "self-helper": 5,
+   "tactic": 16
+  },
+  "definitional": 407,
+  "top1_content": 0.9045,
+  "top1_deep": 0.9459,
+  "top1_mid": 0.9219,
+  "top1_shallow": 0.8322,
+  "top2_content": 0.9405
+ },
+ "gradient": {
+  "MeasureTheory.integral_add": {
+   "cutoff_slices": {
+    "depth>=121": [
+     "MeasureTheory.Integrable.add (d=200)",
+     "MeasureTheory.L1.integral_def (d=237)",
+     "MeasureTheory.dominatedFinMeasAdditive_weightedSMul (d=187)",
+     "MeasureTheory.integral_def (d=241)",
+     "MeasureTheory.integral_eq_setToFun (d=242)",
+     "MeasureTheory.norm_weightedSMul_le (d=167)",
+     "MeasureTheory.setToFun_add (d=233)",
+     "MeasureTheory.setToFun_eq (d=232)",
+     "MeasureTheory.weightedSMul_union (d=186)"
+    ],
+    "depth>=194": [
+     "MeasureTheory.Integrable.add (d=200)",
+     "MeasureTheory.L1.integral_def (d=237)",
+     "MeasureTheory.integral_def (d=241)",
+     "MeasureTheory.integral_eq_setToFun (d=242)",
+     "MeasureTheory.setToFun_add (d=233)",
+     "MeasureTheory.setToFun_eq (d=232)"
+    ],
+    "depth>=60": [
+     "MeasureTheory.Integrable.add (d=200)",
+     "MeasureTheory.L1.integral_def (d=237)",
+     "MeasureTheory.dominatedFinMeasAdditive_weightedSMul (d=187)",
+     "MeasureTheory.integral_def (d=241)",
+     "MeasureTheory.integral_eq_setToFun (d=242)",
+     "MeasureTheory.norm_weightedSMul_le (d=167)",
+     "MeasureTheory.setToFun_add (d=233)",
+     "MeasureTheory.setToFun_eq (d=232)",
+     "MeasureTheory.weightedSMul_union (d=186)"
+    ]
+   },
+   "decl": "MeasureTheory.integral_add",
+   "depth": 243,
+   "levels": [
+    [
+     {
+      "d": 242,
+      "name": "MeasureTheory.integral_eq_setToFun"
+     },
+     {
+      "d": 233,
+      "name": "MeasureTheory.setToFun_add"
+     },
+     {
+      "d": 187,
+      "name": "MeasureTheory.dominatedFinMeasAdditive_weightedSMul"
+     }
+    ],
+    [
+     {
+      "moves": [
+       {
+        "d": 241,
+        "name": "MeasureTheory.integral_def"
+       },
+       {
+        "d": 237,
+        "name": "MeasureTheory.L1.integral_def"
+       },
+       {
+        "d": 7,
+        "name": "dite.congr_simp"
+       }
+      ],
+      "parent": "MeasureTheory.integral_eq_setToFun"
+     },
+     {
+      "moves": [
+       {
+        "d": 232,
+        "name": "MeasureTheory.setToFun_eq"
+       },
+       {
+        "d": 200,
+        "name": "MeasureTheory.Integrable.add"
+       },
+       {
+        "d": 24,
+        "name": "ContinuousLinearMap.map_add"
+       }
+      ],
+      "parent": "MeasureTheory.setToFun_add"
+     },
+     {
+      "moves": [
+       {
+        "d": 186,
+        "name": "MeasureTheory.weightedSMul_union"
+       },
+       {
+        "d": 167,
+        "name": "MeasureTheory.norm_weightedSMul_le"
+       },
+       {
+        "d": 2,
+        "name": "one_mul"
+       }
+      ],
+      "parent": "MeasureTheory.dominatedFinMeasAdditive_weightedSMul"
+     }
+    ]
+   ]
+  },
+  "Nat.exists_infinite_primes": {
+   "cutoff_slices": {
+    "depth>=18": [
+     "Nat.Prime.not_dvd_one (d=20)",
+     "Nat.minFac_has_prop (d=69)",
+     "Nat.minFac_prime (d=70)",
+     "Nat.prime_def_lt' (d=47)"
+    ],
+    "depth>=36": [
+     "Nat.minFac_has_prop (d=69)",
+     "Nat.minFac_prime (d=70)",
+     "Nat.prime_def_lt' (d=47)"
+    ],
+    "depth>=57": [
+     "Nat.minFac_has_prop (d=69)",
+     "Nat.minFac_prime (d=70)"
+    ]
+   },
+   "decl": "Nat.exists_infinite_primes",
+   "depth": 72,
+   "levels": [
+    [
+     {
+      "d": 70,
+      "name": "Nat.minFac_prime"
+     },
+     {
+      "d": 20,
+      "name": "Nat.Prime.not_dvd_one"
+     }
+    ],
+    [
+     {
+      "moves": [
+       {
+        "d": 69,
+        "name": "Nat.minFac_has_prop"
+       },
+       {
+        "d": 47,
+        "name": "Nat.prime_def_lt'"
+       },
+       {
+        "d": 7,
+        "name": "Dvd.dvd.trans"
+       }
+      ],
+      "parent": "Nat.minFac_prime"
+     },
+     {
+      "moves": [
+       {
+        "d": 13,
+        "name": "Irreducible.not_dvd_isUnit"
+       },
+       {
+        "d": 8,
+        "name": "isUnit_one"
+       }
+      ],
+      "parent": "Nat.Prime.not_dvd_one"
+     }
+    ]
+   ]
+  },
+  "Nat.gcd_comm": {
+   "cutoff_slices": {
+    "depth>=16": [
+     "Nat.dvd_gcd (d=30)",
+     "Nat.dvd_mod_iff (d=24)",
+     "Nat.gcd_dvd (d=30)",
+     "Nat.gcd_dvd_left (d=31)",
+     "Nat.gcd_dvd_right (d=31)",
+     "Nat.gcd_rec (d=29)",
+     "Nat.gcd_zero_left (d=27)"
+    ],
+    "depth>=25": [
+     "Nat.dvd_gcd (d=30)",
+     "Nat.gcd_dvd (d=30)",
+     "Nat.gcd_dvd_left (d=31)",
+     "Nat.gcd_dvd_right (d=31)",
+     "Nat.gcd_rec (d=29)",
+     "Nat.gcd_zero_left (d=27)"
+    ],
+    "depth>=8": [
+     "Nat.dvd_gcd (d=30)",
+     "Nat.dvd_mod_iff (d=24)",
+     "Nat.gcd_dvd (d=30)",
+     "Nat.gcd_dvd_left (d=31)",
+     "Nat.gcd_dvd_right (d=31)",
+     "Nat.gcd_rec (d=29)",
+     "Nat.gcd_zero_left (d=27)"
+    ]
+   },
+   "decl": "Nat.gcd_comm",
+   "depth": 32,
+   "levels": [
+    [
+     {
+      "d": 31,
+      "name": "Nat.gcd_dvd_right"
+     },
+     {
+      "d": 31,
+      "name": "Nat.gcd_dvd_left"
+     },
+     {
+      "d": 30,
+      "name": "Nat.dvd_gcd"
+     }
+    ],
+    [
+     {
+      "moves": [
+       {
+        "d": 30,
+        "name": "Nat.gcd_dvd"
+       }
+      ],
+      "parent": "Nat.gcd_dvd_right"
+     },
+     {
+      "moves": [
+       {
+        "d": 30,
+        "name": "Nat.gcd_dvd"
+       }
+      ],
+      "parent": "Nat.gcd_dvd_left"
+     },
+     {
+      "moves": [
+       {
+        "d": 29,
+        "name": "Nat.gcd_rec"
+       },
+       {
+        "d": 27,
+        "name": "Nat.gcd_zero_left"
+       },
+       {
+        "d": 24,
+        "name": "Nat.dvd_mod_iff"
+       }
+      ],
+      "parent": "Nat.dvd_gcd"
+     }
+    ]
+   ]
+  },
+  "Real.exp_add": {
+   "cutoff_slices": {
+    "depth>=115": [
+     "Complex.exp_add (d=141)",
+     "Complex.exp_def (d=140)",
+     "Complex.exp_ofReal_im (d=143)",
+     "Complex.ofReal_exp_ofReal_re (d=142)"
+    ],
+    "depth>=36": [
+     "Complex.exp_add (d=141)",
+     "Complex.exp_def (d=140)",
+     "Complex.exp_ofReal_im (d=143)",
+     "Complex.mul_re (d=93)",
+     "Complex.ofReal_add (d=95)",
+     "Complex.ofReal_exp_ofReal_re (d=142)",
+     "Complex.ofReal_im (d=87)",
+     "Finset.sum_range_sub_sum_range (d=69)",
+     "add_pow (d=72)"
+    ],
+    "depth>=72": [
+     "Complex.exp_add (d=141)",
+     "Complex.exp_def (d=140)",
+     "Complex.exp_ofReal_im (d=143)",
+     "Complex.mul_re (d=93)",
+     "Complex.ofReal_add (d=95)",
+     "Complex.ofReal_exp_ofReal_re (d=142)",
+     "Complex.ofReal_im (d=87)",
+     "add_pow (d=72)"
+    ]
+   },
+   "decl": "Real.exp_add",
+   "depth": 144,
+   "levels": [
+    [
+     {
+      "d": 143,
+      "name": "Complex.exp_ofReal_im"
+     },
+     {
+      "d": 141,
+      "name": "Complex.exp_add"
+     },
+     {
+      "d": 95,
+      "name": "Complex.ofReal_add"
+     },
+     {
+      "d": 93,
+      "name": "Complex.mul_re"
+     },
+     {
+      "d": 6,
+      "name": "sub_zero"
+     },
+     {
+      "d": 4,
+      "name": "of_eq_true"
+     }
+    ],
+    [
+     {
+      "moves": [
+       {
+        "d": 142,
+        "name": "Complex.ofReal_exp_ofReal_re"
+       },
+       {
+        "d": 87,
+        "name": "Complex.ofReal_im"
+       }
+      ],
+      "parent": "Complex.exp_ofReal_im"
+     },
+     {
+      "moves": [
+       {
+        "d": 140,
+        "name": "Complex.exp_def"
+       },
+       {
+        "d": 72,
+        "name": "add_pow"
+       },
+       {
+        "d": 69,
+        "name": "Finset.sum_range_sub_sum_range"
+       }
+      ],
+      "parent": "Complex.exp_add"
+     },
+     {
+      "moves": [
+       {
+        "d": 7,
+        "name": "Complex.ext_iff"
+       },
+       {
+        "d": 4,
+        "name": "of_eq_true"
+       },
+       {
+        "d": 4,
+        "name": "eq_self"
+       }
+      ],
+      "parent": "Complex.ofReal_add"
+     },
+     {
+      "moves": [],
+      "parent": "Complex.mul_re"
+     },
+     {
+      "moves": [
+       {
+        "d": 2,
+        "name": "sub_eq_add_neg"
+       },
+       {
+        "d": 2,
+        "name": "neg_zero"
+       }
+      ],
+      "parent": "sub_zero"
+     },
+     {
+      "moves": [
+       {
+        "d": 2,
+        "name": "trivial"
+       }
+      ],
+      "parent": "of_eq_true"
+     }
+    ]
+   ]
+  },
+  "Real.exp_log": {
+   "cutoff_slices": {
+    "depth>=131": [
+     "Real.exp_log_eq_abs (d=163)",
+     "Real.log_of_ne_zero (d=162)"
+    ],
+    "depth>=41": [
+     "Real.exp_log_eq_abs (d=163)",
+     "Real.log_of_ne_zero (d=162)"
+    ],
+    "depth>=82": [
+     "Real.exp_log_eq_abs (d=163)",
+     "Real.log_of_ne_zero (d=162)"
+    ]
+   },
+   "decl": "Real.exp_log",
+   "depth": 164,
+   "levels": [
+    [
+     {
+      "d": 163,
+      "name": "Real.exp_log_eq_abs"
+     },
+     {
+      "d": 17,
+      "name": "abs_of_pos"
+     }
+    ],
+    [
+     {
+      "moves": [
+       {
+        "d": 162,
+        "name": "Real.log_of_ne_zero"
+       },
+       {
+        "d": 18,
+        "name": "abs_pos"
+       },
+       {
+        "d": 3,
+        "name": "OrderIso.apply_symm_apply"
+       }
+      ],
+      "parent": "Real.exp_log_eq_abs"
+     },
+     {
+      "moves": [
+       {
+        "d": 16,
+        "name": "abs_of_nonneg"
+       }
+      ],
+      "parent": "abs_of_pos"
+     }
+    ]
+   ]
+  },
+  "deriv_add": {
+   "cutoff_slices": {
+    "depth>=132": [
+     "DifferentiableAt.hasDerivAt (d=149)",
+     "HasDerivAt.add (d=161)",
+     "HasDerivAt.deriv (d=165)",
+     "HasDerivAt.differentiableAt (d=149)",
+     "HasDerivAt.unique (d=164)",
+     "HasDerivAtFilter.add (d=160)"
+    ],
+    "depth>=41": [
+     "DifferentiableAt.hasDerivAt (d=149)",
+     "DifferentiableAt.hasFDerivAt (d=80)",
+     "HasDerivAt.add (d=161)",
+     "HasDerivAt.deriv (d=165)",
+     "HasDerivAt.differentiableAt (d=149)",
+     "HasDerivAt.unique (d=164)",
+     "HasDerivAtFilter.add (d=160)",
+     "HasFDerivAt.hasDerivAt (d=107)"
+    ],
+    "depth>=83": [
+     "DifferentiableAt.hasDerivAt (d=149)",
+     "HasDerivAt.add (d=161)",
+     "HasDerivAt.deriv (d=165)",
+     "HasDerivAt.differentiableAt (d=149)",
+     "HasDerivAt.unique (d=164)",
+     "HasDerivAtFilter.add (d=160)",
+     "HasFDerivAt.hasDerivAt (d=107)"
+    ]
+   },
+   "decl": "deriv_add",
+   "depth": 166,
+   "levels": [
+    [
+     {
+      "d": 165,
+      "name": "HasDerivAt.deriv"
+     },
+     {
+      "d": 161,
+      "name": "HasDerivAt.add"
+     },
+     {
+      "d": 149,
+      "name": "DifferentiableAt.hasDerivAt"
+     }
+    ],
+    [
+     {
+      "moves": [
+       {
+        "d": 164,
+        "name": "HasDerivAt.unique"
+       },
+       {
+        "d": 149,
+        "name": "HasDerivAt.differentiableAt"
+       },
+       {
+        "d": 149,
+        "name": "DifferentiableAt.hasDerivAt"
+       }
+      ],
+      "parent": "HasDerivAt.deriv"
+     },
+     {
+      "moves": [
+       {
+        "d": 160,
+        "name": "HasDerivAtFilter.add"
+       }
+      ],
+      "parent": "HasDerivAt.add"
+     },
+     {
+      "moves": [
+       {
+        "d": 107,
+        "name": "HasFDerivAt.hasDerivAt"
+       },
+       {
+        "d": 80,
+        "name": "DifferentiableAt.hasFDerivAt"
+       }
+      ],
+      "parent": "DifferentiableAt.hasDerivAt"
+     }
+    ]
+   ]
+  }
+ },
+ "layer_coherence_frac_grandchildren_relevant_to_root": 1.0,
+ "route_items_demoted": {
+  "count": 0,
+  "examples": []
+ },
+ "seed": 20260819,
+ "theta": 0.02,
+ "universality": {
+  "0.01": {
+   "examples": [
+    "Eq",
+    "OfNat.ofNat",
+    "Nat",
+    "Membership.mem",
+    "DFunLike.coe",
+    "Set",
+    "LE.le",
+    "CategoryTheory.Category"
+   ],
+   "n_universal_concepts": 261
+  },
+  "0.02": {
+   "examples": [
+    "Eq",
+    "OfNat.ofNat",
+    "Nat",
+    "Membership.mem",
+    "DFunLike.coe",
+    "Set",
+    "LE.le",
+    "CategoryTheory.Category"
+   ],
+   "n_universal_concepts": 149
+  },
+  "0.05": {
+   "examples": [
+    "Eq",
+    "OfNat.ofNat",
+    "Nat",
+    "Membership.mem",
+    "DFunLike.coe",
+    "Set",
+    "LE.le",
+    "CategoryTheory.Category"
+   ],
+   "n_universal_concepts": 47
+  }
+ },
+ "verdict_x_category": {
+  "alien": {
+   "content": 798,
+   "generated": 55,
+   "glue": 25,
+   "instance": 4,
+   "tactic": 198
+  },
+  "bookkeeping": {
+   "content": 1694,
+   "generated": 138,
+   "glue": 3961,
+   "tactic": 263
+  },
+  "relevant": {
+   "content": 10893,
+   "generated": 917,
+   "glue": 440,
+   "instance": 36,
+   "self-helper": 11,
+   "tactic": 1096
+  }
+ }
+}

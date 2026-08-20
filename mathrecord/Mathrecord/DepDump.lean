@@ -86,6 +86,41 @@ def loadBearingHeads (env : Environment)
     | _ => pure ()
   return hb
 
+/-- Outermost head chain of a proof term: peel lambdas/lets/mdata, record the
+head constant, descend into the LAST explicit argument (the continuation
+position of eliminators, byContradiction, fix), repeat (≤ depth 5). -/
+def rootChain (env : Environment) (cache : IO.Ref (Std.HashMap Name (Array BinderInfo)))
+    (value : Expr) : BaseIO (Array Name) := do
+  let mut chain : Array Name := #[]
+  let mut e := value
+  for _ in [0:5] do
+    -- peel binders
+    let mut peeled := true
+    while peeled do
+      match e with
+      | .lam _ _ b _ => e := b
+      | .letE _ _ _ b _ => e := b
+      | .mdata _ b => e := b
+      | _ => peeled := false
+    match e.getAppFn with
+    | .const c _ =>
+      chain := chain.push c
+      let args := e.getAppArgs
+      if args.isEmpty then
+        break
+      let bis ← sigBinders env cache c
+      let mut nxt : Option Expr := none
+      for i in [0:args.size] do
+        match bis[i]? with
+        | some .default => nxt := some args[i]!
+        | none => nxt := some args[i]!
+        | some _ => pure ()
+      match nxt with
+      | some a => e := a
+      | none => break
+    | _ => break
+  return chain
+
 def depDump (path : System.FilePath) (out : System.FilePath) : IO Unit := do
   let pf ← Mathrecord.processFile path mathlibOptions
   let env := pf.env
@@ -99,18 +134,23 @@ def depDump (path : System.FilePath) (out : System.FilePath) : IO Unit := do
       let isInst ← Meta.isInstance n
       let cls := classify env n isInst
       let tdeps := ci.type.getUsedConstantsAsSet.toArray
-      let (vdeps, hb) ← match ci.value? (allowOpaque := true) with
+      let (vdeps, hb, rt) ← match ci.value? (allowOpaque := true) with
         | some v => do
           let hb ← loadBearingHeads env sigCache v
-          pure (v.getUsedConstantsAsSet.toArray, hb.toArray)
-        | none => pure (#[], #[])
-      let j := Json.mkObj [
+          let rt ← rootChain env sigCache v
+          pure (v.getUsedConstantsAsSet.toArray, hb.toArray, rt)
+        | none => pure (#[], #[], #[])
+      let mut fields := [
         ("n", Json.str (toString n)),
         ("k", Json.str (kindString ci)),
         ("c", toJson (cls.map toString)),
         ("t", toJson (tdeps.map toString)),
         ("v", toJson (vdeps.map toString)),
-        ("hb", toJson (hb.map toString))]
+        ("hb", toJson (hb.map toString)),
+        ("rt", toJson (rt.map toString))]
+      if let .inductInfo iv := ci then
+        fields := fields ++ [("ir", Json.bool iv.isRec)]
+      let j := Json.mkObj fields
       h.putStrLn j.compress
       count := count + 1
       if count % 50000 == 0 then

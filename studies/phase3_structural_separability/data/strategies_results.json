@@ -1,0 +1,289 @@
+{
+ "anchor_strategies": {
+  "Function.Injective.isPartialInv": [
+   "choice",
+   "contradiction"
+  ],
+  "Nat.exists_infinite_primes": [],
+  "Nat.gcd_comm": [],
+  "Nat.pow_sub_one_gcd_pow_sub_one": [],
+  "Real.exp_log": [],
+  "Real.range_log": [],
+  "limUnder_of_not_tendsto": [
+   "choice"
+  ],
+  "zpow_mul": [
+   "extensionality"
+  ]
+ },
+ "by_depth_tercile": {
+  "deep": {
+   "case_split": 0.0392,
+   "choice": 0.0084,
+   "computation": 0.0051,
+   "contradiction": 0.0293,
+   "contrapositive": 0.0037,
+   "extensionality": 0.2042,
+   "induction": 0.0001
+  },
+  "mid": {
+   "case_split": 0.0399,
+   "choice": 0.0035,
+   "computation": 0.0348,
+   "contradiction": 0.0589,
+   "contrapositive": 0.0013,
+   "extensionality": 0.1575,
+   "induction": 0.0003
+  },
+  "shallow": {
+   "case_split": 0.0321,
+   "choice": 0.0037,
+   "computation": 0.004,
+   "contradiction": 0.0235,
+   "contrapositive": 0.0012,
+   "extensionality": 0.21,
+   "induction": 0.0002
+  }
+ },
+ "by_domain": {
+  "AlgebraicGeometry": {
+   "case_split": 0.02,
+   "choice": 0.016,
+   "contradiction": 0.004,
+   "extensionality": 0.141,
+   "n": 491
+  },
+  "CategoryTheory": {
+   "case_split": 0.01,
+   "choice": 0.005,
+   "contradiction": 0.007,
+   "extensionality": 0.083,
+   "n": 4146
+  },
+  "Finset": {
+   "case_split": 0.034,
+   "choice": 0.006,
+   "contradiction": 0.024,
+   "contrapositive": 0.004,
+   "extensionality": 0.208,
+   "n": 496
+  },
+  "Lean": {
+   "case_split": 0.046,
+   "computation": 0.003,
+   "contradiction": 0.034,
+   "extensionality": 0.023,
+   "n": 656
+  },
+  "List": {
+   "case_split": 0.219,
+   "computation": 0.003,
+   "contradiction": 0.084,
+   "contrapositive": 0.005,
+   "extensionality": 0.183,
+   "n": 606
+  },
+  "MeasureTheory": {
+   "case_split": 0.025,
+   "choice": 0.014,
+   "contradiction": 0.017,
+   "contrapositive": 0.004,
+   "extensionality": 0.214,
+   "n": 725
+  },
+  "Nat": {
+   "case_split": 0.118,
+   "computation": 0.016,
+   "contradiction": 0.089,
+   "contrapositive": 0.006,
+   "extensionality": 0.156,
+   "n": 493
+  },
+  "Polynomial": {
+   "case_split": 0.087,
+   "computation": 0.008,
+   "contradiction": 0.039,
+   "contrapositive": 0.021,
+   "extensionality": 0.181,
+   "n": 381
+  },
+  "Set": {
+   "case_split": 0.027,
+   "choice": 0.009,
+   "contradiction": 0.016,
+   "contrapositive": 0.006,
+   "extensionality": 0.186,
+   "n": 673
+  },
+  "SimpleGraph": {
+   "case_split": 0.07,
+   "choice": 0.006,
+   "contradiction": 0.045,
+   "contrapositive": 0.003,
+   "extensionality": 0.182,
+   "n": 313
+  },
+  "Std": {
+   "case_split": 0.05,
+   "computation": 0.011,
+   "contradiction": 0.036,
+   "contrapositive": 0.002,
+   "extensionality": 0.076,
+   "n": 2087
+  },
+  "_private": {
+   "case_split": 0.04,
+   "choice": 0.002,
+   "computation": 0.063,
+   "contradiction": 0.123,
+   "extensionality": 0.468,
+   "n": 6616
+  }
+ },
+ "n_sampled_theorems": 40000,
+ "strategy_rates": {
+  "case_split": 0.0371,
+  "choice": 0.0052,
+  "computation": 0.0147,
+  "contradiction": 0.0374,
+  "contrapositive": 0.0021,
+  "extensionality": 0.1904,
+  "induction": 0.0002
+ },
+ "validation": {
+  "case_split": {
+   "fn": 93,
+   "fn_examples": [
+    "Bornology.IsBounded.prod",
+    "DifferentiableWithinAt.sqrt",
+    "Seminorm.balanced_ball_zero",
+    "SSet.degenerate_app_apply",
+    "List.rotate_injective"
+   ],
+   "fp": 14,
+   "fp_examples": [
+    "Set.sym2_insert",
+    "Equiv.Perm.IsCycle.of_zpow",
+    "Fin.val_neg",
+    "Ordinal.iSup_sum",
+    "SimpleGraph.isBipartiteWith_support_subset"
+   ],
+   "precision_vs_source": 0.754,
+   "recall_vs_source": 0.316,
+   "tn": 950,
+   "tp": 43
+  },
+  "choice": {
+   "fn": 6,
+   "fn_examples": [
+    "List.Forall\u2082.length_eq",
+    "Finset.local_lubell_yamamoto_meshalkin_inequality_div",
+    "Module.Finite.of_pi",
+    "VectorField.mpullbackWithin_mlieBracketWithin_of_isSymmSndFDerivWithinAt",
+    "IsConjRoot.trans"
+   ],
+   "fp": 7,
+   "fp_examples": [
+    "Int.csSup_eq_greatestOfBdd",
+    "hallMatchingsOn.nonempty",
+    "CategoryTheory.PreGaloisCategory.autMap_unique",
+    "MeasureTheory.AEStronglyMeasurable.stronglyMeasurable_mk",
+    "ContractingWith.efixedPoint_isFixedPt'"
+   ],
+   "precision_vs_source": 0.125,
+   "recall_vs_source": 0.143,
+   "tn": 1086,
+   "tp": 1
+  },
+  "computation": {
+   "fn": 1,
+   "fn_examples": [
+    "EReal.neg_eq_zero_iff"
+   ],
+   "fp": 1,
+   "fp_examples": [
+    "mellin_eq_fourier"
+   ],
+   "precision_vs_source": 0.667,
+   "recall_vs_source": 0.667,
+   "tn": 1096,
+   "tp": 2
+  },
+  "contradiction": {
+   "fn": 2,
+   "fn_examples": [
+    "Stream'.mem_append_stream_left",
+    "Rat.ne_of_lt"
+   ],
+   "fp": 19,
+   "fp_examples": [
+    "Fin.val_neg",
+    "LinearOrderedCommGroup.Subgroup.genLTOne_unique",
+    "List.perm_option_toList",
+    "linearIndependent_unique_iff",
+    "SimpleGraph.isBipartiteWith_support_subset"
+   ],
+   "precision_vs_source": 0.095,
+   "recall_vs_source": 0.5,
+   "tn": 1077,
+   "tp": 2
+  },
+  "contrapositive": {
+   "fn": 9,
+   "fn_examples": [
+    "charpoly_leftMulMatrix",
+    "Pell.eq_pow_of_pell",
+    "SimpleGraph.Subgraph.deleteEdges_coe_eq",
+    "Finset.intervalGapsWithin_snd_le",
+    "ArchimedeanClass.subsemigroup_strictAnti"
+   ],
+   "fp": 1,
+   "fp_examples": [
+    "AddCommGroup.tfae_modEq"
+   ],
+   "precision_vs_source": 0.667,
+   "recall_vs_source": 0.182,
+   "tn": 1088,
+   "tp": 2
+  },
+  "extensionality": {
+   "fn": 59,
+   "fn_examples": [
+    "LieAdmissibleRing.ext",
+    "CategoryTheory.Limits.ChosenPullback\u2083.hom_ext",
+    "UInt64.ext",
+    "MulEquiv.mk_coe",
+    "MeasureTheory.FiniteMeasure.toMeasure_map"
+   ],
+   "fp": 147,
+   "fp_examples": [
+    "MvPolynomial.mem_coeffs_iff",
+    "NumberField.InfinitePlace.isUnramified_iff_card_stabilizer_eq_one",
+    "FirstOrder.Language.Term.realize_varsToConstants",
+    "InnerProductSpace.Core.inner_self_im",
+    "Seminorm.balanced_ball_zero"
+   ],
+   "precision_vs_source": 0.169,
+   "recall_vs_source": 0.337,
+   "tn": 864,
+   "tp": 30
+  },
+  "induction": {
+   "fn": 18,
+   "fn_examples": [
+    "DifferentiableWithinAt.sqrt",
+    "FirstOrder.Language.Term.realize_varsToConstants",
+    "Fin2.ofFin_toFin",
+    "Associates.pow_factors",
+    "MultilinearMap.freeDFinsuppEquiv_apply"
+   ],
+   "fp": 0,
+   "fp_examples": [],
+   "precision_vs_source": 0.0,
+   "recall_vs_source": 0.0,
+   "tn": 1082,
+   "tp": 0
+  }
+ },
+ "validation_n": 1100
+}
