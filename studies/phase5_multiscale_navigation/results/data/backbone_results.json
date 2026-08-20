@@ -1,0 +1,98 @@
+{
+ "prerequisite_spearman_depth_vs_ncitations": 0.35137115500354915,
+ "base_incidences": 8485349,
+ "distinct_edges": 8485349,
+ "backbone_edges": 728753,
+ "slider": [
+  {
+   "level": "backbone only",
+   "edges": 728753,
+   "components_with_root": 64,
+   "giant_with_root": 0.9998,
+   "components_math_only": 34337,
+   "giant_math_only": 0.0644
+  },
+  {
+   "level": "top 5% by z",
+   "edges": 728753,
+   "components_with_root": 64,
+   "giant_with_root": 0.9998,
+   "components_math_only": 34337,
+   "giant_math_only": 0.0644
+  },
+  {
+   "level": "top 10% by z",
+   "edges": 848534,
+   "components_with_root": 25,
+   "giant_with_root": 0.9999,
+   "components_math_only": 22471,
+   "giant_math_only": 0.8808
+  },
+  {
+   "level": "top 25% by z",
+   "edges": 2121337,
+   "components_with_root": 1,
+   "giant_with_root": 1.0,
+   "components_math_only": 1716,
+   "giant_math_only": 0.989
+  },
+  {
+   "level": "top 50% by z",
+   "edges": 4242674,
+   "components_with_root": 1,
+   "giant_with_root": 1.0,
+   "components_math_only": 895,
+   "giant_math_only": 0.9966
+  },
+  {
+   "level": "top 75% by z",
+   "edges": 6364011,
+   "components_with_root": 1,
+   "giant_with_root": 1.0,
+   "components_math_only": 598,
+   "giant_math_only": 0.9977
+  },
+  {
+   "level": "top 100% by z",
+   "edges": 8485349,
+   "components_with_root": 1,
+   "giant_with_root": 1.0,
+   "components_math_only": 569,
+   "giant_math_only": 0.9978
+  }
+ ],
+ "nested": true,
+ "backbone_passes_filter_alone": 0.9098967688640733,
+ "backbone_composition_by_depth": [
+  {
+   "band": "0-10",
+   "edges": 130039,
+   "content_fraction": 0.2774
+  },
+  {
+   "band": "10-25",
+   "edges": 148294,
+   "content_fraction": 0.5493
+  },
+  {
+   "band": "25-50",
+   "edges": 129184,
+   "content_fraction": 0.5089
+  },
+  {
+   "band": "50-75",
+   "edges": 103109,
+   "content_fraction": 0.752
+  },
+  {
+   "band": "75-125",
+   "edges": 132525,
+   "content_fraction": 0.6668
+  },
+  {
+   "band": "125-350",
+   "edges": 85602,
+   "content_fraction": 0.7021
+  }
+ ]
+}

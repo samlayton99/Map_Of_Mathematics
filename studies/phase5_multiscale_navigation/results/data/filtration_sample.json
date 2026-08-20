@@ -1,0 +1,1617 @@
+{
+ "note": "Samples of the actual filtration output. Full arrays (97MB) are regenerable with src/build_incidence.py, src/build_v8_mask.py, src/backbone.py.",
+ "n_edges": 8485349,
+ "n_backbone": 728753,
+ "backbone_sample_depth_0_10": [
+  {
+   "theorem": "Lean.Grind.NoopConfig.inj._inherited_default",
+   "cites": "Bool.true",
+   "cited_kind": "constructor",
+   "depth_theorem": 2,
+   "depth_cited": 1,
+   "weight": 0.506,
+   "z": 14.1,
+   "in_backbone": true
+  },
+  {
+   "theorem": "NonUnitalSubalgebraClass.subtype_injective",
+   "cites": "Subtype.coe_injective",
+   "cited_kind": "theorem",
+   "depth_theorem": 8,
+   "depth_cited": 7,
+   "weight": 1.526,
+   "z": 172.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.Grind.Config.splitIte._default",
+   "cites": "Bool.true",
+   "cited_kind": "constructor",
+   "depth_theorem": 2,
+   "depth_cited": 1,
+   "weight": 0.506,
+   "z": 14.1,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Batteries.AssocList.toList.eq_2",
+   "cites": "Batteries.AssocList.toList",
+   "cited_kind": "def",
+   "depth_theorem": 7,
+   "depth_cited": 6,
+   "weight": 1.467,
+   "z": 438.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Std.Internal.idToMonad",
+   "cites": "Id.run",
+   "cited_kind": "def",
+   "depth_theorem": 2,
+   "depth_cited": 1,
+   "weight": 1.215,
+   "z": 84.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CategoryTheory.Coverage._sizeOf_1",
+   "cites": "CategoryTheory.Coverage.rec",
+   "cited_kind": "recursor",
+   "depth_theorem": 8,
+   "depth_cited": 5,
+   "weight": 3.492,
+   "z": 1089.1,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.NumberTheory.PellMatiyasevic.0.Pell.xn_ge_a_pow.match_1_1",
+   "cites": "Nat.casesOn",
+   "cited_kind": "def",
+   "depth_theorem": 4,
+   "depth_cited": 3,
+   "weight": 1.713,
+   "z": 71.7,
+   "in_backbone": true
+  },
+  {
+   "theorem": "OrderMonoidWithZeroHom.toOrderMonoidHom._proof_2",
+   "cites": "MonoidWithZeroHom.map_mul'",
+   "cited_kind": "theorem",
+   "depth_theorem": 3,
+   "depth_cited": 2,
+   "weight": 3.0,
+   "z": 890.5,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.Combinatorics.Matroid.Rank.Cardinal.0.Matroid.rankFinite_iff_cRank_lt_aleph0.match_1_1",
+   "cites": "Matroid.RankFinite.casesOn",
+   "cited_kind": "def",
+   "depth_theorem": 9,
+   "depth_cited": 8,
+   "weight": 4.057,
+   "z": 1769.6,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.IR.FnBody.nil",
+   "cites": "Lean.IR.FnBody.unreachable",
+   "cited_kind": "constructor",
+   "depth_theorem": 2,
+   "depth_cited": 1,
+   "weight": 2.662,
+   "z": 993.0,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.Elab.Term.Do.JPDecl.mk._flat_ctor",
+   "cites": "Lean.Elab.Term.Do.JPDecl.mk",
+   "cited_kind": "constructor",
+   "depth_theorem": 3,
+   "depth_cited": 2,
+   "weight": 3.284,
+   "z": 1575.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.Analysis.Complex.CoveringMap.0.Complex.isAddQuotientCoveringMap_exp._simp_1_5",
+   "cites": "eq_comm",
+   "cited_kind": "theorem",
+   "depth_theorem": 6,
+   "depth_cited": 5,
+   "weight": 1.296,
+   "z": 80.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Init.Data.Array.Lemmas.0.Array.anyM_toList._simp_1_9",
+   "cites": "Nat.le_refl",
+   "cited_kind": "theorem",
+   "depth_theorem": 4,
+   "depth_cited": 3,
+   "weight": 1.481,
+   "z": 146.2,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Std.Data.DTreeMap.Internal.Lemmas.0.Std.DTreeMap.Internal.Impl.get!_diff_of_contains_eq_false_right._simp_1_1",
+   "cites": "Std.LawfulBEqOrd.compare_eq_iff_beq",
+   "cited_kind": "theorem",
+   "depth_theorem": 4,
+   "depth_cited": 3,
+   "weight": 1.337,
+   "z": 62.5,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Int.sign_neg_one",
+   "cites": "rfl",
+   "cited_kind": "def",
+   "depth_theorem": 9,
+   "depth_cited": 2,
+   "weight": 0.658,
+   "z": 14.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "SimpleGraph.IsTree.isConnected",
+   "cites": "SimpleGraph.IsTree.connected",
+   "cited_kind": "theorem",
+   "depth_theorem": 3,
+   "depth_cited": 2,
+   "weight": 3.093,
+   "z": 1310.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Unital.0._auto_318",
+   "cites": "Lean.Syntax.node",
+   "cited_kind": "constructor",
+   "depth_theorem": 8,
+   "depth_cited": 2,
+   "weight": 1.155,
+   "z": 19.6,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.ScopedEnvExtension.State.delimitsLocal._default",
+   "cites": "Bool.true",
+   "cited_kind": "constructor",
+   "depth_theorem": 2,
+   "depth_cited": 1,
+   "weight": 0.506,
+   "z": 14.1,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Set.mapsTo_of_subsingleton",
+   "cites": "Set.mapsTo_of_subsingleton'",
+   "cited_kind": "theorem",
+   "depth_theorem": 8,
+   "depth_cited": 7,
+   "weight": 3.997,
+   "z": 2409.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.Util.AtLocation.0.Lean.Elab.Tactic.withNondepPropLocation.match_1",
+   "cites": "Lean.Elab.Tactic.Location.casesOn",
+   "cited_kind": "def",
+   "depth_theorem": 4,
+   "depth_cited": 3,
+   "weight": 3.187,
+   "z": 867.5,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Init.Data.String.Pattern.String.0.String.Slice.Pattern.ForwardSliceSearcher.finitenessRelation._simp_11",
+   "cites": "forall_exists_index",
+   "cited_kind": "theorem",
+   "depth_theorem": 6,
+   "depth_cited": 5,
+   "weight": 1.667,
+   "z": 176.2,
+   "in_backbone": true
+  },
+  {
+   "theorem": "PProd.ext_iff",
+   "cites": "PProd.ext",
+   "cited_kind": "theorem",
+   "depth_theorem": 6,
+   "depth_cited": 5,
+   "weight": 2.849,
+   "z": 1761.0,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CategoryTheory.Limits.WalkingParallelPairHom.id.elim",
+   "cites": "CategoryTheory.Limits.WalkingParallelPairHom.ctorElim",
+   "cited_kind": "def",
+   "depth_theorem": 9,
+   "depth_cited": 8,
+   "weight": 3.929,
+   "z": 1438.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.Combinatorics.SimpleGraph.Bipartite.0.SimpleGraph.IsBipartiteWith.edgeSetEmbeddingCompleteBipartiteGraph._proof_31",
+   "cites": "And.right",
+   "cited_kind": "theorem",
+   "depth_theorem": 4,
+   "depth_cited": 1,
+   "weight": 1.021,
+   "z": 31.3,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.Level.PP.Result.brecOn_1",
+   "cites": "Lean.Level.PP.Result.brecOn_1.go",
+   "cited_kind": "def",
+   "depth_theorem": 5,
+   "depth_cited": 4,
+   "weight": 3.778,
+   "z": 2406.6,
+   "in_backbone": true
+  }
+ ],
+ "backbone_sample_depth_25_50": [
+  {
+   "theorem": "Int.fdiv_left_inj._simp_1",
+   "cites": "Int.fdiv_left_inj",
+   "cited_kind": "theorem",
+   "depth_theorem": 43,
+   "depth_cited": 42,
+   "weight": 4.182,
+   "z": 2714.3,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.CategoryTheory.Functor.OfSequence.0.CategoryTheory.Functor.OfSequence.map_comp._proof_1_2",
+   "cites": "Nat.Internal.Linear.ExprCnstr.eq_true_of_isValid",
+   "cited_kind": "theorem",
+   "depth_theorem": 35,
+   "depth_cited": 34,
+   "weight": 2.278,
+   "z": 90.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.Meta.Simp.SimprocDeclExtState._sizeOf_1",
+   "cites": "Lean.Meta.Simp.SimprocDeclExtState.rec",
+   "cited_kind": "recursor",
+   "depth_theorem": 29,
+   "depth_cited": 28,
+   "weight": 4.873,
+   "z": 1382.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CategoryTheory.Idempotents.karoubiCochainComplexEquivalence_inverse_obj_X_X",
+   "cites": "CategoryTheory.Idempotents.karoubiCochainComplexEquivalence",
+   "cited_kind": "def",
+   "depth_theorem": 40,
+   "depth_cited": 39,
+   "weight": 2.238,
+   "z": 523.3,
+   "in_backbone": true
+  },
+  {
+   "theorem": "WeierstrassCurve.Projective.addX_neg",
+   "cites": "WeierstrassCurve.Projective.neg_Y",
+   "cited_kind": "theorem",
+   "depth_theorem": 39,
+   "depth_cited": 32,
+   "weight": 3.375,
+   "z": 361.0,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Init.Data.BitVec.Bitblast.0.BitVec.toInt_sdiv_of_ne_or_ne._proof_1_6",
+   "cites": "Lean.Omega.LinearCombo.neg_eval",
+   "cited_kind": "theorem",
+   "depth_theorem": 46,
+   "depth_cited": 30,
+   "weight": 2.032,
+   "z": 51.2,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Lean.Elab.Tactic.Grind.Param.0.Lean.Elab.Tactic.warnRedundantEMatchArg._sparseCasesOn_3",
+   "cites": "Lean.Meta.Grind.EMatchTheoremKind.rec",
+   "cited_kind": "recursor",
+   "depth_theorem": 29,
+   "depth_cited": 2,
+   "weight": 1.582,
+   "z": 243.3,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Mathlib.Tactic.BicategoryLike.Atom\u2081.mk.sizeOf_spec",
+   "cites": "SizeOf.sizeOf",
+   "cited_kind": "def",
+   "depth_theorem": 36,
+   "depth_cited": 1,
+   "weight": 0.453,
+   "z": 20.6,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Composition.reverse_bijective",
+   "cites": "Composition.reverse_involutive",
+   "cited_kind": "theorem",
+   "depth_theorem": 25,
+   "depth_cited": 24,
+   "weight": 3.287,
+   "z": 1397.6,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Init.Data.Array.BinSearch.0.Array.binInsertAux._unary._proof_19",
+   "cites": "_private.Init.Data.Array.BinSearch.0.Array.binInsertAux._proof_3",
+   "cited_kind": "theorem",
+   "depth_theorem": 47,
+   "depth_cited": 46,
+   "weight": 3.169,
+   "z": 409.3,
+   "in_backbone": true
+  },
+  {
+   "theorem": "String.Slice.sliceFrom",
+   "cites": "String.Slice.Pos.offset_str_le_offset_endExclusive",
+   "cited_kind": "theorem",
+   "depth_theorem": 48,
+   "depth_cited": 47,
+   "weight": 3.771,
+   "z": 892.6,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.RingTheory.Ideal.IsPrimary.0.Ideal.isPrimary_iff._simp_1_5",
+   "cites": "Ideal.span_singleton_le_iff_mem",
+   "cited_kind": "theorem",
+   "depth_theorem": 27,
+   "depth_cited": 26,
+   "weight": 2.671,
+   "z": 475.2,
+   "in_backbone": true
+  },
+  {
+   "theorem": "MeasureTheory._aux_Mathlib_MeasureTheory_Group_Convolution___unexpand_MeasureTheory_Measure_conv_1",
+   "cites": "Lean.Syntax.matchesNull",
+   "cited_kind": "def",
+   "depth_theorem": 30,
+   "depth_cited": 29,
+   "weight": 1.713,
+   "z": 23.4,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.Grind.CommRing.Poly.mulMon_nc.eq_1",
+   "cites": "Lean.Grind.CommRing.Poly.mulMon_nc",
+   "cited_kind": "def",
+   "depth_theorem": 48,
+   "depth_cited": 47,
+   "weight": 2.365,
+   "z": 850.4,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Std.TreeMap.toList_iter",
+   "cites": "Std.DTreeMap.toList_iter",
+   "cited_kind": "theorem",
+   "depth_theorem": 35,
+   "depth_cited": 34,
+   "weight": 3.915,
+   "z": 1198.5,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.Algebra.Homology.SpectralObject.SpectralSequence.0.CategoryTheory.Abelian.SpectralObject.SpectralSequence.HomologyData.kfSc_exact._proof_1_1",
+   "cites": "Int.Internal.Linear.diseq_of_core",
+   "cited_kind": "theorem",
+   "depth_theorem": 49,
+   "depth_cited": 48,
+   "weight": 2.971,
+   "z": 119.5,
+   "in_backbone": true
+  },
+  {
+   "theorem": "affineSegment_const_vsub_image",
+   "cites": "affineSegment_image",
+   "cited_kind": "theorem",
+   "depth_theorem": 48,
+   "depth_cited": 47,
+   "weight": 5.316,
+   "z": 957.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CategoryTheory.Limits.Cocone.extendId",
+   "cites": "CategoryTheory.Limits.Cocone.extInv",
+   "cited_kind": "def",
+   "depth_theorem": 28,
+   "depth_cited": 27,
+   "weight": 3.907,
+   "z": 430.6,
+   "in_backbone": true
+  },
+  {
+   "theorem": "IsMaxChain.nonempty_iff",
+   "cites": "IsMaxChain.isEmpty_iff",
+   "cited_kind": "theorem",
+   "depth_theorem": 30,
+   "depth_cited": 29,
+   "weight": 3.747,
+   "z": 1548.2,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CategoryTheory.Limits.FormalCoproduct.powerMap_f",
+   "cites": "CategoryTheory.Limits.FormalCoproduct.powerMap",
+   "cited_kind": "def",
+   "depth_theorem": 33,
+   "depth_cited": 32,
+   "weight": 2.051,
+   "z": 558.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CategoryTheory.TwoSquare._aux_Mathlib_CategoryTheory_Functor_TwoSquare___unexpand_CategoryTheory_TwoSquare_vId_1",
+   "cites": "Lean.Syntax.isOfKind",
+   "cited_kind": "def",
+   "depth_theorem": 28,
+   "depth_cited": 27,
+   "weight": 1.369,
+   "z": 13.3,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Init.Data.Nat.Fold.0.Nat.dfold_add._proof_13",
+   "cites": "Lean.Omega.Constraint.not_sat'_of_isImpossible",
+   "cited_kind": "theorem",
+   "depth_theorem": 46,
+   "depth_cited": 35,
+   "weight": 1.952,
+   "z": 11.5,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.Tactic.DepRewrite.0.Mathlib.Tactic.DepRewrite.zetaDelta._sparseCasesOn_1",
+   "cites": "Option.rec",
+   "cited_kind": "recursor",
+   "depth_theorem": 29,
+   "depth_cited": 2,
+   "weight": 0.968,
+   "z": 48.6,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.Parser.patternIgnore",
+   "cites": "Lean.Parser.node",
+   "cited_kind": "def",
+   "depth_theorem": 31,
+   "depth_cited": 30,
+   "weight": 4.375,
+   "z": 999.1,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CategoryTheory.Limits.colimitHomIsoLimitYoneda'_inv_comp_\u03c0_assoc",
+   "cites": "CategoryTheory.Limits.colimitHomIsoLimitYoneda'_inv_comp_\u03c0",
+   "cited_kind": "theorem",
+   "depth_theorem": 42,
+   "depth_cited": 41,
+   "weight": 4.149,
+   "z": 1551.6,
+   "in_backbone": true
+  }
+ ],
+ "backbone_sample_depth_75_125": [
+  {
+   "theorem": "irrational_neg_iff._simp_1",
+   "cites": "irrational_neg_iff",
+   "cited_kind": "theorem",
+   "depth_theorem": 108,
+   "depth_cited": 107,
+   "weight": 6.324,
+   "z": 3086.6,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Std.DTreeMap.Internal.Impl.Const.get?_inter",
+   "cites": "Std.DTreeMap.Internal.Impl.toListModel_inter",
+   "cited_kind": "theorem",
+   "depth_theorem": 78,
+   "depth_cited": 77,
+   "weight": 3.725,
+   "z": 136.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.PrettyPrinter.Delaborator.delabNeg",
+   "cites": "Lean.PrettyPrinter.Delaborator.delabNegIntCore",
+   "cited_kind": "def",
+   "depth_theorem": 93,
+   "depth_cited": 92,
+   "weight": 5.532,
+   "z": 936.1,
+   "in_backbone": true
+  },
+  {
+   "theorem": "separatesPointsOfOpensMeasurableSpaceOfT0Space",
+   "cites": "MeasurableSpace.SeparatesPoints.mk",
+   "cited_kind": "constructor",
+   "depth_theorem": 79,
+   "depth_cited": 4,
+   "weight": 2.628,
+   "z": 524.5,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.CategoryTheory.Galois.Action.0.CategoryTheory.PreGaloisCategory.instPreservesFiniteProductsActionFintypeCatAutFunctorFunctorToAction._proof_1",
+   "cites": "CategoryTheory.Limits.PreservesFiniteLimits.preservesFiniteLimits",
+   "cited_kind": "theorem",
+   "depth_theorem": 81,
+   "depth_cited": 3,
+   "weight": 2.674,
+   "z": 1271.1,
+   "in_backbone": true
+  },
+  {
+   "theorem": "AddAction.stabilizer_finite",
+   "cites": "Set.Finite.sub",
+   "cited_kind": "theorem",
+   "depth_theorem": 82,
+   "depth_cited": 81,
+   "weight": 5.469,
+   "z": 1880.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "AlgebraicClosure.spanCoeffs.eq_1",
+   "cites": "AlgebraicClosure.spanCoeffs",
+   "cited_kind": "def",
+   "depth_theorem": 96,
+   "depth_cited": 95,
+   "weight": 3.428,
+   "z": 949.3,
+   "in_backbone": true
+  },
+  {
+   "theorem": "MonovaryOn.sum_mul_comp_perm_eq_sum_mul_iff",
+   "cites": "MonovaryOn.sum_smul_comp_perm_eq_sum_smul_iff",
+   "cited_kind": "theorem",
+   "depth_theorem": 83,
+   "depth_cited": 82,
+   "weight": 6.923,
+   "z": 1510.7,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Algebra.Extension.tensorCotangentOfFlat_tmul",
+   "cites": "Algebra.Extension.cotangentEquivCotangentKer_apply",
+   "cited_kind": "theorem",
+   "depth_theorem": 104,
+   "depth_cited": 92,
+   "weight": 5.647,
+   "z": 913.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "AlgebraicGeometry.Scheme.Etale.rec._proof_1",
+   "cites": "CategoryTheory.MorphismProperty.Comma.prop",
+   "cited_kind": "theorem",
+   "depth_theorem": 92,
+   "depth_cited": 4,
+   "weight": 2.058,
+   "z": 356.7,
+   "in_backbone": true
+  },
+  {
+   "theorem": "QuotientGroup.homQuotientZPowOfHom_comp_of_rightInverse",
+   "cites": "QuotientGroup.monoidHom_ext",
+   "cited_kind": "theorem",
+   "depth_theorem": 78,
+   "depth_cited": 71,
+   "weight": 5.901,
+   "z": 566.6,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Polynomial.iterate_derivative_natCast_mul",
+   "cites": "Polynomial.derivative_natCast",
+   "cited_kind": "theorem",
+   "depth_theorem": 101,
+   "depth_cited": 99,
+   "weight": 5.241,
+   "z": 691.4,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Algebra.Presentation.instCommRingCore._proof_3",
+   "cites": "AddMemClass.toAddSemigroup._proof_1",
+   "cited_kind": "theorem",
+   "depth_theorem": 77,
+   "depth_cited": 8,
+   "weight": 2.586,
+   "z": 521.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Submodule.mulLeftMap_eq_mulRightMap",
+   "cites": "Submodule.mulLeftMap_eq_mulRightMap_of_commute",
+   "cited_kind": "theorem",
+   "depth_theorem": 79,
+   "depth_cited": 78,
+   "weight": 7.672,
+   "z": 2974.2,
+   "in_backbone": true
+  },
+  {
+   "theorem": "MvPolynomial.image_comap_C_basicOpen",
+   "cites": "MvPolynomial.mem_image_comap_C_basicOpen",
+   "cited_kind": "theorem",
+   "depth_theorem": 95,
+   "depth_cited": 94,
+   "weight": 5.897,
+   "z": 1471.7,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Finsupp.supportedEquivFinsupp_apply_support_val",
+   "cites": "Finsupp.supportedEquivFinsupp",
+   "cited_kind": "def",
+   "depth_theorem": 76,
+   "depth_cited": 75,
+   "weight": 2.915,
+   "z": 538.0,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.Lsp.instToJsonSemanticTokensParams.toJson",
+   "cites": "Lean.Json.mkObj",
+   "cited_kind": "def",
+   "depth_theorem": 84,
+   "depth_cited": 81,
+   "weight": 4.562,
+   "z": 125.7,
+   "in_backbone": true
+  },
+  {
+   "theorem": "MvPowerSeries.hasSum_eval\u2082",
+   "cites": "MvPowerSeries.eval\u2082Hom_eq_extend",
+   "cited_kind": "theorem",
+   "depth_theorem": 103,
+   "depth_cited": 99,
+   "weight": 5.7,
+   "z": 628.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Ultrafilter.lawfulMonad",
+   "cites": "LawfulMonad.mk",
+   "cited_kind": "constructor",
+   "depth_theorem": 75,
+   "depth_cited": 2,
+   "weight": 2.272,
+   "z": 221.1,
+   "in_backbone": true
+  },
+  {
+   "theorem": "DividedPowers.mk._flat_ctor",
+   "cites": "DividedPowers.mk",
+   "cited_kind": "constructor",
+   "depth_theorem": 76,
+   "depth_cited": 75,
+   "weight": 5.984,
+   "z": 629.5,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.Meta.getNatValue?",
+   "cites": "Lean.Meta.getOfNatValue?",
+   "cited_kind": "def",
+   "depth_theorem": 89,
+   "depth_cited": 88,
+   "weight": 4.358,
+   "z": 290.3,
+   "in_backbone": true
+  },
+  {
+   "theorem": "AddCommGrpCat.hasColimitsOfSize",
+   "cites": "CategoryTheory.Limits.HasColimitsOfSize.mk",
+   "cited_kind": "constructor",
+   "depth_theorem": 88,
+   "depth_cited": 9,
+   "weight": 2.4,
+   "z": 421.5,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Lean.Meta.IndPredBelow.0.Lean.Meta.IndPredBelow.mkBelowMatcher.toBelowType",
+   "cites": "Lean.getConstInfoInduct",
+   "cited_kind": "def",
+   "depth_theorem": 124,
+   "depth_cited": 121,
+   "weight": 4.919,
+   "z": 200.0,
+   "in_backbone": true
+  },
+  {
+   "theorem": "ContinuousLinearMap.toSpanSingleton",
+   "cites": "ContinuousLinearMap.toSpanSingleton._proof_1",
+   "cited_kind": "theorem",
+   "depth_theorem": 75,
+   "depth_cited": 74,
+   "weight": 5.239,
+   "z": 2397.0,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.Lsp.instToJsonRpcConnected.toJson",
+   "cites": "Lean.Json.mkObj",
+   "cited_kind": "def",
+   "depth_theorem": 82,
+   "depth_cited": 81,
+   "weight": 4.595,
+   "z": 125.9,
+   "in_backbone": true
+  }
+ ],
+ "backbone_sample_depth_125plus": [
+  {
+   "theorem": "IsPrimitiveRoot.norm_of_cyclotomic_irreducible",
+   "cites": "IsPrimitiveRoot.norm_eq_one",
+   "cited_kind": "theorem",
+   "depth_theorem": 207,
+   "depth_cited": 206,
+   "weight": 8.793,
+   "z": 770.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "galLift_algebraMap_apply",
+   "cites": "galLift",
+   "cited_kind": "def",
+   "depth_theorem": 135,
+   "depth_cited": 134,
+   "weight": 3.893,
+   "z": 509.4,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Polynomial.natSepDegree_eq_natDegree_iff",
+   "cites": "Polynomial.card_rootSet_eq_natDegree_iff_of_splits",
+   "cited_kind": "theorem",
+   "depth_theorem": 138,
+   "depth_cited": 135,
+   "weight": 7.212,
+   "z": 1263.0,
+   "in_backbone": true
+  },
+  {
+   "theorem": "MeasureTheory.Integrable.integral_eq_integral_meas_lt",
+   "cites": "MeasureTheory.lintegral_eq_lintegral_meas_lt",
+   "cited_kind": "theorem",
+   "depth_theorem": 253,
+   "depth_cited": 252,
+   "weight": 10.511,
+   "z": 717.0,
+   "in_backbone": true
+  },
+  {
+   "theorem": "AlgebraicGeometry.instCanonicallyOverSpecStalkCommRingCatPresheaf",
+   "cites": "CategoryTheory.CanonicallyOverClass.mk",
+   "cited_kind": "constructor",
+   "depth_theorem": 139,
+   "depth_cited": 2,
+   "weight": 2.469,
+   "z": 729.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "uniqueDiffWithinAt_convex",
+   "cites": "Convex.span_tangentConeAt",
+   "cited_kind": "theorem",
+   "depth_theorem": 155,
+   "depth_cited": 154,
+   "weight": 7.866,
+   "z": 1765.5,
+   "in_backbone": true
+  },
+  {
+   "theorem": "NumberField.mixedEmbedding.fundamentalCone.unit_smul_mem_iff_mem_torsion",
+   "cites": "NumberField.mixedEmbedding.fundamentalCone.torsion_smul_mem_of_mem",
+   "cited_kind": "theorem",
+   "depth_theorem": 318,
+   "depth_cited": 317,
+   "weight": 12.533,
+   "z": 713.4,
+   "in_backbone": true
+  },
+  {
+   "theorem": "AlgebraicGeometry.Scheme.RationalMap.openCoverDomain.eq_1",
+   "cites": "AlgebraicGeometry.Scheme.RationalMap.openCoverDomain",
+   "cited_kind": "def",
+   "depth_theorem": 142,
+   "depth_cited": 141,
+   "weight": 4.153,
+   "z": 666.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "ENNReal.iInf_mul_of_ne",
+   "cites": "ENNReal.iInf_mul'",
+   "cited_kind": "theorem",
+   "depth_theorem": 131,
+   "depth_cited": 130,
+   "weight": 9.074,
+   "z": 1420.3,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Lean.Elab.Command.elabExport",
+   "cites": "Lean.Elab.OpenDecl.resolveNameUsingNamespaces",
+   "cited_kind": "def",
+   "depth_theorem": 131,
+   "depth_cited": 130,
+   "weight": 7.079,
+   "z": 933.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "LipschitzOnWith.add",
+   "cites": "edist_add_add_le",
+   "cited_kind": "theorem",
+   "depth_theorem": 152,
+   "depth_cited": 151,
+   "weight": 7.369,
+   "z": 1822.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "RKHS.kerFun_apply",
+   "cites": "ContinuousLinearMap.adjoint_adjoint",
+   "cited_kind": "theorem",
+   "depth_theorem": 186,
+   "depth_cited": 181,
+   "weight": 6.799,
+   "z": 350.9,
+   "in_backbone": true
+  },
+  {
+   "theorem": "MeasureTheory.L1.setToL1_smul_left'",
+   "cites": "MeasureTheory.L1.setToL1_unique",
+   "cited_kind": "theorem",
+   "depth_theorem": 232,
+   "depth_cited": 231,
+   "weight": 12.559,
+   "z": 539.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "EuclideanGeometry.exists_circumradius_eq_of_cospherical",
+   "cites": "EuclideanGeometry.exists_circumradius_eq_of_cospherical_subset",
+   "cited_kind": "theorem",
+   "depth_theorem": 183,
+   "depth_cited": 182,
+   "weight": 11.529,
+   "z": 1459.7,
+   "in_backbone": true
+  },
+  {
+   "theorem": "NormedSpace.invertibleExpOfMemBall._proof_1",
+   "cites": "NormedSpace.exp_add_of_commute_of_mem_ball",
+   "cited_kind": "theorem",
+   "depth_theorem": 171,
+   "depth_cited": 170,
+   "weight": 7.391,
+   "z": 609.6,
+   "in_backbone": true
+  },
+  {
+   "theorem": "MeasureTheory.AEDisjoint.mono",
+   "cites": "MeasureTheory.AEDisjoint.mono_ae",
+   "cited_kind": "theorem",
+   "depth_theorem": 166,
+   "depth_cited": 165,
+   "weight": 11.15,
+   "z": 2130.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "ContinuousMap.instNonUnitalSeminormedCommRing",
+   "cites": "ContinuousMap.instNonUnitalSeminormedCommRing._proof_2",
+   "cited_kind": "theorem",
+   "depth_theorem": 173,
+   "depth_cited": 160,
+   "weight": 7.896,
+   "z": 2664.0,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Lean.Meta.Tactic.Grind.EMatch.0.Lean.Meta.Grind.ematchOnly.go",
+   "cites": "Lean.Meta.Grind.EMatch.ematchTheorem",
+   "cited_kind": "def",
+   "depth_theorem": 156,
+   "depth_cited": 155,
+   "weight": 7.256,
+   "z": 687.2,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.Geometry.Euclidean.Angle.Unoriented.TriangleInequality.0.InnerProductGeometry.angle_expression_of_angle_eq_angle_sum._proof_1_12",
+   "cites": "InnerProductGeometry.angle_comm",
+   "cited_kind": "theorem",
+   "depth_theorem": 184,
+   "depth_cited": 183,
+   "weight": 6.861,
+   "z": 326.2,
+   "in_backbone": true
+  },
+  {
+   "theorem": "AlgebraicGeometry.GeometricallyIrreducible.eq_geometrically",
+   "cites": "AlgebraicGeometry.geometricallyIrreducible_iff",
+   "cited_kind": "theorem",
+   "depth_theorem": 126,
+   "depth_cited": 125,
+   "weight": 6.56,
+   "z": 1811.4,
+   "in_backbone": true
+  },
+  {
+   "theorem": "ProperSpace.of_isCompact_closedBall_of_le",
+   "cites": "ProperSpace.mk",
+   "cited_kind": "constructor",
+   "depth_theorem": 150,
+   "depth_cited": 96,
+   "weight": 6.093,
+   "z": 430.2,
+   "in_backbone": true
+  },
+  {
+   "theorem": "completedRiemannZeta\u2080",
+   "cites": "HurwitzZeta.completedHurwitzZetaEven\u2080",
+   "cited_kind": "def",
+   "depth_theorem": 294,
+   "depth_cited": 293,
+   "weight": 14.104,
+   "z": 1040.0,
+   "in_backbone": true
+  },
+  {
+   "theorem": "ContinuousMultilinearMap.norm_ofSubsingleton_id",
+   "cites": "ContinuousLinearMap.norm_id",
+   "cited_kind": "theorem",
+   "depth_theorem": 161,
+   "depth_cited": 160,
+   "weight": 6.993,
+   "z": 795.4,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Lean.Meta.Tactic.Simp.BuiltinSimprocs.Core.0.reduceDIte._regBuiltin.reduceDIte.declare_1._@.Lean.Meta.Tactic.Simp.BuiltinSimprocs.Core.3647891266._hygCtx._hyg.19",
+   "cites": "reduceDIte",
+   "cited_kind": "def",
+   "depth_theorem": 127,
+   "depth_cited": 126,
+   "weight": 6.382,
+   "z": 1275.7,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Batteries.Tactic.\u00ab_aux_Batteries_Tactic_HelpCmd___elabRules_Batteries_Tactic_command#help_Cat+_______1\u00bb",
+   "cites": "_private.Batteries.Tactic.HelpCmd.0.Batteries.Tactic.elabHelpCat",
+   "cited_kind": "def",
+   "depth_theorem": 145,
+   "depth_cited": 144,
+   "weight": 7.538,
+   "z": 1601.5,
+   "in_backbone": true
+  }
+ ],
+ "top_30_by_score": [
+  {
+   "theorem": "Functor.Const.ext",
+   "cites": "Functor.Const.run",
+   "cited_kind": "def",
+   "depth_theorem": 2,
+   "depth_cited": 1,
+   "weight": 1.625,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CategoryTheory.AddMon.instIsAddMonHomHom",
+   "cites": "CategoryTheory.AddMon.Hom.isAddMonHom_hom",
+   "cited_kind": "theorem",
+   "depth_theorem": 16,
+   "depth_cited": 4,
+   "weight": 2.189,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "_private.Mathlib.CategoryTheory.Monoidal.Comon_.0.CategoryTheory.Comon.instIsComonHomHom._proof_1",
+   "cites": "CategoryTheory.Comon.Hom.isComonHom_hom",
+   "cited_kind": "theorem",
+   "depth_theorem": 16,
+   "depth_cited": 4,
+   "weight": 2.189,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CategoryTheory.Mon.instIsMonHomHom",
+   "cites": "CategoryTheory.Mon.Hom.isMonHom_hom",
+   "cited_kind": "theorem",
+   "depth_theorem": 16,
+   "depth_cited": 4,
+   "weight": 2.189,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CommSemiRingCat.instCommSemiringObjForgetRingHomCarrier",
+   "cites": "CommSemiRingCat.commSemiring",
+   "cited_kind": "def",
+   "depth_theorem": 2,
+   "depth_cited": 1,
+   "weight": 2.321,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "TopCommRingCat.forgetToCommRingCatTopologicalSpace",
+   "cites": "TopCommRingCat.isTopologicalSpace",
+   "cited_kind": "def",
+   "depth_theorem": 2,
+   "depth_cited": 1,
+   "weight": 2.321,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "instBooleanAlgebraCarrierToBddLatToBddDistLat",
+   "cites": "BoolAlg.str",
+   "cited_kind": "def",
+   "depth_theorem": 2,
+   "depth_cited": 1,
+   "weight": 2.321,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "TopCommRingCat.forgetToTopCatCommRing",
+   "cites": "TopCommRingCat.isCommRing",
+   "cited_kind": "def",
+   "depth_theorem": 2,
+   "depth_cited": 1,
+   "weight": 2.321,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "HasFibers.Fib.mk._proof_1",
+   "cites": "CategoryTheory.Functor.IsEquivalence.essSurj",
+   "cited_kind": "theorem",
+   "depth_theorem": 27,
+   "depth_cited": 3,
+   "weight": 3.073,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "MontelSpace.isCompact_of_isClosed_of_isVonNBounded",
+   "cites": "MontelSpace.heine_borel",
+   "cited_kind": "theorem",
+   "depth_theorem": 20,
+   "depth_cited": 2,
+   "weight": 3.025,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "RingFilterBasis.mul_right",
+   "cites": "RingFilterBasis.mul_right'",
+   "cited_kind": "theorem",
+   "depth_theorem": 12,
+   "depth_cited": 2,
+   "weight": 3.108,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Std.Broadcast.Sync",
+   "cites": "Std.Broadcast",
+   "cited_kind": "inductive",
+   "depth_theorem": 1,
+   "depth_cited": 0,
+   "weight": 2.835,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "WithTop.sumHomeomorph._proof_1",
+   "cites": "top_nonempty",
+   "cited_kind": "theorem",
+   "depth_theorem": 16,
+   "depth_cited": 2,
+   "weight": 3.056,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CommAlgCat.instCommRingObjForgetAlgHomCarrier",
+   "cites": "CommAlgCat.commRing",
+   "cited_kind": "def",
+   "depth_theorem": 3,
+   "depth_cited": 2,
+   "weight": 2.486,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "NNReal.instLinearOrderedCommGroupWithZero._proof_2",
+   "cites": "instIsBotZeroClass",
+   "cited_kind": "theorem",
+   "depth_theorem": 109,
+   "depth_cited": 5,
+   "weight": 3.058,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "LaurentSeries.instCoePowerSeries._proof_1",
+   "cites": "IsStrictOrderedRing.toIsOrderedCancelAddMonoid",
+   "cited_kind": "theorem",
+   "depth_theorem": 39,
+   "depth_cited": 2,
+   "weight": 2.964,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "instCommCStarAlgebraComplex._proof_1",
+   "cites": "StarMul.toStarModule",
+   "cited_kind": "theorem",
+   "depth_theorem": 105,
+   "depth_cited": 6,
+   "weight": 3.106,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "BoundedContinuousFunction.toContinuousMap\u2090._proof_2",
+   "cites": "BoundedContinuousMapClass.toContinuousMapClass",
+   "cited_kind": "theorem",
+   "depth_theorem": 101,
+   "depth_cited": 4,
+   "weight": 3.016,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "AlgebraicGeometry.Scheme.Over",
+   "cites": "CategoryTheory.OverClass",
+   "cited_kind": "inductive",
+   "depth_theorem": 90,
+   "depth_cited": 1,
+   "weight": 2.881,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "RingPreordering.mem_of_isSquare",
+   "cites": "RingPreordering.mem_of_isSquare'",
+   "cited_kind": "theorem",
+   "depth_theorem": 12,
+   "depth_cited": 2,
+   "weight": 3.108,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "SeparationQuotient.exists",
+   "cites": "Quotient.exists",
+   "cited_kind": "theorem",
+   "depth_theorem": 30,
+   "depth_cited": 5,
+   "weight": 3.213,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Matroid.IsBasis.cardinalMk_sdiff_comm",
+   "cites": "Matroid.InvariantCardinalRank.forall_card_isBasis_diff",
+   "cited_kind": "theorem",
+   "depth_theorem": 7,
+   "depth_cited": 2,
+   "weight": 3.255,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "AlgCat.instRingObjForgetAlgHomCarrier",
+   "cites": "AlgCat.isRing",
+   "cited_kind": "def",
+   "depth_theorem": 3,
+   "depth_cited": 2,
+   "weight": 2.486,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "Locale.PT",
+   "cites": "FrameHom",
+   "cited_kind": "inductive",
+   "depth_theorem": 15,
+   "depth_cited": 1,
+   "weight": 2.95,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CategoryTheory.Limits.IsTerminal.isIso_from",
+   "cites": "CategoryTheory.Limits.HasStrictTerminalObjects.out",
+   "cited_kind": "theorem",
+   "depth_theorem": 25,
+   "depth_cited": 2,
+   "weight": 3.0,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "CategoryTheory.Ind.lim._proof_1",
+   "cites": "CategoryTheory.Limits.hasColimitsOfShape_of_has_filtered_colimits",
+   "cited_kind": "theorem",
+   "depth_theorem": 88,
+   "depth_cited": 3,
+   "weight": 2.976,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "ENNReal.top_mul_top",
+   "cites": "WithTop.top_mul_top",
+   "cited_kind": "theorem",
+   "depth_theorem": 109,
+   "depth_cited": 9,
+   "weight": 3.241,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "ContinuousMapZero.instNormedSpaceOfNormedAlgebra._proof_1",
+   "cites": "ContinuousMapZero.instAddCommGroup._proof_7",
+   "cited_kind": "theorem",
+   "depth_theorem": 160,
+   "depth_cited": 3,
+   "weight": 2.957,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "ProofWidgets.PenroseDiagramProps",
+   "cites": "ProofWidgets.Penrose.DiagramProps",
+   "cited_kind": "inductive",
+   "depth_theorem": 1,
+   "depth_cited": 0,
+   "weight": 2.835,
+   "z": 3236.8,
+   "in_backbone": true
+  },
+  {
+   "theorem": "HahnEmbedding.Partial.evalCoeff._proof_1",
+   "cites": "IsOrderedModule.toPosSMulMono",
+   "cited_kind": "theorem",
+   "depth_theorem": 45,
+   "depth_cited": 2,
+   "weight": 2.956,
+   "z": 3236.8,
+   "in_backbone": true
+  }
+ ],
+ "bottom_30_by_score": [
+  {
+   "theorem": "isCompact_setOfPred_finiteMeasure_mass_le_compl_isCompact_le",
+   "cites": "of_eq_true",
+   "cited_kind": "theorem",
+   "depth_theorem": 255,
+   "depth_cited": 4,
+   "weight": 0.22,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "_private.Mathlib.RingTheory.Spectrum.Prime.ChevalleyComplexity.0.ChevalleyThm.PolynomialC.statement",
+   "cites": "Eq.refl",
+   "cited_kind": "constructor",
+   "depth_theorem": 122,
+   "depth_cited": 1,
+   "weight": 0.152,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "isCompact_setOfPred_finiteMeasure_mass_le_compl_isCompact_le",
+   "cites": "Eq.symm",
+   "cited_kind": "theorem",
+   "depth_theorem": 255,
+   "depth_cited": 3,
+   "weight": 0.209,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "Std.Tactic.BVDecide.BVExpr.bitblast.goCache_Inv_of_Inv._mutual",
+   "cites": "HAdd.hAdd",
+   "cited_kind": "def",
+   "depth_theorem": 121,
+   "depth_cited": 2,
+   "weight": 0.22,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "MeasureTheory.VectorMeasure.variation_withDensity'",
+   "cites": "congrArg",
+   "cited_kind": "theorem",
+   "depth_theorem": 247,
+   "depth_cited": 3,
+   "weight": 0.151,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "NumberField.Ideal.tendsto_norm_le_and_mk_eq_div_atTop",
+   "cites": "Eq.refl",
+   "cited_kind": "constructor",
+   "depth_theorem": 337,
+   "depth_cited": 1,
+   "weight": 0.152,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "_private.Mathlib.MeasureTheory.Integral.CurveIntegral.Poincare.0.ContinuousMap.Homotopy.curveIntegral_add_curveIntegral_eq_of_hasFDerivWithinAt_off_countable_real",
+   "cites": "congrArg",
+   "cited_kind": "theorem",
+   "depth_theorem": 256,
+   "depth_cited": 3,
+   "weight": 0.151,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "isCompact_setOfPred_finiteMeasure_mass_le_compl_isCompact_le",
+   "cites": "Eq.trans",
+   "cited_kind": "theorem",
+   "depth_theorem": 255,
+   "depth_cited": 3,
+   "weight": 0.189,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "MeasureTheory.eLpNorm_le_eLpNorm_fderiv_of_eq_inner",
+   "cites": "Eq.refl",
+   "cited_kind": "constructor",
+   "depth_theorem": 273,
+   "depth_cited": 1,
+   "weight": 0.152,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "MeasureTheory.VectorMeasure.variation_withDensity'",
+   "cites": "OfNat.ofNat",
+   "cited_kind": "def",
+   "depth_theorem": 247,
+   "depth_cited": 2,
+   "weight": 0.135,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "Std.Tactic.BVDecide.BVExpr.bitblast.goCache_Inv_of_Inv._mutual",
+   "cites": "congrFun'",
+   "cited_kind": "theorem",
+   "depth_theorem": 121,
+   "depth_cited": 3,
+   "weight": 0.226,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "_private.Mathlib.MeasureTheory.Integral.CurveIntegral.Poincare.0.ContinuousMap.Homotopy.curveIntegral_add_curveIntegral_eq_of_hasFDerivWithinAt_off_countable_real",
+   "cites": "OfNat.ofNat",
+   "cited_kind": "def",
+   "depth_theorem": 256,
+   "depth_cited": 2,
+   "weight": 0.135,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "isCompact_setOfPred_finiteMeasure_mass_le_compl_isCompact_le",
+   "cites": "Eq.mpr",
+   "cited_kind": "def",
+   "depth_theorem": 255,
+   "depth_cited": 4,
+   "weight": 0.211,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "isCompact_setOfPred_finiteMeasure_mass_le_compl_isCompact_le",
+   "cites": "propext",
+   "cited_kind": "axiom",
+   "depth_theorem": 255,
+   "depth_cited": 1,
+   "weight": 0.215,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "MeasureTheory.VectorMeasure.variation_withDensity'",
+   "cites": "Eq.refl",
+   "cited_kind": "constructor",
+   "depth_theorem": 247,
+   "depth_cited": 1,
+   "weight": 0.152,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "isCompact_setOfPred_finiteMeasure_mass_le_compl_isCompact_le",
+   "cites": "Eq",
+   "cited_kind": "inductive",
+   "depth_theorem": 255,
+   "depth_cited": 0,
+   "weight": 0.136,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "_private.Mathlib.MeasureTheory.Integral.CurveIntegral.Poincare.0.ContinuousMap.Homotopy.curveIntegral_add_curveIntegral_eq_of_hasFDerivWithinAt_off_countable_real",
+   "cites": "Eq.refl",
+   "cited_kind": "constructor",
+   "depth_theorem": 256,
+   "depth_cited": 1,
+   "weight": 0.152,
+   "z": -1.1,
+   "in_backbone": false
+  },
+  {
+   "theorem": "isCompact_setOfPred_finiteMeasure_mass_le_compl_isCompact_le",
+   "cites": "id",
+   "cited_kind": "def",
+   "depth_theorem": 255,
+   "depth_cited": 0,
+   "weight": 0.163,
+   "z": -1.2,
+   "in_backbone": false
+  },
+  {
+   "theorem": "isCompact_setOfPred_finiteMeasure_mass_le_compl_isCompact_le",
+   "cites": "congrArg",
+   "cited_kind": "theorem",
+   "depth_theorem": 255,
+   "depth_cited": 3,
+   "weight": 0.151,
+   "z": -1.2,
+   "in_backbone": false
+  },
+  {
+   "theorem": "isCompact_setOfPred_finiteMeasure_mass_le_compl_isCompact_le",
+   "cites": "OfNat.ofNat",
+   "cited_kind": "def",
+   "depth_theorem": 255,
+   "depth_cited": 2,
+   "weight": 0.135,
+   "z": -1.2,
+   "in_backbone": false
+  },
+  {
+   "theorem": "isCompact_setOfPred_finiteMeasure_mass_le_compl_isCompact_le",
+   "cites": "Eq.refl",
+   "cited_kind": "constructor",
+   "depth_theorem": 255,
+   "depth_cited": 1,
+   "weight": 0.152,
+   "z": -1.3,
+   "in_backbone": false
+  },
+  {
+   "theorem": "Std.Tactic.BVDecide.BVExpr.bitblast.goCache_Inv_of_Inv._mutual",
+   "cites": "of_eq_true",
+   "cited_kind": "theorem",
+   "depth_theorem": 121,
+   "depth_cited": 4,
+   "weight": 0.221,
+   "z": -1.3,
+   "in_backbone": false
+  },
+  {
+   "theorem": "Std.Tactic.BVDecide.BVExpr.bitblast.goCache_Inv_of_Inv._mutual",
+   "cites": "Eq.symm",
+   "cited_kind": "theorem",
+   "depth_theorem": 121,
+   "depth_cited": 3,
+   "weight": 0.21,
+   "z": -1.3,
+   "in_backbone": false
+  },
+  {
+   "theorem": "Std.Tactic.BVDecide.BVExpr.bitblast.goCache_Inv_of_Inv._mutual",
+   "cites": "Eq.trans",
+   "cited_kind": "theorem",
+   "depth_theorem": 121,
+   "depth_cited": 3,
+   "weight": 0.19,
+   "z": -1.3,
+   "in_backbone": false
+  },
+  {
+   "theorem": "Std.Tactic.BVDecide.BVExpr.bitblast.goCache_Inv_of_Inv._mutual",
+   "cites": "Eq",
+   "cited_kind": "inductive",
+   "depth_theorem": 121,
+   "depth_cited": 0,
+   "weight": 0.136,
+   "z": -1.3,
+   "in_backbone": false
+  },
+  {
+   "theorem": "Std.Tactic.BVDecide.BVExpr.bitblast.goCache_Inv_of_Inv._mutual",
+   "cites": "Eq.mpr",
+   "cited_kind": "def",
+   "depth_theorem": 121,
+   "depth_cited": 4,
+   "weight": 0.212,
+   "z": -1.3,
+   "in_backbone": false
+  },
+  {
+   "theorem": "Std.Tactic.BVDecide.BVExpr.bitblast.goCache_Inv_of_Inv._mutual",
+   "cites": "id",
+   "cited_kind": "def",
+   "depth_theorem": 121,
+   "depth_cited": 0,
+   "weight": 0.163,
+   "z": -1.4,
+   "in_backbone": false
+  },
+  {
+   "theorem": "Std.Tactic.BVDecide.BVExpr.bitblast.goCache_Inv_of_Inv._mutual",
+   "cites": "congrArg",
+   "cited_kind": "theorem",
+   "depth_theorem": 121,
+   "depth_cited": 3,
+   "weight": 0.152,
+   "z": -1.4,
+   "in_backbone": false
+  },
+  {
+   "theorem": "Std.Tactic.BVDecide.BVExpr.bitblast.goCache_Inv_of_Inv._mutual",
+   "cites": "OfNat.ofNat",
+   "cited_kind": "def",
+   "depth_theorem": 121,
+   "depth_cited": 2,
+   "weight": 0.136,
+   "z": -1.4,
+   "in_backbone": false
+  },
+  {
+   "theorem": "Std.Tactic.BVDecide.BVExpr.bitblast.goCache_Inv_of_Inv._mutual",
+   "cites": "Eq.refl",
+   "cited_kind": "constructor",
+   "depth_theorem": 121,
+   "depth_cited": 1,
+   "weight": 0.152,
+   "z": -1.5,
+   "in_backbone": false
+  }
+ ]
+}
