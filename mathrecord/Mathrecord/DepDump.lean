@@ -221,6 +221,10 @@ def depDump (path : System.FilePath) (out : System.FilePath) : IO Unit := do
         ("rt", toJson (rt.map toString))]
       if prFell then
         fields := fields ++ [("prf", Json.bool true)]
+      -- machine-generated flag: no source declaration range (recorded env
+      -- fact: the elaborator logs ranges for human-written declarations)
+      if (← Lean.findDeclarationRanges? n).isNone then
+        fields := fields ++ [("gen", Json.bool true)]
       if bf > 0 then
         fields := fields ++ [("bf", Json.num bf)]
       if let .inductInfo iv := ci then

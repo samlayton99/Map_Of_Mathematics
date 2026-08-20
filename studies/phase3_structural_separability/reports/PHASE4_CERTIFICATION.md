@@ -62,3 +62,10 @@ The taxonomy is the architectural verdict: **every single loss is a citation tha
 2. The **exact substrate is more faithful and currently scores lower on the proxy** — because the proxy rewards the historical variant's accidental filters. Both facts are now measured instead of conflated. The certified path forward: substrate = V5p (exact, occurrence-level, attribute-based); display = zoom semantics; the `rfl`/`propext`/bookkeeping residue goes to the next registered round.
 3. **Single-use containers**: the judge's correction is implemented and vindicated — zoom semantics recovers most of the inlining benefit (70.4 → 80.75) without destroying abstraction boundaries or labels.
 4. Still open, unchanged: keyness (deliberately untouched, per ruling), cross-version testing (needs an older-toolchain extractor build; next), the shallow floor.
+
+
+## Round 6 addendum (2026-08-20)
+
+Dump v5 adds the machine-generated flag (gen = no source declaration range; recorded environment fact, probe-verified 5/5). Registered variant V6 = V5v + forwarder attribution: a gen-flagged candidate whose own substantive move-set is exactly one non-bookkeeping claim P is displayed and scored as P (kernel necessity: derived forms prove themselves from their originals — verified: mem_product._simp_1 root chain = [propext, mem_product]). The registry-based attribution hypothesis from the first prep was probe-FALSIFIED (matcher registry rejects splitters; simp registry holds zero twins) and replaced.
+
+Seed 20260828 (seeds 19-27 all excluded), run once: **V6 = 94.84% top-1 proxy** (bar 93), V5v anchor 92.29 (8th replication), matched denominator 92.28 vs 94.84, shallow 91.4 / deep 97.1, generated blames 92 -> 44. Complete failure accounting, verdict audit (39/39 verified correct, 41 unresolvable disclosed), and defense preparation: trial/DEFENSE_PREP_ROUND2.md.
