@@ -22,16 +22,45 @@ namespace Mathrecord
 
 open Lean
 
+/-- Pointer address of an expression, for exact per-call memo keys.
+NOTE: Lean's `Expr ==` (and `hash`) ignore binder display names, so
+structural keys would collapse nodes that differ only in stored display
+names. Pointer keys are exact; they are sound only while the root
+expression is alive (per-call / per-scope caches, cleared at boundaries). -/
+unsafe def exprPtrUnsafe (e : Expr) : USize := ptrAddrUnsafe e
+@[implemented_by exprPtrUnsafe]
+opaque exprPtr (e : Expr) : USize
+
 /-- Recursively strip `mdata` (canonicalization step; documented loss of
-elaborator annotations only). -/
-partial def stripMData : Expr → Expr
-  | .mdata _ b       => stripMData b
-  | .app f a         => .app (stripMData f) (stripMData a)
-  | .lam n t b bi    => .lam n (stripMData t) (stripMData b) bi
-  | .forallE n t b bi => .forallE n (stripMData t) (stripMData b) bi
-  | .letE n t v b nd => .letE n (stripMData t) (stripMData v) (stripMData b) nd
-  | .proj s i b      => .proj s i (stripMData b)
-  | e                => e
+elaborator annotations only). Sharing-aware: memoized (per call, by pointer)
+and identity-preserving (returns the original object when nothing changed),
+so DAG-shaped terms stay DAG-shaped instead of exploding into trees. -/
+partial def stripMData (e : Expr) : Expr :=
+  (go e).run' {}
+where
+  go (e : Expr) : StateM (Std.HashMap USize Expr) Expr := do
+    if let some r := (← get).get? (exprPtr e) then
+      return r
+    let r ← match e with
+      | .mdata _ b => go b
+      | .app f a => do
+        let f' ← go f; let a' ← go a
+        pure (if f' == f && a'== a then e else .app f' a')
+      | .lam n t b bi => do
+        let t' ← go t; let b' ← go b
+        pure (if t'== t && b'== b then e else .lam n t' b' bi)
+      | .forallE n t b bi => do
+        let t' ← go t; let b' ← go b
+        pure (if t'== t && b'== b then e else .forallE n t' b' bi)
+      | .letE n t v b nd => do
+        let t' ← go t; let v' ← go v; let b' ← go b
+        pure (if t'== t && v'== v && b'== b then e else .letE n t' v' b' nd)
+      | .proj s i b => do
+        let b' ← go b
+        pure (if b'== b then e else .proj s i b')
+      | _ => pure e
+    modify (·.insert (exprPtr e) r)
+    return r
 
 def biToString : BinderInfo → String
   | .default => "default" | .implicit => "implicit"
@@ -67,6 +96,12 @@ structure EncState where
   /-- mvar → first-occurrence ordinal (reset per state group). -/
   mvarOrd : Std.HashMap MVarId Nat := {}
   lmvarOrd : Std.HashMap LMVarId Nat := {}
+  /-- expr pointer → stored id. Shared subterms are encoded once instead of
+  re-traversed per occurrence. Pointer-keyed (exact: display names preserved);
+  MUST be cleared at scope boundaries (per declaration / per state) — see
+  `resetEncScope`. The keyed Expr is stored too, keeping its address alive so
+  pointer keys cannot be reused by freed objects. -/
+  ememo : Std.HashMap USize (Expr × String) := {}
 
 abbrev EncM := StateT EncState (Except EncodeError)
 
@@ -113,8 +148,22 @@ partial def encodeLevel (sc : Scope) : Level → EncM Json
     if !sc.allowMVars then throw .levelMVarNotAllowed
     return Json.mkObj [("k", Json.str "lmvar"), ("i", toJson (← lmvarOrdinal id))]
 
-/-- Encode an expression (post `stripMData`) into the store; returns root id. -/
+/-- Clear per-scope encoder caches. Call at every scope boundary (new
+declaration or new state): fvar/mvar ordinals change there, and pointer
+keys must not outlive their expressions. -/
+def resetEncScope : EncM Unit :=
+  modify fun s => { s with mvarOrd := {}, lmvarOrd := {}, ememo := {} }
+
+/-- Encode an expression (post `stripMData`) into the store; returns root id.
+Pointer-memoized within the current scope, so DAG-shared subterms are
+traversed once instead of once per occurrence. -/
 partial def encodeExpr (sc : Scope) (e : Expr) : EncM String := do
+  if let some (_, r) := (← get).ememo.get? (exprPtr e) then
+    return r
+  let r ← core e
+  modify fun s => { s with ememo := s.ememo.insert (exprPtr e) (e, r) }
+  return r
+where core (e : Expr) : EncM String := do
   match e with
   | .bvar i => intern <| Json.mkObj [("k", Json.str "bvar"), ("i", toJson i)]
   | .fvar id =>
@@ -173,34 +222,47 @@ partial def sidLevel (sc : Scope) (lmvarOrd : Std.HashMap LMVarId Nat) :
     | some i => pure s!"lm{i}"
     | none => throw .levelMVarNotAllowed
 
-/-- Canonical name-free structural identity string. Exact, not a hash. -/
+/-- Canonical name-free structural identity string. Exact, not a hash.
+Memoized on subterms free of fvars/mvars/level-params (sid IS scope-dependent
+for those), so DAG-shared subterms are rendered once per top-level call. -/
 partial def sidOf (sc : Scope) (mvarOrd : Std.HashMap MVarId Nat)
-    (lmvarOrd : Std.HashMap LMVarId Nat) : Expr → Except EncodeError String
-  | .bvar i => pure s!"b{i}"
-  | .fvar id =>
-    match sc.fvarOrd with
-    | none => throw (.fvarInClosedExpr id)
-    | some m => match m.get? id with
-      | some i => pure s!"l{i}"
-      | none => throw (.unknownFVar id)
-  | .mvar id =>
-    match mvarOrd.get? id with
-    | some i => pure s!"m{i}"
-    | none => throw (.mvarInClosedExpr id)
-  | .sort u => do pure s!"s({← sidLevel sc lmvarOrd u})"
-  | .const n us => do
-    let uss ← us.mapM (sidLevel sc lmvarOrd)
-    pure s!"c({n};{",".intercalate uss})"
-  | .app f a => do pure s!"a({← sidOf sc mvarOrd lmvarOrd f},{← sidOf sc mvarOrd lmvarOrd a})"
-  | .lam _ t b bi => do
-    pure s!"L({biToString bi},{← sidOf sc mvarOrd lmvarOrd t},{← sidOf sc mvarOrd lmvarOrd b})"
-  | .forallE _ t b bi => do
-    pure s!"P({biToString bi},{← sidOf sc mvarOrd lmvarOrd t},{← sidOf sc mvarOrd lmvarOrd b})"
-  | .letE _ t v b nd => do
-    pure s!"E({nd},{← sidOf sc mvarOrd lmvarOrd t},{← sidOf sc mvarOrd lmvarOrd v},{← sidOf sc mvarOrd lmvarOrd b})"
-  | .lit (.natVal v) => pure s!"n{v}"
-  | .lit (.strVal v) => pure s!"t{v.quote}"
-  | .mdata _ b => sidOf sc mvarOrd lmvarOrd b
-  | .proj s i b => do pure s!"j({s},{i},{← sidOf sc mvarOrd lmvarOrd b})"
+    (lmvarOrd : Std.HashMap LMVarId Nat) (e : Expr) : Except EncodeError String :=
+  (go e).run' {}
+where
+  go (e : Expr) : StateT (Std.HashMap Expr String) (Except EncodeError) String := do
+    let cacheable := !e.hasFVar && !e.hasExprMVar && !e.hasLevelMVar && !e.hasLevelParam
+    if cacheable then
+      if let some r := (← get).get? e then
+        return r
+    let r : String ← match e with
+      | .bvar i => pure s!"b{i}"
+      | .fvar id =>
+        match sc.fvarOrd with
+        | none => throw (.fvarInClosedExpr id)
+        | some m => match m.get? id with
+          | some i => pure s!"l{i}"
+          | none => throw (.unknownFVar id)
+      | .mvar id =>
+        match mvarOrd.get? id with
+        | some i => pure s!"m{i}"
+        | none => throw (.mvarInClosedExpr id)
+      | .sort u => do pure s!"s({← sidLevel sc lmvarOrd u})"
+      | .const n us => do
+        let uss ← liftM (us.mapM (sidLevel sc lmvarOrd))
+        pure s!"c({n};{",".intercalate uss})"
+      | .app f a => do pure s!"a({← go f},{← go a})"
+      | .lam _ t b bi => do
+        pure s!"L({biToString bi},{← go t},{← go b})"
+      | .forallE _ t b bi => do
+        pure s!"P({biToString bi},{← go t},{← go b})"
+      | .letE _ t v b nd => do
+        pure s!"E({nd},{← go t},{← go v},{← go b})"
+      | .lit (.natVal v) => pure s!"n{v}"
+      | .lit (.strVal v) => pure s!"t{v.quote}"
+      | .mdata _ b => go b
+      | .proj s i b => do pure s!"j({s},{i},{← go b})"
+    if cacheable then
+      modify (·.insert e r)
+    return r
 
 end Mathrecord

@@ -243,6 +243,7 @@ def shallowDeclJson (env : Environment) (encSt : EncState) (n : Name) (isInst : 
     return (Json.mkObj [("name", Json.str (toString n)), ("error", Json.str "not-found")], encSt)
   let sc : Scope := { levelParams := ci.levelParams }
   let enc : EncM (String × String) := do
+    resetEncScope
     let tid ← encodeExpr sc (stripMData ci.type)
     let tsid ← match sidOf sc {} {} (stripMData ci.type) with
       | .ok s => pure s | .error e => throw e

@@ -138,7 +138,7 @@ where
     ord := ord + 1
   let sc : Scope := { fvarOrd := some fvarOrd, allowMVars := true }
   -- reset per-state mvar ordinals
-  modifyThe EncState fun s => { s with mvarOrd := {}, lmvarOrd := {} }
+  modifyThe EncState fun s => { s with mvarOrd := {}, lmvarOrd := {}, ememo := {} }
   let inst (e : Expr) : Expr := (instantiateMVarsCore mctx e).1
   let mut ctxJson : Array Json := #[]
   let mut ctxSid : Array String := #[]
@@ -335,6 +335,7 @@ def runExtraction (path : System.FilePath) (spike : Bool) (opts : Options := {})
     let reduc := reducibilityString pf.env name
     let mainMod := toString pf.env.mainModule
     let enc : EncM Json := do
+      resetEncScope
       let typeId ← encodeExpr sc (stripMData ci.type)
       let typeSid ← match sidOf sc {} {} (stripMData ci.type) with
         | .ok s => pure s | .error e => throw e
