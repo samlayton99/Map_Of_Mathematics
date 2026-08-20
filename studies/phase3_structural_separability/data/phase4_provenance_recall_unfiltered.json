@@ -1,0 +1,378 @@
+{
+ "extraction_misses_(refs_absent_from_kernel_term)": 46,
+ "frac_perfect": 0.034,
+ "loss_examples": [
+  {
+   "decl": "norm_mul_sub_norm_div_le_two_mul",
+   "kind": "theorem",
+   "lost": "tsub_le_iff_right",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "norm_mul_sub_norm_div_le_two_mul",
+   "kind": "def",
+   "lost": "Norm.norm",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "norm_mul_sub_norm_div_le_two_mul",
+   "kind": "inductive",
+   "lost": "SeminormedGroup",
+   "why": "background-slot"
+  },
+  {
+   "decl": "norm_mul_sub_norm_div_le_two_mul",
+   "kind": "theorem",
+   "lost": "norm_add_sub_norm_sub_le_two_mul",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "norm_mul_sub_norm_div_le_two_mul",
+   "kind": "theorem",
+   "lost": "tsub_le_iff_left",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "kind": "theorem",
+   "lost": "Filter.eventually_pure",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "kind": "def",
+   "lost": "Finset.prod",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "kind": "def",
+   "lost": "Set.iInter",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "kind": "inductive",
+   "lost": "Finset",
+   "why": "background-slot"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "kind": "def",
+   "lost": "ProbabilityTheory.Kernel.iIndepSets",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "kind": "def",
+   "lost": "Membership.mem",
+   "why": "background-slot"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "kind": "def",
+   "lost": "Set",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "kind": "inductive",
+   "lost": "Iff",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "kind": "theorem",
+   "lost": "ProbabilityTheory.Kernel.const_apply",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "kind": "def",
+   "lost": "ProbabilityTheory.iIndepSets",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "ProbabilityTheory.iIndepSets_iff",
+   "kind": "inductive",
+   "lost": "MeasureTheory.Measure",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Equiv.Perm.OnCycleFactors.val_centralizer_smul",
+   "kind": "def",
+   "lost": "Equiv.Perm",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Equiv.Perm.OnCycleFactors.val_centralizer_smul",
+   "kind": "def",
+   "lost": "Inv.inv",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Equiv.Perm.OnCycleFactors.val_centralizer_smul",
+   "kind": "def",
+   "lost": "Singleton.singleton",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Equiv.Perm.OnCycleFactors.val_centralizer_smul",
+   "kind": "def",
+   "lost": "Subgroup.centralizer",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Ideal.radical_bot_of_isReduced",
+   "kind": "inductive",
+   "lost": "IsReduced",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Ideal.radical_bot_of_isReduced",
+   "kind": "def",
+   "lost": "Bot.bot",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Ideal.radical_bot_of_isReduced",
+   "kind": "def",
+   "lost": "Ideal.radical",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Ideal.radical_bot_of_isReduced",
+   "kind": "def",
+   "lost": "Ideal",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Ideal.radical_bot_of_isReduced",
+   "kind": "inductive",
+   "lost": "CommSemiring",
+   "why": "background-slot"
+  },
+  {
+   "decl": "toIocDiv_sub_natCast_mul'",
+   "kind": "inductive",
+   "lost": "Nat",
+   "why": "background-slot"
+  },
+  {
+   "decl": "toIocDiv_sub_natCast_mul'",
+   "kind": "def",
+   "lost": "toIocDiv",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "def",
+   "lost": "Ideal.map",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "inductive",
+   "lost": "RingEquivClass",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "constructor",
+   "lost": "And.intro",
+   "why": "claims-filter:ctor-or-recursor"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "constructor",
+   "lost": "Exists.intro",
+   "why": "claims-filter:ctor-or-recursor"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "def",
+   "lost": "Lean.Meta.Simp.Config.failIfUnchanged",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "def",
+   "lost": "Membership.mem",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "inductive",
+   "lost": "Exists",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "inductive",
+   "lost": "EquivLike",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "inductive",
+   "lost": "And",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "inductive",
+   "lost": "Iff",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "constructor",
+   "lost": "Bool.false",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "def",
+   "lost": "Ideal",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "inductive",
+   "lost": "RingEquiv",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "def",
+   "lost": "RingEquivClass.toRingEquiv",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Ideal.mem_map_of_equiv",
+   "kind": "def",
+   "lost": "EquivLike.toEquiv",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Nat.pow_of_pow_add_prime",
+   "kind": "theorem",
+   "lost": "exists_prop",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Nat.pow_of_pow_add_prime",
+   "kind": "inductive",
+   "lost": "Nat",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Nat.pow_of_pow_add_prime",
+   "kind": "inductive",
+   "lost": "Exists",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "ENNReal.zpow_ne_top",
+   "kind": "def",
+   "lost": "ENNReal",
+   "why": "background-slot"
+  },
+  {
+   "decl": "ENNReal.zpow_ne_top",
+   "kind": "inductive",
+   "lost": "Int",
+   "why": "background-slot"
+  },
+  {
+   "decl": "ENNReal.zpow_ne_top",
+   "kind": "def",
+   "lost": "Top.top",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Concept.isExtent_extent",
+   "kind": "def",
+   "lost": "Order.IsExtent",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Concept.isExtent_extent",
+   "kind": "inductive",
+   "lost": "Concept",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Fin.preimage_cast_Ioo",
+   "kind": "def",
+   "lost": "Set.preimage",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Fin.preimage_cast_Ioo",
+   "kind": "def",
+   "lost": "Set.Ioo",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Fin.preimage_cast_Ioo",
+   "kind": "inductive",
+   "lost": "Fin",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "Real.zpow_arith_mean_le_arith_mean_zpow",
+   "kind": "inductive",
+   "lost": "Int",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Real.zpow_arith_mean_le_arith_mean_zpow",
+   "kind": "def",
+   "lost": "Membership.mem",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Real.zpow_arith_mean_le_arith_mean_zpow",
+   "kind": "inductive",
+   "lost": "Real",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Real.zpow_arith_mean_le_arith_mean_zpow",
+   "kind": "def",
+   "lost": "Finset.sum",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "toIocMod_add_nsmul",
+   "kind": "def",
+   "lost": "toIocMod",
+   "why": "claims-filter:not-Prop(def/construction)"
+  },
+  {
+   "decl": "toIocMod_add_nsmul",
+   "kind": "inductive",
+   "lost": "Nat",
+   "why": "background-slot"
+  },
+  {
+   "decl": "toIcoMod_eq_add_fract_mul",
+   "kind": "def",
+   "lost": "Int.fract",
+   "why": "claims-filter:not-Prop(def/construction)"
+  }
+ ],
+ "loss_taxonomy": {
+  "background-slot": 73,
+  "claims-filter:ctor-or-recursor": 8,
+  "claims-filter:not-Prop(def/construction)": 91,
+  "not-in-term": 46
+ },
+ "mean_recall": 0.336,
+ "median_recall": 0.333,
+ "n_evaluated": 59,
+ "n_files": 40,
+ "n_prov_decls": 4522,
+ "note": "UNFILTERED ground truth = every elaborator-resolved source identifier, no claims filter applied to the answer key; this is the honest recall of the SHIPPED pipeline including definition 2"
+}

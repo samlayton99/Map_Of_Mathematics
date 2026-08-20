@@ -1,8 +1,11 @@
 # ACCOUNTING STATUS — every flagged case, marked (2026-08-20)
 
 Latest certified run: **round 9, seed 20260831, V8, run once**
-(data/phase4_holdout9_results.json). 2,400 theorems -> 519 verdicts,
-1,826 scored. Rank-1 pass 94.80% on the standing proxy, 94.52% under a
+(data/phase4_holdout9_results.json). 2,400 theorems -> 280 verdicts
+("holds by definition"), 239 EMPTY (the filters left nothing at all -- a
+FAILURE MODE, not a designed output; it is excluded from the precision
+denominator, which flatters the headline and is disclosed here for the first
+time), 55 too small, 1,826 scored. Rank-1 pass 94.80% on the standing proxy, 94.52% under a
 stricter grader (two measured blind spots closed for evaluation only:
 core-internal arithmetic namespaces, and the True-twin normalization
 family). Same-sample V6 baseline: 94.38 / 93.18. Markers:
@@ -55,7 +58,17 @@ Earlier falsified detector designs, still recorded: raw statement-exposure,
 root-grain strategy signatures, Lean registries, co-mention islands,
 weighted islands, author-written priority at file and declaration grain.
 
-## Verdicts (519; 80 sampled from the earlier round, audited THREE ways)
+## The empty bucket (disclosed, not yet fixed)
+
+239 of 2,400 sampled theorems (12.8% library-wide) produce NO output: after
+the position and claims filters nothing survives, so there is no list to rank
+and no verdict to issue. The scoring code drops them from the denominator
+(`live = a[a > 0]`), so they cost the reported precision nothing. They were
+previously reported together with verdicts, which was wrong: a verdict is a
+statement about every candidate being demoted, and requires candidates. This
+is the single largest unmeasured failure mode in the system.
+
+## Verdicts (280; 80 sampled from the earlier round, audited THREE ways)
 
 - v1 (source text): 39/39 resolvable verified correct (30 literal rfl).
 - v2 (exact-module + provenance channel via `mathrecord modules`): 28
@@ -72,8 +85,18 @@ by definition" precisely so this audit stays meaningful.
 Below rank 1: 97% of visible glue sits below the real moves (OK by owner
 ruling). Plumbing-boundary display cut: floated, NOT implemented, cosmetic.
 
-Recall: filters lose zero human citations; ~14% erased by compilation before
-extraction; provenance sidecar implemented, not yet merged into views.
+Recall (CORRECTED 2026-08-20; the previous claim was an artifact):
+the old harness applied the claims filter to its own answer key, so its
+"zero filter losses" was arithmetically forced. Rebuilt with an unfiltered
+answer key (src/recall_loss_split.py): mean recall 0.317 / median 0.25
+against EVERY elaborator-resolved source identifier. Loss taxonomy over 146
+losses: 51 statement vocabulary (the theorem's own nouns -- not moves), 60
+background slots (same vocabulary in implicit positions), 24 erased by
+compilation before any term exists, 8 constructors assembling pairs, and
+THREE genuine "unfold this definition" moves the claims filter cannot
+express. That last class is the architecture's real recall cost and matches
+the documented Type-valued gap (ADR-0004 s3). n=39; the rate at scale is
+unknown.
 
 Implemented and certified: position filter; claims filter; attribution;
 verdict semantics; logic-only demotion; statement-world priority; depth

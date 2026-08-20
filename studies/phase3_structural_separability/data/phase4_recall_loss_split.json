@@ -1,0 +1,379 @@
+{
+ "extraction_misses_(refs_absent_from_kernel_term)": 24,
+ "frac_perfect": 0.051,
+ "loss_examples": [
+  {
+   "decl": "UniformSpace.Completion.isUniformEmbedding_coe",
+   "kind": "def",
+   "lost": "UniformSpace.Completion",
+   "why": "background-slot"
+  },
+  {
+   "decl": "UniformSpace.Completion.isUniformEmbedding_coe",
+   "kind": "inductive",
+   "lost": "IsUniformEmbedding",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "UniformSpace.Completion.isUniformEmbedding_coe",
+   "kind": "inductive",
+   "lost": "T0Space",
+   "why": "background-slot"
+  },
+  {
+   "decl": "toIocDiv_sub_natCast_mul'",
+   "kind": "def",
+   "lost": "toIocDiv",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "toIocDiv_sub_natCast_mul'",
+   "kind": "inductive",
+   "lost": "Nat",
+   "why": "background-slot"
+  },
+  {
+   "decl": "dvd_normalize_iff",
+   "kind": "def",
+   "lost": "normalize",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "dvd_normalize_iff",
+   "kind": "inductive",
+   "lost": "Iff",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "dvd_normalize_iff",
+   "kind": "def",
+   "lost": "Dvd.dvd",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "setOf_div_mem_sphere_eq_sphere''",
+   "kind": "def",
+   "lost": "Membership.mem",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "setOf_div_mem_sphere_eq_sphere''",
+   "kind": "theorem",
+   "lost": "setOf_sub_mem_sphere_eq_sphere",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "setOf_div_mem_sphere_eq_sphere''",
+   "kind": "def",
+   "lost": "Metric.sphere",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "setOf_div_mem_sphere_eq_sphere''",
+   "kind": "def",
+   "lost": "Set.ofPred",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Tactic.ComputeAsymptotics.MultiseriesExpansion.const_toFun",
+   "kind": "def",
+   "lost": "Tactic.ComputeAsymptotics.MultiseriesExpansion",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Tactic.ComputeAsymptotics.MultiseriesExpansion.const_toFun",
+   "kind": "constructor",
+   "lost": "List.nil",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "IsAntichain.of_monotoneOn_strictAntiOn",
+   "kind": "def",
+   "lost": "StrictAntiOn",
+   "why": "background-slot"
+  },
+  {
+   "decl": "IsAntichain.of_monotoneOn_strictAntiOn",
+   "kind": "def",
+   "lost": "MonotoneOn",
+   "why": "background-slot"
+  },
+  {
+   "decl": "IsAntichain.of_monotoneOn_strictAntiOn",
+   "kind": "def",
+   "lost": "IsAntichain",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Prime.not_dvd_lcm",
+   "kind": "def",
+   "lost": "GCDMonoid.lcm",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Prime.not_dvd_lcm",
+   "kind": "def",
+   "lost": "Not",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Prime.not_dvd_lcm",
+   "kind": "def",
+   "lost": "Dvd.dvd",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Prime.not_dvd_lcm",
+   "kind": "constructor",
+   "lost": "And.intro",
+   "why": "claims-filter:ctor-or-recursor"
+  },
+  {
+   "decl": "csSup_insert",
+   "kind": "def",
+   "lost": "Max.max",
+   "why": "background-slot"
+  },
+  {
+   "decl": "csSup_insert",
+   "kind": "def",
+   "lost": "SupSet.sSup",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "csSup_insert",
+   "kind": "def",
+   "lost": "BddAbove",
+   "why": "background-slot"
+  },
+  {
+   "decl": "csSup_insert",
+   "kind": "def",
+   "lost": "Insert.insert",
+   "why": "background-slot"
+  },
+  {
+   "decl": "ProbabilityTheory.indep_bot_left",
+   "kind": "def",
+   "lost": "Bot.bot",
+   "why": "background-slot"
+  },
+  {
+   "decl": "ProbabilityTheory.indep_bot_left",
+   "kind": "def",
+   "lost": "ProbabilityTheory.Indep",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "ProbabilityTheory.indep_bot_left",
+   "kind": "inductive",
+   "lost": "MeasureTheory.IsZeroOrProbabilityMeasure",
+   "why": "background-slot"
+  },
+  {
+   "decl": "toIocDiv_eq_iff",
+   "kind": "inductive",
+   "lost": "Iff",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "toIocDiv_eq_iff",
+   "kind": "def",
+   "lost": "Set.Ioc",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "toIocDiv_eq_iff",
+   "kind": "def",
+   "lost": "Membership.mem",
+   "why": "background-slot"
+  },
+  {
+   "decl": "toIocDiv_eq_iff",
+   "kind": "def",
+   "lost": "toIocDiv",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Fin.preimage_val_uIcc_val",
+   "kind": "inductive",
+   "lost": "Fin",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Fin.preimage_val_uIcc_val",
+   "kind": "def",
+   "lost": "Set.uIcc",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Fin.preimage_val_uIcc_val",
+   "kind": "def",
+   "lost": "Set.preimage",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Fin.preimage_val_uIcc_val",
+   "kind": "inductive",
+   "lost": "Nat",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Concept.intent_subset_intent_iff",
+   "kind": "inductive",
+   "lost": "Iff",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Concept.intent_subset_intent_iff",
+   "kind": "constructor",
+   "lost": "Iff.intro",
+   "why": "claims-filter:ctor-or-recursor"
+  },
+  {
+   "decl": "Concept.intent_subset_intent_iff",
+   "kind": "opaque",
+   "lost": "Mathlib.Meta.SetNotationForOrder.SubsetElabAux",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "Concept.strictAnti_intent",
+   "kind": "def",
+   "lost": "Concept.intent",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Concept.strictAnti_intent",
+   "kind": "def",
+   "lost": "StrictAnti",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "FirstOrder.Language.LHom.coe_substructureReduct",
+   "kind": "def",
+   "lost": "Set",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Real.cos_sub_int_mul_two_pi",
+   "kind": "inductive",
+   "lost": "Int",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Real.cos_sub_int_mul_two_pi",
+   "kind": "def",
+   "lost": "Real.cos",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Real.cos_sub_int_mul_two_pi",
+   "kind": "inductive",
+   "lost": "Real",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Real.cos_sub_int_mul_two_pi",
+   "kind": "def",
+   "lost": "Real.pi",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Tactic.ComputeAsymptotics.MultiseriesExpansion.Approximates.elim_cons",
+   "kind": "def",
+   "lost": "Tactic.ComputeAsymptotics.MultiseriesExpansion.Multiseries",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Tactic.ComputeAsymptotics.MultiseriesExpansion.Approximates.elim_cons",
+   "kind": "def",
+   "lost": "Tactic.ComputeAsymptotics.MultiseriesExpansion",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Tactic.ComputeAsymptotics.MultiseriesExpansion.Approximates.elim_cons",
+   "kind": "def",
+   "lost": "Tactic.ComputeAsymptotics.Majorized",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Tactic.ComputeAsymptotics.MultiseriesExpansion.Approximates.elim_cons",
+   "kind": "def",
+   "lost": "Tactic.ComputeAsymptotics.MultiseriesExpansion.mk",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Tactic.ComputeAsymptotics.MultiseriesExpansion.Approximates.elim_cons",
+   "kind": "def",
+   "lost": "Tactic.ComputeAsymptotics.MultiseriesExpansion.Approximates",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Tactic.ComputeAsymptotics.MultiseriesExpansion.Approximates.elim_cons",
+   "kind": "inductive",
+   "lost": "Real",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Tactic.ComputeAsymptotics.MultiseriesExpansion.Approximates.elim_cons",
+   "kind": "constructor",
+   "lost": "List.cons",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Tactic.ComputeAsymptotics.MultiseriesExpansion.Approximates.elim_cons",
+   "kind": "inductive",
+   "lost": "And",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "Order.Ideal.coe_toIdeal",
+   "kind": "def",
+   "lost": "Set",
+   "why": "background-slot"
+  },
+  {
+   "decl": "Order.Ideal.coe_toIdeal",
+   "kind": "inductive",
+   "lost": "Order.IsIdeal",
+   "why": "background-slot"
+  },
+  {
+   "decl": "IsAntichain.flip",
+   "kind": "def",
+   "lost": "flip",
+   "why": "not-in-term"
+  },
+  {
+   "decl": "IsAntichain.flip",
+   "kind": "def",
+   "lost": "IsAntichain",
+   "why": "background-slot"
+  },
+  {
+   "decl": "UpperHalfPlane.\u03c3_conj",
+   "kind": "def",
+   "lost": "starRingEnd",
+   "why": "claims-filter:statement-vocabulary"
+  },
+  {
+   "decl": "UpperHalfPlane.\u03c3_conj",
+   "kind": "inductive",
+   "lost": "Real",
+   "why": "claims-filter:statement-vocabulary"
+  }
+ ],
+ "loss_taxonomy": {
+  "background-slot": 60,
+  "claims-filter:ctor-or-recursor": 8,
+  "claims-filter:statement-vocabulary": 51,
+  "claims-filter:unfolding-move(NOT expressible)": 3,
+  "not-in-term": 24
+ },
+ "mean_recall": 0.317,
+ "median_recall": 0.25,
+ "n_evaluated": 39,
+ "n_files": 40,
+ "n_prov_decls": 4522,
+ "note": "UNFILTERED ground truth = every elaborator-resolved source identifier, no claims filter applied to the answer key; this is the honest recall of the SHIPPED pipeline including definition 2"
+}

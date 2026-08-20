@@ -65,11 +65,28 @@
 
 Constants: the measured 2% line, the apparatus thresholds (200 uses, 20x
 ratio), 3 attribution hops, 8 zoom opens, "unresolvable slot counts as kept"
-(conservative). Nothing else.
+(conservative), a 4-of-8 selection of load-bearing binder roles, and a
+minimum of 3 distinct citations for a proof to be scored. Sensitivity of the
+apparatus thresholds is measured (data/apparatus_sensitivity.json): across a
+4x swing in the size of the apparatus set, top-1 moves 0.06 points and the
+tactic-blame and verdict counts do not move at all.
+
+Evaluation caveat, stated plainly: the ranking rules read no names, but the
+CERTIFICATION does. Every sample is drawn from theorems carrying no
+classification flag, and those flags come from a name-based classifier
+(mathrecord/Mathrecord/Study.lean), which excludes about 46% of Mathlib's
+theorems from every round ever run. The grader is name-based too. Both are
+evaluation scaffolding, both are discarded with the grader, and neither
+touches the system's output -- but no certified number describes the
+excluded half.
 
 Certified (round 9, seed 20260831, run once, data/phase4_holdout9_results.json):
-V8 = 94.80% top-1 non-machinery proxy / 94.52% under a stricter grader,
-against V6's 94.38 / 93.18 on the same sample; tactic-internal rank-1 blames
+V8 = 94.80% top-1 non-machinery proxy against V6's 94.38 on the same sample --
+a gain of 0.42 points, eight theorems. (A stricter grader was introduced in
+the same round and reports 94.52 vs 93.18; because an instrument change
+shipped alongside the treatment, the STANDING-metric gain of +0.42 is the
+honest headline, not the +1.34. The anchor's own seed-to-seed spread is 0.87,
+so this gain is within the noise of the baseline it is measured against.) tactic-internal rank-1 blames
 cut 18 -> 13; real moves lost to the new rule: 2 in 1,826. Earlier rounds:
 V6 certified 94.84 (round 6), replicated 93.97 (round 7).
 

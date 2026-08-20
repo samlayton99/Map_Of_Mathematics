@@ -247,8 +247,8 @@ def main():
                 return cache[c]
             if seen is None:
                 seen = set()
-            if not gen[c] or c in seen:
-                return c
+            if not gen[c] or c in seen or len(seen) >= 3:
+                return c          # METHOD.md: up to 3 hops, never revisit
             seen.add(c)
             subst = [d for d in loadbearing_g(c) if claimf(d) and not bk(d)
                      and not (v8 and tainted(d))]
