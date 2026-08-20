@@ -1,0 +1,106 @@
+{
+ "anchors": {
+  "And.intro": 1,
+  "CauSeq.Completion.Cauchy": 65,
+  "Complex.instField": 111,
+  "Eq.mpr": 4,
+  "Eq.trans": 3,
+  "HasDerivAt.exp": 165,
+  "Iff.intro": 1,
+  "MeasureTheory.integral_add": 243,
+  "Nat.add_comm": 11,
+  "Nat.gcd_comm": 32,
+  "Nat.rec": 2,
+  "OfNat.ofNat": 2,
+  "Real.exp": 140,
+  "Real.exp_log": 164,
+  "Real.instAdd": 89,
+  "Real.log": 162,
+  "Real.log_le_sub_one_of_pos": 165,
+  "congrArg": 3,
+  "deriv_add": 166,
+  "dist_triangle": 2,
+  "id": 0,
+  "instAddNat": 7,
+  "instHAdd": 3,
+  "norm_add_le": 95
+ },
+ "auc_depth_p3_any_full_population": 0.6371,
+ "constants": 771129,
+ "cyclic_nodes": 543,
+ "depth_by_class": {
+  "UNCLASSIFIED": {
+   "median": 56.0,
+   "n": 377048,
+   "p90": 160.0
+  },
+  "coercion": {
+   "auc_shallow": 0.9546,
+   "median": 3.0,
+   "n": 110,
+   "p90": 6.0
+  },
+  "eq-machinery": {
+   "auc_shallow": 0.9571,
+   "median": 3.0,
+   "n": 21,
+   "p90": 4.0
+  },
+  "generated": {
+   "auc_shallow": 0.74,
+   "median": 11.0,
+   "n": 95465,
+   "p90": 81.0
+  },
+  "internal-detail": {
+   "auc_shallow": 0.6147,
+   "median": 28.0,
+   "n": 297988,
+   "p90": 114.0
+  },
+  "recursor": {
+   "auc_shallow": 0.7946,
+   "median": 5.0,
+   "n": 6913,
+   "p90": 72.0
+  },
+  "structure-projection": {
+   "auc_shallow": 0.9323,
+   "median": 1.0,
+   "n": 15056,
+   "p90": 9.0
+  },
+  "typeclass-instance": {
+   "auc_shallow": 0.5601,
+   "median": 35.0,
+   "n": 42904,
+   "p90": 124.0
+  },
+  "unclassified_theorems": {
+   "median": 64.0,
+   "n": 287483,
+   "p90": 169.0
+  }
+ },
+ "depth_percentiles": {
+  "50": 33.0,
+  "75": 80.0,
+  "90": 132.0,
+  "99": 248.0,
+  "100": 346.0
+ },
+ "spearman_depth_vs_machineryProb": {
+  "n": 3442,
+  "rho": -0.244
+ },
+ "theorems_at_depth_geq": {
+  "5": 283592,
+  "10": 266841,
+  "20": 230023,
+  "30": 199884,
+  "50": 170168,
+  "75": 116758,
+  "100": 67403,
+  "150": 40471
+ }
+}

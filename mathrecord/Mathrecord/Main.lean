@@ -1,6 +1,7 @@
 import Mathrecord.Extract
 import Mathrecord.Validate
 import Mathrecord.Study
+import Mathrecord.DepDump
 
 /-! MathRecord CLI.
 
@@ -165,6 +166,9 @@ unsafe def main (args : List String) : IO UInt32 := do
     let json ← Study.studyFile file opts
     IO.FS.writeFile out (json.pretty ++ "\n")
     IO.println s!"studied {file} -> {out}"
+    return 0
+  | ["depdump", file, out] => do
+    Mathrecord.DepDump.depDump file out
     return 0
   | ["alpha", a, b] => alpha a b
   | ["inspect", recordPath, declName] => inspect recordPath declName
