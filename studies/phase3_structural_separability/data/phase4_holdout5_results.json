@@ -1,0 +1,63 @@
+{
+ "V4hist": {
+  "definitional_verdicts": 412,
+  "no_content": 0.037,
+  "top1_cause_when_machinery": {
+   "generated": 81,
+   "glue": 72,
+   "instance": 9,
+   "self-helper": 5,
+   "tactic": 20
+  },
+  "top1_deep": 0.9504,
+  "top1_mid": 0.9112,
+  "top1_nonmachinery_proxy": 0.9038,
+  "top1_shallow": 0.8402,
+  "top1_single_use_rate": 0.001,
+  "top2_nonmachinery_proxy": 0.9403
+ },
+ "V5pzb": {
+  "definitional_verdicts": 202,
+  "no_content": 0.1328,
+  "top1_cause_when_machinery": {
+   "generated": 84,
+   "glue": 282,
+   "instance": 9,
+   "self-helper": 5,
+   "tactic": 17
+  },
+  "top1_deep": 0.8947,
+  "top1_mid": 0.845,
+  "top1_nonmachinery_proxy": 0.8157,
+  "top1_shallow": 0.7017,
+  "top1_single_use_rate": 0.0,
+  "top2_nonmachinery_proxy": 0.8431
+ },
+ "V5v": {
+  "definitional_verdicts": 453,
+  "no_content": 0.0257,
+  "top1_cause_when_machinery": {
+   "generated": 84,
+   "glue": 45,
+   "instance": 9,
+   "self-helper": 5,
+   "tactic": 17
+  },
+  "top1_deep": 0.9574,
+  "top1_mid": 0.9194,
+  "top1_nonmachinery_proxy": 0.9159,
+  "top1_shallow": 0.8605,
+  "top1_single_use_rate": 0.0,
+  "top2_nonmachinery_proxy": 0.9469
+ },
+ "binder_fallback_rows": 57741,
+ "dev_seed": 20260819,
+ "holdout_seed": 20260825,
+ "kind_vs_pr_disagreements": 20113,
+ "matched_denominator": {
+  "V4hist_top1": 0.9163,
+  "V5v_top1": 0.9179,
+  "n_both_live": 1899
+ },
+ "note": "top1_nonmachinery_proxy = agreement with an automated machinery-labeling proxy, NOT semantic precision"
+}

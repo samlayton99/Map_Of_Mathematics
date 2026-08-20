@@ -34,7 +34,14 @@ Round 2 (seed 20260821, disjoint from both prior samples; registered before runn
 
 Replication: V4hist = 90.25 (dev) / 89.85 (holdout 1) / 90.13 (holdout 2). That number is real.
 
-**The remaining V4hist-vs-V5pz gap is now fully named**: a 300-root diagnostic (post-hoc, descriptive) shows the extra glue-top1 cases come from exactly two constants the kind proxy excluded and the exact check admits — `rfl` (a Prop-valued *def*) and `propext` (a Prop-valued *axiom*) — both new-to-statement, hence elevated by the new-first rule. The principled handling is the measured-universality bookkeeping demotion (previously validated at zero route-item loss), to be certified in a future registered round — not patched in now.
+Rounds 3–5 (seeds 20260822/24/25, each disjoint from all prior samples, each registered before running, each run once):
+
+- **Round 3** — hypothesis: bookkeeping demotion (measured universality) closes the gap. **Falsified**: 83.24 → 83.33 (+0.09; bar was 88). V4hist replicated a 4th time (90.93).
+- **Round 4** — hypothesis: breadth zoom (expand every single-use candidate, not just rank-1 chains) closes it. **Falsified**: 81.3. V4hist replicated a 5th time (90.89). Lesson recorded: two mechanism guesses in a row failed because they were theorized instead of read from cases.
+- Post-hoc case reading (400 roots): the "failures" are proofs whose ENTIRE candidate list is `rfl`/`Iff.rfl` — true-by-definition lemmas. The historical variant excludes `rfl` by kind, gets an empty list, and exits those proofs from the denominator as "definitional"; the exact substrate keeps `rfl` visible and is scored a failure *for reporting the correct fact as a candidate*. The gap was substantially a **denominator accounting artifact**.
+- **Round 5** — verdict semantics fixed kernel-honestly (all-bookkeeping candidate list ⇒ holds-by-definition verdict, like empty), plus a matched-denominator comparison. **Certified**: V5v = **91.59%** (bar 88), glue blames 282 → 45 (below V4hist's 72), no-content 2.6%, shallow/deep 86/95.7. Matched denominator (1,899 proofs live in both): V4hist 91.63 vs **V5v 91.79**. V4hist replicated a 6th time (90.38).
+
+**Certification conclusion**: the exact, kernel-honest substrate — occurrence roles, true Prop check, claims = Prop ∧ not constructor/recursor, single-use as attribute with zoom display, bookkeeping-aware verdicts — now matches the historical accidental system on identical proofs, with every component principled and every previously-mysterious gap explained by a named fact. Six replications of the anchor across disjoint samples close the overfitting charge; the substrate formulation (V5v) is the standing definition going forward.
 
 ## 3. Elaboration-provenance sidecar (built)
 
