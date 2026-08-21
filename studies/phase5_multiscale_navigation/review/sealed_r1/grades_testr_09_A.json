@@ -1,0 +1,146 @@
+{
+  "proof_0193": {
+    "moves": "Commute the product a*b to b*a and then invoke the already-proved right-hand cancellation law for Euclidean division, using the nonzero hypothesis on a.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 1, "5": 1, "6": 0, "7": 0, "8": 4, "9": 0, "10": 3, "11": 1, "12": 2, "13": 1, "14": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0194": {
+    "moves": "Since colimit.pre is an isomorphism, move its inverse to the other side of the composite (the comp_inv_eq cancellation), reducing the goal to the known compatibility colimit.ι_pre; simp then closes it.",
+    "grades": {"1": 1, "2": 1, "3": 3, "4": 0, "5": 1, "6": 1, "7": 3, "8": 1, "9": 0, "10": 1, "11": 3, "12": 0, "13": 1, "14": 4, "15": 2, "16": 0, "17": 1, "18": 1, "19": 3, "20": 1, "21": 0, "22": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0195": {
+    "moves": "Split the iff into its two directions: forward, transport a face relation back along an injective linear map; backward, push a face relation forward under the map. The proof is entirely the two-direction case split plus one lemma per direction.",
+    "grades": {"1": 4, "2": 1, "3": 2, "4": 0, "5": 3, "6": 1, "7": 1, "8": 1, "9": 0, "10": 1, "11": 1, "12": 0, "13": 2, "14": 3, "15": 2, "16": 4, "17": 1, "18": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0196": {
+    "moves": "Apply the existing fact that a cast nonnegative rational commutes with any element, then take the symmetric form of that commutation.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 4, "5": 3, "6": 0, "7": 0, "8": 3, "9": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0197": {
+    "moves": "Destructure the divisibility hypothesis into an explicit multiple (write the divided quantity as a product) and substitute, reducing the goal to the gcd lemma for adding a multiple of the second argument.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 0, "5": 0, "6": 4, "7": 0, "8": 1, "9": 1, "10": 3, "11": 2, "12": 1, "13": 1, "14": 1, "15": 0, "16": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0198": {
+    "moves": "Induction on the number of iterations: iterating the n-th power map k times gives the n^k power map, the inductive step being the power-of-a-power law. The real content is the recursion on k, carried here by an auto-generated recursive helper.",
+    "grades": {"1": 3, "2": 0, "3": 1, "4": 0, "5": 0, "6": 3, "7": 1, "8": 1, "9": 0, "10": 0, "11": 1, "12": 0, "13": 1, "14": 1},
+    "missing_key": true,
+    "confidence": "low"
+  },
+  "proof_0199": {
+    "moves": "Unfold the 32-bit view as a cast of the platform-width bitvector, rewrite with the fact that USize's toBitVec commutes with mod, and push the resulting equality through the BitVec.cast congruence. Mostly rewriting plus a congruence step.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 3, "5": 2, "6": 2, "7": 1, "8": 1, "9": 0, "10": 0, "11": 0, "12": 1, "13": 2, "14": 1, "15": 1, "16": 4, "17": 1, "18": 2, "19": 1, "20": 1, "21": 1, "22": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0200": {
+    "moves": "A Bool-level restatement of left-cancellation for BitVec addition: turn the boolean equality test into propositional equality, apply add_right_inj, and convert back through propext. Essentially simp normalization around one real cancellation lemma.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 1, "5": 0, "6": 1, "7": 0, "8": 1, "9": 4, "10": 3, "11": 1, "12": 1, "13": 0, "14": 1, "15": 2, "16": 1, "17": 0, "18": 0, "19": 0, "20": 0, "21": 0, "22": 1, "23": 1, "24": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0201": {
+    "moves": "Direct appeal to the corresponding clamping lemma: truncation and clamping agree on the Fin value, so the statement is just that lemma applied.",
+    "grades": {"1": 1, "2": 2, "3": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0202": {
+    "moves": "Unfold conjugation by an isomorphism as the composite alpha.symm ≪≫ f ≪≫ alpha, using extensionality for Aut to reduce equality of automorphisms to equality of their underlying isomorphisms; then it is definitional.",
+    "grades": {"1": 1, "2": 0, "3": 2, "4": 1, "5": 0, "6": 3, "7": 0, "8": 3, "9": 1, "10": 0, "11": 0, "12": 0, "13": 0, "14": 4, "15": 1, "16": 0, "17": 0, "18": 3, "19": 2, "20": 1, "21": 0, "22": 2, "23": 1, "24": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0203": {
+    "moves": "Pure definitional unfolding (rfl): the functor from coalgebras of the product comonad to the over-category sends a coalgebra map to the same underlying morphism, and its structure map is the coalgebra map followed by the first projection. Nothing is proved beyond reading off the definition.",
+    "grades": {"1": 3, "2": 2, "3": 3, "4": 1, "5": 1, "6": 0, "7": 2, "8": 3, "9": 0, "10": 0, "11": 0, "12": 2, "13": 1, "14": 2, "15": 1, "16": 1, "17": 2, "18": 2, "19": 4, "20": 3},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0204": {
+    "moves": "Definitional unfolding (rfl): the unit morphism of the monoidal structure on the inverse of the double-monoidal-opposite equivalence is the identity after stripping two unmop's. No mathematical step beyond unfolding.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 2, "5": 2, "6": 2, "7": 0, "8": 3, "9": 1, "10": 1, "11": 1, "12": 2, "13": 0, "14": 4, "15": 2, "16": 0, "17": 3, "18": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0205": {
+    "moves": "Unfold the 64-bit view of an ISize as a cast of its platform-width bitvector, rewrite with the known description of Int64.toISize on bitvectors (sign extension), and transport through the BitVec.cast congruence. Rewriting plus a cast congruence.",
+    "grades": {"1": 0, "2": 2, "3": 0, "4": 0, "5": 1, "6": 1, "7": 1, "8": 4, "9": 1, "10": 3, "11": 2, "12": 1, "13": 2, "14": 1, "15": 1, "16": 1, "17": 2, "18": 2, "19": 1, "20": 3, "21": 1, "22": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0206": {
+    "moves": "Split the iff: one direction is the duality lemma turning limits in the opposite category into colimits, the other direction is obtained by instance search (the dual construction is already an instance).",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 2, "5": 4, "6": 2, "7": 2, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0207": {
+    "moves": "Definitional unfolding (rfl): the hom component of the isomorphism of frames built from an order isomorphism is the underlying order map. No content beyond reading the constructor.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 1, "9": 1, "10": 0, "11": 2, "12": 4, "13": 1, "14": 0, "15": 0, "16": 2, "17": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0208": {
+    "moves": "Integer strict inequality a < x unfolds to a + 1 ≤ x, so the statement is exactly the non-strict le_min characterization applied at a + 1. The successor shift is the whole idea.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 0, "5": 4, "6": 1, "7": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0209": {
+    "moves": "Destructure both IsNat hypotheses (each says the ordinal is the cast of a natural), substitute, and then use that the natural-number cast into the ordinals is multiplicative; repackage with the IsNat constructor.",
+    "grades": {"1": 4, "2": 2, "3": 0, "4": 1, "5": 1, "6": 2, "7": 2, "8": 2, "9": 0, "10": 0, "11": 1, "12": 0, "13": 0, "14": 0, "15": 0, "16": 1, "17": 2, "18": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0210": {
+    "moves": "The reassociated form of coprod.inl_fst: whisker the known identity on the right by an arbitrary morphism and reassociate. The only mathematical input is inl_fst; the rest is associativity/unit bookkeeping generated by the reassoc machinery.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 1, "5": 1, "6": 4, "7": 1, "8": 1, "9": 1, "10": 3, "11": 1, "12": 0, "13": 0, "14": 2, "15": 3, "16": 1, "17": 2, "18": 2, "19": 1, "20": 2, "21": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0211": {
+    "moves": "Definitional unfolding (rfl): whiskering a simplicial object by a functor commutes with the face maps because delta is by definition the simplicial object applied to op of the face inclusion. No step beyond unfolding.",
+    "grades": {"1": 0, "2": 1, "3": 2, "4": 1, "5": 0, "6": 2, "7": 1, "8": 1, "9": 1, "10": 0, "11": 1, "12": 4, "13": 0, "14": 0, "15": 1, "16": 2, "17": 0, "18": 3, "19": 1, "20": 1, "21": 0, "22": 0, "23": 1, "24": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0212": {
+    "moves": "Definitional unfolding (rfl): the underlying natural transformation of the identity morphism in the category of lax monoidal functors is the identity of the underlying functor, which holds by construction of that category instance.",
+    "grades": {"1": 0, "2": 3, "3": 1, "4": 3, "5": 1, "6": 3, "7": 0, "8": 1, "9": 1, "10": 2, "11": 0, "12": 2, "13": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0213": {
+    "moves": "Direct application of the general joint-surjectivity statement for colimit cocones in Type: every point of the colimit is hit by some component of the cocone.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 1, "5": 4, "6": 2, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0214": {
+    "moves": "Definitional unfolding (rfl): the counit isomorphism of the equivalence of discrete categories induced by an equivalence of types is the isomorphism built from the type-level round trip. Reading off the definition, nothing proved.",
+    "grades": {"1": 1, "2": 4, "3": 0, "4": 2, "5": 2, "6": 1, "7": 0, "8": 1, "9": 0, "10": 1, "11": 0, "12": 2, "13": 1, "14": 1, "15": 2, "16": 3, "17": 2, "18": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0215": {
+    "moves": "Definitional unfolding (rfl): the second component of the symmetrized homotopy is read directly off the definition of Homotopy.symm. Projection lemma with no argument.",
+    "grades": {"1": 2, "2": 0, "3": 0, "4": 0, "5": 1, "6": 1, "7": 3, "8": 1, "9": 4, "10": 2, "11": 1, "12": 1, "13": 1, "14": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0216": {
+    "moves": "Definitional unfolding (rfl): the ring homomorphism lifted out of the direct limit, precomposed with the canonical map from a stage, is the original compatible family at that stage, true by construction of lift on the quotient representatives.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 0, "5": 1, "6": 3, "7": 1, "8": 0, "9": 1, "10": 1, "11": 1, "12": 2, "13": 0, "14": 0, "15": 4, "16": 0, "17": 1, "18": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  }
+}

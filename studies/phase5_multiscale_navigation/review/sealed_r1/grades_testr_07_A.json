@@ -1,0 +1,146 @@
+{
+  "proof_0145": {
+    "moves": "Says a functor's map commutes with a dependent if-then-else: case-split on the decidable proposition P and both branches close by reflexivity. The whole content is the case split; it is discharged by automation, so the only thing carrying it is an anonymous generated proof term that no citation could name.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 1, "5": 0, "6": 1, "7": 2, "8": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0146": {
+    "moves": "A simps-generated component lemma for the counit isomorphism of the shuffle equivalence prodμ on product categories: unfold the composite of associators and braidings componentwise and cancel identity compositions. Real content is pure normalisation, not a cited theorem; the only named idea used is comp_id.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 0, "5": 1, "6": 1, "7": 1, "8": 1, "9": 1, "10": 2, "11": 3, "12": 2, "13": 1, "14": 1, "15": 1, "16": 1, "17": 2, "18": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0147": {
+    "moves": "Builds the Trichotomous instance for Char's <: given neither a < b nor b < a, convert both negations into ≤ (not_lt) and conclude a = b by antisymmetry of ≤ on Char.",
+    "grades": {"1": 1, "2": 3, "3": 4, "4": 1, "5": 0, "6": 1, "7": 0, "8": 2, "9": 1, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0148": {
+    "moves": "From IsGLB (u '' s) a conclude IsGLB s (l a). Split into the two halves of IsGLB: for the lower-bound half, apply the Galois-connection adjunction l_le to the fact that a is below u x for x in s (using mem_image_of_mem); for the greatest half, go x ≤ l (u x) then apply monotonicity of l to a's maximality, transporting the lower-bound hypothesis through the image with monotone_u.mem_lowerBounds_image.",
+    "grades": {"1": 2, "2": 2, "3": 2, "4": 4, "5": 1, "6": 4, "7": 1, "8": 2, "9": 2, "10": 2, "11": 0, "12": 1, "13": 3, "14": 1, "15": 0, "16": 3, "17": 3, "18": 2, "19": 2, "20": 2, "21": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0149": {
+    "moves": "The reassoc'd form of Grp.comp_hom_hom: take the base lemma (which itself holds by rfl, since group objects live in an induced category over monoid objects) and whisker it on the right, reassociating with the category associativity law. No new mathematics — it is the mechanical reassoc transformation.",
+    "grades": {"1": 1, "2": 3, "3": 2, "4": 1, "5": 4, "6": 1, "7": 1, "8": 1, "9": 2, "10": 0, "11": 1, "12": 1, "13": 0, "14": 0, "15": 2, "16": 0, "17": 1, "18": 0, "19": 0, "20": 1, "21": 2, "22": 0, "23": 1, "24": 1, "25": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0150": {
+    "moves": "The unit map of a commutative group object is unchanged by the forgetful functor to group objects. Since forget₂Grp is the induced functor along CommGrp.toGrp, both sides are the same term and the proof is rfl — definitional transparency of an induced-category functor is the whole content.",
+    "grades": {"1": 1, "2": 0, "3": 2, "4": 0, "5": 2, "6": 0, "7": 1, "8": 0, "9": 1, "10": 2, "11": 4, "12": 1, "13": 2, "14": 2, "15": 1, "16": 3, "17": 2, "18": 0, "19": 0, "20": 1, "21": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0151": {
+    "moves": "The recursor notNilRec, applied to a walk of the form cons h q, reduces to the supplied cons case. The proof is rfl: it is exactly the definitional computation rule of the match in notNilRec on the cons constructor.",
+    "grades": {"1": 2, "2": 3, "3": 1, "4": 2, "5": 1, "6": 4, "7": 1, "8": 1, "9": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0152": {
+    "moves": "A transitivity lemma for the field_simp normal form: given eval t = eval t' and eval ((r,x) :: t') = eval l', deduce eval ((r,x) :: t) = eval l'. Rewrite backwards along the second hypothesis, expand both cons-evaluations with eval_cons into (tail eval) * zpow' x r, then rewrite with the first hypothesis.",
+    "grades": {"1": 3, "2": 1, "3": 2, "4": 1, "5": 1, "6": 4, "7": 0, "8": 1, "9": 0, "10": 3, "11": 1, "12": 1, "13": 0, "14": 0, "15": 1, "16": 1, "17": 0, "18": 0, "19": 2, "20": 2, "21": 1, "22": 1, "23": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0153": {
+    "moves": "Preimage of a set under a composite partial function equals the iterated preimage. Unfolds both sides to membership statements about Part-bind and closes by pure logical/extensional reasoning; the proof is a single automation call, so its content is an anonymous generated term that no citation names.",
+    "grades": {"1": 1, "2": 2, "3": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0154": {
+    "moves": "An order-connected subset of a strongly coatomic order is strongly coatomic. The whole argument is dualisation: pass to the order dual, where the set is still order-connected (OrdConnected.dual) and the ambient order is strongly atomic, apply the strongly-atomic version, then transport back along the iff isStronglyAtomic αᵒᵈ ↔ IsStronglyCoatomic α.",
+    "grades": {"1": 2, "2": 1, "3": 4, "4": 0, "5": 3, "6": 1, "7": 4, "8": 3, "9": 2, "10": 0, "11": 1, "12": 0, "13": 2, "14": 4, "15": 1, "16": 1, "17": 1, "18": 1, "19": 2, "20": 1, "21": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0155": {
+    "moves": "The set 0 in a type with a zero is small. Since (0 : Set α) is by definition the singleton {0}, this is just the singleton case of smallness applied to 0.",
+    "grades": {"1": 1, "2": 0, "3": 4, "4": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0156": {
+    "moves": "F.map f.hom ≫ F.map f.inv = 𝟙 (F.obj X) for an isomorphism f. One step: the functor image of an iso is an iso, i.e. the map_hom_inv_id identity; the rest is simp's rewriting skeleton closing a True goal.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 2, "6": 2, "7": 0, "8": 0, "9": 0, "10": 2, "11": 4, "12": 0, "13": 1, "14": 1, "15": 1, "16": 2, "17": 1, "18": 0, "19": 2, "20": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0157": {
+    "moves": "In a modular lattice, from Disjoint b c and Disjoint a (b ⊔ c) deduce Disjoint (a ⊔ b) c. Purely a symmetry manoeuvre: commute the disjointness and the sup, apply the already-proved mirror statement disjoint_sup_right_of_disjoint_sup_left to the symmetrised hypotheses, and commute the remaining hypothesis into shape. The modularity itself is used only inside the lemma being invoked.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 0, "5": 4, "6": 1, "7": 0, "8": 2, "9": 0, "10": 0, "11": 1, "12": 2, "13": 1, "14": 4, "15": 1, "16": 1, "17": 4, "18": 1, "19": 0, "20": 3, "21": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0158": {
+    "moves": "Component lemma for the inverse of the natural isomorphism comparing comap along g then f with comap along g ∘ f: at every index the component is the identity morphism by construction, so the proof is rfl.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 1, "5": 1, "6": 4, "7": 1, "8": 2, "9": 2, "10": 0, "11": 3, "12": 2, "13": 1, "14": 2, "15": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0159": {
+    "moves": "gcd a 1 is a unit: it divides the second argument, which is 1, and anything dividing 1 is a unit. Two named facts composed, nothing else.",
+    "grades": {"1": 4, "2": 0, "3": 0, "4": 1, "5": 0, "6": 2, "7": 0, "8": 0, "9": 1, "10": 1, "11": 0, "12": 4, "13": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0160": {
+    "moves": "The product of the multiset of inverses is the inverse of the product. Exhibits inversion as a monoid homomorphism (invMonoidHom, valid because the monoid is commutative) and applies the general fact that products commute with monoid homs.",
+    "grades": {"1": 4, "2": 0, "3": 1, "4": 4, "5": 2, "6": 0, "7": 0, "8": 0, "9": 1, "10": 0, "11": 0, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0161": {
+    "moves": "1 < mulSingle i a ↔ 1 < a in a pointwise-ordered Pi type. Unfold mulSingle as a Function.update of the constant 1 and appeal to the characterisation of when an update is strictly above the base point; the rest is simp closing the resulting iff.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 1, "5": 4, "6": 1, "7": 1, "8": 0, "9": 0, "10": 1, "11": 0, "12": 1, "13": 1, "14": 3, "15": 1, "16": 1, "17": 1, "18": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0162": {
+    "moves": "(a \\ b) \\ a = ⊥. Swap the two subtracted elements (sdiff_sdiff_comm) to get (a \\ a) \\ b, use a \\ a = ⊥, then ⊥ \\ b = ⊥. Three named rewrites in a row.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 0, "5": 1, "6": 0, "7": 1, "8": 1, "9": 0, "10": 0, "11": 2, "12": 4, "13": 0, "14": 0, "15": 1, "16": 0, "17": 1, "18": 4, "19": 0, "20": 1, "21": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0163": {
+    "moves": "From a ≤ b conclude a < b or a = b (the dual-primed form). The classical version is obtained from the decidable version by supplying classical decidability of the ≤ relation; there is no other step.",
+    "grades": {"1": 1, "2": 2, "3": 4, "4": 0, "5": 1, "6": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0164": {
+    "moves": "Auto-generated iff form of an extensionality lemma: two AddCancelMonoid structures on the same type are equal iff their additions agree. Forward direction is the already-proved ext lemma; backward direction is substitution along the structure equality, then reflexivity. Content is structural, not mathematical.",
+    "grades": {"1": 1, "2": 4, "3": 0, "4": 1, "5": 2, "6": 1, "7": 1, "8": 0, "9": 0, "10": 1, "11": 0, "12": 0, "13": 2, "14": 2, "15": 2, "16": 1, "17": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0165": {
+    "moves": "The underlying submonoid of the comap of a subgroup along a multiplicative equivalence is the comap of the underlying submonoid along the corresponding monoid hom. Both sides have literally the same carrier set, so the proof is rfl; the point is that Subgroup.comap and Subgroup.toSubmonoid are definitionally compatible.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 2, "5": 0, "6": 0, "7": 2, "8": 0, "9": 0, "10": 2, "11": 0, "12": 0, "13": 4, "14": 4, "15": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0166": {
+    "moves": "dpow 1 x = x for x in the ideal. This is not a derived theorem at all: it is one of the axioms packaged as a field of the DividedPowers structure, so the proof is the projection out of that structure.",
+    "grades": {"1": 1, "2": 0, "3": 2, "4": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0167": {
+    "moves": "Trichotomy for the lexicographic order on a sigma type. Destructure both elements as pairs, apply trichotomy in the index type; in the two strict cases build a left Lex step, and in the equal-index case apply trichotomy in the fibre, producing either a right Lex step or genuine equality of the two dependent pairs. The real content is the nested case split plus exhibiting which Lex constructor to use.",
+    "grades": {"1": 2, "2": 1, "3": 4, "4": 4, "5": 2, "6": 2, "7": 3, "8": 2, "9": 2, "10": 1, "11": 1, "12": 3, "13": 1, "14": 1, "15": 3, "16": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0168": {
+    "moves": "Congruence of psigma along the identity family of equivalences is the identity equivalence. Both sides compute to the same functions and proofs, so the proof is rfl — definitional unfolding of psigmaCongrRight at Equiv.refl.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 4, "5": 4},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

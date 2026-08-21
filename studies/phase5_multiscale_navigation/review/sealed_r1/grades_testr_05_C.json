@@ -1,0 +1,146 @@
+{
+  "proof_0097": {
+    "moves": "Pure definitional unfolding: endPos is defined by a match on the SearchStep constructors, and on the `matched p q` branch it returns q, so the equation holds by rfl. No mathematical step at all beyond selecting the right constructor branch.",
+    "grades": {"1": 2, "2": 3, "3": 1, "4": 1, "5": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0098": {
+    "moves": "s ∩ t ⊆ s, and bounded-below is inherited by subsets; so apply monotonicity of BddBelow to the left inclusion. Two named lemmas composed, nothing else.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 4, "5": 4, "6": 1, "7": 1, "8": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0099": {
+    "moves": "Given an equality of propositions p₁ = p₂, transport the dependent ∀-statement along it; the proof is a substitution (`h ▸ rfl`), i.e. the Eq recursor applied to reflexivity. The content is purely the transport, which no citation really names.",
+    "grades": {"1": 2, "2": 3, "3": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0100": {
+    "moves": "Option's bespoke forM is by construction the same function as the generic forM coming from its ForM instance, so the identification is rfl. Purely definitional; the monad structure is carried along but does nothing.",
+    "grades": {"1": 1, "2": 0, "3": 2, "4": 1, "5": 3, "6": 0, "7": 1},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0101": {
+    "moves": "Not a proof: this is the automatically generated projection extracting the `out` field of the class PreservesColimitOfIsReflexivePair. There is no mathematical step; the only thing one could name is the structure being projected.",
+    "grades": {"1": 1, "2": 1, "3": 3},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0102": {
+    "moves": "Negation on a quaternion algebra is defined componentwise, so the imI component of -a is by definition -(a.imI); rfl. The real content is the definition of the Neg instance, not any lemma.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 2, "5": 3, "6": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0103": {
+    "moves": "Not a proof: this is the projection of the `add_left` axiom field out of the InnerProductSpace class (additivity of the inner product in the first slot is an assumed axiom). No step to explain.",
+    "grades": {"1": 3, "2": 1, "3": 1},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0104": {
+    "moves": "The graded-one instance on the constant family (fun _ => R) is defined with one := 1, so its GOne.one field is literally 1; rfl. Content is the definition of the instance being unfolded.",
+    "grades": {"1": 1, "2": 3, "3": 3, "4": 1, "5": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0105": {
+    "moves": "From -x ∈ s and y ∈ s, closure under multiplication gives (-x) * y ∈ s; then rewrite (-x) * y = -(x * y) using neg_mul. Two real lemmas, glued by simp.",
+    "grades": {"1": 0, "2": 1, "3": 2, "4": 1, "5": 4, "6": 4, "7": 1, "8": 0, "9": 0, "10": 0, "11": 0, "12": 2, "13": 0, "14": 1, "15": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0106": {
+    "moves": "Not a proof: the auto-generated parent projection witnessing that LatticeHomClass extends InfHomClass. The only content is the class hierarchy declaration itself.",
+    "grades": {"1": 1, "2": 1, "3": 3},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0107": {
+    "moves": "The coercion of a set to a sort is by definition the subtype {x // x ∈ S}, so coercing the set-builder {x | x ∈ S} gives that subtype on the nose; rfl. Purely unfolding Set.Elem and the set-builder.",
+    "grades": {"1": 3, "2": 2, "3": 3, "4": 1, "5": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0108": {
+    "moves": "intersperse is defined by pattern matching, and the one-element case [x] falls into the branch returning [x] unchanged; rfl. The content is which defining equation of intersperse fires.",
+    "grades": {"1": 3, "2": 2, "3": 2, "4": 1, "5": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0109": {
+    "moves": "The bipointed type obtained from a two-pointed type is built on the same carrier, so the two coercions to Sort are definitionally equal; rfl. Only carrier projections are unfolded.",
+    "grades": {"1": 2, "2": 3, "3": 1, "4": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0110": {
+    "moves": "Commute the two factors so the expression matches the already-proved cancellation a / b * (b / c) = a / c, then apply that lemma. Exactly two mathematical steps: mul_comm, then div_mul_div_cancel.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 4, "6": 0, "7": 0, "8": 0, "9": 0, "10": 1, "11": 0, "12": 0, "13": 0, "14": 1, "15": 4, "16": 0, "17": 0, "18": 0, "19": 0, "20": 0, "21": 1, "22": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0111": {
+    "moves": "Use the characterization a::l ⊆ m ↔ a ∈ m ∧ l ⊆ m in the backwards direction, feeding it the pair of the two hypotheses. The whole proof is packaging the two hypotheses into a conjunction and applying the iff.",
+    "grades": {"1": 4, "2": 2, "3": 2, "4": 1, "5": 2, "6": 1, "7": 1, "8": 1, "9": 0, "10": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0112": {
+    "moves": "Case split on the Option: for none both sides reduce to true, for some a both sides reduce to p applied through f. The content is the case analysis plus definitional computation of bind and all; the rest is simp residue.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 0, "5": 0, "6": 4, "7": 3, "8": 3, "9": 0, "10": 0, "11": 2, "12": 1, "13": 1, "14": 0, "15": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0113": {
+    "moves": "On the order dual, ≤ is reversed while multiplication is unchanged, so right-cancellation of ≤ for the dual is the same statement as contravariance for the swapped multiplication on the original order; flip the base instance's field through Contravariant.flip and package it with the class constructor.",
+    "grades": {"1": 2, "2": 4, "3": 2, "4": 1, "5": 0, "6": 1, "7": 1, "8": 2, "9": 2, "10": 1, "11": 3, "12": 1, "13": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0114": {
+    "moves": "The multicospan shape attached to a 1-hypercover is defined by @[simps]-style fields, and its `snd` field is literally j.1.2; so the simp lemma holds by rfl. Pure projection unfolding.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 3, "5": 1, "6": 3, "7": 2, "8": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0115": {
+    "moves": "To show 0 is additively cancellable for ≤: rewrite 0 + a and 0 + b down to a and b using zero_add, after which the required implication is the identity. One real lemma (zero_add) plus the identity function; everything else is simp's congruence scaffolding.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 0, "5": 2, "6": 0, "7": 0, "8": 1, "9": 0, "10": 1, "11": 4, "12": 1, "13": 1, "14": 0, "15": 0, "16": 0, "17": 0, "18": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0116": {
+    "moves": "The action of an additive unit on a type is by definition the action of its underlying element, so commutation of the two actions transfers verbatim from the base commutation axiom; build the instance with that field.",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 3, "5": 4, "6": 2, "7": 2, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0117": {
+    "moves": "The identity morphism of a frame object has underlying frame hom the identity, which applied to x gives x; closed by simp. The genuinely used facts are the hom_id lemma and the identity-application lemma, neither of which appears here — the listed items are simp's `of_eq_true`/`eq_self` residue.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 1, "5": 1},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0118": {
+    "moves": "Not a proof: the projection extracting the `property` field from the Hom structure of an induced wide category (a morphism there is by construction a morphism of D satisfying P). Nothing to argue.",
+    "grades": {"1": 2, "2": 1, "3": 3, "4": 0, "5": 2, "6": 1},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0119": {
+    "moves": "Take x with a < x and conclude a ≤ x; the entire proof is membership unfolding plus le_of_lt applied to the hypothesis.",
+    "grades": {"1": 4, "2": 2, "3": 1, "4": 1, "5": 1, "6": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0120": {
+    "moves": "Case split on the outer Option: for none both sides are none, for some y both sides reduce to y.map f. The case analysis plus definitional reduction of map and join is the whole argument.",
+    "grades": {"1": 0, "2": 3, "3": 0, "4": 2, "5": 0, "6": 0, "7": 3, "8": 1, "9": 4, "10": 0, "11": 2, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "proof_0217": {
+    "moves": "States that the underlying Equiv of the inverse affine equivalence is the inverse of the underlying Equiv. This is true by definition -- AffineEquiv.symm is built by putting Equiv.symm in the toEquiv field -- so the proof is rfl. The content is pure definitional unfolding, not a citation.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 0, "5": 1, "6": 0, "7": 4, "8": 2, "9": 1, "10": 2, "11": 0, "12": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0218": {
+    "moves": "Extracts the triangle inequality from the SeminormedSpace.Core structure: the field is literally one of the axioms bundled in Core, so the proof is a projection out of the given structure. No real mathematical step beyond naming the axiom.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 4, "5": 1, "6": 1, "7": 0, "8": 0, "9": 0, "10": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0219": {
+    "moves": "Computes the n-th object of the complex I produced by the cm5b factorization construction. It holds by definition of I (its X field is given by that formula), so the proof is Eq.refl. Everything else is the ambient abelian-category and Int-graded-shape setup.",
+    "grades": {"1": 0, "2": 2, "3": 3, "4": 4, "5": 0, "6": 0, "7": 1, "8": 1, "9": 2, "10": 1, "11": 0, "12": 0, "13": 0, "14": 0, "15": 0, "16": 0, "17": 0, "18": 1, "19": 0, "20": 0, "21": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0220": {
+    "moves": "Two module structures over the same additive monoid give the same scalar action of a nonnegative rational. The trick is to apply the general lemma that any additive monoid hom commutes with NNRat scalars, instantiated at the identity hom, so the hom equation collapses to the desired equality.",
+    "grades": {"1": 0, "2": 2, "3": 0, "4": 1, "5": 2, "6": 0, "7": 1, "8": 0, "9": 2, "10": 4, "11": 1, "12": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0221": {
+    "moves": "Shows that pulling back the pushforward of a sieve along the Over-forgetful functor returns a described sieve. The proof reduces sieve equality to equality of the underlying arrow families via Sieve.arrows_ext, then rewrites with the presieve-level computations of pushforward/pullback along Over.forget.",
+    "grades": {"1": 0, "2": 3, "3": 0, "4": 3, "5": 3, "6": 2, "7": 4, "8": 2, "9": 0, "10": 1, "11": 3, "12": 2, "13": 4, "14": 2, "15": 1, "16": 2, "17": 4, "18": 0, "19": 0, "20": 1, "21": 2, "22": 2, "23": 3, "24": 0, "25": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0222": {
+    "moves": "Specialises the general 'n is congruent to its digit sum mod b when the base is 1 mod b' lemma to base 10 and modulus 3, discharging the numeric side condition 10 % 3 = 1 by computation. The only real step is picking the instantiation.",
+    "grades": {"1": 1, "2": 0, "3": 4, "4": 1, "5": 1, "6": 1, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0223": {
+    "moves": "The forgetful functor on Action objects preserves limits because it is naturally isomorphic to the composite of the equivalence with the functor category followed by evaluation at the single object; limit preservation transports along a natural isomorphism, and the composite preserves limits since equivalences and evaluation do.",
+    "grades": {"1": 3, "2": 0, "3": 1, "4": 2, "5": 1, "6": 2, "7": 2, "8": 4, "9": 2, "10": 3, "11": 2, "12": 3, "13": 1, "14": 2, "15": 0, "16": 4, "17": 0, "18": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0224": {
+    "moves": "Unfolds the Ord-based min on dependent pairs into an if-then-else on whether compare says less-or-equal, and pushes an outer function/projection through that if-then-else. The real content is apply_ite plus congruence on the branches -- pure rewriting.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 2, "5": 0, "6": 0, "7": 1, "8": 3, "9": 1, "10": 2, "11": 4, "12": 1, "13": 4, "14": 1, "15": 1, "16": 0, "17": 0, "18": 3, "19": 1, "20": 0, "21": 3, "22": 3, "23": 0, "24": 0},
+    "missing_key": false,
+    "confidence": "low"
+  },
+  "proof_0225": {
+    "moves": "The sum of a digit list is bounded by ofDigits at base b. Rewrite the list sum as ofDigits at base 1 (ofDigits_one), then apply monotonicity of ofDigits in the base. Two citations glued by a single rewrite.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 0, "5": 1, "6": 0, "7": 0, "8": 1, "9": 4, "10": 0, "11": 3, "12": 1, "13": 4, "14": 2, "15": 1, "16": 3, "17": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0226": {
+    "moves": "Computes the right component of the Arrow-object produced by the toArrow functor on an augmented cosimplicial object. It holds by definition of toArrow, so the proof is Eq.refl; the content is definitional unfolding.",
+    "grades": {"1": 3, "2": 4, "3": 0, "4": 2, "5": 2, "6": 1, "7": 2, "8": 2, "9": 1, "10": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0227": {
+    "moves": "Subtraction on UInt64 is defined by transporting Fin subtraction through toFin, so toFin of a difference is the difference of toFin's. The proof is rfl; the content is that the Sub instance is defined exactly that way.",
+    "grades": {"1": 4, "2": 2, "3": 3, "4": 2, "5": 0, "6": 2, "7": 3, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0228": {
+    "moves": "The forward map of an Equiv composed with a PartialEquiv is the composite of the two forward maps -- true by construction of transPartialEquiv, so the proof is Eq.refl. Pure definitional unfolding.",
+    "grades": {"1": 2, "2": 2, "3": 3, "4": 4, "5": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0229": {
+    "moves": "Appending the empty ByteArray on the left is the identity. Reduce to the underlying Array via ByteArray.ext, rewrite the append with data_append, and finish with the Array-level empty_append. The whole argument is 'transport the Array fact through the wrapper'.",
+    "grades": {"1": 1, "2": 2, "3": 4, "4": 0, "5": 0, "6": 3, "7": 1, "8": 4, "9": 1, "10": 2, "11": 2, "12": 0, "13": 0, "14": 0, "15": 0, "16": 0, "17": 4, "18": 0, "19": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0230": {
+    "moves": "The coweight map of the inverse of a root-pairing equivalence is the stated inverse linear map -- true by definition of Equiv.symm, whose toHom field is built from that data. The proof is rfl.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 2, "5": 0, "6": 2, "7": 2, "8": 4, "9": 1, "10": 0, "11": 4, "12": 1, "13": 1, "14": 0, "15": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0231": {
+    "moves": "Builds the grind ToInt.Div instance for UInt8: constructs the structure and discharges its single obligation, that the integer image of a UInt8 quotient equals the quotient of the images, using UInt8.toNat_div plus the Nat-to-Int cast compatibility. The content is the toNat_div lemma packaged into a constructor.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 1, "5": 1, "6": 1, "7": 2, "8": 3, "9": 0, "10": 4, "11": 2, "12": 3, "13": 3, "14": 3, "15": 0, "16": 2, "17": 0, "18": 0, "19": 0, "20": 0, "21": 0, "22": 1, "23": 2, "24": 0, "25": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0232": {
+    "moves": "Assembles the PreservesLimitsOfSize instance for the forgetful functor on MonCat from the already-registered per-shape and per-diagram preservation instances -- two constructor applications wrapping inferInstance. The mathematics lives in those prior instances; here it is packaging.",
+    "grades": {"1": 3, "2": 1, "3": 0, "4": 3, "5": 1, "6": 1, "7": 1, "8": 0, "9": 0, "10": 0, "11": 2, "12": 1, "13": 2, "14": 3, "15": 2, "16": 0, "17": 3, "18": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0233": {
+    "moves": "From a product of two integers equal to one, deduce the two factors are equal. Invoke the classification that either both are 1 or both are -1, then case split on that disjunction and in each branch chain the two equalities. The case split is the argument.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 2, "5": 4, "6": 1, "7": 1, "8": 2, "9": 1, "10": 2, "11": 0, "12": 0, "13": 1, "14": 0, "15": 4, "16": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0234": {
+    "moves": "Given a reflexive transitive relation holding between consecutive integers above a, and a <= b, conclude the relation holds from a to b. Split a <= b into a = b or a < b: the equality case is closed by reflexivity (rewriting along the equality), the strict case by the already-proved strict version.",
+    "grades": {"1": 3, "2": 0, "3": 0, "4": 0, "5": 4, "6": 2, "7": 3, "8": 4, "9": 4, "10": 1, "11": 0, "12": 1, "13": 2, "14": 2, "15": 2, "16": 1, "17": 2, "18": 0, "19": 0, "20": 0, "21": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0235": {
+    "moves": "The list of the keys array of a tree map equals the key list. Rewrite keysArray as the toArray of keys, then cancel toList of toArray, with keys_eq_keys connecting the Impl-level and list-model-level key functions. Chaining defining lemmas.",
+    "grades": {"1": 4, "2": 0, "3": 0, "4": 3, "5": 3, "6": 2, "7": 3, "8": 0, "9": 0, "10": 0, "11": 1, "12": 1, "13": 2, "14": 2, "15": 1, "16": 2, "17": 0, "18": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0236": {
+    "moves": "Computes getKey! on a list filtered by a predicate on keys. Reduce the panicking getKey! to the Option-valued getKey? via getKey!_eq_getKey?, apply the already-proved getKey?_filter_key, and read off get! of the filtered Option.",
+    "grades": {"1": 2, "2": 2, "3": 2, "4": 2, "5": 0, "6": 0, "7": 1, "8": 1, "9": 2, "10": 4, "11": 1, "12": 2, "13": 3, "14": 3, "15": 0, "16": 3, "17": 0, "18": 0, "19": 0, "20": 4, "21": 1, "22": 3, "23": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0237": {
+    "moves": "Identifies the forward map of the canonical isomorphism between the product of an initial object with X and the initial object. It holds by definition of initialMul, so the proof is Eq.refl; the ambient strict-initial and binary-product hypotheses are what make the iso exist at all.",
+    "grades": {"1": 1, "2": 3, "3": 2, "4": 0, "5": 1, "6": 2, "7": 4, "8": 0, "9": 3, "10": 3, "11": 2, "12": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0238": {
+    "moves": "Proves an iff between two right-Kan-extension statements related by an isomorphism of the data. Both directions are the same move: take the universal (terminal) object of right extensions attached to one side, transport it across the equivalence of right-extension categories induced by the iso, and repackage it with the IsRightKanExtension constructor.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 4, "5": 2, "6": 0, "7": 0, "8": 4, "9": 2, "10": 3, "11": 2, "12": 2, "13": 3, "14": 2, "15": 2, "16": 2, "17": 1, "18": 3, "19": 1, "20": 1, "21": 1, "22": 2, "23": 2, "24": 0, "25": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0239": {
+    "moves": "Identifies the unit isomorphism of the equivalence of discrete categories induced by a type equivalence. It is definitionally the stated iso built pointwise from the Equiv's left inverse property, so the proof is Eq.refl -- definitional unfolding of the equivalence's construction.",
+    "grades": {"1": 3, "2": 0, "3": 2, "4": 2, "5": 4, "6": 2, "7": 1, "8": 0, "9": 4, "10": 2, "11": 2, "12": 0, "13": 1, "14": 2, "15": 0, "16": 2, "17": 2, "18": 3},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0240": {
+    "moves": "The underlying linear map of the opposite algebra hom is the same function as the original -- toOpposite only changes the multiplicative target to MulOpposite (using the commuting hypothesis) and leaves the additive/scalar structure untouched, so both sides are the same map by definition and the proof is rfl.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 1, "5": 1, "6": 1, "7": 0, "8": 0, "9": 0, "10": 2, "11": 2, "12": 4, "13": 2, "14": 3, "15": 0, "16": 4, "17": 1, "18": 1, "19": 0, "20": 0, "21": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  }
+}

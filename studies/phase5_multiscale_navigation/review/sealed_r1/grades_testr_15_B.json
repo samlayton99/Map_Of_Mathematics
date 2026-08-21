@@ -1,0 +1,146 @@
+{
+  "proof_0337": {
+    "moves": "Pure definitional unfolding: the first component of WithLp.toLp x is x.fst by construction, so rfl closes it. No mathematical idea beyond the fact that toLp is a type-synonym wrapper and fst is the plain projection.",
+    "grades": {"1": 1, "2": 3, "3": 3, "4": 2, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0338": {
+    "moves": "An API simp lemma stating what isEmptyRingEquiv does to an element; true by definitional unfolding of the equiv's forward map, closed by Eq.refl. The content is the definition of the equiv itself, not any argument.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 3, "5": 1, "6": 0, "7": 2, "8": 0, "9": 0, "10": 0, "11": 0, "12": 1, "13": 0, "14": 0, "15": 0, "16": 1, "17": 1, "18": 1, "19": 0, "20": 0, "21": 2, "22": 1, "23": 0, "24": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0339": {
+    "moves": "A faithfully flat ring map gives a regular epi in the opposite category (the cited construction), and regular epis are effective epis; transport along that equivalence. Two citations plus one Iff.mp.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 1, "5": 1, "6": 0, "7": 1, "8": 4, "9": 2, "10": 1, "11": 1, "12": 3, "13": 4, "14": 0, "15": 0, "16": 0, "17": 1, "18": 1, "19": 0, "20": 1, "21": 0, "22": 0, "23": 0, "24": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0340": {
+    "moves": "Take the known iff characterizing when the ENNReal-to-EReal coercion equals 1 and negate both sides. The whole proof is Iff.not applied to that lemma.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 2, "5": 1, "6": 4, "7": 0, "8": 2, "9": 1, "10": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0341": {
+    "moves": "dropEndWhile is sliceTo applied to skipSuffixWhile, so the statement follows by congrArg from the already-proved agreement of the Char pattern and the (· == c) predicate pattern for skipSuffixWhile.",
+    "grades": {"1": 2, "2": 0, "3": 2, "4": 4, "5": 1, "6": 1, "7": 1, "8": 1, "9": 0, "10": 1, "11": 2, "12": 2, "13": 2, "14": 2, "15": 2, "16": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0342": {
+    "moves": "On the empty list the predicate reduces to a claim that Sign.zero is Sign.pos, which fails by constructor distinctness. Proof is decide/simp automation: the real content is the definitional reduction plus no-confusion, and most of the term is simp residue.",
+    "grades": {"1": 3, "2": 0, "3": 0, "4": 2, "5": 1, "6": 2, "7": 0, "8": 1, "9": 2, "10": 1, "11": 0, "12": 2, "13": 1, "14": 0, "15": 1, "16": 1, "17": 0, "18": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0343": {
+    "moves": "Pure finite computation: expand the 2x2 determinant of the explicit G2 Cartan matrix over the integers and check it equals 1. Discharged by decide, so the content is decidability of integer equality plus evaluation, not any theorem.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 1, "5": 1, "6": 1, "7": 3, "8": 0, "9": 0, "10": 0, "11": 1, "12": 1, "13": 0, "14": 2, "15": 3, "16": 2, "17": 1, "18": 2, "19": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0344": {
+    "moves": "Unfolds the Zero instance on FormalGroup.Point: the underlying power series of the zero point is 0 by construction, so rfl. Definitional, no argument.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 3, "5": 3, "6": 1, "7": 2, "8": 1, "9": 0, "10": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0345": {
+    "moves": "symm is an order-reversing involution on the unit interval: a <= symm b iff symm(symm b) <= symm a, and symm(symm b) = b. So the two cited facts (antitone iff, and involutivity) rewrite the goal to itself.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 0, "5": 4, "6": 1, "7": 0, "8": 1, "9": 1, "10": 1, "11": 3, "12": 1, "13": 1, "14": 1, "15": 1, "16": 0, "17": 1, "18": 4, "19": 2, "20": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0346": {
+    "moves": "Specialize the Holder-triple transfer to NNReal at the conjugate case, then rewrite Real.toNNReal 1 = 1 so the resulting statement matches the intended NNReal form.",
+    "grades": {"1": 1, "2": 1, "3": 3, "4": 1, "5": 0, "6": 1, "7": 0, "8": 2, "9": 1, "10": 3, "11": 3, "12": 0, "13": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0347": {
+    "moves": "Strict monotonicity of ecard on finite sets is exactly repeated application of the strict-inclusion-increases-ecard lemma; the proof just packages that one fact into the StrictMonoOn shape.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 0, "5": 2, "6": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0348": {
+    "moves": "Unfold rank as the supremum over linearly independent subsets of their cardinality, then bound the supremum: each such subset injects into the ambient set, so its cardinal is at most the card of the set. Sup-bound lemma plus a cardinality-of-subset bound.",
+    "grades": {"1": 0, "2": 4, "3": 0, "4": 0, "5": 2, "6": 2, "7": 0, "8": 3, "9": 0, "10": 2, "11": 0, "12": 1, "13": 1, "14": 2, "15": 0, "16": 3, "17": 1, "18": 1, "19": 1, "20": 0, "21": 1, "22": 4, "23": 1, "24": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0349": {
+    "moves": "Definitional unfolding of the inverse of the uniqueProd homeomorphism on the second component; rfl. The only content is the definition of uniqueProd.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 3, "5": 2, "6": 2, "7": 1, "8": 0, "9": 1, "10": 2, "11": 0, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0350": {
+    "moves": "Reads off the object part of the extend-scalars pseudofunctor from its definition; true by rfl after peeling the Pseudofunctor -> PrelaxFunctor -> Prefunctor projections. No mathematics.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 0, "5": 1, "6": 1, "7": 2, "8": 2, "9": 1, "10": 1, "11": 0, "12": 1, "13": 3, "14": 1, "15": 0, "16": 0, "17": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0351": {
+    "moves": "The hypothesis that every subspace is normal is one direction of an existing characterization of complete normality; apply Iff.mpr to it. One citation.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 2, "5": 1, "6": 2, "7": 1, "8": 1, "9": 2, "10": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0352": {
+    "moves": "The constant polynomial 1 is C 1, so the Taylor shift fixes it; the proof is the taylor-of-a-constant lemma specialized at 1, with the rest instance projections for the numeral 1.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 4, "5": 0, "6": 1, "7": 0, "8": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0353": {
+    "moves": "A homeomorphism is a closed embedding, and precomposition with a closed embedding preserves compact multiplicative support. Two citations chained.",
+    "grades": {"1": 2, "2": 4, "3": 0, "4": 0, "5": 1, "6": 4, "7": 2, "8": 1, "9": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0354": {
+    "moves": "vsub of finsets is image2 of the vsub operation, so the inclusion for intersection on the right side is literally the general image2 lemma instantiated. One citation.",
+    "grades": {"1": 1, "2": 4, "3": 2, "4": 1, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0355": {
+    "moves": "Wrapper lifting: unfold the Raw tree map to its internal Impl representation, extract the well-formedness witness with WF.out, and apply the corresponding Impl-level lemma. No new mathematics.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 1, "5": 2, "6": 2, "7": 1, "8": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0356": {
+    "moves": "Unfolds the inverse of the coprime-power equivalence on an element; it is the defined formula by construction, so Eq.refl. The content is the definition of powCoprime.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 2, "5": 0, "6": 2, "7": 1, "8": 1, "9": 2, "10": 3, "11": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0357": {
+    "moves": "Boxes are nonempty as sets, so two disjoint box-sets cannot be equal; contrapose the injectivity of the box-to-set coercion, using Disjoint.ne with the nonemptiness (coe never empty).",
+    "grades": {"1": 4, "2": 4, "3": 0, "4": 0, "5": 1, "6": 0, "7": 2, "8": 0, "9": 1, "10": 0, "11": 0, "12": 0, "13": 4, "14": 0, "15": 2, "16": 0, "17": 2, "18": 1, "19": 1, "20": 1, "21": 0, "22": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0358": {
+    "moves": "Continuity into the units group is checked componentwise (value and inverse-value); both components are the given continuous hom composed with the continuous coercion, respectively the continuous inverse-coercion. Apply the componentwise criterion and pair the two composites.",
+    "grades": {"1": 1, "2": 3, "3": 1, "4": 1, "5": 1, "6": 1, "7": 1, "8": 2, "9": 1, "10": 2, "11": 1, "12": 0, "13": 2, "14": 3, "15": 2, "16": 0, "17": 1, "18": 2, "19": 0, "20": 0, "21": 0, "22": 1, "23": 4, "24": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0359": {
+    "moves": "A currying/repackaging variant of primitive recursion: feed the standard nat_rec the reassociated pair of arguments via composition of primitive recursive functions, with the identity for the unchanged slot. The real work is the argument reshuffle, not a new idea.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 1, "5": 4, "6": 0, "7": 1, "8": 3, "9": 1, "10": 2, "11": 2, "12": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0360": {
+    "moves": "Wrapper lifting again: the Raw-level statement about getKey! on a unit tree map built from a pairwise-distinct list reduces to the internal Impl lemma about insertManyIfNewUnit into the empty map. Pure delegation.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 2, "5": 1, "6": 1, "7": 2, "8": 2, "9": 0, "10": 4, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

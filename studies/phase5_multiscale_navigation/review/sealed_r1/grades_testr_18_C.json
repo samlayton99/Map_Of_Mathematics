@@ -1,0 +1,146 @@
+{
+  "proof_0409": {
+    "moves": "Pure definitional unfolding: the value of the exponential map on the fundamental cone at a point is by definition the coordinatewise exponential, so the proof is rfl. No mathematical step beyond unfolding the partial-homeomorph coercion.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 2, "6": 0, "7": 0, "8": 0, "9": 2, "10": 2, "11": 0, "12": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0410": {
+    "moves": "The coercion of the constant modular form to a function is the constant function, true by definition; the proof is Eq.refl after unfolding the FunLike coercion. All the group/matrix scaffolding is just the ambient setting.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 4, "5": 0, "6": 2, "7": 1, "8": 0, "9": 1, "10": 1, "11": 0, "12": 0, "13": 2, "14": 0, "15": 1, "16": 1, "17": 1, "18": 1, "19": 0, "20": 1, "21": 1, "22": 0, "23": 1, "24": 2, "25": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0411": {
+    "moves": "Splitting of p * X is the same as splitting of X * p, so commute the product and quote the already-proved X * p version; the rest is simp closing an iff by reflexivity.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 0, "6": 4, "7": 0, "8": 1, "9": 0, "10": 0, "11": 0, "12": 4, "13": 2, "14": 0, "15": 0, "16": 2, "17": 0, "18": 1, "19": 0, "20": 1, "21": 1, "22": 1, "23": 0, "24": 0, "25": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0412": {
+    "moves": "Adding a fixed constant is a measurable map, so composing it with an identically-distributed pair preserves identical distribution: apply the composition lemma with measurability of const-add.",
+    "grades": {"1": 4, "2": 1, "3": 3, "4": 1, "5": 1, "6": 0, "7": 1, "8": 1, "9": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0413": {
+    "moves": "Real exp is the restriction of complex exp to the reals; since complex exp is smooth as a complex function, the real-of-complex transfer lemma gives smoothness of the real one.",
+    "grades": {"1": 0, "2": 4, "3": 0, "4": 2, "5": 1, "6": 4, "7": 0, "8": 1, "9": 0, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0414": {
+    "moves": "Two directions: forward, a conjugate root produces an algebra equivalence carrying one to the other (the normality/minimal-polynomial content); backward, any algebra equivalence sends a root to a conjugate root, with a symmetry step to orient it. The Iff.intro plus destructuring of the existential is packaging.",
+    "grades": {"1": 0, "2": 1, "3": 2, "4": 4, "5": 1, "6": 1, "7": 0, "8": 1, "9": 3, "10": 0, "11": 0, "12": 2, "13": 1, "14": 4, "15": 0, "16": 2, "17": 0, "18": 2, "19": 1, "20": 2, "21": 0, "22": 0, "23": 0, "24": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0415": {
+    "moves": "Negation is a measurable map, so precomposing an a.e.-measurable function with it (composition of measurable with aemeasurable) is again a.e. measurable.",
+    "grades": {"1": 3, "2": 2, "3": 4, "4": 1, "5": 1, "6": 2, "7": 1, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0416": {
+    "moves": "The iff form of extensionality: backward direction is the already-proved ext lemma, forward direction is just congruence on the coercion. The real content is the ext lemma; everything else is equality/subst plumbing.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 1, "5": 1, "6": 0, "7": 1, "8": 2, "9": 1, "10": 2, "11": 2, "12": 0, "13": 1, "14": 0, "15": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0417": {
+    "moves": "Preservation of the pullback for one arm of the cospan follows from preservation for the other by the symmetry of pullbacks; the proof just transports the existing instance across that symmetry.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 2, "5": 1, "6": 0, "7": 1, "8": 0, "9": 0, "10": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0418": {
+    "moves": "Meromorphy on a set is meromorphy at each point, so fix a point and apply the pointwise quotient lemma for meromorphic germs.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 0, "5": 4, "6": 1, "7": 0, "8": 0, "9": 1, "10": 0, "11": 0, "12": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0419": {
+    "moves": "The trivialization at a point of a vector bundle core is by definition the local trivialization at the index of that point, so the statement reduces to the already-proved localTriv version of the symmL formula.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 1, "6": 1, "7": 0, "8": 0, "9": 2, "10": 1, "11": 0, "12": 1, "13": 0, "14": 0, "15": 4, "16": 2, "17": 1, "18": 0, "19": 0, "20": 2, "21": 1, "22": 2, "23": 0, "24": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0420": {
+    "moves": "Smoothness is pointwise smoothness, so rewrite both hypotheses and the goal through contDiff_iff_contDiffAt and apply the pointwise product-map lemma at each point of the product.",
+    "grades": {"1": 4, "2": 1, "3": 0, "4": 0, "5": 2, "6": 0, "7": 0, "8": 1, "9": 1, "10": 4, "11": 1, "12": 2, "13": 0, "14": 1, "15": 0, "16": 1, "17": 0, "18": 1, "19": 2, "20": 0, "21": 1, "22": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0421": {
+    "moves": "The Stieltjes function built from a measurable rational CDF is nonnegative; the proof just supplies the instance saying toRatCDF really is a measurable rational CDF and quotes the general nonnegativity lemma.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 1, "5": 1, "6": 0, "7": 3, "8": 0, "9": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0422": {
+    "moves": "The representative of a rational map is defined by choice from the existence statement, so its defining property is exactly Exists.choose_spec applied to exists_rep. The whole content is unpacking that choice.",
+    "grades": {"1": 4, "2": 1, "3": 1, "4": 1, "5": 2, "6": 4, "7": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0423": {
+    "moves": "At exponent infinity the eLpNorm is the essential sup, so the statement is the already-proved essential-sup formula for a piecewise function, transported through that identification.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 1, "5": 1, "6": 1, "7": 4, "8": 1, "9": 1, "10": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0424": {
+    "moves": "The coercion from reals to extended reals is measurable, so composing it with an a.e.-measurable function keeps a.e. measurability.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 1, "5": 4, "6": 0, "7": 1, "8": 2, "9": 2, "10": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0425": {
+    "moves": "Membership in the support is tested on a neighbourhood basis; take the tautological basis of the neighbourhood filter and feed it to the has-basis characterisation of the support, turning it into a statement over all basis sets.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 1, "5": 1, "6": 0, "7": 1, "8": 1, "9": 3, "10": 4, "11": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0426": {
+    "moves": "Cast the natural number to an integer (the casts agree in the reals) and invoke the integer version of the same inequality; the only step is the cast bookkeeping.",
+    "grades": {"1": 1, "2": 2, "3": 4, "4": 1, "5": 1, "6": 1, "7": 1, "8": 1, "9": 0, "10": 1, "11": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0427": {
+    "moves": "A probability measure's underlying finite measure has the same values on sets by construction, so the coercion identity holds by rfl. Definitional unfolding only.",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 1, "5": 2, "6": 1, "7": 1, "8": 2, "9": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0428": {
+    "moves": "The quotient map is surjective and continuous (continuity for the coinduced topology is automatic), so path-connectedness transfers from the space to its quotient via the surjective-image lemma.",
+    "grades": {"1": 3, "2": 3, "3": 2, "4": 1, "5": 1, "6": 1, "7": 2, "8": 4, "9": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0429": {
+    "moves": "The unit of the operator-norm algebra of continuous linear maps is the identity map, and the identity has operator norm one on a nontrivial space; construct the NormOneClass instance from that.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 2, "5": 1, "6": 4, "7": 0, "8": 2, "9": 0, "10": 0, "11": 1, "12": 0, "13": 0, "14": 2, "15": 0, "16": 0, "17": 2, "18": 2, "19": 0, "20": 1, "21": 0, "22": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0430": {
+    "moves": "The interior is open and contained in the null set, so by monotonicity it is null too; an open null set in a space with the open-positive-measure property must be empty.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 1, "5": 1, "6": 0, "7": 3, "8": 3, "9": 4, "10": 1, "11": 1, "12": 1, "13": 2, "14": 0, "15": 3, "16": 1, "17": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0431": {
+    "moves": "Swapping coordinates is a measurable equivalence whose inverse is itself, so comap along swap equals map along its symm by the general comap-symm lemma for measurable equivalences.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 0, "6": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0432": {
+    "moves": "Use that the map is measure-preserving to replace the pushforward measure by the original, then move the restricted integral across the measurable embedding using the map-restriction and lintegral-under-embedding lemmas; the rest is rewriting.",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 4, "5": 1, "6": 4, "7": 1, "8": 1, "9": 1, "10": 3, "11": 2, "12": 1, "13": 1, "14": 0, "15": 2, "16": 2, "17": 1, "18": 1, "19": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  }
+}

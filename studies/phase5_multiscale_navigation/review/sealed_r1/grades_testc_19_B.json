@@ -1,0 +1,170 @@
+{
+  "proof_0433": {
+    "moves": "Structural induction on the red-black node, with a three-way case split on the comparison result, showing the insertion function preserves the Ordered invariant in each branch.",
+    "grades": {"1": 2, "2": 3, "3": 2, "4": 1, "5": 2, "6": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"4": "A"}
+  },
+  "proof_0434": {
+    "moves": "The right factor of a concatenation is a sublist of the whole list (reflexivity plus the append-sublist lemma), and well-formedness of a basis is inherited along sublists.",
+    "grades": {"1": 3, "2": 1, "3": 3, "4": 1, "5": 1, "6": 0, "7": 0, "8": 2, "9": 0, "10": 4, "11": 1, "12": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "D", "4": "G", "5": "C", "6": "C", "7": "C", "9": "G", "11": "G"}
+  },
+  "proof_0435": {
+    "moves": "Exhibit an explicit colimit cocone: take the pushout of the already-existing span, package its two legs into a PushoutCocone, and use the epi-comp variant of the pushout universal property to see it is a colimit; conclude HasPushout by Nonempty of a ColimitCocone.",
+    "grades": {"1": 3, "2": 3, "3": 2, "4": 4, "5": 2, "6": 2, "7": 0, "8": 3, "9": 0, "10": 1, "11": 2, "12": 3, "13": 1, "14": 2, "15": 3, "16": 0, "17": 3, "18": 1, "19": 0, "20": 1, "21": 1, "22": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"7": "C", "9": "C", "10": "A", "13": "C", "16": "C", "18": "E", "19": "C", "20": "G", "21": "G", "22": "E"}
+  },
+  "proof_0436": {
+    "moves": "Prove both implications of the iff: unfold semicontinuity as a neighborhood-filter condition and, in one direction, use that an open set containing the point is a neighborhood; the other direction is the definitional membership rewriting of the sublevel/superlevel set.",
+    "grades": {"1": 0, "2": 2, "3": 4, "4": 3, "5": 1, "6": 1, "7": 1, "8": 1, "9": 1, "10": 3, "11": 1, "12": 1, "13": 1, "14": 0, "15": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "5": "C", "6": "E", "7": "C", "8": "E", "9": "G", "11": "G", "12": "A", "13": "C", "14": "D"}
+  },
+  "proof_0437": {
+    "moves": "Rewrite the 64-bit bitvector of the USize conversion using the known toBitVec-of-toUSize lemma, then push that rewrite under the width cast by congruence and close by reflexivity; the real content is width bookkeeping between numBits and 64 via setWidth.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 3, "5": 0, "6": 1, "7": 1, "8": 1, "9": 1, "10": 1, "11": 3, "12": 0, "13": 3, "14": 3, "15": 4, "16": 3, "17": 2, "18": 2, "19": 1, "20": 0, "21": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "E", "5": "D", "6": "E", "7": "E", "8": "G", "9": "D", "10": "G", "12": "D", "19": "E", "20": "C"}
+  },
+  "proof_0438": {
+    "moves": "Introduce the hypothesis n+1 <= 0 and case on the inductive definition of Nat's order: neither constructor can produce a successor below zero, so the case analysis is vacuous and yields False.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 0, "5": 1, "6": 2, "7": 2, "8": 0, "9": 2, "10": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "3": "A", "4": "C", "5": "C", "8": "C", "10": "C"}
+  },
+  "proof_0439": {
+    "moves": "Case on the walk (it is not nil, so it ends in a cons/concat step) and read off the adjacency of the penultimate vertex with the endpoint from the final edge of the walk; the argument is an induction packaged into a generated helper.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 3, "5": 1},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"2": "G", "3": "A", "5": "E"}
+  },
+  "proof_0440": {
+    "moves": "Unfold the ForIn instance for monadic iterators to the underlying IteratorLoop.forIn and transport the hypothesised equality of loop bodies through by congruence under binders; the proof is essentially pure equality/HEq transport, which here really is the content.",
+    "grades": {"1": 1, "2": 2, "3": 3, "4": 1, "5": 2, "6": 2, "7": 2, "8": 2, "9": 1, "10": 0, "11": 2, "12": 0, "13": 1, "14": 2, "15": 2, "16": 2, "17": 1, "18": 1, "19": 3, "20": 1, "21": 1, "22": 2},
+    "missing_key": false,
+    "confidence": "low",
+    "causes": {"1": "C", "4": "E", "9": "A", "10": "C", "12": "D", "13": "E", "17": "D", "18": "C", "20": "E", "21": "C"}
+  },
+  "proof_0441": {
+    "moves": "Destructure the hash map into its raw representation plus the well-formedness proof, repackage as the size-positive subtype, and apply the corresponding internal Raw-level lemma; no new mathematics, it is a lift across the wrapper.",
+    "grades": {"1": 0, "2": 1, "3": 2, "4": 4, "5": 1, "6": 2, "7": 1, "8": 2, "9": 0, "10": 1, "11": 0, "12": 0, "13": 1, "14": 1, "15": 0, "16": 2, "17": 1, "18": 0, "19": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "5": "C", "7": "A", "9": "C", "10": "C", "11": "C", "12": "C", "13": "C", "14": "G", "15": "C", "17": "C", "18": "C", "19": "C"}
+  },
+  "proof_0442": {
+    "moves": "Transport both sides to bitvectors via toBitVec, use that complement commutes with the representation map, and finish with the corresponding bitvector commutation of negation; the surrounding structure is a simp certificate.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 4, "5": 1, "6": 1, "7": 1, "8": 0, "9": 1, "10": 1, "11": 1, "12": 3, "13": 2, "14": 3, "15": 1, "16": 1, "17": 0, "18": 1, "19": 0, "20": 1, "21": 0},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "A", "3": "E", "5": "D", "6": "D", "7": "D", "8": "C", "9": "E", "10": "D", "11": "G", "15": "D", "16": "G", "17": "C", "18": "A", "19": "C", "20": "D", "21": "D"}
+  },
+  "proof_0443": {
+    "moves": "Purely definitional: unfold the short complex sc1 attached to the spectral object and read off its middle object X2, closing by reflexivity.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 1, "5": 0, "6": 2, "7": 1, "8": 2, "9": 0, "10": 3, "11": 0, "12": 0, "13": 1, "14": 1, "15": 0, "16": 4, "17": 0, "18": 1, "19": 0, "20": 1, "21": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "3": "A", "4": "C", "5": "D", "7": "G", "9": "C", "11": "C", "12": "C", "13": "E", "14": "C", "15": "C", "17": "C", "18": "C", "19": "C", "20": "C", "21": "C"}
+  },
+  "proof_0444": {
+    "moves": "Push the nonnegative-real distance through the coercion to the reals, so that nndist x y = 0 becomes dist x y = 0, and apply the metric-space separation axiom dist_eq_zero.",
+    "grades": {"1": 1, "2": 3, "3": 0, "4": 1, "5": 0, "6": 0, "7": 0, "8": 1, "9": 1, "10": 1, "11": 1, "12": 2, "13": 1, "14": 1, "15": 0, "16": 1, "17": 2, "18": 1, "19": 4, "20": 3},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "E", "3": "C", "4": "D", "5": "C", "6": "C", "7": "C", "8": "D", "9": "D", "10": "G", "11": "C", "13": "E", "14": "A", "15": "D", "16": "D", "18": "D"}
+  },
+  "proof_0445": {
+    "moves": "Unfold the Int8 order relations to the corresponding order on the underlying integers via toInt, then apply the integer mixed-transitivity lemma.",
+    "grades": {"1": 1, "2": 0, "3": 2, "4": 0, "5": 1, "6": 1, "7": 0, "8": 2, "9": 0, "10": 2, "11": 4, "12": 0, "13": 3, "14": 1, "15": 1, "16": 1},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"1": "D", "2": "C", "4": "C", "5": "E", "6": "C", "7": "C", "9": "D", "12": "C", "14": "C", "15": "A", "16": "A"}
+  },
+  "proof_0446": {
+    "moves": "Unfold deleteVerts as the induced subgraph on the vertex set minus the deleted set, apply the adjacency characterisation of induce, and expand set-difference membership into a conjunction with a negation.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 1, "5": 0, "6": 1, "7": 0, "8": 3, "9": 3, "10": 1, "11": 1, "12": 1, "13": 1, "14": 2, "15": 2, "16": 1, "17": 3, "18": 0, "19": 1, "20": 1, "21": 3, "22": 3, "23": 1, "24": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "G", "3": "D", "4": "D", "5": "C", "6": "D", "7": "C", "10": "A", "11": "C", "12": "D", "13": "E", "16": "E", "18": "D", "19": "D", "20": "G", "23": "D", "24": "E"}
+  },
+  "proof_0447": {
+    "moves": "Use the criterion for when two drops of a list agree, then normalise the index arithmetic: min is associative and min n (length) is already at most the length, so clamping twice is clamping once.",
+    "grades": {"1": 4, "2": 0, "3": 0, "4": 1, "5": 0, "6": 2, "7": 3, "8": 1, "9": 1, "10": 1, "11": 1, "12": 1, "13": 1, "14": 3, "15": 3, "16": 3, "17": 3, "18": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "D", "4": "G", "5": "C", "8": "E", "9": "G", "10": "D", "11": "D", "12": "D", "13": "D", "18": "C"}
+  },
+  "proof_0448": {
+    "moves": "Transport to bitvectors (complement commutes with toBitVec) and use that a bitvector of positive width is never equal to its own complement, discharging positivity of the platform word size.",
+    "grades": {"1": 1, "2": 4, "3": 3, "4": 1, "5": 1, "6": 0, "7": 0, "8": 1, "9": 2, "10": 3, "11": 2, "12": 3, "13": 1, "14": 0, "15": 0, "16": 1, "17": 1, "18": 4, "19": 1, "20": 1, "21": 1, "22": 2, "23": 1, "24": 0, "25": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "E", "4": "E", "5": "D", "6": "C", "7": "C", "8": "D", "13": "G", "14": "D", "15": "C", "16": "D", "17": "C", "19": "A", "20": "D", "21": "E", "23": "D", "24": "C", "25": "C"}
+  },
+  "proof_0449": {
+    "moves": "Unfold the extended norm as the coercion of the nonnegative norm into the extended nonnegative reals, then use that this coercion reflects and preserves the order (coe_le_coe).",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 0, "5": 1, "6": 0, "7": 1, "8": 3, "9": 0, "10": 0, "11": 1, "12": 1, "13": 3, "14": 3, "15": 4, "16": 2, "17": 3, "18": 1, "19": 0, "20": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"3": "D", "4": "C", "5": "C", "6": "C", "7": "D", "9": "D", "10": "C", "11": "D", "12": "D", "18": "D", "19": "C", "20": "E"}
+  },
+  "proof_0450": {
+    "moves": "Destructure the hash map into its raw buckets plus well-formedness witness, repackage as the size-positive subtype, and delegate to the internal Raw-level lemma about getD under a false contains.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 1, "6": 2, "7": 2, "8": 1, "9": 0, "10": 0, "11": 0, "12": 2, "13": 0, "14": 0, "15": 0, "16": 1, "17": 1, "18": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C", "5": "C", "8": "G", "9": "C", "10": "C", "11": "C", "13": "C", "14": "C", "15": "C", "16": "A", "17": "C"}
+  },
+  "proof_0451": {
+    "moves": "Rewrite prev of a nonstart position as the normalised posLT form, then apply the characterisation of when a position is at most posLT, which turns the inequality into strict inequality.",
+    "grades": {"1": 1, "2": 2, "3": 3, "4": 1, "5": 1, "6": 1, "7": 1, "8": 2, "9": 1, "10": 0, "11": 0, "12": 1, "13": 2, "14": 1, "15": 0, "16": 0, "17": 1, "18": 4, "19": 1, "20": 1, "21": 1, "22": 1, "23": 3, "24": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "D", "4": "E", "5": "A", "6": "G", "7": "D", "9": "A", "10": "C", "11": "C", "12": "D", "14": "E", "15": "D", "16": "C", "17": "C", "19": "D", "20": "D", "21": "C", "22": "C"}
+  },
+  "proof_0452": {
+    "moves": "Contrapose the iff and use that a Finset fails to be nonempty exactly when it is empty, then invoke the characterisation that the support of a free abelian group element is empty exactly when the element is zero.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 2, "5": 0, "6": 0, "7": 2, "8": 0, "9": 0, "10": 2, "11": 1, "12": 4, "13": 0, "14": 4, "15": 0, "16": 0, "17": 1, "18": 3, "19": 1, "20": 3, "21": 2, "22": 0, "23": 3, "24": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "D", "2": "C", "3": "C", "5": "C", "6": "D", "8": "C", "9": "C", "11": "E", "13": "C", "15": "C", "16": "C", "17": "E", "19": "E", "22": "C", "24": "D"}
+  },
+  "proof_0453": {
+    "moves": "Definitional unfolding: the trivial group object is the tensor unit with its canonical structure, so its unit morphism is the identity by construction; closed by reflexivity.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 3, "5": 2, "6": 4, "7": 2, "8": 1, "9": 0, "10": 2, "11": 0, "12": 0, "13": 0, "14": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "3": "C", "8": "C", "9": "C", "11": "C", "12": "C", "13": "C", "14": "C"}
+  },
+  "proof_0454": {
+    "moves": "A continuous affine map is differentiable everywhere; restrict that global differentiability to the given set using Differentiable.differentiableOn. One-step forwarding.",
+    "grades": {"1": 0, "2": 4, "3": 1, "4": 0, "5": 0, "6": 1, "7": 2, "8": 0, "9": 1, "10": 0, "11": 0, "12": 4, "13": 0, "14": 1, "15": 0, "16": 0, "17": 0, "18": 0, "19": 1, "20": 0, "21": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "3": "C", "4": "C", "5": "C", "6": "C", "8": "C", "9": "C", "10": "C", "11": "C", "13": "C", "14": "C", "15": "C", "16": "C", "17": "C", "18": "C", "19": "G", "20": "C", "21": "C"}
+  },
+  "proof_0455": {
+    "moves": "Purely definitional: the strict betweenness relation on Fin is by construction the one coming from its circular order instance, so the iff holds by Iff.rfl.",
+    "grades": {"1": 3, "2": 0, "3": 2, "4": 1, "5": 0, "6": 2, "7": 1, "8": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "4": "G", "5": "C", "7": "C"}
+  },
+  "proof_0456": {
+    "moves": "In a preorder viewed as a category, take the top element as the candidate terminal object: every object has exactly one morphism to it (le_top, plus homs being subsingletons), so the unique-morphism criterion for a terminal object applies.",
+    "grades": {"1": 4, "2": 0, "3": 4, "4": 1, "5": 0, "6": 2, "7": 4, "8": 3, "9": 3, "10": 0, "11": 1, "12": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "4": "C", "5": "C", "10": "C", "11": "C"}
+  }
+}

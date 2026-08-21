@@ -1,0 +1,146 @@
+{
+  "proof_0241": {
+    "moves": "Instance derivation: given that a morphism property satisfies the cardinal small-object-argument hypotheses, the pushouts needed for the construction exist. The proof is a single appeal to the packaged lemma attached to that structure; the cardinal/ordinal data in the statement is carried along, not reasoned about.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 1, "5": 1, "6": 0, "7": 0, "8": 1, "9": 0, "10": 3, "11": 0, "12": 0, "13": 0, "14": 1, "15": 1, "16": 0, "17": 4, "18": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0242": {
+    "moves": "Complement commutes past a boolean `cond`: case split on the boolean condition and each branch closes by reflexivity. The whole content is the two-case analysis on Bool; everything else is decide/simp residue.",
+    "grades": {"1": 1, "2": 0, "3": 2, "4": 0, "5": 0, "6": 3, "7": 2, "8": 1, "9": 2, "10": 1, "11": 1, "12": 0, "13": 4, "14": 0, "15": 1, "16": 1, "17": 0, "18": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0243": {
+    "moves": "Graph distance is defined as the ENat extended distance coerced to Nat, so symmetry of dist follows by unfolding that definition and applying symmetry of edist under toNat. The step is: unfold, then congrArg toNat on edist_comm.",
+    "grades": {"1": 4, "2": 0, "3": 1, "4": 1, "5": 1, "6": 2, "7": 2, "8": 1, "9": 2, "10": 2, "11": 2, "12": 0, "13": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0244": {
+    "moves": "Precomposing a dense functor with an equivalence keeps it dense: build the IsDense structure, and at each object transport density along the induced functor on costructured arrows, which is final because the precomposed functor is an equivalence.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 1, "5": 2, "6": 2, "7": 4, "8": 0, "9": 2, "10": 0, "11": 3, "12": 3, "13": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0245": {
+    "moves": "Rewrite the right shift as division by a power of two, then use that natural division never increases the number. Two facts, one rewrite and one closing lemma.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 0, "5": 0, "6": 0, "7": 1, "8": 1, "9": 1, "10": 4, "11": 0, "12": 0, "13": 1, "14": 1, "15": 0, "16": 1, "17": 0, "18": 0, "19": 4, "20": 0, "21": 1, "22": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0246": {
+    "moves": "Unfolding equation for the two-step list recursor on the cons-cons case. There is no mathematical content beyond invoking the generated defining equation; it is definitional computation.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0247": {
+    "moves": "The fundamental-sequence property at the inl-none case is literally the definition unfolded, so the proof is Iff.rfl. Nothing but definitional unfolding on a specific constructor pattern.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 1, "5": 3, "6": 2, "7": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0248": {
+    "moves": "The underlying set of the order isomorphism on subgroups induced by an additive equivalence is by construction the image map, so the coercion lemma is true by definition (rfl).",
+    "grades": {"1": 3, "2": 0, "3": 1, "4": 1, "5": 1, "6": 0, "7": 0, "8": 2, "9": 0, "10": 0, "11": 0, "12": 2, "13": 0, "14": 3, "15": 0, "16": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0249": {
+    "moves": "Application lemma for the linear equivalence acting on the right of a bilinear map: the defined equivalence's forward map is already the intended composite, so rfl closes it. Pure definitional unfolding.",
+    "grades": {"1": 2, "2": 3, "3": 0, "4": 2, "5": 1, "6": 0, "7": 0, "8": 0, "9": 1, "10": 0, "11": 1, "12": 0, "13": 0, "14": 1, "15": 0, "16": 0, "17": 0, "18": 3, "19": 0, "20": 1, "21": 0, "22": 0, "23": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0250": {
+    "moves": "The colimit hom-equivalence sends a cocone map to the extension of the cocone; that is how the equivalence was defined, so the application lemma holds by reflexivity.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 1, "5": 0, "6": 1, "7": 3, "8": 0, "9": 2, "10": 1, "11": 1, "12": 3, "13": 1, "14": 0, "15": 3, "16": 0, "17": 1, "18": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0251": {
+    "moves": "Definitional equation for the raw tree-map union; the proof is reflexivity dressed up as simp-produced `of_eq_true (eq_self _)`. No mathematical step.",
+    "grades": {"1": 2, "2": 3, "3": 0, "4": 1, "5": 1, "6": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0252": {
+    "moves": "Unfold multiset union as (s - t) + t, then push the filter through subtraction and through addition using the corresponding filter lemmas, and the two sides match.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 2, "5": 2, "6": 1, "7": 0, "8": 0, "9": 2, "10": 4, "11": 0, "12": 0, "13": 4, "14": 3, "15": 1, "16": 0, "17": 1, "18": 1, "19": 2, "20": 1, "21": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0253": {
+    "moves": "Guitart exactness of a primed horizontal composite: rewrite the primed composite as the ordinary horizontal composite whiskered by the connecting isomorphism (whiskering preserves the property), then apply the unprimed of_hComp result.",
+    "grades": {"1": 4, "2": 2, "3": 2, "4": 3, "5": 3, "6": 2, "7": 3, "8": 1, "9": 1, "10": 2, "11": 1, "12": 4, "13": 1, "14": 1, "15": 1, "16": 1, "17": 0, "18": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0254": {
+    "moves": "The inclusion of finite types into Types creates finite colimits, and Types has all finite colimits; a functor that creates colimits of a shape that exists downstream preserves them. Build the PreservesFiniteColimits instance shape-by-shape from those two facts.",
+    "grades": {"1": 2, "2": 1, "3": 4, "4": 1, "5": 2, "6": 4, "7": 1, "8": 2, "9": 1, "10": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0255": {
+    "moves": "Two subalgebras' intersection maps onto the intersection of their images because the algebra map is injective: reduce the subalgebra equality to an equality of underlying sets via injectivity of the SetLike coercion, then apply image-of-intersection for injective maps.",
+    "grades": {"1": 1, "2": 3, "3": 0, "4": 1, "5": 1, "6": 3, "7": 1, "8": 0, "9": 2, "10": 1, "11": 1, "12": 0, "13": 0, "14": 0, "15": 1, "16": 3, "17": 0, "18": 0, "19": 1, "20": 0, "21": 2, "22": 4, "23": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0256": {
+    "moves": "For a monotone family of sets, the multiplicative indicator of the union is eventually (along the filter) equal to the pointwise limit; this is the multiplicative repackaging of the corresponding statement for piecewise functions, so the proof is a direct appeal to that result with the constant-one branch.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 1, "5": 0, "6": 0, "7": 0, "8": 0, "9": 1, "10": 2, "11": 0, "12": 1, "13": 1, "14": 0, "15": 0, "16": 2, "17": 4, "18": 1, "19": 0, "20": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0257": {
+    "moves": "The Ioc-interval tendsto class follows from the Icc one because Ioc is contained in Icc: monotonicity of the Ixx class under pointwise inclusion of the interval former.",
+    "grades": {"1": 1, "2": 4, "3": 2, "4": 2, "5": 4, "6": 2, "7": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0258": {
+    "moves": "generateFrom is the left adjoint of the (order-reversing) Galois connection between families of sets and topologies, so it turns suprema into suprema; apply the general l_sSup lemma for that Galois connection, with the order-dual bookkeeping that makes the topology lattice come out the right way round.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 2, "5": 1, "6": 1, "7": 0, "8": 0, "9": 2, "10": 1, "11": 3, "12": 4, "13": 4, "14": 0, "15": 0, "16": 1, "17": 1, "18": 0, "19": 1, "20": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0259": {
+    "moves": "The `Insert` instance for extensional hash sets is defined to be the set's own insert operation, so the compatibility lemma is reflexivity. Purely definitional.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 0, "6": 2, "7": 3, "8": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0260": {
+    "moves": "A field of the complete-lattice instance on saturated additive submonoids: the infimum really is the greatest lower bound, which is exactly what the already-established CompleteSemilatticeInf structure provides. The proof forwards to that instance.",
+    "grades": {"1": 1, "2": 4, "3": 0, "4": 1, "5": 3, "6": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0261": {
+    "moves": "Closure is the left adjoint of a Galois insertion between sets and non-unital subsemirings, hence preserves arbitrary suprema; extract the Galois connection from the insertion and apply l_sSup to the sUnion.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 1, "5": 0, "6": 3, "7": 0, "8": 1, "9": 4, "10": 0, "11": 3, "12": 0, "13": 1, "14": 0, "15": 1, "16": 4, "17": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0262": {
+    "moves": "Dropping the zero-weight indices does not change the weighted vector subtraction, because weightedVSub is defined as weightedVSubOfPoint at a fixed base point and the corresponding statement is already proved there. A direct specialization.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 0, "6": 1, "7": 0, "8": 0, "9": 0, "10": 1, "11": 1, "12": 4, "13": 0, "14": 1, "15": 1, "16": 0, "17": 1, "18": 1, "19": 1, "20": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0263": {
+    "moves": "Merge sort of the empty list is the empty list: unfold the defining equation of mergeSort at nil and close by reflexivity. Pure computation on the base case.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 1, "5": 4, "6": 0, "7": 3, "8": 2, "9": 1, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0264": {
+    "moves": "Integer scalar multiplication in a grind ring is multiplication by the integer cast: rewrite with the ring's zsmul_eq_intCast_mul, the only friction being that the smul comes through the ring's induced IntModule structure.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 2, "6": 1, "7": 2, "8": 1, "9": 1, "10": 0, "11": 0, "12": 1, "13": 2, "14": 2, "15": 1, "16": 4, "17": 1, "18": 1, "19": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  }
+}

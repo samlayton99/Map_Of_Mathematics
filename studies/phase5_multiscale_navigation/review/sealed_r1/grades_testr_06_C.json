@@ -1,0 +1,146 @@
+{
+  "proof_0121": {
+    "moves": "Unfold Function.update, which is a dite on the decidable equality a = a', and discharge the branch using the hypothesis a ≠ a' (dif_neg). The only real step is resolving the dependent if against the negated equality.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 4, "5": 0, "6": 1, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0122": {
+    "moves": "An auto-generated field obligation for an AddAction instance on LowerSet: reduce the equality of lower sets to equality of their underlying sets by injectivity of the SetLike coercion, after which the action law holds at the set level.",
+    "grades": {"1": 4, "2": 1, "3": 0, "4": 1, "5": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0123": {
+    "moves": "From b < a weaken to b ≤ a and apply the ≥ version of the same statement; uIcc a b = Icc b a once you know which endpoint is smaller.",
+    "grades": {"1": 3, "2": 1, "3": 0, "4": 0, "5": 1, "6": 0, "7": 4, "8": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0124": {
+    "moves": "Purely definitional: mapping f over the constant stream and the constant stream at f a unfold to the same function of the index, so rfl closes it. The content is the unfolding of const and map, nothing more.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0125": {
+    "moves": "Take two distinct points of the range, destructure them as f x and f y with x, y in s; distinctness of the images forces x ≠ y (else congr_arg on the subtype equality from Subtype.ext contradicts it), so the ambient pairwise disjointness applies, and Disjoint.mono transfers it along the hypotheses g (f x) ≤ g x.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 1, "5": 1, "6": 1, "7": 1, "8": 1, "9": 0, "10": 1, "11": 1, "12": 0, "13": 2, "14": 1, "15": 2, "16": 3, "17": 1, "18": 1, "19": 4, "20": 2, "21": 1, "22": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0126": {
+    "moves": "A forgetful instance: an ordered cancellative scalar action is in particular an ordered one, obtained by handing over the corresponding monotonicity field. No mathematical step beyond structure projection.",
+    "grades": {"1": 1, "2": 2, "3": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0127": {
+    "moves": "Pure unpacking of a one-field class into its statement: split the iff, destructure the structure in one direction and apply its constructor in the other. There is no mathematics here, only structure eta.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 2, "5": 1, "6": 1, "7": 2, "8": 2, "9": 1, "10": 0, "11": 0, "12": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0128": {
+    "moves": "Cycles are defined through the chosen left homology data, whose kernel inclusion satisfies i ≫ g = 0 by construction; the proof just cites that defining property (wi) of leftHomologyData.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 1, "6": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0129": {
+    "moves": "Multiplication by a fixed constant is monotone (covariance hypothesis), so the goal is a monotone map composed with an antitone-on-s map; apply the monotone∘antitoneOn composition lemma.",
+    "grades": {"1": 4, "2": 0, "3": 1, "4": 1, "5": 2, "6": 4, "7": 1, "8": 1, "9": 0, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0130": {
+    "moves": "The value of castAdd i is just i.val, and every Fin m has value below m; the proof is simp closing the goal with Fin's built-in bound. Content is a single defining inequality plus automation residue.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 0, "5": 1, "6": 1, "7": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0131": {
+    "moves": "Restrict a globally pairwise property to a set: a Pairwise (Disjoint on f) hypothesis specialises to pairwise disjointness on s. One citation, no other content.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 1, "6": 1, "7": 0, "8": 4, "9": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0132": {
+    "moves": "This is an auto-generated structure field accessor for BindStruct; the 'proof' is the projection itself, with no mathematical step at all.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 0, "5": 1, "6": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0133": {
+    "moves": "Decompose the stream as (take n s) appended to (drop n s), so that the i-th entry of the stream with i < n is read off the left, list part of the append; then apply the get-on-append-left lemma and finish by rewriting.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 1, "5": 1, "6": 1, "7": 1, "8": 0, "9": 1, "10": 1, "11": 2, "12": 1, "13": 2, "14": 0, "15": 1, "16": 1, "17": 1, "18": 4, "19": 1, "20": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0134": {
+    "moves": "argminOn is by definition the minimum of the set under the well-founded order pulled back along f, so membership is exactly the statement that a well-founded minimum of a nonempty set lies in the set.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 1, "5": 3, "6": 2, "7": 2, "8": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0135": {
+    "moves": "OrderDual is a type synonym and toDual is the identity equivalence; the dual's norm instance is literally the original norm, so both sides are definitionally equal and rfl closes it.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 1, "5": 1, "6": 2, "7": 2, "8": 2, "9": 0, "10": 0, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0136": {
+    "moves": "op2 and unop2 are structural re-wrappings of a 2-isomorphism through the bicategorical opposite; unwrapping after wrapping gives back the same data definitionally, so rfl suffices.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 2, "5": 2, "6": 2, "7": 2, "8": 1, "9": 2, "10": 1, "11": 1, "12": 2, "13": 2, "14": 1, "15": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0137": {
+    "moves": "Both sides unfold to the same localization class of the pair (a, 1), the map of the monoid localization being defined by mk a 1; rfl. The content is that the two definitions coincide on the nose.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 1, "6": 0, "7": 0, "8": 2, "9": 0, "10": 1, "11": 0, "12": 1, "13": 2, "14": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0138": {
+    "moves": "Unfold ≤ on UInt16 to ≤ on the underlying BitVec/Nat value and close by reflexivity of ≤ there; the rest is simp bookkeeping (of_eq_true / True).",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 1, "5": 4, "6": 1, "7": 0, "8": 1, "9": 3, "10": 0, "11": 1, "12": 1, "13": 2, "14": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0139": {
+    "moves": "View the Lie subalgebra as a Lie submodule of the algebra acting on itself by the adjoint action, and cite the corresponding containment in the normalizer already proved for submodules. The transport toLieSubmodule is the whole trick.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 0, "6": 1, "7": 2, "8": 1, "9": 4, "10": 1, "11": 0, "12": 1, "13": 4, "14": 1, "15": 1, "16": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0140": {
+    "moves": "Case split on totality of ≤ for naturals: in one case max a b rewrites to a, in the other to b, and the corresponding hypothesis finishes. The case analysis plus the two max-evaluation lemmas is the entire argument.",
+    "grades": {"1": 2, "2": 4, "3": 0, "4": 1, "5": 4, "6": 1, "7": 0, "8": 1, "9": 1, "10": 1, "11": 1, "12": 4, "13": 0, "14": 1, "15": 1, "16": 1, "17": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0141": {
+    "moves": "Given i, j in s with g j < g i, use that g is monotone on s in a linear order to reflect the strict inequality back to j ≤ i, then apply monotonicity of f to get f j ≤ f i, which is exactly monovariance.",
+    "grades": {"1": 4, "2": 0, "3": 1, "4": 0, "5": 0, "6": 0, "7": 0, "8": 2, "9": 1, "10": 1, "11": 0, "12": 2, "13": 2, "14": 0, "15": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0142": {
+    "moves": "Cite the pointwise characterisation of antitonicity for a doubly-indexed Pi type and take its backward direction; the only step is applying Iff.mpr to that equivalence.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 4, "5": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0143": {
+    "moves": "Complementarity is symmetric, so flip IsCompl ⊥ x to IsCompl x ⊥ and apply the already-proved lemma in that orientation.",
+    "grades": {"1": 0, "2": 3, "3": 0, "4": 1, "5": 1, "6": 4, "7": 1, "8": 0, "9": 0, "10": 0, "11": 0, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0144": {
+    "moves": "Destructure both characters into a UInt32 value plus a validity proof, note the values are equal by hypothesis, and the validity components agree by proof irrelevance, so the structures are equal by rfl. The content is the case analysis on the structure.",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 1, "5": 1, "6": 1, "7": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  }
+}

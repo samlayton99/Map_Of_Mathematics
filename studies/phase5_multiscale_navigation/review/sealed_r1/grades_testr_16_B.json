@@ -1,0 +1,146 @@
+{
+  "proof_0361": {
+    "moves": "Membership in lifts means exhibiting a polynomial that maps to X; the witness is X itself, and the verification is the standard fact that map sends X to X. So: supply the witness, then close with map_X (the rest is simp-generated equality plumbing).",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 0, "5": 4, "6": 1, "7": 0, "8": 0, "9": 2, "10": 1, "11": 1, "12": 3, "13": 1, "14": 0, "15": 0, "16": 0, "17": 2, "18": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0362": {
+    "moves": "A simp/API lemma computing the inverse of the smulConst homeomorphism on a point. The inverse is definitionally the given formula, so the proof is pure definitional unfolding closed by rfl -- no mathematical step at all.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 0, "5": 1, "6": 1, "7": 1, "8": 1, "9": 1, "10": 3, "11": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0363": {
+    "moves": "Connected = Preconnected + Nonempty. From edge-connectedness one already has preconnectedness (a named lemma), and the vertex type is nonempty (packaged in the edge-connectivity hypothesis with k not zero); assemble the two into the Connected structure.",
+    "grades": {"1": 0, "2": 2, "3": 0, "4": 3, "5": 4, "6": 2, "7": 0, "8": 1, "9": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0364": {
+    "moves": "A projection/simp lemma for the inverse of the algebra equivalence between multivariate polynomials over a unique index type and univariate polynomials. The equivalence is built so this holds definitionally; the proof is rfl. No mathematical content beyond unfolding the definition.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 1, "5": 0, "6": 1, "7": 1, "8": 0, "9": 0, "10": 2, "11": 0, "12": 0, "13": 1, "14": 1, "15": 0, "16": 0, "17": 2, "18": 0, "19": 2, "20": 3, "21": 1, "22": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0365": {
+    "moves": "Specialize the existing construction of a module structure from an additive-torsion hypothesis, obtaining that hypothesis from finiteness via the finite-implies-torsion lemma. Two lemma applications composed.",
+    "grades": {"1": 4, "2": 0, "3": 1, "4": 1, "5": 2, "6": 0, "7": 0, "8": 1, "9": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0366": {
+    "moves": "A Raw-layer wrapper: unfold the raw tree map to its internal Impl representation, convert the WF hypothesis into the internal well-formedness predicate, and invoke the already-proved Impl lemma. The content is the transfer, not new mathematics.",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 0, "5": 1, "6": 1, "7": 2, "8": 1, "9": 2, "10": 1, "11": 0, "12": 1, "13": 2, "14": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0367": {
+    "moves": "Same wrapper pattern: peel the Raw structure down to its inner Impl, feed the well-formedness proof through WF.out, and apply the corresponding Impl-level getD/modify lemma verbatim.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 1, "5": 2, "6": 2, "7": 1, "8": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0368": {
+    "moves": "A hash set is a hash map with unit values, so the size-after-bulk-insert statement is exactly the corresponding hash map lemma about insertManyIfNewUnit; unwrap the set to its inner map and apply it. The pairwise-distinctness hypothesis is what makes the size formula true.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 1, "6": 1, "7": 0, "8": 2, "9": 1, "10": 1, "11": 1, "12": 1, "13": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0369": {
+    "moves": "Uniform summability on a family of sets is by definition uniform convergence of the net of partial sums; transport along that characterization, apply monotonicity of uniform convergence under shrinking the set, and transport back.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 3, "5": 3, "6": 3, "7": 0, "8": 2, "9": 1, "10": 1, "11": 4, "12": 0, "13": 2, "14": 4, "15": 0, "16": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0370": {
+    "moves": "The real-to-EReal coercion and the toReal projection are definitional inverses on the image of the coercion, so the statement holds by rfl. Pure unfolding.",
+    "grades": {"1": 3, "2": 3, "3": 1, "4": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0371": {
+    "moves": "If one graph is a subgraph of another, the induced map on connected components (from the inclusion homomorphism) is surjective, so the target has no more components than the source; conclude by the cardinality bound for surjections between finite types.",
+    "grades": {"1": 4, "2": 1, "3": 2, "4": 1, "5": 2, "6": 3, "7": 4, "8": 1, "9": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0372": {
+    "moves": "The product of two closed sets in the Closeds lattice is defined by taking the product of the underlying sets, so the coercion lemma is true by definition; the proof is rfl and the real content is the definition of the SProd instance.",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 1, "5": 3, "6": 1, "7": 2, "8": 2, "9": 1, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0373": {
+    "moves": "Specialize the more general result (continuity on a set contained in a compact set gives a.e. strong measurability) by taking the compact set to be the set itself, i.e. instantiate the subset hypothesis with reflexivity of inclusion.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 1, "5": 4, "6": 1, "7": 1, "8": 2, "9": 2, "10": 1, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0374": {
+    "moves": "Multiplication is the scalar action of a monoid on itself, so the product of a locally uniformly convergent family with a continuous bounded factor is just the scalar-multiplication version of the theorem applied through the Mul-to-SMul instance.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 0, "6": 1, "7": 2, "8": 1, "9": 2, "10": 2, "11": 1, "12": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0375": {
+    "moves": "Use the congruence lemma for a.e. equality of intersections: intersect the hypothesis (s a.e. equals univ) with the reflexive a.e. equality of t, then rewrite univ-intersect-t to t. Mostly a rewrite chain around one congruence lemma.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 2, "5": 1, "6": 1, "7": 2, "8": 4, "9": 1, "10": 0, "11": 0, "12": 1, "13": 0, "14": 2, "15": 1, "16": 3, "17": 2, "18": 0, "19": 3},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0376": {
+    "moves": "Being an integral curve everywhere trivially restricts to being one on a subset: fix a point of the set and weaken the (global) derivative statement at that point to a within-the-set derivative statement. The only real step is HasDerivAt to HasDerivWithinAt.",
+    "grades": {"1": 3, "2": 0, "3": 0, "4": 0, "5": 1, "6": 1, "7": 0, "8": 1, "9": 1, "10": 1, "11": 0, "12": 4},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0377": {
+    "moves": "Rewrite the union over a countable collection of sets as an indexed union over the collection itself, then apply the already-proved congruence lemma for restrictions to a countable indexed union.",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 1, "5": 1, "6": 0, "7": 1, "8": 1, "9": 1, "10": 3, "11": 1, "12": 1, "13": 1, "14": 4, "15": 1, "16": 2, "17": 0, "18": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0378": {
+    "moves": "Membership in the orthogonal complement of the underlying submodule of a closed submodule is by definition membership in the orthogonal complement; the proof is Iff.rfl. Pure definitional unfolding through the toSubmodule coercion.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 2, "5": 1, "6": 0, "7": 0, "8": 0, "9": 2, "10": 0, "11": 0, "12": 3, "13": 0, "14": 0, "15": 1, "16": 0, "17": 0, "18": 1, "19": 0, "20": 1, "21": 0, "22": 0, "23": 0, "24": 1, "25": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0379": {
+    "moves": "The arithmetic-geometric mean dominates the minimum of its two arguments, and the minimum of two positive numbers is positive; chain the strict inequality 0 < min with the non-strict min <= agm.",
+    "grades": {"1": 3, "2": 0, "3": 4, "4": 0, "5": 0, "6": 1, "7": 0, "8": 1, "9": 1, "10": 0, "11": 3, "12": 2, "13": 0, "14": 0, "15": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0380": {
+    "moves": "There is an iff characterizing when separable degree is additive on a product (a disjunction of side conditions); coprimality supplies the right disjunct, so the proof is: pick the correct branch of the disjunction and feed it to the mpr direction of the characterization.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 1, "6": 0, "7": 1, "8": 2, "9": 1, "10": 2, "11": 0, "12": 1, "13": 1, "14": 0, "15": 0, "16": 1, "17": 3, "18": 0, "19": 1, "20": 4, "21": 1, "22": 3, "23": 0, "24": 0, "25": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0381": {
+    "moves": "The companion lemma says the ball of radius infDist to the complement is contained in the complement of the complement; cancel the double complement to land in the set itself. One inclusion plus one rewrite.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 2, "5": 3, "6": 3, "7": 4, "8": 1, "9": 2, "10": 3, "11": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0382": {
+    "moves": "The cells of a subcomplex in each dimension form a subtype of the cells of the ambient complex; since the ambient complex has finitely many cells in each dimension, so does the subtype. Build the FiniteType structure from finiteness of a subtype of a finite type.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 0, "5": 2, "6": 1, "7": 4, "8": 4, "9": 2, "10": 2, "11": 0, "12": 1, "13": 1, "14": 1, "15": 3, "16": 3, "17": 1, "18": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0383": {
+    "moves": "Cancellation on the left follows from cancellation on the right by commuting the sums: rewrite both sides with commutativity of measure addition and apply the right-cancellation lemma.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 0, "5": 1, "6": 4, "7": 4, "8": 1, "9": 1, "10": 0, "11": 1, "12": 0, "13": 0, "14": 1, "15": 2, "16": 1, "17": 1, "18": 0, "19": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0384": {
+    "moves": "The norm is continuous, i.e. it tends to the norm of the limit point; compose that with the given convergence of the function to get convergence of the norms. Composition of a tendsto with continuity of the norm map.",
+    "grades": {"1": 2, "2": 2, "3": 2, "4": 4, "5": 0, "6": 4, "7": 0, "8": 1, "9": 1, "10": 1, "11": 0, "12": 0, "13": 0},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

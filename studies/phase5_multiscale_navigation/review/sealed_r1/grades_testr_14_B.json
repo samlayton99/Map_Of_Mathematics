@@ -1,0 +1,146 @@
+{
+  "proof_0313": {
+    "moves": "Reduce the claim that the intersection of all lower rays Iic(q), q rational, is empty to the general criterion that such an intersection is empty exactly when the index set is not bounded below, then discharge that side by the fact that the rationals sitting inside the reals are unbounded below.",
+    "grades": {"1": 0, "2": 1, "3": 2, "4": 1, "5": 1, "6": 4, "7": 0, "8": 1, "9": 0, "10": 3, "11": 1, "12": 0, "13": 0, "14": 0, "15": 0, "16": 1, "17": 1, "18": 1, "19": 0, "20": 4, "21": 2, "22": 1, "23": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0314": {
+    "moves": "Show the topology-replaced pseudometric structure equals the original by extensionality for pseudometric spaces: the distance function is literally unchanged, so pointwise equality (funext / rfl) finishes. The real content is that PseudoMetricSpace is determined by its dist.",
+    "grades": {"1": 2, "2": 3, "3": 1, "4": 2, "5": 2, "6": 4, "7": 1, "8": 1, "9": 0, "10": 1, "11": 1, "12": 0, "13": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0315": {
+    "moves": "Pure definitional unfolding: the bundled ring hom that sends a vector to its diagonal matrix is defined by that very formula, so applying its coercion reduces to the underlying function and the goal closes by rfl. No mathematical step at all.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 3, "5": 0, "6": 2, "7": 1, "8": 1, "9": 0, "10": 0, "11": 1},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0316": {
+    "moves": "Definitional: pushing a function through a constant simple function gives the constant at the image point, and both sides unfold to the same term, so rfl. The content is that map is defined by postcomposition and const by a constant function.",
+    "grades": {"1": 3, "2": 3, "3": 2, "4": 1, "5": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0317": {
+    "moves": "Evaluation aeval x is an algebra homomorphism, and algebra homs preserve the multiplicative unit; so the whole proof is one application of map_one. Everything else is instance plumbing for the semiring/algebra structures.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 1, "5": 4, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 3, "13": 1, "14": 1, "15": 0, "16": 1, "17": 0, "18": 0, "19": 2, "20": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0318": {
+    "moves": "Auto-generated reassociated form of functorMap_comp: take the existing composition identity and whisker it on the right by an arbitrary further morphism, reassociating with the category associativity law. No new mathematics beyond the original lemma.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 3, "5": 1, "6": 1, "7": 0, "8": 0, "9": 2, "10": 1, "11": 0, "12": 1, "13": 0, "14": 0, "15": 0, "16": 3, "17": 1, "18": 1, "19": 0, "20": 1, "21": 4, "22": 3, "23": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0319": {
+    "moves": "A simp-normal-form lemma recording what the spectral object functor does on an object; the defining data is exactly the stated expression, so it closes by rfl. Pure unfolding of a definition wrapped in heavy triangulated-category instance context.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 1, "5": 2, "6": 0, "7": 0, "8": 0, "9": 4, "10": 0, "11": 1, "12": 0, "13": 2, "14": 1, "15": 1, "16": 1, "17": 1, "18": 2, "19": 0, "20": 0, "21": 0, "22": 1, "23": 2, "24": 1, "25": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0320": {
+    "moves": "The pointwise subtraction of finsets is by definition the binary image under vsub, so nonemptiness of the result forces nonemptiness of the right factor by the general image2 lemma. One transport of a general statement through a definitional identification.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 0, "5": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0321": {
+    "moves": "Pointwise vadd of finsets is the binary image under vadd, and the binary image of two singletons is the singleton of the value; so the statement is the image2 singleton lemma read through that definition.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 0, "5": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0322": {
+    "moves": "Wrapper transport: unfold the non-dependent extensional tree map to its underlying dependent one and apply the already-proved dependent lemma verbatim. The only step is unwrapping the type synonym.",
+    "grades": {"1": 4, "2": 1, "3": 2, "4": 1, "5": 1, "6": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0323": {
+    "moves": "Membership is defined via contains, so rewrite contains of a filter by the contains_filter lemma and simp the resulting Option.any/Bool condition into the conjunctive iff. The real move is the single rewrite; everything after is simp bookkeeping.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 1, "5": 3, "6": 1, "7": 1, "8": 1, "9": 2, "10": 2, "11": 1, "12": 1, "13": 0, "14": 1, "15": 4, "16": 1, "17": 1, "18": 1, "19": 0, "20": 0, "21": 1, "22": 0, "23": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0324": {
+    "moves": "Transport the corresponding statement from the raw implementation layer to the packaged tree map: unwrap to the inner Impl and feed the stored well-formedness proof. No mathematical content beyond the wrapper unfolding.",
+    "grades": {"1": 1, "2": 4, "3": 2, "4": 1, "5": 2, "6": 1, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0325": {
+    "moves": "Membership in the doubly stochastic submonoid is by construction the stated conjunction of nonnegativity and unit row/column sums, so the iff holds definitionally (Iff.rfl). Pure unfolding of a SetLike definition.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 0, "5": 1, "6": 0, "7": 1, "8": 0, "9": 1, "10": 2, "11": 0, "12": 0, "13": 4, "14": 1, "15": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0326": {
+    "moves": "Compute the cardinality of the powerset of the naturals: the cardinality of a set-of-X is 2^#X, then #N = aleph0, and 2^aleph0 is by definition the continuum. Chain of two rewrites closed by the definition of continuum.",
+    "grades": {"1": 4, "2": 0, "3": 4, "4": 0, "5": 0, "6": 1, "7": 1, "8": 1, "9": 1, "10": 2, "11": 2, "12": 0, "13": 0, "14": 0, "15": 3, "16": 0, "17": 0, "18": 1, "19": 0, "20": 0, "21": 1, "22": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0327": {
+    "moves": "Wrapper transport for raw tree maps: extract the well-formedness witness from the WF hypothesis and hand the goal to the corresponding Impl-level lemma about getD after erase.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 2, "5": 1, "6": 1, "7": 2, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0328": {
+    "moves": "The OfNat-literal version follows from the already-proved natCast version because for numerals at least two the literal is the cast of the numeral; a single application, no new content.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0329": {
+    "moves": "The multiplication version is the scalar-action version read through the fact that a semiring acts on itself by multiplication, so the statement is the Lid smul lemma with smul identified with mul.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 1, "5": 4, "6": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0330": {
+    "moves": "The homeomorphism built from an equivalence that is inducing carries that same underlying equivalence by construction, so the projection back gives it verbatim and the goal is rfl.",
+    "grades": {"1": 4, "2": 1, "3": 1, "4": 0, "5": 1, "6": 2, "7": 0, "8": 1, "9": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0331": {
+    "moves": "Wrapper transport: unfold the non-dependent tree map to its underlying dependent tree map and apply the dependent lemma about getKey? of an intersection when the key is absent on the left.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 1, "6": 4, "7": 0, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0332": {
+    "moves": "Extended nonnegative reals are WithTop of the nonnegative reals, so the cancellation-under-addition statement follows from the general WithTop lemma once the nonnegative reals are known to be an additive cancellative commutative monoid; the finiteness hypothesis is what makes it work.",
+    "grades": {"1": 3, "2": 0, "3": 1, "4": 0, "5": 1, "6": 4, "7": 1, "8": 0, "9": 2, "10": 0, "11": 0, "12": 1, "13": 2, "14": 0, "15": 0, "16": 1, "17": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0333": {
+    "moves": "The uniform equivalence reindexing a product is built on top of the corresponding equivalence, so forgetting the uniform structure returns that equivalence definitionally; rfl.",
+    "grades": {"1": 3, "2": 1, "3": 2, "4": 4, "5": 0, "6": 1, "7": 0, "8": 1, "9": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0334": {
+    "moves": "Use the iff characterization that a finite set has positive ncard exactly when it is nonempty, applied in the mpr direction to the given nonemptiness hypothesis; the finiteness autoparam is carried along.",
+    "grades": {"1": 2, "2": 0, "3": 0, "4": 1, "5": 1, "6": 2, "7": 0, "8": 1, "9": 2, "10": 0, "11": 4, "12": 2, "13": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0335": {
+    "moves": "Wrapper transport: pull the well-formedness witness out of the WF hypothesis and apply the Impl-level lemma saying get! returns the default value when the key is absent.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 1, "5": 1, "6": 1, "7": 2, "8": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0336": {
+    "moves": "Wrapper transport: unfold the extensional tree map to its dependent counterpart and apply the corresponding lemma that containment in a filtered map implies containment in the original.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 1, "5": 1, "6": 2},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "proof_0121": {
+    "moves": "Function.update is defined by a dependent if-then-else on `a = a'`; since the hypothesis says a ≠ a', the else branch is taken, so the whole proof is one application of dif_neg.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 4, "5": 1, "6": 1, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0122": {
+    "moves": "An action axiom for the induced action on LowerSets: since a LowerSet is determined by its underlying set (the SetLike coercion is injective), the axiom reduces to the corresponding statement about sets, which holds because the action on LowerSets is defined by the action on the carrier. The one real step is invoking injectivity of the coercion.",
+    "grades": {"1": 4, "2": 2, "3": 0, "4": 1, "5": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0123": {
+    "moves": "Weaken the strict inequality b < a to b ≤ a and quote the already-proved version of the lemma for ≤. Nothing else happens.",
+    "grades": {"1": 3, "2": 1, "3": 0, "4": 0, "5": 1, "6": 0, "7": 4, "8": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0124": {
+    "moves": "Both sides compute to the same function of the index (map f (const a) n = f a = const (f a) n), so the statement is true by definitional unfolding and closed by rfl. There is no mathematical step beyond computation.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0125": {
+    "moves": "Take two elements of the range and write them as g x, g y for x, y in s (destructuring the existential and substituting). Given g x ≠ g y, deduce x ≠ y by applying g to a Subtype.ext-produced equality of the underlying values, feed that into the pairwise disjointness on s, and finally weaken the resulting disjointness along the pointwise bounds hg x, hg y using Disjoint.mono.",
+    "grades": {"1": 2, "2": 0, "3": 2, "4": 1, "5": 1, "6": 1, "7": 1, "8": 1, "9": 0, "10": 1, "11": 1, "12": 0, "13": 3, "14": 1, "15": 2, "16": 3, "17": 2, "18": 1, "19": 4, "20": 3, "21": 1, "22": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0126": {
+    "moves": "Pure structure projection: IsOrderedCancelSMul is declared as extending IsOrderedSMul, so the instance is just the parent field of the given structure. No mathematical step at all.",
+    "grades": {"1": 1, "2": 2, "3": 1},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0127": {
+    "moves": "The class is a one-field structure whose field is exactly the right-hand side of the iff, so the proof is: destructure the instance to get the field in one direction, and package the hypothesis with the constructor in the other. The content is purely wrapping/unwrapping a structure.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 2, "5": 1, "6": 1, "7": 2, "8": 2, "9": 1, "10": 0, "11": 0, "12": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0128": {
+    "moves": "iCycles is by definition the map i of the chosen left-homology data, and that data carries the kernel condition i ≫ g = 0 as one of its fields. So the proof is the projection of that field.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 4, "5": 1, "6": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0129": {
+    "moves": "Left multiplication by a is a monotone map (from the covariance hypothesis), and composing a monotone map after an antitone-on-a-set map gives an antitone-on-that-set map. One composition lemma applied to one monotonicity fact.",
+    "grades": {"1": 4, "2": 0, "3": 1, "4": 2, "5": 3, "6": 4, "7": 1, "8": 1, "9": 0, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0130": {
+    "moves": "castAdd does not change the underlying natural number, so the claim is just i.val < m, which is the built-in bound carried by every element of Fin m. Discharged by simp using that bound.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 0, "5": 2, "6": 1, "7": 4},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0131": {
+    "moves": "Pairwise disjointness on all of the index type restricts to any subset: the global Pairwise hypothesis directly gives the set-relative version, so the proof is one application of Pairwise.set_pairwise, everything else being definitional (PairwiseDisjoint is Set.Pairwise of Disjoint on f).",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 0, "5": 1, "6": 1, "7": 0, "8": 4, "9": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0132": {
+    "moves": "Auto-generated field accessor of the BindStruct structure: the conclusion is literally one of the structure's fields, so the proof is the projection. No mathematics.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 0, "5": 1, "6": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0133": {
+    "moves": "Rewrite the stream on the right-hand side as (take n a) ++ₛ (drop n a) using append_take_drop, then use that reading index m < length of the prefix out of an appended stream returns the list element. Two real rewrites plus rewriting bookkeeping.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 2, "5": 2, "6": 1, "7": 1, "8": 0, "9": 1, "10": 1, "11": 2, "12": 1, "13": 3, "14": 0, "15": 1, "16": 1, "17": 1, "18": 4, "19": 1, "20": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0134": {
+    "moves": "argminOn is defined as the minimum of the nonempty set s for the well-founded relation obtained by pulling < back along f, and the defining property of that minimum is that it lies in the set. So the proof is WellFounded.min_mem applied to the well-foundedness witness and the nonemptiness hypothesis.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 1, "5": 3, "6": 2, "7": 2, "8": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0135": {
+    "moves": "The norm on the order dual is defined to be the norm of the underlying element, and toDual is the identity equivalence, so both sides are literally the same term and rfl closes it. Purely definitional.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 1, "5": 2, "6": 2, "7": 3, "8": 4, "9": 0, "10": 0, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0136": {
+    "moves": "op2 and unop2 on 2-isomorphisms are inverse by construction: they only rewrap the underlying 2-morphisms of the opposite bicategory, leaving the data unchanged, so the round trip is definitionally the identity and rfl suffices. No argument beyond unfolding the two definitions.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 2, "5": 2, "6": 1, "7": 3, "8": 1, "9": 1, "10": 1, "11": 1, "12": 3, "13": 2, "14": 1, "15": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0137": {
+    "moves": "The localization map monoidOf sends x to the class of (x, 1), which is exactly how mk x 1 is defined, so the two sides are the same term and the proof is rfl. Pure definitional identification of two constructions.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 1, "6": 0, "7": 0, "8": 2, "9": 0, "10": 1, "11": 0, "12": 1, "13": 2, "14": 2},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0138": {
+    "moves": "≤ on UInt16 is by definition ≤ on the underlying bitvector, so after unfolding, the goal is reflexivity of ≤ on BitVec; simp does the unfolding and closes with the reflexivity lemma.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 0, "5": 4, "6": 1, "7": 0, "8": 1, "9": 3, "10": 0, "11": 1, "12": 1, "13": 1, "14": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0139": {
+    "moves": "Transport the statement to the Lie-submodule setting: view the Lie subalgebra H as a Lie submodule of L over itself, and quote the already-proved fact that a Lie submodule is contained in its normalizer. The whole proof is that one transfer.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 0, "6": 1, "7": 1, "8": 1, "9": 4, "10": 0, "11": 0, "12": 1, "13": 4, "14": 1, "15": 0, "16": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0140": {
+    "moves": "Case split on totality of ≤ for naturals: in the branch a ≤ b, max a b rewrites to b and the second hypothesis closes it; in the branch b ≤ a, max a b rewrites to a and the first hypothesis closes it. The case split plus the two max-evaluation lemmas are the whole proof.",
+    "grades": {"1": 2, "2": 4, "3": 0, "4": 1, "5": 4, "6": 1, "7": 1, "8": 1, "9": 1, "10": 1, "11": 1, "12": 4, "13": 0, "14": 1, "15": 1, "16": 1, "17": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0141": {
+    "moves": "To show f and g vary together on s, take i, j in s with g i < g j; since g is monotone on s it reflects strict inequality, giving i < j, hence i ≤ j, and monotonicity of f on s then gives f i ≤ f j.",
+    "grades": {"1": 4, "2": 0, "3": 1, "4": 0, "5": 0, "6": 0, "7": 0, "8": 1, "9": 1, "10": 1, "11": 0, "12": 2, "13": 3, "14": 0, "15": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0142": {
+    "moves": "Antitonicity of a function into a pi type is pointwise antitonicity in each coordinate, since the order on functions is defined pointwise; the proof is the mpr direction of that characterisation applied to the hypothesis.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 4, "5": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0143": {
+    "moves": "Complementation is symmetric, so from IsCompl ⊥ x get IsCompl x ⊥, and then quote the already-proved statement that anything complementary to ⊥ is ⊤.",
+    "grades": {"1": 0, "2": 4, "3": 0, "4": 2, "5": 2, "6": 4, "7": 1, "8": 0, "9": 0, "10": 0, "11": 0, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0144": {
+    "moves": "Destructure both characters into (value, validity-proof) pairs and pattern-match the hypothesis as rfl so the two values become identical; the remaining validity proofs are propositions, hence equal by proof irrelevance, so rfl closes it. The content is the case analysis, not any citable lemma.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 1, "5": 2, "6": 1, "7": 2},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

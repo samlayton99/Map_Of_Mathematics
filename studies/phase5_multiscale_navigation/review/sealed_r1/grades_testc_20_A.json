@@ -1,0 +1,170 @@
+{
+  "proof_0457": {
+    "moves": "Given two valuation bounds with one below the other, show the induced additive subgroup of elements with small value is contained in the larger one; the whole content is chaining an element's value bound through transitivity of the order on the value group.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 0, "5": 0, "6": 0, "7": 0, "8": 2, "9": 0, "10": 0, "11": 1, "12": 0, "13": 4, "14": 1, "15": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "3": "C", "4": "C", "5": "C", "6": "C", "7": "C", "9": "C", "10": "C", "11": "C", "12": "C", "14": "E", "15": "C"}
+  },
+  "proof_0458": {
+    "moves": "The starProjection form of the norm identity is the same statement as the older orthogonalProjection form, so the proof is a single application of that lemma; no new mathematics happens here.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 4, "5": 0, "6": 0, "7": 1, "8": 0, "9": 1, "10": 0, "11": 1, "12": 0, "13": 1, "14": 0, "15": 0, "16": 0, "17": 0, "18": 1, "19": 0, "20": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C", "5": "C", "6": "C", "7": "C", "8": "C", "9": "F", "10": "C", "11": "C", "12": "C", "13": "F", "14": "C", "15": "C", "16": "C", "17": "C", "18": "C", "19": "C", "20": "C"}
+  },
+  "proof_0459": {
+    "moves": "A continuous linear map on the reals is applied to a real Gaussian; pass to the underlying linear map and quote the variance formula for a linear map of a Gaussian.",
+    "grades": {"1": 1, "2": 0, "3": 3, "4": 0, "5": 0, "6": 0, "7": 1, "8": 0, "9": 0, "10": 4, "11": 1, "12": 0, "13": 2},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "F", "2": "C", "4": "C", "5": "C", "6": "C", "7": "F", "8": "C", "9": "C", "11": "C", "12": "C"}
+  },
+  "proof_0460": {
+    "moves": "From positivity of the negation conclude the element is negative: apply the forward direction of the characterisation 0 < -a iff a < 0, which needs left strict monotonicity of addition.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 0, "5": 4, "6": 0, "7": 0, "8": 0, "9": 0, "10": 1, "11": 1, "12": 1, "13": 1, "14": 0, "15": 0, "16": 1, "17": 0, "18": 2, "19": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C", "4": "C", "6": "C", "7": "C", "8": "C", "9": "C", "10": "C", "11": "C", "12": "C", "13": "C", "14": "C", "15": "C", "16": "C", "17": "C", "19": "C"}
+  },
+  "proof_0461": {
+    "moves": "The unordered interval is the closed interval between the meet and the join of the endpoints, so monotonicity of Icc applies once we supply the bounds inf le left and right le sup.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 4, "5": 1, "6": 3, "7": 3, "8": 0, "9": 0, "10": 0, "11": 1, "12": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C", "5": "C", "8": "C", "9": "C", "10": "C", "11": "C", "12": "C"}
+  },
+  "proof_0462": {
+    "moves": "Extract the disjointness half of the complement hypothesis and convert disjointness into the statement that the meet is bottom.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 0, "5": 1, "6": 4, "7": 3, "8": 0, "9": 0, "10": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "4": "C", "5": "C", "8": "C", "9": "C", "10": "C"}
+  },
+  "proof_0463": {
+    "moves": "For sets, superset is exactly the reversed order, so maximality gives equality: apply the order-theoretic eq_of_ge to the containment hypothesis.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 0, "5": 2, "6": 0, "7": 1, "8": 1, "9": 0, "10": 1, "11": 0, "12": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "3": "C", "4": "C", "6": "C", "7": "C", "8": "F", "9": "C", "10": "C", "11": "C"}
+  },
+  "proof_0464": {
+    "moves": "Specialise the localization version of the statement to the localization at the non-zero-divisor submonoid, where the required submonoid containment is the trivial reflexive one.",
+    "grades": {"1": 4, "2": 1, "3": 1, "4": 0, "5": 0, "6": 0, "7": 2, "8": 0, "9": 0, "10": 2, "11": 0, "12": 2, "13": 1, "14": 0, "15": 0, "16": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "C", "4": "C", "5": "C", "6": "C", "8": "C", "9": "C", "11": "C", "13": "F", "14": "C", "15": "C"}
+  },
+  "proof_0465": {
+    "moves": "One is a unit, and a unit is relatively prime to everything, so the pair (x, 1) is relatively prime.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 0, "5": 1, "6": 0, "7": 4, "8": 3, "9": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C", "4": "C", "5": "C", "6": "C", "9": "C"}
+  },
+  "proof_0466": {
+    "moves": "An isometric ring hom is uniformly continuous, hence continuous, so the completion's induced ring hom is the one given by the general completion lemma and agrees with the original on the image of the coercion.",
+    "grades": {"1": 4, "2": 1, "3": 0, "4": 0, "5": 0, "6": 1, "7": 0, "8": 2, "9": 0, "10": 1, "11": 3, "12": 0, "13": 1, "14": 1, "15": 0, "16": 3, "17": 0, "18": 0, "19": 0, "20": 0, "21": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "F", "3": "C", "4": "C", "5": "C", "6": "C", "7": "C", "9": "C", "10": "C", "12": "C", "13": "C", "14": "C", "15": "C", "17": "C", "18": "C", "19": "C", "20": "C", "21": "C"}
+  },
+  "proof_0467": {
+    "moves": "The complex coercion of a real function has the same norm as the function, so it is Theta-equivalent to it; rewriting the left argument of little-o along a Theta equivalence gives the iff.",
+    "grades": {"1": 1, "2": 0, "3": 4, "4": 1, "5": 0, "6": 0, "7": 4, "8": 2, "9": 1, "10": 0, "11": 0, "12": 0, "13": 0, "14": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "4": "F", "5": "C", "6": "C", "9": "F", "10": "C", "11": "C", "12": "C", "13": "C", "14": "F"}
+  },
+  "proof_0468": {
+    "moves": "Use the characterisation that the quotient congruence of one normal subgroup is below that of another exactly when the subgroups are nested, and feed the hypothesis into its backward direction.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 0, "5": 1, "6": 2, "7": 2, "8": 0, "9": 0, "10": 0, "11": 1, "12": 1, "13": 4, "14": 1, "15": 1, "16": 0, "17": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "3": "C", "4": "C", "5": "C", "8": "C", "9": "C", "10": "C", "11": "F", "12": "F", "14": "C", "15": "C", "16": "C", "17": "C"}
+  },
+  "proof_0469": {
+    "moves": "In an order with no maximum no element is maximal, so the hypothesis of the general Ioo/Ioc-successor identity is discharged and that identity applies.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 1, "6": 2, "7": 0, "8": 0, "9": 3, "10": 0, "11": 4},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C", "4": "C", "5": "C", "7": "C", "8": "C", "10": "C"}
+  },
+  "proof_0470": {
+    "moves": "This is the order dual of the already-proved statement about eventual upper bounds: transport to the order-dual type, where the linear order and topology are the dual instances, and apply the dual lemma.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 1, "5": 1, "6": 0, "7": 3, "8": 1, "9": 0, "10": 1, "11": 1, "12": 1, "13": 0, "14": 0, "15": 4, "16": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "3": "C", "4": "C", "5": "C", "6": "C", "8": "C", "9": "C", "10": "C", "11": "F", "12": "C", "13": "C", "14": "C", "16": "C"}
+  },
+  "proof_0471": {
+    "moves": "An additive equivalence is in particular an additive-monoid-hom-class map, so the generic lemma that such maps preserve subtraction applies verbatim.",
+    "grades": {"1": 0, "2": 4, "3": 0, "4": 0, "5": 1, "6": 1, "7": 0, "8": 0, "9": 2, "10": 0, "11": 0, "12": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "3": "C", "4": "C", "5": "C", "6": "C", "7": "C", "8": "C", "10": "C", "11": "C", "12": "C"}
+  },
+  "proof_0472": {
+    "moves": "A direct sum is a dependent finitely supported function, and its map is mapRange of the component maps, so the statement reduces to the DFinsupp lemma that mapRange of identity homs is the identity.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 4},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C"}
+  },
+  "proof_0473": {
+    "moves": "The empty set is collinear, and every collinear set is coplanar; compose the two facts.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 1, "5": 1, "6": 0, "7": 4, "8": 0, "9": 1, "10": 1, "11": 4, "12": 0, "13": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C", "4": "F", "5": "C", "6": "C", "8": "C", "9": "C", "10": "C", "12": "C", "13": "C"}
+  },
+  "proof_0474": {
+    "moves": "Morphisms in the full subcategory of fibrant objects are literally morphisms of the ambient category, so given such a morphism its underlying map is a preimage under homMk and the equation holds by definitional reflexivity; the real content is exhibiting that witness.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 1, "5": 1, "6": 0, "7": 3, "8": 1, "9": 1, "10": 2, "11": 1, "12": 2, "13": 1, "14": 1, "15": 1, "16": 2, "17": 0, "18": 2},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "3": "F", "4": "C", "5": "E", "6": "C", "8": "F", "9": "F", "11": "C", "13": "C", "14": "F", "15": "C", "17": "C"}
+  },
+  "proof_0475": {
+    "moves": "The two-argument lambda is definitionally the curried function, so the multiplicative-support identity for curry applies directly.",
+    "grades": {"1": 4, "2": 1, "3": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "F", "3": "C"}
+  },
+  "proof_0476": {
+    "moves": "Pure unfolding: applying the formal variable X as a coefficient function is by definition the indicator of index one, so reflexivity closes it.",
+    "grades": {"1": 1, "2": 3, "3": 2, "4": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "F", "4": "C"}
+  },
+  "proof_0477": {
+    "moves": "The map sending a point to the compact singleton is distance preserving because the Hausdorff extended distance between two singletons is just the distance between the points.",
+    "grades": {"1": 4, "2": 0, "3": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "3": "C"}
+  },
+  "proof_0478": {
+    "moves": "The map and its inverse are mutually inverse on source and target and each maps one into the other, so the general criterion turning a two-sided inverse pair into a bijection on those sets applies.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 3, "5": 1, "6": 1, "7": 2, "8": 2, "9": 4, "10": 4, "11": 2, "12": 2},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "B", "3": "B", "5": "C", "6": "C"}
+  },
+  "proof_0479": {
+    "moves": "An auto-generated obligation for transporting a colimit along an isomorphism of cocones: rewrite the composite with the iso inverse using the cancellation lemma and close by uniqueness of the descent morphism; most of the term is rewrite/congruence residue.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 0, "6": 2, "7": 2, "8": 1, "9": 1, "10": 1, "11": 1, "12": 0, "13": 1, "14": 3, "15": 4, "16": 2, "17": 3, "18": 2, "19": 2, "20": 0, "21": 1},
+    "missing_key": false,
+    "confidence": "low",
+    "causes": {"1": "C", "2": "D", "3": "D", "4": "C", "5": "D", "8": "F", "9": "F", "10": "E", "11": "C", "12": "C", "13": "E", "20": "C", "21": "D"}
+  },
+  "proof_0480": {
+    "moves": "Unwrap the raw tree map to its internal implementation and turn the raw well-formedness hypothesis into the internal invariant, then quote the internal lemma that any member key is at most the maximum key.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 3, "5": 2, "6": 4, "7": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "3": "C", "7": "F"}
+  }
+}

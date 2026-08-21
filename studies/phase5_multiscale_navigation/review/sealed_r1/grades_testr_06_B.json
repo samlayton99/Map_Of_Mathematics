@@ -1,0 +1,146 @@
+{
+  "proof_0121": {
+    "moves": "Function.update is a dite on the equality a = a'; since the hypothesis says a ≠ a', the negative branch is taken and the value is the old f a. The entire proof is one application of dif_neg to the disequality hypothesis.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 4, "5": 1, "6": 1, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0122": {
+    "moves": "An instance-field obligation for an additive action on LowerSet: lower sets are determined by their underlying set, so the action law is checked after pushing through the injective coercion to Set. Injectivity of the SetLike coercion is the only real step.",
+    "grades": {"1": 4, "2": 1, "3": 0, "4": 1, "5": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0123": {
+    "moves": "Weaken the strict inequality b < a to b ≤ a and cite the ≤-version of the same statement. One step: h.le, then uIcc_of_ge.",
+    "grades": {"1": 4, "2": 2, "3": 0, "4": 0, "5": 1, "6": 0, "7": 4, "8": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0124": {
+    "moves": "Mapping f over the constant stream at a and the constant stream at f a unfold to the same function of the index, so the two sides are definitionally equal. The proof is rfl — no citation names the content; it is pure definitional unfolding of map and const.",
+    "grades": {"1": 1, "2": 2, "3": 3, "4": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0125": {
+    "moves": "Take two elements of range g and destructure them as g x, g y for x, y in the subtype s. From the assumption g x ≠ g y deduce x ≠ y (if x = y as subtypes then g x = g y, via Subtype.ext and congr_arg), feed that plus the memberships x.2, y.2 into the ambient pairwise-disjointness, then shrink the resulting disjointness along the hypotheses f (g i) ≤ f i with Disjoint.mono. The rintro-style destructuring of range membership is itself a real part of the argument.",
+    "grades": {"1": 3, "2": 0, "3": 2, "4": 2, "5": 1, "6": 1, "7": 1, "8": 1, "9": 0, "10": 1, "11": 1, "12": 0, "13": 3, "14": 1, "15": 2, "16": 3, "17": 1, "18": 1, "19": 4, "20": 3, "21": 1, "22": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0126": {
+    "moves": "This is the automatically generated parent projection of a class that extends another one. There is no mathematical step at all — the field is simply read off the structure.",
+    "grades": {"1": 1, "2": 2, "3": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0127": {
+    "moves": "The mk_iff-generated unbundling of a one-field Prop class: forward, destructure the instance to get its single field; backward, rebuild the instance from that statement. Both directions are structure eta, packaged with Iff.intro; there is no mathematics beyond 'the class has exactly this one field'.",
+    "grades": {"1": 0, "2": 3, "3": 0, "4": 2, "5": 1, "6": 1, "7": 3, "8": 3, "9": 1, "10": 0, "11": 0, "12": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0128": {
+    "moves": "Cycles is by definition the object of the chosen left-homology data of the short complex, and that data comes equipped with the property that its inclusion composes to zero with g. The proof is just handing back that field of the chosen data.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 4, "5": 1, "6": 3},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0129": {
+    "moves": "Left multiplication by a fixed element a is a monotone map (this is exactly the covariant-class hypothesis), and precomposing a monotone map with a map antitone on s is antitone on s. Two citations, composed.",
+    "grades": {"1": 4, "2": 0, "3": 1, "4": 2, "5": 3, "6": 4, "7": 1, "8": 1, "9": 0, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0130": {
+    "moves": "The underlying natural number of castAdd n i is just i.val, which is less than m because that is what being an element of Fin m means. Discharged by simp, so the visible content is the is_lt fact plus simp's proof scaffolding.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 1, "5": 2, "6": 1, "7": 4},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0131": {
+    "moves": "A relation that holds pairwise on all of the index type in particular holds pairwise on any subset; apply that restriction lemma with the relation being disjointness of the f-values. A single citation.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 0, "5": 1, "6": 1, "7": 0, "8": 4, "9": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0132": {
+    "moves": "This is an auto-generated field accessor of a structure — the 'proof' is the projection itself. There is no mathematical step; the only thing worth naming is the structure being projected.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 0, "5": 1, "6": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0133": {
+    "moves": "Rewrite the stream on the right-hand side as (take n a) ++ₛ (drop n a), so that reading index m (which is below the length of take n a) happens inside the prepended list; then the get-on-append-left lemma turns that back into the list lookup. The two stream lemmas do all the work; the rest is rewriting scaffolding.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 2, "5": 3, "6": 1, "7": 1, "8": 0, "9": 1, "10": 1, "11": 3, "12": 1, "13": 3, "14": 0, "15": 1, "16": 1, "17": 1, "18": 4, "19": 1, "20": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0134": {
+    "moves": "argminOn is defined as the well-founded minimum of the set with respect to the pullback of < along f; the minimum of a nonempty set produced by well-founded recursion lies in the set. So the proof is: unfold to WellFounded.min and cite min_mem, with the well-foundedness certificate for the inverse image supplied as an argument.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 1, "5": 3, "6": 3, "7": 2, "8": 4},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0135": {
+    "moves": "The order dual carries literally the same norm instance as the original type and toDual is the identity map, so both sides are the same real number by definition. The proof is rfl; the content is the definitional transparency of the dual's Norm instance.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 1, "5": 2, "6": 2, "7": 3, "8": 3, "9": 0, "10": 0, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0136": {
+    "moves": "op2 and unop2 on 2-isomorphisms in a bicategory are built from the opposite-quiver wrappers op/unop, which are inverse by construction, so the round trip is the identity definitionally. The proof is rfl — no citation carries the idea beyond the two definitions themselves.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 2, "5": 2, "6": 1, "7": 3, "8": 1, "9": 1, "10": 2, "11": 1, "12": 3, "13": 1, "14": 1, "15": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0137": {
+    "moves": "The localization element mk x 1 and the image of x under the canonical localization map are the same term by construction, so the identification is definitional. The proof is rfl; the real content is that the two constructions of the localization agree on the nose.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 2, "6": 0, "7": 0, "8": 2, "9": 0, "10": 2, "11": 0, "12": 1, "13": 2, "14": 3},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0138": {
+    "moves": "Order on UInt16 is defined by transporting to the underlying bit vector, so unfold ≤ through toBitVec and close with reflexivity of ≤ there. Entirely a simp call, so the content is the transfer lemma plus reflexivity, with of_eq_true/Eq.trans as simp residue.",
+    "grades": {"1": 3, "2": 1, "3": 2, "4": 0, "5": 4, "6": 1, "7": 0, "8": 1, "9": 4, "10": 0, "11": 1, "12": 1, "13": 1, "14": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0139": {
+    "moves": "Regard the Lie subalgebra as a Lie submodule of the Lie algebra viewed as a module over itself, and quote the already-proved statement that a Lie submodule is contained in its normalizer. One transport plus one citation.",
+    "grades": {"1": 0, "2": 2, "3": 0, "4": 0, "5": 0, "6": 1, "7": 2, "8": 1, "9": 4, "10": 0, "11": 0, "12": 1, "13": 4, "14": 1, "15": 0, "16": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0140": {
+    "moves": "Case split on totality of ≤ on the naturals: if a ≤ b then max a b is b and the second hypothesis closes it, otherwise max a b is a and the first hypothesis closes it. The case split itself is the proof, with the two max-evaluation lemmas supplying each branch.",
+    "grades": {"1": 3, "2": 4, "3": 0, "4": 2, "5": 4, "6": 1, "7": 1, "8": 1, "9": 1, "10": 1, "11": 1, "12": 4, "13": 0, "14": 2, "15": 1, "16": 2, "17": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0141": {
+    "moves": "Take i, j in s with g i < g j; since g is monotone on s and the codomain is linearly ordered, monotonicity reflects the strict inequality back to i < j, weaken that to i ≤ j, and apply monotonicity of f. The whole argument is 'reflect through g, then push through f'.",
+    "grades": {"1": 4, "2": 0, "3": 1, "4": 0, "5": 0, "6": 0, "7": 0, "8": 2, "9": 1, "10": 1, "11": 0, "12": 3, "13": 3, "14": 0, "15": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0142": {
+    "moves": "This is an alias for one direction of an existing iff: antitonicity of a function into a pi type is equivalent to antitonicity of each coordinate. The proof is Iff.mpr applied to that iff — no mathematical step of its own.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 4, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0143": {
+    "moves": "IsCompl is symmetric, so a complement relation with bottom on the left becomes one with bottom on the right; then cite the already-proved statement in that orientation. Symmetrize and quote.",
+    "grades": {"1": 0, "2": 4, "3": 0, "4": 2, "5": 2, "6": 4, "7": 1, "8": 0, "9": 0, "10": 0, "11": 0, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0144": {
+    "moves": "Destructure both characters into their UInt32 value together with the validity proof, match the hypothesis with rfl so the two values are literally the same, and then the remaining validity proofs are equal by proof irrelevance, so rfl closes it. The content is a pattern match plus proof irrelevance — nothing a citation can name.",
+    "grades": {"1": 3, "2": 2, "3": 2, "4": 1, "5": 2, "6": 1, "7": 3},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

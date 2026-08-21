@@ -1,0 +1,146 @@
+{
+  "proof_0169": {
+    "moves": "A WSeq is a Seq of Options and `think s` is literally `cons none s`, so appending after a think is the same statement as Seq's cons_append. The proof is one application of that Seq lemma under a definitional identification.",
+    "grades": {"1": 2, "2": 4, "3": 1, "4": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0170": {
+    "moves": "The numeral `ofNat(a)` in a matrix ring is the Nat-cast, which is a diagonal matrix; so the statement is an instance of the already-proved fact that the Hadamard product of an adjacency matrix with any diagonal matrix is zero (the adjacency matrix vanishes on the diagonal). One-line specialisation.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 1, "5": 0, "6": 1, "7": 1, "8": 4, "9": 0, "10": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0171": {
+    "moves": "Unfold `bne` to `!(a == b)` and then rewrite with the already-proved `beq` version of the same simproc lemma. Everything else in the term is simp-generated congruence/of_eq_true residue.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 1, "6": 0, "7": 1, "8": 1, "9": 0, "10": 2, "11": 4, "12": 1, "13": 0, "14": 0, "15": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0172": {
+    "moves": "Given that F(f) is an isomorphism, it is in particular both mono and epi; reflecting monos and epis along F gives that f is mono and epi; since C is balanced, a map that is both mono and epi is an isomorphism. Three named lemmas chained inside the instance constructor.",
+    "grades": {"1": 2, "2": 1, "3": 4, "4": 3, "5": 0, "6": 0, "7": 4, "8": 2, "9": 1, "10": 2, "11": 0, "12": 2, "13": 2, "14": 4, "15": 1, "16": 1, "17": 1, "18": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0173": {
+    "moves": "Pure restatement: a LinearMap is an additive-hom-class bundled map, so the generic `map_add` for FunLike homs already gives the result. No mathematical step of its own.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 2, "6": 1, "7": 1, "8": 1, "9": 4, "10": 0, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0174": {
+    "moves": "Connectedness is preconnectedness plus nonemptiness of the vertex type; the vertex type is unchanged, and preconnectedness goes up along an edge-set inclusion by the corresponding Preconnected lemma. The proof is a structure instance assembling those two fields.",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 1, "5": 1, "6": 2, "7": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0175": {
+    "moves": "A @[simps!]-generated projection lemma: the hom component of the inverse image of an automorphism under the fully-faithful transport equivalence is by construction the fully-faithful preimage of the hom. The proof is `rfl` -- pure definitional unfolding, no mathematical move at all.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 1, "5": 2, "6": 1, "7": 0, "8": 1, "9": 1, "10": 0, "11": 1, "12": 2, "13": 1, "14": 0, "15": 0, "16": 0, "17": 0, "18": 0, "19": 0, "20": 0, "21": 4, "22": 1, "23": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0176": {
+    "moves": "`rtakeWhile` is by definition reverse-takeWhile-reverse, so membership in it is membership in `takeWhile p l.reverse` (using that reversing does not change membership); then the corresponding takeWhile lemma gives that the predicate holds.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 0, "6": 2, "7": 0, "8": 0, "9": 2, "10": 4, "11": 4, "12": 2, "13": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0177": {
+    "moves": "Case split on n. If n = 0 the NeZero hypothesis is contradicted, so that branch is vacuous; if n = k+1 then Fin (n+1) has at least three elements and the numeral 2 computes, so the claim is definitional. The real content is the case split plus discharging the impossible case.",
+    "grades": {"1": 0, "2": 1, "3": 2, "4": 0, "5": 1, "6": 0, "7": 0, "8": 2, "9": 1, "10": 2, "11": 2, "12": 4, "13": 4, "14": 0, "15": 3, "16": 2, "17": 1, "18": 0, "19": 1, "20": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0178": {
+    "moves": "Right multiplication by c is a monotone map (identity times a constant, using the right-covariance hypothesis), and a monotone map on a linear order carries max to max; take the symmetric form of that.",
+    "grades": {"1": 4, "2": 1, "3": 0, "4": 3, "5": 1, "6": 4, "7": 1, "8": 0, "9": 3, "10": 0, "11": 1, "12": 2, "13": 0, "14": 0, "15": 0, "16": 0, "17": 0, "18": 0, "19": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0179": {
+    "moves": "The kernel subgroup is defined as the preimage of 1, so `x in ker f` unfolds to `f x = 1` on the nose; the proof is `Iff.rfl`. The content is the definition of the kernel, nothing more.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 1, "5": 0, "6": 1, "7": 0, "8": 4, "9": 0, "10": 2, "11": 0, "12": 0, "13": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0180": {
+    "moves": "The hypothesis 'g x = 1 implies x is in the range of f' is definitionally the containment ker g <= range f, so the statement follows immediately from the ker-le-range form of the exactness criterion. Pure repackaging of a hypothesis.",
+    "grades": {"1": 0, "2": 4, "3": 0, "4": 0, "5": 2, "6": 1, "7": 1, "8": 0, "9": 1, "10": 0, "11": 0, "12": 0, "13": 0, "14": 0, "15": 2, "16": 0, "17": 1, "18": 0, "19": 1, "20": 0, "21": 0, "22": 1, "23": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0181": {
+    "moves": "The order dual is a type synonym carrying the same multiplication and `toDual` is the identity equivalence, so right-regularity of `toDual a` is literally the same proposition as right-regularity of a. Proof is `Iff.rfl`.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 0, "5": 1, "6": 2, "7": 1, "8": 0, "9": 2, "10": 2, "11": 0, "12": 0, "13": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0182": {
+    "moves": "A simps-generated field lemma: the oplax structure map delta of the discrete monoidal functor induced by an additive hom is by construction the identity/eqToHom on the relevant discrete object. Proof is `rfl` -- unfolding the definition of the monoidal structure, no mathematical step.",
+    "grades": {"1": 4, "2": 3, "3": 1, "4": 1, "5": 0, "6": 0, "7": 0, "8": 2, "9": 1, "10": 2, "11": 1, "12": 0, "13": 0, "14": 2, "15": 0, "16": 1, "17": 1, "18": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0183": {
+    "moves": "The raw `toFun` field reached through the tower of parent structures (NonUnitalAlgHom -> DistribMulActionHom -> MulActionHom) is definitionally the FunLike coercion. Proof is `rfl`; the whole content is the projection chain.",
+    "grades": {"1": 2, "2": 0, "3": 0, "4": 0, "5": 0, "6": 2, "7": 0, "8": 2, "9": 0, "10": 2, "11": 0, "12": 1, "13": 2, "14": 0, "15": 0, "16": 1, "17": 1, "18": 0, "19": 1, "20": 2, "21": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0184": {
+    "moves": "Write the domain restriction as f composed with the subtype inclusion; the image of a preimage under a composite splits, the image of a preimage equals the intersection with the range, and the range of the subtype coercion is exactly s. Four rewrites, each a genuine step.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 0, "5": 4, "6": 1, "7": 2, "8": 2, "9": 0, "10": 1, "11": 1, "12": 3, "13": 1, "14": 2, "15": 0, "16": 2, "17": 4, "18": 4, "19": 1, "20": 2, "21": 1, "22": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0185": {
+    "moves": "Direct application of add_sub_cancel_left with the left summand taken to be 1. There is no step beyond instantiating that lemma.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0186": {
+    "moves": "The edge set of a subgraph is `Sym2.fromRel` of its adjacency relation (using symmetry), and pushing a subgraph forward along a graph hom maps the relation; so the claim is exactly the general Sym2 lemma that fromRel commutes with relation-maps. One citation.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 1, "5": 0, "6": 2, "7": 4, "8": 1, "9": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0187": {
+    "moves": "This is the auto-generated `reassoc` variant: take the base lemma homOfLE h1 comp eqToHom h2 = homOfLE (trans), whisker it on the right by an arbitrary morphism and reassociate. No new mathematics beyond the base lemma; the rest is reassoc tactic machinery.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 0, "5": 0, "6": 2, "7": 2, "8": 0, "9": 0, "10": 0, "11": 1, "12": 2, "13": 4, "14": 1, "15": 1, "16": 0, "17": 0, "18": 1, "19": 1, "20": 2, "21": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0188": {
+    "moves": "Apply extensionality for equivariant maps to reduce to a pointwise statement, then compute both sides: composition applied at x is the outer map applied to the inner value, and the identity map acts as the identity. The extensionality reduction is the shape of the proof.",
+    "grades": {"1": 2, "2": 1, "3": 3, "4": 0, "5": 1, "6": 1, "7": 0, "8": 0, "9": 2, "10": 1, "11": 1, "12": 4, "13": 1, "14": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0189": {
+    "moves": "A coercion lemma for the order hom induced on WithTop: the underlying function of `withTopMap f` is by construction `WithTop.map f`. Proof is `rfl` -- pure unfolding of the definition, no mathematical move.",
+    "grades": {"1": 2, "2": 4, "3": 1, "4": 1, "5": 1, "6": 2, "7": 0, "8": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0190": {
+    "moves": "An alias extracting the backward direction of the already-proved iff `ofDual a covBy ofDual b iff b covBy a`. The only move is `Iff.mpr` applied to that lemma.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 0, "5": 2, "6": 1, "7": 2, "8": 1, "9": 0, "10": 1, "11": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0191": {
+    "moves": "A simps-generated component lemma for the postcomposition functor on hom-categories of a bicategory: its action on a 2-cell, evaluated at a 1-cell, is by construction the corresponding whiskering/composite. Proof is `rfl` -- definitional unfolding only.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 2, "5": 1, "6": 0, "7": 0, "8": 1, "9": 0, "10": 4, "11": 1, "12": 2, "13": 3, "14": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0192": {
+    "moves": "Register the OrderIsoClass instance for order isomorphisms: the single field, that the coercion reflects and preserves <=, is exactly the RelIso's `map_rel_iff'` field. The proof is assembling the instance from the existing EquivLike structure plus that one projection.",
+    "grades": {"1": 2, "2": 4, "3": 2, "4": 1, "5": 2, "6": 1},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

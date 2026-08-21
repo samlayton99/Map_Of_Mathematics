@@ -1,0 +1,170 @@
+{
+  "proof_0433": {
+    "moves": "Structural induction on the red-black node together with a three-way case split on the comparison Ordering, showing each branch of ins preserves the Ordered invariant; the actual case work sits in a generated helper.",
+    "grades": {"1": 2, "2": 4, "3": 2, "4": 1, "5": 2, "6": 3},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"4": "A"}
+  },
+  "proof_0434": {
+    "moves": "Observe that b2 is a sublist of b1 ++ b2 (sublist_append_of_sublist_right applied to Sublist.refl), then invoke that WellFormedBasis is inherited along sublists.",
+    "grades": {"1": 3, "2": 0, "3": 3, "4": 1, "5": 2, "6": 0, "7": 0, "8": 2, "9": 1, "10": 4, "11": 2, "12": 3},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "D", "4": "G", "6": "C", "7": "C", "9": "G"}
+  },
+  "proof_0435": {
+    "moves": "Exhibit a colimit cocone for the span: take the pushout cocone built by pushoutIsPushoutOfEpiComp out of the existing pushout's inl/inr, then conclude HasColimit via HasColimit.mk'.",
+    "grades": {"1": 3, "2": 3, "3": 2, "4": 4, "5": 2, "6": 2, "7": 1, "8": 3, "9": 0, "10": 1, "11": 2, "12": 3, "13": 1, "14": 2, "15": 2, "16": 0, "17": 2, "18": 1, "19": 0, "20": 1, "21": 1, "22": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"7": "G", "9": "C", "10": "A", "13": "C", "16": "C", "18": "E", "19": "C", "20": "G", "21": "G", "22": "E"}
+  },
+  "proof_0436": {
+    "moves": "Split the iff; the forward direction turns openness of a sublevel/superlevel set into a neighborhood statement via IsOpen.mem_nhds, the reverse rewrites the nhds condition back to openness, with simp normalizing the set-builder form.",
+    "grades": {"1": 0, "2": 2, "3": 4, "4": 3, "5": 1, "6": 1, "7": 1, "8": 1, "9": 1, "10": 3, "11": 1, "12": 1, "13": 1, "14": 0, "15": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "5": "G", "6": "E", "7": "C", "8": "D", "9": "G", "11": "G", "12": "A", "13": "C", "14": "D"}
+  },
+  "proof_0437": {
+    "moves": "Unfold toUSize/toBitVec64 and rewrite with the known description of (x.toUSize).toBitVec, then push the rewrite under the BitVec width cast by congruence and close by reflexivity.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 3, "5": 0, "6": 1, "7": 1, "8": 1, "9": 1, "10": 1, "11": 3, "12": 0, "13": 3, "14": 3, "15": 4, "16": 3, "17": 2, "18": 1, "19": 1, "20": 0, "21": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "E", "5": "D", "6": "D", "7": "E", "8": "G", "9": "E", "10": "G", "12": "D", "18": "G", "19": "E", "20": "C"}
+  },
+  "proof_0438": {
+    "moves": "Introduce the hypothesis n+1 <= 0 and observe no constructor of Nat.le can produce it; the whole proof is the vacuous case analysis, packaged in a generated match.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 1, "5": 1, "6": 1, "7": 2, "8": 0, "9": 1, "10": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "4": "C", "5": "C", "6": "G", "8": "C", "9": "E", "10": "C"}
+  },
+  "proof_0439": {
+    "moves": "Case on the walk being non-nil (so it has a penultimate vertex) and read off adjacency from the final edge of the walk; the case analysis lives in a generated proof helper.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 2, "5": 1},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"2": "G", "3": "A", "5": "E"}
+  },
+  "proof_0440": {
+    "moves": "Pure equality transport: substitute the assumed equalities of iterator and body (including a heterogeneous one), push them under the binder with congruence, and close by reflexivity. There is no mathematical content beyond the congruence assembly.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 2, "5": 2, "6": 1, "7": 2, "8": 2, "9": 1, "10": 0, "11": 2, "12": 0, "13": 2, "14": 2, "15": 2, "16": 1, "17": 2, "18": 1, "19": 3, "20": 2, "21": 0, "22": 2},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "6": "C", "9": "A", "10": "C", "12": "D", "16": "C", "18": "G", "21": "C"}
+  },
+  "proof_0441": {
+    "moves": "Unwrap the DHashMap to its underlying Raw0 subtype (carrying the well-formedness field and the positive bucket-count obligation) and apply the corresponding internal Raw0 lemma. The proof is a wrapper transfer.",
+    "grades": {"1": 0, "2": 1, "3": 2, "4": 4, "5": 1, "6": 2, "7": 1, "8": 2, "9": 0, "10": 1, "11": 0, "12": 0, "13": 1, "14": 1, "15": 0, "16": 2, "17": 1, "18": 0, "19": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "G", "5": "G", "7": "A", "9": "C", "10": "G", "11": "C", "12": "C", "13": "C", "14": "G", "15": "C", "17": "C", "18": "C", "19": "G"}
+  },
+  "proof_0442": {
+    "moves": "Transfer the statement along toBitVec, rewriting complement of a UInt8 into complement of its BitVec, then use the BitVec-level commutation of not across an equation; simp closes the resulting iff.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 4, "5": 1, "6": 1, "7": 1, "8": 0, "9": 1, "10": 1, "11": 1, "12": 3, "13": 2, "14": 2, "15": 1, "16": 1, "17": 0, "18": 1, "19": 0, "20": 1, "21": 0},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "A", "3": "E", "5": "D", "6": "D", "7": "E", "8": "C", "9": "E", "10": "E", "11": "G", "15": "E", "16": "G", "17": "C", "18": "A", "19": "C", "20": "D", "21": "D"}
+  },
+  "proof_0443": {
+    "moves": "A projection lemma: the X2 component of the short complex sc1 is by definition the stated object, so the proof is definitional unfolding closed by rfl.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 0, "6": 2, "7": 1, "8": 2, "9": 0, "10": 3, "11": 0, "12": 0, "13": 2, "14": 1, "15": 0, "16": 4, "17": 0, "18": 1, "19": 0, "20": 1, "21": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "3": "A", "4": "C", "5": "D", "7": "G", "9": "C", "11": "C", "12": "C", "14": "C", "15": "C", "17": "C", "18": "C", "19": "C", "20": "C", "21": "C"}
+  },
+  "proof_0444": {
+    "moves": "Push the statement through the coercion NNReal to Real: nndist x y = 0 iff its real coercion dist x y = 0, then apply dist_eq_zero for a genuine metric space.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 1, "5": 0, "6": 0, "7": 0, "8": 1, "9": 1, "10": 1, "11": 1, "12": 3, "13": 1, "14": 1, "15": 0, "16": 1, "17": 2, "18": 1, "19": 4, "20": 3},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "E", "3": "C", "4": "E", "5": "C", "6": "C", "7": "C", "8": "D", "9": "E", "10": "G", "11": "C", "13": "E", "14": "A", "15": "D", "16": "D", "18": "D"}
+  },
+  "proof_0445": {
+    "moves": "Rewrite both Int8 order relations into their defining statements about toInt, then apply transitivity of < with <= on the integers.",
+    "grades": {"1": 2, "2": 0, "3": 2, "4": 1, "5": 1, "6": 2, "7": 0, "8": 2, "9": 0, "10": 1, "11": 4, "12": 1, "13": 3, "14": 2, "15": 1, "16": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "4": "C", "5": "E", "7": "C", "9": "D", "10": "D", "12": "C", "15": "A", "16": "A"}
+  },
+  "proof_0446": {
+    "moves": "Unfold deleteVerts as the induced subgraph on verts minus s, apply the adjacency description of induce, and simplify the resulting set-difference memberships into the conjunctive form.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 1, "5": 0, "6": 1, "7": 0, "8": 3, "9": 3, "10": 1, "11": 1, "12": 1, "13": 1, "14": 1, "15": 2, "16": 1, "17": 2, "18": 0, "19": 1, "20": 1, "21": 3, "22": 3, "23": 1, "24": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "G", "3": "E", "4": "E", "5": "C", "6": "E", "7": "C", "10": "A", "11": "C", "12": "D", "13": "E", "14": "G", "16": "E", "18": "D", "19": "D", "20": "G", "23": "D", "24": "E"}
+  },
+  "proof_0447": {
+    "moves": "Apply the criterion for when two drops of a list agree, which reduces the goal to a min identity on Nat (associativity of min plus min n len <= len), discharged by simp.",
+    "grades": {"1": 4, "2": 0, "3": 0, "4": 1, "5": 0, "6": 2, "7": 3, "8": 1, "9": 1, "10": 1, "11": 1, "12": 1, "13": 1, "14": 2, "15": 3, "16": 2, "17": 3, "18": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "D", "4": "G", "5": "C", "8": "E", "9": "G", "10": "E", "11": "D", "12": "D", "13": "E", "18": "C"}
+  },
+  "proof_0448": {
+    "moves": "Transfer the inequality to BitVec via toBitVec, where complement of a nonzero-width bitvector is never equal to itself; the positivity of the platform word size is the needed side condition.",
+    "grades": {"1": 1, "2": 4, "3": 3, "4": 1, "5": 1, "6": 0, "7": 0, "8": 1, "9": 2, "10": 2, "11": 1, "12": 3, "13": 1, "14": 0, "15": 0, "16": 1, "17": 1, "18": 3, "19": 1, "20": 1, "21": 1, "22": 2, "23": 1, "24": 0, "25": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "E", "4": "E", "5": "D", "6": "C", "7": "C", "8": "E", "11": "G", "13": "G", "14": "D", "15": "C", "16": "D", "17": "C", "19": "A", "20": "E", "21": "E", "23": "E", "24": "C", "25": "C"}
+  },
+  "proof_0449": {
+    "moves": "Unfold the extended norm as the ENNReal coercion of the nonnegative norm, then use that the coercion NNReal to ENNReal reflects and preserves the order.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 0, "5": 2, "6": 0, "7": 1, "8": 3, "9": 0, "10": 0, "11": 1, "12": 1, "13": 3, "14": 3, "15": 4, "16": 2, "17": 3, "18": 1, "19": 0, "20": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"3": "D", "4": "C", "6": "C", "7": "D", "9": "D", "10": "C", "11": "E", "12": "E", "18": "D", "19": "C", "20": "E"}
+  },
+  "proof_0450": {
+    "moves": "Unwrap the DHashMap into its Raw0 subtype with the well-formedness witness and apply the internal Raw0 lemma that getD returns the fallback when contains is false. A wrapper transfer.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 1, "6": 2, "7": 2, "8": 1, "9": 0, "10": 0, "11": 0, "12": 2, "13": 0, "14": 0, "15": 0, "16": 1, "17": 1, "18": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "G", "2": "G", "3": "G", "5": "C", "8": "G", "9": "C", "10": "C", "11": "C", "13": "C", "14": "C", "15": "C", "16": "A", "17": "G"}
+  },
+  "proof_0451": {
+    "moves": "Rewrite prev as posLT (valid because the position is not the start), then apply the characterization of <= against posLT, turning the goal into the strict inequality.",
+    "grades": {"1": 1, "2": 2, "3": 3, "4": 1, "5": 1, "6": 1, "7": 1, "8": 1, "9": 1, "10": 0, "11": 0, "12": 1, "13": 2, "14": 1, "15": 0, "16": 0, "17": 2, "18": 4, "19": 1, "20": 1, "21": 1, "22": 2, "23": 3, "24": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "D", "4": "E", "5": "A", "6": "G", "7": "E", "8": "G", "9": "A", "10": "C", "11": "C", "12": "E", "14": "E", "15": "D", "16": "C", "19": "D", "20": "E", "21": "G"}
+  },
+  "proof_0452": {
+    "moves": "Contrapose the iff: nonempty support fails exactly when the support is empty, and support is empty exactly when the element is zero.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 2, "5": 0, "6": 0, "7": 1, "8": 0, "9": 0, "10": 2, "11": 1, "12": 4, "13": 0, "14": 3, "15": 0, "16": 0, "17": 1, "18": 2, "19": 1, "20": 3, "21": 2, "22": 0, "23": 3, "24": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "D", "2": "C", "3": "C", "5": "C", "6": "D", "7": "G", "8": "C", "9": "C", "11": "E", "13": "C", "15": "C", "16": "C", "17": "E", "19": "D", "22": "C", "24": "E"}
+  },
+  "proof_0453": {
+    "moves": "The unit morphism of the trivial group object is by construction the identity of the tensor unit, so the proof is definitional unfolding closed by rfl.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 3, "5": 2, "6": 4, "7": 2, "8": 1, "9": 0, "10": 1, "11": 0, "12": 0, "13": 0, "14": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "3": "C", "8": "C", "9": "C", "10": "C", "11": "C", "12": "C", "13": "C", "14": "C"}
+  },
+  "proof_0454": {
+    "moves": "A continuous affine map is differentiable everywhere; weaken global differentiability to differentiability on the given set. One-step forwarder.",
+    "grades": {"1": 0, "2": 4, "3": 1, "4": 0, "5": 0, "6": 1, "7": 2, "8": 0, "9": 1, "10": 0, "11": 0, "12": 4, "13": 0, "14": 1, "15": 0, "16": 0, "17": 0, "18": 0, "19": 1, "20": 0, "21": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "3": "C", "4": "C", "5": "C", "6": "C", "8": "C", "9": "C", "10": "C", "11": "C", "13": "C", "14": "C", "15": "C", "16": "C", "17": "C", "18": "C", "19": "G", "20": "C", "21": "C"}
+  },
+  "proof_0455": {
+    "moves": "The strict betweenness relation on Fin is defined by the circular order instance transported from the stated condition, so the two sides are definitionally equal and Iff.rfl closes it.",
+    "grades": {"1": 3, "2": 0, "3": 2, "4": 1, "5": 0, "6": 2, "7": 1, "8": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "4": "G", "5": "C", "7": "C"}
+  },
+  "proof_0456": {
+    "moves": "In the category attached to a preorder, the top element receives a unique morphism from every object, so it is terminal; conclude by the criterion that an object with unique incoming maps is terminal.",
+    "grades": {"1": 4, "2": 1, "3": 3, "4": 1, "5": 0, "6": 2, "7": 4, "8": 3, "9": 2, "10": 0, "11": 1, "12": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "4": "C", "5": "C", "10": "C", "11": "C", "12": "C"}
+  }
+}

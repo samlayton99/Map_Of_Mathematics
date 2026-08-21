@@ -1,0 +1,146 @@
+{
+  "proof_0073": {
+    "moves": "Pure definitional unfolding: `SVal.uncurry` is defined by recursion on the list of state types, and the cons branch of that definition is literally the equation being stated, so the proof is `rfl`. The only real content is the shape of the recursive definition on a `(s, t)` pair.",
+    "grades": {"1": 2, "2": 2, "3": 2, "4": 4, "5": 4, "6": 1, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0074": {
+    "moves": "Given an explicit `HomologyData` for the short complex, wrap it with `Nonempty.intro` and package that into the `HasHomology` class. No mathematics beyond exhibiting the datum and repackaging it.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 3, "5": 1, "6": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0075": {
+    "moves": "Destructure the `Equivalence` bundle into its three consequences (reflexivity, symmetry, transitivity instances), install them as local instances, then let the anonymous constructor assemble `IsEquiv` from them. The content is a repackaging of one bundled structure into three unbundled classes.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 3, "5": 3, "6": 1, "7": 3, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0076": {
+    "moves": "The lattice structure on `NonemptyInterval` is defined so that the sup's second coordinate is literally the sup of the second coordinates (the underlying `Prod` sup is componentwise), so both sides are the same term and `rfl` closes it. No idea beyond unfolding the chosen `Max` instance.",
+    "grades": {"1": 1, "2": 0, "3": 4, "4": 3, "5": 1, "6": 2, "7": 0, "8": 2, "9": 0, "10": 2, "11": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0077": {
+    "moves": "Case split on the supplied `Decidable False` instance: in the `isFalse` branch `decide` reduces to `false` definitionally, and in the `isTrue` branch we hold a proof of `False` and discharge everything with `False.elim`. The real move is the case analysis on the instance, plus noting the impossible branch.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 2, "6": 3, "7": 3, "8": 2, "9": 3, "10": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0078": {
+    "moves": "This is the `@[reassoc]`-generated variant of `leftFraction_fac`: take the identity `φ.f ≫ φ.leftFraction.s = φ.s ≫ φ.leftFraction.f`, compose both sides on the right with an arbitrary morphism, and reassociate. All the mathematics lives in the base lemma; the rest is whiskering plus associativity.",
+    "grades": {"1": 3, "2": 0, "3": 0, "4": 0, "5": 1, "6": 1, "7": 3, "8": 1, "9": 1, "10": 0, "11": 2, "12": 2, "13": 0, "14": 4, "15": 1, "16": 2, "17": 0, "18": 2, "19": 2, "20": 0, "21": 1, "22": 2, "23": 1, "24": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0079": {
+    "moves": "Rewrite along the hypothesis `a = b` (the `▸` / `Eq.rec` substitution) and then close by reflexivity. That substitution-then-rfl pattern is the entire proof; the additive structure is only carried along.",
+    "grades": {"1": 1, "2": 2, "3": 3, "4": 1, "5": 3, "6": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0080": {
+    "moves": "The identity prefunctor is defined to act as the identity on hom-sets, so `(𝟭q C).map f` and `f` are the same term and reflexivity closes the goal. Pure definitional unfolding of `Prefunctor.id`.",
+    "grades": {"1": 4, "2": 3, "3": 1, "4": 1, "5": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0081": {
+    "moves": "Direct projection: the statement is exactly the primed structure field `smul_right'` of a `ModuleFilterBasis`, applied to the given point and the membership hypothesis. No mathematical step at all beyond invoking the axiom of the structure.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 1, "5": 1, "6": 1, "7": 1, "8": 4, "9": 1, "10": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0082": {
+    "moves": "From `0 ≤ a` and `0 ≤ b`, apply the right-covariance lemma `le_add_of_nonneg_of_le` to get `0 ≤ a + b`. The point of this particular version is that it uses the right-monotonicity hypothesis rather than the left one.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 4, "5": 0, "6": 0, "7": 1, "8": 2, "9": 1, "10": 0, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0083": {
+    "moves": "`IsBimonHom` is declared as a class extending `IsMonHom` and `IsComonHom`, so this is the auto-generated parent projection: extract the monoid-hom half of a bimonoid-hom instance. There is no argument, only field access.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 1, "6": 3, "7": 0, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0084": {
+    "moves": "An auto-generated field obligation for the induced `AddMonoid` on a subobject: the `add_zero` law on the subtype is transported from the ambient monoid along the injective coercion `Subtype.val`, which preserves `0` and `+` by `rfl`. The mathematical content is 'transport a law along an injective structure-preserving map'; everything else is typeclass bookkeeping.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 4, "5": 0, "6": 1, "7": 0, "8": 1, "9": 0, "10": 1, "11": 0, "12": 1, "13": 1, "14": 3, "15": 3, "16": 2, "17": 3, "18": 1, "19": 0, "20": 2, "21": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0085": {
+    "moves": "Auto-generated structure projection: `exact₃'` is a field of the `SpectralObject` structure, so the proof just reads that field off. No mathematical step whatsoever.",
+    "grades": {"1": 1, "2": 1, "3": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0086": {
+    "moves": "The `@[reassoc]` variant of `unit_actionHomRight`: take the identity expressing the unit action as conjugation by the unitor iso, compose both sides on the right with an arbitrary morphism, and reassociate. All content is in the base lemma; the rest is whiskering and associativity.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 2, "5": 0, "6": 1, "7": 2, "8": 0, "9": 1, "10": 1, "11": 0, "12": 0, "13": 0, "14": 1, "15": 0, "16": 2, "17": 1, "18": 3, "19": 1, "20": 0, "21": 2, "22": 2, "23": 0, "24": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0087": {
+    "moves": "`IsNonempty` is by definition the disjunction 'vertex set nonempty or edge set nonempty', so from nonemptiness of the vertex set we just take the left disjunct. Choosing the disjunct is the whole proof.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 4, "5": 1, "6": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0088": {
+    "moves": "Auto-generated projection of the right-cancellation axiom out of the `AddOreSet` structure. Nothing is proved; a field is read.",
+    "grades": {"1": 3, "2": 0, "3": 1, "4": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0089": {
+    "moves": "Auto-generated projection: `hasLimit'` is the single field of the `HasPointwiseLeftDerivedFunctorAt` class, so the proof is field access on the instance.",
+    "grades": {"1": 1, "2": 1, "3": 3, "4": 0, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0090": {
+    "moves": "Both directions of the iff are the same lemma `units_inv_symm_left`, applied to `a` in one direction and to `a⁻¹` in the other (using that inverting twice returns to `a` definitionally). So: assemble an `Iff` from one lemma used symmetrically.",
+    "grades": {"1": 0, "2": 4, "3": 1, "4": 2, "5": 1, "6": 0, "7": 1, "8": 1, "9": 0, "10": 1, "11": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0091": {
+    "moves": "To show the range iterator is deterministic, exhibit the witness: for each iterator state the unique plausible step is `Rxo.Iterator.Monadic.step it`, and the claim that `IsPlausibleStep` equals equality-to-that-step holds by `rfl` because the plausibility relation is defined that way. Exhibiting the witness plus a definitional equality is the whole proof.",
+    "grades": {"1": 1, "2": 2, "3": 3, "4": 1, "5": 1, "6": 1, "7": 4, "8": 1, "9": 4, "10": 1, "11": 1, "12": 0, "13": 1, "14": 3},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0092": {
+    "moves": "The `@[reassoc]` variant of the bicategory exchange law: take `whisker_exchange`, compose both sides on the right with an arbitrary 2-cell, and reassociate. The exchange axiom does all the work; whiskering and associativity are the packaging.",
+    "grades": {"1": 2, "2": 0, "3": 0, "4": 2, "5": 4, "6": 1, "7": 1, "8": 0, "9": 3, "10": 0, "11": 0, "12": 1, "13": 0, "14": 0, "15": 1, "16": 0, "17": 2, "18": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0093": {
+    "moves": "Two directions: given `a = b`, substitute to reduce to `Iff.rfl`; given `a ↔ b`, apply the axiom `propext`. The backward direction is where the real (axiomatic) content sits; the forward direction is a rewrite, and the `Eq.casesOn`/`HEq` material is just the elaborated substitution.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 3, "5": 2, "6": 0, "7": 0, "8": 1, "9": 4, "10": 1, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0094": {
+    "moves": "Unfold `Clause.relabel` to `List.map` and use that mapping over the empty list gives the empty list. A one-step `simp`; everything else in the term is simp's proof-format residue (`of_eq_true`, `eq_self`, congruence lemmas).",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 1, "5": 1, "6": 0, "7": 2, "8": 0, "9": 4, "10": 1, "11": 0, "12": 1, "13": 0, "14": 3, "15": 1, "16": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0095": {
+    "moves": "Membership in a sequence is by definition 'there exists an index whose `get?` is `some x`', so from the hypothesis we exhibit that index `n` and flip the equation with `.symm`. Exhibiting a witness plus symmetry of equality is the entire proof.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 4, "6": 2, "7": 3, "8": 3, "9": 1, "10": 1, "11": 1, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0096": {
+    "moves": "`PFun.prodLift` is defined exactly as the `Part` whose domain is the conjunction of the two domains and whose value is the pair of the two values, so the stated equation is the definition and `rfl` closes it.",
+    "grades": {"1": 1, "2": 2, "3": 4, "4": 4, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "proof_0385": {
+    "moves": "Says the scalar action on a.e.-equivalence classes commutes with the quotient map mk; true by definitional unfolding of the AEEqFun SMul instance, so the proof is rfl. No mathematical step beyond the instance being defined by lifting.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 3, "5": 2, "6": 1, "7": 0, "8": 1, "9": 2, "10": 1, "11": 1, "12": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0386": {
+    "moves": "The identity map is conformal because it is conformal at every point; fix a point and cite the pointwise statement.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 1, "5": 4, "6": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0387": {
+    "moves": "Composing a manifold-differentiable map with the first projection: cite that Prod.fst is mdifferentiable on the product model and use the composition rule.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 4, "6": 1, "7": 0, "8": 1, "9": 1, "10": 2, "11": 0, "12": 0, "13": 1, "14": 0, "15": 0, "16": 4, "17": 2, "18": 0, "19": 0, "20": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0388": {
+    "moves": "For a nonzero real exponent, x^z = y^z iff x = y: get injectivity of the base map from the nonzero exponent, then turn injectivity into an iff.",
+    "grades": {"1": 2, "2": 1, "3": 4, "4": 1, "5": 0, "6": 0, "7": 1, "8": 3, "9": 0, "10": 1, "11": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0389": {
+    "moves": "Unprimed version of the conditional-probability product rule: discharge the side condition that the measure of the conditioning set is finite (from IsFiniteMeasure) and apply the primed lemma.",
+    "grades": {"1": 1, "2": 4, "3": 3, "4": 2, "5": 1, "6": 1, "7": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0390": {
+    "moves": "Transfers the MeromorphicOn-on-univ statement about the logarithmic derivative of a zpow to the global Meromorphic predicate, by rewriting meromorphic = meromorphicOn univ and applying the set version.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 4, "8": 2, "9": 2, "10": 1, "11": 3, "12": 0, "13": 1, "14": 2, "15": 0, "16": 2, "17": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0391": {
+    "moves": "The left-multiplication dilation equivalence, applied to a point, is just multiplication; true by definitional unfolding of the coercion, proved by rfl.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 1, "12": 1, "13": 3, "14": 0, "15": 0, "16": 2, "17": 1, "18": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0392": {
+    "moves": "Symmetric difference respects a.e. equality of sets: specialize the general filter lemma that EventuallyEq is preserved by symmDiff to the a.e. filter.",
+    "grades": {"1": 2, "2": 0, "3": 2, "4": 0, "5": 1, "6": 1, "7": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0393": {
+    "moves": "A cyclotomic extension of a field by a finite set of indices is finite-dimensional: cite the module-finiteness result and repackage it as finite dimensionality.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "6": 0, "7": 0, "8": 4, "9": 2, "10": 2, "11": 1, "12": 1, "13": 0, "14": 0, "15": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0394": {
+    "moves": "Eta/lambda-form restatement of the sum rule for differentiability at a point; the proof just applies DifferentiableAt.add. No new mathematics.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 0, "6": 1, "7": 1, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, "13": 1, "14": 2, "15": 0, "16": 0, "17": 0, "18": 0, "19": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0395": {
+    "moves": "Computes the map on fundamental groups induced by an equality of basepoints: identify the fundamental group with an endomorphism monoid in the fundamental groupoid and rewrite the induced map as conjugation by eqToHom (with the equality taken in the right direction).",
+    "grades": {"1": 2, "2": 4, "3": 2, "4": 1, "5": 1, "6": 0, "7": 1, "8": 0, "9": 1, "10": 2, "11": 3, "12": 0, "13": 1, "14": 0, "15": 0, "16": 1, "17": 0, "18": 1, "19": 1, "20": 0, "21": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0396": {
+    "moves": "Lipschitz bound for the WithLp product coercion: the whole proof is a call to the private auxiliary lemma proved earlier in the file, under the Fact (1 <= p) hypothesis.",
+    "grades": {"1": 2, "2": 0, "3": 0, "4": 0, "5": 1, "6": 0, "7": 1, "8": 4, "9": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0397": {
+    "moves": "If the negation of f is Lipschitz on a set then so is f: take the forward direction of the iff characterizing Lipschitz-ness of -f.",
+    "grades": {"1": 2, "2": 0, "3": 0, "4": 0, "5": 1, "6": 2, "7": 0, "8": 0, "9": 4, "10": 1, "11": 0, "12": 1, "13": 1, "14": 0, "15": 2, "16": 0, "17": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0398": {
+    "moves": "The inverse of the continuous-linear-equiv coming from a linear isometry equiv is the one coming from its inverse; both sides unfold to the same data, so rfl.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 0, "5": 0, "6": 3, "7": 1, "8": 0, "9": 0, "10": 2, "11": 0, "12": 1, "13": 1, "14": 2, "15": 3, "16": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0399": {
+    "moves": "Two measures agreeing on the restrictions to each member of a countable cover of the universe are equal: take the mpr direction of the corresponding iff lemma.",
+    "grades": {"1": 2, "2": 1, "3": 4, "4": 2, "5": 2, "6": 1, "7": 1, "8": 2, "9": 0, "10": 2, "11": 1, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0400": {
+    "moves": "The measure with density given by the Radon-Nikodym derivative is sigma-finite because it is dominated by the reference measure, and sigma-finiteness passes down along domination.",
+    "grades": {"1": 1, "2": 4, "3": 2, "4": 4, "5": 1, "6": 2, "7": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0401": {
+    "moves": "Variant of the congruence lemma for Frechet derivatives within a set where the agreement hypothesis is an EqOn plus membership of the base point; instantiate EqOn at the point and apply the existing congr lemma.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 1, "5": 0, "6": 0, "7": 0, "8": 1, "9": 0, "10": 1, "11": 1, "12": 1, "13": 0, "14": 0, "15": 2, "16": 0, "17": 4, "18": 0, "19": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0402": {
+    "moves": "Destructure the a.e.-measurability hypothesis into a measurable representative g together with f =ae g, note g is null-measurable, and transfer back along the (symmetrized) a.e. equality. The witness extraction is the real first step and no citation names it.",
+    "grades": {"1": 4, "2": 3, "3": 4, "4": 2, "5": 1, "6": 1, "7": 2, "8": 2, "9": 2, "10": 2, "11": 1, "12": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0403": {
+    "moves": "The first-marginal kernel is s-finite: rewrite fst as the pushforward under Prod.fst and conclude by the already-known s-finiteness of a mapped kernel.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 2, "5": 0, "6": 1, "7": 2, "8": 4, "9": 1, "10": 1, "11": 1, "12": 3, "13": 0, "14": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0404": {
+    "moves": "The discrete functor into light condensed modules is faithful because it is naturally isomorphic to the locally-constant functor, which is faithful; transport faithfulness along that isomorphism.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 3, "5": 0, "6": 0, "7": 1, "8": 0, "9": 0, "10": 4, "11": 1, "12": 1, "13": 4, "14": 2, "15": 0, "16": 0, "17": 1, "18": 0, "19": 0, "20": 1, "21": 3, "22": 1, "23": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0405": {
+    "moves": "Primed restatement of the additivity of the iterated integral against a kernel composition-product; the proof just applies the unprimed lemma with the same integrability hypotheses.",
+    "grades": {"1": 0, "2": 4, "3": 0, "4": 0, "5": 0, "6": 0, "7": 1, "8": 1, "9": 2, "10": 0, "11": 1, "12": 2, "13": 1, "14": 0, "15": 1, "16": 0, "17": 0, "18": 1, "19": 2, "20": 1, "21": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0406": {
+    "moves": "The forgetful functor from affine schemes to schemes acts on morphisms as the identity, since affine schemes are a full/induced subcategory; the equation is definitional, proved by rfl.",
+    "grades": {"1": 2, "2": 2, "3": 3, "4": 0, "5": 0, "6": 1, "7": 1, "8": 1, "9": 2, "10": 1, "11": 1, "12": 0, "13": 2, "14": 1, "15": 0, "16": 0, "17": 0, "18": 0, "19": 2, "20": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0407": {
+    "moves": "Congruence for gradients within a set under the hypothesis that the base point lies in the set: instantiate the pointwise agreement at that point and apply the existing congr lemma.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 0, "5": 2, "6": 0, "7": 1, "8": 1, "9": 1, "10": 4, "11": 1, "12": 0, "13": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0408": {
+    "moves": "A bump function is smooth: apply the general result that a bump built from smooth center and radius data is smooth, supplying constants for the radii and the identity for the argument.",
+    "grades": {"1": 0, "2": 4, "3": 2, "4": 1, "5": 3, "6": 0, "7": 0, "8": 1, "9": 2, "10": 0, "11": 1, "12": 0, "13": 0, "14": 0, "15": 0, "16": 1, "17": 3, "18": 0, "19": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  }
+}

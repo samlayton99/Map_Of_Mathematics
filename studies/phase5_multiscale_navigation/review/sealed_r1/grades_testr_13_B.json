@@ -1,0 +1,146 @@
+{
+  "proof_0289": {
+    "moves": "A definitional simp lemma: the object part of the unopFunctor sending right resolutions of a localizer morphism to left resolutions of its opposite is literally the construction unfolded, so the proof is rfl. The real content is the definition of unopFunctor and the op/unop transport, not any cited theorem.",
+    "grades": {"1": 3, "2": 1, "3": 2, "4": 2, "5": 1, "6": 2, "7": 0, "8": 1, "9": 2, "10": 0, "11": 4, "12": 0, "13": 2, "14": 3, "15": 3, "16": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0290": {
+    "moves": "Induction over membership in the additive submonoid closure of a set: the gcd of the set divides each generator, divides zero, and divides any sum of two things it divides. The three-case closure induction is the whole argument.",
+    "grades": {"1": 0, "2": 3, "3": 3, "4": 0, "5": 0, "6": 3, "7": 0, "8": 1, "9": 4, "10": 1, "11": 1, "12": 0, "13": 0, "14": 0, "15": 1, "16": 4, "17": 3, "18": 1, "19": 0, "20": 0, "21": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0291": {
+    "moves": "Pure definitional unfolding: the underlying multilinear map of the continuous multilinear map produced by ofSubsingleton (from a continuous linear map on the single index) is by construction the corresponding multilinear map, so rfl closes it. No citation names the content.",
+    "grades": {"1": 1, "2": 0, "3": 4, "4": 1, "5": 1, "6": 1, "7": 2, "8": 1, "9": 0, "10": 2, "11": 0, "12": 3, "13": 1, "14": 1, "15": 1, "16": 2, "17": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0292": {
+    "moves": "Unwrap the Raw tree map to its internal Impl representation, extract the well-formedness witness from the Raw.WF hypothesis, and apply the already-proved Impl-level statement that isEmpty agrees with size = 0.",
+    "grades": {"1": 3, "2": 2, "3": 1, "4": 4, "5": 2, "6": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0293": {
+    "moves": "The coercion of a Finset to a sort is the subtype of elements satisfying membership, so nonempty of that subtype is exactly the existence of a member; nonempty_subtype does it in one step.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0294": {
+    "moves": "A HashMap is a thin wrapper on a DHashMap with constant value type; unfold to the inner map and cite the dependent-map version of the lemma verbatim. Pure delegation.",
+    "grades": {"1": 1, "2": 4, "3": 2, "4": 1, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0295": {
+    "moves": "A Subarray's iteration is defined via the generic slice iterator, so the forIn-over-toArray statement is exactly the generic slice lemma after unfolding the iterator instances. Delegation plus instance transport.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 1, "5": 1, "6": 1, "7": 4, "8": 1, "9": 1, "10": 1, "11": 1, "12": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0296": {
+    "moves": "Push the statement about the wrapped HashMap.Raw down to the inner DHashMap.Raw, feed it the well-formedness witness via WF.out, and cite the dependent-map lemma for getKeyD after insertIfNew.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 1, "5": 4, "6": 1, "7": 3, "8": 1, "9": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0297": {
+    "moves": "A component-at-index-0 lemma for a natural transformation between two-step composable arrows; both sides reduce to the same composite by definitional unfolding, so it is rfl. The content is the definition of the transformation, not any cited fact.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 4, "6": 3, "7": 0, "8": 0, "9": 1, "10": 2, "11": 2, "12": 0, "13": 1, "14": 0, "15": 2, "16": 1, "17": 1, "18": 0, "19": 1, "20": 1, "21": 0, "22": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0298": {
+    "moves": "Repackage the DHashMap as the subtype-with-nonempty-buckets form Raw0 (using the stored size-positivity proof and the map's well-formedness), then apply the corresponding Raw0-level lemma that inserting a key makes getKey of that key return it.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 4, "6": 1, "7": 1, "8": 1, "9": 1, "10": 1, "11": 0, "12": 1, "13": 2, "14": 1, "15": 2, "16": 0, "17": 1, "18": 0, "19": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0299": {
+    "moves": "Build the ContinuousStar instance on the multiplicative opposite: star on M-op is op composed with star composed with unop, and each of the three factors is continuous, so the composite is. Constructor plus composition of continuities.",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 1, "5": 3, "6": 2, "7": 2, "8": 1, "9": 4, "10": 1, "11": 4, "12": 1, "13": 1, "14": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0300": {
+    "moves": "If two valuation subrings have equal associated local subrings, apply the underlying-subring map to that equality to get equal subrings, then use injectivity of toSubring on valuation subrings.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 3, "5": 3, "6": 1, "7": 1, "8": 4, "9": 0, "10": 2, "11": 0, "12": 1, "13": 0, "14": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0301": {
+    "moves": "Compute the source/target components of the left unitor's forward map in the Dial category: a composite of product lifts is simplified by pushing composition inside the lift, collapsing the map to the terminal object by uniqueness, and cancelling identities, leaving the second projection.",
+    "grades": {"1": 2, "2": 2, "3": 2, "4": 3, "5": 3, "6": 4, "7": 4, "8": 2, "9": 2, "10": 1, "11": 1, "12": 3, "13": 1, "14": 0, "15": 2, "16": 0, "17": 1, "18": 2, "19": 2, "20": 3, "21": 1, "22": 1, "23": 1, "24": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0302": {
+    "moves": "Rotating a list by its own length returns it: rewrite rotate' as drop n ++ take n with n = length (needs length <= length), then drop of the full length is nil and take of the full length is the list, so nil ++ l = l.",
+    "grades": {"1": 3, "2": 4, "3": 0, "4": 1, "5": 4, "6": 1, "7": 2, "8": 0, "9": 0, "10": 1, "11": 0, "12": 0, "13": 1, "14": 2, "15": 4, "16": 0, "17": 0, "18": 0, "19": 1, "20": 1, "21": 2, "22": 2, "23": 2, "24": 1, "25": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0303": {
+    "moves": "A constant map is continuous, and global continuity implies continuity within any set at any point. Two citations chained; nothing else.",
+    "grades": {"1": 4, "2": 1, "3": 1, "4": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0304": {
+    "moves": "Rewrite the membership condition pointwise under the universal quantifier: a set is contained in powersetCard n univ exactly when every member has card n, using the characterization of membership in powersetCard of univ. Rewriting under a binder is the real structure.",
+    "grades": {"1": 1, "2": 1, "3": 3, "4": 3, "5": 1, "6": 4, "7": 0, "8": 0, "9": 0, "10": 3, "11": 2, "12": 1, "13": 0, "14": 1, "15": 1, "16": 1, "17": 1, "18": 1, "19": 1, "20": 2, "21": 1, "22": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0305": {
+    "moves": "The inverse functor of the self-duality equivalence on Boolean algebras is by construction the stated functor, so the proof is rfl. Purely definitional.",
+    "grades": {"1": 1, "2": 1, "3": 3, "4": 4, "5": 0, "6": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0306": {
+    "moves": "Assemble HasFiniteLimits for a comma category from its constructor: for each finite (small) index category, limits of that shape in the comma category already exist as an instance, so typeclass inference discharges each case. The proof is instance assembly.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 2, "5": 2, "6": 1, "7": 1, "8": 2, "9": 2, "10": 2, "11": 3},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0307": {
+    "moves": "Counting occurrences equal to a given element before an index is the predicate-version count with the beq predicate, so the zero-index lemma is literally the predicate lemma. Pure delegation.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0308": {
+    "moves": "Transfer both sides to the sorted list model of the tree: minKey? on the tree agrees with minKey? on toListModel (needs the ordering part of well-formedness), the list lemma says minKey? is none exactly when the list is empty, and isEmpty on the tree agrees with isEmpty on the list model.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 1, "5": 1, "6": 0, "7": 3, "8": 1, "9": 1, "10": 3, "11": 0, "12": 2, "13": 3, "14": 3, "15": 1, "16": 0, "17": 1, "18": 0, "19": 0, "20": 1, "21": 1, "22": 4, "23": 2, "24": 1, "25": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0309": {
+    "moves": "Every element of an additive group is an additive unit, so the general statement for additive units about translation preserving the uniformity applies verbatim to group elements.",
+    "grades": {"1": 1, "2": 4, "3": 0, "4": 1, "5": 0, "6": 1, "7": 1, "8": 0, "9": 0, "10": 4, "11": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0310": {
+    "moves": "A HashSet is a HashMap with Unit values, so get? on the empty set is the getKey? of the empty map; cite that lemma directly.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0311": {
+    "moves": "Use the left characterization of disjointness: take x in Ico a b, so x < b, and suppose x in Ico b c, so b <= x; those contradict. Membership unfolding plus the strict-less-than/not-greater-equal clash.",
+    "grades": {"1": 0, "2": 0, "3": 4, "4": 2, "5": 2, "6": 0, "7": 1, "8": 0, "9": 1, "10": 2, "11": 2, "12": 1, "13": 1, "14": 4, "15": 4, "16": 2, "17": 0, "18": 0, "19": 0, "20": 2, "21": 1, "22": 1, "23": 2, "24": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0312": {
+    "moves": "Dropping n from the first n elements: rewrite drop-of-take into take of (n - n) applied to the dropped list, note n - n = 0, and take 0 is the empty list.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 1, "5": 1, "6": 0, "7": 2, "8": 4, "9": 2, "10": 0, "11": 0, "12": 1, "13": 1, "14": 0, "15": 0, "16": 1, "17": 2, "18": 1, "19": 0, "20": 0, "21": 0},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

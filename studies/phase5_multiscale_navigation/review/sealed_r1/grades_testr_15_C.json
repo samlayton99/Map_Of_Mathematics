@@ -1,0 +1,146 @@
+{
+  "proof_0337": {
+    "moves": "Pure definitional unfolding: the first component of the WithLp-tagged pair is by construction the first component of the underlying product, so the proof is rfl. No citation names the content.",
+    "grades": {"1": 1, "2": 3, "3": 3, "4": 2, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0338": {
+    "moves": "A simp/API lemma stating what the isEmptyRingEquiv does on an element; it holds by definitional unfolding (Eq.refl). Everything else in the term is typeclass and coercion bookkeeping for the polynomial/AddMonoidAlgebra structures.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 3, "5": 1, "6": 0, "7": 1, "8": 0, "9": 0, "10": 0, "11": 0, "12": 1, "13": 0, "14": 0, "15": 0, "16": 1, "17": 1, "18": 1, "19": 0, "20": 0, "21": 1, "22": 1, "23": 0, "24": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0339": {
+    "moves": "Given a faithfully flat ring map, the opposite morphism is already known to be a regular epi in CommRingCat^op; the proof cites that construction and then converts regular epi to effective epi through the standard equivalence.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 1, "5": 0, "6": 0, "7": 0, "8": 4, "9": 3, "10": 1, "11": 1, "12": 3, "13": 4, "14": 0, "15": 0, "16": 0, "17": 1, "18": 1, "19": 0, "20": 0, "21": 0, "22": 0, "23": 0, "24": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0340": {
+    "moves": "Negate both sides of the already-proved criterion for a coerced ENNReal to equal 1: take the equality lemma and apply Iff.not.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 2, "5": 1, "6": 4, "7": 0, "8": 3, "9": 1, "10": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0341": {
+    "moves": "dropEndWhile is sliceTo applied to skipSuffixWhile, so the char-pattern vs BEq-predicate agreement for skipSuffixWhile transports through by congruence under sliceTo.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 4, "5": 1, "6": 1, "7": 1, "8": 1, "9": 0, "10": 1, "11": 0, "12": 2, "13": 2, "14": 2, "15": 2, "16": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0342": {
+    "moves": "Unfold the FirstNonzeroIsPos predicate at the empty list: it reduces to a claim that two distinct Sign constructors are equal, which is refuted by constructor discrimination. Almost the whole term is decide/simp automation residue.",
+    "grades": {"1": 3, "2": 0, "3": 0, "4": 1, "5": 1, "6": 2, "7": 0, "8": 1, "9": 2, "10": 1, "11": 0, "12": 2, "13": 1, "14": 0, "15": 0, "16": 1, "17": 0, "18": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0343": {
+    "moves": "Brute-force evaluation: the determinant of the explicit 2x2 G2 Cartan matrix over the integers is computed by kernel reduction and closed by decide/rfl. No mathematical idea beyond the computation.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 0, "6": 1, "7": 3, "8": 1, "9": 0, "10": 0, "11": 0, "12": 1, "13": 1, "14": 2, "15": 3, "16": 2, "17": 0, "18": 2, "19": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0344": {
+    "moves": "The zero element of the Point type is defined to be the zero power series, so the underlying-value equation is true by definition; proof is rfl unfolding the Zero instance.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 3, "5": 2, "6": 0, "7": 2, "8": 1, "9": 0, "10": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0345": {
+    "moves": "Rewrite the goal using the fact that symm is order-reversing (symm_le_symm) and involutive (symm_symm), after which the two sides are literally the same statement and Iff.rfl closes it.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 0, "5": 4, "6": 1, "7": 0, "8": 1, "9": 1, "10": 1, "11": 3, "12": 1, "13": 1, "14": 1, "15": 1, "16": 0, "17": 1, "18": 4, "19": 2, "20": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0346": {
+    "moves": "Push a real Hoelder conjugacy hypothesis to NNReal via the general HolderTriple transfer lemma, then fix up the coercion of the literal 1 using toNNReal_one.",
+    "grades": {"1": 1, "2": 0, "3": 2, "4": 1, "5": 0, "6": 1, "7": 0, "8": 3, "9": 1, "10": 3, "11": 2, "12": 0, "13": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0347": {
+    "moves": "Strict monotonicity on finite sets unwinds to: given a strict inclusion of finite sets, the extended cardinalities are strictly ordered; this is exactly the existing ecard_lt_ecard lemma after introducing the hypotheses.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 0, "5": 2, "6": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0348": {
+    "moves": "Unfold rank as the supremum over linearly independent subsets of their cardinality, bound the supremum pointwise, and use that the cardinality of any subset of the module is at most the cardinality of the ambient type.",
+    "grades": {"1": 0, "2": 4, "3": 0, "4": 0, "5": 2, "6": 3, "7": 0, "8": 3, "9": 1, "10": 2, "11": 0, "12": 1, "13": 1, "14": 2, "15": 1, "16": 3, "17": 1, "18": 1, "19": 0, "20": 0, "21": 1, "22": 4, "23": 1, "24": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0349": {
+    "moves": "A simp lemma computing the second component of the inverse of the uniqueProd homeomorphism; it holds by definitional unfolding, proof is Eq.refl.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 3, "5": 2, "6": 2, "7": 1, "8": 0, "9": 1, "10": 1, "11": 0, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0350": {
+    "moves": "Computes the object part of the extend-scalars pseudofunctor; true by definition, so the proof is Eq.refl through the projection chain from Pseudofunctor down to Prefunctor.obj.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 1, "7": 2, "8": 1, "9": 0, "10": 1, "11": 0, "12": 1, "13": 3, "14": 0, "15": 0, "16": 0, "17": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0351": {
+    "moves": "Direct use of the characterization: complete normality is equivalent to every subspace being normal, so feed the hypothesis into the mpr direction of that iff.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 3, "5": 1, "6": 3, "7": 1, "8": 1, "9": 2, "10": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0352": {
+    "moves": "The polynomial 1 is the constant polynomial C 1, so the Taylor shift of it is itself by the constant-polynomial case; a one-step application of taylor_C, everything else is the numeral/one instance chain.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 4, "5": 0, "6": 1, "7": 0, "8": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0353": {
+    "moves": "A homeomorphism is in particular a closed embedding, and compact support is already known to be preserved under precomposition with a closed embedding; chain the two.",
+    "grades": {"1": 3, "2": 4, "3": 0, "4": 0, "5": 1, "6": 4, "7": 2, "8": 1, "9": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0354": {
+    "moves": "The vsub of two finsets is by definition image2 of the subtraction map, so the general image2-versus-intersection containment applies verbatim.",
+    "grades": {"1": 1, "2": 4, "3": 2, "4": 1, "5": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0355": {
+    "moves": "Wrapper proof: unwrap the Raw tree to its internal implementation, extract the wellformedness witness with WF.out, and hand off to the corresponding Impl-level lemma.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 1, "5": 2, "6": 2, "7": 1, "8": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0356": {
+    "moves": "Simp lemma unfolding the inverse of the powCoprime equivalence to the explicit power map; definitionally true, closed by Eq.refl.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 2, "5": 0, "6": 1, "7": 1, "8": 1, "9": 2, "10": 3, "11": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0357": {
+    "moves": "Contrapositive: if the two boxes were equal their underlying sets would be equal (coe_inj), but a box has nonempty underlying set and disjointness forces distinct sets, so the boxes differ.",
+    "grades": {"1": 4, "2": 4, "3": 0, "4": 0, "5": 1, "6": 0, "7": 2, "8": 0, "9": 1, "10": 0, "11": 0, "12": 0, "13": 4, "14": 0, "15": 2, "16": 0, "17": 2, "18": 1, "19": 1, "20": 1, "21": 0, "22": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0358": {
+    "moves": "Continuity into the unit group is checked on the value and inverse coordinates; both are continuous compositions of the given continuous monoid hom with the coercion and the inverse coercion, assembled through the continuity criterion for Units.",
+    "grades": {"1": 1, "2": 3, "3": 1, "4": 1, "5": 1, "6": 1, "7": 1, "8": 1, "9": 1, "10": 2, "11": 1, "12": 0, "13": 2, "14": 3, "15": 3, "16": 0, "17": 1, "18": 2, "19": 0, "20": 0, "21": 0, "22": 1, "23": 4, "24": 3},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0359": {
+    "moves": "A repackaging of primitive recursion: apply the existing nat_rec primitive-recursiveness result, composing with the identity/pairing so the arguments land in the right product shape.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 1, "5": 4, "6": 0, "7": 1, "8": 3, "9": 1, "10": 2, "11": 2, "12": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0360": {
+    "moves": "Wrapper proof: the unit-list constructor is insertManyIfNewUnit into the empty map, so the statement is exactly the corresponding internal implementation lemma with the pairwise-distinctness and membership hypotheses passed through.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 1, "6": 1, "7": 1, "8": 2, "9": 0, "10": 4, "11": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  }
+}

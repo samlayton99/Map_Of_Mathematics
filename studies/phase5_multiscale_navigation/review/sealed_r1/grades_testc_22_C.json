@@ -1,0 +1,170 @@
+{
+  "proof_0505": {
+    "moves": "In a tower R -> S -> T with S/R algebraic and T/S integral, unpack the integrality class pointwise, apply the transitivity lemma that integral-over-algebraic is algebraic over the base, and repackage the result as an Algebra.IsAlgebraic instance.",
+    "grades": {"1": 3, "2": 1, "3": 0, "4": 0, "5": 0, "6": 2, "7": 0, "8": 2, "9": 0, "10": 3, "11": 3, "12": 3, "13": 1, "14": 0, "15": 0, "16": 0, "17": 2, "18": 4, "19": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "C", "4": "C", "5": "C", "7": "C", "9": "C", "13": "C", "14": "C", "15": "C", "16": "C", "19": "C"}
+  },
+  "proof_0506": {
+    "moves": "Unfold the vertex-cover condition and, for each edge, take the endpoint covered by the smaller set and push it into the larger set along the subset hypothesis. The real content is transitivity of membership through an inclusion.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 1, "5": 3, "6": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "3": "C", "4": "A", "6": "C"}
+  },
+  "proof_0507": {
+    "moves": "A generated side goal for the quotient-by-kernel equivalence: show rangeKerLift is bijective by pairing the already-proved injectivity and surjectivity lemmas. The proof is literally an And.intro of the two.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 1, "5": 0, "6": 0, "7": 0, "8": 1, "9": 2, "10": 4, "11": 0, "12": 2, "13": 0, "14": 1, "15": 0, "16": 3, "17": 0, "18": 2, "19": 1, "20": 1, "21": 0, "22": 3, "23": 4, "24": 0, "25": 3},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "4": "C", "5": "C", "6": "C", "7": "C", "8": "C", "11": "C", "13": "C", "14": "C", "15": "C", "17": "C", "19": "C", "20": "C", "21": "C", "24": "C"}
+  },
+  "proof_0508": {
+    "moves": "Push the invariant measure forward along a translation: apply the general map-invariance lemma to the constant-vadd map, which is measurable, and use that the two actions commute so the translated action is preserved.",
+    "grades": {"1": 3, "2": 2, "3": 2, "4": 1, "5": 1, "6": 4, "7": 0, "8": 4, "9": 1, "10": 3, "11": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"4": "C", "5": "C", "7": "C", "9": "C"}
+  },
+  "proof_0509": {
+    "moves": "Primed variant of a monotonicity statement: given a pointwise inequality g <= f everywhere rather than eventually, upgrade the hypothesis with 'forall implies eventually' and apply the eventual version to conclude g tends to bottom.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 4, "5": 2, "6": 2, "7": 2, "8": 1, "9": 0, "10": 2, "11": 2, "12": 1, "13": 0, "14": 3},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "3": "C", "8": "C", "9": "C", "12": "C", "13": "C"}
+  },
+  "proof_0510": {
+    "moves": "A reassoc-generated variant: take the base identity about lift, snd, fst and the braiding, post-compose both sides with an arbitrary further morphism, and reassociate. No new mathematics beyond the base lemma plus associativity of composition.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 0, "5": 1, "6": 2, "7": 0, "8": 1, "9": 2, "10": 2, "11": 0, "12": 1, "13": 0, "14": 1, "15": 2, "16": 2, "17": 4, "18": 1, "19": 2, "20": 2, "21": 0, "22": 2, "23": 1, "24": 2, "25": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"3": "E", "4": "C", "5": "E", "7": "C", "8": "E", "11": "D", "12": "E", "13": "C", "14": "C", "18": "C", "21": "C", "23": "C", "25": "C"}
+  },
+  "proof_0511": {
+    "moves": "Another reassoc-generated variant: whisker the base equation about the inverse of the composed 2-isomorphism in the Pith by a further morphism and reassociate. The mathematical content is entirely in the base lemma.",
+    "grades": {"1": 2, "2": 0, "3": 0, "4": 0, "5": 0, "6": 1, "7": 2, "8": 1, "9": 2, "10": 1, "11": 2, "12": 1, "13": 1, "14": 2, "15": 2, "16": 2, "17": 0, "18": 0, "19": 4, "20": 1, "21": 0, "22": 0, "23": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "C", "4": "C", "5": "C", "6": "E", "8": "C", "10": "C", "12": "E", "13": "C", "17": "C", "18": "C", "20": "E", "21": "D", "22": "C", "23": "E"}
+  },
+  "proof_0512": {
+    "moves": "Rewrite the pushforward of the inverted function as the inverse of the pushforward filter, then apply monotonicity of inversion on filters to the tendsto hypothesis; the equality and the inequality are chained together.",
+    "grades": {"1": 1, "2": 4, "3": 0, "4": 0, "5": 0, "6": 0, "7": 2, "8": 0, "9": 0, "10": 1, "11": 0, "12": 4, "13": 0, "14": 2, "15": 0, "16": 1, "17": 2, "18": 0, "19": 2, "20": 2, "21": 1, "22": 0, "23": 1, "24": 0, "25": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "3": "C", "4": "C", "5": "C", "6": "C", "8": "C", "9": "C", "10": "C", "11": "C", "13": "C", "15": "C", "16": "C", "18": "C", "21": "C", "22": "C", "23": "C", "24": "C", "25": "C"}
+  },
+  "proof_0513": {
+    "moves": "The rational cast of the nonnegative-rational one is one; both sides are the same term after unfolding the cast and the numeral, so the proof is rfl. No mathematical step at all.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 2, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 2, "11": 0, "12": 1, "13": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "3": "C", "5": "C", "6": "C", "7": "C", "8": "C", "9": "C", "11": "C", "12": "C", "13": "C"}
+  },
+  "proof_0514": {
+    "moves": "The string-level skip? agrees with the slice-level skip? on the string's slice because the former is defined as the latter; the proof is rfl. Content is purely definitional unfolding.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 3, "5": 2, "6": 1},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "C", "6": "C"}
+  },
+  "proof_0515": {
+    "moves": "Unfold ENNReal.ofReal as the coercion of Real.toNNReal, reduce the inequality of coerced NNReals to an inequality in NNReal via coe_le_coe, then apply monotonicity of toNNReal under the nonnegativity hypothesis.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 4, "5": 1, "6": 1, "7": 0, "8": 3, "9": 1, "10": 0, "11": 0, "12": 1, "13": 0, "14": 2, "15": 2, "16": 0, "17": 1, "18": 1, "19": 3, "20": 2, "21": 2, "22": 0, "23": 1, "24": 1, "25": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "D", "5": "E", "6": "C", "7": "C", "9": "E", "10": "C", "11": "C", "12": "E", "13": "C", "16": "C", "17": "E", "18": "E", "22": "C", "23": "E", "24": "C"}
+  },
+  "proof_0516": {
+    "moves": "Prove both directions: if x is in the support and x, y are in the same cycle, then x lies in the support of cycleOf y (using the characterization of membership in that support), and support of cycleOf is contained in the support; symmetry of SameCycle handles the other direction.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 3, "5": 3, "6": 2, "7": 0, "8": 1, "9": 0, "10": 2, "11": 1, "12": 4, "13": 3, "14": 3, "15": 3, "16": 0, "17": 0, "18": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "C", "7": "C", "8": "C", "9": "C", "11": "E", "16": "C", "17": "C", "18": "C"}
+  },
+  "proof_0517": {
+    "moves": "The seqRight of the Finset applicative is by construction the stated expression, so the proof is rfl; the only content is unfolding the applicative instance.",
+    "grades": {"1": 2, "2": 0, "3": 2, "4": 1, "5": 2, "6": 0, "7": 2},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "4": "C", "6": "C"}
+  },
+  "proof_0518": {
+    "moves": "Extensional tree maps are a quotient of tree maps, so do quotient induction to reduce to a concrete DTreeMap and invoke the corresponding get?_insert lemma there; the dependent if on the comparison result and the cast it forces are carried along.",
+    "grades": {"1": 4, "2": 4, "3": 1, "4": 2, "5": 1, "6": 1, "7": 2, "8": 2, "9": 2, "10": 1, "11": 3, "12": 2, "13": 1, "14": 0, "15": 1, "16": 1, "17": 2, "18": 2, "19": 2, "20": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"3": "E", "5": "E", "6": "E", "10": "C", "13": "E", "14": "C", "15": "C", "16": "C", "20": "E"}
+  },
+  "proof_0519": {
+    "moves": "A definitional simp lemma stating what the functor from condensed sets to topological spaces does on morphisms; both sides reduce to the same term, so the proof is Eq.refl.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 0, "5": 1, "6": 1, "7": 0, "8": 3, "9": 1, "10": 0, "11": 0, "12": 2, "13": 4, "14": 2, "15": 0, "16": 2, "17": 2, "18": 0, "19": 1, "20": 1, "21": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "4": "C", "5": "C", "6": "C", "7": "C", "9": "C", "10": "C", "11": "C", "15": "C", "18": "C", "19": "C", "20": "F", "21": "F"}
+  },
+  "proof_0520": {
+    "moves": "Take the universe-lifted version of the relative-rank equality for the double comap along a ring hom, and cancel the cardinal lifts on both sides with lift_id to land in a single universe.",
+    "grades": {"1": 2, "2": 2, "3": 0, "4": 0, "5": 0, "6": 1, "7": 2, "8": 1, "9": 0, "10": 3, "11": 0, "12": 1, "13": 3, "14": 1, "15": 1, "16": 0, "17": 3, "18": 1, "19": 1, "20": 0, "21": 0, "22": 4, "23": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"3": "C", "4": "C", "5": "C", "6": "E", "8": "E", "9": "C", "11": "C", "12": "E", "14": "C", "15": "E", "16": "C", "18": "C", "19": "C", "20": "C", "21": "C"}
+  },
+  "proof_0521": {
+    "moves": "Rewrite Option.bind as a case analysis on the option, apply computability of Option.casesOn with the constant none function on the none branch and the given binary computable function on the some branch, then fix the definitional mismatch by casing on the option.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 1, "5": 1, "6": 2, "7": 2, "8": 1, "9": 2, "10": 1, "11": 2, "12": 3, "13": 3, "14": 1, "15": 4, "16": 2},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "E", "3": "C", "4": "E", "5": "E", "8": "E", "10": "C", "14": "C"}
+  },
+  "proof_0522": {
+    "moves": "The integer scalar action on continuous maps is defined pointwise, so evaluating a scalar multiple at a point is definitionally the scalar multiple of the value; the proof is rfl.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 0, "5": 1, "6": 2, "7": 2, "8": 0, "9": 2, "10": 2, "11": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "4": "C", "5": "C", "8": "C", "11": "C"}
+  },
+  "proof_0523": {
+    "moves": "Analyticity on a set is a pointwise condition, so fix a point of the source set, use MapsTo to know its image lies in the target set, and apply the within-at composition lemma there.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 0, "6": 1, "7": 1, "8": 0, "9": 3, "10": 0, "11": 3},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C", "5": "C", "6": "C", "7": "C", "8": "C", "10": "C"}
+  },
+  "proof_0524": {
+    "moves": "Apply the characterization of right derivability structures as Guitart exactness of the associated two-square: rewrite the hypothesis along that iff and read off the conclusion.",
+    "grades": {"1": 0, "2": 1, "3": 4, "4": 2, "5": 2, "6": 1, "7": 2, "8": 2, "9": 1, "10": 1, "11": 0, "12": 2, "13": 3, "14": 2, "15": 1, "16": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "E", "6": "C", "9": "E", "10": "C", "11": "C", "15": "C"}
+  },
+  "proof_0525": {
+    "moves": "Exhibit the subtype inclusion of the subsemigroup as an additive hom (its additivity is rfl) which is inducing (the subspace topology is by definition the induced one, again rfl), then transport separate continuity of addition along that inducing hom.",
+    "grades": {"1": 2, "2": 2, "3": 0, "4": 3, "5": 2, "6": 1, "7": 1, "8": 2, "9": 0, "10": 2, "11": 1, "12": 1, "13": 0, "14": 2, "15": 0, "16": 2, "17": 0, "18": 1, "19": 2, "20": 1, "21": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"3": "C", "6": "C", "7": "C", "9": "C", "11": "C", "12": "C", "13": "C", "15": "C", "17": "C", "18": "C", "20": "C"}
+  },
+  "proof_0526": {
+    "moves": "Evaluation is eval2 along the identity ring hom, so the statement is the special case of the already-proved eval2 version for sums over a finset.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 2, "5": 4, "6": 3},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C"}
+  },
+  "proof_0527": {
+    "moves": "Build the lawfulness instance for matching a single character backwards by reducing the character pattern to the character-predicate pattern (equality against the fixed char) and supplying the two required equations for endsWith and skipSuffixOfNonempty? from that instance.",
+    "grades": {"1": 2, "2": 2, "3": 3, "4": 1, "5": 2, "6": 1, "7": 2, "8": 3, "9": 2, "10": 0, "11": 3, "12": 1, "13": 3, "14": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"4": "C", "6": "C", "10": "C", "12": "E", "14": "E"}
+  },
+  "proof_0528": {
+    "moves": "Since f and g agree on all nonzero naturals, their L-series terms agree, so rewrite both the summability and the value of the L-series along the congruence lemmas; the two HasSum statements then coincide and the goal closes by simp-style reflexivity.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 3, "5": 0, "6": 1, "7": 0, "8": 1, "9": 1, "10": 1, "11": 1, "12": 1, "13": 1, "14": 4, "15": 1, "16": 4, "17": 1, "18": 1, "19": 1, "20": 2, "21": 3, "22": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "E", "3": "E", "5": "C", "6": "C", "7": "D", "8": "E", "9": "E", "10": "E", "11": "A", "12": "C", "13": "E", "15": "C", "17": "E", "18": "E", "19": "E", "22": "D"}
+  }
+}

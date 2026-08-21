@@ -1,0 +1,170 @@
+{
+  "proof_0529": {
+    "moves": "Instance showing the category of schemes has all finite limits: it suffices to exhibit a terminal object (Spec Z) and pullbacks (fibre products of schemes), and then invoke the general criterion that terminal + pullbacks gives all finite limits.",
+    "grades": {"1": 4, "2": 1, "3": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C"}
+  },
+  "proof_0530": {
+    "moves": "Rewrite the first marginal of the kernel as the pushforward along Prod.fst using fst_eq, then conclude that the map of a zero-or-Markov kernel along a measurable map is again zero-or-Markov (instance inference does the last step).",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 0, "5": 4, "6": 0, "7": 3, "8": 2, "9": 1, "10": 0, "11": 1, "12": 1, "13": 3, "14": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "G", "2": "D", "4": "C", "6": "D", "9": "E", "10": "C", "11": "E", "12": "C"}
+  },
+  "proof_0531": {
+    "moves": "Instance: SL(n,R) carries the discrete topology when the matrix space does. The whole argument is delegated to an auto-generated private obligation, morally that the discrete topology is inherited by a subtype/injection into a discrete space.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 0, "6": 3},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"1": "A", "2": "C", "3": "C", "4": "C", "5": "C"}
+  },
+  "proof_0532": {
+    "moves": "Pure definitional unfolding: the intersection operation on extensional tree maps is by definition the right-hand side, so the two sides are syntactically equal and the goal closes by reflexivity (dressed up by simp as of_eq_true/eq_self).",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 1, "5": 2, "6": 1, "7": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "D", "2": "E", "4": "C", "6": "C"}
+  },
+  "proof_0533": {
+    "moves": "Build an IsWellOrder structure for the relation pulled back along an injection: trichotomy transfers because the map is injective (the onFun trichotomy lemma), and the remaining fields (transitivity, well-foundedness of the inverse image) come along.",
+    "grades": {"1": 2, "2": 3, "3": 3, "4": 4, "5": 3, "6": 2},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {}
+  },
+  "proof_0534": {
+    "moves": "No mathematical content: converting a UInt32 to a bitvector and reinterpreting it as an Int32 is definitionally the identity on the underlying bits, so the proof is rfl.",
+    "grades": {"1": 2, "2": 2, "3": 3, "4": 2, "5": 3},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {}
+  },
+  "proof_0535": {
+    "moves": "Obtain the witness c with b = a + c from the ExistsAddOfLE hypothesis; then a <= a + c gives 0 <= c by left-cancellation/reflection of the order; finally package the witness, the nonnegativity and the equation as the existential-and-conjunction.",
+    "grades": {"1": 1, "2": 2, "3": 4, "4": 0, "5": 2, "6": 1, "7": 0, "8": 2, "9": 4, "10": 0, "11": 0, "12": 2, "13": 2, "14": 2, "15": 2, "16": 1, "17": 3, "18": 2, "19": 0, "20": 0, "21": 3, "22": 0, "23": 1, "24": 2},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "E", "4": "C", "6": "C", "7": "C", "10": "C", "11": "C", "16": "C", "19": "C", "20": "C", "22": "C", "23": "E"}
+  },
+  "proof_0536": {
+    "moves": "Definitional: the bitvector underlying the numeral-valued Int16 is by construction the bitvector of that natural number, so both sides reduce to the same term and rfl closes it.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 4, "5": 2, "6": 4, "7": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"3": "G", "7": "C"}
+  },
+  "proof_0537": {
+    "moves": "Unfold the evaluation semantics of the `succ` code: it takes the head of the input list and adds one, returning a singleton partial value; simp reduces both sides to the same term.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 1, "5": 2, "6": 0, "7": 2, "8": 0, "9": 2, "10": 2, "11": 2, "12": 0, "13": 1, "14": 3, "15": 2, "16": 2},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "C", "4": "D", "6": "C", "8": "C", "12": "C", "13": "E"}
+  },
+  "proof_0538": {
+    "moves": "Unfold IsLoopAt and IsNonloopAt to their incidence definitions and then push negations through the conjunction/double negation classically until the two sides of the iff coincide; the content is definitional unfolding plus propositional rearrangement.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 4, "6": 1, "7": 0, "8": 1, "9": 4, "10": 1, "11": 0, "12": 2, "13": 2, "14": 1, "15": 0, "16": 4, "17": 1, "18": 1, "19": 2, "20": 0, "21": 0, "22": 1, "23": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "D", "2": "E", "3": "D", "6": "A", "7": "D", "8": "A", "10": "E", "11": "D", "14": "A", "15": "A", "17": "E", "18": "D", "20": "A", "21": "A", "22": "D", "23": "E"}
+  },
+  "proof_0539": {
+    "moves": "Definitional: FreeMonoid over a type is its list of generators and toList is the identifying equivalence, so prepending a generator is literally list cons; rfl.",
+    "grades": {"1": 2, "2": 4, "3": 0, "4": 3, "5": 0, "6": 2, "7": 3, "8": 1, "9": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"3": "C", "5": "C", "8": "C", "9": "C"}
+  },
+  "proof_0540": {
+    "moves": "Case split on the option: in the none branch both sides are false, in the some branch the attached subtype element has the same underlying value, so each branch closes definitionally.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 2, "5": 4, "6": 4, "7": 1, "8": 2, "9": 2, "10": 2, "11": 1, "12": 1, "13": 1, "14": 2, "15": 2, "16": 1, "17": 3, "18": 0, "19": 2, "20": 2, "21": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "D", "3": "E", "7": "E", "11": "D", "12": "E", "13": "E", "16": "E", "18": "D", "21": "D"}
+  },
+  "proof_0541": {
+    "moves": "This is the mechanically generated `_assoc` variant: take the base naturality square for the associator tensored with an identity, whisker it on the right by an arbitrary further morphism, and reassociate the composites. No new mathematics beyond the base lemma.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 1, "5": 1, "6": 2, "7": 0, "8": 0, "9": 2, "10": 2, "11": 1, "12": 1, "13": 1, "14": 3, "15": 3, "16": 1, "17": 2, "18": 0, "19": 2, "20": 4, "21": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "E", "3": "D", "4": "D", "5": "E", "7": "C", "8": "C", "11": "C", "12": "C", "13": "E", "16": "E", "18": "C"}
+  },
+  "proof_0542": {
+    "moves": "Transport along order duality: a set is a lower set exactly when its preimage under toDual is an upper set, so apply the mpr direction of that characterisation.",
+    "grades": {"1": 3, "2": 3, "3": 1, "4": 3, "5": 0, "6": 0, "7": 2, "8": 3, "9": 2, "10": 0, "11": 1, "12": 4, "13": 3, "14": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"3": "C", "5": "C", "6": "C", "10": "C", "11": "C", "14": "C"}
+  },
+  "proof_0543": {
+    "moves": "Internal recursive helper: by structural recursion over the list of union-find nodes, show a member node's rank is at most the running foldr-max of the ranks, using that max dominates both arguments in the cons step.",
+    "grades": {"1": 2, "2": 2, "3": 0, "4": 0, "5": 2, "6": 2, "7": 1, "8": 3, "9": 0, "10": 2, "11": 0, "12": 3, "13": 3, "14": 3, "15": 1},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"3": "C", "4": "C", "7": "C", "9": "C", "11": "C", "15": "A"}
+  },
+  "proof_0544": {
+    "moves": "Chain two inequalities: from the hypothesis a <= b + c and the fact that adding a nonpositive element only decreases (b + c <= b), transitivity gives a <= b.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 3, "5": 0, "6": 0, "7": 0, "8": 1, "9": 0, "10": 4, "11": 0, "12": 3, "13": 2, "14": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "3": "C", "5": "C", "6": "C", "7": "C", "8": "C", "9": "C", "11": "C", "14": "C"}
+  },
+  "proof_0545": {
+    "moves": "Pure forwarding: the statement is exactly the field of the IsCocomm class, so the proof just restates it. No mathematical step.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 1, "5": 4, "6": 0, "7": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "3": "C", "4": "C", "6": "C"}
+  },
+  "proof_0546": {
+    "moves": "Definitional: the opposite of a set is defined by exactly this membership condition, so the iff is Iff.rfl.",
+    "grades": {"1": 4, "2": 2, "3": 0, "4": 2, "5": 2, "6": 3, "7": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"3": "C"}
+  },
+  "proof_0547": {
+    "moves": "Assemble the SubgroupClass instance out of the closure properties a Subgroup already carries: multiplication-closure via its underlying subsemigroup, one-closure via its underlying submonoid, and inverse-closure from the Subgroup field itself.",
+    "grades": {"1": 3, "2": 0, "3": 0, "4": 2, "5": 0, "6": 1, "7": 0, "8": 3, "9": 3, "10": 4, "11": 3, "12": 0, "13": 0, "14": 2, "15": 0, "16": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "C", "5": "C", "6": "C", "7": "C", "12": "C", "13": "C", "15": "C"}
+  },
+  "proof_0548": {
+    "moves": "Identify the image of the fibre-mk map with the fibre's image set: apply the map_eq_image lemma to the canonical section mkSelf and take the symmetric form; the fibre is the preimage of a singleton, so the range of the inclusion is that set.",
+    "grades": {"1": 3, "2": 2, "3": 3, "4": 1, "5": 4, "6": 4, "7": 2, "8": 4, "9": 3, "10": 2, "11": 1, "12": 2, "13": 0, "14": 0},
+    "missing_key": false,
+    "confidence": "low",
+    "causes": {"4": "C", "11": "C", "13": "C", "14": "C"}
+  },
+  "proof_0549": {
+    "moves": "Mechanically generated `_assoc` variant of coassociativity for a comonad in a bicategory: whisker the comul_assoc equation on the right by an arbitrary further 2-cell and reassociate the composites. The content is entirely the base lemma.",
+    "grades": {"1": 4, "2": 0, "3": 3, "4": 3, "5": 3, "6": 2, "7": 1, "8": 1, "9": 0, "10": 1, "11": 2, "12": 2, "13": 0, "14": 0, "15": 2, "16": 1, "17": 0, "18": 1, "19": 1, "20": 2, "21": 1, "22": 3, "23": 0, "24": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "7": "C", "8": "E", "9": "C", "10": "E", "13": "C", "14": "C", "16": "D", "17": "D", "18": "E", "19": "E", "21": "E", "23": "C"}
+  },
+  "proof_0550": {
+    "moves": "Case split on the option: for none the list is empty so the fold returns the initial value, for some it is a singleton so one application of the function occurs; both branches match Option.elim definitionally.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 2, "5": 1, "6": 3, "7": 1, "8": 2, "9": 4, "10": 1, "11": 4, "12": 1, "13": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"3": "D", "5": "E", "7": "E", "10": "D", "12": "E"}
+  },
+  "proof_0551": {
+    "moves": "Definitional: casting a morphism along two reflexivity proofs of the endpoint equalities reduces to the morphism itself, so the proof is rfl.",
+    "grades": {"1": 4, "2": 2, "3": 2, "4": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {}
+  },
+  "proof_0552": {
+    "moves": "Weaken the IsPredLimit hypothesis to IsPredPrelimit and apply the corresponding prelimit lemma giving x - 1 < x; a single forwarding step.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 4, "5": 1, "6": 3, "7": 0, "8": 2, "9": 1, "10": 3},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "3": "C", "5": "C", "7": "C", "9": "C"}
+  }
+}

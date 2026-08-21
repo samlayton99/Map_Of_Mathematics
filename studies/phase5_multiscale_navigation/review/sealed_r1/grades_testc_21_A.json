@@ -1,0 +1,170 @@
+{
+  "proof_0481": {
+    "moves": "Both sides unfold to the same search over the slice, so the equality of contains-with-a-Char-pattern and contains-with-the-(· == c)-predicate holds definitionally; the proof is rfl.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 0, "5": 0, "6": 1, "7": 3, "8": 0, "9": 0, "10": 1, "11": 0, "12": 2, "13": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "C", "4": "C", "5": "C", "6": "C", "8": "C", "9": "C", "10": "C", "11": "C", "13": "C"}
+  },
+  "proof_0482": {
+    "moves": "A component complement is contained in its image under hom, and a set containing an infinite set is infinite; so apply monotonicity of Set.Infinite to subset_hom.",
+    "grades": {"1": 2, "2": 0, "3": 4, "4": 0, "5": 3, "6": 1, "7": 2, "8": 1, "9": 1, "10": 4, "11": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "4": "C", "6": "E", "8": "C", "9": "C", "11": "C"}
+  },
+  "proof_0483": {
+    "moves": "Turn the ring homs into algebra structures, note the composite gives a scalar tower (algebraMap equality holds by rfl), then descend formal etaleness along restriction of scalars.",
+    "grades": {"1": 3, "2": 3, "3": 0, "4": 0, "5": 2, "6": 1, "7": 0, "8": 3, "9": 2, "10": 3, "11": 4, "12": 3, "13": 1, "14": 0, "15": 3, "16": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"3": "C", "4": "C", "6": "C", "7": "C", "13": "C", "14": "C", "16": "E"}
+  },
+  "proof_0484": {
+    "moves": "Membership in the closure means membership in every non-unital subsemiring containing s, so any element of s qualifies; apply the mpr direction of mem_closure.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 2, "5": 0, "6": 4, "7": 2, "8": 2, "9": 1, "10": 0, "11": 4, "12": 1, "13": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "E", "5": "C", "9": "C", "10": "C", "12": "C", "13": "C"}
+  },
+  "proof_0485": {
+    "moves": "The plausible-successor relation is defined as the stated inverse image, so the two sides are definitionally equal; the proof is rfl.",
+    "grades": {"1": 3, "2": 1, "3": 2, "4": 1, "5": 1},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"2": "C", "4": "C", "5": "C"}
+  },
+  "proof_0486": {
+    "moves": "The theory-level iff formula is equivalent to the conjunction of the two implications; take the right conjunct of that equivalence.",
+    "grades": {"1": 2, "2": 3, "3": 1, "4": 2, "5": 1, "6": 1, "7": 1, "8": 3, "9": 1, "10": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"3": "C", "5": "C", "6": "C", "7": "C", "9": "E"}
+  },
+  "proof_0487": {
+    "moves": "Pairwise with the bottom relation says no two distinct points of s are related at all, which is exactly subsingleton-ness; apply the forward direction of pairwise_bot_iff.",
+    "grades": {"1": 2, "2": 3, "3": 3, "4": 4, "5": 1, "6": 0, "7": 0, "8": 2, "9": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"5": "C", "6": "C", "7": "C", "9": "C"}
+  },
+  "proof_0488": {
+    "moves": "Reduce a = ⊤ to ⊤ ≤ a via eq_top_iff, then feed codisjointness the two bounds a ≤ a (reflexivity) and b ≤ a.",
+    "grades": {"1": 0, "2": 0, "3": 3, "4": 1, "5": 4, "6": 2, "7": 2, "8": 4, "9": 2, "10": 0, "11": 1, "12": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "4": "C", "10": "C", "11": "E", "12": "C"}
+  },
+  "proof_0489": {
+    "moves": "Construct the isometric-action instance for the additive opposite: the opposite action is the original action by the unopped element, so the extended distance is unchanged by edist_vadd_left.",
+    "grades": {"1": 2, "2": 0, "3": 0, "4": 2, "5": 3, "6": 0, "7": 0, "8": 1, "9": 0, "10": 1, "11": 4, "12": 0, "13": 3, "14": 2, "15": 1, "16": 2, "17": 1, "18": 0, "19": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "C", "6": "C", "7": "C", "8": "F", "9": "C", "10": "E", "12": "C", "15": "C", "17": "C", "18": "D"}
+  },
+  "proof_0490": {
+    "moves": "Chain two known bridges: the implementation's minEntry? agrees with the model version minEntry?ₘ, which in turn agrees with the list-level minEntry? on the tree's list model, using the ordering invariant.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 0, "5": 2, "6": 0, "7": 1, "8": 4, "9": 1, "10": 3, "11": 3, "12": 3, "13": 1, "14": 3, "15": 0, "16": 0, "17": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "E", "4": "D", "6": "D", "7": "C", "9": "C", "13": "C", "15": "D", "16": "D", "17": "C"}
+  },
+  "proof_0491": {
+    "moves": "Write Ico a b as the intersection Iio b ∩ Ici a, then use that Iio is locally closed (open) and Ici is locally closed (closed) together with closure of local closedness under intersection.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 1, "5": 0, "6": 1, "7": 2, "8": 4, "9": 0, "10": 4, "11": 0, "12": 4, "13": 3, "14": 3, "15": 0, "16": 0, "17": 0, "18": 3, "19": 2, "20": 0, "21": 1, "22": 0, "23": 0, "24": 3},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "E", "3": "C", "4": "C", "5": "D", "6": "C", "9": "C", "11": "C", "15": "C", "16": "C", "17": "D", "20": "C", "21": "E", "22": "D", "23": "C"}
+  },
+  "proof_0492": {
+    "moves": "The subfield attached to an intermediate field has the same underlying carrier, so the two membership statements are definitionally the same; the proof is Iff.rfl.",
+    "grades": {"1": 4, "2": 0, "3": 0, "4": 0, "5": 1, "6": 2, "7": 0, "8": 0, "9": 0, "10": 0, "11": 1, "12": 3, "13": 2, "14": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "3": "C", "4": "C", "5": "C", "7": "C", "8": "C", "9": "C", "10": "C", "11": "C"}
+  },
+  "proof_0493": {
+    "moves": "Destructure the arrays as wrappers around lists, transport the permutation to the underlying lists, and apply List.Perm.mem_iff, rewriting array membership as list membership.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 0, "5": 1, "6": 3, "7": 0, "8": 3, "9": 0, "10": 2, "11": 1, "12": 0, "13": 1, "14": 0, "15": 2, "16": 2, "17": 0, "18": 0, "19": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "A", "2": "E", "3": "C", "4": "D", "5": "E", "7": "C", "9": "D", "11": "C", "12": "D", "13": "C", "14": "D", "17": "A", "18": "D"}
+  },
+  "proof_0494": {
+    "moves": "Iio is injective on a linear order, and an injective function's equality of values is equivalent to equality of arguments.",
+    "grades": {"1": 4, "2": 0, "3": 3, "4": 3, "5": 0, "6": 1, "7": 1, "8": 0, "9": 0, "10": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "5": "C", "6": "C", "7": "C", "8": "C", "9": "C", "10": "C"}
+  },
+  "proof_0495": {
+    "moves": "Case-split the integer argument into the nonneg (cast of a nat) and negSucc branches; in each branch the Nonnegg predicate reduces definitionally to the claimed SqLe statement or to True.",
+    "grades": {"1": 0, "2": 3, "3": 1, "4": 2, "5": 1, "6": 2, "7": 0, "8": 0, "9": 3, "10": 0, "11": 1, "12": 0, "13": 1, "14": 4, "15": 2, "16": 2, "17": 1, "18": 1},
+    "missing_key": false,
+    "confidence": "low",
+    "causes": {"1": "C", "3": "E", "5": "C", "7": "C", "8": "C", "10": "C", "11": "C", "12": "C", "13": "E", "17": "E", "18": "E"}
+  },
+  "proof_0496": {
+    "moves": "Unpack the raw tree map's well-formedness to get the invariant on the inner implementation, then apply the implementation-level get!_erase! lemma.",
+    "grades": {"1": 4, "2": 2, "3": 3, "4": 2, "5": 3, "6": 2, "7": 3, "8": 1, "9": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"8": "C", "9": "C"}
+  },
+  "proof_0497": {
+    "moves": "In a normal space every neighbourhood of a set contains a closed neighbourhood of it; feed that existence statement to the self-basis criterion for filters to get a basis of closed neighbourhoods.",
+    "grades": {"1": 3, "2": 0, "3": 1, "4": 3, "5": 4, "6": 1, "7": 3, "8": 1, "9": 1, "10": 3, "11": 2, "12": 1, "13": 1, "14": 4, "15": 0, "16": 1, "17": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "3": "C", "6": "E", "8": "E", "9": "E", "12": "E", "13": "C", "15": "D", "16": "C", "17": "C"}
+  },
+  "proof_0498": {
+    "moves": "Given the edge from the start to v and v on the path's support, compare the single-edge path u→v with the truncation of p up to v; in an acyclic graph paths between two vertices are unique (Subsingleton), so the two agree and v must be p.snd.",
+    "grades": {"1": 4, "2": 4, "3": 3, "4": 4, "5": 1, "6": 0, "7": 1, "8": 3, "9": 1, "10": 2, "11": 0, "12": 2, "13": 3, "14": 1, "15": 2, "16": 4, "17": 3, "18": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"5": "A", "6": "C", "7": "C", "9": "C", "11": "C", "14": "E", "18": "E"}
+  },
+  "proof_0499": {
+    "moves": "Assemble the equivalence-relation structure from the three already-proved facts: reflexivity, symmetry and transitivity of the right-fraction relation (the calculus of fractions hypothesis is what makes transitivity available).",
+    "grades": {"1": 4, "2": 3, "3": 1, "4": 2, "5": 0, "6": 2, "7": 4, "8": 3, "9": 4, "10": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"3": "C", "5": "C"}
+  },
+  "proof_0500": {
+    "moves": "The claim that a set is contained in the von Neumann ordinal of its own rank; here it is discharged by simp-generated rewriting that reduces the goal to reflexivity of ≤ on ordinals, with the actual content buried in a private simp lemma.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 0, "6": 4, "7": 2, "8": 0, "9": 1, "10": 4, "11": 0, "12": 1, "13": 2, "14": 0},
+    "missing_key": true,
+    "confidence": "low",
+    "causes": {"1": "D", "2": "C", "3": "D", "4": "A", "5": "C", "8": "C", "9": "E", "11": "D", "12": "A", "14": "C"}
+  },
+  "proof_0501": {
+    "moves": "Rewrite subtraction as addition of the negation, then rewrite negation as multiplication by -1 and identify -1 with the appropriate UInt8 literal; a chain of rewrites.",
+    "grades": {"1": 2, "2": 0, "3": 2, "4": 0, "5": 0, "6": 0, "7": 0, "8": 4, "9": 0, "10": 2, "11": 3, "12": 1, "13": 2, "14": 4, "15": 2, "16": 0, "17": 0, "18": 0, "19": 0, "20": 1, "21": 0, "22": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "D", "4": "D", "5": "C", "6": "C", "7": "C", "9": "D", "12": "E", "16": "C", "17": "D", "18": "C", "19": "C", "20": "C", "21": "C", "22": "C"}
+  },
+  "proof_0502": {
+    "moves": "Translate each congruence into a divisibility of the difference, then use that the lcm divides a number exactly when both do; here the translation is carried out by simp with generated private lemmas.",
+    "grades": {"1": 0, "2": 4, "3": 0, "4": 4, "5": 1, "6": 1, "7": 1, "8": 0, "9": 1, "10": 0, "11": 0, "12": 0, "13": 0, "14": 2, "15": 2, "16": 0, "17": 0, "18": 3, "19": 2, "20": 0},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"1": "D", "3": "C", "5": "E", "6": "C", "7": "A", "8": "D", "9": "A", "10": "D", "11": "C", "12": "C", "13": "C", "16": "D", "17": "D", "20": "D"}
+  },
+  "proof_0503": {
+    "moves": "Induct on the natural number n: the base case is exp 0 = 1, and the successor step splits exp((n+1)z) via the addition formula for exp into exp(nz) * exp z, matching pow_succ.",
+    "grades": {"1": 2, "2": 2, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 1, "10": 1, "11": 2, "12": 4, "13": 0, "14": 1, "15": 0, "16": 2, "17": 1},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"3": "C", "4": "C", "5": "C", "6": "C", "7": "C", "8": "C", "9": "C", "10": "C", "13": "C", "14": "A", "15": "C", "17": "E"}
+  },
+  "proof_0504": {
+    "moves": "Prove both directions: a covering relation gives the weak covering relation plus distinctness, and conversely a weak covering with distinct endpoints is a covering.",
+    "grades": {"1": 0, "2": 3, "3": 2, "4": 4, "5": 2, "6": 4, "7": 2, "8": 3, "9": 4, "10": 2, "11": 3, "12": 1, "13": 0, "14": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "12": "C", "13": "C"}
+  }
+}

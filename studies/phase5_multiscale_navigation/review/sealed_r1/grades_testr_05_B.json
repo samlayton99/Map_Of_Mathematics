@@ -1,0 +1,146 @@
+{
+  "proof_0097": {
+    "moves": "Pure definitional unfolding: `endPos` is defined by a match on the SearchStep constructors, so on the `matched p q` branch it reduces to `q` and the goal closes by rfl. No citation is used; the content is that the match arm computes.",
+    "grades": {"1": 2, "2": 3, "3": 1, "4": 1, "5": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0098": {
+    "moves": "s ∩ t is a subset of s, and being bounded below is inherited by subsets; so apply monotonicity of BddBelow along `inter_subset_left`.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 4, "5": 4, "6": 1, "7": 1, "8": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0099": {
+    "moves": "Transport along the equality of propositions h : p₁ = p₂ (i.e. substitute), after which both universally quantified statements are literally the same term and reflexivity finishes. There is no mathematical idea beyond the substitution.",
+    "grades": {"1": 2, "2": 3, "3": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0100": {
+    "moves": "The `ForM` instance for `Option` is defined to be `Option.forM`, so the two sides are the same term; the whole proof is rfl.",
+    "grades": {"1": 1, "2": 0, "3": 2, "4": 1, "5": 2, "6": 0, "7": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0101": {
+    "moves": "No mathematical content: this is the auto-generated projection extracting the single field out of the class `PreservesColimitOfIsReflexivePair`.",
+    "grades": {"1": 1, "2": 1, "3": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0102": {
+    "moves": "Negation on a quaternion algebra is defined componentwise, so the imI component of -a is by definition -a.imI; the proof is rfl.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 1, "5": 3, "6": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0103": {
+    "moves": "No mathematical content: this is the structure projection pulling the additivity-in-the-first-argument axiom field out of the `InnerProductSpace` class.",
+    "grades": {"1": 2, "2": 1, "3": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0104": {
+    "moves": "Unfold the trivially-graded `One.gOne` instance: its `one` field was defined to be `1`, so the equation holds by rfl.",
+    "grades": {"1": 1, "2": 2, "3": 3, "4": 1, "5": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0105": {
+    "moves": "Multiply the two membership hypotheses using closure of the subobject under multiplication to get (-x) * y ∈ s, then rewrite (-x) * y = -(x * y) by the distributivity of negation over multiplication.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 1, "5": 4, "6": 4, "7": 1, "8": 0, "9": 0, "10": 1, "11": 1, "12": 2, "13": 0, "14": 1, "15": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0106": {
+    "moves": "No mathematical content: the parent-class projection instance, extracting the `InfHomClass` structure that `LatticeHomClass` already extends.",
+    "grades": {"1": 1, "2": 1, "3": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0107": {
+    "moves": "The coercion of a set to a type (`Set.Elem`) is defined as the subtype of elements satisfying membership, and `{x | x ∈ S}` unfolds to that same predicate, so the equation is definitional and closed by rfl.",
+    "grades": {"1": 2, "2": 1, "3": 3, "4": 1, "5": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0108": {
+    "moves": "`intersperse` is defined by pattern matching on the list shape; a singleton `x :: nil` hits the arm that returns the list unchanged, so the goal reduces definitionally and rfl closes it.",
+    "grades": {"1": 3, "2": 2, "3": 2, "4": 1, "5": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0109": {
+    "moves": "`toBipointed` is built so that its underlying carrier is literally X's carrier, so the coercion equality holds by definition; the proof is rfl.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0110": {
+    "moves": "Commute the outer product so that a / b * (c / a) becomes (c / a) * (a / b), then apply the already-proved cancellation lemma div_mul_div_cancel.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 1, "5": 4, "6": 0, "7": 0, "8": 0, "9": 0, "10": 1, "11": 0, "12": 0, "13": 0, "14": 1, "15": 4, "16": 0, "17": 0, "18": 0, "19": 0, "20": 0, "21": 0, "22": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0111": {
+    "moves": "Use the characterization a :: l ⊆ m ↔ a ∈ m ∧ l ⊆ m in the reverse direction, feeding it the pair of the two given hypotheses. The only work is packaging them into a conjunction.",
+    "grades": {"1": 4, "2": 2, "3": 2, "4": 1, "5": 1, "6": 1, "7": 1, "8": 1, "9": 0, "10": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0112": {
+    "moves": "Case split on the Option: for `none` both sides are the vacuous `true`, and for `some a` both sides reduce to `(f a).all p`. The real content is the case analysis; everything else is computation.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 0, "5": 0, "6": 4, "7": 2, "8": 2, "9": 1, "10": 1, "11": 2, "12": 1, "13": 1, "14": 1, "15": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0113": {
+    "moves": "Passing to the order dual reverses ≤, so the contravariance hypothesis for right multiplication transfers by flipping the relation; build the instance from the original class field composed with the flip lemma, with right multiplication encoded as the swap of (·*·).",
+    "grades": {"1": 2, "2": 3, "3": 2, "4": 1, "5": 0, "6": 1, "7": 1, "8": 2, "9": 2, "10": 1, "11": 2, "12": 0, "13": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0114": {
+    "moves": "An auto-generated projection lemma: `multicospanShape` was defined with `snd j := j.1.2`, so unfolding the definition gives the equation by rfl. No mathematical step.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 3, "5": 1, "6": 2, "7": 1, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0115": {
+    "moves": "Rewrite 0 + a to a on both sides using zero_add, after which the goal a ≤ b → a ≤ b is discharged by the identity function.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 1, "5": 2, "6": 1, "7": 0, "8": 1, "9": 0, "10": 1, "11": 4, "12": 1, "13": 1, "14": 1, "15": 0, "16": 1, "17": 1, "18": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0116": {
+    "moves": "An additive unit acts through its underlying element, so commutativity of the two actions on the units type is exactly the commutativity already assumed downstairs, applied to the coercion; the instance is then packaged with mk.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 3, "5": 4, "6": 1, "7": 2, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0117": {
+    "moves": "The identity morphism of a frame is the identity frame hom, which acts as the identity function, so applying it to x returns x; `simp` closes it via the hom_id simp lemma. The candidate list contains only simp's closing residue and ambient types, not the lemma that does the work.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 1, "5": 1},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0118": {
+    "moves": "No mathematical content: the structure projection extracting the `property` field (the proof that the underlying morphism satisfies P) from a morphism of the induced wide category.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 0, "5": 1, "6": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0119": {
+    "moves": "Take x in Ioi a, i.e. a < x, and conclude a ≤ x. The single step is passing from strict to non-strict inequality; membership in Ioi and Ici unfolds definitionally.",
+    "grades": {"1": 4, "2": 2, "3": 1, "4": 1, "5": 1, "6": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0120": {
+    "moves": "Case split on the outer Option: for `none` both sides are none, and for `some y` both sides reduce to `y.map f`. The case analysis is the whole proof; the rest is computation.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 2, "5": 1, "6": 0, "7": 2, "8": 1, "9": 4, "10": 1, "11": 2, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

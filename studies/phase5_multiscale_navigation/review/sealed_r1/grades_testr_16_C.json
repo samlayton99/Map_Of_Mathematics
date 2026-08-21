@@ -1,0 +1,146 @@
+{
+  "proof_0361": {
+    "moves": "Exhibit X itself as the preimage witness, then observe that a ring hom maps X to X (map_X). The mathematical content is choosing the witness plus one computation lemma; the rest is simp proof-term residue.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 0, "5": 4, "6": 1, "7": 0, "8": 0, "9": 2, "10": 1, "11": 0, "12": 2, "13": 0, "14": 0, "15": 0, "16": 0, "17": 2, "18": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0362": {
+    "moves": "A definitional simp lemma: the inverse of the smulConst homeomorphism applied to a point is what its definition says, closed by rfl. The content is unfolding a definition, not a citation.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 0, "5": 1, "6": 1, "7": 1, "8": 1, "9": 1, "10": 3, "11": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0363": {
+    "moves": "Assemble the Connected structure from its two fields: preconnectedness comes from the edge-connectivity hypothesis, and nonemptiness of the vertex set is already available. Pure structure construction plus one projection.",
+    "grades": {"1": 0, "2": 2, "3": 0, "4": 2, "5": 4, "6": 3, "7": 0, "8": 1, "9": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0364": {
+    "moves": "Definitional simp lemma computing the inverse of the uniqueAlgEquiv between MvPolynomial over a Unique index type and Polynomial; closed by rfl. All real weight is in the definition being unfolded; the long tail is typeclass instance bookkeeping.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 0, "5": 0, "6": 0, "7": 1, "8": 0, "9": 0, "10": 2, "11": 0, "12": 0, "13": 1, "14": 1, "15": 0, "16": 0, "17": 1, "18": 0, "19": 1, "20": 3, "21": 1, "22": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0365": {
+    "moves": "Two-step chain: finiteness gives torsion (isAddTorsion_of_finite), and torsion gives the module structure (module_of_torsion). Everything else is algebraic-hierarchy plumbing.",
+    "grades": {"1": 4, "2": 0, "3": 1, "4": 1, "5": 2, "6": 0, "7": 0, "8": 1, "9": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0366": {
+    "moves": "A Raw-wrapper proof: unpack the well-formedness hypothesis with WF.out and hand the goal to the corresponding Internal.Impl lemma. No new mathematics; the unwrapping is the whole proof.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 0, "5": 0, "6": 0, "7": 1, "8": 1, "9": 2, "10": 1, "11": 0, "12": 0, "13": 1, "14": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0367": {
+    "moves": "Same wrapper pattern: extract the internal well-formedness proof and apply the Impl-level getD_modify lemma. Content is delegation.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 2, "6": 1, "7": 1, "8": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0368": {
+    "moves": "Transport the hash-map result to hash sets by viewing a set as a map with unit values, so size_insertMany reduces to size_insertManyIfNewUnit on the inner map; the pairwise-distinctness hypothesis carries over verbatim.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 1, "6": 1, "7": 0, "8": 2, "9": 1, "10": 1, "11": 1, "12": 0, "13": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0369": {
+    "moves": "Rewrite uniform summability as uniform convergence of partial sums via the characterization iff, apply monotonicity of TendstoUniformlyOn in the set, then convert back.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 2, "5": 2, "6": 3, "7": 0, "8": 1, "9": 1, "10": 1, "11": 4, "12": 0, "13": 1, "14": 4, "15": 0, "16": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0370": {
+    "moves": "The real-to-EReal coercion is defined so that toReal of a coerced real is the real itself; true by rfl. Pure definitional unfolding.",
+    "grades": {"1": 3, "2": 3, "3": 1, "4": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0371": {
+    "moves": "The inclusion homomorphism induced by G ≤ G' pushes components forward, and this induced map on connected components is surjective; a surjection from a finite type bounds cardinality.",
+    "grades": {"1": 4, "2": 2, "3": 2, "4": 1, "5": 2, "6": 3, "7": 4, "8": 0, "9": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0372": {
+    "moves": "The underlying set of a product of closed sets is by construction the product of the underlying sets, so rfl closes it. The content is that the SProd instance is defined that way.",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 1, "5": 3, "6": 1, "7": 2, "8": 2, "9": 1, "10": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0373": {
+    "moves": "Specialize the more general 'continuous on a set contained in a compact set' result by taking the containing set to be the compact set itself, i.e. supply subset_rfl.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 1, "5": 4, "6": 1, "7": 1, "8": 2, "9": 3, "10": 1, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0374": {
+    "moves": "Recognize multiplication in the target as the scalar action of the ring on itself, so the statement is literally the smul₀ version applied through instSMulOfMul.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 0, "6": 1, "7": 3, "8": 1, "9": 2, "10": 2, "11": 1, "12": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0375": {
+    "moves": "Rewrite almost-everywhere equality of an intersection componentwise (ae_eq_set_inter), use the hypothesis s =ᵃᵉ univ on the left factor and reflexivity on the right, then simplify univ ∩ t to t.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 1, "5": 1, "6": 1, "7": 2, "8": 4, "9": 0, "10": 0, "11": 0, "12": 0, "13": 0, "14": 2, "15": 1, "16": 3, "17": 2, "18": 0, "19": 3},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0376": {
+    "moves": "A global integral curve satisfies the defining derivative condition at every point; weaken each HasDerivAt to a HasDerivWithinAt on the given set. One weakening lemma applied pointwise.",
+    "grades": {"1": 2, "2": 0, "3": 0, "4": 0, "5": 1, "6": 1, "7": 0, "8": 1, "9": 1, "10": 1, "11": 0, "12": 4},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0377": {
+    "moves": "Rewrite the union of a countable family of sets as an indexed union over the family itself (sUnion_eq_biUnion), then invoke the biUnion version of the restriction-congruence theorem.",
+    "grades": {"1": 2, "2": 0, "3": 2, "4": 0, "5": 1, "6": 0, "7": 1, "8": 1, "9": 1, "10": 2, "11": 1, "12": 1, "13": 1, "14": 4, "15": 0, "16": 2, "17": 0, "18": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0378": {
+    "moves": "Membership in the orthogonal complement of a closed submodule is by definition membership in the orthogonal complement of its underlying submodule, so Iff.rfl closes it. Pure definitional transparency; the rest is the normed/inner-product typeclass tower.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 3, "5": 1, "6": 0, "7": 0, "8": 0, "9": 2, "10": 0, "11": 0, "12": 3, "13": 0, "14": 0, "15": 1, "16": 0, "17": 0, "18": 1, "19": 0, "20": 1, "21": 0, "22": 0, "23": 0, "24": 1, "25": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0379": {
+    "moves": "The arithmetic-geometric mean is at least the minimum of its two arguments, and the minimum of two positive numbers is positive; chain the strict inequality through the non-strict one.",
+    "grades": {"1": 3, "2": 0, "3": 4, "4": 0, "5": 0, "6": 1, "7": 0, "8": 0, "9": 1, "10": 0, "11": 3, "12": 2, "13": 0, "14": 0, "15": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0380": {
+    "moves": "Apply the characterization of when natSepDegree is additive on a product, and discharge its disjunctive side condition by picking the branch that coprimality supplies (the factors share no common root/are not both zero).",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 1, "6": 0, "7": 1, "8": 3, "9": 1, "10": 2, "11": 0, "12": 1, "13": 1, "14": 0, "15": 0, "16": 1, "17": 2, "18": 0, "19": 1, "20": 4, "21": 1, "22": 3, "23": 0, "24": 0, "25": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0381": {
+    "moves": "The ball of radius infDist x sᶜ is contained in the complement of sᶜ; then use double-complement to identify that with s. One containment lemma plus one rewrite.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 2, "5": 2, "6": 2, "7": 4, "8": 1, "9": 1, "10": 3, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0382": {
+    "moves": "Build the FiniteType instance for the subcomplex: for each dimension the subcomplex's cell index set is a subtype of the ambient complex's cell index set, which is finite by hypothesis, so subtypes of a finite type are finite.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 1, "5": 3, "6": 1, "7": 4, "8": 4, "9": 2, "10": 2, "11": 0, "12": 1, "13": 1, "14": 1, "15": 3, "16": 2, "17": 1, "18": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0383": {
+    "moves": "Commute the two summands so that the fixed measure sits on the right, then apply the already-proved right-cancellation for sigma-finite measures.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 0, "5": 1, "6": 4, "7": 4, "8": 1, "9": 1, "10": 0, "11": 1, "12": 0, "13": 0, "14": 1, "15": 0, "16": 0, "17": 0, "18": 0, "19": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0384": {
+    "moves": "Compose the given filter convergence with the fact that the norm is continuous (tendsto_norm), i.e. Tendsto.comp of norm-continuity after the hypothesis.",
+    "grades": {"1": 2, "2": 2, "3": 2, "4": 4, "5": 0, "6": 4, "7": 0, "8": 1, "9": 1, "10": 1, "11": 0, "12": 0, "13": 0},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

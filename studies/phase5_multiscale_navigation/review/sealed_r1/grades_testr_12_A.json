@@ -1,0 +1,146 @@
+{
+  "proof_0265": {
+    "moves": "Pure delegation: unwrap the DTreeMap into its underlying Internal.Impl tree together with its well-formedness proof, and apply the Impl-level lemma about the first component of containsThenInsertIfNew. No mathematical idea beyond the wrapper/implementation transfer.",
+    "grades": {"1": 2, "2": 4, "3": 2, "4": 1, "5": 0, "6": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0266": {
+    "moves": "Definitional: the complete-lattice structure on Opens defines the meet as intersection of the underlying sets, so the coercion of U ⊓ V is literally U ∩ V and rfl closes it. The content is that the lattice instance is set-level by construction.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 1, "5": 1, "6": 2, "7": 0, "8": 1, "9": 0, "10": 0, "11": 1, "12": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0267": {
+    "moves": "Delegation: a HashSet is a HashMap with Unit values, so unwrap to the inner map and apply the corresponding getKey! lemma for unions. No content beyond the wrapper transfer.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 1, "6": 2, "7": 1, "8": 1, "9": 1, "10": 1, "11": 1, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0268": {
+    "moves": "Build the HasFactorization instance: for a given morphism, invoke the existence theorem that every morphism factors as a P_sigma map followed by a P_delta map, destruct the nested existentials to get the middle object, the two maps and the factorization equation, and repackage them (with the equation flipped) into MapFactorizationData wrapped in Nonempty. The real work is instance packaging around one cited existence result.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 0, "5": 1, "6": 1, "7": 2, "8": 0, "9": 1, "10": 2, "11": 1, "12": 1, "13": 2, "14": 1, "15": 1, "16": 1, "17": 4, "18": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0269": {
+    "moves": "Split the iff into its two directions; each direction is the congr_uniformity transfer lemma, with the reverse direction obtained by first symmetrizing the uniformity hypothesis (swapping the two functions) and then applying the same lemma.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 4, "5": 1, "6": 1, "7": 3, "8": 2, "9": 1, "10": 1, "11": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0270": {
+    "moves": "Eventually along atTop we have x > a (no top order), and pointwise x > a implies x is not equal to a; upgrade the pointwise implication across the filter with Eventually.mono.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 0, "5": 1, "6": 2, "7": 1, "8": 4, "9": 4, "10": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0271": {
+    "moves": "Specialize the general 'f commutes with Finset.sup' lemma to a linear order: the only hypothesis to discharge is that f preserves binary sups, and for a monotone map on a linear (hence distributive lattice) order that is exactly Monotone.map_sup.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 1, "12": 0, "13": 0, "14": 4, "15": 0, "16": 4, "17": 2, "18": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0272": {
+    "moves": "Transport to lattice language: Finsets over a fintype form a Boolean algebra in which subset is the order and complement is the lattice complement, so the statement is the general order-theoretic fact le_compl_iff_le_compl.",
+    "grades": {"1": 0, "2": 0, "3": 4, "4": 1, "5": 2, "6": 1, "7": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0273": {
+    "moves": "Definitional: the composite equivalence is defined so that its underlying coalgebra hom is the composite of the underlying homs, so both sides are the same term and rfl closes it.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 2, "5": 1, "6": 1, "7": 2, "8": 0, "9": 1, "10": 1, "11": 1, "12": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0274": {
+    "moves": "A presented group is by definition the quotient of the free group by the normal closure of the relations, so the canonical map is the quotient-group projection and surjectivity is the general quotient-map fact.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0275": {
+    "moves": "Finset.sup is implemented as a fold of the join over the finset starting at bottom; since join is idempotent (and commutative/associative), the fold-over-insert lemma for idempotent operations gives the result directly, with no case analysis on whether the inserted element was already present.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 0, "6": 1, "7": 4, "8": 0, "9": 1, "10": 1, "11": 0, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0276": {
+    "moves": "Construct the DiscreteTopology instance: its single field asks that the topology on PUnit equal the bottom topology, and the topology instance on PUnit is defined to be exactly that, so rfl fills the field.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 2, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0277": {
+    "moves": "Delegation: a HashMap is a dependent hash map with constant value type, so unwrap to the inner DHashMap and apply the corresponding Const.get! lemma for unions.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "6": 2, "7": 1, "8": 1, "9": 4, "10": 1, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0278": {
+    "moves": "Pure definitional unfolding: the right-hand side is literally the definition of lower hemicontinuity on a set, so Iff.rfl proves it. The whole content is that this is a definitional restatement.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0279": {
+    "moves": "Take a point where the product is nonzero and show it lies in every support: membership in the indexed intersection over the finset unfolds via mem_iInter2 to a statement for each index, and if some factor vanished at that point then the whole product would vanish by prod_eq_zero, contradicting nonvanishing. Essentially a contrapositive of 'one zero factor kills the product'.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 0, "5": 0, "6": 0, "7": 0, "8": 1, "9": 0, "10": 3, "11": 0, "12": 2, "13": 0, "14": 0, "15": 1, "16": 1, "17": 4, "18": 0, "19": 2, "20": 0, "21": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0280": {
+    "moves": "The single function is the zero function updated at one coordinate, so the statement is the already-proved image formula for Function.update applied with the base point zero; the proof is that specialization.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 1, "5": 4, "6": 0, "7": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0281": {
+    "moves": "Unfold retrocompactness: for a compact open test set U we must see that (s inter t) inter U is compact; regroup by associativity as s inter (t inter U), get compactness of t inter U from retrocompactness of t and its openness from t open intersect U open, then apply retrocompactness of s to that set. The associativity regrouping plus the openness of the intersection is the whole argument.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 3, "5": 3, "6": 1, "7": 1, "8": 0, "9": 0, "10": 2, "11": 1, "12": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0282": {
+    "moves": "Take a point of the image, destruct the existential to get a preimage x and the equation f x = y, then split on whether x belongs to the relevant set: in the membership branch apply_mem places f x in the target, in the other branch apply_of_notMem identifies f x explicitly. The case split (materialized as a dite) and the witness destructuring are the actual content.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 4, "5": 1, "6": 0, "7": 1, "8": 1, "9": 2, "10": 1, "11": 2, "12": 1, "13": 1, "14": 2, "15": 1, "16": 0, "17": 4, "18": 2, "19": 0, "20": 0, "21": 2, "22": 0, "23": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0283": {
+    "moves": "Chain two facts: a perfect number is pseudoperfect (its proper divisors sum to it, which is a subset sum), and a prime is not pseudoperfect since its only proper divisor is one. Compose to contradiction.",
+    "grades": {"1": 1, "2": 4, "3": 4, "4": 1, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0284": {
+    "moves": "Delegation: unwrap the extensional hash map to its underlying dependent extensional map and apply the corresponding isEmpty-of-intersection lemma there.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 0, "6": 1, "7": 1, "8": 4, "9": 0, "10": 0, "11": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0285": {
+    "moves": "Direct specialization: the primitive character attached to any Dirichlet character is primitive, applied to the product character on the lcm of the two moduli.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 4, "5": 1, "6": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0286": {
+    "moves": "Delegation through the raw-data layer: repackage the hash map's inner Raw data as a Raw0 subtype element (buckets array together with the proof that its size is positive) and feed it, plus the well-formedness invariant, to the raw-level get_eq_getD lemma. Pure invariant plumbing.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 1, "6": 1, "7": 0, "8": 1, "9": 2, "10": 1, "11": 0, "12": 2, "13": 1, "14": 0, "15": 0, "16": 1, "17": 1, "18": 0, "19": 2, "20": 0, "21": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0287": {
+    "moves": "Delegation: the HashMap with given capacity is the dependent version with constant value type, so the no-membership fact transfers verbatim.",
+    "grades": {"1": 4, "2": 1, "3": 0, "4": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0288": {
+    "moves": "Definitional: the locally-finite-order instance on a sum type is defined by cases on the two constructors, and the case of an interval from a right injection down to a left injection is defined to be the empty finset, so rfl closes it.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 1, "5": 2, "6": 1, "7": 1, "8": 1, "9": 1, "10": 2},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

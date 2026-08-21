@@ -1,0 +1,146 @@
+{
+  "proof_0265": {
+    "moves": "Unwrap the bundled DTreeMap into its underlying Impl (projection `inner` plus the well-formedness field `wf`) and apply the already-proved Impl-level statement that the first component of containsThenInsertIfNew is `contains`. All the mathematics lives in the Impl lemma; this layer is pure wrapper transport.",
+    "grades": {"1": 2, "2": 4, "3": 2, "4": 1, "5": 1, "6": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0266": {
+    "moves": "The lattice inf on `Opens` is defined as intersection of the underlying sets, so the coercion equation holds definitionally: the entire proof is `rfl` against the `CompleteLattice` instance on `Opens`.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 1, "5": 0, "6": 4, "7": 0, "8": 1, "9": 0, "10": 0, "11": 1, "12": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0267": {
+    "moves": "A HashSet is a HashMap with Unit values, so unwrap through `inner` and apply the corresponding HashMap statement about `getKey!` on a union when the key is absent from the left map. No new mathematical step.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 0, "6": 2, "7": 1, "8": 1, "9": 1, "10": 1, "11": 1, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0268": {
+    "moves": "Provide the HasFactorization instance by invoking the existence theorem that every morphism of SimplexCategoryGenRel factors as a P_σ followed by a P_δ, destructuring the resulting existentials to get the middle object and the two morphisms, repackaging them as MapFactorizationData (flipping the factorization equation), and wrapping in Nonempty.",
+    "grades": {"1": 2, "2": 3, "3": 1, "4": 0, "5": 1, "6": 0, "7": 2, "8": 0, "9": 1, "10": 2, "11": 1, "12": 1, "13": 1, "14": 2, "15": 2, "16": 1, "17": 4, "18": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0269": {
+    "moves": "Split the iff and prove each direction by the transfer lemma that convergence passes along a pair that tends to the uniformity filter; the reverse direction first symmetrizes the uniformity hypothesis.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 4, "5": 1, "6": 1, "7": 3, "8": 2, "9": 1, "10": 1, "11": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0270": {
+    "moves": "Start from the fact that eventually x > a along atTop (available because the order has no top), and weaken pointwise with the implication x > a implies x ≠ a.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 0, "5": 1, "6": 1, "7": 1, "8": 3, "9": 4, "10": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0271": {
+    "moves": "Specialize the general `apply_sup_eq_sup_comp` lemma to a linear order, where the required hypothesis (the map sends binary sups to sups) is exactly `Monotone.map_sup` — monotone maps into a linear order automatically preserve joins.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 1, "12": 1, "13": 0, "14": 4, "15": 0, "16": 4, "17": 2, "18": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0272": {
+    "moves": "Finsets of a fintype form a Boolean algebra, so the set-theoretic statement s ⊆ tᶜ ↔ t ⊆ sᶜ is just the order-theoretic `le_compl_iff_le_compl` transported through that instance.",
+    "grades": {"1": 0, "2": 0, "3": 4, "4": 1, "5": 3, "6": 1, "7": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0273": {
+    "moves": "The underlying coalgebra hom of a composite coalgebra equivalence is by construction the composite of the underlying homs, so the proof is `rfl` unfolding `CoalgEquiv.trans`.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 1, "6": 1, "7": 2, "8": 0, "9": 0, "10": 1, "11": 1, "12": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0274": {
+    "moves": "A presented group is by definition the quotient of a free group by the normal closure of the relations, so the canonical map is surjective by the general surjectivity of a group quotient map.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 4, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0275": {
+    "moves": "`Finset.sup` is a fold of `max` starting at ⊥; since max is idempotent, the fold-over-insert lemma applies without needing a ∉ s, giving f a ⊔ s.sup f directly.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 0, "6": 1, "7": 4, "8": 0, "9": 1, "10": 1, "11": 0, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0276": {
+    "moves": "The topology on PUnit is literally defined to be the bottom topology, so constructing the DiscreteTopology instance amounts to supplying `rfl` for its single field.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 4, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0277": {
+    "moves": "Unwrap the HashMap to its underlying DHashMap via `inner` and apply the corresponding dependent-map statement about `get!` on a union when the key is not in the right map. Pure wrapper transport.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 0, "6": 2, "7": 1, "8": 1, "9": 4, "10": 1, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0278": {
+    "moves": "The right-hand side is the literal unfolding of the definition of `LowerHemicontinuousOn`, so the iff holds by `Iff.rfl`. The content is definitional, not deductive.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0279": {
+    "moves": "Take x in the support of the product, reduce membership in the indexed intersection over s to a pointwise statement, and argue contrapositively: if some factor vanishes at x then the whole product vanishes at x, contradicting x being in the support.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 0, "5": 0, "6": 0, "7": 0, "8": 1, "9": 0, "10": 2, "11": 0, "12": 1, "13": 1, "14": 0, "15": 1, "16": 1, "17": 4, "18": 0, "19": 2, "20": 0, "21": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0280": {
+    "moves": "`Pi.single i a` is `Function.update 0 i a`, so the image of a single-coordinate Ico is exactly the specialization of the general `update` image lemma; the only step is recognizing that identification.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 0, "5": 4, "6": 0, "7": 0},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0281": {
+    "moves": "Unfold retrocompactness: given an open compact U, reassociate (s ∩ t) ∩ U as s ∩ (t ∩ U), note t ∩ U is open (intersection of opens) and compact by the hypothesis on t, then apply retrocompactness of s to it. The associativity rewrite is the actual manipulation.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 3, "5": 3, "6": 1, "7": 1, "8": 1, "9": 0, "10": 2, "11": 1, "12": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0282": {
+    "moves": "Take a point of the image, destructure the witness x with its membership and the defining equation, then case-split (the `dite` in the representative function) on whether x lies in the relevant part: in the first branch the value lands where required by `apply_mem`, in the second the junk-value lemma `apply_of_notMem` handles it. The real content is the witness destructuring plus the case split.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 4, "5": 1, "6": 0, "7": 1, "8": 1, "9": 2, "10": 1, "11": 2, "12": 1, "13": 1, "14": 2, "15": 1, "16": 0, "17": 4, "18": 2, "19": 0, "20": 1, "21": 2, "22": 0, "23": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0283": {
+    "moves": "A perfect number is in particular pseudoperfect (it is the sum of a sub-collection of its proper divisors, namely all of them), and a prime is not pseudoperfect since its only proper divisor is 1; chain the two.",
+    "grades": {"1": 1, "2": 4, "3": 4, "4": 1, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0284": {
+    "moves": "Push through the ExtHashMap wrapper via `inner` and apply the corresponding ExtDHashMap statement that the left-intersection is empty. No independent argument.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "6": 1, "7": 1, "8": 4, "9": 1, "10": 1, "11": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0285": {
+    "moves": "The primitive character attached to any Dirichlet character is primitive; apply that general theorem to the product character on the lcm of the moduli.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 1, "6": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0286": {
+    "moves": "Repackage the bundled DHashMap as a `Raw₀` — its `inner` raw map paired with the positivity-of-bucket-count proof via `Subtype.mk` — and apply the Raw₀-level `get_eq_getD` with the well-formedness hypothesis. Entirely representation transport.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 4, "5": 1, "6": 1, "7": 0, "8": 1, "9": 2, "10": 1, "11": 1, "12": 2, "13": 1, "14": 1, "15": 0, "16": 1, "17": 1, "18": 0, "19": 2, "20": 1, "21": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0287": {
+    "moves": "Direct restatement of the dependent-hash-map fact that a map created with a given capacity contains no keys; the HashMap version is that theorem verbatim.",
+    "grades": {"1": 4, "2": 1, "3": 1, "4": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0288": {
+    "moves": "In the lexicographic-style order on a sum, an inr element is never below an inl element, and the LocallyFiniteOrder instance on Sum is defined so that this interval computes to the empty finset; hence `rfl`.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 1, "5": 1, "6": 1, "7": 1, "8": 1, "9": 1, "10": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  }
+}

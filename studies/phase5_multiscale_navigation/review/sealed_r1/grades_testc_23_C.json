@@ -1,0 +1,170 @@
+{
+  "proof_0529": {
+    "moves": "Schemes have a terminal object and all pullbacks, so finite limits follow from the standard reduction of finite limits to terminal object plus pullbacks; the proof is a single application of that reduction.",
+    "grades": {"1": 4, "2": 1, "3": 1},
+    "missing_key": true,
+    "confidence": "high",
+    "causes": {"2": "C", "3": "G"}
+  },
+  "proof_0530": {
+    "moves": "Rewrite the first marginal of a kernel as the pushforward (map) along Prod.fst, then the zero-or-Markov property transfers through map by the existing instance.",
+    "grades": {"1": 1, "2": 1, "3": 3, "4": 0, "5": 4, "6": 0, "7": 2, "8": 1, "9": 1, "10": 0, "11": 1, "12": 0, "13": 2, "14": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "G", "2": "D", "4": "C", "6": "D", "8": "G", "9": "D", "10": "C", "11": "G", "12": "C"}
+  },
+  "proof_0531": {
+    "moves": "SL(n,R) sits inside the finite matrix space, which is discrete when R is, so discreteness is inherited through the subtype embedding; here the actual argument is hidden behind an auto-generated private proof term.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 0, "6": 2},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"1": "A", "2": "C", "3": "C", "5": "C"}
+  },
+  "proof_0532": {
+    "moves": "Both sides of the intersection identity unfold to the same term by definition; the proof is definitional unfolding closed by reflexivity (packaged as simp's of_eq_true/eq_self residue).",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 1, "5": 2, "6": 0, "7": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "D", "2": "G", "4": "C", "6": "C"}
+  },
+  "proof_0533": {
+    "moves": "Pull a well-order back along an injection: build the IsWellOrder structure by transporting trichotomy through injectivity of f (the relation being r composed with f on both arguments) and inheriting well-foundedness of the pulled-back relation.",
+    "grades": {"1": 3, "2": 2, "3": 2, "4": 4, "5": 3, "6": 2},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {}
+  },
+  "proof_0534": {
+    "moves": "Int32 is a thin wrapper over the bit-vector representation, so converting to a bit vector and back is definitionally the identity; the proof is rfl.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 3, "5": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "G", "2": "G"}
+  },
+  "proof_0535": {
+    "moves": "From a <= b, ExistsAddOfLE supplies c with b = a + c; destruct that existential, show 0 <= c from a <= a + c using the left-reflecting order hypothesis, and repackage as an existential conjunction.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 0, "5": 1, "6": 1, "7": 0, "8": 2, "9": 4, "10": 0, "11": 0, "12": 2, "13": 2, "14": 1, "15": 1, "16": 1, "17": 3, "18": 2, "19": 0, "20": 0, "21": 2, "22": 0, "23": 1, "24": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "D", "2": "C", "4": "C", "5": "G", "6": "C", "7": "C", "10": "C", "11": "C", "14": "G", "15": "C", "16": "C", "19": "C", "20": "C", "22": "C", "23": "E", "24": "G"}
+  },
+  "proof_0536": {
+    "moves": "The Int16 numeral literal is defined through the same bit-vector construction as the right-hand side, so both sides are definitionally equal; the proof is rfl.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 3, "5": 1, "6": 2, "7": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "G", "3": "G", "5": "C", "7": "C"}
+  },
+  "proof_0537": {
+    "moves": "Unfold the evaluation of the successor code: it reads the head of the input list and returns the singleton list containing head+1, wrapped in Part.some; the whole thing computes definitionally.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 1, "5": 1, "6": 0, "7": 1, "8": 0, "9": 1, "10": 1, "11": 2, "12": 0, "13": 1, "14": 3, "15": 1, "16": 1},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "C", "3": "C", "4": "D", "5": "D", "6": "C", "7": "G", "8": "C", "9": "G", "10": "G", "12": "C", "13": "G", "15": "G", "16": "G"}
+  },
+  "proof_0538": {
+    "moves": "Unfold IsLoopAt and IsNonloopAt into their incidence conditions, then rearrange the resulting propositional formula by pushing the negation through the conjunction and eliminating a double negation classically.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 3, "6": 0, "7": 0, "8": 2, "9": 3, "10": 1, "11": 1, "12": 1, "13": 1, "14": 2, "15": 0, "16": 3, "17": 1, "18": 1, "19": 1, "20": 0, "21": 0, "22": 1, "23": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "D", "2": "D", "3": "D", "4": "G", "6": "D", "7": "D", "10": "D", "11": "D", "12": "G", "13": "G", "15": "A", "17": "E", "18": "D", "19": "G", "20": "A", "21": "A", "22": "D", "23": "D"}
+  },
+  "proof_0539": {
+    "moves": "FreeMonoid is definitionally the list type and toList is the identity equivalence, so multiplying by a generator on the left is definitionally list cons; the proof is rfl.",
+    "grades": {"1": 1, "2": 3, "3": 0, "4": 2, "5": 0, "6": 3, "7": 2, "8": 1, "9": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "G", "3": "C", "5": "C", "8": "C", "9": "C"}
+  },
+  "proof_0540": {
+    "moves": "Case split on the option: for none both sides are false, for some the attached element carries the same value so the predicate agrees; each branch closes by computation.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 1, "5": 3, "6": 3, "7": 1, "8": 1, "9": 2, "10": 2, "11": 1, "12": 1, "13": 1, "14": 2, "15": 2, "16": 1, "17": 3, "18": 0, "19": 2, "20": 1, "21": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "D", "3": "E", "4": "D", "7": "D", "8": "G", "11": "D", "12": "G", "13": "D", "16": "D", "18": "D", "20": "G", "21": "D"}
+  },
+  "proof_0541": {
+    "moves": "This is the reassociated form of the naturality square for the associator against an identity tensor: take the base naturality identity and post-compose both sides with an arbitrary morphism, reassociating the composites.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 1, "5": 1, "6": 1, "7": 0, "8": 0, "9": 3, "10": 2, "11": 1, "12": 1, "13": 1, "14": 2, "15": 2, "16": 1, "17": 2, "18": 0, "19": 2, "20": 4, "21": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "G", "2": "C", "3": "D", "4": "D", "5": "D", "6": "C", "7": "C", "8": "C", "11": "C", "12": "C", "13": "D", "16": "D", "18": "C", "21": "C"}
+  },
+  "proof_0542": {
+    "moves": "Transport the lower-set condition to the order dual: a set is a lower set exactly when its preimage under toDual is an upper set, so the proof is one direction of that characterization.",
+    "grades": {"1": 2, "2": 3, "3": 1, "4": 3, "5": 0, "6": 0, "7": 1, "8": 3, "9": 2, "10": 1, "11": 1, "12": 4, "13": 3, "14": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"3": "C", "5": "C", "6": "C", "7": "G", "10": "C", "11": "C", "14": "C"}
+  },
+  "proof_0543": {
+    "moves": "Internal recursion helper: by structural induction on the node list, every node's rank is bounded by the running foldr-max of the ranks, using that each element is below the max at its step.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 0, "5": 2, "6": 1, "7": 0, "8": 3, "9": 0, "10": 1, "11": 0, "12": 3, "13": 2, "14": 3, "15": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "G", "3": "C", "4": "C", "6": "G", "7": "C", "9": "C", "10": "G", "11": "C", "15": "A"}
+  },
+  "proof_0544": {
+    "moves": "Adding a nonpositive element does not increase the sum, so b + c <= b; chain that with the hypothesis a <= b + c by transitivity of the order.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 2, "5": 0, "6": 0, "7": 0, "8": 1, "9": 0, "10": 4, "11": 0, "12": 3, "13": 1, "14": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C", "5": "C", "6": "C", "7": "C", "8": "C", "9": "C", "11": "C", "13": "C", "14": "C"}
+  },
+  "proof_0545": {
+    "moves": "Pure forwarder: the cocommutativity identity is literally a field of the IsCocomm class, so the root-level statement is discharged by that field.",
+    "grades": {"1": 3, "2": 0, "3": 1, "4": 0, "5": 4, "6": 0, "7": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "3": "C", "4": "C", "6": "C"}
+  },
+  "proof_0546": {
+    "moves": "The opposite of a set is defined as the preimage of membership under unop, so membership of op a in it unfolds definitionally to membership of a; the proof is Iff.rfl.",
+    "grades": {"1": 3, "2": 3, "3": 1, "4": 1, "5": 2, "6": 3, "7": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"3": "C", "4": "G"}
+  },
+  "proof_0547": {
+    "moves": "Build the SubgroupClass instance for Subgroup by supplying its three closure fields: multiplication closure from the underlying subsemigroup, one from the submonoid, and inverse from the subgroup itself.",
+    "grades": {"1": 3, "2": 0, "3": 0, "4": 3, "5": 0, "6": 1, "7": 0, "8": 2, "9": 2, "10": 3, "11": 3, "12": 0, "13": 0, "14": 1, "15": 0, "16": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "3": "C", "5": "C", "6": "C", "7": "C", "12": "C", "13": "C", "14": "C", "15": "C"}
+  },
+  "proof_0548": {
+    "moves": "Identify the image of a fiber under the canonical inclusion with the preimage of the singleton, using the map/image characterization of fibers, then flip the equation.",
+    "grades": {"1": 2, "2": 2, "3": 3, "4": 1, "5": 3, "6": 3, "7": 2, "8": 4, "9": 2, "10": 2, "11": 1, "12": 1, "13": 0, "14": 0},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"4": "C", "11": "C", "12": "G", "13": "C", "14": "C"}
+  },
+  "proof_0549": {
+    "moves": "Reassociated form of the comonad coassociativity law in a bicategory: take the comul_assoc 2-cell identity and post-compose it with an arbitrary 2-morphism, then reassociate the resulting composites.",
+    "grades": {"1": 4, "2": 0, "3": 3, "4": 2, "5": 2, "6": 2, "7": 1, "8": 1, "9": 0, "10": 1, "11": 2, "12": 1, "13": 0, "14": 0, "15": 2, "16": 1, "17": 0, "18": 1, "19": 1, "20": 3, "21": 1, "22": 2, "23": 0, "24": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "7": "C", "8": "D", "9": "C", "10": "G", "12": "C", "13": "C", "14": "C", "16": "D", "17": "D", "18": "D", "19": "D", "21": "D", "23": "C", "24": "C"}
+  },
+  "proof_0550": {
+    "moves": "Case split on the option: none gives the empty list and the initial value, some gives a one-element fold; both branches compute definitionally.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 1, "5": 1, "6": 3, "7": 1, "8": 2, "9": 3, "10": 1, "11": 3, "12": 1, "13": 3},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "G", "3": "D", "4": "D", "5": "E", "7": "G", "10": "D", "12": "D"}
+  },
+  "proof_0551": {
+    "moves": "Casting a morphism along two reflexivity proofs is the identity by definition; the proof is rfl.",
+    "grades": {"1": 3, "2": 3, "3": 1, "4": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"3": "C", "4": "C"}
+  },
+  "proof_0552": {
+    "moves": "Weaken the predecessor-limit hypothesis to a pre-limit and apply the pre-limit version of the strict inequality with the subtraction of one.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 4, "5": 1, "6": 3, "7": 0, "8": 2, "9": 1, "10": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "3": "C", "5": "C", "7": "C", "9": "C"}
+  }
+}

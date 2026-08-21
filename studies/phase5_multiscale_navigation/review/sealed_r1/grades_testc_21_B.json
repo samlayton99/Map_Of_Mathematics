@@ -1,0 +1,170 @@
+{
+  "proof_0481": {
+    "moves": "Pure definitional unfolding: searching a slice for a character and searching it for the predicate (· == c) reduce to the same searcher computation, so the proof is rfl.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 1, "5": 0, "6": 1, "7": 3, "8": 0, "9": 0, "10": 1, "11": 0, "12": 2, "13": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "G", "3": "C", "4": "C", "5": "C", "6": "G", "8": "C", "9": "C", "10": "C", "11": "C", "13": "G"}
+  },
+  "proof_0482": {
+    "moves": "The component complement C is contained in its image under hom (subset_hom); an infinite set contained in another forces that one to be infinite too, so apply Set.Infinite.mono.",
+    "grades": {"1": 2, "2": 0, "3": 4, "4": 1, "5": 3, "6": 2, "7": 2, "8": 1, "9": 1, "10": 4, "11": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "4": "C", "8": "G", "9": "G", "11": "C"}
+  },
+  "proof_0483": {
+    "moves": "Transport the ring-hom statement to the Algebra language: install the algebra structures induced by the maps via RingHom.toAlgebra, build the scalar tower from the fact that the composite's algebraMap is the composition, and then apply the Algebra-level restriction-of-scalars theorem.",
+    "grades": {"1": 3, "2": 3, "3": 0, "4": 0, "5": 2, "6": 2, "7": 0, "8": 3, "9": 2, "10": 3, "11": 4, "12": 3, "13": 1, "14": 0, "15": 3, "16": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"3": "C", "4": "C", "7": "C", "13": "G", "14": "C", "16": "E"}
+  },
+  "proof_0484": {
+    "moves": "Unfold membership in the closure (the smallest non-unital subsemiring containing s, characterized by mem_closure) and observe that any element of s lies in every subsemiring containing s; the whole proof is that one characterization applied in the mpr direction.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 2, "5": 1, "6": 4, "7": 2, "8": 2, "9": 1, "10": 1, "11": 4, "12": 1, "13": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "5": "C", "9": "G", "10": "C", "12": "C", "13": "C"}
+  },
+  "proof_0485": {
+    "moves": "Definitional: the plausible-successor relation is by construction the inverse image of the iterator's step relation, so both sides unfold to the same term and rfl closes it. No mathematical step at all.",
+    "grades": {"1": 3, "2": 1, "3": 2, "4": 1, "5": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "G", "4": "C", "5": "C"}
+  },
+  "proof_0486": {
+    "moves": "Rewrite the semantic biconditional of a theory as the conjunction of the two implications (iff_iff_imp_and_imp) and take the right conjunct.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 2, "5": 2, "6": 2, "7": 1, "8": 3, "9": 2, "10": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"3": "G", "7": "G"}
+  },
+  "proof_0487": {
+    "moves": "Cite the characterization that a set is pairwise-related by the bottom (always false) relation exactly when it is a subsingleton, and take the forward direction.",
+    "grades": {"1": 2, "2": 3, "3": 3, "4": 4, "5": 1, "6": 0, "7": 0, "8": 2, "9": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"5": "G", "6": "C", "7": "C", "9": "C"}
+  },
+  "proof_0488": {
+    "moves": "Reduce a = ⊤ to ⊤ ≤ a via eq_top_iff, then feed codisjointness the two bounds a ≤ a (le_rfl) and b ≤ a to conclude ⊤ ≤ a.",
+    "grades": {"1": 0, "2": 0, "3": 2, "4": 1, "5": 4, "6": 2, "7": 2, "8": 4, "9": 2, "10": 0, "11": 1, "12": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "2": "C", "4": "C", "10": "C", "11": "E", "12": "C"}
+  },
+  "proof_0489": {
+    "moves": "Construct the IsIsometricVAdd instance: unfolding the opposite action to unop, the required edist (a +ᵥ x) (a +ᵥ y) = edist x y is exactly edist_vadd_left in the underlying space.",
+    "grades": {"1": 2, "2": 0, "3": 0, "4": 2, "5": 2, "6": 0, "7": 1, "8": 1, "9": 0, "10": 1, "11": 4, "12": 0, "13": 2, "14": 2, "15": 1, "16": 2, "17": 1, "18": 0, "19": 2},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"2": "C", "3": "C", "6": "C", "7": "F", "8": "F", "9": "C", "10": "E", "12": "C", "15": "C", "17": "C", "18": "D"}
+  },
+  "proof_0490": {
+    "moves": "Chain the implementation's minEntry? through the intermediate model function minEntry?ₘ: one lemma takes minEntry? to minEntry?ₘ, a second takes minEntry?ₘ to the list-model minEntry?, and the two are composed by rewriting.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 1, "5": 2, "6": 0, "7": 1, "8": 4, "9": 2, "10": 3, "11": 3, "12": 3, "13": 1, "14": 3, "15": 1, "16": 1, "17": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "C", "2": "E", "4": "D", "6": "D", "7": "G", "13": "G", "15": "D", "16": "E", "17": "C"}
+  },
+  "proof_0491": {
+    "moves": "Write Ico a b as the intersection Iio b ∩ Ici a, then combine local closedness of Iio (it is open) and of Ici (it is closed) using closure of locally closed sets under intersection.",
+    "grades": {"1": 1, "2": 4, "3": 1, "4": 1, "5": 1, "6": 1, "7": 2, "8": 4, "9": 0, "10": 4, "11": 0, "12": 4, "13": 3, "14": 3, "15": 0, "16": 0, "17": 1, "18": 3, "19": 2, "20": 0, "21": 1, "22": 0, "23": 0, "24": 3},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "E", "3": "C", "4": "C", "5": "D", "6": "G", "9": "C", "11": "C", "15": "C", "16": "C", "17": "D", "20": "C", "21": "E", "22": "D", "23": "C"}
+  },
+  "proof_0492": {
+    "moves": "Definitional: the underlying carrier of the intermediate field and of its associated subfield are the same set, so membership on both sides is literally the same proposition and Iff.rfl closes it.",
+    "grades": {"1": 3, "2": 0, "3": 0, "4": 1, "5": 1, "6": 2, "7": 1, "8": 0, "9": 0, "10": 0, "11": 1, "12": 2, "13": 2, "14": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "3": "C", "4": "C", "5": "C", "7": "C", "8": "C", "9": "C", "10": "C", "11": "C"}
+  },
+  "proof_0493": {
+    "moves": "Destructure both arrays into their underlying lists, identify array membership with list membership, and transport the list-level statement that permuted lists have the same members.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "6": 3, "7": 1, "8": 3, "9": 0, "10": 2, "11": 1, "12": 1, "13": 2, "14": 1, "15": 2, "16": 2, "17": 0, "18": 1, "19": 4},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"1": "A", "2": "E", "3": "C", "4": "D", "5": "E", "7": "C", "9": "D", "11": "G", "12": "D", "14": "D", "17": "A", "18": "D"}
+  },
+  "proof_0494": {
+    "moves": "Iio is injective as a function of its endpoint, so the equality of the two lower intervals is equivalent to the equality of the endpoints via Injective.eq_iff.",
+    "grades": {"1": 4, "2": 0, "3": 3, "4": 3, "5": 0, "6": 1, "7": 1, "8": 0, "9": 0, "10": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "5": "C", "6": "C", "7": "G", "8": "C", "9": "C", "10": "C"}
+  },
+  "proof_0495": {
+    "moves": "Case analysis on the shape of the integer argument (nonneg cast versus negSucc) via a generated match, with the resulting branches closed by reflexivity or triviality; the content is the case split, not any cited lemma.",
+    "grades": {"1": 0, "2": 3, "3": 2, "4": 2, "5": 1, "6": 1, "7": 0, "8": 0, "9": 3, "10": 0, "11": 1, "12": 0, "13": 1, "14": 3, "15": 2, "16": 2, "17": 2, "18": 1},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"1": "C", "5": "G", "6": "A", "7": "C", "8": "C", "10": "C", "11": "G", "12": "C", "13": "E", "18": "E"}
+  },
+  "proof_0496": {
+    "moves": "Extract the well-formedness of the underlying implementation tree from the Raw wrapper (WF.out) and apply the implementation-level lemma about get! after erase.",
+    "grades": {"1": 4, "2": 2, "3": 3, "4": 2, "5": 3, "6": 2, "7": 3, "8": 1, "9": 1},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"8": "C", "9": "C"}
+  },
+  "proof_0497": {
+    "moves": "Apply the self-basis criterion for a filter (a filter has a basis of sets satisfying p when every member contains a member satisfying p) and supply normality, which produces a closed neighbourhood of the set inside any given neighbourhood.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 3, "5": 4, "6": 1, "7": 3, "8": 2, "9": 1, "10": 3, "11": 2, "12": 2, "13": 1, "14": 4, "15": 0, "16": 1, "17": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "C", "3": "G", "6": "E", "9": "E", "13": "C", "15": "D", "16": "G", "17": "C"}
+  },
+  "proof_0498": {
+    "moves": "In an acyclic graph paths between two vertices are unique, so the single-edge path from the start along the given adjacency and the path obtained by truncating the given walk up to that vertex must coincide (Subsingleton.elim), which forces the claimed identification of the second vertex.",
+    "grades": {"1": 3, "2": 4, "3": 2, "4": 3, "5": 0, "6": 1, "7": 1, "8": 3, "9": 1, "10": 2, "11": 0, "12": 2, "13": 3, "14": 2, "15": 1, "16": 4, "17": 2, "18": 1},
+    "missing_key": false,
+    "confidence": "medium",
+    "causes": {"5": "A", "6": "C", "7": "G", "9": "G", "11": "C", "15": "E", "18": "E"}
+  },
+  "proof_0499": {
+    "moves": "Assemble the three already-proved facts — reflexivity, symmetry and transitivity of the right-fraction relation — into an Equivalence structure. The assembly is the entire proof.",
+    "grades": {"1": 4, "2": 2, "3": 1, "4": 2, "5": 0, "6": 2, "7": 4, "8": 3, "9": 4, "10": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"3": "C", "5": "C"}
+  },
+  "proof_0500": {
+    "moves": "The claim that a ZF set is contained in the von Neumann set of its rank is discharged by a simp certificate that rewrites the goal to True; the actual mathematical step (rank/vonNeumann characterization plus reflexivity of ≤) is sealed inside a generated private lemma.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "6": 3, "7": 2, "8": 0, "9": 2, "10": 3, "11": 0, "12": 1, "13": 2, "14": 0},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"1": "D", "2": "C", "3": "E", "4": "A", "5": "C", "8": "C", "11": "D", "12": "A", "14": "C"}
+  },
+  "proof_0501": {
+    "moves": "Rewrite subtraction on UInt8 as addition of the negation, then rewrite negation as multiplication by -1, identifying the literal -1 with its numeral form.",
+    "grades": {"1": 2, "2": 0, "3": 2, "4": 1, "5": 0, "6": 0, "7": 0, "8": 4, "9": 1, "10": 2, "11": 3, "12": 1, "13": 2, "14": 4, "15": 2, "16": 0, "17": 1, "18": 0, "19": 0, "20": 2, "21": 0, "22": 0},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"2": "D", "4": "D", "5": "C", "6": "C", "7": "C", "9": "D", "12": "E", "16": "C", "17": "E", "18": "C", "19": "C", "21": "C", "22": "C"}
+  },
+  "proof_0502": {
+    "moves": "Turn both congruences into divisibility statements about a - b and use that m and n both divide a difference exactly when their lcm does; here that reduction is packaged as a simp certificate closing the iff to True.",
+    "grades": {"1": 1, "2": 3, "3": 0, "4": 4, "5": 1, "6": 1, "7": 1, "8": 0, "9": 1, "10": 1, "11": 0, "12": 1, "13": 0, "14": 2, "15": 2, "16": 1, "17": 1, "18": 3, "19": 2, "20": 1},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"1": "D", "3": "C", "5": "E", "6": "G", "7": "A", "8": "D", "9": "A", "10": "D", "11": "C", "12": "C", "13": "C", "16": "D", "17": "E", "20": "D"}
+  },
+  "proof_0503": {
+    "moves": "Induction on the natural number n: exp(0 * z) = 1 = exp(z)^0, and the successor step uses exp of a sum to peel off one factor. The inductive body is compiled into a generated auxiliary definition, so the additive property of exp never appears by name.",
+    "grades": {"1": 2, "2": 2, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 2, "10": 2, "11": 2, "12": 4, "13": 1, "14": 1, "15": 0, "16": 2, "17": 1},
+    "missing_key": true,
+    "confidence": "medium",
+    "causes": {"3": "C", "4": "C", "5": "C", "6": "C", "7": "C", "8": "C", "13": "F", "14": "A", "15": "C", "17": "E"}
+  },
+  "proof_0504": {
+    "moves": "Prove both directions: a covering relation gives the weak covering relation together with a ≠ b; conversely a weak covering with a ≠ b upgrades to a covering. The proof is the two-way assembly of these three lemmas.",
+    "grades": {"1": 0, "2": 3, "3": 2, "4": 4, "5": 2, "6": 4, "7": 2, "8": 2, "9": 4, "10": 2, "11": 3, "12": 1, "13": 0, "14": 2},
+    "missing_key": false,
+    "confidence": "high",
+    "causes": {"1": "C", "12": "C", "13": "C"}
+  }
+}

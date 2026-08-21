@@ -1,0 +1,146 @@
+{
+  "proof_0073": {
+    "moves": "Pure definitional unfolding: uncurry is defined by recursion on the list of state types, and on a cons list its branch is `fun (s, t) => uncurry (f s) t`. The claimed equation IS that defining branch, so the proof is rfl; the only real content is that the pair pattern and the cons branch line up.",
+    "grades": {"1": 2, "2": 2, "3": 2, "4": 3, "5": 4, "6": 1, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0074": {
+    "moves": "Given an actual homology datum for a short complex, produce the (propositional, Nonempty-style) existence class by wrapping it in the constructor. No mathematics beyond exhibiting the supplied datum as the witness.",
+    "grades": {"1": 1, "2": 1, "3": 3, "4": 2, "5": 1, "6": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0075": {
+    "moves": "Repackaging: from a bundled `Equivalence r` extract its three fields as the three separate unbundled typeclasses (reflexivity, symmetry, transitivity), put them in scope as local instances, and then `IsEquiv` is assembled with an empty structure instance. The three field-extraction lemmas are the whole argument.",
+    "grades": {"1": 2, "2": 2, "3": 2, "4": 4, "5": 4, "6": 2, "7": 4, "8": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0076": {
+    "moves": "The lattice structure on nonempty intervals is defined coordinatewise on the underlying pair (fst by inf, snd by sup), so the second coordinate of a join is definitionally the join of the second coordinates. The proof is rfl; the content is that the definition of max on intervals already has this shape.",
+    "grades": {"1": 1, "2": 0, "3": 4, "4": 3, "5": 1, "6": 2, "7": 0, "8": 2, "9": 0, "10": 2, "11": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0077": {
+    "moves": "Case split on the given Decidable instance for False. In the isFalse branch `decide` reduces to false by definition (rfl); the isTrue branch supplies an actual proof of False, which is discharged by ex falso. The case analysis plus the absurd branch is the entire proof.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 2, "6": 2, "7": 3, "8": 3, "9": 2, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0078": {
+    "moves": "Mechanically derived (reassoc) form of the factorization lemma for the left fraction associated to a right fraction: take the base identity f ≫ s' = s ≫ f', post-compose both sides with an arbitrary further morphism, and reassociate the composites. No new mathematics beyond the base lemma.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 0, "5": 1, "6": 1, "7": 3, "8": 2, "9": 1, "10": 1, "11": 2, "12": 2, "13": 0, "14": 4, "15": 1, "16": 2, "17": 1, "18": 1, "19": 2, "20": 1, "21": 1, "22": 3, "23": 1, "24": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0079": {
+    "moves": "Rewrite the goal along the given equation a = b (substitution by the equality recursor) and close by reflexivity. Pure congruence for addition on the right; there is no mathematical idea beyond substitution.",
+    "grades": {"1": 2, "2": 2, "3": 2, "4": 1, "5": 4, "6": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0080": {
+    "moves": "The identity prefunctor is defined with map := fun f => f, so its action on an arrow is definitionally that arrow. Proof is reflexivity; the content is just the definition of the identity prefunctor.",
+    "grades": {"1": 4, "2": 2, "3": 1, "4": 1, "5": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0081": {
+    "moves": "The statement is exactly one of the axiom fields of the module filter basis structure, stated with the primed field renamed. The proof is applying that field to the given element and membership hypothesis; there is no argument at all.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 1, "5": 1, "6": 1, "7": 0, "8": 4, "9": 1, "10": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0082": {
+    "moves": "From 0 ≤ a and 0 ≤ b conclude 0 ≤ a + b, using right covariance of addition with respect to the order: apply the one-step lemma that adding a nonnegative on the left preserves ≤. Single lemma application.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 4, "5": 0, "6": 0, "7": 1, "8": 2, "9": 1, "10": 0, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0083": {
+    "moves": "This is the auto-generated parent projection of a class that extends two others: a bimonoid morphism is in particular a monoid morphism. The 'proof' is the structure field access, carrying no mathematical step.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 1, "6": 2, "7": 0, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0084": {
+    "moves": "An auto-extracted field obligation from transporting the additive structure to a subobject: the coercion to the ambient type is injective and sends the subobject's zero and addition to the ambient ones (both by rfl), so the transferred unital structure inherits the identity law, and the field is closed by the ambient add_zero.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 4, "5": 0, "6": 1, "7": 0, "8": 1, "9": 0, "10": 1, "11": 0, "12": 1, "13": 1, "14": 3, "15": 3, "16": 2, "17": 3, "18": 1, "19": 0, "20": 2, "21": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0085": {
+    "moves": "Auto-generated projection: the exactness axiom is literally one of the fields of the spectral object structure. There is no proof step, just field access.",
+    "grades": {"1": 1, "2": 1, "3": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0086": {
+    "moves": "Reassoc-generated variant of the unit compatibility law for a monoidal right action: take the base identity relating the unit isomorphism to the action's left whiskering, post-compose both sides with an arbitrary morphism, and reassociate. No new content.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 3, "5": 0, "6": 1, "7": 2, "8": 0, "9": 1, "10": 1, "11": 0, "12": 1, "13": 1, "14": 1, "15": 1, "16": 2, "17": 1, "18": 3, "19": 2, "20": 0, "21": 2, "22": 2, "23": 1, "24": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0087": {
+    "moves": "Nonemptiness of a hypergraph is defined as the disjunction 'vertex set nonempty or edge set nonempty', so a nonempty vertex set gives the result by taking the left disjunct. The whole proof is one Or introduction.",
+    "grades": {"1": 2, "2": 2, "3": 1, "4": 4, "5": 1, "6": 1},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0088": {
+    "moves": "Auto-generated structure projection: the right-cancellation condition is one of the defining fields of an additive Ore set. There is no argument, only field access.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0089": {
+    "moves": "Auto-generated class-field projection: the existence of the relevant pointwise right Kan extension is the single field of the 'has pointwise left derived functor at X' class. No mathematical step.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 0, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0090": {
+    "moves": "Both directions of the iff are the very same one-directional lemma: conjugation by a unit's inverse swaps the two elements, and since inversion on units is definitionally involutive, applying that lemma again gives the converse. The proof is an Iff constructor with the same lemma in both slots.",
+    "grades": {"1": 0, "2": 4, "3": 2, "4": 2, "5": 2, "6": 0, "7": 2, "8": 1, "9": 0, "10": 1, "11": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0091": {
+    "moves": "Exhibit a witness: the range iterator's plausible-step relation has exactly one inhabitant, namely the value computed by its own monadic step function, and the predicate is definitionally equality to that value, so the existential is closed by supplying step it and rfl.",
+    "grades": {"1": 1, "2": 2, "3": 3, "4": 1, "5": 1, "6": 1, "7": 4, "8": 1, "9": 3, "10": 1, "11": 1, "12": 1, "13": 1, "14": 3},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0092": {
+    "moves": "Reassoc-generated version of the bicategorical interchange law for left and right whiskering: take the base exchange identity, post-compose both sides with a further 2-morphism, and reassociate the composites in the hom-category. The base law does all the work.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 3, "5": 4, "6": 1, "7": 1, "8": 1, "9": 3, "10": 1, "11": 1, "12": 1, "13": 1, "14": 0, "15": 2, "16": 0, "17": 2, "18": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0093": {
+    "moves": "Two directions. Forward: substitute along the equality of propositions and close with the reflexive iff. Backward: apply propositional extensionality, which is the axiom that makes the statement true. The Iff assembly plus the substitution is the rest.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 3, "5": 2, "6": 0, "7": 0, "8": 1, "9": 4, "10": 2, "11": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0094": {
+    "moves": "Unfold relabel to a list map over the clause, then mapping over the empty list gives the empty list. Everything else is simp-normalization residue (of_eq_true, eq_self, congr lemmas) with no content.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 1, "5": 1, "6": 1, "7": 2, "8": 0, "9": 4, "10": 1, "11": 0, "12": 1, "13": 1, "14": 3, "15": 1, "16": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0095": {
+    "moves": "Membership in a sequence is by definition the existence of an index whose lookup returns that element. Given the lookup hypothesis at index n, supply n as the witness and flip the equation to the required orientation. The whole proof is exhibiting a witness plus a symm.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 4, "6": 1, "7": 3, "8": 2, "9": 1, "10": 1, "11": 1, "12": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0096": {
+    "moves": "The product-lift of two partial functions is defined pointwise as the Part whose domain is the conjunction of the two domains and whose value is the pair of the two values, so applying it at a point is definitionally the stated Part. Proof is rfl.",
+    "grades": {"1": 1, "2": 2, "3": 4, "4": 3, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}
