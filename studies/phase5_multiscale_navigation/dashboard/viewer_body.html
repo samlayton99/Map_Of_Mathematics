@@ -283,6 +283,12 @@ function buildChrome() {
   for (const p of ["topk", "pct", "global"])
     document.querySelectorAll(".p-" + p).forEach(
       e => e.style.display = (S.policy === p ? "" : "none"));
+  // push state INTO the widgets too, otherwise a restored session shows the
+  // right numbers in the readouts while the sliders sit at their defaults
+  document.getElementById("c-policy").value = S.policy;
+  document.getElementById("c-k").value = S.k;
+  document.getElementById("c-pct").value = S.pct;
+  document.getElementById("c-q").value = S.q;
   document.getElementById("o-k").textContent = S.k;
   document.getElementById("o-pct").textContent = S.pct + "%";
   document.getElementById("o-q").textContent = S.q + "%";
@@ -308,6 +314,7 @@ function wireControls() {
 /* ================================ render ================================ */
 function render() {
   buildChrome();
+  saveState();
   const m = document.getElementById("main");
   m.innerHTML = "";
   try {
@@ -1205,7 +1212,37 @@ function renderVibe(m) {
 }
 
 /* ================================= boot ================================= */
+/* Remember where you were. Every value is validated against the manifest
+   before use, so a stored state from an older build cannot wedge the page on
+   a tab or ranking that no longer exists. */
+const STORE = "mathmap.viewer.state.v1";
+function saveState() {
+  try { localStorage.setItem(STORE, JSON.stringify(S)); } catch (e) {}
+}
+function restoreState() {
+  let saved;
+  try { saved = JSON.parse(localStorage.getItem(STORE) || "null"); }
+  catch (e) { return; }
+  if (!saved) return;
+  const names = D.manifest.rankings.map(r => r.name);
+  const ok = {
+    universe: v => D.manifest.universes.indexOf(v) >= 0,
+    lane: v => D.manifest.lanes.indexOf(v) >= 0,
+    tab: v => ["howto", "summary", "vibe", "ranking"].indexOf(v) >= 0,
+    ranking: v => names.indexOf(v) >= 0,
+    vibeRanking: v => names.indexOf(v) >= 0,
+    policy: v => ["topk", "pct", "global", "cluster"].indexOf(v) >= 0,
+    k: v => Number.isInteger(v) && v >= 1 && v <= 12,
+    pct: v => Number.isFinite(v) && v >= 1 && v <= 100,
+    q: v => Number.isFinite(v) && v >= 1 && v <= 100,
+  };
+  for (const [k, valid] of Object.entries(ok))
+    if (saved[k] !== undefined && saved[k] !== null && valid(saved[k]))
+      S[k] = saved[k];
+}
+
 function boot() {
+  restoreState();
   S.universe = S.universe || D.manifest.reference_universe;
   S.ranking = S.ranking ||
     (D.manifest.rankings.find(r => r.family === "candidate") ||

@@ -25,8 +25,12 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
 PY = sys.executable
-SEND = os.path.expanduser("~/sam-setup/utilities/send")
-DEST = "laptop:~/Desktop/map_results"
+# The `send` utility only ever lands in ~/Downloads, so deliver with scp.
+# Note: `scp -p` fails here -- preserving mode triggers a setstat on the
+# directory that macOS denies. Copy without -p.
+DEV = "laptop"
+DEST_DIR = "Desktop"
+DEST = f"{DEV}:~/{DEST_DIR}/map_results"
 
 
 def run(script, *args):
@@ -81,16 +85,26 @@ def main():
 
     if "--no-send" not in a:
         dist = os.path.join(ROOT, "dashboard", "dist", "map_results")
-        if not os.path.exists(SEND):
-            print(f"\n(no send utility at {SEND}; dashboard is at {dist})",
+        print(f"\n=== delivering to {DEST}", flush=True)
+        reach = subprocess.run(
+            ["ssh", "-o", "ConnectTimeout=8", "-o", "BatchMode=yes", DEV,
+             "true"], capture_output=True)
+        if reach.returncode:
+            print(f"{DEV} unreachable (asleep?); the built folder is at {dist}",
                   flush=True)
             return
-        print(f"\n=== delivering to {DEST}", flush=True)
-        r = subprocess.run([SEND, dist, "laptop"], cwd=ROOT)
+        # replace rather than overlay, so a file dropped from a later build
+        # cannot linger and be read as current
+        subprocess.run(["ssh", DEV, f"rm -rf ~/{DEST_DIR}/map_results"])
+        r = subprocess.run(["scp", "-rq", dist, f"{DEV}:{DEST_DIR}/"])
         if r.returncode:
             print("delivery failed; the built folder is at " + dist, flush=True)
-        else:
-            print("delivered.", flush=True)
+            return
+        n = subprocess.run(
+            ["ssh", DEV, f"ls ~/{DEST_DIR}/map_results/data | wc -l"],
+            capture_output=True, text=True)
+        print(f"delivered: ~/{DEST_DIR}/map_results "
+              f"({n.stdout.strip()} data files). Open viewer.html.", flush=True)
 
 
 if __name__ == "__main__":

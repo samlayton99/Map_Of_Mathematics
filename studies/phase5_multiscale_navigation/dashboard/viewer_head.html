@@ -156,8 +156,17 @@ td.keys{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;color:var(--di
   white-space:nowrap}
 
 /* ---------------- picker ---------------- */
-.picker{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;
+/* Default is HIDDEN; the visible state is opt-in.
+   Do NOT write `.picker{display:flex}` and rely on the `hidden` attribute to
+   turn it off: an author class rule beats the browser's built-in
+   [hidden]{display:none} on origin, so the attribute goes inert and the
+   overlay covers the page permanently -- even when the data loaded fine, and
+   it will not dismiss after a manual load either. That bug shipped once.
+   Stating the default as none removes the cascade conflict instead of
+   fighting it. src/render_test.js asserts this rule's shape. */
+.picker{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;
   align-items:center;justify-content:center;z-index:100;padding:20px}
+.picker:not([hidden]){display:flex}
 .picker-card{background:var(--card);border:1px solid var(--line);border-radius:12px;
   padding:24px 28px;max-width:540px}
 .picker-card input[type=file]{font:inherit;font-size:.85rem}

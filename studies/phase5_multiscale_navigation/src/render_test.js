@@ -46,10 +46,51 @@ JSDOM.fromFile(file, {
   if (!w.Charts) fail.push("window.Charts missing");
   if (!w.Report) fail.push("window.Report missing");
   if (!w.D) fail.push("viewer never bound its data");
+  // Check what the user would SEE, not what the attribute says. The attribute
+  // being set proves nothing: a class selector can outrank [hidden] and leave
+  // the overlay painted over the page. That exact bug shipped once.
   const picker = doc.getElementById("picker");
-  if (picker && !picker.hidden) fail.push("the folder picker is showing, so " +
-    "automatic loading failed");
+  if (picker) {
+    if (!picker.hidden)
+      fail.push("the folder picker is showing, so automatic loading failed");
+    const disp = w.getComputedStyle(picker).display;
+    if (disp !== "none")
+      fail.push(`the folder picker is hidden=${picker.hidden} but computes ` +
+                `display:${disp}, so it is painted over the page anyway`);
+  }
   if (fail.length) { report(fail); return; }
+
+  // The overlay must respond to the attribute in BOTH directions. jsdom's
+  // cascade does NOT reproduce a real browser's author-over-UA precedence --
+  // verified by injecting the bug and watching this pass -- so the computed
+  // style is checked as a smoke test only, and the real guarantee comes from
+  // the source assertion below: the CSS must never leave `.picker` visible by
+  // default and lean on [hidden] to switch it off.
+  if (picker) {
+    picker.hidden = false;
+    const shown = w.getComputedStyle(picker).display;
+    picker.hidden = true;
+    const gone = w.getComputedStyle(picker).display;
+    if (shown === "none")
+      fail.push("picker cannot be shown: hidden=false still computes none");
+    if (gone !== "none")
+      fail.push(`picker cannot be dismissed: hidden=true computes ${gone}`);
+    note(`picker toggles ${shown} <-> ${gone} (jsdom; see source assertion)`);
+  }
+  {
+    // strip CSS comments first: the rule is documented with a comment that
+    // quotes the buggy form, which the naive regex happily matches
+    const css = fs.readFileSync(file, "utf8").replace(/\/\*[\s\S]*?\*\//g, "");
+    const rule = /\.picker\s*\{[^}]*\}/.exec(css);
+    if (!rule) fail.push("no .picker rule found in the packaged CSS");
+    else if (/display\s*:\s*(?!none)/.test(rule[0]))
+      fail.push("`.picker` sets a visible display by default; the `hidden` " +
+                "attribute cannot override an author class rule, so the " +
+                "overlay would cover the page permanently. Default it to " +
+                "display:none and opt in with .picker:not([hidden]).");
+    if (!/\.picker:not\(\[hidden\]\)/.test(css))
+      fail.push("no `.picker:not([hidden])` rule; the overlay can never show");
+  }
 
   const M = w.MAPDATA.manifest;
   note(`loaded: ${M.rankings.length} rankings, universes ` +

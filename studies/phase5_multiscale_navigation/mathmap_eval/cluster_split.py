@@ -41,8 +41,12 @@ Methods (all guarantee 1 <= admitted <= proof size):
   curvature          largest discrete second difference of the score curve
 
 `DEFAULT_METHOD` is the one registered as the `cluster_split` inclusion
-policy. It was chosen by `evaluate_methods` against the graded rater labels;
-the evidence, including the ways it loses, is in reports/CLUSTER_SPLIT.md.
+policy. It was chosen by `evaluate_methods` against the graded rater labels.
+READ reports/CLUSTER_SPLIT.md BEFORE QUOTING IT: the honest result is that the
+methods which genuinely vary per proof (max_gap, otsu, kneedle, curvature) are
+WORSE than fixed top-k at the same mean size, and the tie-block methods that
+do win, win by about one graded candidate out of 154 -- well inside the Wilson
+interval. The default is defensible, not demonstrated.
 
 The module must be IMPORTED for the `cluster_split` policy to appear in
 `mathmap_eval.inclusions.REGISTRY`.
@@ -58,8 +62,9 @@ from .inclusions import inclusion
 METHODS = ("tie_first", "tie_first_capped", "tie_two", "max_gap",
            "max_gap_half", "max_gap_rel", "otsu", "kneedle", "curvature")
 
-#: Chosen by evidence in reports/CLUSTER_SPLIT.md.
-DEFAULT_METHOD = "tie_first_capped"
+#: Chosen by evidence in reports/CLUSTER_SPLIT.md. It wins by a margin the
+#: 180-proof labelled set cannot resolve -- read that report before quoting it.
+DEFAULT_METHOD = "tie_two"
 
 _NEG = -np.inf
 
@@ -286,16 +291,38 @@ def _sizes_for_method(seg: _Segments, method: str, tied_all: bool,
 
 
 # ------------------------------------------------------------------- public
+def make_segments(corpus, base: np.ndarray, ranks: np.ndarray,
+                  keys: Sequence[np.ndarray], scale: str = "level"
+                  ) -> "_Segments":
+    """The sorted-by-(artifact, rank) working set, shared by all methods.
+
+    Building it costs one dense-ranking pass and one lexsort over the whole
+    universe, so comparing several methods on the same ranking should build it
+    ONCE and hand it to `split_sizes(..., seg=...)`.
+    """
+    if isinstance(keys, np.ndarray):
+        keys = (keys,)
+    art = corpus.inc_artifact[np.asarray(base)]
+    s, step = score_from_keys(tuple(keys), scale=scale)
+    seg = _Segments(art, np.asarray(ranks), s, step)
+    seg.art_sorted_starts = art[seg.order][seg.starts] if seg.n else \
+        np.zeros(0, np.int64)
+    return seg
+
+
 def split_sizes(corpus, base: np.ndarray, ranks: np.ndarray,
-                keys: Sequence[np.ndarray], method: str = DEFAULT_METHOD,
+                keys: Sequence[np.ndarray] | None = None,
+                method: str = DEFAULT_METHOD,
                 scale: str = "level", tied_all: bool = True,
                 cap_abs: int = 8, cap_frac: float = 0.5,
-                return_sizes: bool = False) -> np.ndarray:
+                return_sizes: bool = False, seg: "_Segments | None" = None
+                ) -> np.ndarray:
     """Per-proof adaptive admission mask over `base`.
 
     `keys` are the ranking's ascending lexicographic sort keys aligned to
     `base` (i.e. `RankingSpec.keys(corpus, base)`); `ranks` are the 0-based
-    within-proof ranks (`RankingSpec.ranks_within_proof`).
+    within-proof ranks (`RankingSpec.ranks_within_proof`). Pass `seg` from
+    `make_segments` to reuse the shared work across methods.
 
     Returns a bool mask over `base`. With `return_sizes=True` returns
     `(mask, sizes, seg_artifacts)` where `sizes` is the admitted count per
@@ -306,18 +333,16 @@ def split_sizes(corpus, base: np.ndarray, ranks: np.ndarray,
         empty = np.zeros(0, bool)
         return (empty, np.zeros(0, np.int64), np.zeros(0, np.int64)) \
             if return_sizes else empty
-    if isinstance(keys, np.ndarray):
-        keys = (keys,)
-    art = corpus.inc_artifact[base]
-    s, step = score_from_keys(tuple(keys), scale=scale)
-    seg = _Segments(art, np.asarray(ranks), s, step)
-    del s
+    if seg is None:
+        if keys is None:
+            raise ValueError("split_sizes needs keys=... or seg=...")
+        seg = make_segments(corpus, base, ranks, keys, scale=scale)
     m = _sizes_for_method(seg, method, tied_all, cap_abs, cap_frac)
     admitted = seg.pos < m[seg.seg_of]
     mask = np.zeros(len(base), bool)
     mask[seg.order] = admitted
     if return_sizes:
-        return mask, m, art[seg.order][seg.starts]
+        return mask, m, seg.art_sorted_starts
     return mask
 
 
@@ -342,8 +367,9 @@ def _cluster_split(c, base, ranks, keys=None, ranking=None,
 
 
 # ---------------------------------------------------------------- evaluation
-def _labelled_arrays(corpus, base, grades_by_inc):
-    """Per-candidate grade (-1 = ungraded) and the labelled-proof mask."""
+def grade_array(corpus, base, grades_by_inc):
+    """Per-candidate rater grade over `base`; -1 where the candidate is
+    ungraded. Small, dense, and the only thing the label channel needs."""
     g = np.full(corpus.n_incidences, -1, np.int8)
     if grades_by_inc:
         idx = np.fromiter(grades_by_inc.keys(), np.int64, len(grades_by_inc))
@@ -411,7 +437,7 @@ def evaluate_methods(corpus=None, universe: str = "U1D", rankings=None,
     base = np.where(c.universe(universe))[0]
     art = c.inc_artifact[base]
     n_art = int(art.max()) + 1
-    gb = _labelled_arrays(c, base, grades)
+    gb = grade_array(c, base, grades)
     lab_arts = np.unique(art[gb >= 0])
 
     rows = []
@@ -438,8 +464,9 @@ def evaluate_methods(corpus=None, universe: str = "U1D", rankings=None,
         for k in ks:
             rows.append(fixed[k - 1])
         for sc in scales:
+            seg = make_segments(c, base, ranks, keys, scale=sc)
             for meth in methods:
-                mask = split_sizes(c, base, ranks, keys, method=meth, scale=sc)
+                mask = split_sizes(c, base, ranks, method=meth, seg=seg)
                 r = _score_mask(mask, gb, art, lab_arts, n_art)
                 r.update(ranking=nm, universe=universe,
                          kind="cluster" if sc == "level" else f"cluster[{sc}]",
@@ -453,6 +480,8 @@ def evaluate_methods(corpus=None, universe: str = "U1D", rankings=None,
                     r["KeyRecall"] > r["matched_KeyRecall"]
                     and r["PrecisionGraded"] > r["matched_PrecisionGraded"])
                 rows.append(r)
+                del mask
+            del seg
         if verbose:
             print(f"  evaluated {nm}", flush=True)
 
