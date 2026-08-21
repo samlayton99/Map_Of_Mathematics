@@ -1,0 +1,146 @@
+{
+  "proof_0049": {
+    "moves": "In a compact Hausdorff totally disconnected space the clopen sets form a basis for the topology; since U is open and contains x, U is a neighbourhood of x, and the basis characterization of neighbourhoods hands back a clopen V with x in V and V contained in U.",
+    "grades": {"1": 1, "2": 4, "3": 0, "4": 1, "5": 0, "6": 0, "7": 1, "8": 1, "9": 1, "10": 1, "11": 1, "12": 1, "13": 2, "14": 4, "15": 0, "16": 1, "17": 3, "18": 2, "19": 0, "20": 1, "21": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0050": {
+    "moves": "A product indexed by the subtype of a set is reindexed as a product over the corresponding finset, using prod_subtype with the membership compatibility x in s.toFinset iff x in s; the result is then flipped with symm.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 3, "5": 1, "6": 1, "7": 1, "8": 1, "9": 1, "10": 2, "11": 0, "12": 2, "13": 4, "14": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0051": {
+    "moves": "Pure specialization: the general statement about comparing the minimum key of a modified tree map under an arbitrary comparator is instantiated at the Ord instance's compare. No mathematical step beyond the instantiation.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 1, "5": 4, "6": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0052": {
+    "moves": "The monoidal comparison map delta for the free-module functor is by construction the inverse of the mu isomorphism, so the value on a generator is read off from the corresponding lemma about that inverse. A one-step delegation.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 0, "6": 1, "7": 4, "8": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0053": {
+    "moves": "Set.piecewise is just an if-then-else on membership in s, so the continuity criterion for if-then-else applies verbatim: the two branches are continuous and agree on the frontier of s.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 0, "5": 0, "6": 4, "7": 0, "8": 1, "9": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0054": {
+    "moves": "Take n in the support of p; membership in the support forces n at most natDegree p, and natDegree p is below m by hypothesis, so n < m by transitivity, which is exactly membership in range m. The proof is a pointwise subset introduction plus one chain of inequalities.",
+    "grades": {"1": 0, "2": 1, "3": 2, "4": 4, "5": 1, "6": 1, "7": 0, "8": 0, "9": 0, "10": 3, "11": 0, "12": 1, "13": 1, "14": 1, "15": 2, "16": 0, "17": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0055": {
+    "moves": "ofList is by definition repeated insertion into the empty map, so containment in the built map reduces to the internal lemma about insertMany from empty, which says a key is present exactly when it occurs among the keys of the list. The comparator/BEq compatibility class is what lets the list-side BEq test match the tree-side comparison.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 1, "5": 1, "6": 1, "7": 2, "8": 1, "9": 1, "10": 1, "11": 1, "12": 0, "13": 2, "14": 1, "15": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0056": {
+    "moves": "ContinuousWithinAt is by definition a Tendsto statement along the within-neighbourhood filter, so the theorem is the filter-limit version of nsmul applied directly to the hypothesis. Nothing beyond unfolding the definition.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 0, "5": 1, "6": 1, "7": 4, "8": 0, "9": 0, "10": 2, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0057": {
+    "moves": "An auto-generated simp lemma for the inverse of the linear equivalence obtained by post-composing locally constant functions with e: both sides are the same term after unfolding, so the proof is rfl. There is no mathematical step at all.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 0, "5": 2, "6": 2, "7": 1, "8": 0, "9": 1, "10": 1, "11": 0, "12": 1, "13": 0, "14": 0, "15": 0, "16": 2, "17": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0058": {
+    "moves": "The non-dependent tree map is a thin wrapper around the dependent one, so getElem equals get of getElem? is inherited verbatim from the dependent Const-version lemma. Pure unwrapping.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 1, "5": 4, "6": 0, "7": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0059": {
+    "moves": "Exhibit the explicit basis 1, i, j, k indexed by Fin 4 for the quaternion algebra over R, and conclude module-finiteness from the general fact that a module with a basis indexed by a finite type is finite.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 2, "11": 1, "12": 0, "13": 1, "14": 4, "15": 2, "16": 1, "17": 0, "18": 0, "19": 0, "20": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0060": {
+    "moves": "Definitional: the strict-inequality position predicate on a string slice is set up so that it literally reduces to the non-strict one at the relevant raw position, so the proof is rfl. No mathematical content, only unfolding.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 2, "6": 2, "7": 1, "8": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0061": {
+    "moves": "The coercion from the reals into an RCLike field is the algebra map, and ring homomorphisms send minus r to minus its image; the theorem is that general coercion lemma specialized here.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 4, "6": 0, "7": 0, "8": 0, "9": 0, "10": 1, "11": 1, "12": 1, "13": 0, "14": 0, "15": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0062": {
+    "moves": "For the model space with the trivial model-with-corners, the chart at any point is the identity partial equivalence, and composing it with the identity model leaves it unchanged; the extended chart therefore collapses to PartialEquiv.refl. Discharged by simp, so most of the term is normalization residue.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 0, "6": 1, "7": 2, "8": 0, "9": 1, "10": 2, "11": 0, "12": 1, "13": 0, "14": 1, "15": 2, "16": 0, "17": 3, "18": 1, "19": 1, "20": 2, "21": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0063": {
+    "moves": "Rewrite the goal f = g along the already-established extensionality characterization, which turns equality into an existential over the source equality, target equality and the compatibility of the isomorphisms; then supply exactly the three hypotheses as witnesses. The real content is exhibiting witnesses, not any cited theorem beyond ext_iff.",
+    "grades": {"1": 2, "2": 4, "3": 2, "4": 1, "5": 1, "6": 1, "7": 0, "8": 1, "9": 1, "10": 1, "11": 1, "12": 1, "13": 1, "14": 1, "15": 1, "16": 0, "17": 2, "18": 1, "19": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0064": {
+    "moves": "To say an isometry equivalence preserves Hausdorff measure one checks two things: the map is measurable, which follows because it is continuous and the space carries the Borel sigma-algebra, and the pushforward of the Hausdorff measure is itself, which is the substantive input.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 3, "6": 1, "7": 0, "8": 3, "9": 4, "10": 1, "11": 2, "12": 1, "13": 0, "14": 1, "15": 2, "16": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0065": {
+    "moves": "Equality of the two derivative functions is proved pointwise: fix a point, apply the pointwise fact that adding a constant does not change the derivative, then bundle back up with funext.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, "13": 1, "14": 1, "15": 4, "16": 0, "17": 1, "18": 0, "19": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0066": {
+    "moves": "Conditional independence of families of sets is defined as independence with respect to the conditional expectation kernel, so the union criterion is literally the kernel-level union criterion. A definitional transfer.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 1, "6": 1, "7": 1, "8": 2, "9": 0, "10": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0067": {
+    "moves": "Start from the known identity cosh squared equals sinh squared plus one and swap the two summands by commutativity of addition; the proof is a two-link chain of equalities.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 2, "5": 0, "6": 0, "7": 0, "8": 1, "9": 0, "10": 1, "11": 3, "12": 0, "13": 1, "14": 0, "15": 0, "16": 0, "17": 0, "18": 0, "19": 1, "20": 4, "21": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0068": {
+    "moves": "The function constantly equal to one is a constant function, so pointwise its derivative is zero by the constant rule; funext turns the pointwise statement into equality of functions. The only real recognition is that 1 as a function means the constant function.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 1, "6": 0, "7": 0, "8": 1, "9": 4, "10": 0, "11": 1, "12": 1, "13": 0, "14": 0, "15": 0, "16": 2, "17": 0, "18": 0, "19": 0, "20": 2, "21": 0, "22": 0, "23": 0, "24": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0069": {
+    "moves": "For real-valued integrands the absolute value is the norm, so the statement is exactly the already-proved norm version of the identity relating the oriented interval integral to the integral over the unordered interval.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 0, "5": 0, "6": 0, "7": 4, "8": 1, "9": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0070": {
+    "moves": "To show a scalar multiple of a left-invariant measure is still left invariant, check the defining condition: push forward c times mu under left translation, use that pushforward commutes with scaling the measure, then use the invariance of mu itself. The rest of the term is rewriting residue.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 2, "5": 0, "6": 1, "7": 0, "8": 0, "9": 1, "10": 1, "11": 0, "12": 1, "13": 0, "14": 1, "15": 4, "16": 1, "17": 4, "18": 1, "19": 0, "20": 1, "21": 0, "22": 0, "23": 0, "24": 1, "25": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0071": {
+    "moves": "An auto-generated simp lemma stating that the monoid homomorphism packaging the dilation ratio evaluates to the ratio; true by definition, proved by rfl. No mathematical step.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 1, "5": 0, "6": 2, "7": 1, "8": 0, "9": 0, "10": 1, "11": 1, "12": 2, "13": 0, "14": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0072": {
+    "moves": "A simply connected set means the subtype carries a SimplyConnectedSpace structure, which in particular gives a PathConnectedSpace structure on the subtype; converting that back into the set-level statement is the characterization of IsPathConnected via path-connectedness of the coerced subtype.",
+    "grades": {"1": 3, "2": 1, "3": 1, "4": 2, "5": 3, "6": 4, "7": 2, "8": 0, "9": 3, "10": 1, "11": 1, "12": 2, "13": 1, "14": 0},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

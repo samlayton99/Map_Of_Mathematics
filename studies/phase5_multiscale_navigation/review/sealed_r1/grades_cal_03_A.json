@@ -1,0 +1,146 @@
+{
+  "proof_0049": {
+    "moves": "In a compact Hausdorff totally disconnected space, the clopen sets form a topological basis; since U is open and contains x, U is a neighbourhood of x, so the basis characterization of neighbourhoods hands back a clopen V with x in V and V inside U. The whole proof is: apply the clopen-basis theorem through the basis-neighbourhood criterion.",
+    "grades": {"1": 1, "2": 3, "3": 0, "4": 2, "5": 0, "6": 0, "7": 1, "8": 1, "9": 1, "10": 1, "11": 1, "12": 1, "13": 1, "14": 4, "15": 1, "16": 1, "17": 3, "18": 2, "19": 0, "20": 1, "21": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0050": {
+    "moves": "Identify a product indexed by the coercion of a set s (as a subtype) with the product over s.toFinset, using the general subtype-to-finset product lemma with the side condition that membership in s.toFinset matches the subtype predicate; then flip the equation.",
+    "grades": {"1": 1, "2": 1, "3": 0, "4": 3, "5": 1, "6": 1, "7": 1, "8": 1, "9": 1, "10": 2, "11": 0, "12": 2, "13": 4, "14": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0051": {
+    "moves": "Pure restatement: the ordCompare-phrased claim about the minimum key after a modify is literally the compare-phrased lemma already proved. No mathematical step of its own.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 4, "6": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0052": {
+    "moves": "The tensorator delta of the free-module functor applied to a generator freeMk z splits as freeMk z.1 tensor freeMk z.2. The proof simply applies the already-established computation of the inverse of the monoidal comparison iso on generators; the delta is that inverse by definition.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 0, "6": 0, "7": 4, "8": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0053": {
+    "moves": "Set.piecewise is definitionally an if-then-else on membership, so continuity of the glued function follows immediately from the if-then-else gluing lemma, whose hypothesis is exactly that f and g agree on the frontier of s. The mathematical content (agreement on the boundary makes the glue continuous) lives entirely in that lemma.",
+    "grades": {"1": 2, "2": 1, "3": 1, "4": 0, "5": 0, "6": 4, "7": 0, "8": 1, "9": 1},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0054": {
+    "moves": "Take an exponent n in the support of p. Any such n is at most natDegree p, and natDegree p < m by hypothesis, so n < m by transitivity; membership in Finset.range m is exactly that inequality. It is a pointwise subset argument built from one degree bound plus transitivity.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 4, "5": 1, "6": 0, "7": 1, "8": 0, "9": 0, "10": 3, "11": 0, "12": 1, "13": 1, "14": 1, "15": 1, "16": 0, "17": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0055": {
+    "moves": "ofList on a raw dependent tree map is by definition insertMany into the empty map, so the containment claim is exactly the already-proved statement about contains after insertMany from a list into the empty structure. A single delegation, no new argument.",
+    "grades": {"1": 1, "2": 0, "3": 4, "4": 1, "5": 1, "6": 1, "7": 2, "8": 1, "9": 1, "10": 1, "11": 1, "12": 0, "13": 1, "14": 1, "15": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0056": {
+    "moves": "ContinuousWithinAt is by definition a Tendsto statement along the within-neighbourhood filter, so continuity within a set of n-fold repeated addition follows directly from the corresponding Tendsto lemma for nsmul (which itself rests on continuity of addition).",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 1, "6": 1, "7": 4, "8": 0, "9": 0, "10": 2, "11": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0057": {
+    "moves": "A simps-generated projection lemma: the inverse of the linear equivalence induced on locally constant functions is, by construction, postcomposition by the inverse equivalence, so the statement holds by definitional unfolding and reflexivity. There is no mathematical step, only unfolding of how congrRight and symm were defined.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 0, "5": 3, "6": 2, "7": 1, "8": 0, "9": 1, "10": 1, "11": 0, "12": 1, "13": 2, "14": 0, "15": 0, "16": 3, "17": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0058": {
+    "moves": "The extensional tree map is a quotient wrapper around the dependent one, and getElem for the constant-value case is defined through it; so this is the already-proved dependent/const version transported verbatim. Pure delegation.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 1, "5": 4, "6": 1, "7": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0059": {
+    "moves": "Exhibit the explicit basis 1, i, j, k of the quaternion algebra over R (indexed by Fin 4) and conclude module-finiteness from the general fact that a module with a finite basis is finite. The mathematical act is producing the witness basis.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 1, "11": 1, "12": 0, "13": 1, "14": 4, "15": 1, "16": 0, "17": 0, "18": 0, "19": 0, "20": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0060": {
+    "moves": "A definitional identity between two positional predicates on a string slice: it holds by rfl, i.e. the two defs reduce to the same comparison against the raw end position. The content is entirely how posGT was defined, not any argument.",
+    "grades": {"1": 1, "2": 0, "3": 1, "4": 1, "5": 3, "6": 2, "7": 1, "8": 1},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0061": {
+    "moves": "The coercion from the reals into an RCLike field is the algebra map, and ring homomorphisms send negatives to negatives; the proof is the single application of that fact. Everything else is the instance chain that identifies the coercion with algebraMap.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 0, "5": 4, "6": 0, "7": 0, "8": 0, "9": 0, "10": 0, "11": 1, "12": 1, "13": 0, "14": 0, "15": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0062": {
+    "moves": "For the model space, the chart at any point is the identity partial equivalence and the model with corners is also the identity, so the extended chart is refl composed with refl, which collapses by trans_refl to refl. Executed as a simp call, so much of the cited material is congruence/decide residue.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": 1, "7": 2, "8": 0, "9": 1, "10": 3, "11": 0, "12": 0, "13": 0, "14": 1, "15": 2, "16": 0, "17": 3, "18": 1, "19": 1, "20": 3, "21": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0063": {
+    "moves": "Rewrite the goal f = g by the extensionality iff for partial isomorphisms, then close it by supplying the three given data as the existential witnesses. The real move is exhibiting witnesses after one rewrite; there is no geometry here.",
+    "grades": {"1": 2, "2": 4, "3": 1, "4": 1, "5": 1, "6": 1, "7": 0, "8": 1, "9": 1, "10": 1, "11": 1, "12": 1, "13": 1, "14": 1, "15": 1, "16": 1, "17": 2, "18": 0, "19": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0064": {
+    "moves": "Construct a MeasurePreserving instance from its two components: the isometric equivalence is continuous hence measurable, and it pushes the d-dimensional Hausdorff measure to itself. The second component is the substantive input.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 3, "6": 1, "7": 0, "8": 3, "9": 4, "10": 1, "11": 2, "12": 1, "13": 1, "14": 1, "15": 1, "16": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0065": {
+    "moves": "Upgrade the pointwise statement deriv (c + f) x = deriv f x to an equality of functions by function extensionality. The mathematics is entirely in the pointwise lemma; the proof itself is just funext.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 0, "5": 0, "6": 1, "7": 0, "8": 0, "9": 0, "10": 0, "11": 0, "12": 0, "13": 1, "14": 1, "15": 4, "16": 0, "17": 1, "18": 0, "19": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0066": {
+    "moves": "Conditional independence of sigma-systems is by definition kernel independence with respect to the conditional expectation kernel, so the union criterion is literally the kernel-level lemma. Pure transport across a definition.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 4, "5": 1, "6": 1, "7": 1, "8": 2, "9": 1, "10": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0067": {
+    "moves": "Start from the identity cosh x ^ 2 = sinh x ^ 2 + 1 and commute the two summands to get 1 + sinh x ^ 2. One known identity plus commutativity of addition, chained by transitivity.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 2, "5": 0, "6": 0, "7": 0, "8": 0, "9": 0, "10": 1, "11": 3, "12": 1, "13": 1, "14": 0, "15": 0, "16": 0, "17": 0, "18": 0, "19": 1, "20": 4, "21": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0068": {
+    "moves": "The constant function 1 has zero derivative at every point, and function extensionality turns that pointwise fact into the equality deriv 1 = 0. All the Pi/One/Zero material is instance bookkeeping for reading 1 and 0 as functions.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 1, "6": 0, "7": 0, "8": 1, "9": 4, "10": 0, "11": 1, "12": 1, "13": 0, "14": 0, "15": 0, "16": 2, "17": 0, "18": 0, "19": 0, "20": 0, "21": 0, "22": 0, "23": 0, "24": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0069": {
+    "moves": "On the reals the absolute value is the norm, so the claim that the absolute value of an interval integral equals that of the integral over the unordered interval is definitionally the already-proved norm version. The only work is the instances lining norm up with abs.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 0, "6": 0, "7": 4, "8": 1, "9": 0},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0070": {
+    "moves": "To show a scalar multiple c * mu is left invariant, unpack the invariance structure: pushing c * mu forward under left translation commutes with the scaling, and the pushforward of mu is mu by hypothesis, so the result is c * mu again.",
+    "grades": {"1": 0, "2": 2, "3": 1, "4": 2, "5": 1, "6": 1, "7": 0, "8": 0, "9": 1, "10": 1, "11": 1, "12": 1, "13": 0, "14": 1, "15": 3, "16": 1, "17": 4, "18": 1, "19": 0, "20": 0, "21": 0, "22": 0, "23": 0, "24": 1, "25": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0071": {
+    "moves": "A projection lemma: the monoid hom sending a self-dilation to its ratio was built with ratio as its underlying function, so applying the hom is the ratio by definition, closed by rfl. No argument, only unfolding of a bundled structure and its coercion.",
+    "grades": {"1": 1, "2": 0, "3": 2, "4": 1, "5": 0, "6": 2, "7": 1, "8": 1, "9": 0, "10": 0, "11": 1, "12": 3, "13": 0, "14": 0},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0072": {
+    "moves": "A simply connected subset s means the subtype s is a simply connected space; a simply connected space is in particular path connected (found by instance search), and path connectedness of the subtype is equivalent to IsPathConnected of the set. So: transfer to the subspace, use simply connected implies path connected, transfer back.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 1, "5": 3, "6": 4, "7": 2, "8": 0, "9": 2, "10": 1, "11": 1, "12": 1, "13": 1, "14": 0},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

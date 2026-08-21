@@ -1,0 +1,146 @@
+{
+  "proof_0025": {
+    "moves": "Prove equality of the two generated sieves by antisymmetry: an isomorphism of pre-0-hypercovers supplies morphisms in both directions, and the lemma that any morphism makes the generated sieve smaller is applied to e.hom and to e.inv.",
+    "grades": {"1": 1, "2": 2, "3": 1, "4": 0, "5": 1, "6": 0, "7": 3, "8": 0, "9": 4, "10": 3, "11": 4, "12": 1, "13": 0, "14": 0, "15": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0026": {
+    "moves": "Exhibit a witness: the Nonempty hypothesis gives some 0-simplex (pulled out with Classical.arbitrary), which is packaged as an element of the type of simplices with dim = 0. There is no argument beyond producing the term.",
+    "grades": {"1": 0, "2": 0, "3": 0, "4": 4, "5": 0, "6": 1, "7": 0, "8": 3, "9": 0, "10": 0, "11": 1, "12": 4, "13": 0, "14": 2, "15": 1, "16": 1, "17": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0027": {
+    "moves": "Composition in the category of cones is computed componentwise on the underlying maps, so pushing the .hom projection through the composite turns the goal into the ordinary Iso.inv_hom_id for the iso of cones. The unfolding of composition-of-cone-morphisms is the real step; the rest is simp residue.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 0, "5": 2, "6": 0, "7": 0, "8": 2, "9": 0, "10": 4, "11": 0, "12": 1, "13": 0, "14": 2, "15": 0, "16": 0, "17": 0, "18": 2, "19": 0, "20": 0, "21": 1, "22": 1},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0028": {
+    "moves": "Pure instance transport: the quaternions over R are by definition the algebra with structure constants (-1, 0, -1), so the Subsingleton instance for the general quaternion algebra (which comes from the bijection with a 4-tuple) applies unchanged. The extracted private lemma carries whatever content there is.",
+    "grades": {"1": 1, "2": 4, "3": 2, "4": 1, "5": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0029": {
+    "moves": "Nothing to prove: remainder on UInt8 is defined as remainder on the underlying Fin, so the two sides are definitionally equal and the proof is rfl.",
+    "grades": {"1": 2, "2": 1, "3": 2, "4": 2, "5": 1, "6": 0, "7": 1, "8": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0030": {
+    "moves": "Commute the two factors so the expression reads (b / a) * a, then apply the cancellation lemma for a genuine divisor. Two rewrites, both carrying content.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 1, "5": 0, "6": 0, "7": 1, "8": 0, "9": 0, "10": 0, "11": 4, "12": 4, "13": 0, "14": 2, "15": 0, "16": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0031": {
+    "moves": "Definitional: the lifted object's arrow is literally defined as the .hom of the image under F, so both sides are the same term and the proof is rfl. No mathematical step at all.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 2, "5": 3, "6": 0, "7": 1, "8": 2, "9": 2, "10": 1, "11": 0, "12": 2, "13": 0, "14": 0, "15": 1, "16": 0, "17": 1, "18": 0, "19": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0032": {
+    "moves": "natAdd m is strictly monotone, hence injective, and an injective map turns the equation between images into the equation between arguments.",
+    "grades": {"1": 0, "2": 1, "3": 1, "4": 4, "5": 4, "6": 3, "7": 0, "8": 0, "9": 2, "10": 0, "11": 0, "12": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0033": {
+    "moves": "Definitional: restricting the composite isomorphism to the induced subgraphs and composing the two restrictions produce the same underlying function on the same subtypes, so the whole lemma is rfl. The content is unfolding, not an argument.",
+    "grades": {"1": 3, "2": 2, "3": 1, "4": 2, "5": 1, "6": 0, "7": 3, "8": 1, "9": 2, "10": 0, "11": 1, "12": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0034": {
+    "moves": "A simps-generated projection lemma: it reads off the component of the inverse of a natural isomorphism that was built by ofComponents, so both sides are the same term and the proof is rfl.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 2, "6": 2, "7": 0, "8": 1, "9": 2, "10": 0, "11": 0, "12": 1, "13": 1, "14": 0, "15": 0, "16": 3, "17": 0, "18": 2, "19": 0, "20": 1, "21": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0035": {
+    "moves": "Unfold relabel and empty: relabelling maps a function over the array of clauses, and the empty CNF has the empty array, so the computation reduces to 'map over the empty list is the empty list' after crossing the Array/List bridge.",
+    "grades": {"1": 0, "2": 1, "3": 0, "4": 1, "5": 2, "6": 1, "7": 0, "8": 2, "9": 2, "10": 0, "11": 1, "12": 4, "13": 3, "14": 3, "15": 0, "16": 1, "17": 1, "18": 4, "19": 2, "20": 1, "21": 0, "22": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0036": {
+    "moves": "Substitute the factorisation equation so that f3 is replaced by the composite f1 followed by f2, and then invoke the two-out-of-three statement that local surjectivity of a composite gives local surjectivity of the second factor.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 0, "5": 0, "6": 0, "7": 3, "8": 1, "9": 0, "10": 0, "11": 2, "12": 0, "13": 1, "14": 2, "15": 0, "16": 4},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0037": {
+    "moves": "The product of two ideals is contained in the right factor, so the join of J*I with I collapses to I; that is exactly the characterisation of sup being the right argument.",
+    "grades": {"1": 4, "2": 0, "3": 4, "4": 0, "5": 2, "6": 0, "7": 0, "8": 1, "9": 2, "10": 0, "11": 0, "12": 0, "13": 0, "14": 0, "15": 2, "16": 0, "17": 1, "18": 1, "19": 0, "20": 1, "21": 1, "22": 0, "23": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0038": {
+    "moves": "Translating a set by a group element is taking its image under the map x -> a*x; that map is injective because a is invertible, and images under an injective map distribute over intersections.",
+    "grades": {"1": 0, "2": 4, "3": 0, "4": 0, "5": 0, "6": 4, "7": 2, "8": 0, "9": 1, "10": 1, "11": 2, "12": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0039": {
+    "moves": "No mathematical content: the non-dependent extensional hash map is a thin wrapper around the dependent one, so the statement is the dependent lemma read through the .inner projection.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "6": 4, "7": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0040": {
+    "moves": "The real argument is a case split on the list: the empty list cannot have length n+1, and a cons supplies the head and tail as the required witnesses. Here that is done wholesale by grind, and the content sits inside an anonymous extracted lemma, so no citation names the actual move.",
+    "grades": {"1": 4, "2": 1, "3": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0041": {
+    "moves": "Definitional: in dimension 0 the auxiliary construction behind spineToSimplex is literally the single vertex of the path, so the equation holds by rfl with no argument.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 0, "5": 1, "6": 0, "7": 0, "8": 2, "9": 1, "10": 1, "11": 0, "12": 0, "13": 1, "14": 3, "15": 0, "16": 0},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0042": {
+    "moves": "Rewrite the second betweenness relation using symmetry of Wbtw in its outer arguments so the conjunction matches the already-proved swap-on-the-right criterion, then flip the resulting equality with eq_comm. Three rewrites, all of them content.",
+    "grades": {"1": 4, "2": 1, "3": 0, "4": 0, "5": 0, "6": 1, "7": 1, "8": 3, "9": 0, "10": 1, "11": 1, "12": 1, "13": 1, "14": 1, "15": 1, "16": 4, "17": 1, "18": 3, "19": 0, "20": 1, "21": 1, "22": 0, "23": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0043": {
+    "moves": "No content: this is the pointwise-lambda restatement of the already-proved continuity of the inf of two functions at a point, applied verbatim.",
+    "grades": {"1": 1, "2": 1, "3": 2, "4": 4, "5": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0044": {
+    "moves": "Delegation: the raw hash map is a wrapper around the raw dependent hash map, so the lemma is the dependent (Const) version, with the well-formedness hypothesis converted through WF.out.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 1, "5": 4, "6": 1, "7": 1, "8": 2, "9": 2, "10": 1, "11": 3, "12": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0045": {
+    "moves": "Definitional: the natural transformation between the two composable-arrow diagrams is built with the identity in position 0, so evaluating its component there gives the identity by rfl.",
+    "grades": {"1": 2, "2": 0, "3": 0, "4": 1, "5": 1, "6": 0, "7": 3, "8": 0, "9": 2, "10": 0, "11": 0, "12": 1, "13": 1, "14": 0, "15": 0, "16": 0, "17": 2, "18": 0, "19": 0, "20": 0, "21": 0, "22": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0046": {
+    "moves": "Strip the binderNameHint and wfParam markers, which are identity wrappers inserted for well-founded-recursion preprocessing, and then observe that monadic flatMap over the value-stripped subtype array is the same as flatMap over the array with each element destructured; this is the subtype version of flatMapM plus a congruence under the binder.",
+    "grades": {"1": 2, "2": 1, "3": 0, "4": 4, "5": 0, "6": 0, "7": 0, "8": 0, "9": 1, "10": 0, "11": 3, "12": 3, "13": 1, "14": 1, "15": 0, "16": 0, "17": 0, "18": 2, "19": 0, "20": 0, "21": 0, "22": 1, "23": 0, "24": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0047": {
+    "moves": "Move the statement from the unconstrained raw hash map to the Raw-zero refinement (a raw map bundled with a proof that the bucket array is nonempty), which requires extracting the bucket-positivity part of well-formedness and rewriting map on Raw as map on Raw-zero; then the Raw-zero lemma finishes it.",
+    "grades": {"1": 1, "2": 4, "3": 0, "4": 1, "5": 1, "6": 2, "7": 1, "8": 0, "9": 0, "10": 3, "11": 0, "12": 0, "13": 0, "14": 4, "15": 2, "16": 0, "17": 1, "18": 0, "19": 0, "20": 2, "21": 1, "22": 4, "23": 2, "24": 2, "25": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0048": {
+    "moves": "The two sides are dependent tuples over index types that are only propositionally the same, so the heterogeneous equality is reduced to a pointwise one by function extensionality for HEq (domains equal by rfl), an index is introduced, removeNth is unfolded into a composite of succAbove reindexings, and the goal closes by heterogeneous congruence along the four-fold succAbove/predAbove commutation identity.",
+    "grades": {"1": 0, "2": 0, "3": 1, "4": 1, "5": 3, "6": 1, "7": 0, "8": 3, "9": 0, "10": 0, "11": 2, "12": 4, "13": 0, "14": 1, "15": 3, "16": 1, "17": 4, "18": 0, "19": 0, "20": 0, "21": 4, "22": 0, "23": 1, "24": 1},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}
