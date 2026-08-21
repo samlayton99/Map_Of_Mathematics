@@ -1,0 +1,49 @@
+{
+  "data_dir": "/Users/sam/my-repos/research/Map_Of_Mathematics/studies/phase6_stable_local_geometry/../phase5_multiscale_navigation/data",
+  "E4": {
+    "n_edges": 1704084,
+    "n_unique_edges": 1704084,
+    "n_src": 442376,
+    "n_dst": 250287,
+    "n_nodes": 464316
+  },
+  "EL0": {
+    "n_edges": 1458344,
+    "n_unique_edges": 1458344,
+    "n_src": 340135,
+    "n_dst": 224212,
+    "n_nodes": 383969
+  },
+  "EL0_k": {
+    "n_artifacts": 442662,
+    "mean": 3.2944865382616983,
+    "median": 2.0,
+    "p90": 7.0,
+    "p99": 30.0,
+    "max": 202,
+    "frac_zero": 0.23161464051578856,
+    "mean_nonzero": 4.287544651388419
+  },
+  "E4_k": {
+    "mean": 3.849627932824593,
+    "frac_zero": 0.0006460911485512648,
+    "frac_full4": 0.9304683934921001
+  },
+  "pool": {
+    "n_candidates": 12059181,
+    "dem1_frac": 0.5437140382916551,
+    "lane_frac": [
+      0.25033333524059387,
+      0.4278530192058648,
+      0.3218136455535413
+    ],
+    "stmt1_frac": 0.6635505346507362
+  },
+  "E4_flat": {
+    "n_edges": 1482782,
+    "n_unique_edges": 1482782,
+    "n_src": 427780,
+    "n_dst": 208164,
+    "n_nodes": 505561
+  }
+}
