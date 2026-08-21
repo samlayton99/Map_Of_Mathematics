@@ -1,0 +1,573 @@
+{
+ "per_k": [
+  {
+   "k": 1,
+   "eligible": 728753,
+   "crossing": 728753,
+   "mergers": 18293,
+   "components_eliminated": 728709,
+   "components": 34318,
+   "giant": 0.1428,
+   "enrichment": {
+    "theorem": {
+     "p_eligible": 0.5488677233575711,
+     "p_crossing": 0.5488677233575711,
+     "enrichment": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ]
+    },
+    "definition/construction": {
+     "p_eligible": 0.27308704046501353,
+     "p_crossing": 0.27308704046501353,
+     "enrichment": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ]
+    },
+    "constructor/recursor": {
+     "p_eligible": 0.048510263422586256,
+     "p_crossing": 0.048510263422586256,
+     "enrichment": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ]
+    },
+    "glue": {
+     "p_eligible": 0.12953497275482914,
+     "p_crossing": 0.12953497275482914,
+     "enrichment": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ]
+    }
+   },
+   "ablation": {
+    "theorem": {
+     "components_eliminated_without": 328720,
+     "marginal_loss": 399989
+    },
+    "definition/construction": {
+     "components_eliminated_without": 529739,
+     "marginal_loss": 198970
+    },
+    "constructor/recursor": {
+     "components_eliminated_without": 693357,
+     "marginal_loss": 35352
+    },
+    "glue": {
+     "components_eliminated_without": 634311,
+     "marginal_loss": 94398
+    }
+   },
+   "shapley": {
+    "theorem": 399989.0,
+    "definition/construction": 198970.0,
+    "constructor/recursor": 35352.0,
+    "glue": 94398.0
+   }
+  },
+  {
+   "k": 2,
+   "eligible": 672031,
+   "crossing": 540641,
+   "mergers": 112,
+   "components_eliminated": 21454,
+   "components": 12864,
+   "giant": 0.9784,
+   "enrichment": {
+    "theorem": {
+     "p_eligible": 0.318348409522775,
+     "p_crossing": 0.27508272587539606,
+     "enrichment": 0.8640932941608315,
+     "ci95": [
+      0.8622894061836155,
+      0.8659082740998851
+     ]
+    },
+    "definition/construction": {
+     "p_eligible": 0.34974279460322516,
+     "p_crossing": 0.36503520820655483,
+     "enrichment": 1.0437247424087137,
+     "ci95": [
+      1.0423116747315888,
+      1.0454074159600375
+     ]
+    },
+    "constructor/recursor": {
+     "p_eligible": 0.04630143549925524,
+     "p_crossing": 0.05717657373377158,
+     "enrichment": 1.2348769129348325,
+     "ci95": [
+      1.2330142301902585,
+      1.2368139633768165
+     ]
+    },
+    "glue": {
+     "p_eligible": 0.2856073603747446,
+     "p_crossing": 0.30270549218427756,
+     "enrichment": 1.0598658654563333,
+     "ci95": [
+      1.0581396342545168,
+      1.061703717966468
+     ]
+    }
+   },
+   "ablation": {
+    "theorem": {
+     "components_eliminated_without": 20095,
+     "marginal_loss": 1359
+    },
+    "definition/construction": {
+     "components_eliminated_without": 16924,
+     "marginal_loss": 4530
+    },
+    "constructor/recursor": {
+     "components_eliminated_without": 18964,
+     "marginal_loss": 2490
+    },
+    "glue": {
+     "components_eliminated_without": 19081,
+     "marginal_loss": 2373
+    }
+   },
+   "shapley": {
+    "theorem": 3014.8,
+    "definition/construction": 8034.8,
+    "constructor/recursor": 5665.2,
+    "glue": 4739.2
+   }
+  },
+  {
+   "k": 3,
+   "eligible": 589873,
+   "crossing": 7075,
+   "mergers": 26,
+   "components_eliminated": 3406,
+   "components": 9458,
+   "giant": 0.9842,
+   "enrichment": {
+    "theorem": {
+     "p_eligible": 0.22122219528610396,
+     "p_crossing": 0.09413427561837456,
+     "enrichment": 0.4255191279366515,
+     "ci95": [
+      0.3928798187349663,
+      0.45239085751509356
+     ]
+    },
+    "definition/construction": {
+     "p_eligible": 0.4062094722084245,
+     "p_crossing": 0.2809893992932862,
+     "enrichment": 0.6917352216471989,
+     "ci95": [
+      0.6699985056582345,
+      0.7175031753971914
+     ]
+    },
+    "constructor/recursor": {
+     "p_eligible": 0.05997223131080758,
+     "p_crossing": 0.3379505300353357,
+     "enrichment": 5.635116830719515,
+     "ci95": [
+      5.442051032704741,
+      5.821451852112874
+     ]
+    },
+    "glue": {
+     "p_eligible": 0.3125961011946639,
+     "p_crossing": 0.28692579505300353,
+     "enrichment": 0.9178802741187273,
+     "ci95": [
+      0.8819674631157596,
+      0.952602737754762
+     ]
+    }
+   },
+   "ablation": {
+    "theorem": {
+     "components_eliminated_without": 2944,
+     "marginal_loss": 462
+    },
+    "definition/construction": {
+     "components_eliminated_without": 2402,
+     "marginal_loss": 1004
+    },
+    "constructor/recursor": {
+     "components_eliminated_without": 2193,
+     "marginal_loss": 1213
+    },
+    "glue": {
+     "components_eliminated_without": 2774,
+     "marginal_loss": 632
+    }
+   },
+   "shapley": {
+    "theorem": 463.8,
+    "definition/construction": 1047.5,
+    "constructor/recursor": 1255.2,
+    "glue": 639.5
+   }
+  },
+  {
+   "k": 4,
+   "eligible": 507877,
+   "crossing": 2453,
+   "mergers": 12,
+   "components_eliminated": 1778,
+   "components": 7680,
+   "giant": 0.9879,
+   "enrichment": {
+    "theorem": {
+     "p_eligible": 0.18829165329400624,
+     "p_crossing": 0.13860578883000407,
+     "enrichment": 0.7361228519969463,
+     "ci95": [
+      0.6776498716265079,
+      0.8219798516070677
+     ]
+    },
+    "definition/construction": {
+     "p_eligible": 0.40711432098716815,
+     "p_crossing": 0.531593966571545,
+     "enrichment": 1.3057609107990586,
+     "ci95": [
+      1.2493078148801156,
+      1.3503478742667836
+     ]
+    },
+    "constructor/recursor": {
+     "p_eligible": 0.04044877007621924,
+     "p_crossing": 0.18507949449653485,
+     "enrichment": 4.575651970326468,
+     "ci95": [
+      4.255580201392146,
+      4.959599492220196
+     ]
+    },
+    "glue": {
+     "p_eligible": 0.36414525564260636,
+     "p_crossing": 0.144720750101916,
+     "enrichment": 0.3974258839279057,
+     "ci95": [
+      0.35576493084111077,
+      0.4334584250402521
+     ]
+    }
+   },
+   "ablation": {
+    "theorem": {
+     "components_eliminated_without": 1527,
+     "marginal_loss": 251
+    },
+    "definition/construction": {
+     "components_eliminated_without": 778,
+     "marginal_loss": 1000
+    },
+    "constructor/recursor": {
+     "components_eliminated_without": 1453,
+     "marginal_loss": 325
+    },
+    "glue": {
+     "components_eliminated_without": 1580,
+     "marginal_loss": 198
+    }
+   },
+   "shapley": {
+    "theorem": 251.5,
+    "definition/construction": 1002.0,
+    "constructor/recursor": 325.0,
+    "glue": 199.5
+   }
+  },
+  {
+   "k": 5,
+   "eligible": 435491,
+   "crossing": 1520,
+   "mergers": 7,
+   "components_eliminated": 1087,
+   "components": 6593,
+   "giant": 0.9895,
+   "enrichment": {
+    "theorem": {
+     "p_eligible": 0.16869464581357593,
+     "p_crossing": 0.14144736842105263,
+     "enrichment": 0.8384816704696472,
+     "ci95": [
+      0.7333982683213349,
+      0.9443213718487217
+     ]
+    },
+    "definition/construction": {
+     "p_eligible": 0.38155553157240907,
+     "p_crossing": 0.4756578947368421,
+     "enrichment": 1.2466282241450741,
+     "ci95": [
+      1.1812104122731086,
+      1.308707925495121
+     ]
+    },
+    "constructor/recursor": {
+     "p_eligible": 0.04817780390409905,
+     "p_crossing": 0.16578947368421051,
+     "enrichment": 3.4412003090515477,
+     "ci95": [
+      3.058733445535955,
+      3.818123715858891
+     ]
+    },
+    "glue": {
+     "p_eligible": 0.40157201870991593,
+     "p_crossing": 0.21710526315789475,
+     "enrichment": 0.5406384236017334,
+     "ci95": [
+      0.488403120817523,
+      0.5946627818787167
+     ]
+    }
+   },
+   "ablation": {
+    "theorem": {
+     "components_eliminated_without": 910,
+     "marginal_loss": 177
+    },
+    "definition/construction": {
+     "components_eliminated_without": 584,
+     "marginal_loss": 503
+    },
+    "constructor/recursor": {
+     "components_eliminated_without": 885,
+     "marginal_loss": 202
+    },
+    "glue": {
+     "components_eliminated_without": 885,
+     "marginal_loss": 202
+    }
+   },
+   "shapley": {
+    "theorem": 177.0,
+    "definition/construction": 504.5,
+    "constructor/recursor": 202.0,
+    "glue": 203.5
+   }
+  },
+  {
+   "k": 6,
+   "eligible": 384538,
+   "crossing": 984,
+   "mergers": 7,
+   "components_eliminated": 785,
+   "components": 5808,
+   "giant": 0.9906,
+   "enrichment": {
+    "theorem": {
+     "p_eligible": 0.1531292095969709,
+     "p_crossing": 0.13617886178861788,
+     "enrichment": 0.8893068941388415,
+     "ci95": [
+      0.7445110045424005,
+      1.033416096072991
+     ]
+    },
+    "definition/construction": {
+     "p_eligible": 0.3737888063078291,
+     "p_crossing": 0.6158536585365854,
+     "enrichment": 1.6475979166412136,
+     "ci95": [
+      1.5725375892344808,
+      1.725615855207585
+     ]
+    },
+    "constructor/recursor": {
+     "p_eligible": 0.051204302305623894,
+     "p_crossing": 0.10264227642276423,
+     "enrichment": 2.004563519098878,
+     "ci95": [
+      1.7159987285689384,
+      2.333331583219203
+     ]
+    },
+    "glue": {
+     "p_eligible": 0.4218776817895761,
+     "p_crossing": 0.14532520325203252,
+     "enrichment": 0.34447236610283105,
+     "ci95": [
+      0.29241537006535423,
+      0.39349106591599314
+     ]
+    }
+   },
+   "ablation": {
+    "theorem": {
+     "components_eliminated_without": 667,
+     "marginal_loss": 118
+    },
+    "definition/construction": {
+     "components_eliminated_without": 296,
+     "marginal_loss": 489
+    },
+    "constructor/recursor": {
+     "components_eliminated_without": 706,
+     "marginal_loss": 79
+    },
+    "glue": {
+     "components_eliminated_without": 689,
+     "marginal_loss": 96
+    }
+   },
+   "shapley": {
+    "theorem": 118.0,
+    "definition/construction": 490.5,
+    "constructor/recursor": 79.0,
+    "glue": 97.5
+   }
+  },
+  {
+   "k": 7,
+   "eligible": 344997,
+   "crossing": 759,
+   "mergers": 6,
+   "components_eliminated": 639,
+   "components": 5169,
+   "giant": 0.9914,
+   "enrichment": {
+    "theorem": {
+     "p_eligible": 0.14043310521540767,
+     "p_crossing": 0.10276679841897234,
+     "enrichment": 0.7317847046203265,
+     "ci95": [
+      0.5745971262769921,
+      0.8661891706095061
+     ]
+    },
+    "definition/construction": {
+     "p_eligible": 0.35798282303904094,
+     "p_crossing": 0.691699604743083,
+     "enrichment": 1.9322145092633327,
+     "ci95": [
+      1.8310031982702002,
+      2.035027679672906
+     ]
+    },
+    "constructor/recursor": {
+     "p_eligible": 0.0546149676663855,
+     "p_crossing": 0.08432147562582346,
+     "enrichment": 1.5439261292050852,
+     "ci95": [
+      1.1904902315304982,
+      1.8872582097833228
+     ]
+    },
+    "glue": {
+     "p_eligible": 0.4469691040791659,
+     "p_crossing": 0.12121212121212122,
+     "enrichment": 0.27118680039829435,
+     "ci95": [
+      0.21989654612944384,
+      0.3179150767132308
+     ]
+    }
+   },
+   "ablation": {
+    "theorem": {
+     "components_eliminated_without": 576,
+     "marginal_loss": 63
+    },
+    "definition/construction": {
+     "components_eliminated_without": 190,
+     "marginal_loss": 449
+    },
+    "constructor/recursor": {
+     "components_eliminated_without": 585,
+     "marginal_loss": 54
+    },
+    "glue": {
+     "components_eliminated_without": 571,
+     "marginal_loss": 68
+    }
+   },
+   "shapley": {
+    "theorem": 63.5,
+    "definition/construction": 451.0,
+    "constructor/recursor": 54.5,
+    "glue": 70.0
+   }
+  },
+  {
+   "k": 8,
+   "eligible": 313165,
+   "crossing": 601,
+   "mergers": 6,
+   "components_eliminated": 500,
+   "components": 4669,
+   "giant": 0.9921,
+   "enrichment": {
+    "theorem": {
+     "p_eligible": 0.13108425271023263,
+     "p_crossing": 0.08485856905158069,
+     "enrichment": 0.6473589870414427,
+     "ci95": [
+      0.4721559943774674,
+      0.7992706985940087
+     ]
+    },
+    "definition/construction": {
+     "p_eligible": 0.35107371513419444,
+     "p_crossing": 0.7171381031613977,
+     "enrichment": 2.0426995022605974,
+     "ci95": [
+      1.938335284600072,
+      2.1323096336923197
+     ]
+    },
+    "constructor/recursor": {
+     "p_eligible": 0.050966742771382495,
+     "p_crossing": 0.07487520798668885,
+     "enrichment": 1.4690993364545715,
+     "ci95": [
+      1.0709066889990133,
+      1.9051202905093445
+     ]
+    },
+    "glue": {
+     "p_eligible": 0.46687528938419043,
+     "p_crossing": 0.12312811980033278,
+     "enrichment": 0.26372807171426665,
+     "ci95": [
+      0.20770244506595664,
+      0.32108469436787157
+     ]
+    }
+   },
+   "ablation": {
+    "theorem": {
+     "components_eliminated_without": 455,
+     "marginal_loss": 45
+    },
+    "definition/construction": {
+     "components_eliminated_without": 141,
+     "marginal_loss": 359
+    },
+    "constructor/recursor": {
+     "components_eliminated_without": 461,
+     "marginal_loss": 39
+    },
+    "glue": {
+     "components_eliminated_without": 447,
+     "marginal_loss": 53
+    }
+   },
+   "shapley": {
+    "theorem": 45.0,
+    "definition/construction": 361.0,
+    "constructor/recursor": 39.0,
+    "glue": 55.0
+   }
+  }
+ ],
+ "note": "batch-invariant mergers via quotient graph; enrichment normalised by eligibility; Shapley over kind groups"
+}

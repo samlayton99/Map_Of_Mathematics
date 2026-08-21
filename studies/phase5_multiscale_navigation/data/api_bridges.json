@@ -1,0 +1,140 @@
+[
+ {
+  "k": 1,
+  "eligible": 728753,
+  "crossing": 728753,
+  "components_eliminated": 728709,
+  "components": 34318,
+  "giant": 0.142829808119503,
+  "enrichment": {
+   "glue": {
+    "p_eligible": 0.12953497275482914,
+    "p_crossing": 0.12953497275482914,
+    "enrichment": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "theorem": {
+    "p_eligible": 0.5488677233575711,
+    "p_crossing": 0.5488677233575711,
+    "enrichment": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "definition/construction": {
+    "p_eligible": 0.27308704046501353,
+    "p_crossing": 0.27308704046501353,
+    "enrichment": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "constructor/recursor": {
+    "p_eligible": 0.048510263422586256,
+    "p_crossing": 0.048510263422586256,
+    "enrichment": 1.0,
+    "ci95": [
+     1.0,
+     1.0
+    ]
+   }
+  }
+ },
+ {
+  "k": 2,
+  "eligible": 672031,
+  "crossing": 540641,
+  "components_eliminated": 21454,
+  "components": 12864,
+  "giant": 0.978387396514147,
+  "enrichment": {
+   "glue": {
+    "p_eligible": 0.2856073603747446,
+    "p_crossing": 0.30270549218427756,
+    "enrichment": 1.0598658654563333,
+    "ci95": [
+     1.0580393327205602,
+     1.0616082681631145
+    ]
+   },
+   "theorem": {
+    "p_eligible": 0.318348409522775,
+    "p_crossing": 0.27508272587539606,
+    "enrichment": 0.8640932941608315,
+    "ci95": [
+     0.8623637204552382,
+     0.866117037354564
+    ]
+   },
+   "definition/construction": {
+    "p_eligible": 0.34974279460322516,
+    "p_crossing": 0.36503520820655483,
+    "enrichment": 1.0437247424087137,
+    "ci95": [
+     1.042318674799352,
+     1.0449713727846255
+    ]
+   },
+   "constructor/recursor": {
+    "p_eligible": 0.04630143549925524,
+    "p_crossing": 0.05717657373377158,
+    "enrichment": 1.2348769129348325,
+    "ci95": [
+     1.232962123971908,
+     1.2367466092867925
+    ]
+   }
+  }
+ },
+ {
+  "k": 3,
+  "eligible": 589873,
+  "crossing": 7075,
+  "components_eliminated": 3406,
+  "components": 9458,
+  "giant": 0.9842469532532925,
+  "enrichment": {
+   "glue": {
+    "p_eligible": 0.3125961011946639,
+    "p_crossing": 0.28692579505300353,
+    "enrichment": 0.9178802741187273,
+    "ci95": [
+     0.8838940423141757,
+     0.9459928946066952
+    ]
+   },
+   "theorem": {
+    "p_eligible": 0.22122219528610396,
+    "p_crossing": 0.09413427561837456,
+    "enrichment": 0.4255191279366515,
+    "ci95": [
+     0.39634849549129103,
+     0.46314715507898213
+    ]
+   },
+   "definition/construction": {
+    "p_eligible": 0.4062094722084245,
+    "p_crossing": 0.2809893992932862,
+    "enrichment": 0.6917352216471989,
+    "ci95": [
+     0.6699657137009665,
+     0.7156069667368928
+    ]
+   },
+   "constructor/recursor": {
+    "p_eligible": 0.05997223131080758,
+    "p_crossing": 0.3379505300353357,
+    "enrichment": 5.635116830719515,
+    "ci95": [
+     5.446018552281857,
+     5.766750040815155
+    ]
+   }
+  }
+ }
+]
