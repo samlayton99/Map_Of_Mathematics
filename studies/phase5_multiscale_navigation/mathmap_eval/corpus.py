@@ -62,6 +62,11 @@ class Corpus:
         self.node_in_degree = nodes["in_degree"]
         self.node_stated = nodes["stated"]
 
+        # kernel-local TYPE facts (exposed as documented properties below)
+        self._node_pr = nodes["pr"]
+        self._node_ps = nodes["ps"]
+        self._node_ar = nodes["ar"].astype(np.int32)
+
         # frozen V8 categories, used as SIGNALS only (never as deletions)
         self.decl_is_claim = v8["decl_is_claim"]
         self.decl_logic_only = v8["decl_logic_only"]
@@ -80,6 +85,49 @@ class Corpus:
     @property
     def n_incidences(self) -> int:
         return len(self.inc_artifact)
+
+    # ------------------------------------------------- kernel-local signals
+    # The three below are properties of a declaration's OWN TYPE, decided by
+    # the kernel when that declaration is elaborated. They read nothing about
+    # the rest of the library -- no usage counts, no thresholds, no
+    # neighbourhoods -- so they are APPEND-SAFE: adding theorems to Mathlib
+    # can never change the value already recorded for an existing
+    # declaration. This is the property `decl_logic_only` (v8_mask.npz) does
+    # NOT have; that one is derived from library-wide usage frequencies.
+
+    @property
+    def node_is_proof(self) -> np.ndarray:
+        """Per declaration: its type IS a Prop, i.e. the constant is a proof.
+
+        Kernel fact (`Meta.isProp` on the declaration's type), decided from
+        the type alone. Append-safe: independent of the rest of the library.
+        """
+        self.load()
+        return self._node_pr
+
+    @property
+    def node_is_prop(self) -> np.ndarray:
+        """Per declaration: its type telescopes to Sort 0, i.e. the constant
+        is a proposition or a predicate (`True`, `Even`, `Membership.mem`)
+        rather than data (`Nat`, `Finset`).
+
+        Kernel fact (telescope the type, whnf the body, ask if the sort is
+        Prop). Append-safe: independent of the rest of the library.
+        """
+        self.load()
+        return self._node_ps
+
+    @property
+    def node_arity(self) -> np.ndarray:
+        """Per declaration: number of binders its type telescopes through.
+
+        Kernel fact, read off the declaration's own type. Append-safe:
+        independent of the rest of the library. With `node_is_prop` it
+        separates BARE propositions (is_prop and arity 0 -- `True`, `False`,
+        named conjectures) from PREDICATES (is_prop and arity > 0).
+        """
+        self.load()
+        return self._node_ar
 
     @cached_property
     def inc_target(self) -> np.ndarray:
