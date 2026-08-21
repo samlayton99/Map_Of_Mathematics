@@ -1,0 +1,116 @@
+{
+ "built": "2026-08-20 19:31",
+ "git": "8e5b721",
+ "universes": [
+  "U1",
+  "U1D",
+  "U0"
+ ],
+ "reference_universe": "U1D",
+ "lanes": [
+  "all",
+  "no_glue",
+  "theorems_defs",
+  "introduced_only",
+  "theorems_only"
+ ],
+ "lane_doc": {
+  "all": "Every candidate in the universe. The fully open slider.",
+  "no_glue": "Hide anything our own classifier calls glue (logic-only declaration or apparatus machinery). The classic V8 view. Nothing is deleted from the ranking -- it is hidden from the display.",
+  "theorems_defs": "Only theorems and definitions/constructions; hides constructors and recursors.",
+  "introduced_only": "Only citations the proof introduces, hiding anything already implied by the theorem's own statement.",
+  "theorems_only": "Only cited theorems. The narrowest lane."
+ },
+ "ks": [
+  1,
+  2,
+  4,
+  8
+ ],
+ "rankings": [
+  {
+   "name": "B0_random",
+   "family": "baseline",
+   "doc": "Uniform random order within each proof. The floor."
+  },
+  {
+   "name": "B1_reverse_depth",
+   "family": "baseline",
+   "doc": "Shallowest cited declaration first: the anti-ranking."
+  },
+  {
+   "name": "B2_popularity",
+   "family": "baseline",
+   "doc": "Most globally cited first. Tests 'importance = citation count'."
+  },
+  {
+   "name": "B3_term_order",
+   "family": "baseline",
+   "doc": "Order of first occurrence in the record: a structural arbitrary order."
+  },
+  {
+   "name": "O_source",
+   "family": "baseline",
+   "doc": "SourceOracle: identifiers the human wrote first, then depth.\n\n    NOT a keyness oracle (audit item 2). It is an upper bound for\n    Source* metrics only, and its ceiling below 100% measures CANDIDATE\n    COVERAGE, not ranking quality."
+  },
+  {
+   "name": "R_depth",
+   "family": "candidate",
+   "doc": "Deepest cited declaration first. The simplest real candidate."
+  },
+  {
+   "name": "R_introduced_depth",
+   "family": "candidate",
+   "doc": "Citations the proof introduces first, then deepest. Current leader."
+  },
+  {
+   "name": "R_phase5_composite",
+   "family": "candidate",
+   "doc": "Frozen as a weak comparator: role x statement x depth x idf."
+  },
+  {
+   "name": "R_v8_all_kinds",
+   "family": "candidate",
+   "doc": "V8's demotions, but declaration kind ignored so definitions compete."
+  },
+  {
+   "name": "R_v8_faithful",
+   "family": "candidate",
+   "doc": "Frozen V8 order, with what V8 filtered merely ranked last."
+  }
+ ],
+ "n_labelled_proofs": 180,
+ "n_labels": 2419,
+ "n_rater_files": 11,
+ "vibe_proofs": [
+  "proof_031",
+  "proof_067",
+  "proof_176",
+  "proof_098",
+  "proof_135",
+  "proof_147",
+  "proof_034",
+  "proof_076",
+  "proof_005",
+  "proof_041",
+  "proof_048",
+  "proof_138"
+ ],
+ "files": [
+  "manifest.json",
+  "summary.json",
+  "definitions.json",
+  "vibe.json",
+  "ranking_B0_random.json",
+  "ranking_B1_reverse_depth.json",
+  "ranking_B2_popularity.json",
+  "ranking_B3_term_order.json",
+  "ranking_O_source.json",
+  "ranking_R_depth.json",
+  "ranking_R_introduced_depth.json",
+  "ranking_R_phase5_composite.json",
+  "ranking_R_v8_all_kinds.json",
+  "ranking_R_v8_faithful.json"
+ ],
+ "explanations_are_inspection_only": true
+}

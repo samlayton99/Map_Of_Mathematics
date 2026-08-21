@@ -1,0 +1,71 @@
+{
+ "how_a_run_is_built": {
+  "pipeline": [
+   "1. DEPENDENCY DUMP. Every constant in Mathlib is walked in the Lean kernel (`mathrecord depdump`, run inside `lake env`). For each constant we record its kernel dependencies, whether its type is a Prop (`pr`), whether its type telescopes to Sort 0 (`ps`), and its arity (`ar`). 771,129 constants. No name string is ever pattern-matched.",
+   "2. INCIDENCE RECORD. For each proof term we record every exact occurrence of every other declaration, together with the syntactic ROLE of that occurrence (applied, explicit-arg, instance-slot, ...) and whether the cited declaration already appears in the theorem's statement. 747,644 artifacts, 18,721,317 incidences.",
+   "3. UNIVERSE. A named mask over that record decides which occurrences are candidates at all. This is declared, never assumed, and is part of the experiment's identity.",
+   "4. RANKING. A pure function of the corpus returning ascending lexicographic sort keys over the candidates. Candidates are ordered within each proof. Rankings never delete.",
+   "5. VIEW. A lane hides rows from the ranked list and k takes the first k survivors. The view cannot re-order and cannot change any ranking-quality number."
+  ],
+  "reproducing_a_ranking": "Each ranking tab carries the literal Python source of its scoring function plus the definition of every signal it reads. Given the incidence record, that source and np.lexsort reproduce the ranking exactly. There are no hidden constants, no name lists and no learned parameters in any ranking here."
+ },
+ "universes": {
+  "U0": "Every exact occurrence, any role. The complete record; 18.7M candidates.",
+  "U1": "Load-bearing roles only (applied, let-value, explicit-arg, unresolved). The historical filter; 8.5M candidates.",
+  "U1D": "U1 for theorems, but ALL roles for definitions. Restores definitions that occur in type, implicit and instance positions while keeping the role recorded; 18.1M candidates. The reference universe.",
+  "_note": "Changing universe changes the candidate set and therefore genuinely RE-RANKS. It is an experiment control, not a display control."
+ },
+ "lanes": {
+  "all": "Every candidate in the universe. The fully open slider.",
+  "no_glue": "Hide anything our own classifier calls glue (logic-only declaration or apparatus machinery). The classic V8 view. Nothing is deleted from the ranking -- it is hidden from the display.",
+  "theorems_defs": "Only theorems and definitions/constructions; hides constructors and recursors.",
+  "introduced_only": "Only citations the proof introduces, hiding anything already implied by the theorem's own statement.",
+  "theorems_only": "Only cited theorems. The narrowest lane."
+ },
+ "metric_families": {
+  "Source*": "Agreement with the identifiers the human author actually wrote, recovered from the elaborator and never through our extraction. THIS IS NOT KEYNESS. The 25-proof semantic panel measured the SourceOracle -- which by construction ranks the author's own citations first -- at only 0.619 semantic keyness, beaten by four candidate rankings. Source* is an authorship-alignment diagnostic. A ranking may not be promoted on it.",
+  "Role*": "Descriptive composition of what our OWN classifier says is sitting at a rank. A statistic, not a judgement. `RoleGlueAt1` answers 'is there glue at rank 1', and cannot answer 'is that glue wrong'.",
+  "Semantic*": "Graded rater labels, 0-4, on every candidate of 180 proofs. The only channel that can separate BAD glue from LEGITIMATE glue and the only one that can say what a ranking MISSED. Small n; every figure carries its n and a 95% Wilson interval.",
+  "Coverage*": "What fraction of what humans wrote is present in a universe AT ALL. A property of candidate generation, not of ranking. A ranking cannot be blamed for a candidate that was never offered.",
+  "Graph*/View*": "Structure and content of the currently displayed slice. These MOVE when you change lane or k, and that is their whole purpose. They say nothing about ranking quality."
+ },
+ "grades": {
+  "4 KEY": "A core move. You would name it when asked how the proof goes.",
+  "3 SUPPORT": "Real mathematical content, genuinely used, secondary.",
+  "2 LEGIT_GLUE": "Plumbing that genuinely IS the content of this proof. Near the foundations, assembling equalities really can be the whole argument.",
+  "1 BAD_GLUE": "Plumbing that carries no idea here. Correct to demote.",
+  "0 JUNK": "Irrelevant machinery: automation residue, instance resolution, universe or decidability bookkeeping."
+ },
+ "headline_metrics": {
+  "RoleGlueAt1": "Share of proofs whose rank-1 item OUR CLASSIFIER calls glue. Structural, full corpus.",
+  "SemanticKeyMoveAt1": "Share of proofs whose rank-1 item raters graded 4 (KEY).",
+  "SemanticBadGlueAt1": "Share graded 1 (BAD_GLUE). The real failure rate at rank 1.",
+  "SemanticLegitGlueAt1": "Share graded 2. Glue at rank 1 that is CORRECT. Distinguishing this from BadGlue@1 is the point of the panel.",
+  "SemanticJunkAt1": "Share graded 0.",
+  "SemanticBadAt1": "BadGlue@1 + Junk@1. The headline failure rate.",
+  "SemanticKeyMoveRecall@k": "Of all candidates graded KEY in a proof, the share appearing in the top k. Averaged over proofs that have at least one KEY.",
+  "GluePrecision": "Of candidates OUR classifier calls glue, the share raters graded 1 or 2 (plumbing-shaped).",
+  "GlueRecall": "Of candidates raters graded 1 or 2, the share our classifier catches.",
+  "KeyMovesFlaggedAsGlue": "Of candidates graded KEY, the share our glue flag would demote. The cost of the glue channel; must stay near zero.",
+  "SemanticKeyLostToPolicy": "Of candidates graded KEY, the share the CURRENT LANE hides entirely. A view property, not a ranking property.",
+  "ViewKeyRetained@k": "Of candidates graded KEY, the share visible in the current slice."
+ },
+ "signals": {
+  "inc_d_cite": "Depth of the CITED declaration: how many unfolding levels of Mathlib sit beneath it. Computed from the kernel dependency graph, no names used.",
+  "inc_d_target": "Depth of the theorem being proved.",
+  "inc_in_stmt_world": "True if the cited declaration is already implied by the theorem's own statement; False if the proof introduced it.",
+  "inc_roles": "One-hot occurrence roles: applied, let-value, explicit-arg, implicit-arg, instance-slot, strict-implicit, type-annotation, unresolved.",
+  "decl_is_claim": "Frozen V8 flag: the declaration's type is a Prop, i.e. it is a proof of something rather than data.",
+  "decl_logic_only": "Frozen V8 flag: the declaration's ingredients are purely logical, i.e. structural plumbing.",
+  "inc_machinery": "Frozen V8 flag: the cited concept is apparatus -- used far more often than it is stated (used>200 and used>20x inherited-stated) AND shares no ingredient with the target theorem's statement.",
+  "decl_popularity": "How many times a declaration is cited across the whole library.",
+  "decl_idf": "log(n_proofs / popularity), floored at 0."
+ },
+ "cautions": [
+  "SourceHit@1 is retired as a promotion criterion. It measures agreement with authorship, and the semantic panel showed the SourceOracle itself scores only 0.619 on keyness.",
+  "The apparatus/machinery flag fires on ZERO candidates in the labelled sample. It is extremely sparse (102 concepts) and carries no weight in these numbers; do not read Junk@1 as evidence that it works.",
+  "The labelled set is 180 proofs. Single-rater for 160 of them, triple-rated for 20. Differences smaller than the Wilson intervals shown are not real.",
+  "Only 5 of the 180 labelled proofs also carry source provenance, so Source* and Semantic* are measured on almost disjoint samples and should not be differenced.",
+  "English explanations in the vibe check are LLM-generated for your inspection only. They are not used by any metric and were produced after all grading was complete."
+ ]
+}

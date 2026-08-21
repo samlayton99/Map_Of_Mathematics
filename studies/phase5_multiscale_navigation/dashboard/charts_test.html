@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charts self-test</title>
+<style>
+  :root {
+    color-scheme: light;
+    --ink:  #16161a;
+    --dim:  #6b6a65;
+    --line: #d9d8d3;
+    --card: #ffffff;
+    --page: #f5f4f1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ink:  #f2f1ee;
+      --dim:  #a3a29c;
+      --line: #3a3a37;
+      --card: #1a1a19;
+      --page: #111110;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ink:  #f2f1ee;
+    --dim:  #a3a29c;
+    --line: #3a3a37;
+    --card: #1a1a19;
+    --page: #111110;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px;
+    background: var(--page);
+    color: var(--ink);
+    font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+  h1 { font-size: 17px; margin: 0; font-weight: 600; }
+  h2 { font-size: 13px; margin: 26px 0 10px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--dim); }
+  button {
+    font: inherit; padding: 5px 11px; border-radius: 6px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  }
+  #status { padding: 5px 11px; border-radius: 6px; font-weight: 600; font-size: 13px; }
+  .ok   { background: #d8f3e4; color: #0d5c35; }
+  .fail { background: #fbdcdc; color: #7c1d1d; }
+  :root[data-theme="dark"] .ok   { background: #123d28; color: #7fe0ac; }
+  :root[data-theme="dark"] .fail { background: #4a1919; color: #f2a3a3; }
+
+  /* Deliberately flexible + narrow-ish columns: charts must not overflow. */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 9px;
+    padding: 12px; min-width: 0; overflow: hidden;
+  }
+  .card > .name { font-size: 11px; color: var(--dim); margin-bottom: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .card > .host { min-width: 0; }
+  #log { margin-top: 22px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--dim); white-space: pre-wrap; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Charts self-test</h1>
+  <button id="theme">Toggle theme</button>
+  <button id="rerun">Re-render</button>
+  <span id="status">running…</span>
+</header>
+
+<h2>Realistic data</h2>
+<div class="grid" id="real"></div>
+
+<h2>Edge cases</h2>
+<div class="grid" id="edge"></div>
+
+<div id="log"></div>
+
+<script src="charts.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ---- error capture -------------------------------------------------- */
+  var problems = [];
+  var realError = console.error;
+  console.error = function () {
+    problems.push('console.error: ' + Array.prototype.map.call(arguments, String).join(' '));
+    realError.apply(console, arguments);
+  };
+  window.addEventListener('error', function (e) { problems.push('window.error: ' + e.message); });
+  window.addEventListener('unhandledrejection', function (e) { problems.push('rejection: ' + e.reason); });
+
+  var pct = function (v) { return (v * 100).toFixed(v * 100 >= 10 ? 0 : 1) + '%'; };
+  var ms = function (v) { return v.toFixed(0) + ' ms'; };
+
+  function cell(parentId, name) {
+    var card = document.createElement('div');
+    card.className = 'card';
+    var h = document.createElement('div');
+    h.className = 'name';
+    h.textContent = name;
+    var host = document.createElement('div');
+    host.className = 'host';
+    card.appendChild(h);
+    card.appendChild(host);
+    document.getElementById(parentId).appendChild(card);
+    return host;
+  }
+
+  var LONG = 'Sheaf cohomology of quasi-coherent modules on a Noetherian scheme (long label)';
+
+  function renderAll() {
+    problems.length = 0;
+    document.getElementById('real').innerHTML = '';
+    document.getElementById('edge').innerHTML = '';
+
+    /* =================== REALISTIC =================== */
+
+    Charts.bar(cell('real', 'bar / horizontal + CI'), {
+      title: 'Retrieval precision by strategy',
+      horizontal: true,
+      yLabel: 'precision@10',
+      yFormat: pct,
+      series: [
+        { label: 'kernel-move cone (V5p)', value: 0.902, ci: [0.871, 0.928] },
+        { label: 'hb + Prop + containers', value: 0.864, ci: [0.828, 0.895] },
+        { label: 'name-similarity baseline', value: 0.713, ci: [0.669, 0.755] },
+        { label: 'topology prior only', value: 0.548, ci: [0.501, 0.594] },
+        { label: 'random draw', value: 0.121, ci: [0.098, 0.147] }
+      ]
+    });
+
+    Charts.bar(cell('real', 'bar / vertical'), {
+      title: 'Facts extracted per round',
+      yLabel: 'facts',
+      series: [
+        { label: 'r1', value: 1240 }, { label: 'r2', value: 3180 },
+        { label: 'r3', value: 5920 }, { label: 'r4', value: 7410 },
+        { label: 'r5', value: 8030 }, { label: 'r6', value: 8125 }
+      ]
+    });
+
+    Charts.stacked(cell('real', 'stacked'), {
+      title: 'Move-type composition by zoom level',
+      yFormat: pct,
+      parts: [
+        { name: 'definitional' }, { name: 'structural' },
+        { name: 'computational' }, { name: 'other' }
+      ],
+      rows: [
+        { label: 'zoom 1 (field)',     values: { definitional: 0.52, structural: 0.28, computational: 0.14, other: 0.06 } },
+        { label: 'zoom 2 (area)',      values: { definitional: 0.38, structural: 0.36, computational: 0.19, other: 0.07 } },
+        { label: 'zoom 3 (topic)',     values: { definitional: 0.21, structural: 0.44, computational: 0.28, other: 0.07 } },
+        { label: 'zoom 4 (statement)', values: { definitional: 0.09, structural: 0.31, computational: 0.52, other: 0.08 } }
+      ]
+    });
+
+    Charts.lines(cell('real', 'lines / log x + vline'), {
+      title: 'Recall vs. corpus size fraction',
+      xType: 'log',
+      xLabel: 'corpus size fraction',
+      yLabel: 'recall',
+      yFormat: pct,
+      vline: { x: 0.25, label: 'current' },
+      series: [
+        { label: 'V5p + zoom', points: [
+          { x: 0.01, y: 0.31 }, { x: 0.02, y: 0.44 }, { x: 0.05, y: 0.61 },
+          { x: 0.1, y: 0.74 }, { x: 0.25, y: 0.86 }, { x: 0.5, y: 0.93 }, { x: 1.0, y: 0.99 }
+        ] },
+        { label: 'V4 kernel', points: [
+          { x: 0.01, y: 0.22 }, { x: 0.02, y: 0.33 }, { x: 0.05, y: 0.49 },
+          { x: 0.1, y: 0.62 }, { x: 0.25, y: 0.77 }, { x: 0.5, y: 0.88 }, { x: 1.0, y: 0.97 }
+        ] },
+        { label: 'baseline (projected)', dashed: true, points: [
+          { x: 0.01, y: 0.08 }, { x: 0.02, y: 0.13 }, { x: 0.05, y: 0.22 },
+          { x: 0.1, y: 0.31 }, { x: 0.25, y: 0.46 }, { x: 0.5, y: 0.6 }, { x: 1.0, y: 0.72 }
+        ] }
+      ]
+    });
+
+    Charts.heat(cell('real', 'heat'), {
+      title: 'Transfer accuracy: source → target area',
+      rows: ['algebra', 'topology', 'analysis', 'combinatorics', 'logic'],
+      cols: ['algebra', 'topology', 'analysis', 'comb.', 'logic'],
+      format: pct,
+      min: 0, max: 1,
+      values: [
+        [0.94, 0.61, 0.48, 0.39, 0.30],
+        [0.58, 0.91, 0.52, 0.28, null],
+        [0.46, 0.55, 0.93, 0.33, 0.24],
+        [0.41, 0.29, 0.35, 0.88, 0.44],
+        [0.33, null, 0.27, 0.47, 0.90]
+      ]
+    });
+
+    Charts.grouped(cell('real', 'grouped'), {
+      title: 'Latency by stage and configuration',
+      yLabel: 'ms',
+      yFormat: ms,
+      groups: ['parse', 'extract', 'rank', 'render'],
+      series: [
+        { label: 'cold',  values: [140, 620, 310, 88] },
+        { label: 'warm',  values: [42, 180, 95, 31] },
+        { label: 'cached', values: [11, 24, 18, 12] }
+      ]
+    });
+
+    /* =================== EDGE CASES =================== */
+
+    Charts.bar(cell('edge', 'bar / empty series'), { title: 'Empty series', series: [] });
+
+    Charts.bar(cell('edge', 'bar / all null values'), {
+      title: 'All values null',
+      horizontal: true,
+      series: [{ label: 'a', value: null }, { label: 'b' }, { label: 'c', value: undefined }]
+    });
+
+    Charts.bar(cell('edge', 'bar / negatives + very long labels'), {
+      title: 'Negative values and overlong category names',
+      horizontal: true,
+      yLabel: 'delta',
+      series: [
+        { label: LONG, value: -0.42, ci: [-0.58, -0.27] },
+        { label: 'short', value: 0.31, ci: [0.19, 0.44] },
+        { label: 'Another extremely verbose ranking name that will certainly be truncated', value: -0.08 },
+        { label: 'zero', value: 0 }
+      ]
+    });
+
+    Charts.bar(cell('edge', 'bar / single point + vertical negatives'), {
+      title: 'Vertical with negatives',
+      series: [
+        { label: 'only', value: -12.5, ci: [-18, -7] },
+        { label: 'up', value: 7.25 }
+      ]
+    });
+
+    Charts.stacked(cell('edge', 'stacked / 0.5% sliver + zero row'), {
+      title: '0.5% segment, a zero-sum row, long row labels',
+      yFormat: pct,
+      parts: [
+        { name: 'dominant' }, { name: 'sliver' }, { name: 'rest' }, { name: 'tail' }
+      ],
+      rows: [
+        { label: 'sliver row', values: { dominant: 0.965, sliver: 0.005, rest: 0.02, tail: 0.01 } },
+        { label: LONG, values: { dominant: 0.34, sliver: 0.33, rest: 0.32, tail: 0.01 } },
+        { label: 'all zero', values: { dominant: 0, sliver: 0, rest: 0, tail: 0 } },
+        { label: 'missing keys', values: { dominant: 0.7 } },
+        { label: 'unnormalised', values: { dominant: 40, sliver: 1, rest: 30, tail: 29 } }
+      ]
+    });
+
+    Charts.stacked(cell('edge', 'stacked / no rows'), { title: 'No rows at all', rows: [], parts: [] });
+
+    Charts.lines(cell('edge', 'lines / single point + gaps + all-null'), {
+      title: 'Single point, mid-series gaps, an all-null series',
+      xLabel: 'round',
+      yLabel: 'score',
+      xTicks: 5,
+      vline: { x: 4, label: 'cutover' },
+      series: [
+        { label: 'one point only', points: [{ x: 3, y: 0.5 }] },
+        { label: 'with gaps', points: [
+          { x: 1, y: 0.2 }, { x: 2, y: 0.35 }, { x: 3, y: null },
+          { x: 4, y: 0.6 }, { x: 5, y: null }, { x: 6, y: 0.8 }
+        ] },
+        { label: 'entirely null', points: [{ x: 1, y: null }, { x: 2, y: null }] },
+        { label: 'no points at all', points: [] }
+      ]
+    });
+
+    Charts.lines(cell('edge', 'lines / log 0.01→1.0, negative + zero x'), {
+      title: 'Log axis with unplottable x values',
+      xType: 'log',
+      xLabel: 'size fraction (log)',
+      yFormat: pct,
+      vline: { x: 0.01, label: 'floor' },
+      series: [
+        { label: 'series with x<=0 dropped', points: [
+          { x: -1, y: 0.9 }, { x: 0, y: 0.85 }, { x: 0.01, y: 0.1 },
+          { x: 0.1, y: 0.44 }, { x: 1.0, y: 0.97 }
+        ] }
+      ]
+    });
+
+    Charts.lines(cell('edge', 'lines / empty'), { title: 'No series', series: [] });
+
+    Charts.heat(cell('edge', 'heat / nulls, negatives, long labels'), {
+      title: 'Ragged rows, nulls, negatives, long headers',
+      rows: [LONG, 'b', 'c'],
+      cols: ['a very long column header indeed', 'β', 'γ', 'δ'],
+      nullText: 'n/a',
+      colorLow: '#f7e6dd',
+      colorHigh: '#8c3310',
+      values: [
+        [-3.5, 0, null, 12.25],
+        [null, null, 7, 8],
+        [1]
+      ]
+    });
+
+    Charts.heat(cell('edge', 'heat / all null'), {
+      title: 'Every cell null',
+      rows: ['r1', 'r2'], cols: ['c1', 'c2'],
+      values: [[null, null], [null, null]]
+    });
+
+    Charts.heat(cell('edge', 'heat / single cell'), {
+      title: 'Single cell (min === max)',
+      rows: ['only'], cols: ['only'], values: [[42]]
+    });
+
+    Charts.grouped(cell('edge', 'grouped / negatives + ragged + long labels'), {
+      title: 'Negatives, ragged value arrays, long group names',
+      yLabel: 'delta',
+      groups: [LONG, 'b', 'c', 'd', 'e'],
+      series: [
+        { label: 'alpha', values: [-4, 2, null, 8] },
+        { label: 'beta with a rather long legend label', values: [3, -6, 5] },
+        { label: 'gamma', values: [] }
+      ]
+    });
+
+    Charts.grouped(cell('edge', 'grouped / single series, no groups'), {
+      title: 'Groups inferred from values',
+      series: [{ label: 'solo', values: [1, 2, 3] }]
+    });
+
+    /* garbage inputs: must not throw, must not render junk */
+    Charts.bar(cell('edge', 'bar / opts omitted'));
+    Charts.stacked(cell('edge', 'stacked / opts null'), null);
+    Charts.lines(cell('edge', 'lines / garbage'), { series: 'not an array', xType: 'log', yFormat: 'nope' });
+    Charts.heat(cell('edge', 'heat / garbage'), { rows: 3, cols: null, values: 'x' });
+    Charts.grouped(cell('edge', 'grouped / throwing formatter'), {
+      title: 'yFormat throws (should fall back)',
+      groups: ['a', 'b'],
+      series: [{ label: 's', values: [1, 2] }],
+      yFormat: function () { throw new Error('boom'); }
+    });
+
+    /* structural assertions */
+    var svgCount = document.querySelectorAll('.host > svg').length;
+    var hostCount = document.querySelectorAll('.host').length;
+    if (svgCount !== hostCount) {
+      problems.push('expected one <svg> per host: got ' + svgCount + ' of ' + hostCount);
+    }
+    var fixedWidth = 0;
+    Array.prototype.forEach.call(document.querySelectorAll('.host > svg'), function (s) {
+      if (s.getAttribute('width') !== '100%') fixedWidth++;
+      if (!s.getAttribute('viewBox')) problems.push('svg without viewBox');
+    });
+    if (fixedWidth) problems.push(fixedWidth + ' svg(s) not width:100%');
+
+    var st = document.getElementById('status');
+    if (problems.length) {
+      st.className = 'fail';
+      st.textContent = problems.length + ' problem(s)';
+      document.getElementById('log').textContent = problems.join('\n');
+    } else {
+      st.className = 'ok';
+      st.textContent = svgCount + ' charts rendered, 0 console errors';
+      document.getElementById('log').textContent = '';
+    }
+  }
+
+  document.getElementById('theme').addEventListener('click', function () {
+    var root = document.documentElement;
+    var now = root.getAttribute('data-theme');
+    root.setAttribute('data-theme', now === 'dark' ? 'light' : 'dark');
+    renderAll();
+  });
+  document.getElementById('rerun').addEventListener('click', renderAll);
+
+  renderAll();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+{
+  "proof_034": {
+    "statement_en": "For any two elements a and b of Fin k (the type of natural numbers strictly less than k), the bitwise XOR of a and b equals the bitwise XOR of b and a. In other words, XOR on bounded machine-word-like values is commutative.",
+    "proof_sketch_en": "XOR on Fin k is defined by taking the XOR of the two underlying natural numbers and reducing modulo k, so the goal unfolds to a statement about Nat.xor. Commutativity of Nat.xor (a bit-by-bit fact) then finishes it, and here the `grind` automation does the unfolding and closing in one step.",
+    "candidates": {
+      "1": "An anonymous helper lemma that the compiler split off from this very proof and marked file-private; it holds the actual bit-level argument that XOR of the two underlying naturals commutes and survives the mod-k reduction. It is a compilation artifact of `grind`, not a lemma a human wrote or would cite.",
+      "2": "Fin is the type of natural numbers below a fixed bound: a value is a pair of a natural number and a proof that it is less than the bound. It is the carrier on which the XOR in this theorem operates.",
+      "3": "Nat is the type of natural numbers (built from zero and successor). Fin values wrap a Nat, and the actual XOR computation happens on that underlying Nat before being reduced back into range."
+    }
+  },
+  "proof_076": {
+    "statement_en": "A graph G is a closed subgraph of the empty graph if and only if G is itself the empty graph. 'Closed subgraph' (written G <=c H) means G is an induced subgraph of H that also swallows every edge of H touching any of its vertices, i.e. G is a union of connected components of H.",
+    "proof_sketch_en": "Forward: being a closed subgraph implies being an induced subgraph, which implies the plain subgraph relation G <= bottom, and in any order with a least element x <= bottom forces x = bottom. Backward: substitute G = bottom and use that every graph is a closed subgraph of itself.",
+    "candidates": {
+      "1": "Eq.rec is the primitive eliminator for equality: given a proof that a = b, it lets you replace a by b anywhere in a goal or term. Here it is what the `h ▸` substitution of G by the empty graph compiles down to. Pure kernel machinery.",
+      "2": "PartialOrder.toPreorder is the automatic downcast from a partial order to the weaker preorder structure underneath it. It is typeclass plumbing that lets the `<=` in the statement resolve through the order hierarchy.",
+      "3": "Bot.bot is the field holding the designated least element of a type, which the notation `⊥` prints. In this theorem it denotes the empty graph: no vertices and no edges.",
+      "4": "Graph.IsClosedSubgraph is the structure defining the `<=c` relation: H is an induced subgraph of G, plus every edge of G incident to a vertex of H already belongs to H. That closure condition is exactly what makes H a union of components of G.",
+      "5": "Graph.instPartialOrder is the instance that makes graphs into a partially ordered set, with H <= G meaning the vertex set of H is contained in that of G and every edge-link of H is a link of G. It supplies the `<=` that the proof passes to le_bot_iff.",
+      "6": "Iff.intro is the constructor for an if-and-only-if: hand it the two implications and it produces the biconditional. It is the outer shape of this proof term.",
+      "7": "le_bot_iff is the order-theoretic fact that in a type with a least element, a <= bottom holds exactly when a = bottom. This is the mathematical content of the forward direction.",
+      "8": "Graph is the structure being studied: a graph on vertex type alpha and edge type beta, given by a set of vertices and an IsLink relation saying which edge joins which two vertices.",
+      "9": "Eq is the equality type; here it forms the right-hand side of the biconditional, G = the empty graph.",
+      "10": "LE.le is the field behind the `<=` notation, the abstract less-or-equal relation that the graph instance resolves to the subgraph relation.",
+      "11": "Graph.IsInducedSubgraph.le is the projection that pulls the plain subgraph fact H <= G out of the richer induced-subgraph record. It is the step that hands le_bot_iff something it can use.",
+      "12": "Graph.IsClosedSubgraph.rfl is reflexivity for the closed-subgraph relation: every graph is a closed subgraph of itself. Once G has been rewritten to the empty graph, this closes the backward direction.",
+      "13": "Preorder.toLE extracts the `<=` operation out of a preorder structure. More typeclass plumbing connecting the notation to the instance found for graphs.",
+      "14": "Graph.IsClosedSubgraph.isInducedSubgraph is the projection saying a closed subgraph is in particular an induced subgraph. It is the first link in the chain closed-subgraph to induced-subgraph to plain subgraph.",
+      "15": "Iff.mp takes a biconditional and a proof of its left side and yields the right side. It is used to apply le_bot_iff in the forward direction.",
+      "16": "Graph.instOrderBot is the instance giving graphs a least element: the graph with empty vertex set and no edges, together with a proof it sits below every graph. This is where `⊥` in the statement comes from.",
+      "17": "OrderBot.toBot is the projection pulling the bottom element out of the OrderBot instance so the `⊥` notation resolves. Typeclass plumbing."
+    }
+  },
+  "proof_005": {
+    "statement_en": "For a numeric literal n and a rational number q, the denominator of (n + q) is the same as the denominator of q. Rationals here are stored in lowest terms with a positive denominator, and adding a whole number never changes that denominator.",
+    "proof_sketch_en": "The numeral `ofNat(n)` in the rationals is the same thing as the cast of the natural number n, definitionally, so the goal is already an instance of the cast version of the lemma. The proof is a one-liner that just cites that version.",
+    "candidates": {
+      "1": "Rat.natCast_add_den is the identical statement phrased with an explicit coercion of n into the rationals rather than a literal. Since numerals and casts agree by definition here, this lemma is the entire proof.",
+      "2": "Rat is the type of rational numbers as stored in Lean: an integer numerator, a natural denominator, plus invariants that the denominator is nonzero and shares no common factor with the numerator.",
+      "3": "Nat is the natural numbers; it is both the type of the literal n and the type of the `den` field whose equality this theorem asserts."
+    }
+  },
+  "proof_041": {
+    "statement_en": "Take a string slice s (a window into a backing string). Copying s produces a standalone String, and a position inside that copy can be translated back to a position inside the slice (ofCopy) and then forward again (copy). The theorem says this round trip returns exactly the position you started with.",
+    "proof_sketch_en": "Both position types are structures carrying a single piece of data, a byte offset, plus a proof that the offset lands on a UTF-8 character boundary. Extensionality reduces the goal to equality of byte offsets, and both translations leave the offset untouched (true by definition), so simp closes it; the validity proofs need no argument since proofs of the same proposition are interchangeable.",
+    "candidates": {
+      "1": "String.Pos is a validated cursor into a particular String: a byte offset together with a proof that the offset sits at the start of a UTF-8 character in that string.",
+      "2": "String.Pos.offset_ofCopy states that translating a position from the copied string back into the slice leaves its byte offset unchanged. It holds by definition, since ofCopy only rebuilds the validity proof.",
+      "3": "eq_self is the simp lemma rewriting any goal of the form `a = a` into `True`. It is simp-normalization machinery, the last rewrite before the goal is discharged.",
+      "4": "String.Slice.copy turns a slice into a real String by extracting the byte range from the start position up to the end position of the backing string. This is the copying operation the theorem is about.",
+      "5": "String.Pos.Raw is an unvalidated byte index, essentially a wrapper around a Nat byte count with no proof attached. It is the shared data field of both position types, and the thing the proof ultimately compares.",
+      "6": "String.Pos.ofCopy converts a position in the copied string into the corresponding position in the original slice, keeping the same byte offset and re-deriving the boundary-validity proof.",
+      "7": "of_eq_true converts a proof that `p = True` into a proof of p. It is the closing step of the simp-generated proof term, pure automation residue.",
+      "8": "String.Slice is a non-copying view into a string: a backing String plus validated start and end positions with start at or before end.",
+      "9": "Eq is the equality type, the top-level connective of the statement.",
+      "10": "True is the trivially true proposition. Simp normalizes the goal to True and then discharges it; it carries no mathematical content here.",
+      "11": "String.Slice.Pos.copy is the other direction of the translation: a position in slice s becomes a position in the copied string, at the same byte offset.",
+      "12": "String.Slice.Pos.offset_copy states that translating a slice position into the copied string leaves its byte offset unchanged. Like its counterpart, it is true by definition.",
+      "13": "Eq.trans chains two equalities into one. It stitches together the individual rewrite steps simp produced.",
+      "14": "congrFun' is the congruence step going from an equality of two functions to an equality of their values at a fixed argument. Rewriting machinery emitted when simp rewrites something in function position.",
+      "15": "congrArg is the congruence step going from a = b to f a = f b. It is how the offset rewrites get pushed inside the surrounding structure-building expressions.",
+      "16": "String.Slice.Pos.offset is the field accessor returning the raw byte offset of a slice position.",
+      "17": "String.Pos.offset is the field accessor returning the raw byte offset of a string position.",
+      "18": "String.Pos.ext is the extensionality principle for validated string positions: two positions in the same string are equal as soon as their byte offsets agree. This is the step that reduces the whole theorem to a fact about byte offsets."
+    }
+  },
+  "proof_048": {
+    "statement_en": "Suppose f maps space A to space B and g maps B to C, both measurable, and the composite g after f carries the measure mu_a to exactly the measure mu_c. Then g alone carries the pushforward of mu_a along f to mu_c. In short, you can split a measure-preserving composite at the intermediate space by pushing the source measure forward.",
+    "proof_sketch_en": "Measure-preserving is a two-field record: the map is measurable, and its pushforward equals the target measure. Measurability of g is a hypothesis; for the measure equation, pushing forward twice equals pushing forward along the composite, and by assumption that composite pushforward is mu_c.",
+    "candidates": {
+      "1": "MeasurePreserving.map_eq is the projection that extracts the defining equation from a measure-preserving hypothesis, namely that the pushforward of the source measure along the map is literally the target measure. It supplies the second half of the equality chain.",
+      "2": "MeasurePreserving.mk is the constructor of the MeasurePreserving record, taking a measurability proof and a pushforward equation and packaging them. It is the outer shape of this proof term.",
+      "3": "MeasureTheory.Measure.map is the pushforward of a measure along a function: the measure of a set S is the measure of its preimage (and it collapses to zero if the function is not almost-everywhere measurable). This is the operation the whole theorem manipulates.",
+      "4": "Function.comp is ordinary function composition, g after f. It is the map assumed measure-preserving in the hypothesis.",
+      "5": "Eq.trans chains the two equalities: pushing forward twice equals pushing forward along the composite, which in turn equals mu_c.",
+      "6": "MeasurableSpace is a sigma-algebra on a type: the designated family of measurable sets, closed under complement and countable union. Each of the three spaces here carries one.",
+      "7": "MeasureTheory.MeasurePreserving is the structure asserting that a function is measurable and that pushing the source measure forward along it produces exactly the target measure. Both the hypothesis and the conclusion of this theorem are instances of it.",
+      "8": "MeasureTheory.Measure is the type of countably additive measures on a measurable space, taking values in the extended nonnegative reals and built on top of an outer measure.",
+      "9": "Measurable is the predicate that preimages of measurable sets are measurable. It is the side condition needed for the pushforward-composition lemma to apply.",
+      "10": "MeasureTheory.Measure.map_map is the functoriality lemma for pushforward: for measurable g and f, pushing forward along f and then along g equals pushing forward along g after f. This is the mathematical heart of the proof."
+    }
+  },
+  "proof_138": {
+    "statement_en": "Let A be a C*-algebra without a unit, and embed an element x into its unitization (A with a complex unit adjoined). The theorem says x's image lies in the order interval from 0 to 1 exactly when x is a positive element and its norm is at most 1. This version states the norm bound using the nonnegative-real-valued norm rather than the ordinary real norm.",
+    "proof_sketch_en": "The nonnegative-real norm is the same number as the ordinary norm, just carried in a type where nonnegativity is built in, so the inequality 'norm at most 1' is the same proposition in both phrasings. The proof therefore just cites the real-norm version of the lemma directly, with no rewriting needed.",
+    "candidates": {
+      "1": "NonUnitalRing.toNonUnitalSemiring is the forgetful instance that drops subtraction and negation, viewing a non-unital ring as a non-unital semiring. It is needed only because the star-ordered-ring axiom is stated over semirings. Typeclass plumbing.",
+      "2": "NonUnitalCStarAlgebra is the class of complex C*-algebras with no unit element: a complete normed non-unital algebra over the complex numbers with an involution satisfying the C*-identity (norm of star-a times a equals the square of the norm of a). It is the ambient setting of the theorem.",
+      "3": "PartialOrder is the reflexive, transitive, antisymmetric less-or-equal relation. Here it is the order on the C*-algebra that makes the interval from 0 to 1 meaningful.",
+      "4": "StarOrderedRing is the axiom tying the order to the involution: x is at most y precisely when y minus x is a sum of elements of the form star-s times s. It is what makes '0 <= x' mean 'x is a positive element' in the operator-algebra sense.",
+      "5": "NonUnitalNormedRing.toNonUnitalRing is the forgetful instance extracting the bare ring structure from a normed non-unital ring, discarding the norm. Typeclass plumbing on the path from the C*-algebra class down to the order axioms.",
+      "6": "NonUnitalCStarAlgebra.toStarRing is the projection supplying the involution (the star operation) together with its compatibility with addition and multiplication. It is one of the ingredients StarOrderedRing needs.",
+      "7": "NonUnitalCStarAlgebra.toNonUnitalNormedRing is the projection supplying the norm and the underlying non-unital ring structure out of the C*-algebra bundle. Typeclass plumbing.",
+      "8": "CStarAlgebra.inr_mem_Icc_iff_norm_le is precisely this statement with the ordinary real-valued norm. It is the entire proof; its own justification uses that the embedding into the unitization is isometric and that a positive element has norm at most 1 exactly when it is bounded above by the unit."
+    }
+  }
+}

@@ -1,0 +1,2330 @@
+[
+ {
+  "id": "proof_01",
+  "theorem": "HomologicalComplex.IsStrictlySupported.isZero",
+  "theorem_depth": 4,
+  "band": "0-10",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.Limits.HasZeroMorphisms",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "HomologicalComplex.IsStrictlySupported",
+    "kind": "inductive",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "HomologicalComplex",
+    "kind": "inductive",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "ComplexShape",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Category",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "ComplexShape.Embedding",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_02",
+  "theorem": "Bool.false_eq_true",
+  "theorem_depth": 10,
+  "band": "0-10",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "eq_false'",
+    "kind": "theorem",
+    "depth": 4,
+    "in_statement": false
+   },
+   {
+    "n": 2,
+    "name": "False",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "Bool.true",
+    "kind": "constructor",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "congrArg",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": false
+   },
+   {
+    "n": 5,
+    "name": "Eq.trans",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": false
+   },
+   {
+    "n": 6,
+    "name": "Bool.ctorIdx",
+    "kind": "def",
+    "depth": 4,
+    "in_statement": false
+   },
+   {
+    "n": 7,
+    "name": "Bool",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "True",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": false
+   },
+   {
+    "n": 9,
+    "name": "Bool.false",
+    "kind": "constructor",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "False.elim",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": false
+   },
+   {
+    "n": 11,
+    "name": "congrFun'",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": false
+   },
+   {
+    "n": 12,
+    "name": "noConfusion_of_Nat",
+    "kind": "theorem",
+    "depth": 9,
+    "in_statement": false
+   },
+   {
+    "n": 13,
+    "name": "eq_self",
+    "kind": "theorem",
+    "depth": 4,
+    "in_statement": false
+   },
+   {
+    "n": 14,
+    "name": "of_eq_true",
+    "kind": "theorem",
+    "depth": 4,
+    "in_statement": false
+   },
+   {
+    "n": 15,
+    "name": "Eq",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_03",
+  "theorem": "SetLike.smul_def",
+  "theorem_depth": 7,
+  "band": "0-10",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Subtype",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "SMulMemClass",
+    "kind": "inductive",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "instHSMul",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "HSMul.hSMul",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "Membership.mem",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "SetLike.smul",
+    "kind": "def",
+    "depth": 6,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "SetLike.instMembership",
+    "kind": "def",
+    "depth": 4,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "SetLike",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "rfl",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": false
+   },
+   {
+    "n": 10,
+    "name": "SMul",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_04",
+  "theorem": "isGenericPoint_def",
+  "theorem_depth": 8,
+  "band": "0-10",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "IsGenericPoint",
+    "kind": "def",
+    "depth": 7,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "TopologicalSpace",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "Set",
+    "kind": "def",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "Iff.rfl",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": false
+   }
+  ]
+ },
+ {
+  "id": "proof_05",
+  "theorem": "AddSubmonoid.comap._proof_3",
+  "theorem_depth": 14,
+  "band": "11-25",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "AddZeroClass",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "HAdd.hAdd",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "AddZero.toAdd",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "Set.instMembership",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "FunLike",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "AddSubmonoid",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "AddZeroClass.toAddZero",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "Membership.mem",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "Set.preimage",
+    "kind": "def",
+    "depth": 4,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "AddSubmonoid.comap._proof_1",
+    "kind": "theorem",
+    "depth": 13,
+    "in_statement": false
+   },
+   {
+    "n": 11,
+    "name": "instHAdd",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 12,
+    "name": "SetLike.coe",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 13,
+    "name": "AddSubmonoid.instSetLike",
+    "kind": "def",
+    "depth": 10,
+    "in_statement": true
+   },
+   {
+    "n": 14,
+    "name": "Set",
+    "kind": "def",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 15,
+    "name": "AddMonoidHomClass",
+    "kind": "inductive",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 16,
+    "name": "SetLike.instMembership",
+    "kind": "def",
+    "depth": 4,
+    "in_statement": true
+   },
+   {
+    "n": 17,
+    "name": "DFunLike.coe",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_06",
+  "theorem": "CategoryTheory.Limits.Types.instHasImage",
+  "theorem_depth": 25,
+  "band": "11-25",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.Limits.HasImage.mk",
+    "kind": "theorem",
+    "depth": 4,
+    "in_statement": false
+   },
+   {
+    "n": 2,
+    "name": "Quiver.Hom",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.CategoryStruct.toQuiver",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.types",
+    "kind": "def",
+    "depth": 10,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Limits.ImageFactorisation.mk",
+    "kind": "constructor",
+    "depth": 4,
+    "in_statement": false
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Category.toCategoryStruct",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.Limits.Types.monoFactorisation",
+    "kind": "def",
+    "depth": 23,
+    "in_statement": false
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Limits.Types.isImage",
+    "kind": "def",
+    "depth": 24,
+    "in_statement": false
+   }
+  ]
+ },
+ {
+  "id": "proof_07",
+  "theorem": "Fin.ofNat_val_eq_self",
+  "theorem_depth": 25,
+  "band": "11-25",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Nat",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "id",
+    "kind": "def",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "Eq.refl",
+    "kind": "constructor",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "instHMod",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "Fin",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "Zero.ofOfNat0",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "Fin.isLt",
+    "kind": "theorem",
+    "depth": 2,
+    "in_statement": false
+   },
+   {
+    "n": 8,
+    "name": "instOfNatNat",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "Fin.val",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "Eq",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 11,
+    "name": "Fin.ext",
+    "kind": "theorem",
+    "depth": 9,
+    "in_statement": false
+   },
+   {
+    "n": 12,
+    "name": "Eq.mpr",
+    "kind": "def",
+    "depth": 4,
+    "in_statement": false
+   },
+   {
+    "n": 13,
+    "name": "Fin.ofNat",
+    "kind": "def",
+    "depth": 23,
+    "in_statement": true
+   },
+   {
+    "n": 14,
+    "name": "Fin.val_ofNat",
+    "kind": "theorem",
+    "depth": 24,
+    "in_statement": false
+   },
+   {
+    "n": 15,
+    "name": "Nat.instMod",
+    "kind": "def",
+    "depth": 20,
+    "in_statement": true
+   },
+   {
+    "n": 16,
+    "name": "congrArg",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 17,
+    "name": "HMod.hMod",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 18,
+    "name": "Nat.mod_eq_of_lt",
+    "kind": "theorem",
+    "depth": 23,
+    "in_statement": false
+   },
+   {
+    "n": 19,
+    "name": "NeZero",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_08",
+  "theorem": "CategoryTheory.Join.inclLeftFaithful",
+  "theorem_depth": 17,
+  "band": "11-25",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.Functor.FullyFaithful.faithful",
+    "kind": "theorem",
+    "depth": 16,
+    "in_statement": false
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Join.instCategory",
+    "kind": "def",
+    "depth": 10,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Join.inclLeftFullyFaithful",
+    "kind": "def",
+    "depth": 14,
+    "in_statement": false
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Category",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Join",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Join.inclLeft",
+    "kind": "def",
+    "depth": 12,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_09",
+  "theorem": "CategoryTheory.unop_tensorObj",
+  "theorem_depth": 26,
+  "band": "26-50",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.monoidalCategoryOp",
+    "kind": "def",
+    "depth": 25,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Category",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.MonoidalCategory.toMonoidalCategoryStruct",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "Opposite.unop",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Category.opposite",
+    "kind": "def",
+    "depth": 10,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.MonoidalCategoryStruct.tensorObj",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "Opposite",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "rfl",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "CategoryTheory.MonoidalCategory",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_10",
+  "theorem": "USize.toBitVec_neg",
+  "theorem_depth": 28,
+  "band": "26-50",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "instNegUSize",
+    "kind": "def",
+    "depth": 27,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "Neg.neg",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "USize.toBitVec",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "USize",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "System.Platform.numBits",
+    "kind": "def",
+    "depth": 6,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "rfl",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "BitVec",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_11",
+  "theorem": "Int.modEq_add_modulus_mul_iff",
+  "theorem_depth": 37,
+  "band": "26-50",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Int.instMul",
+    "kind": "def",
+    "depth": 11,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "Iff",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "Eq.trans",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": false
+   },
+   {
+    "n": 4,
+    "name": "iff_self",
+    "kind": "theorem",
+    "depth": 4,
+    "in_statement": false
+   },
+   {
+    "n": 5,
+    "name": "congrArg",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "Int.instMod",
+    "kind": "def",
+    "depth": 22,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "Int.instAdd",
+    "kind": "def",
+    "depth": 11,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "HMod.hMod",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "Int.ModEq",
+    "kind": "def",
+    "depth": 23,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "instHAdd",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 11,
+    "name": "Eq",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 12,
+    "name": "of_eq_true",
+    "kind": "theorem",
+    "depth": 4,
+    "in_statement": false
+   },
+   {
+    "n": 13,
+    "name": "congrFun'",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": false
+   },
+   {
+    "n": 14,
+    "name": "Int.add_mul_emod_self_left",
+    "kind": "theorem",
+    "depth": 36,
+    "in_statement": false
+   },
+   {
+    "n": 15,
+    "name": "HAdd.hAdd",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 16,
+    "name": "instHMul",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 17,
+    "name": "Int",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 18,
+    "name": "instHMod",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 19,
+    "name": "HMul.hMul",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 20,
+    "name": "True",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_12",
+  "theorem": "CategoryTheory.WithInitial.map_obj",
+  "theorem_depth": 38,
+  "band": "26-50",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Eq.refl",
+    "kind": "constructor",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.WithInitial",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.WithInitial.instCategory",
+    "kind": "def",
+    "depth": 34,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Functor",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Category",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Functor.obj",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.WithInitial.map",
+    "kind": "def",
+    "depth": 37,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_13",
+  "theorem": "DFinsupp.prod_one",
+  "theorem_depth": 75,
+  "band": "51-75",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "AddCommMonoid.toAddMonoid",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "Finset.prod_const_one",
+    "kind": "theorem",
+    "depth": 23,
+    "in_statement": false
+   },
+   {
+    "n": 3,
+    "name": "Zero.toOfNat0",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "Decidable",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "AddMonoid.toAddZeroClass",
+    "kind": "def",
+    "depth": 5,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "CommMonoid",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "OfNat.ofNat",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "DFinsupp",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "DecidableEq",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "Ne",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 11,
+    "name": "AddZeroClass.toAddZero",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 12,
+    "name": "DFinsupp.support",
+    "kind": "def",
+    "depth": 74,
+    "in_statement": true
+   },
+   {
+    "n": 13,
+    "name": "AddZero.toZero",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 14,
+    "name": "AddCommMonoid",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_14",
+  "theorem": "Std.Sat.CNF.eval_append",
+  "theorem_depth": 58,
+  "band": "51-75",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Std.Sat.CNF.clauses",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "Bool",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "Std.Sat.CNF.Clause.eval",
+    "kind": "def",
+    "depth": 8,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "Std.Sat.CNF",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "Array.all_append",
+    "kind": "theorem",
+    "depth": 57,
+    "in_statement": false
+   },
+   {
+    "n": 6,
+    "name": "Std.Sat.CNF.Clause",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_15",
+  "theorem": "MvPowerSeries.coeff_zero_one",
+  "theorem_depth": 67,
+  "band": "51-75",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "MulZeroClass.toZero",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "AddMonoidWithOne.toOne",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "Semiring.toNonAssocSemiring",
+    "kind": "def",
+    "depth": 10,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "Zero.toOfNat0",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "Finsupp",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "Nat",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "Finsupp.instZero",
+    "kind": "def",
+    "depth": 58,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "NonAssocSemiring.toAddCommMonoidWithOne",
+    "kind": "def",
+    "depth": 10,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "AddCommMonoidWithOne.toAddMonoidWithOne",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "One.toOfNat1",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 11,
+    "name": "Semiring",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 12,
+    "name": "OfNat.ofNat",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 13,
+    "name": "MvPowerSeries.coeff_monomial_same",
+    "kind": "theorem",
+    "depth": 66,
+    "in_statement": false
+   },
+   {
+    "n": 14,
+    "name": "Nat.instMulZeroClass",
+    "kind": "def",
+    "depth": 17,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_16",
+  "theorem": "prespectralSpace_iff",
+  "theorem_depth": 53,
+  "band": "51-75",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "TopologicalSpace",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "Set.ofPred",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "PrespectralSpace",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "IsOpen",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "PrespectralSpace.mk",
+    "kind": "constructor",
+    "depth": 50,
+    "in_statement": false
+   },
+   {
+    "n": 6,
+    "name": "TopologicalSpace.IsTopologicalBasis",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "Set",
+    "kind": "def",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "IsCompact",
+    "kind": "def",
+    "depth": 49,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "PrespectralSpace.casesOn",
+    "kind": "def",
+    "depth": 52,
+    "in_statement": false
+   },
+   {
+    "n": 10,
+    "name": "And",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 11,
+    "name": "Iff.intro",
+    "kind": "constructor",
+    "depth": 1,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_17",
+  "theorem": "Ideal.span_singleton_mul_right_injective",
+  "theorem_depth": 83,
+  "band": "76-125",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Set",
+    "kind": "def",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "Eq",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "Ideal.span",
+    "kind": "def",
+    "depth": 18,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "Submodule.mul",
+    "kind": "def",
+    "depth": 67,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "Algebra.id",
+    "kind": "def",
+    "depth": 20,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "Set.instSingletonSet",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "HMul.hMul",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "IsDomain",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "CommSemiring.toSemiring",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "CommSemiring",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 11,
+    "name": "Ideal.span_singleton_mul_right_inj",
+    "kind": "theorem",
+    "depth": 82,
+    "in_statement": false
+   },
+   {
+    "n": 12,
+    "name": "MulZeroClass.toZero",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 13,
+    "name": "Singleton.singleton",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 14,
+    "name": "Zero.toOfNat0",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 15,
+    "name": "Ideal",
+    "kind": "def",
+    "depth": 14,
+    "in_statement": true
+   },
+   {
+    "n": 16,
+    "name": "instHMul",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 17,
+    "name": "Iff.mp",
+    "kind": "theorem",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 18,
+    "name": "OfNat.ofNat",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 19,
+    "name": "Semiring.toModule",
+    "kind": "def",
+    "depth": 13,
+    "in_statement": true
+   },
+   {
+    "n": 20,
+    "name": "instMulZeroClassOfSemiring",
+    "kind": "def",
+    "depth": 11,
+    "in_statement": true
+   },
+   {
+    "n": 21,
+    "name": "Ne",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_18",
+  "theorem": "Nat.divisorsHom_apply",
+  "theorem_depth": 82,
+  "band": "76-125",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Finset",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "instDecidableEqNat",
+    "kind": "def",
+    "depth": 11,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "Nat.instMulOneClass",
+    "kind": "def",
+    "depth": 17,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "Nat.divisorsHom",
+    "kind": "def",
+    "depth": 81,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "Nat",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "DFunLike.coe",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "Finset.mulOneClass",
+    "kind": "def",
+    "depth": 80,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "MonoidHom",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "MonoidHom.instFunLike",
+    "kind": "def",
+    "depth": 10,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "MulOneClass.toMulOne",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 11,
+    "name": "Eq.refl",
+    "kind": "constructor",
+    "depth": 1,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_19",
+  "theorem": "ENNReal.measurable_ofReal",
+  "theorem_depth": 125,
+  "band": "76-125",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "ENNReal.measurableSpace",
+    "kind": "def",
+    "depth": 107,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "PseudoMetricSpace.toUniformSpace",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "Real",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "ENNReal.instTopologicalSpace",
+    "kind": "def",
+    "depth": 106,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "Real.pseudoMetricSpace",
+    "kind": "def",
+    "depth": 113,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "UniformSpace.toTopologicalSpace",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "Real.measurableSpace",
+    "kind": "def",
+    "depth": 114,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "Continuous.measurable",
+    "kind": "theorem",
+    "depth": 63,
+    "in_statement": false
+   },
+   {
+    "n": 9,
+    "name": "ENNReal",
+    "kind": "def",
+    "depth": 96,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "ENNReal.ofReal",
+    "kind": "def",
+    "depth": 108,
+    "in_statement": true
+   },
+   {
+    "n": 11,
+    "name": "ENNReal.continuous_ofReal",
+    "kind": "theorem",
+    "depth": 124,
+    "in_statement": false
+   }
+  ]
+ },
+ {
+  "id": "proof_20",
+  "theorem": "Std.ExtDTreeMap.Const.contains_ofList",
+  "theorem_depth": 79,
+  "band": "76-125",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Prod",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "Ordering",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "List",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "BEq",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "Std.TransCmp",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "Std.LawfulBEqCmp",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "Std.DTreeMap.Const.contains_ofList",
+    "kind": "theorem",
+    "depth": 78,
+    "in_statement": false
+   }
+  ]
+ },
+ {
+  "id": "proof_21",
+  "theorem": "IsometryEquiv.addRight_apply",
+  "theorem_depth": 149,
+  "band": "126+",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "AddMonoid.toOppositeAddAction",
+    "kind": "def",
+    "depth": 21,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "IsometryEquiv",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "PseudoEMetricSpace",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "AddAction.toAddSemigroupAction",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "AddOpposite.instAddMonoid",
+    "kind": "def",
+    "depth": 20,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "AddSemigroupAction.toVAdd",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "AddGroup.toSubNegMonoid",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "AddGroup",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "AddOpposite",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "Eq.refl",
+    "kind": "constructor",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 11,
+    "name": "SubNegMonoid.toAddMonoid",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 12,
+    "name": "IsometryEquiv.instEquivLike",
+    "kind": "def",
+    "depth": 148,
+    "in_statement": true
+   },
+   {
+    "n": 13,
+    "name": "IsIsometricVAdd",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 14,
+    "name": "EquivLike.toFunLike",
+    "kind": "def",
+    "depth": 8,
+    "in_statement": true
+   },
+   {
+    "n": 15,
+    "name": "IsometryEquiv.addRight",
+    "kind": "def",
+    "depth": 143,
+    "in_statement": true
+   },
+   {
+    "n": 16,
+    "name": "DFunLike.coe",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 17,
+    "name": "AddMonoid.toAddSemigroup",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_22",
+  "theorem": "MeasureTheory.integral_Ico_eq_integral_Ioc",
+  "theorem_depth": 244,
+  "band": "126+",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "MeasureTheory.Measure.restrict",
+    "kind": "def",
+    "depth": 185,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "NormedSpace",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "Real.normedField",
+    "kind": "def",
+    "depth": 150,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "MeasureTheory.integral",
+    "kind": "def",
+    "depth": 240,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "congrArg",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "NormedAddCommGroup",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "NormedAddCommGroup.toSeminormedAddCommGroup",
+    "kind": "def",
+    "depth": 10,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "MeasureTheory.integral_Ico_eq_integral_Ioo",
+    "kind": "theorem",
+    "depth": 243,
+    "in_statement": false
+   },
+   {
+    "n": 9,
+    "name": "id",
+    "kind": "def",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "MeasureTheory.NullSingletonClass",
+    "kind": "inductive",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 11,
+    "name": "MeasureTheory.integral_Ioc_eq_integral_Ioo",
+    "kind": "theorem",
+    "depth": 243,
+    "in_statement": false
+   },
+   {
+    "n": 12,
+    "name": "Set.Ico",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 13,
+    "name": "Real",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 14,
+    "name": "MeasurableSpace",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 15,
+    "name": "Set.Ioo",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 16,
+    "name": "PartialOrder.toPreorder",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 17,
+    "name": "MeasureTheory.Measure",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 18,
+    "name": "PartialOrder",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 19,
+    "name": "Eq.mpr",
+    "kind": "def",
+    "depth": 4,
+    "in_statement": true
+   },
+   {
+    "n": 20,
+    "name": "Eq.refl",
+    "kind": "constructor",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 21,
+    "name": "Eq",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 22,
+    "name": "Set.Ioc",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_23",
+  "theorem": "Metric.continuous_infDist_pt",
+  "theorem_depth": 152,
+  "band": "126+",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "UniformContinuous.continuous",
+    "kind": "theorem",
+    "depth": 71,
+    "in_statement": false
+   },
+   {
+    "n": 2,
+    "name": "Real",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "PseudoMetricSpace",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "Metric.uniformContinuous_infDist_pt",
+    "kind": "theorem",
+    "depth": 151,
+    "in_statement": false
+   },
+   {
+    "n": 5,
+    "name": "Metric.infDist",
+    "kind": "def",
+    "depth": 142,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "Real.pseudoMetricSpace",
+    "kind": "def",
+    "depth": 113,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "Set",
+    "kind": "def",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "PseudoMetricSpace.toUniformSpace",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_24",
+  "theorem": "Asymptotics.isTheta_completion_right",
+  "theorem_depth": 155,
+  "band": "126+",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Asymptotics.isBigO_completion_left",
+    "kind": "theorem",
+    "depth": 154,
+    "in_statement": false
+   },
+   {
+    "n": 2,
+    "name": "UniformSpace.Completion.coe'",
+    "kind": "def",
+    "depth": 81,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "Norm",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "SeminormedAddCommGroup.toNorm",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "UniformSpace.Completion",
+    "kind": "def",
+    "depth": 77,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "SeminormedAddCommGroup.toPseudoMetricSpace",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "and_congr",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "PseudoMetricSpace.toUniformSpace",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "Filter",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "Asymptotics.isBigO_completion_right",
+    "kind": "theorem",
+    "depth": 154,
+    "in_statement": false
+   },
+   {
+    "n": 11,
+    "name": "UniformSpace.Completion.instNorm",
+    "kind": "def",
+    "depth": 114,
+    "in_statement": true
+   },
+   {
+    "n": 12,
+    "name": "Asymptotics.IsBigO",
+    "kind": "def",
+    "depth": 102,
+    "in_statement": true
+   },
+   {
+    "n": 13,
+    "name": "SeminormedAddCommGroup",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   }
+  ]
+ },
+ {
+  "id": "proof_25",
+  "theorem": "SpecialLinearGroup.toLinearEquiv_eq_coe",
+  "theorem_depth": 133,
+  "band": "126+",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "DFunLike.coe",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 2,
+    "name": "RingHom.id",
+    "kind": "def",
+    "depth": 12,
+    "in_statement": true
+   },
+   {
+    "n": 3,
+    "name": "CommSemiring.toSemiring",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 4,
+    "name": "LinearEquiv.automorphismGroup",
+    "kind": "def",
+    "depth": 28,
+    "in_statement": true
+   },
+   {
+    "n": 5,
+    "name": "SpecialLinearGroup",
+    "kind": "def",
+    "depth": 126,
+    "in_statement": true
+   },
+   {
+    "n": 6,
+    "name": "CommRing.toCommSemiring",
+    "kind": "def",
+    "depth": 5,
+    "in_statement": true
+   },
+   {
+    "n": 7,
+    "name": "LinearEquiv",
+    "kind": "inductive",
+    "depth": 12,
+    "in_statement": true
+   },
+   {
+    "n": 8,
+    "name": "SpecialLinearGroup.instGroup",
+    "kind": "def",
+    "depth": 131,
+    "in_statement": true
+   },
+   {
+    "n": 9,
+    "name": "SpecialLinearGroup.toLinearEquiv",
+    "kind": "def",
+    "depth": 132,
+    "in_statement": true
+   },
+   {
+    "n": 10,
+    "name": "DivInvMonoid.toMonoid",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 11,
+    "name": "MulOneClass.toMulOne",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 12,
+    "name": "MonoidHom.instFunLike",
+    "kind": "def",
+    "depth": 10,
+    "in_statement": true
+   },
+   {
+    "n": 13,
+    "name": "Module",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 14,
+    "name": "AddCommGroup",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 15,
+    "name": "CommRing",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true
+   },
+   {
+    "n": 16,
+    "name": "AddCommGroup.toAddCommMonoid",
+    "kind": "def",
+    "depth": 5,
+    "in_statement": true
+   },
+   {
+    "n": 17,
+    "name": "Monoid.toMulOneClass",
+    "kind": "def",
+    "depth": 5,
+    "in_statement": true
+   },
+   {
+    "n": 18,
+    "name": "Semiring.toNonAssocSemiring",
+    "kind": "def",
+    "depth": 10,
+    "in_statement": true
+   },
+   {
+    "n": 19,
+    "name": "rfl",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true
+   },
+   {
+    "n": 20,
+    "name": "MonoidHom",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true
+   },
+   {
+    "n": 21,
+    "name": "Group.toDivInvMonoid",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true
+   }
+  ]
+ }
+]

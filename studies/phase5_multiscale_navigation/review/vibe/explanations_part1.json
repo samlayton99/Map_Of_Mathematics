@@ -1,0 +1,79 @@
+{
+  "proof_031": {
+    "statement_en": "ExceptT is the error monad transformer: it wraps a monad m so that computations can also fail with an error of type e. This theorem says that if you take an ordinary m-computation x and lift it into ExceptT e m, then unwrap it again with .run, you get back exactly x with its result tagged as a success (Except.ok <$> x). In short: lifting adds an error channel but never uses it.",
+    "proof_sketch_en": "The proof is a single rfl. ExceptT e m a is defined to literally BE m (Except e a), .run is the identity function, and the MonadLift instance for ExceptT is defined as fmapping Except.ok over the computation, so both sides of the equation unfold to the same term with no reasoning steps at all.",
+    "candidates": {
+      "1": "Except is the two-constructor error type: a value is either `ok a` (a success carrying an a) or `error e`. It is the thing ExceptT stores inside the underlying monad, and its `ok` constructor is what appears on the right-hand side of the equation.",
+      "2": "ExceptT.run is the unwrapper that takes a value of type ExceptT e m a and hands back the underlying m (Except e a). Because ExceptT is a type synonym rather than a real structure, run is definitionally the identity function, which is why rfl closes this goal.",
+      "3": "liftM is an abbreviation for MonadLiftT.monadLift: the generic 'take an action in an inner monad and run it in an outer monad' operation, resolved by typeclass search. It is the operation on the left-hand side of the equation, here lifting from m into ExceptT e m.",
+      "4": "instMonadLiftTOfMonadLift is the recursive step of lift resolution: given a one-step MonadLift from n into o and an existing multi-step lift from m into n, it builds a lift from m into o. This is pure typeclass instance-resolution plumbing that gets unfolded when liftM is elaborated; it carries no mathematical content.",
+      "5": "ExceptT is the monad transformer itself, defined by `ExceptT e m a := m (Except e a)`. It bolts an error channel of type e onto an arbitrary monad m, and its bind short-circuits as soon as an error appears.",
+      "6": "instMonadLiftT is the base case of the same lift-resolution search: every monad lifts into itself by doing nothing (monadLift x := x). Like candidate 4 this is instance-resolution machinery, not mathematics.",
+      "7": "rfl is the proof term: the reflexivity constructor of equality, which succeeds whenever both sides reduce to the same expression by unfolding definitions. It is the entire proof here.",
+      "8": "ExceptT.instMonadLift is the specific instance declaring that m lifts into ExceptT e m, implemented by ExceptT.lift, which maps the result of the computation through Except.ok. This instance is exactly what makes the right-hand side of the theorem come out as `Except.ok <$> x`.",
+      "9": "Monad is the type class supplying pure and bind (and hence the <$> map used on the right-hand side). It appears as a hypothesis on m so the statement typechecks, but the rfl proof never invokes any of its operations as facts.",
+      "10": "LawfulMonad is the class asserting that m actually satisfies the monad laws (left/right identity and associativity of bind). It is a hypothesis carried along in the statement for uniformity with neighbouring lemmas; this particular proof, being rfl, never uses it."
+    }
+  },
+  "proof_067": {
+    "statement_en": "For a binary relation r, TransGen r is its transitive closure: `TransGen r a b` means there is a chain of at least one r-step from a to b. This theorem says you can prepend a step to the front of such a chain: if `r a b` holds and there is a chain from b to c, then there is a chain from a to c.",
+    "proof_sketch_en": "TransGen is defined by extending chains at the tail, so prepending at the head needs a small detour: weaken the chain from b to c into a reflexive-transitive chain (zero-or-more steps), then apply head', which glues a single r-step onto the front of a possibly-empty chain and returns a nonempty one.",
+    "candidates": {
+      "1": "Relation.TransGen.head' is the more general prepending lemma: given one step `r a b` and a zero-or-more-step chain `ReflTransGen r b c`, it produces a one-or-more-step chain from a to c. It is the actual workhorse, proved by induction on the reflexive-transitive chain.",
+      "2": "Relation.TransGen.to_reflTransGen is the weakening map turning any one-or-more-step chain into a zero-or-more-step chain (a nonempty path is in particular a path). It is used to convert the hypothesis into the form head' wants.",
+      "3": "Relation.TransGen is the inductive definition of the transitive closure, built from two constructors: `single`, which turns one r-step into a chain, and `tail`, which extends an existing chain by one more step at the end. The asymmetry (growth at the tail) is precisely why this head lemma needs a proof at all."
+    }
+  },
+  "proof_176": {
+    "statement_en": "Take two lists whose elements are themselves lists. If l1 is a sublist of l2 (obtained by deleting some entries while keeping the order of the rest), then concatenating all of l1's inner lists yields a sublist of the concatenation of l2's inner lists. Deleting whole blocks from a list of blocks leaves you with a sublist after flattening.",
+    "proof_sketch_en": "Induct on the derivation of the sublist witness. The empty case is trivial; when l2 skips a block, the flattened right side gains an extra prefix block, and a longer list still contains the shorter one as a sublist; when both lists share a head block, that same block is appended on both sides, preserving the relation. The tactic `grind` discharges each of these three appending steps automatically.",
+    "candidates": {
+      "1": "List is the inductive list type with constructors nil and cons. Here the element type is itself a list, so we are working with lists of blocks.",
+      "2": "List.Sublist.rec is the eliminator Lean automatically generates for the Sublist inductive relation. It is what the `induction h` tactic compiles into: pure case-splitting machinery on how the sublist witness was constructed, with no mathematical content of its own.",
+      "3": "This is one of three anonymous private side-goals that Lean auto-generated while compiling the induction; it holds one branch of the case split (a nil/skip/keep case) as discharged by the `grind` automation. It is proof-automation residue with a mangled internal name, not a reusable mathematical lemma.",
+      "4": "List.flatten concatenates a list of lists into a single list, e.g. [[1,2],[3]] becomes [1,2,3]. It is the operation the theorem is about.",
+      "5": "Another of the three auto-generated private side-goals from the same induction, covering a different branch (the case where the two lists agree on a head block, so the same block is appended to both flattened results). Automation residue, same status as candidate 3.",
+      "6": "List.Sublist is the inductive relation written `l1 <+ l2`, defined by three constructors: the empty list is a sublist of itself, you may skip an element of l2, or you may keep a matching head on both sides. It formalises 'l1 embeds in l2 in an order-preserving way'.",
+      "7": "The third auto-generated private side-goal of the induction, at one level deeper than the other two, again produced by `grind` closing one branch. Purely internal bookkeeping emitted by the tactic."
+    }
+  },
+  "proof_098": {
+    "statement_en": "Zipping two lists pairs up corresponding elements and stops as soon as either list runs out. This theorem says you may harmlessly truncate both lists to the length of the shorter one before zipping: zip l1 l2 equals zip (take k l1) (take k l2) where k is the minimum of the two lengths. The excess tail of the longer list never contributes anything.",
+    "proof_sketch_en": "Structural recursion on both lists at once. If either list is empty, both sides are the empty list. For two nonempty lists, min (n+1) (m+1) = min n m + 1, so `take` peels off exactly the two heads on each side, the heads pair up identically, and the recursive call handles the tails.",
+    "candidates": {
+      "1": "This is the internal function the equation compiler generated to package the two-argument recursion in the proof (the recursive-call bundle for the pattern match on both lists). It is a compilation artifact of writing the proof by equations rather than a named tactic block, not a mathematical object.",
+      "2": "Nat is the type of natural numbers. It is where the two list lengths and the truncation index live.",
+      "3": "Prod is the ordinary pair type. zip produces a list whose elements are pairs, one component from each input list.",
+      "4": "Min.min is the minimum operation coming from the Min type class. Applied to the two lengths, it gives the truncation point k used on both sides of the equation.",
+      "5": "List.brecOn is the course-of-values recursor for lists, giving a recursive call access to all structurally smaller lists at once. It is the low-level machinery the equation compiler emits for this pattern match; it appears in the statement only because the definition was elaborated through it.",
+      "6": "List.length counts the elements of a list. Both lengths are needed to compute the truncation point.",
+      "7": "List is the inductive list type (nil and cons), the datatype everything here operates on.",
+      "8": "Eq is the built-in propositional equality type; the theorem is a single equation between two lists of pairs, so Eq is its top-level connective.",
+      "9": "List.take n l keeps the first n elements of l, returning all of l when n is at least the length. It performs the truncation on the right-hand side.",
+      "10": "List.zip pairs up corresponding elements of two lists, halting when either input is exhausted. That truncating behaviour is exactly what the theorem makes explicit.",
+      "11": "instMinNat is the Min type class instance for Nat, which is what makes the generic `min` in the statement resolve to the concrete minimum on natural numbers. It is instance-resolution plumbing; the proof only needs the resulting fact that min (n+1) (m+1) reduces to min n m + 1."
+    }
+  },
+  "proof_135": {
+    "statement_en": "Given functors G : C to D and F : D to E, right-whiskering means composing a natural transformation out of G with F, componentwise applying F to each component morphism. This theorem says whiskering the IDENTITY natural transformation of G by F gives the identity natural transformation of the composite functor G followed by F. Postcomposing with F does nothing to an identity.",
+    "proof_sketch_en": "Right-whiskering by F is precisely the action on morphisms of the functor `(whiskeringRight C D E).obj F`, which acts on the functor category (C to D) sending each functor to its composite with F. Since every functor preserves identity morphisms, the claim is a direct instance of Functor.map_id for that functor.",
+    "candidates": {
+      "1": "CategoryTheory.Functor.category is the instance making the functors from C to D into a category in their own right, with natural transformations as the morphisms. It supplies the identity morphism (the identity natural transformation) whose whiskering the theorem computes.",
+      "2": "CategoryTheory.Functor.map_id is the functoriality axiom stating that a functor sends the identity morphism on X to the identity morphism on F.obj X. It is the one genuine mathematical fact the proof uses.",
+      "3": "CategoryTheory.Functor.whiskeringRight is the functor (D to E) to ((C to D) to (C to E)) sending F to the operation 'postcompose everything with F'. The proof introduces it so that right-whiskering becomes literally a functor's map, which lets map_id apply.",
+      "4": "CategoryTheory.Functor.obj is the object-component of a functor, the field giving its action on objects. It is used to apply whiskeringRight to the particular functor F, producing the postcompose-with-F functor.",
+      "5": "CategoryTheory.Category is the class packaging a category: objects, hom-types between them, identity morphisms, composition, and the unit and associativity laws. It is the ambient structure on C, D and E.",
+      "6": "CategoryTheory.Functor is the structure of a functor: a map on objects, a map on morphisms, plus proofs that identities and composition are preserved. Both G and F are instances of it, and its identity-preservation field is what candidate 2 exposes as a lemma."
+    }
+  },
+  "proof_147": {
+    "statement_en": "Mathlib represents a length-n vector as a function from Fin n (the naturals below n) into a type. For a vector u of length m+1, which is therefore nonempty, this says that taking its first entry and its remaining entries and gluing them back together with vecCons reproduces u exactly. It is the eta rule for the cons/head/tail vector notation.",
+    "proof_sketch_en": "Matrix.vecCons, vecHead and vecTail are thin renamings of Fin.cons, evaluation at index 0, and Fin.tail, so the goal is definitionally the same statement about Fin. The proof is a one-liner applying Fin.cons_self_tail, which itself goes by function extensionality plus a case split on whether the index is 0 or a successor.",
+    "candidates": {
+      "1": "Nat is the type of natural numbers, used here to index the length of the vector.",
+      "2": "Nat.succ is the successor constructor. Writing the length as m.succ is what guarantees the vector is nonempty, so that head and tail are defined at all; the proof also relies on this shape to split indices into 0 versus a successor.",
+      "3": "Fin.cons_self_tail is the lemma that prepending u 0 to Fin.tail u recovers u, for u a function out of Fin (n+1). It is proved by extensionality and a zero-or-successor case analysis on the index, and it is the entire content of this proof.",
+      "4": "Fin n is the type of natural numbers strictly less than n. A function Fin n to a is Mathlib's representation of a length-n vector, and Fin (m+1) is the nonempty case where a head and a tail exist."
+    }
+  }
+}

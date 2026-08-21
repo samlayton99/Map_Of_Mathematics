@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>report.js verification harness</title>
+<style>
+  body { font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         margin: 0; padding: 16px 24px; background: #fbfbfa; color: #1c1c1a; }
+  h1 { font-size: 18px; margin: 0 0 4px; }
+  .sub { color: #666; margin: 0 0 16px; }
+  .bar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+         margin-bottom: 12px; }
+  select, button { font: inherit; padding: 4px 8px; }
+  #checks { margin: 0 0 16px; border: 1px solid #ddd; border-radius: 4px;
+            background: #fff; padding: 10px 14px; }
+  #checks table { border-collapse: collapse; font-size: 13px; }
+  #checks td, #checks th { padding: 3px 12px 3px 0; text-align: left;
+                           vertical-align: top; }
+  .pass { color: #146c2e; font-weight: 600; }
+  .fail { color: #a01212; font-weight: 600; }
+  pre { background: #fff; border: 1px solid #ddd; border-radius: 4px;
+        padding: 14px; white-space: pre-wrap; word-break: break-word;
+        font: 12px/1.55 ui-monospace, "SF Mono", Menlo, monospace;
+        max-height: 78vh; overflow: auto; }
+  .err { background: #fff2f2; border: 1px solid #e0a0a0; padding: 12px;
+         border-radius: 4px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+
+<h1>report.js verification harness</h1>
+<p class="sub">Loads the real dashboard JSON, builds a report for every ranking,
+runs the faithfulness checks, and renders the Markdown below verbatim.</p>
+
+<div class="bar">
+  <label>Ranking <select id="ranking"></select></label>
+  <label>Universe <select id="universe"></select></label>
+  <label>Lane <select id="lane"></select></label>
+  <label>k <select id="k"></select></label>
+  <button id="dl">Test Report.download()</button>
+</div>
+
+<div id="checks">loading data&hellip;</div>
+<pre id="out"></pre>
+
+<!-- The exporter writes data/all.js as `window.MAPDATA = {...};` precisely so a
+     file:// page can load everything without fetch(). If it is absent we fall
+     back to fetch()ing the individual files, which works over http:// only. -->
+<script src="data/all.js" onerror="window.__ALLJS_FAILED=1"></script>
+<script src="report.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var FILES = ["manifest", "summary", "definitions", "vibe"];
+  var $ = function (id) { return document.getElementById(id); };
+
+  function fail(msg) {
+    $("checks").className = "err";
+    $("checks").textContent = msg;
+  }
+
+  function loadJSON(path) {
+    return fetch(path).then(function (r) {
+      if (!r.ok) throw new Error(path + ": HTTP " + r.status);
+      return r.json();
+    });
+  }
+
+  /* ---- data acquisition ------------------------------------------------ */
+  function getData() {
+    if (window.MAPDATA && window.MAPDATA.rankings) {
+      return Promise.resolve(window.MAPDATA);
+    }
+    if (typeof fetch !== "function") {
+      return Promise.reject(new Error(
+        "data/all.js did not load and fetch() is unavailable. Run " +
+        "src/dashboard_export.py to produce dashboard/data/all.js."));
+    }
+    var bundle = { rankings: {} };
+    return Promise.all(FILES.map(function (f) {
+      return loadJSON("data/" + f + ".json").then(function (j) { bundle[f] = j; })
+        .catch(function () { bundle[f] = null; });
+    })).then(function () {
+      var names = (bundle.manifest && bundle.manifest.rankings || [])
+        .map(function (r) { return r.name; });
+      if (!names.length && bundle.summary) names = Object.keys(bundle.summary.rankings || {});
+      return Promise.all(names.map(function (n) {
+        return loadJSON("data/ranking_" + n + ".json").then(function (j) {
+          bundle.rankings[n] = j;
+        }).catch(function () {});
+      })).then(function () { return bundle; });
+    });
+  }
+
+  /* ---- checks ---------------------------------------------------------- */
+  function checkText(md) {
+    var bad = [];
+    ["undefined", "NaN", "[object Object]"].forEach(function (needle) {
+      var re = new RegExp(needle.replace(/[[\]]/g, "\\$&"), "g");
+      var m = md.match(re);
+      if (m) bad.push(needle + " x" + m.length);
+    });
+    return {
+      chars: md.length,
+      lines: md.split("\n").length,
+      tables: (md.match(/^\| --- /gm) || []).length,
+      badTokens: bad,
+      longEnough: md.length >= 4000,
+      hasInvariant: md.indexOf("INVARIANT") !== -1,
+      hasSlice: md.indexOf("SLICE-DEPENDENT") !== -1,
+      hasNotKeyness: md.indexOf("NOT keyness") !== -1 ||
+                     md.indexOf("not keyness") !== -1,
+      hasCI: /\[\d\.\d{3}, \d\.\d{3}\]/.test(md),
+      hasCautions: md.indexOf("## 9. Caveats") !== -1,
+      noEmoji: !/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(md)
+    };
+  }
+
+  function renderChecks(bundle, results, current) {
+    var rows = [];
+    function row(label, ok, detail) {
+      rows.push("<tr><td>" + label + "</td><td class=\"" +
+                (ok ? "pass" : "fail") + "\">" + (ok ? "PASS" : "FAIL") +
+                "</td><td>" + (detail === undefined ? "" : detail) + "</td></tr>");
+    }
+    var allOk = true;
+    var names = Object.keys(results);
+    names.forEach(function (n) {
+      var r = results[n];
+      if (r.error) {
+        allOk = false;
+        row("build(" + n + ")", false, "threw: " + r.error);
+        return;
+      }
+      var c = r.checks;
+      var ok = !c.badTokens.length && c.longEnough && c.hasInvariant &&
+               c.hasSlice && c.hasNotKeyness && c.hasCautions && c.noEmoji;
+      if (!ok) allOk = false;
+      row("build(" + n + ")", ok,
+          c.chars.toLocaleString() + " chars, " + c.lines.toLocaleString() +
+          " lines, " + c.tables + " tables" +
+          (c.badTokens.length ? " &mdash; forbidden tokens: " +
+            c.badTokens.join(", ") : "") +
+          (c.hasCI ? "" : " &mdash; no confidence interval printed") +
+          (c.longEnough ? "" : " &mdash; too short"));
+    });
+    row("built &ge; 2 rankings", names.length >= 2, names.length + " built");
+    row("Report.filename()", /\.md$/.test(current.fname), current.fname);
+    row("single global", typeof window.Report === "object", "window.Report");
+
+    $("checks").className = "";
+    $("checks").innerHTML =
+      "<b class=\"" + (allOk && names.length >= 2 ? "pass" : "fail") + "\">" +
+      (allOk && names.length >= 2 ? "ALL CHECKS PASS" : "CHECKS FAILED") +
+      "</b> &mdash; data built " +
+      ((bundle.manifest && bundle.manifest.built) || "?") + ", git " +
+      ((bundle.manifest && bundle.manifest.git) || "?") +
+      "<table>" + rows.join("") + "</table>";
+  }
+
+  /* ---- main ------------------------------------------------------------ */
+  getData().then(function (bundle) {
+    var names = Object.keys(bundle.rankings || {}).sort();
+    if (!names.length) throw new Error("no ranking payloads found in data/");
+
+    var universes = (bundle.manifest && bundle.manifest.universes) ||
+                    (bundle.summary && bundle.summary.universes) ||
+                    Object.keys(bundle.rankings[names[0]].experiments || {});
+    var lanes = (bundle.manifest && bundle.manifest.lanes) ||
+                (bundle.summary && bundle.summary.lanes) || ["all"];
+    var ks = (bundle.manifest && bundle.manifest.ks) ||
+             (bundle.summary && bundle.summary.ks) || [1, 2, 4, 8];
+    var refU = (bundle.manifest && bundle.manifest.reference_universe) ||
+               universes[0];
+
+    function fill(sel, values, chosen) {
+      sel.innerHTML = values.map(function (v) {
+        return "<option" + (String(v) === String(chosen) ? " selected" : "") +
+               ">" + v + "</option>";
+      }).join("");
+    }
+    fill($("ranking"), names,
+         names.indexOf("R_v8_faithful") !== -1 ? "R_v8_faithful" : names[0]);
+    fill($("universe"), universes, refU);
+    fill($("lane"), lanes, lanes.indexOf("no_glue") !== -1 ? "no_glue" : lanes[0]);
+    fill($("k"), ks, 4);
+
+    function ctxFor(name) {
+      return {
+        ranking: name,
+        data: bundle.rankings[name],
+        summary: bundle.summary,
+        definitions: bundle.definitions,
+        manifest: bundle.manifest,
+        vibe: bundle.vibe,
+        sweep: bundle.sweep || null,
+        state: {
+          universe: $("universe").value,
+          lane: $("lane").value,
+          k: Number($("k").value)
+        }
+      };
+    }
+
+    var lastMd = "", lastName = "";
+
+    function draw() {
+      /* Build EVERY ranking so the checks cover more than the visible one. */
+      var results = {};
+      names.forEach(function (n) {
+        try {
+          var md = window.Report.build(ctxFor(n));
+          results[n] = { md: md, checks: checkText(md) };
+        } catch (e) {
+          results[n] = { error: (e && e.stack) || String(e) };
+        }
+      });
+      var cur = $("ranking").value;
+      lastName = cur;
+      lastMd = results[cur].md || ("BUILD FAILED\n\n" + results[cur].error);
+      $("out").textContent = lastMd;
+      renderChecks(bundle, results, {
+        fname: window.Report.filename(ctxFor(cur))
+      });
+    }
+
+    ["ranking", "universe", "lane", "k"].forEach(function (id) {
+      $(id).addEventListener("change", draw);
+    });
+    $("dl").addEventListener("click", function () {
+      window.Report.download(window.Report.filename(ctxFor(lastName)), lastMd);
+    });
+
+    draw();
+  }).catch(function (e) {
+    fail("Could not load data.\n\n" + ((e && e.stack) || String(e)) +
+         "\n\nEither run src/dashboard_export.py (which writes " +
+         "dashboard/data/all.js for exactly this file:// case), or serve this " +
+         "directory over http:// so fetch() can read the individual JSON files.");
+  });
+}());
+</script>
+</body>
+</html>

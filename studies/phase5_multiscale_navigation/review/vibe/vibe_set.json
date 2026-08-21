@@ -1,0 +1,922 @@
+[
+ {
+  "id": "proof_031",
+  "theorem": "ExceptT.run_liftM",
+  "band": "0-10",
+  "theorem_depth": 4,
+  "artifact": 473215,
+  "def_fraction": 1.0,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Except",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 2,
+    "name": "ExceptT.run",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 3,
+    "name": "liftM",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 4,
+    "name": "instMonadLiftTOfMonadLift",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true,
+    "role": "instance-slot"
+   },
+   {
+    "n": 5,
+    "name": "ExceptT",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 6,
+    "name": "instMonadLiftT",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true,
+    "role": "instance-slot"
+   },
+   {
+    "n": 7,
+    "name": "rfl",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": false,
+    "role": "applied"
+   },
+   {
+    "n": 8,
+    "name": "ExceptT.instMonadLift",
+    "kind": "def",
+    "depth": 3,
+    "in_statement": true,
+    "role": "instance-slot"
+   },
+   {
+    "n": 9,
+    "name": "Monad",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 10,
+    "name": "LawfulMonad",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true,
+    "role": "type-annotation"
+   }
+  ]
+ },
+ {
+  "id": "proof_067",
+  "theorem": "Relation.TransGen.head",
+  "band": "0-10",
+  "theorem_depth": 5,
+  "artifact": 150033,
+  "def_fraction": 0.333,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Relation.TransGen.head'",
+    "kind": "theorem",
+    "depth": 4,
+    "in_statement": false,
+    "role": "applied"
+   },
+   {
+    "n": 2,
+    "name": "Relation.TransGen.to_reflTransGen",
+    "kind": "theorem",
+    "depth": 4,
+    "in_statement": false,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 3,
+    "name": "Relation.TransGen",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   }
+  ]
+ },
+ {
+  "id": "proof_176",
+  "theorem": "List.Sublist.flatten",
+  "band": "11-25",
+  "theorem_depth": 15,
+  "artifact": 658703,
+  "def_fraction": 0.429,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "List",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 2,
+    "name": "List.Sublist.rec",
+    "kind": "recursor",
+    "depth": 3,
+    "in_statement": false,
+    "role": "applied"
+   },
+   {
+    "n": 3,
+    "name": "_private.Mathlib.Data.List.Flatten.0.List.Sublist.flatten._proof_1_2",
+    "kind": "theorem",
+    "depth": 13,
+    "in_statement": false,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 4,
+    "name": "List.flatten",
+    "kind": "def",
+    "depth": 8,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 5,
+    "name": "_private.Mathlib.Data.List.Flatten.0.List.Sublist.flatten._proof_1_1",
+    "kind": "theorem",
+    "depth": 13,
+    "in_statement": false,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 6,
+    "name": "List.Sublist",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 7,
+    "name": "_private.Mathlib.Data.List.Flatten.0.List.Sublist.flatten._proof_1_3",
+    "kind": "theorem",
+    "depth": 14,
+    "in_statement": false,
+    "role": "explicit-arg"
+   }
+  ]
+ },
+ {
+  "id": "proof_098",
+  "theorem": "List.zip_eq_zip_take_min",
+  "band": "11-25",
+  "theorem_depth": 21,
+  "artifact": 173203,
+  "def_fraction": 1.0,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "List.zip_eq_zip_take_min._f",
+    "kind": "def",
+    "depth": 20,
+    "in_statement": false,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 2,
+    "name": "Nat",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 3,
+    "name": "Prod",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 4,
+    "name": "Min.min",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 5,
+    "name": "List.brecOn",
+    "kind": "def",
+    "depth": 5,
+    "in_statement": true,
+    "role": "applied"
+   },
+   {
+    "n": 6,
+    "name": "List.length",
+    "kind": "def",
+    "depth": 9,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 7,
+    "name": "List",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 8,
+    "name": "Eq",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 9,
+    "name": "List.take",
+    "kind": "def",
+    "depth": 6,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 10,
+    "name": "List.zip",
+    "kind": "def",
+    "depth": 7,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 11,
+    "name": "instMinNat",
+    "kind": "def",
+    "depth": 16,
+    "in_statement": true,
+    "role": "instance-slot"
+   }
+  ]
+ },
+ {
+  "id": "proof_135",
+  "theorem": "CategoryTheory.Functor.whiskerRight_id",
+  "band": "26-50",
+  "theorem_depth": 27,
+  "artifact": 147489,
+  "def_fraction": 0.833,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.Functor.category",
+    "kind": "def",
+    "depth": 19,
+    "in_statement": true,
+    "role": "instance-slot"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Functor.map_id",
+    "kind": "theorem",
+    "depth": 2,
+    "in_statement": true,
+    "role": "applied"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Functor.whiskeringRight",
+    "kind": "def",
+    "depth": 26,
+    "in_statement": false,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Functor.obj",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Category",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Functor",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true,
+    "role": "implicit-arg"
+   }
+  ]
+ },
+ {
+  "id": "proof_147",
+  "theorem": "Matrix.cons_head_tail",
+  "band": "26-50",
+  "theorem_depth": 31,
+  "artifact": 328421,
+  "def_fraction": 0.5,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Nat",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 2,
+    "name": "Nat.succ",
+    "kind": "constructor",
+    "depth": 1,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 3,
+    "name": "Fin.cons_self_tail",
+    "kind": "theorem",
+    "depth": 30,
+    "in_statement": false,
+    "role": "applied"
+   },
+   {
+    "n": 4,
+    "name": "Fin",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true,
+    "role": "type-annotation"
+   }
+  ]
+ },
+ {
+  "id": "proof_034",
+  "theorem": "Fin.xor_comm",
+  "band": "51-75",
+  "theorem_depth": 51,
+  "artifact": 405124,
+  "def_fraction": 0.667,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "_private.Mathlib.Data.Fin.Init.0.Fin.xor_comm._proof_1_1",
+    "kind": "theorem",
+    "depth": 50,
+    "in_statement": false,
+    "role": "applied"
+   },
+   {
+    "n": 2,
+    "name": "Fin",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 3,
+    "name": "Nat",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   }
+  ]
+ },
+ {
+  "id": "proof_076",
+  "theorem": "Graph.isClosedSubgraph_bot_iff",
+  "band": "51-75",
+  "theorem_depth": 68,
+  "artifact": 445433,
+  "def_fraction": 0.588,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Eq.rec",
+    "kind": "recursor",
+    "depth": 2,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 2,
+    "name": "PartialOrder.toPreorder",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true,
+    "role": "instance-slot"
+   },
+   {
+    "n": 3,
+    "name": "Bot.bot",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 4,
+    "name": "Graph.IsClosedSubgraph",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 5,
+    "name": "Graph.instPartialOrder",
+    "kind": "def",
+    "depth": 58,
+    "in_statement": true,
+    "role": "instance-slot"
+   },
+   {
+    "n": 6,
+    "name": "Iff.intro",
+    "kind": "constructor",
+    "depth": 1,
+    "in_statement": true,
+    "role": "applied"
+   },
+   {
+    "n": 7,
+    "name": "le_bot_iff",
+    "kind": "theorem",
+    "depth": 8,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 8,
+    "name": "Graph",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 9,
+    "name": "Eq",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 10,
+    "name": "LE.le",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 11,
+    "name": "Graph.IsInducedSubgraph.le",
+    "kind": "theorem",
+    "depth": 2,
+    "in_statement": false,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 12,
+    "name": "Graph.IsClosedSubgraph.rfl",
+    "kind": "theorem",
+    "depth": 67,
+    "in_statement": false,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 13,
+    "name": "Preorder.toLE",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 14,
+    "name": "Graph.IsClosedSubgraph.isInducedSubgraph",
+    "kind": "theorem",
+    "depth": 2,
+    "in_statement": false,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 15,
+    "name": "Iff.mp",
+    "kind": "theorem",
+    "depth": 1,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 16,
+    "name": "Graph.instOrderBot",
+    "kind": "def",
+    "depth": 59,
+    "in_statement": true,
+    "role": "instance-slot"
+   },
+   {
+    "n": 17,
+    "name": "OrderBot.toBot",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true,
+    "role": "instance-slot"
+   }
+  ]
+ },
+ {
+  "id": "proof_005",
+  "theorem": "Rat.ofNat_add_den",
+  "band": "76-125",
+  "theorem_depth": 77,
+  "artifact": 636376,
+  "def_fraction": 0.667,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Rat.natCast_add_den",
+    "kind": "theorem",
+    "depth": 76,
+    "in_statement": false,
+    "role": "applied"
+   },
+   {
+    "n": 2,
+    "name": "Rat",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 3,
+    "name": "Nat",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   }
+  ]
+ },
+ {
+  "id": "proof_041",
+  "theorem": "String.Pos.copy_ofCopy",
+  "band": "76-125",
+  "theorem_depth": 98,
+  "artifact": 323713,
+  "def_fraction": 0.556,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "String.Pos",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 2,
+    "name": "String.Pos.offset_ofCopy",
+    "kind": "theorem",
+    "depth": 97,
+    "in_statement": false,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 3,
+    "name": "eq_self",
+    "kind": "theorem",
+    "depth": 4,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 4,
+    "name": "String.Slice.copy",
+    "kind": "def",
+    "depth": 89,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 5,
+    "name": "String.Pos.Raw",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 6,
+    "name": "String.Pos.ofCopy",
+    "kind": "def",
+    "depth": 96,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 7,
+    "name": "of_eq_true",
+    "kind": "theorem",
+    "depth": 4,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 8,
+    "name": "String.Slice",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 9,
+    "name": "Eq",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 10,
+    "name": "True",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 11,
+    "name": "String.Slice.Pos.copy",
+    "kind": "def",
+    "depth": 96,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 12,
+    "name": "String.Slice.Pos.offset_copy",
+    "kind": "theorem",
+    "depth": 97,
+    "in_statement": false,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 13,
+    "name": "Eq.trans",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 14,
+    "name": "congrFun'",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 15,
+    "name": "congrArg",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 16,
+    "name": "String.Slice.Pos.offset",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 17,
+    "name": "String.Pos.offset",
+    "kind": "def",
+    "depth": 2,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 18,
+    "name": "String.Pos.ext",
+    "kind": "theorem",
+    "depth": 6,
+    "in_statement": false,
+    "role": "applied"
+   }
+  ]
+ },
+ {
+  "id": "proof_048",
+  "theorem": "MeasureTheory.MeasurePreserving.map_of_comp",
+  "band": "126+",
+  "theorem_depth": 194,
+  "artifact": 489875,
+  "def_fraction": 0.6,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "MeasureTheory.MeasurePreserving.map_eq",
+    "kind": "theorem",
+    "depth": 10,
+    "in_statement": false,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 2,
+    "name": "MeasureTheory.MeasurePreserving.mk",
+    "kind": "constructor",
+    "depth": 189,
+    "in_statement": false,
+    "role": "applied"
+   },
+   {
+    "n": 3,
+    "name": "MeasureTheory.Measure.map",
+    "kind": "def",
+    "depth": 188,
+    "in_statement": true,
+    "role": "implicit-arg"
+   },
+   {
+    "n": 4,
+    "name": "Function.comp",
+    "kind": "def",
+    "depth": 0,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 5,
+    "name": "Eq.trans",
+    "kind": "theorem",
+    "depth": 3,
+    "in_statement": true,
+    "role": "explicit-arg"
+   },
+   {
+    "n": 6,
+    "name": "MeasurableSpace",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 7,
+    "name": "MeasureTheory.MeasurePreserving",
+    "kind": "inductive",
+    "depth": 9,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 8,
+    "name": "MeasureTheory.Measure",
+    "kind": "inductive",
+    "depth": 1,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 9,
+    "name": "Measurable",
+    "kind": "def",
+    "depth": 5,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 10,
+    "name": "MeasureTheory.Measure.map_map",
+    "kind": "theorem",
+    "depth": 193,
+    "in_statement": false,
+    "role": "explicit-arg"
+   }
+  ]
+ },
+ {
+  "id": "proof_138",
+  "theorem": "CStarAlgebra.inr_mem_Icc_iff_nnnorm_le",
+  "band": "126+",
+  "theorem_depth": 311,
+  "artifact": 508109,
+  "def_fraction": 0.875,
+  "candidates": [
+   {
+    "n": 1,
+    "name": "NonUnitalRing.toNonUnitalSemiring",
+    "kind": "def",
+    "depth": 5,
+    "in_statement": true,
+    "role": "instance-slot"
+   },
+   {
+    "n": 2,
+    "name": "NonUnitalCStarAlgebra",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 3,
+    "name": "PartialOrder",
+    "kind": "inductive",
+    "depth": 0,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 4,
+    "name": "StarOrderedRing",
+    "kind": "inductive",
+    "depth": 2,
+    "in_statement": true,
+    "role": "type-annotation"
+   },
+   {
+    "n": 5,
+    "name": "NonUnitalNormedRing.toNonUnitalRing",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true,
+    "role": "instance-slot"
+   },
+   {
+    "n": 6,
+    "name": "NonUnitalCStarAlgebra.toStarRing",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true,
+    "role": "instance-slot"
+   },
+   {
+    "n": 7,
+    "name": "NonUnitalCStarAlgebra.toNonUnitalNormedRing",
+    "kind": "def",
+    "depth": 1,
+    "in_statement": true,
+    "role": "instance-slot"
+   },
+   {
+    "n": 8,
+    "name": "CStarAlgebra.inr_mem_Icc_iff_norm_le",
+    "kind": "theorem",
+    "depth": 310,
+    "in_statement": false,
+    "role": "applied"
+   }
+  ]
+ }
+]
