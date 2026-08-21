@@ -43,14 +43,29 @@ structure Occ where
   nesting : Nat
   nargs   : Nat
 
+/-- Is `c` a generated (no source range) declaration owned by `target` —
+i.e. `target` is a name-prefix of `c` after stripping private mangling?
+Elaborator provenance, the stated exception to the no-names principle. -/
+def ownedByTarget (env : Environment) (target c : Name) : CoreM Bool := do
+  if (← Lean.findDeclarationRanges? c).isSome then
+    return false
+  let cu := (privateToUserName? c).getD c
+  return target.isPrefixOf cu && cu != target && env.contains c
+
 /-- Walk `value`, emitting the typed occurrence forest. Explicit stack;
-dedup on (subterm pointer, role, parent constant). -/
+dedup on (subterm pointer, role, parent constant). When `target` is given,
+generated helpers OWNED BY the target are inlined transparently: no
+occurrence is recorded for the helper itself; its own value is walked at
+the citation's context (its contents ARE the proof's internal steps). -/
 def occurrenceForest (cache : IO.Ref (Std.HashMap Name (Array BinderInfo × Nat)))
-    (value : Expr) (budget : Nat := 2000000) :
+    (value : Expr) (target : Name := .anonymous) (budget : Nat := 2000000) :
     MetaM (Array Occ × Bool) := do
+  let env ← getEnv
   let mut occs : Array Occ := #[]
   let mut truncated := false
   let mut seen : Std.HashSet (USize × UInt8 × Name) := {}
+  let mut expanded : Std.HashSet Name := {}
+  let mut ownCache : Std.HashMap Name Bool := {}
   let mut pinned : Array Expr := #[]
   -- stack entry: (expr, role, parent occ id, parent const, argIdx, nesting)
   let mut stack : Array (Expr × UInt8 × Int × Name × Int × Nat) :=
@@ -74,19 +89,41 @@ def occurrenceForest (cache : IO.Ref (Std.HashMap Name (Array BinderInfo × Nat)
       let args := e.getAppArgs
       match fn with
       | .const c _ =>
-        let id : Int := occs.size
-        occs := occs.push
-          { const := c, parent := parent, role := role, argIdx := argIdx,
-            nesting := nesting, nargs := args.size }
-        let bis ← exactBinders cache c args.size
-        for i in [0:args.size] do
-          let argRole : UInt8 := match bis[i]? with
-            | some .default => 2
-            | some .implicit => 3
-            | some .instImplicit => 4
-            | some .strictImplicit => 5
-            | none => 7
-          stack := stack.push (args[i]!, argRole, id, c, i, nesting + 1)
+        let owned ← match ownCache.get? c with
+          | some b => pure b
+          | none => do
+            let b ← if target == .anonymous then pure false
+                    else (ownedByTarget env target c : CoreM Bool)
+            ownCache := ownCache.insert c b
+            pure b
+        if owned && !expanded.contains c then
+          expanded := expanded.insert c
+          -- inline: walk the helper's own value at this context; its
+          -- applied args are walked as unresolved-role children of the
+          -- current parent (no beta reduction — occurrence statistics)
+          match env.find? c |>.bind (·.value? (allowOpaque := true)) with
+          | some hv =>
+            stack := stack.push (hv, role, parent, pconst, argIdx, nesting)
+            for a in args do
+              stack := stack.push (a, 7, parent, pconst, -1, nesting)
+          | none =>
+            occs := occs.push
+              { const := c, parent := parent, role := role, argIdx := argIdx,
+                nesting := nesting, nargs := args.size }
+        else
+          let id : Int := occs.size
+          occs := occs.push
+            { const := c, parent := parent, role := role, argIdx := argIdx,
+              nesting := nesting, nargs := args.size }
+          let bis ← exactBinders cache c args.size
+          for i in [0:args.size] do
+            let argRole : UInt8 := match bis[i]? with
+              | some .default => 2
+              | some .implicit => 3
+              | some .instImplicit => 4
+              | some .strictImplicit => 5
+              | none => 7
+            stack := stack.push (args[i]!, argRole, id, c, i, nesting + 1)
       | _ =>
         stack := stack.push (fn, role, parent, pconst, argIdx, nesting)
         for a in args do
@@ -104,14 +141,31 @@ def occurrenceForest (cache : IO.Ref (Std.HashMap Name (Array BinderInfo × Nat)
     | .mdata _ b => stack := stack.push (b, role, parent, pconst, argIdx, nesting)
     | .proj _ _ b => stack := stack.push (b, role, parent, pconst, -1, nesting)
     | .const c _ =>
-      occs := occs.push
-        { const := c, parent := parent, role := role, argIdx := argIdx,
-          nesting := nesting, nargs := 0 }
+      let owned ← match ownCache.get? c with
+        | some b => pure b
+        | none => do
+          let b ← if target == .anonymous then pure false
+                  else (ownedByTarget env target c : CoreM Bool)
+          ownCache := ownCache.insert c b
+          pure b
+      if owned && !expanded.contains c then
+        expanded := expanded.insert c
+        match env.find? c |>.bind (·.value? (allowOpaque := true)) with
+        | some hv =>
+          stack := stack.push (hv, role, parent, pconst, argIdx, nesting)
+        | none =>
+          occs := occs.push
+            { const := c, parent := parent, role := role, argIdx := argIdx,
+              nesting := nesting, nargs := 0 }
+      else
+        occs := occs.push
+          { const := c, parent := parent, role := role, argIdx := argIdx,
+            nesting := nesting, nargs := 0 }
     | _ => pure ()
   return (occs, truncated)
 
 def hierDump (envProbe : System.FilePath) (namesPath : System.FilePath)
-    (out : System.FilePath) : IO Unit := do
+    (out : System.FilePath) (expand : Bool := false) : IO Unit := do
   let pf ← Mathrecord.processFile envProbe mathlibOptions
   let env := pf.env
   IO.println s!"env loaded: {env.header.moduleNames.size} modules"
@@ -134,7 +188,8 @@ def hierDump (envProbe : System.FilePath) (namesPath : System.FilePath)
           | some v => do
             let res ← try
               let r ← Core.withCurrHeartbeats <|
-                ((occurrenceForest exactCache v).run' : CoreM _)
+                ((occurrenceForest exactCache v
+                    (if expand then n else .anonymous)).run' : CoreM _)
               pure (some r)
             catch _ => pure none
             match res with
