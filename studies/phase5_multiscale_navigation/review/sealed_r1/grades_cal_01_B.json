@@ -1,0 +1,146 @@
+{
+  "proof_0001": {
+    "moves": "Claims that the isLeft test evaluates to true on the inl constructor. There is no mathematical step: isLeft is defined by cases on the constructor, so on inl it reduces to true and the proof is definitional computation closed by rfl.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0002": {
+    "moves": "Exhibits two provably distinct propositions to witness that Prop has at least two elements: take True and False and cite the fact that they are not equal. The whole content is producing witnesses plus one distinctness lemma.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 3, "5": 2, "6": 2, "7": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0003": {
+    "moves": "Unfolds the preorder characterization of strict order, a < b iff (a <= b and not b <= a), and takes the left conjunct. One rewrite of a definition plus a projection.",
+    "grades": {"1": 4, "2": 2, "3": 0, "4": 0, "5": 1, "6": 2, "7": 1, "8": 1, "9": 1, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0004": {
+    "moves": "States that the explicit app field of an applicative transformation agrees with the coercion to a function. The coercion is set up to be that field, so this is pure definitional unfolding closed by rfl; there is no mathematical step.",
+    "grades": {"1": 2, "2": 1, "3": 3, "4": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0005": {
+    "moves": "A derivation kills 1. This is literally one of the structure's defining axioms, so the proof is a single projection onto the primed field. No argument beyond naming the axiom.",
+    "grades": {"1": 2, "2": 1, "3": 4, "4": 0, "5": 1, "6": 1, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0006": {
+    "moves": "Forward direction: case split on the decidability of the first conjunct. If it holds, then the second must fail (else pair them up and contradict the hypothesis), giving the right disjunct; otherwise give the left disjunct. Backward direction is an existing constructive lemma. The case split is the real content and is exactly what decidability buys.",
+    "grades": {"1": 1, "2": 4, "3": 2, "4": 2, "5": 2, "6": 2, "7": 3, "8": 4, "9": 1, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0007": {
+    "moves": "A Hoare triple is a one-field structure wrapping the weakest-precondition entailment, so the stated iff is structure eta: destructure to get the field one way, rebuild with the constructor the other way. No mathematics at all beyond unwrapping a definition.",
+    "grades": {"1": 3, "2": 2, "3": 1, "4": 2, "5": 3, "6": 0, "7": 1, "8": 0, "9": 1, "10": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0008": {
+    "moves": "The sup on a dependent function type is defined pointwise by its Max instance, so the stated equation with the pointwise lambda holds by definitional unfolding of that instance; rfl.",
+    "grades": {"1": 2, "2": 3, "3": 2, "4": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0009": {
+    "moves": "The zero of the pointwise-set structure is the singleton containing zero, so membership of zero in it reduces to the equation 0 = 0 and closes by reflexivity. Nothing here but a definitional check.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 1},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0010": {
+    "moves": "The neighbourhood-map functor of the identity morphism is the identity functor, so its opposite acts trivially on an opposite open neighbourhood. The proof is discharged by simp, whose visible residue is just the true-proposition bookkeeping of closing a reflexive equality.",
+    "grades": {"1": 0, "2": 2, "3": 0, "4": 1, "5": 1, "6": 1, "7": 0},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0011": {
+    "moves": "Lifting a monadic action along the reflexive (identity) lift instance changes nothing, so its weakest precondition is the same term. Definitional unfolding of the identity MonadLiftT instance; rfl.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 3, "6": 2, "7": 3, "8": 2, "9": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0012": {
+    "moves": "An element injected into the unitization sits in the second coordinate of the underlying pair with zero first coordinate, so its first component is zero by definition of the injection; rfl.",
+    "grades": {"1": 3, "2": 1, "3": 2, "4": 2, "5": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0013": {
+    "moves": "To show the top object-property contains a zero object, exhibit the ambient zero object as witness, note it really is a zero object, and observe that the top property holds of everything trivially. The move is producing a witness and checking the two trivial components.",
+    "grades": {"1": 2, "2": 3, "3": 2, "4": 3, "5": 0, "6": 4, "7": 3, "8": 2, "9": 1, "10": 0, "11": 1, "12": 1, "13": 2, "14": 1, "15": 0, "16": 1, "17": 0, "18": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0014": {
+    "moves": "The lexicographic order on a sum type restricted to two left injections is just the order on the left summand. This is a direct restatement of the already-proved characterization of the lex relation on two inl's.",
+    "grades": {"1": 1, "2": 4, "3": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0015": {
+    "moves": "The functorial action of the upper-set-topology construction on the identity order homomorphism is, after peeling the type synonym, the identity function, and the continuity proof is irrelevant. So it equals the identity continuous map definitionally; rfl.",
+    "grades": {"1": 2, "2": 3, "3": 3, "4": 2, "5": 1, "6": 2, "7": 0},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0016": {
+    "moves": "The complement sub-action is constructed with carrier literally the set-theoretic complement of the carrier, so the stated equation is the definition of that Compl instance; rfl. No mathematical step, and none of the algebraic typeclass hypotheses do any work.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 0, "6": 2, "7": 0, "8": 1, "9": 2, "10": 2, "11": 3, "12": 1, "13": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0017": {
+    "moves": "Forward: substitute along the equality of the two dependent pairs, then supply the reflexivity witness for the index equality and prove the tuple equality pointwise by function extensionality, destructuring each Fin index so that casting along rfl reduces away. Backward: hand the data to the existing lemma that a matching index equality plus a composed-with-cast equality forces the sigma pairs to agree.",
+    "grades": {"1": 2, "2": 3, "3": 2, "4": 1, "5": 3, "6": 0, "7": 2, "8": 1, "9": 1, "10": 2, "11": 2, "12": 2, "13": 1, "14": 1, "15": 3, "16": 1, "17": 4, "18": 1, "19": 2, "20": 3},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0018": {
+    "moves": "Monotonicity of a map lifted to the bottom-adjoined order follows from monotonicity of the original map. The proof is one direction of an already-proved iff characterization; it is an alias, so the only step is applying mpr.",
+    "grades": {"1": 2, "2": 4, "3": 0, "4": 1, "5": 2, "6": 2, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0019": {
+    "moves": "Rewrite with the general formula for dropping a suffix from a list with one element appended, which produces an if-then-else on whether the predicate holds of that element, then discharge the if in the negative branch using the hypothesis. Two rewrites; everything else is rewrite plumbing.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 1, "5": 1, "6": 1, "7": 4, "8": 1, "9": 0, "10": 1, "11": 2, "12": 2, "13": 1, "14": 1, "15": 1, "16": 1, "17": 0, "18": 4, "19": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0020": {
+    "moves": "The inclusion relation-embedding between two subrelations is built with the set inclusion map as its toFun field, so its coercion to a function is that map by definition; rfl. Pure unfolding of the FunLike coercion.",
+    "grades": {"1": 1, "2": 1, "3": 3, "4": 1, "5": 0, "6": 2, "7": 1, "8": 3, "9": 0, "10": 2, "11": 1, "12": 2},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0021": {
+    "moves": "A renamed restatement: the byte index of a raw position advanced by a string equals whatever the previously proved lemma of the old name says. The entire proof is citing that lemma.",
+    "grades": {"1": 4, "2": 1, "3": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0022": {
+    "moves": "This is the side condition generated when equipping the coercion of an additive submonoid with addition: given two elements of the subtype, their sum lies in the submonoid. Apply the submonoid's closure-under-addition property to the two membership proofs carried by the subtype elements.",
+    "grades": {"1": 1, "2": 4, "3": 2, "4": 1, "5": 3, "6": 0, "7": 0, "8": 2, "9": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0023": {
+    "moves": "Forward: a set that is both an antichain and has a least element is the singleton of that element. Use the criterion that a set is a singleton iff the point belongs and every member equals it; membership comes from the least-element hypothesis, and for any other member the least-element hypothesis gives a comparability which the antichain condition upgrades to equality. Backward: substitute the set with the singleton and cite that singletons are antichains and that the point is least in its own singleton.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 4, "5": 2, "6": 2, "7": 1, "8": 3, "9": 4, "10": 2, "11": 1, "12": 1, "13": 2, "14": 2, "15": 1, "16": 2, "17": 0, "18": 0, "19": 2, "20": 0, "21": 3, "22": 4, "23": 2, "24": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0024": {
+    "moves": "Casting an if-then-else of integers into another type distributes over the branches. This is the special case of the general fact that any function commutes with if-then-else, applied directly.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 2, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}

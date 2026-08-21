@@ -1,0 +1,146 @@
+{
+  "proof_0001": {
+    "moves": "Pure definitional unfolding: Sum.isLeft is defined by a match on the constructor, and on inl that match reduces to the literal true, so both sides are the same term and reflexivity closes it. There is no mathematical step at all.",
+    "grades": {"1": 1, "2": 2, "3": 2, "4": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0002": {
+    "moves": "Exhibit two propositions, True and False, as witnesses for the nontriviality of Prop, and cite the fact that they are distinct. The whole content is witness exhibition plus the one nontrivial fact True <> False.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 3, "5": 2, "6": 2, "7": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0003": {
+    "moves": "Unfold the preorder's defining relation between < and <= (a < b iff a <= b and not b <= a) in the forward direction, then take the left conjunct. One rewrite and one projection.",
+    "grades": {"1": 4, "2": 2, "3": 0, "4": 0, "5": 1, "6": 2, "7": 1, "8": 1, "9": 1, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0004": {
+    "moves": "The coercion of an ApplicativeTransformation to a function is by construction its app field, so the two sides are the same term; reflexivity. Pure definitional identification of a coercion with a structure field.",
+    "grades": {"1": 2, "2": 1, "3": 3, "4": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0005": {
+    "moves": "Restate the primed structure axiom of Derivation (that the underlying linear map kills 1) in applied form. A one-step invocation of the field; no argument.",
+    "grades": {"1": 2, "2": 1, "3": 4, "4": 0, "5": 1, "6": 1, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0006": {
+    "moves": "Forward direction: case-split on the decidability of a. If a holds, pair it with an assumed b to contradict the hypothesis, giving not b (right disjunct); otherwise not a is immediate (left disjunct). Backward direction is the already-known implication from not a or not b to not (a and b). The case split is the real content.",
+    "grades": {"1": 1, "2": 4, "3": 2, "4": 2, "5": 2, "6": 2, "7": 2, "8": 4, "9": 1, "10": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0007": {
+    "moves": "Structure eta for a one-field structure: a Triple is by definition the single entailment pre <= wp x post epost, so one direction destructures the constructor to project out the field and the other applies the constructor. No mathematics beyond unfolding the definition.",
+    "grades": {"1": 3, "2": 2, "3": 1, "4": 1, "5": 3, "6": 0, "7": 1, "8": 0, "9": 3, "10": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0008": {
+    "moves": "The Max instance on a Pi type is defined pointwise, so the sup of two functions is literally the function taking pointwise sups; reflexivity. The content is the instance's definition, nothing else.",
+    "grades": {"1": 2, "2": 3, "3": 2, "4": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0009": {
+    "moves": "The pointwise zero of a set is the singleton {0}, and membership in a singleton unfolds to an equation, which reflexivity closes. Pure unfolding; the substantive fact (that 0 : Set a is {0}) never appears as a cited step.",
+    "grades": {"1": 2, "2": 0, "3": 1, "4": 1},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0010": {
+    "moves": "Closed by simp: the functor induced on open neighbourhoods by the identity map sends an object to itself definitionally, so after simp the goal is a reflexivity, in the opposite category. What survives in the trace is simp residue, not a mathematical step; the actual content (OpenNhds.map applied to the identity) is not among the candidates.",
+    "grades": {"1": 1, "2": 2, "3": 0, "4": 1, "5": 2, "6": 1, "7": 2},
+    "missing_key": true,
+    "confidence": "medium"
+  },
+  "proof_0011": {
+    "moves": "The reflexive MonadLiftT instance makes monadLift the identity on m, so the lifted computation is the same term as the original and both weakest preconditions are literally identical; reflexivity. The content is that the self-lift is definitionally a no-op.",
+    "grades": {"1": 1, "2": 1, "3": 1, "4": 0, "5": 3, "6": 2, "7": 3, "8": 2, "9": 1},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0012": {
+    "moves": "The right injection into the unitization is by definition the pair (0, a), so its first component is 0; reflexivity after unfolding inr through the underlying product.",
+    "grades": {"1": 3, "2": 1, "3": 2, "4": 2, "5": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0013": {
+    "moves": "Exhibit the zero object of the category as the required witness, verify it is a zero object by citing isZero_zero, and observe that the top object-property holds of everything so its component is trivially True. Witness exhibition plus one cited fact plus a triviality.",
+    "grades": {"1": 2, "2": 3, "3": 2, "4": 3, "5": 0, "6": 4, "7": 3, "8": 2, "9": 1, "10": 0, "11": 1, "12": 1, "13": 2, "14": 1, "15": 0, "16": 1, "17": 0, "18": 2},
+    "missing_key": false,
+    "confidence": "medium"
+  },
+  "proof_0014": {
+    "moves": "Direct restatement of the characterization of the lexicographic order on two left injections; the proof is a single citation with no intervening step.",
+    "grades": {"1": 1, "2": 4, "3": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0015": {
+    "moves": "The functorial map on the upper-set topology is given by the underlying function of the order hom, so the image of the identity order hom is literally the identity continuous map; both sides are the same term and reflexivity closes it.",
+    "grades": {"1": 2, "2": 3, "3": 3, "4": 2, "5": 1, "6": 2, "7": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0016": {
+    "moves": "The Compl instance on SubMulAction was defined by taking the set-theoretic complement of the carrier, so the stated equation is that definition read back; reflexivity. Everything else in the trace is the algebraic typeclass tower needed to state it.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 0, "6": 2, "7": 0, "8": 1, "9": 2, "10": 3, "11": 4, "12": 1, "13": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0017": {
+    "moves": "Forward: substitute along the equality of the two sigma pairs so they become identical, take rfl as the index-equality witness, then use function extensionality and destruct the Fin argument so that casting along rfl reduces away. Backward: hand the index equality and the pointwise equation to the existing construction lemma. The forward half is genuine hypothesis manipulation (substitute, then eta-expand a Fin), not a citable theorem.",
+    "grades": {"1": 2, "2": 3, "3": 2, "4": 1, "5": 2, "6": 0, "7": 1, "8": 1, "9": 1, "10": 2, "11": 2, "12": 2, "13": 1, "14": 1, "15": 3, "16": 1, "17": 4, "18": 1, "19": 2, "20": 3},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0018": {
+    "moves": "An alias: take the reverse direction of the iff characterizing when WithBot.map of a function is monotone. One projection out of a biconditional, no argument of its own.",
+    "grades": {"1": 2, "2": 4, "3": 1, "4": 1, "5": 2, "6": 3, "7": 2},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0019": {
+    "moves": "Rewrite with the general concat lemma, turning the left side into an if-then-else on whether the predicate holds at the appended element, then discharge that conditional in the negative branch using the hypothesis. Two rewrites; the rest of the trace is rewriting machinery.",
+    "grades": {"1": 1, "2": 0, "3": 0, "4": 1, "5": 1, "6": 1, "7": 4, "8": 1, "9": 0, "10": 1, "11": 2, "12": 2, "13": 1, "14": 1, "15": 1, "16": 1, "17": 0, "18": 4, "19": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0020": {
+    "moves": "The relation embedding built from a set inclusion has the inclusion map as its toFun field, and the FunLike coercion is definitionally that field, so the equation holds by reflexivity. Pure coercion unfolding; the right-hand side (Set.inclusion) is not among the candidates.",
+    "grades": {"1": 2, "2": 1, "3": 4, "4": 1, "5": 0, "6": 2, "7": 1, "8": 3, "9": 0, "10": 2, "11": 1, "12": 3},
+    "missing_key": true,
+    "confidence": "high"
+  },
+  "proof_0021": {
+    "moves": "A deprecated alias: the statement is verbatim the renamed lemma, so the proof is a single citation with no mathematical step whatsoever.",
+    "grades": {"1": 4, "2": 1, "3": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0022": {
+    "moves": "The side condition for the addition operation on a submonoid's subtype: pull the membership proof out of each subtype element and feed both to the submonoid's closure-under-addition property. One cited closure fact plus extracting the carried witnesses.",
+    "grades": {"1": 2, "2": 4, "3": 1, "4": 1, "5": 3, "6": 0, "7": 0, "8": 2, "9": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0023": {
+    "moves": "Forward: to show the set is the singleton {a}, use the unique-member criterion; a lies in s because it is least, and for any other b in s the least property gives a <= b, which in an antichain forces b = a. Backward: substitute s = {a} and cite that a singleton is an antichain and that its element is its least element.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 4, "5": 2, "6": 2, "7": 1, "8": 3, "9": 4, "10": 2, "11": 1, "12": 2, "13": 2, "14": 2, "15": 1, "16": 2, "17": 0, "18": 0, "19": 3, "20": 0, "21": 3, "22": 4, "23": 2, "24": 1},
+    "missing_key": false,
+    "confidence": "high"
+  },
+  "proof_0024": {
+    "moves": "A function commutes with if-then-else: instantiate the general apply_ite lemma with the integer cast as the function. A single specialization, no argument of its own.",
+    "grades": {"1": 1, "2": 1, "3": 4, "4": 3, "5": 1},
+    "missing_key": false,
+    "confidence": "high"
+  }
+}
