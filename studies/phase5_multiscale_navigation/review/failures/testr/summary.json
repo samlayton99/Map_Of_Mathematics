@@ -1,0 +1,23 @@
+{
+ "M1_role_x_frozen_rarity": {
+  "precision_failures": 39,
+  "recall_failures": 14,
+  "gradient_reversals": 1,
+  "n_proofs": 360,
+  "append_safe": true
+ },
+ "M2_role_x_depth": {
+  "precision_failures": 62,
+  "recall_failures": 25,
+  "gradient_reversals": 0,
+  "n_proofs": 360,
+  "append_safe": true
+ },
+ "M3_promoted_composite": {
+  "precision_failures": 33,
+  "recall_failures": 5,
+  "gradient_reversals": 1,
+  "n_proofs": 360,
+  "append_safe": false
+ }
+}
