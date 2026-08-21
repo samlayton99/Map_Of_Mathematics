@@ -641,16 +641,40 @@ function renderSummary(m) {
   }
 }
 
+/* Adapter for sweep.json.
+   It stores `series["<universe>|<ranking>"].points` as an ARRAY of level
+   objects that already carry their own id/label/kind/param, and reports
+   ViewKeyRetained / ViewPrecisionGraded as {value,k,n} objects rather than
+   bare numbers. Everything downstream wants a level-id -> flat-metrics map,
+   so normalise once here instead of special-casing at each call site. */
 function sweepLevels() {
   const sw = D.sweep;
   if (!sw) return [];
   return (sw.levels || []).slice();
 }
+function unwrap(v) {
+  return (v && typeof v === "object" && "value" in v) ? v.value : v;
+}
 function sweepCurve(rk) {
   const sw = D.sweep;
   if (!sw) return null;
-  const key = S.universe + "|" + rk;
-  return (sw.curves || {})[key] || null;
+  const s = (sw.series || {})[S.universe + "|" + rk];
+  if (!s || !s.points) return null;
+  const out = {};
+  for (const p of s.points) {
+    const flat = {};
+    for (const k of Object.keys(p)) flat[k] = unwrap(p[k]);
+    flat._raw = p;
+    out[p.id] = flat;
+  }
+  if (s.cluster) {
+    const cl = sweepLevels().find(l => l.kind === "cluster");
+    const flat = {};
+    for (const k of Object.keys(s.cluster)) flat[k] = unwrap(s.cluster[k]);
+    flat._raw = s.cluster;
+    out[cl ? cl.id : "cluster"] = flat;
+  }
+  return out;
 }
 function currentSweepX() {
   // where the current policy sits on the size-fraction axis

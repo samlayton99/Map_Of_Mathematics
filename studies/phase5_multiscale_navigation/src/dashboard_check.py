@@ -217,15 +217,22 @@ def main():
         lv = sw.get("levels") or []
         if not any(l.get("kind") == "cluster" for l in lv):
             warn("sweep has no cluster_split level")
+        unwrap = lambda v: v["value"] if isinstance(v, dict) and "value" in v else v
         for u in universes:
             for nm in names:
                 key = f"{u}|{nm}"
-                cur = (sw.get("curves") or {}).get(key)
-                if not cur:
-                    bad(f"sweep.json: no curve for {key}")
+                ser = (sw.get("series") or {}).get(key)
+                if not ser or not ser.get("points"):
+                    bad(f"sweep.json: no series for {key}")
                     continue
-                pts = [(v.get("ViewSizeFraction"), v.get("ViewKeyRetained"))
-                       for lid, v in cur.items() if v]
+                if not ser.get("cluster"):
+                    warn(f"sweep {key}: no cluster_split point")
+                # Only the percentile ladder is a NESTED family, so only it
+                # must be monotone. top_k and cluster admit different sets at
+                # a similar aggregate size, and comparing across families
+                # produces false alarms rather than findings.
+                pts = [(v.get("ViewSizeFraction"), unwrap(v.get("ViewKeyRetained")))
+                       for v in ser["points"] if v.get("kind") == "percentile"]
                 pts = [(a, b) for a, b in pts if a is not None]
                 if len(pts) < 5:
                     warn(f"sweep {key}: only {len(pts)} usable points")

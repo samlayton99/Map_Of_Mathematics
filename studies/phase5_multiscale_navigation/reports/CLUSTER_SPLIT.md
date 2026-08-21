@@ -156,3 +156,10 @@ print(res["table"])
 ```
 
 Runtime ~3 min over all 10 rankings.
+
+Correctness of the vectorised implementation was checked against an
+exact-arithmetic per-proof reference (`fractions.Fraction`, first-maximiser
+semantics, ties accepted as a set) on ~8000 randomly generated proof-method
+cases with both continuous and heavily tied keys, plus the corpus-wide
+invariants: bool dtype, `1 <= admitted <= proof size` for all 747,605 proofs,
+and the admitted set of every proof being exactly the rank prefix `0..m-1`.

@@ -55,10 +55,12 @@ UNIVERSES = ["U1", "U1D", "U0"]
 PCTS = [100, 75, 50, 40, 30, 25, 20, 15, 10, 7, 5, 3, 2, 1]
 TOPKS = [8, 4, 2, 1]
 
-# Levels that also get a connected-components pass. Chosen to span the whole
-# ladder; the rest report null graph metrics.
-GRAPH_PCTS = {100, 50, 25, 10, 5, 2, 1}
-GRAPH_TOPKS = {8, 4, 2, 1}
+# Levels that also get a connected-components pass. The full grid measured at
+# 8.7 min with a 12-of-19 subset, so every level gets one; narrow these sets if
+# the grid ever grows past the ~25 min budget. Levels outside them report null
+# graph numbers and carry has_graph_metrics = false, never an interpolation.
+GRAPH_PCTS = set(PCTS)
+GRAPH_TOPKS = set(TOPKS)
 
 
 def clean(o):
@@ -202,10 +204,12 @@ def main():
                                 if l["has_graph_metrics"]],
         "graph_metric_note":
             "Connected components over up to 18M edges is the expensive part "
-            "of this grid, so it is computed on the declared subset above. "
-            "Points outside the subset report GraphComponents = "
-            "GraphGiantFraction = null and carry has_graph_metrics = false. "
-            "No graph number in this file is interpolated.",
+            "of this grid, so the levels that get one are declared above "
+            "rather than assumed. In this build that is EVERY level. If the "
+            "grid ever outgrows its runtime budget the subset shrinks, and "
+            "points outside it report GraphComponents = GraphGiantFraction = "
+            "null and carry has_graph_metrics = false. No graph number in "
+            "this file is ever interpolated.",
         "cluster_split": {
             "method": CS.DEFAULT_METHOD,
             "doc": CS.split_sizes.__doc__.strip().splitlines()[0],
