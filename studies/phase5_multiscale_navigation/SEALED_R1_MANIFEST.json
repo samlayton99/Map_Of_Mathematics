@@ -1,0 +1,57 @@
+{
+ "round": "SEALED-R1",
+ "preregistration_sha256": "8765ace1fa4aa115cbbb64d6e5b6192853e198b036700d5541bbd57a63fec10a",
+ "seed": 20260824,
+ "n_proofs": 552,
+ "splits": {
+  "CAL": 72,
+  "TEST-R": 360,
+  "TEST-C": 120
+ },
+ "by_band": {
+  "0-10": 89,
+  "11-25": 97,
+  "26-50": 85,
+  "51-75": 92,
+  "76-125": 101,
+  "126+": 88
+ },
+ "by_stratum": {
+  "S1_generated": 20,
+  "S2_instance_heavy": 20,
+  "S3_type_position": 20,
+  "S4_single_user": 20,
+  "S5_deep_glue": 20,
+  "S6_shallow_glue": 20
+ },
+ "n_candidates": 7531,
+ "mean_candidates_per_proof": 13.643115942028986,
+ "batches": [
+  "cal_01",
+  "cal_02",
+  "cal_03",
+  "testc_19",
+  "testc_20",
+  "testc_21",
+  "testc_22",
+  "testc_23",
+  "testr_04",
+  "testr_05",
+  "testr_06",
+  "testr_07",
+  "testr_08",
+  "testr_09",
+  "testr_10",
+  "testr_11",
+  "testr_12",
+  "testr_13",
+  "testr_14",
+  "testr_15",
+  "testr_16",
+  "testr_17",
+  "testr_18"
+ ],
+ "n_rating_tasks": 69,
+ "excluded_development_proofs": 180,
+ "briefs_sha256": "305d4301ac1398cf4c3cd3fae6b3d61dcd8b7f5a6f81296c3f869600b4afbb64"
+}
