@@ -1,0 +1,2329 @@
+{
+ "ordering_under_test": "laneD = (dem, lane, -depth_value, first_occurrence)",
+ "note_on_stmt_key": "laneD_stmt is NOT used: variants of a group share their statement, so the stmt key is constant within a group and cannot separate variants.",
+ "n_declarations": 49,
+ "extractor_bad_rows": [],
+ "aggregate": {
+  "harmless": {
+   "n_pairs": 38,
+   "mean_top4_jaccard": 0.6187,
+   "mean_top4_containment": 0.739,
+   "top1_agreement": 0.8684,
+   "top1_mutual_in_top4": 0.8684,
+   "mean_spearman": 0.9938,
+   "n_spearman": 32,
+   "mean_raw_cite_jaccard": 0.5752,
+   "mean_top4_jaccard_tierkey": 0.6266
+  },
+  "control": {
+   "n_pairs": 8,
+   "mean_top4_jaccard": 0.1012,
+   "mean_top4_containment": 0.1562,
+   "top1_agreement": 0.0,
+   "top1_mutual_in_top4": 0.0,
+   "mean_spearman": 0.982,
+   "n_spearman": 5,
+   "mean_raw_cite_jaccard": 0.0598,
+   "mean_top4_jaccard_tierkey": 0.1012
+  }
+ },
+ "by_family": {
+  "F1_simp_vs_rewrite": {
+   "n_pairs": 7,
+   "mean_top4_jaccard": 0.2918,
+   "mean_top4_containment": 0.4405,
+   "top1_agreement": 0.8571,
+   "top1_mutual_in_top4": 0.8571,
+   "mean_spearman": 0.991,
+   "n_spearman": 6,
+   "mean_raw_cite_jaccard": 0.2841,
+   "mean_top4_jaccard_tierkey": 0.2918,
+   "pass_vs_control": true
+  },
+  "F2_inline_vs_have": {
+   "n_pairs": 11,
+   "mean_top4_jaccard": 0.7182,
+   "mean_top4_containment": 0.803,
+   "top1_agreement": 1.0,
+   "top1_mutual_in_top4": 1.0,
+   "mean_spearman": 0.989,
+   "n_spearman": 10,
+   "mean_raw_cite_jaccard": 0.7626,
+   "mean_top4_jaccard_tierkey": 0.7455,
+   "pass_vs_control": true
+  },
+  "F3_tactic_vs_term": {
+   "n_pairs": 8,
+   "mean_top4_jaccard": 0.7667,
+   "mean_top4_containment": 0.8438,
+   "top1_agreement": 0.875,
+   "top1_mutual_in_top4": 0.875,
+   "mean_spearman": 0.9974,
+   "n_spearman": 7,
+   "mean_raw_cite_jaccard": 0.6906,
+   "mean_top4_jaccard_tierkey": 0.7667,
+   "pass_vs_control": true
+  },
+  "F4_explicit_vs_inferred": {
+   "n_pairs": 3,
+   "mean_top4_jaccard": 0.8333,
+   "mean_top4_containment": 1.0,
+   "top1_agreement": 1.0,
+   "top1_mutual_in_top4": 1.0,
+   "mean_spearman": 1.0,
+   "n_spearman": 3,
+   "mean_raw_cite_jaccard": 0.6667,
+   "mean_top4_jaccard_tierkey": 0.8333,
+   "pass_vs_control": true
+  },
+  "F5_wrapper": {
+   "n_pairs": 3,
+   "mean_top4_jaccard": 0.6111,
+   "mean_top4_containment": 0.8889,
+   "top1_agreement": 0.0,
+   "top1_mutual_in_top4": 0.0,
+   "mean_spearman": null,
+   "n_spearman": 0,
+   "mean_raw_cite_jaccard": 0.3333,
+   "mean_top4_jaccard_tierkey": 0.6111,
+   "pass_vs_control": true
+  },
+  "F6_fold_vs_unfold": {
+   "n_pairs": 4,
+   "mean_top4_jaccard": 0.275,
+   "mean_top4_containment": 0.4375,
+   "top1_agreement": 1.0,
+   "top1_mutual_in_top4": 1.0,
+   "mean_spearman": 0.9958,
+   "n_spearman": 4,
+   "mean_raw_cite_jaccard": 0.2386,
+   "mean_top4_jaccard_tierkey": 0.275,
+   "pass_vs_control": true
+  },
+  "F8_witness_syntax": {
+   "n_pairs": 2,
+   "mean_top4_jaccard": 1.0,
+   "mean_top4_containment": 1.0,
+   "top1_agreement": 1.0,
+   "top1_mutual_in_top4": 1.0,
+   "mean_spearman": 1.0,
+   "n_spearman": 2,
+   "mean_raw_cite_jaccard": 1.0,
+   "mean_top4_jaccard_tierkey": 1.0,
+   "pass_vs_control": true
+  }
+ },
+ "worst_harmless_pairs": [
+  {
+   "group": "g8",
+   "a": "mm_g8_v1",
+   "b": "mm_g8_v2",
+   "family": "F1_simp_vs_rewrite",
+   "kind": "harmless",
+   "statement": "Continuous fun x : \u211d => x ^ 2 + 3 * x",
+   "top1_agree": false,
+   "top4_containment": 0.0,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.0,
+   "top1_a": "Continuous.fun_pow",
+   "top1_b": "continuous_pow",
+   "top4_a": [
+    "Continuous.fun_pow",
+    "Continuous.prodMk",
+    "Continuous.comp'",
+    "Continuous.const_mul"
+   ],
+   "top4_b": [
+    "continuous_pow",
+    "Continuous.add",
+    "Continuous.mul",
+    "continuous_const"
+   ],
+   "spearman": 0.997,
+   "n_cand_a": 36,
+   "n_cand_b": 28,
+   "raw_cite_jaccard": 0.1176,
+   "top4_jaccard_tierkey": 0.0
+  },
+  {
+   "group": "g3",
+   "a": "mm_g3_v1",
+   "b": "mm_g3_v2",
+   "family": "F1_simp_vs_rewrite",
+   "kind": "harmless",
+   "statement": "min a (min b c) = min (min a b) c",
+   "top1_agree": true,
+   "top4_containment": 0.25,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1429,
+   "top1_a": "min_assoc",
+   "top1_b": "min_assoc",
+   "top4_a": [
+    "min_assoc",
+    "Eq.symm",
+    "Min.min",
+    "LinearOrder"
+   ],
+   "top4_b": [
+    "min_assoc",
+    "Eq.mpr",
+    "congrArg",
+    "Eq.refl"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 5,
+   "n_cand_b": 13,
+   "raw_cite_jaccard": 0.25,
+   "top4_jaccard_tierkey": 0.1429
+  },
+  {
+   "group": "g6",
+   "a": "mm_g6_v1",
+   "b": "mm_g6_v3",
+   "family": "F6_fold_vs_unfold",
+   "kind": "harmless",
+   "statement": "mm_dbl n = n + n",
+   "top1_agree": true,
+   "top4_containment": 0.3333,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1667,
+   "top1_a": "two_mul",
+   "top1_b": "two_mul",
+   "top4_a": [
+    "two_mul",
+    "mm_dbl",
+    "HAdd.hAdd",
+    "HMul.hMul"
+   ],
+   "top4_b": [
+    "two_mul",
+    "Nat",
+    "Nat.instNonAssocSemiring"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 25,
+   "n_cand_b": 3,
+   "raw_cite_jaccard": 0.0909,
+   "top4_jaccard_tierkey": 0.1667
+  },
+  {
+   "group": "g6",
+   "a": "mm_g6_v2",
+   "b": "mm_g6_v3",
+   "family": "F6_fold_vs_unfold",
+   "kind": "harmless",
+   "statement": "mm_dbl n = n + n",
+   "top1_agree": true,
+   "top4_containment": 0.3333,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1667,
+   "top1_a": "two_mul",
+   "top1_b": "two_mul",
+   "top4_a": [
+    "two_mul",
+    "mm_dbl",
+    "HAdd.hAdd",
+    "id"
+   ],
+   "top4_b": [
+    "two_mul",
+    "Nat",
+    "Nat.instNonAssocSemiring"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 9,
+   "n_cand_b": 3,
+   "raw_cite_jaccard": 0.25,
+   "top4_jaccard_tierkey": 0.1667
+  },
+  {
+   "group": "g6",
+   "a": "mm_g6_v3",
+   "b": "mm_g6_v4",
+   "family": "F6_fold_vs_unfold",
+   "kind": "harmless",
+   "statement": "mm_dbl n = n + n",
+   "top1_agree": true,
+   "top4_containment": 0.3333,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1667,
+   "top1_a": "two_mul",
+   "top1_b": "two_mul",
+   "top4_a": [
+    "two_mul",
+    "Nat",
+    "Nat.instNonAssocSemiring"
+   ],
+   "top4_b": [
+    "two_mul",
+    "mm_dbl",
+    "HAdd.hAdd",
+    "id"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 3,
+   "n_cand_b": 9,
+   "raw_cite_jaccard": 0.25,
+   "top4_jaccard_tierkey": 0.1667
+  },
+  {
+   "group": "g11",
+   "a": "mm_g11_v1",
+   "b": "mm_g11_v2",
+   "family": "F1_simp_vs_rewrite",
+   "kind": "harmless",
+   "statement": "(a + b) ^ 2 = a ^ 2 + 2 * a * b + b ^ 2",
+   "top1_agree": true,
+   "top4_containment": 0.3333,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1667,
+   "top1_a": "add_sq",
+   "top1_b": "add_sq",
+   "top4_a": [
+    "add_sq",
+    "Real",
+    "Real.instCommSemiring"
+   ],
+   "top4_b": [
+    "add_sq",
+    "HAdd.hAdd",
+    "HPow.hPow",
+    "OfNat.ofNat"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 3,
+   "n_cand_b": 33,
+   "raw_cite_jaccard": 0.1,
+   "top4_jaccard_tierkey": 0.1667
+  },
+  {
+   "group": "g11",
+   "a": "mm_g11_v1",
+   "b": "mm_g11_v3",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "(a + b) ^ 2 = a ^ 2 + 2 * a * b + b ^ 2",
+   "top1_agree": true,
+   "top4_containment": 0.3333,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1667,
+   "top1_a": "add_sq",
+   "top1_b": "add_sq",
+   "top4_a": [
+    "add_sq",
+    "Real",
+    "Real.instCommSemiring"
+   ],
+   "top4_b": [
+    "add_sq",
+    "HAdd.hAdd",
+    "HPow.hPow",
+    "OfNat.ofNat"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 3,
+   "n_cand_b": 20,
+   "raw_cite_jaccard": 0.2,
+   "top4_jaccard_tierkey": 0.1667
+  },
+  {
+   "group": "g9",
+   "a": "mm_g9_v1",
+   "b": "mm_g9_v2",
+   "family": "F1_simp_vs_rewrite",
+   "kind": "harmless",
+   "statement": "(Finset.range n).card = n",
+   "top1_agree": true,
+   "top4_containment": 0.5,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.2,
+   "top1_a": "Finset.card_range",
+   "top1_b": "Finset.card_range",
+   "top4_a": [
+    "Finset.card_range",
+    "Finset.range",
+    "Finset.card",
+    "of_eq_true"
+   ],
+   "top4_b": [
+    "Finset.card_range",
+    "Nat"
+   ],
+   "spearman": null,
+   "n_cand_a": 11,
+   "n_cand_b": 2,
+   "raw_cite_jaccard": 0.1111,
+   "top4_jaccard_tierkey": 0.2
+  }
+ ],
+ "most_invariant_control_pairs": [
+  {
+   "group": "g10",
+   "a": "mm_g10_v1",
+   "b": "mm_g10_v4",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "s \u2286 t \u2192 t \u2286 u \u2192 s \u2286 u",
+   "top1_agree": false,
+   "top4_containment": 0.5,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.3333,
+   "top1_a": "LE.le.trans",
+   "top1_b": "Membership.mem",
+   "top4_a": [
+    "LE.le.trans",
+    "LE.le",
+    "Set",
+    "Set.instCompleteAtomicBooleanAlgebra"
+   ],
+   "top4_b": [
+    "Membership.mem",
+    "LE.le",
+    "Set",
+    "Set.instLE"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 10,
+   "n_cand_b": 5,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.3333
+  },
+  {
+   "group": "g10",
+   "a": "mm_g10_v2",
+   "b": "mm_g10_v3",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "s \u2286 t \u2192 t \u2286 u \u2192 s \u2286 u",
+   "top1_agree": false,
+   "top4_containment": 0.5,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.3333,
+   "top1_a": "subset_trans",
+   "top1_b": "Membership.mem",
+   "top4_a": [
+    "subset_trans",
+    "LE.le",
+    "Set",
+    "Set.instCompleteAtomicBooleanAlgebra"
+   ],
+   "top4_b": [
+    "Membership.mem",
+    "LE.le",
+    "Set",
+    "Set.instLE"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 10,
+   "n_cand_b": 5,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.3333
+  },
+  {
+   "group": "c2",
+   "a": "mm_c2_v1",
+   "b": "mm_c2_v2",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "\u2211 _i \u2208 Finset.range n, (1 : \u2115) = n",
+   "top1_agree": false,
+   "top4_containment": 0.25,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.1429,
+   "top1_a": "Finset.sum_const",
+   "top1_b": "Finset.sum_range_succ",
+   "top4_a": [
+    "Finset.sum_const",
+    "Finset.card_range",
+    "mul_one",
+    "OfNat.ofNat"
+   ],
+   "top4_b": [
+    "Finset.sum_range_succ",
+    "Finset.sum_const",
+    "Nat.recAux",
+    "HAdd.hAdd"
+   ],
+   "spearman": 0.9098,
+   "n_cand_a": 23,
+   "n_cand_b": 38,
+   "raw_cite_jaccard": 0.4783,
+   "top4_jaccard_tierkey": 0.1429
+  },
+  {
+   "group": "g2",
+   "a": "mm_g2_v1",
+   "b": "mm_g2_v4",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "s \u2229 t \u2286 s \u222a t",
+   "top1_agree": false,
+   "top4_containment": 0.0,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.0,
+   "top1_a": "Or.inl",
+   "top1_b": "Set.subset_union_left",
+   "top4_a": [
+    "Or.inl",
+    "And.left",
+    "Inter.inter",
+    "Membership.mem"
+   ],
+   "top4_b": [
+    "Set.subset_union_left",
+    "Set.inter_subset_left",
+    "LE.le.trans",
+    "Union.union"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 7,
+   "n_cand_b": 14,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.0
+  },
+  {
+   "group": "g2",
+   "a": "mm_g2_v3",
+   "b": "mm_g2_v4",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "s \u2229 t \u2286 s \u222a t",
+   "top1_agree": false,
+   "top4_containment": 0.0,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.0,
+   "top1_a": "Or.inl",
+   "top1_b": "Set.subset_union_left",
+   "top4_a": [
+    "Or.inl",
+    "And.left",
+    "Inter.inter",
+    "Membership.mem"
+   ],
+   "top4_b": [
+    "Set.subset_union_left",
+    "Set.inter_subset_left",
+    "LE.le.trans",
+    "Union.union"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 7,
+   "n_cand_b": 14,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.0
+  }
+ ],
+ "pairs": [
+  {
+   "group": "g1",
+   "a": "mm_g1_v1",
+   "b": "mm_g1_v2",
+   "family": "F1_simp_vs_rewrite",
+   "kind": "harmless",
+   "statement": "(l ++ l).length = 2 * l.length",
+   "top1_agree": true,
+   "top4_containment": 0.75,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.6,
+   "top1_a": "two_mul",
+   "top1_b": "two_mul",
+   "top4_a": [
+    "two_mul",
+    "Nat.add_left_cancel_iff",
+    "List.length_append",
+    "HAdd.hAdd"
+   ],
+   "top4_b": [
+    "two_mul",
+    "List.length_append",
+    "HAdd.hAdd",
+    "HMul.hMul"
+   ],
+   "spearman": 0.9932,
+   "n_cand_a": 28,
+   "n_cand_b": 30,
+   "raw_cite_jaccard": 0.5556,
+   "top4_jaccard_tierkey": 0.6
+  },
+  {
+   "group": "g1",
+   "a": "mm_g1_v2",
+   "b": "mm_g1_v3",
+   "family": "F3_tactic_vs_term",
+   "kind": "harmless",
+   "statement": "(l ++ l).length = 2 * l.length",
+   "top1_agree": true,
+   "top4_containment": 0.5,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.3333,
+   "top1_a": "two_mul",
+   "top1_b": "two_mul",
+   "top4_a": [
+    "two_mul",
+    "List.length_append",
+    "HAdd.hAdd",
+    "HMul.hMul"
+   ],
+   "top4_b": [
+    "two_mul",
+    "List.length_append",
+    "OfNat.ofNat",
+    "HAppend.hAppend"
+   ],
+   "spearman": 0.9815,
+   "n_cand_a": 30,
+   "n_cand_b": 27,
+   "raw_cite_jaccard": 0.4,
+   "top4_jaccard_tierkey": 0.3333
+  },
+  {
+   "group": "g1",
+   "a": "mm_g1_v3",
+   "b": "mm_g1_v4",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "(l ++ l).length = 2 * l.length",
+   "top1_agree": true,
+   "top4_containment": 0.5,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.3333,
+   "top1_a": "two_mul",
+   "top1_b": "two_mul",
+   "top4_a": [
+    "two_mul",
+    "List.length_append",
+    "OfNat.ofNat",
+    "HAppend.hAppend"
+   ],
+   "top4_b": [
+    "two_mul",
+    "List.length_append",
+    "HAdd.hAdd",
+    "HMul.hMul"
+   ],
+   "spearman": 0.9158,
+   "n_cand_a": 27,
+   "n_cand_b": 20,
+   "raw_cite_jaccard": 0.8,
+   "top4_jaccard_tierkey": 0.3333
+  },
+  {
+   "group": "g1",
+   "a": "mm_g1_v1",
+   "b": "mm_g1_v3",
+   "family": "F1_simp_vs_rewrite",
+   "kind": "harmless",
+   "statement": "(l ++ l).length = 2 * l.length",
+   "top1_agree": true,
+   "top4_containment": 0.5,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.3333,
+   "top1_a": "two_mul",
+   "top1_b": "two_mul",
+   "top4_a": [
+    "two_mul",
+    "Nat.add_left_cancel_iff",
+    "List.length_append",
+    "HAdd.hAdd"
+   ],
+   "top4_b": [
+    "two_mul",
+    "List.length_append",
+    "OfNat.ofNat",
+    "HAppend.hAppend"
+   ],
+   "spearman": 0.9558,
+   "n_cand_a": 28,
+   "n_cand_b": 27,
+   "raw_cite_jaccard": 0.4375,
+   "top4_jaccard_tierkey": 0.3333
+  },
+  {
+   "group": "g2",
+   "a": "mm_g2_v1",
+   "b": "mm_g2_v2",
+   "family": "F3_tactic_vs_term",
+   "kind": "harmless",
+   "statement": "s \u2229 t \u2286 s \u222a t",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "Or.inl",
+   "top1_b": "Or.inl",
+   "top4_a": [
+    "Or.inl",
+    "And.left",
+    "Inter.inter",
+    "Membership.mem"
+   ],
+   "top4_b": [
+    "Or.inl",
+    "And.left",
+    "Inter.inter",
+    "Membership.mem"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 7,
+   "n_cand_b": 7,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g2",
+   "a": "mm_g2_v2",
+   "b": "mm_g2_v3",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "s \u2229 t \u2286 s \u222a t",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "Or.inl",
+   "top1_b": "Or.inl",
+   "top4_a": [
+    "Or.inl",
+    "And.left",
+    "Inter.inter",
+    "Membership.mem"
+   ],
+   "top4_b": [
+    "Or.inl",
+    "And.left",
+    "Inter.inter",
+    "Membership.mem"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 7,
+   "n_cand_b": 7,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g2",
+   "a": "mm_g2_v1",
+   "b": "mm_g2_v4",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "s \u2229 t \u2286 s \u222a t",
+   "top1_agree": false,
+   "top4_containment": 0.0,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.0,
+   "top1_a": "Or.inl",
+   "top1_b": "Set.subset_union_left",
+   "top4_a": [
+    "Or.inl",
+    "And.left",
+    "Inter.inter",
+    "Membership.mem"
+   ],
+   "top4_b": [
+    "Set.subset_union_left",
+    "Set.inter_subset_left",
+    "LE.le.trans",
+    "Union.union"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 7,
+   "n_cand_b": 14,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.0
+  },
+  {
+   "group": "g2",
+   "a": "mm_g2_v3",
+   "b": "mm_g2_v4",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "s \u2229 t \u2286 s \u222a t",
+   "top1_agree": false,
+   "top4_containment": 0.0,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.0,
+   "top1_a": "Or.inl",
+   "top1_b": "Set.subset_union_left",
+   "top4_a": [
+    "Or.inl",
+    "And.left",
+    "Inter.inter",
+    "Membership.mem"
+   ],
+   "top4_b": [
+    "Set.subset_union_left",
+    "Set.inter_subset_left",
+    "LE.le.trans",
+    "Union.union"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 7,
+   "n_cand_b": 14,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.0
+  },
+  {
+   "group": "g3",
+   "a": "mm_g3_v1",
+   "b": "mm_g3_v2",
+   "family": "F1_simp_vs_rewrite",
+   "kind": "harmless",
+   "statement": "min a (min b c) = min (min a b) c",
+   "top1_agree": true,
+   "top4_containment": 0.25,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1429,
+   "top1_a": "min_assoc",
+   "top1_b": "min_assoc",
+   "top4_a": [
+    "min_assoc",
+    "Eq.symm",
+    "Min.min",
+    "LinearOrder"
+   ],
+   "top4_b": [
+    "min_assoc",
+    "Eq.mpr",
+    "congrArg",
+    "Eq.refl"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 5,
+   "n_cand_b": 13,
+   "raw_cite_jaccard": 0.25,
+   "top4_jaccard_tierkey": 0.1429
+  },
+  {
+   "group": "g3",
+   "a": "mm_g3_v1",
+   "b": "mm_g3_v3",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "min a (min b c) = min (min a b) c",
+   "top1_agree": true,
+   "top4_containment": 0.75,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.6,
+   "top1_a": "min_assoc",
+   "top1_b": "min_assoc",
+   "top4_a": [
+    "min_assoc",
+    "Eq.symm",
+    "Min.min",
+    "LinearOrder"
+   ],
+   "top4_b": [
+    "min_assoc",
+    "Eq.symm",
+    "Min.min",
+    "Eq"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 5,
+   "n_cand_b": 9,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 0.6
+  },
+  {
+   "group": "g3",
+   "a": "mm_g3_v1",
+   "b": "mm_g3_v4",
+   "family": "F3_tactic_vs_term",
+   "kind": "harmless",
+   "statement": "min a (min b c) = min (min a b) c",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "min_assoc",
+   "top1_b": "min_assoc",
+   "top4_a": [
+    "min_assoc",
+    "Eq.symm",
+    "Min.min",
+    "LinearOrder"
+   ],
+   "top4_b": [
+    "min_assoc",
+    "Eq.symm",
+    "Min.min",
+    "LinearOrder"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 5,
+   "n_cand_b": 8,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g3",
+   "a": "mm_g3_v3",
+   "b": "mm_g3_v4",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "min a (min b c) = min (min a b) c",
+   "top1_agree": true,
+   "top4_containment": 0.75,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.6,
+   "top1_a": "min_assoc",
+   "top1_b": "min_assoc",
+   "top4_a": [
+    "min_assoc",
+    "Eq.symm",
+    "Min.min",
+    "Eq"
+   ],
+   "top4_b": [
+    "min_assoc",
+    "Eq.symm",
+    "Min.min",
+    "LinearOrder"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 9,
+   "n_cand_b": 8,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 0.6
+  },
+  {
+   "group": "g4",
+   "a": "mm_g4_v1",
+   "b": "mm_g4_v2",
+   "family": "F4_explicit_vs_inferred",
+   "kind": "harmless",
+   "statement": "x \u2264 max x y",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.75,
+   "top1_a": "le_max_left",
+   "top1_b": "le_max_left",
+   "top4_a": [
+    "le_max_left",
+    "Real",
+    "Real.linearOrder"
+   ],
+   "top4_b": [
+    "le_max_left",
+    "Real",
+    "LinearOrder",
+    "Real.linearOrder"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 3,
+   "n_cand_b": 5,
+   "raw_cite_jaccard": 0.5,
+   "top4_jaccard_tierkey": 0.75
+  },
+  {
+   "group": "g4",
+   "a": "mm_g4_v1",
+   "b": "mm_g4_v3",
+   "family": "F4_explicit_vs_inferred",
+   "kind": "harmless",
+   "statement": "x \u2264 max x y",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "le_max_left",
+   "top1_b": "le_max_left",
+   "top4_a": [
+    "le_max_left",
+    "Real",
+    "Real.linearOrder"
+   ],
+   "top4_b": [
+    "le_max_left",
+    "Real",
+    "Real.linearOrder"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 3,
+   "n_cand_b": 3,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g4",
+   "a": "mm_g4_v1",
+   "b": "mm_g4_v4",
+   "family": "F3_tactic_vs_term",
+   "kind": "harmless",
+   "statement": "x \u2264 max x y",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "le_max_left",
+   "top1_b": "le_max_left",
+   "top4_a": [
+    "le_max_left",
+    "Real",
+    "Real.linearOrder"
+   ],
+   "top4_b": [
+    "le_max_left",
+    "Real",
+    "Real.linearOrder"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 3,
+   "n_cand_b": 3,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g4",
+   "a": "mm_g4_v2",
+   "b": "mm_g4_v3",
+   "family": "F4_explicit_vs_inferred",
+   "kind": "harmless",
+   "statement": "x \u2264 max x y",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.75,
+   "top1_a": "le_max_left",
+   "top1_b": "le_max_left",
+   "top4_a": [
+    "le_max_left",
+    "Real",
+    "LinearOrder",
+    "Real.linearOrder"
+   ],
+   "top4_b": [
+    "le_max_left",
+    "Real",
+    "Real.linearOrder"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 5,
+   "n_cand_b": 3,
+   "raw_cite_jaccard": 0.5,
+   "top4_jaccard_tierkey": 0.75
+  },
+  {
+   "group": "g5",
+   "a": "mm_g5_v1",
+   "b": "mm_g5_v2",
+   "family": "F5_wrapper",
+   "kind": "harmless",
+   "statement": "l.reverse.reverse = l",
+   "top1_agree": false,
+   "top4_containment": 0.6667,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.5,
+   "top1_a": "List.reverse_reverse",
+   "top1_b": "mm_g5_helper",
+   "top4_a": [
+    "List.reverse_reverse",
+    "Nat",
+    "List"
+   ],
+   "top4_b": [
+    "mm_g5_helper",
+    "Nat",
+    "List"
+   ],
+   "spearman": null,
+   "n_cand_a": 3,
+   "n_cand_b": 3,
+   "raw_cite_jaccard": 0.3333,
+   "top4_jaccard_tierkey": 0.5
+  },
+  {
+   "group": "g5",
+   "a": "mm_g5_v1",
+   "b": "mm_g5_v3",
+   "family": "F5_wrapper",
+   "kind": "harmless",
+   "statement": "l.reverse.reverse = l",
+   "top1_agree": false,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.6667,
+   "top1_a": "List.reverse_reverse",
+   "top1_b": "Nat",
+   "top4_a": [
+    "List.reverse_reverse",
+    "Nat",
+    "List"
+   ],
+   "top4_b": [
+    "Nat",
+    "List"
+   ],
+   "spearman": null,
+   "n_cand_a": 3,
+   "n_cand_b": 2,
+   "raw_cite_jaccard": 0.3333,
+   "top4_jaccard_tierkey": 0.6667
+  },
+  {
+   "group": "g5",
+   "a": "mm_g5_v2",
+   "b": "mm_g5_v3",
+   "family": "F5_wrapper",
+   "kind": "harmless",
+   "statement": "l.reverse.reverse = l",
+   "top1_agree": false,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.6667,
+   "top1_a": "mm_g5_helper",
+   "top1_b": "Nat",
+   "top4_a": [
+    "mm_g5_helper",
+    "Nat",
+    "List"
+   ],
+   "top4_b": [
+    "Nat",
+    "List"
+   ],
+   "spearman": null,
+   "n_cand_a": 3,
+   "n_cand_b": 2,
+   "raw_cite_jaccard": 0.3333,
+   "top4_jaccard_tierkey": 0.6667
+  },
+  {
+   "group": "g6",
+   "a": "mm_g6_v1",
+   "b": "mm_g6_v2",
+   "family": "F6_fold_vs_unfold",
+   "kind": "harmless",
+   "statement": "mm_dbl n = n + n",
+   "top1_agree": true,
+   "top4_containment": 0.75,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.6,
+   "top1_a": "two_mul",
+   "top1_b": "two_mul",
+   "top4_a": [
+    "two_mul",
+    "mm_dbl",
+    "HAdd.hAdd",
+    "HMul.hMul"
+   ],
+   "top4_b": [
+    "two_mul",
+    "mm_dbl",
+    "HAdd.hAdd",
+    "id"
+   ],
+   "spearman": 0.9833,
+   "n_cand_a": 25,
+   "n_cand_b": 9,
+   "raw_cite_jaccard": 0.3636,
+   "top4_jaccard_tierkey": 0.6
+  },
+  {
+   "group": "g6",
+   "a": "mm_g6_v1",
+   "b": "mm_g6_v3",
+   "family": "F6_fold_vs_unfold",
+   "kind": "harmless",
+   "statement": "mm_dbl n = n + n",
+   "top1_agree": true,
+   "top4_containment": 0.3333,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1667,
+   "top1_a": "two_mul",
+   "top1_b": "two_mul",
+   "top4_a": [
+    "two_mul",
+    "mm_dbl",
+    "HAdd.hAdd",
+    "HMul.hMul"
+   ],
+   "top4_b": [
+    "two_mul",
+    "Nat",
+    "Nat.instNonAssocSemiring"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 25,
+   "n_cand_b": 3,
+   "raw_cite_jaccard": 0.0909,
+   "top4_jaccard_tierkey": 0.1667
+  },
+  {
+   "group": "g6",
+   "a": "mm_g6_v2",
+   "b": "mm_g6_v3",
+   "family": "F6_fold_vs_unfold",
+   "kind": "harmless",
+   "statement": "mm_dbl n = n + n",
+   "top1_agree": true,
+   "top4_containment": 0.3333,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1667,
+   "top1_a": "two_mul",
+   "top1_b": "two_mul",
+   "top4_a": [
+    "two_mul",
+    "mm_dbl",
+    "HAdd.hAdd",
+    "id"
+   ],
+   "top4_b": [
+    "two_mul",
+    "Nat",
+    "Nat.instNonAssocSemiring"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 9,
+   "n_cand_b": 3,
+   "raw_cite_jaccard": 0.25,
+   "top4_jaccard_tierkey": 0.1667
+  },
+  {
+   "group": "g6",
+   "a": "mm_g6_v3",
+   "b": "mm_g6_v4",
+   "family": "F6_fold_vs_unfold",
+   "kind": "harmless",
+   "statement": "mm_dbl n = n + n",
+   "top1_agree": true,
+   "top4_containment": 0.3333,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1667,
+   "top1_a": "two_mul",
+   "top1_b": "two_mul",
+   "top4_a": [
+    "two_mul",
+    "Nat",
+    "Nat.instNonAssocSemiring"
+   ],
+   "top4_b": [
+    "two_mul",
+    "mm_dbl",
+    "HAdd.hAdd",
+    "id"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 3,
+   "n_cand_b": 9,
+   "raw_cite_jaccard": 0.25,
+   "top4_jaccard_tierkey": 0.1667
+  },
+  {
+   "group": "g7",
+   "a": "mm_g7_v1",
+   "b": "mm_g7_v2",
+   "family": "F8_witness_syntax",
+   "kind": "harmless",
+   "statement": "\u2203 n : \u2115, 3 < n \u2227 n < 5",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "Mathlib.Meta.NormNum.isNat_lt_true",
+   "top1_b": "Mathlib.Meta.NormNum.isNat_lt_true",
+   "top4_a": [
+    "Mathlib.Meta.NormNum.isNat_lt_true",
+    "Mathlib.Meta.NormNum.isNat_ofNat",
+    "OfNat.ofNat",
+    "Exists.intro"
+   ],
+   "top4_b": [
+    "Mathlib.Meta.NormNum.isNat_lt_true",
+    "Mathlib.Meta.NormNum.isNat_ofNat",
+    "OfNat.ofNat",
+    "Exists.intro"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 18,
+   "n_cand_b": 18,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g7",
+   "a": "mm_g7_v1",
+   "b": "mm_g7_v3",
+   "family": "F3_tactic_vs_term",
+   "kind": "harmless",
+   "statement": "\u2203 n : \u2115, 3 < n \u2227 n < 5",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "Mathlib.Meta.NormNum.isNat_lt_true",
+   "top1_b": "Mathlib.Meta.NormNum.isNat_lt_true",
+   "top4_a": [
+    "Mathlib.Meta.NormNum.isNat_lt_true",
+    "Mathlib.Meta.NormNum.isNat_ofNat",
+    "OfNat.ofNat",
+    "Exists.intro"
+   ],
+   "top4_b": [
+    "Mathlib.Meta.NormNum.isNat_lt_true",
+    "Mathlib.Meta.NormNum.isNat_ofNat",
+    "OfNat.ofNat",
+    "Exists.intro"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 18,
+   "n_cand_b": 18,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g7",
+   "a": "mm_g7_v1",
+   "b": "mm_g7_v4",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "\u2203 n : \u2115, 3 < n \u2227 n < 5",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "Mathlib.Meta.NormNum.isNat_lt_true",
+   "top1_b": "Mathlib.Meta.NormNum.isNat_lt_true",
+   "top4_a": [
+    "Mathlib.Meta.NormNum.isNat_lt_true",
+    "Mathlib.Meta.NormNum.isNat_ofNat",
+    "OfNat.ofNat",
+    "Exists.intro"
+   ],
+   "top4_b": [
+    "Mathlib.Meta.NormNum.isNat_lt_true",
+    "Mathlib.Meta.NormNum.isNat_ofNat",
+    "OfNat.ofNat",
+    "Exists.intro"
+   ],
+   "spearman": 0.9856,
+   "n_cand_a": 18,
+   "n_cand_b": 18,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g7",
+   "a": "mm_g7_v2",
+   "b": "mm_g7_v3",
+   "family": "F8_witness_syntax",
+   "kind": "harmless",
+   "statement": "\u2203 n : \u2115, 3 < n \u2227 n < 5",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "Mathlib.Meta.NormNum.isNat_lt_true",
+   "top1_b": "Mathlib.Meta.NormNum.isNat_lt_true",
+   "top4_a": [
+    "Mathlib.Meta.NormNum.isNat_lt_true",
+    "Mathlib.Meta.NormNum.isNat_ofNat",
+    "OfNat.ofNat",
+    "Exists.intro"
+   ],
+   "top4_b": [
+    "Mathlib.Meta.NormNum.isNat_lt_true",
+    "Mathlib.Meta.NormNum.isNat_ofNat",
+    "OfNat.ofNat",
+    "Exists.intro"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 18,
+   "n_cand_b": 18,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g8",
+   "a": "mm_g8_v1",
+   "b": "mm_g8_v2",
+   "family": "F1_simp_vs_rewrite",
+   "kind": "harmless",
+   "statement": "Continuous fun x : \u211d => x ^ 2 + 3 * x",
+   "top1_agree": false,
+   "top4_containment": 0.0,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.0,
+   "top1_a": "Continuous.fun_pow",
+   "top1_b": "continuous_pow",
+   "top4_a": [
+    "Continuous.fun_pow",
+    "Continuous.prodMk",
+    "Continuous.comp'",
+    "Continuous.const_mul"
+   ],
+   "top4_b": [
+    "continuous_pow",
+    "Continuous.add",
+    "Continuous.mul",
+    "continuous_const"
+   ],
+   "spearman": 0.997,
+   "n_cand_a": 36,
+   "n_cand_b": 28,
+   "raw_cite_jaccard": 0.1176,
+   "top4_jaccard_tierkey": 0.0
+  },
+  {
+   "group": "g8",
+   "a": "mm_g8_v2",
+   "b": "mm_g8_v3",
+   "family": "F3_tactic_vs_term",
+   "kind": "harmless",
+   "statement": "Continuous fun x : \u211d => x ^ 2 + 3 * x",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "continuous_pow",
+   "top1_b": "continuous_pow",
+   "top4_a": [
+    "continuous_pow",
+    "Continuous.add",
+    "Continuous.mul",
+    "continuous_const"
+   ],
+   "top4_b": [
+    "continuous_pow",
+    "Continuous.add",
+    "Continuous.mul",
+    "continuous_const"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 28,
+   "n_cand_b": 28,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g8",
+   "a": "mm_g8_v2",
+   "b": "mm_g8_v4",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "Continuous fun x : \u211d => x ^ 2 + 3 * x",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "continuous_pow",
+   "top1_b": "continuous_pow",
+   "top4_a": [
+    "continuous_pow",
+    "Continuous.add",
+    "Continuous.mul",
+    "continuous_const"
+   ],
+   "top4_b": [
+    "continuous_pow",
+    "Continuous.add",
+    "Continuous.mul",
+    "continuous_const"
+   ],
+   "spearman": 0.9967,
+   "n_cand_a": 28,
+   "n_cand_b": 29,
+   "raw_cite_jaccard": 0.7778,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g8",
+   "a": "mm_g8_v3",
+   "b": "mm_g8_v4",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "Continuous fun x : \u211d => x ^ 2 + 3 * x",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "continuous_pow",
+   "top1_b": "continuous_pow",
+   "top4_a": [
+    "continuous_pow",
+    "Continuous.add",
+    "Continuous.mul",
+    "continuous_const"
+   ],
+   "top4_b": [
+    "continuous_pow",
+    "Continuous.add",
+    "Continuous.mul",
+    "continuous_const"
+   ],
+   "spearman": 0.9967,
+   "n_cand_a": 28,
+   "n_cand_b": 29,
+   "raw_cite_jaccard": 0.7778,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g9",
+   "a": "mm_g9_v1",
+   "b": "mm_g9_v2",
+   "family": "F1_simp_vs_rewrite",
+   "kind": "harmless",
+   "statement": "(Finset.range n).card = n",
+   "top1_agree": true,
+   "top4_containment": 0.5,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.2,
+   "top1_a": "Finset.card_range",
+   "top1_b": "Finset.card_range",
+   "top4_a": [
+    "Finset.card_range",
+    "Finset.range",
+    "Finset.card",
+    "of_eq_true"
+   ],
+   "top4_b": [
+    "Finset.card_range",
+    "Nat"
+   ],
+   "spearman": null,
+   "n_cand_a": 11,
+   "n_cand_b": 2,
+   "raw_cite_jaccard": 0.1111,
+   "top4_jaccard_tierkey": 0.2
+  },
+  {
+   "group": "g9",
+   "a": "mm_g9_v2",
+   "b": "mm_g9_v3",
+   "family": "F3_tactic_vs_term",
+   "kind": "harmless",
+   "statement": "(Finset.range n).card = n",
+   "top1_agree": true,
+   "top4_containment": 0.5,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.2,
+   "top1_a": "Finset.card_range",
+   "top1_b": "Finset.card_range",
+   "top4_a": [
+    "Finset.card_range",
+    "Nat"
+   ],
+   "top4_b": [
+    "Finset.card_range",
+    "Finset.range",
+    "Finset.card",
+    "Eq.mpr"
+   ],
+   "spearman": null,
+   "n_cand_a": 2,
+   "n_cand_b": 9,
+   "raw_cite_jaccard": 0.125,
+   "top4_jaccard_tierkey": 0.2
+  },
+  {
+   "group": "g9",
+   "a": "mm_g9_v2",
+   "b": "mm_g9_v4",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "(Finset.range n).card = n",
+   "top1_agree": true,
+   "top4_containment": 0.5,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.2,
+   "top1_a": "Finset.card_range",
+   "top1_b": "Finset.card_range",
+   "top4_a": [
+    "Finset.card_range",
+    "Nat"
+   ],
+   "top4_b": [
+    "Finset.card_range",
+    "Finset.range",
+    "Finset.card",
+    "Eq"
+   ],
+   "spearman": null,
+   "n_cand_a": 2,
+   "n_cand_b": 5,
+   "raw_cite_jaccard": 0.3333,
+   "top4_jaccard_tierkey": 0.5
+  },
+  {
+   "group": "g9",
+   "a": "mm_g9_v1",
+   "b": "mm_g9_v3",
+   "family": "F1_simp_vs_rewrite",
+   "kind": "harmless",
+   "statement": "(Finset.range n).card = n",
+   "top1_agree": true,
+   "top4_containment": 0.75,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.6,
+   "top1_a": "Finset.card_range",
+   "top1_b": "Finset.card_range",
+   "top4_a": [
+    "Finset.card_range",
+    "Finset.range",
+    "Finset.card",
+    "of_eq_true"
+   ],
+   "top4_b": [
+    "Finset.card_range",
+    "Finset.range",
+    "Finset.card",
+    "Eq.mpr"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 11,
+   "n_cand_b": 9,
+   "raw_cite_jaccard": 0.4167,
+   "top4_jaccard_tierkey": 0.6
+  },
+  {
+   "group": "g10",
+   "a": "mm_g10_v1",
+   "b": "mm_g10_v2",
+   "family": "F3_tactic_vs_term",
+   "kind": "harmless",
+   "statement": "s \u2286 t \u2192 t \u2286 u \u2192 s \u2286 u",
+   "top1_agree": false,
+   "top4_containment": 0.75,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.6,
+   "top1_a": "LE.le.trans",
+   "top1_b": "subset_trans",
+   "top4_a": [
+    "LE.le.trans",
+    "LE.le",
+    "Set",
+    "Set.instCompleteAtomicBooleanAlgebra"
+   ],
+   "top4_b": [
+    "subset_trans",
+    "LE.le",
+    "Set",
+    "Set.instCompleteAtomicBooleanAlgebra"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 10,
+   "n_cand_b": 10,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.6
+  },
+  {
+   "group": "g10",
+   "a": "mm_g10_v3",
+   "b": "mm_g10_v4",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "s \u2286 t \u2192 t \u2286 u \u2192 s \u2286 u",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "Membership.mem",
+   "top1_b": "Membership.mem",
+   "top4_a": [
+    "Membership.mem",
+    "LE.le",
+    "Set",
+    "Set.instLE"
+   ],
+   "top4_b": [
+    "Membership.mem",
+    "LE.le",
+    "Set",
+    "Set.instLE"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 5,
+   "n_cand_b": 5,
+   "raw_cite_jaccard": 1.0,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g10",
+   "a": "mm_g10_v1",
+   "b": "mm_g10_v4",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "s \u2286 t \u2192 t \u2286 u \u2192 s \u2286 u",
+   "top1_agree": false,
+   "top4_containment": 0.5,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.3333,
+   "top1_a": "LE.le.trans",
+   "top1_b": "Membership.mem",
+   "top4_a": [
+    "LE.le.trans",
+    "LE.le",
+    "Set",
+    "Set.instCompleteAtomicBooleanAlgebra"
+   ],
+   "top4_b": [
+    "Membership.mem",
+    "LE.le",
+    "Set",
+    "Set.instLE"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 10,
+   "n_cand_b": 5,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.3333
+  },
+  {
+   "group": "g10",
+   "a": "mm_g10_v2",
+   "b": "mm_g10_v3",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "s \u2286 t \u2192 t \u2286 u \u2192 s \u2286 u",
+   "top1_agree": false,
+   "top4_containment": 0.5,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.3333,
+   "top1_a": "subset_trans",
+   "top1_b": "Membership.mem",
+   "top4_a": [
+    "subset_trans",
+    "LE.le",
+    "Set",
+    "Set.instCompleteAtomicBooleanAlgebra"
+   ],
+   "top4_b": [
+    "Membership.mem",
+    "LE.le",
+    "Set",
+    "Set.instLE"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 10,
+   "n_cand_b": 5,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.3333
+  },
+  {
+   "group": "g11",
+   "a": "mm_g11_v1",
+   "b": "mm_g11_v2",
+   "family": "F1_simp_vs_rewrite",
+   "kind": "harmless",
+   "statement": "(a + b) ^ 2 = a ^ 2 + 2 * a * b + b ^ 2",
+   "top1_agree": true,
+   "top4_containment": 0.3333,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1667,
+   "top1_a": "add_sq",
+   "top1_b": "add_sq",
+   "top4_a": [
+    "add_sq",
+    "Real",
+    "Real.instCommSemiring"
+   ],
+   "top4_b": [
+    "add_sq",
+    "HAdd.hAdd",
+    "HPow.hPow",
+    "OfNat.ofNat"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 3,
+   "n_cand_b": 33,
+   "raw_cite_jaccard": 0.1,
+   "top4_jaccard_tierkey": 0.1667
+  },
+  {
+   "group": "g11",
+   "a": "mm_g11_v1",
+   "b": "mm_g11_v3",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "(a + b) ^ 2 = a ^ 2 + 2 * a * b + b ^ 2",
+   "top1_agree": true,
+   "top4_containment": 0.3333,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 0.1667,
+   "top1_a": "add_sq",
+   "top1_b": "add_sq",
+   "top4_a": [
+    "add_sq",
+    "Real",
+    "Real.instCommSemiring"
+   ],
+   "top4_b": [
+    "add_sq",
+    "HAdd.hAdd",
+    "HPow.hPow",
+    "OfNat.ofNat"
+   ],
+   "spearman": 1.0,
+   "n_cand_a": 3,
+   "n_cand_b": 20,
+   "raw_cite_jaccard": 0.2,
+   "top4_jaccard_tierkey": 0.1667
+  },
+  {
+   "group": "g11",
+   "a": "mm_g11_v2",
+   "b": "mm_g11_v3",
+   "family": "F2_inline_vs_have",
+   "kind": "harmless",
+   "statement": "(a + b) ^ 2 = a ^ 2 + 2 * a * b + b ^ 2",
+   "top1_agree": true,
+   "top4_containment": 1.0,
+   "top1_in_other_top4": true,
+   "top4_jaccard": 1.0,
+   "top1_a": "add_sq",
+   "top1_b": "add_sq",
+   "top4_a": [
+    "add_sq",
+    "HAdd.hAdd",
+    "HPow.hPow",
+    "OfNat.ofNat"
+   ],
+   "top4_b": [
+    "add_sq",
+    "HAdd.hAdd",
+    "HPow.hPow",
+    "OfNat.ofNat"
+   ],
+   "spearman": 0.9955,
+   "n_cand_a": 33,
+   "n_cand_b": 20,
+   "raw_cite_jaccard": 0.5,
+   "top4_jaccard_tierkey": 1.0
+  },
+  {
+   "group": "g11",
+   "a": "mm_g11_v1",
+   "b": "mm_g11_v4",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "(a + b) ^ 2 = a ^ 2 + 2 * a * b + b ^ 2",
+   "top1_agree": false,
+   "top4_containment": 0.0,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.0,
+   "top1_a": "add_sq",
+   "top1_b": "Mathlib.Tactic.Ring.Common.atom_pf",
+   "top4_a": [
+    "add_sq",
+    "Real",
+    "Real.instCommSemiring"
+   ],
+   "top4_b": [
+    "Mathlib.Tactic.Ring.Common.atom_pf",
+    "Mathlib.Tactic.Ring.Common.pow_one_cast_of_isNat",
+    "Mathlib.Tactic.Ring.Common.coeff_one",
+    "Mathlib.Meta.NormNum.isNat_mul"
+   ],
+   "spearman": null,
+   "n_cand_a": 3,
+   "n_cand_b": 78,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.0
+  },
+  {
+   "group": "c1",
+   "a": "mm_c1_v1",
+   "b": "mm_c1_v2",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "0 \u2264 n",
+   "top1_agree": false,
+   "top4_containment": 0.0,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.0,
+   "top1_a": "Nat.zero_le",
+   "top1_b": "Nat.recAux",
+   "top4_a": [
+    "Nat.zero_le",
+    "Nat"
+   ],
+   "top4_b": [
+    "Nat.recAux",
+    "Nat.le_succ_of_le",
+    "Nat.le_refl",
+    "OfNat.ofNat"
+   ],
+   "spearman": null,
+   "n_cand_a": 2,
+   "n_cand_b": 8,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.0
+  },
+  {
+   "group": "c2",
+   "a": "mm_c2_v1",
+   "b": "mm_c2_v2",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "\u2211 _i \u2208 Finset.range n, (1 : \u2115) = n",
+   "top1_agree": false,
+   "top4_containment": 0.25,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.1429,
+   "top1_a": "Finset.sum_const",
+   "top1_b": "Finset.sum_range_succ",
+   "top4_a": [
+    "Finset.sum_const",
+    "Finset.card_range",
+    "mul_one",
+    "OfNat.ofNat"
+   ],
+   "top4_b": [
+    "Finset.sum_range_succ",
+    "Finset.sum_const",
+    "Nat.recAux",
+    "HAdd.hAdd"
+   ],
+   "spearman": 0.9098,
+   "n_cand_a": 23,
+   "n_cand_b": 38,
+   "raw_cite_jaccard": 0.4783,
+   "top4_jaccard_tierkey": 0.1429
+  },
+  {
+   "group": "c3",
+   "a": "mm_c3_v1",
+   "b": "mm_c3_v2",
+   "family": "CONTROL",
+   "kind": "control",
+   "statement": "a * b = b * a",
+   "top1_agree": false,
+   "top4_containment": 0.0,
+   "top1_in_other_top4": false,
+   "top4_jaccard": 0.0,
+   "top1_a": "Nat.mul_comm",
+   "top1_b": "Nat.succ_mul",
+   "top4_a": [
+    "Nat.mul_comm",
+    "Nat"
+   ],
+   "top4_b": [
+    "Nat.succ_mul",
+    "Nat.mul_succ",
+    "Nat.recAux",
+    "HAdd.hAdd"
+   ],
+   "spearman": null,
+   "n_cand_a": 2,
+   "n_cand_b": 28,
+   "raw_cite_jaccard": 0.0,
+   "top4_jaccard_tierkey": 0.0
+  }
+ ],
+ "orders": {
+  "mm_c1_v1": [
+   "Nat.zero_le",
+   "Nat"
+  ],
+  "mm_c1_v2": [
+   "Nat.recAux",
+   "Nat.le_succ_of_le",
+   "Nat.le_refl",
+   "OfNat.ofNat",
+   "LE.le",
+   "Nat",
+   "instOfNatNat",
+   "instLENat"
+  ],
+  "mm_c2_v1": [
+   "Finset.sum_const",
+   "Finset.card_range",
+   "mul_one",
+   "OfNat.ofNat",
+   "HSMul.hSMul",
+   "Finset.range",
+   "Finset.sum",
+   "Finset.card"
+  ],
+  "mm_c2_v2": [
+   "Finset.sum_range_succ",
+   "Finset.sum_const",
+   "Nat.recAux",
+   "HAdd.hAdd",
+   "OfNat.ofNat",
+   "zero_nsmul",
+   "Finset.range",
+   "Finset.sum"
+  ],
+  "mm_c3_v1": [
+   "Nat.mul_comm",
+   "Nat"
+  ],
+  "mm_c3_v2": [
+   "Nat.succ_mul",
+   "Nat.mul_succ",
+   "Nat.recAux",
+   "HAdd.hAdd",
+   "HMul.hMul",
+   "OfNat.ofNat",
+   "MulZeroClass.zero_mul",
+   "MulZeroClass.mul_zero"
+  ],
+  "mm_g10_v1": [
+   "LE.le.trans",
+   "LE.le",
+   "Set",
+   "Set.instCompleteAtomicBooleanAlgebra",
+   "CompleteLattice.toCompletePartialOrder",
+   "Set.instLE",
+   "PartialOrder.toPreorder",
+   "CompletePartialOrder.toPartialOrder"
+  ],
+  "mm_g10_v2": [
+   "subset_trans",
+   "LE.le",
+   "Set",
+   "Set.instCompleteAtomicBooleanAlgebra",
+   "CompleteLattice.toCompletePartialOrder",
+   "Set.instLE",
+   "PartialOrder.toPreorder",
+   "CompletePartialOrder.toPartialOrder"
+  ],
+  "mm_g10_v3": [
+   "Membership.mem",
+   "LE.le",
+   "Set",
+   "Set.instLE",
+   "Set.instMembership"
+  ],
+  "mm_g10_v4": [
+   "Membership.mem",
+   "LE.le",
+   "Set",
+   "Set.instLE",
+   "Set.instMembership"
+  ],
+  "mm_g11_v1": [
+   "add_sq",
+   "Real",
+   "Real.instCommSemiring"
+  ],
+  "mm_g11_v2": [
+   "add_sq",
+   "HAdd.hAdd",
+   "HPow.hPow",
+   "OfNat.ofNat",
+   "HMul.hMul",
+   "Eq.mpr",
+   "congrArg",
+   "Eq.refl"
+  ],
+  "mm_g11_v3": [
+   "add_sq",
+   "HAdd.hAdd",
+   "HPow.hPow",
+   "OfNat.ofNat",
+   "HMul.hMul",
+   "Real",
+   "Eq",
+   "Nat"
+  ],
+  "mm_g11_v4": [
+   "Mathlib.Tactic.Ring.Common.atom_pf",
+   "Mathlib.Tactic.Ring.Common.pow_one_cast_of_isNat",
+   "Mathlib.Tactic.Ring.Common.coeff_one",
+   "Mathlib.Meta.NormNum.isNat_mul",
+   "Mathlib.Tactic.Ring.Common.pow_bit0",
+   "Mathlib.Tactic.Ring.Common.mul_pow_mul",
+   "Mathlib.Tactic.Ring.Common.pow_nat",
+   "Mathlib.Tactic.Ring.Common.add_congr"
+  ],
+  "mm_g1_v1": [
+   "two_mul",
+   "Nat.add_left_cancel_iff",
+   "List.length_append",
+   "HAdd.hAdd",
+   "HAppend.hAppend",
+   "HMul.hMul",
+   "OfNat.ofNat",
+   "List.length"
+  ],
+  "mm_g1_v2": [
+   "two_mul",
+   "List.length_append",
+   "HAdd.hAdd",
+   "HMul.hMul",
+   "OfNat.ofNat",
+   "HAppend.hAppend",
+   "List.length",
+   "Eq.mpr"
+  ],
+  "mm_g1_v3": [
+   "two_mul",
+   "List.length_append",
+   "OfNat.ofNat",
+   "HAppend.hAppend",
+   "List.length",
+   "Eq.trans",
+   "Eq.symm",
+   "Nat"
+  ],
+  "mm_g1_v4": [
+   "two_mul",
+   "List.length_append",
+   "HAdd.hAdd",
+   "HMul.hMul",
+   "OfNat.ofNat",
+   "HAppend.hAppend",
+   "List.length",
+   "Eq.trans"
+  ],
+  "mm_g2_v1": [
+   "Or.inl",
+   "And.left",
+   "Inter.inter",
+   "Membership.mem",
+   "Set",
+   "Set.instInter",
+   "Set.instMembership"
+  ],
+  "mm_g2_v2": [
+   "Or.inl",
+   "And.left",
+   "Inter.inter",
+   "Membership.mem",
+   "Set",
+   "Set.instInter",
+   "Set.instMembership"
+  ],
+  "mm_g2_v3": [
+   "Or.inl",
+   "And.left",
+   "Inter.inter",
+   "Membership.mem",
+   "Set",
+   "Set.instInter",
+   "Set.instMembership"
+  ],
+  "mm_g2_v4": [
+   "Set.subset_union_left",
+   "Set.inter_subset_left",
+   "LE.le.trans",
+   "Union.union",
+   "Inter.inter",
+   "Set",
+   "Set.instCompleteAtomicBooleanAlgebra",
+   "CompleteLattice.toCompletePartialOrder"
+  ],
+  "mm_g3_v1": [
+   "min_assoc",
+   "Eq.symm",
+   "Min.min",
+   "LinearOrder",
+   "LinearOrder.toMin"
+  ],
+  "mm_g3_v2": [
+   "min_assoc",
+   "Eq.mpr",
+   "congrArg",
+   "Eq.refl",
+   "Min.min",
+   "id",
+   "Eq",
+   "LinearOrder"
+  ],
+  "mm_g3_v3": [
+   "min_assoc",
+   "Eq.symm",
+   "Min.min",
+   "Eq",
+   "LinearOrder",
+   "instDistribLatticeOfLinearOrder",
+   "Lattice.toSemilatticeInf",
+   "SemilatticeInf.toMin"
+  ],
+  "mm_g3_v4": [
+   "min_assoc",
+   "Eq.symm",
+   "Min.min",
+   "LinearOrder",
+   "instDistribLatticeOfLinearOrder",
+   "Lattice.toSemilatticeInf",
+   "SemilatticeInf.toMin",
+   "DistribLattice.toLattice"
+  ],
+  "mm_g4_v1": [
+   "le_max_left",
+   "Real",
+   "Real.linearOrder"
+  ],
+  "mm_g4_v2": [
+   "le_max_left",
+   "Real",
+   "LinearOrder",
+   "Real.linearOrder",
+   "inferInstance"
+  ],
+  "mm_g4_v3": [
+   "le_max_left",
+   "Real",
+   "Real.linearOrder"
+  ],
+  "mm_g4_v4": [
+   "le_max_left",
+   "Real",
+   "Real.linearOrder"
+  ],
+  "mm_g5_v1": [
+   "List.reverse_reverse",
+   "Nat",
+   "List"
+  ],
+  "mm_g5_v2": [
+   "mm_g5_helper",
+   "Nat",
+   "List"
+  ],
+  "mm_g5_v3": [
+   "Nat",
+   "List"
+  ],
+  "mm_g6_v1": [
+   "two_mul",
+   "mm_dbl",
+   "HAdd.hAdd",
+   "HMul.hMul",
+   "OfNat.ofNat",
+   "Eq.mpr",
+   "congrArg",
+   "Eq.refl"
+  ],
+  "mm_g6_v2": [
+   "two_mul",
+   "mm_dbl",
+   "HAdd.hAdd",
+   "id",
+   "Nat",
+   "Eq",
+   "Nat.instNonAssocSemiring",
+   "instAddNat"
+  ],
+  "mm_g6_v3": [
+   "two_mul",
+   "Nat",
+   "Nat.instNonAssocSemiring"
+  ],
+  "mm_g6_v4": [
+   "two_mul",
+   "mm_dbl",
+   "HAdd.hAdd",
+   "id",
+   "Nat",
+   "Eq",
+   "Nat.instNonAssocSemiring",
+   "instAddNat"
+  ],
+  "mm_g7_v1": [
+   "Mathlib.Meta.NormNum.isNat_lt_true",
+   "Mathlib.Meta.NormNum.isNat_ofNat",
+   "OfNat.ofNat",
+   "Exists.intro",
+   "And.intro",
+   "Eq.refl",
+   "Bool.false",
+   "LT.lt"
+  ],
+  "mm_g7_v2": [
+   "Mathlib.Meta.NormNum.isNat_lt_true",
+   "Mathlib.Meta.NormNum.isNat_ofNat",
+   "OfNat.ofNat",
+   "Exists.intro",
+   "And.intro",
+   "Eq.refl",
+   "Bool.false",
+   "LT.lt"
+  ],
+  "mm_g7_v3": [
+   "Mathlib.Meta.NormNum.isNat_lt_true",
+   "Mathlib.Meta.NormNum.isNat_ofNat",
+   "OfNat.ofNat",
+   "Exists.intro",
+   "And.intro",
+   "Eq.refl",
+   "Bool.false",
+   "LT.lt"
+  ],
+  "mm_g7_v4": [
+   "Mathlib.Meta.NormNum.isNat_lt_true",
+   "Mathlib.Meta.NormNum.isNat_ofNat",
+   "OfNat.ofNat",
+   "Exists.intro",
+   "LT.lt",
+   "And.intro",
+   "Eq.refl",
+   "Bool.false"
+  ],
+  "mm_g8_v1": [
+   "Continuous.fun_pow",
+   "Continuous.prodMk",
+   "Continuous.comp'",
+   "Continuous.const_mul",
+   "continuous_id'",
+   "continuous_add",
+   "OfNat.ofNat",
+   "HMul.hMul"
+  ],
+  "mm_g8_v2": [
+   "continuous_pow",
+   "Continuous.add",
+   "Continuous.mul",
+   "continuous_const",
+   "continuous_id",
+   "OfNat.ofNat",
+   "Real",
+   "HMul.hMul"
+  ],
+  "mm_g8_v3": [
+   "continuous_pow",
+   "Continuous.add",
+   "Continuous.mul",
+   "continuous_const",
+   "continuous_id",
+   "OfNat.ofNat",
+   "Real",
+   "HMul.hMul"
+  ],
+  "mm_g8_v4": [
+   "continuous_pow",
+   "Continuous.add",
+   "Continuous.mul",
+   "continuous_const",
+   "continuous_id",
+   "HMul.hMul",
+   "OfNat.ofNat",
+   "HPow.hPow"
+  ],
+  "mm_g9_v1": [
+   "Finset.card_range",
+   "Finset.range",
+   "Finset.card",
+   "of_eq_true",
+   "eq_self",
+   "Eq.trans",
+   "congrFun'",
+   "congrArg"
+  ],
+  "mm_g9_v2": [
+   "Finset.card_range",
+   "Nat"
+  ],
+  "mm_g9_v3": [
+   "Finset.card_range",
+   "Finset.range",
+   "Finset.card",
+   "Eq.mpr",
+   "congrArg",
+   "Eq.refl",
+   "id",
+   "Eq"
+  ],
+  "mm_g9_v4": [
+   "Finset.card_range",
+   "Finset.range",
+   "Finset.card",
+   "Eq",
+   "Nat"
+  ]
+ }
+}

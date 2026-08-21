@@ -1,0 +1,156 @@
+{
+  "_comment": "Pair-level ground truth for the metamorphic benchmark. kind=harmless means the two variants take the SAME mathematical route and the laneD skeleton is expected to be invariant; kind=control means genuinely different routes, where invariance would be a FAILURE (false invariance).",
+  "families": {
+    "F1_simp_vs_rewrite": "simp/simpa vs an explicit rewrite chain",
+    "F2_inline_vs_have": "inline subterm vs named `have` step",
+    "F3_tactic_vs_term": "tactic-mode vs term-mode proof",
+    "F4_explicit_vs_inferred": "explicit instance/type argument vs inferred",
+    "F5_wrapper": "wrapper insertion (forwarding helper lemma)",
+    "F6_fold_vs_unfold": "definition name vs its unfolded body",
+    "F8_witness_syntax": "constructor/witness written differently",
+    "CONTROL": "genuinely different mathematical route"
+  },
+  "groups": [
+    {
+      "id": "g1",
+      "statement": "(l ++ l).length = 2 * l.length",
+      "variants": ["mm_g1_v1", "mm_g1_v2", "mm_g1_v3", "mm_g1_v4"],
+      "pairs": [
+        ["mm_g1_v1", "mm_g1_v2", "F1_simp_vs_rewrite", "harmless"],
+        ["mm_g1_v2", "mm_g1_v3", "F3_tactic_vs_term", "harmless"],
+        ["mm_g1_v3", "mm_g1_v4", "F2_inline_vs_have", "harmless"],
+        ["mm_g1_v1", "mm_g1_v3", "F1_simp_vs_rewrite", "harmless"]
+      ]
+    },
+    {
+      "id": "g2",
+      "statement": "s ∩ t ⊆ s ∪ t",
+      "variants": ["mm_g2_v1", "mm_g2_v2", "mm_g2_v3", "mm_g2_v4"],
+      "pairs": [
+        ["mm_g2_v1", "mm_g2_v2", "F3_tactic_vs_term", "harmless"],
+        ["mm_g2_v2", "mm_g2_v3", "F2_inline_vs_have", "harmless"],
+        ["mm_g2_v1", "mm_g2_v4", "CONTROL", "control"],
+        ["mm_g2_v3", "mm_g2_v4", "CONTROL", "control"]
+      ]
+    },
+    {
+      "id": "g3",
+      "statement": "min a (min b c) = min (min a b) c",
+      "variants": ["mm_g3_v1", "mm_g3_v2", "mm_g3_v3", "mm_g3_v4"],
+      "pairs": [
+        ["mm_g3_v1", "mm_g3_v2", "F1_simp_vs_rewrite", "harmless"],
+        ["mm_g3_v1", "mm_g3_v3", "F2_inline_vs_have", "harmless"],
+        ["mm_g3_v1", "mm_g3_v4", "F3_tactic_vs_term", "harmless"],
+        ["mm_g3_v3", "mm_g3_v4", "F2_inline_vs_have", "harmless"]
+      ]
+    },
+    {
+      "id": "g4",
+      "statement": "x ≤ max x y",
+      "variants": ["mm_g4_v1", "mm_g4_v2", "mm_g4_v3", "mm_g4_v4"],
+      "pairs": [
+        ["mm_g4_v1", "mm_g4_v2", "F4_explicit_vs_inferred", "harmless"],
+        ["mm_g4_v1", "mm_g4_v3", "F4_explicit_vs_inferred", "harmless"],
+        ["mm_g4_v1", "mm_g4_v4", "F3_tactic_vs_term", "harmless"],
+        ["mm_g4_v2", "mm_g4_v3", "F4_explicit_vs_inferred", "harmless"]
+      ]
+    },
+    {
+      "id": "g5",
+      "statement": "l.reverse.reverse = l",
+      "variants": ["mm_g5_v1", "mm_g5_v2", "mm_g5_v3"],
+      "pairs": [
+        ["mm_g5_v1", "mm_g5_v2", "F5_wrapper", "harmless"],
+        ["mm_g5_v1", "mm_g5_v3", "F5_wrapper", "harmless"],
+        ["mm_g5_v2", "mm_g5_v3", "F5_wrapper", "harmless"]
+      ]
+    },
+    {
+      "id": "g6",
+      "statement": "mm_dbl n = n + n",
+      "variants": ["mm_g6_v1", "mm_g6_v2", "mm_g6_v3", "mm_g6_v4"],
+      "pairs": [
+        ["mm_g6_v1", "mm_g6_v2", "F6_fold_vs_unfold", "harmless"],
+        ["mm_g6_v1", "mm_g6_v3", "F6_fold_vs_unfold", "harmless"],
+        ["mm_g6_v2", "mm_g6_v3", "F6_fold_vs_unfold", "harmless"],
+        ["mm_g6_v3", "mm_g6_v4", "F6_fold_vs_unfold", "harmless"]
+      ]
+    },
+    {
+      "id": "g7",
+      "statement": "∃ n : ℕ, 3 < n ∧ n < 5",
+      "variants": ["mm_g7_v1", "mm_g7_v2", "mm_g7_v3", "mm_g7_v4"],
+      "pairs": [
+        ["mm_g7_v1", "mm_g7_v2", "F8_witness_syntax", "harmless"],
+        ["mm_g7_v1", "mm_g7_v3", "F3_tactic_vs_term", "harmless"],
+        ["mm_g7_v1", "mm_g7_v4", "F2_inline_vs_have", "harmless"],
+        ["mm_g7_v2", "mm_g7_v3", "F8_witness_syntax", "harmless"]
+      ]
+    },
+    {
+      "id": "g8",
+      "statement": "Continuous fun x : ℝ => x ^ 2 + 3 * x",
+      "variants": ["mm_g8_v1", "mm_g8_v2", "mm_g8_v3", "mm_g8_v4"],
+      "pairs": [
+        ["mm_g8_v1", "mm_g8_v2", "F1_simp_vs_rewrite", "harmless"],
+        ["mm_g8_v2", "mm_g8_v3", "F3_tactic_vs_term", "harmless"],
+        ["mm_g8_v2", "mm_g8_v4", "F2_inline_vs_have", "harmless"],
+        ["mm_g8_v3", "mm_g8_v4", "F2_inline_vs_have", "harmless"]
+      ]
+    },
+    {
+      "id": "g9",
+      "statement": "(Finset.range n).card = n",
+      "variants": ["mm_g9_v1", "mm_g9_v2", "mm_g9_v3", "mm_g9_v4"],
+      "pairs": [
+        ["mm_g9_v1", "mm_g9_v2", "F1_simp_vs_rewrite", "harmless"],
+        ["mm_g9_v2", "mm_g9_v3", "F3_tactic_vs_term", "harmless"],
+        ["mm_g9_v2", "mm_g9_v4", "F2_inline_vs_have", "harmless"],
+        ["mm_g9_v1", "mm_g9_v3", "F1_simp_vs_rewrite", "harmless"]
+      ]
+    },
+    {
+      "id": "g10",
+      "statement": "s ⊆ t → t ⊆ u → s ⊆ u",
+      "variants": ["mm_g10_v1", "mm_g10_v2", "mm_g10_v3", "mm_g10_v4"],
+      "pairs": [
+        ["mm_g10_v1", "mm_g10_v2", "F3_tactic_vs_term", "harmless"],
+        ["mm_g10_v3", "mm_g10_v4", "F2_inline_vs_have", "harmless"],
+        ["mm_g10_v1", "mm_g10_v4", "CONTROL", "control"],
+        ["mm_g10_v2", "mm_g10_v3", "CONTROL", "control"]
+      ]
+    },
+    {
+      "id": "g11",
+      "statement": "(a + b) ^ 2 = a ^ 2 + 2 * a * b + b ^ 2",
+      "variants": ["mm_g11_v1", "mm_g11_v2", "mm_g11_v3", "mm_g11_v4"],
+      "pairs": [
+        ["mm_g11_v1", "mm_g11_v2", "F1_simp_vs_rewrite", "harmless"],
+        ["mm_g11_v1", "mm_g11_v3", "F2_inline_vs_have", "harmless"],
+        ["mm_g11_v2", "mm_g11_v3", "F2_inline_vs_have", "harmless"],
+        ["mm_g11_v1", "mm_g11_v4", "CONTROL", "control"]
+      ]
+    },
+    {
+      "id": "c1",
+      "statement": "0 ≤ n",
+      "control": true,
+      "variants": ["mm_c1_v1", "mm_c1_v2"],
+      "pairs": [["mm_c1_v1", "mm_c1_v2", "CONTROL", "control"]]
+    },
+    {
+      "id": "c2",
+      "statement": "∑ _i ∈ Finset.range n, (1 : ℕ) = n",
+      "control": true,
+      "variants": ["mm_c2_v1", "mm_c2_v2"],
+      "pairs": [["mm_c2_v1", "mm_c2_v2", "CONTROL", "control"]]
+    },
+    {
+      "id": "c3",
+      "statement": "a * b = b * a",
+      "control": true,
+      "variants": ["mm_c3_v1", "mm_c3_v2"],
+      "pairs": [["mm_c3_v1", "mm_c3_v2", "CONTROL", "control"]]
+    }
+  ]
+}
