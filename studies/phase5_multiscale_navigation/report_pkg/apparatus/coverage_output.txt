@@ -1,0 +1,21 @@
+
+universe U1
+  kind                         written  in record  in universe  coverage
+  ALL                           25,735          0       15,442    60.0%
+  constructor/recursor           1,282        955          941    73.4%
+  definition/construction       15,736     12,930        7,470    47.5%
+  theorem                        8,717      7,033        7,031    80.7%
+
+universe U1D
+  kind                         written  in record  in universe  coverage
+  ALL                           25,772          0       20,921    81.2%
+  constructor/recursor           1,284        955          941    73.3%
+  definition/construction       15,769     12,949       12,949    82.1%
+  theorem                        8,719      7,033        7,031    80.6%
+
+universe U0
+  kind                         written  in record  in universe  coverage
+  ALL                           25,772          0       20,937    81.2%
+  constructor/recursor           1,284        955          955    74.4%
+  definition/construction       15,769     12,949       12,949    82.1%
+  theorem                        8,719      7,033        7,033    80.7%

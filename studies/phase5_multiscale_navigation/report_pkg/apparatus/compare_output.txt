@@ -1,0 +1,52 @@
+  B0_random              SourceHit@1=0.243 MRR=0.387 glue@1=0.353 (5.1s)
+  B1_reverse_depth       SourceHit@1=0.128 MRR=0.256 glue@1=0.631 (3.1s)
+  B2_popularity          SourceHit@1=0.120 MRR=0.243 glue@1=0.564 (3.8s)
+  B3_term_order          SourceHit@1=0.225 MRR=0.375 glue@1=0.378 (2.6s)
+  O_source               SourceHit@1=0.759 MRR=0.759 glue@1=0.086 (4.5s)
+  R_depth                SourceHit@1=0.570 MRR=0.636 glue@1=0.070 (3.2s)
+  R_introduced_depth     SourceHit@1=0.603 MRR=0.663 glue@1=0.073 (3.4s)
+  R_phase5_composite     SourceHit@1=0.561 MRR=0.641 glue@1=0.056 (4.5s)
+  R_v8_all_kinds         SourceHit@1=0.591 MRR=0.655 glue@1=0.027 (3.5s)
+  R_v8_faithful          SourceHit@1=0.587 MRR=0.652 glue@1=0.112 (3.6s)
+
+== Source agreement (NOT keyness) ==
+ranking             family      SourceHit@1     MRR  SrcRec@4   glue@1     tied
+R_introduced_depth  candidate         0.603   0.663     0.346    0.073    0.055
+R_v8_all_kinds      candidate         0.591   0.655     0.342    0.027    0.035
+R_v8_faithful       candidate         0.587   0.652     0.343    0.112    0.029
+R_depth             candidate         0.570   0.636     0.322    0.070    0.089
+R_phase5_composite  candidate         0.561   0.641     0.346    0.056    0.002
+O_source            baseline          0.759   0.759     0.375    0.086    0.089
+B0_random           baseline          0.243   0.387     0.192    0.353    0.000
+B3_term_order       baseline          0.225   0.375     0.195    0.378    0.000
+B1_reverse_depth    baseline          0.128   0.256     0.130    0.631    0.089
+B2_popularity       baseline          0.120   0.243     0.124    0.564    0.006
+
+== SourceHit@1 by target depth ==
+ranking                        0-10      11-25      26-50      51-75     76-125       126+
+B0_random                     0.447      0.221      0.243      0.220      0.213      0.210
+B1_reverse_depth              0.358      0.148      0.087      0.083      0.083      0.069
+B2_popularity                 0.367      0.118      0.081      0.068      0.090      0.077
+B3_term_order                 0.427      0.227      0.278      0.210      0.180      0.152
+O_source                      0.729      0.601      0.799      0.891      0.805      0.828
+R_depth                       0.509      0.372      0.563      0.734      0.613      0.692
+R_introduced_depth            0.567      0.427      0.570      0.753      0.638      0.714
+R_phase5_composite            0.496      0.391      0.479      0.706      0.595      0.696
+R_v8_all_kinds                0.500      0.415      0.570      0.753      0.637      0.708
+R_v8_faithful                 0.544      0.411      0.553      0.729      0.627      0.704
+
+== Graph structure by inclusion (top_k) ==
+ranking                                top_k=1               top_k=2               top_k=4               top_k=8
+                                 comps / giant         comps / giant         comps / giant         comps / giant
+B0_random                        34,275 / 8.0%        10,580 / 98.2%         6,182 / 99.0%         3,575 / 99.4%
+B1_reverse_depth                34,274 / 13.2%        17,346 / 97.0%        10,291 / 98.4%         5,328 / 99.1%
+B2_popularity                   34,274 / 25.6%        21,381 / 96.1%        13,312 / 97.9%         8,319 / 98.7%
+B3_term_order                   34,276 / 16.3%        14,464 / 97.7%         8,728 / 98.6%         4,898 / 99.2%
+O_source                         34,318 / 8.3%        12,540 / 98.0%         8,430 / 98.7%         5,357 / 99.1%
+R_depth                          34,318 / 8.3%        12,554 / 98.0%         8,439 / 98.7%         5,364 / 99.1%
+R_introduced_depth              34,318 / 14.3%        12,864 / 97.8%         7,680 / 98.8%         4,669 / 99.2%
+R_phase5_composite               34,335 / 5.2%         7,940 / 98.7%         4,499 / 99.2%         2,294 / 99.5%
+R_v8_all_kinds                   34,320 / 7.2%        11,006 / 98.2%         6,776 / 98.9%         4,068 / 99.3%
+R_v8_faithful                   34,318 / 17.5%        11,324 / 98.1%         6,937 / 98.9%         4,229 / 99.3%
+
+candidate coverage in U1: 60.0% of written citations

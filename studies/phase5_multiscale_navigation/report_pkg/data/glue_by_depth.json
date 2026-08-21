@@ -1,0 +1,59 @@
+{
+ "rows": [
+  {
+   "band": "0-10",
+   "proofs": 378,
+   "citations": 1318,
+   "theorem": 14.49,
+   "definition/construction": 67.15,
+   "glue (logic-only)": 10.85,
+   "other (ctor/recursor)": 7.51
+  },
+  {
+   "band": "10-25",
+   "proofs": 1149,
+   "citations": 4363,
+   "theorem": 31.79,
+   "definition/construction": 59.0,
+   "glue (logic-only)": 7.15,
+   "other (ctor/recursor)": 2.06
+  },
+  {
+   "band": "25-50",
+   "proofs": 424,
+   "citations": 1730,
+   "theorem": 38.73,
+   "definition/construction": 54.05,
+   "glue (logic-only)": 5.9,
+   "other (ctor/recursor)": 1.33
+  },
+  {
+   "band": "50-75",
+   "proofs": 715,
+   "citations": 2860,
+   "theorem": 49.48,
+   "definition/construction": 45.0,
+   "glue (logic-only)": 5.0,
+   "other (ctor/recursor)": 0.52
+  },
+  {
+   "band": "75-125",
+   "proofs": 604,
+   "citations": 2785,
+   "theorem": 50.92,
+   "definition/construction": 43.12,
+   "glue (logic-only)": 4.99,
+   "other (ctor/recursor)": 0.97
+  },
+  {
+   "band": "125-350",
+   "proofs": 979,
+   "citations": 4140,
+   "theorem": 42.9,
+   "definition/construction": 53.99,
+   "glue (logic-only)": 2.13,
+   "other (ctor/recursor)": 0.99
+  }
+ ],
+ "verdict": "SUPPORTED: humans genuinely write more glue at shallow depth, so glue at rank 1 is more often correct there"
+}

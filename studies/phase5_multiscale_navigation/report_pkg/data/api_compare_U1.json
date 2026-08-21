@@ -1,0 +1,1491 @@
+{
+ "config": {
+  "universe": "U1",
+  "rankings": [],
+  "ks": [
+   1,
+   2,
+   4,
+   8
+  ],
+  "graph_ks": [
+   1,
+   2,
+   4,
+   8
+  ],
+  "proof_written_only": true,
+  "bootstrap": 0,
+  "out": "data/api_compare_U1.json"
+ },
+ "n_incidences_in_universe": 8485349,
+ "n_eval_proofs": 4249,
+ "coverage": {
+  "definition/construction": {
+   "written": 15736,
+   "in_record": 12930,
+   "in_universe": 7470,
+   "CoverageInUniverse": 0.47470767666497204
+  },
+  "constructor/recursor": {
+   "written": 1282,
+   "in_record": 955,
+   "in_universe": 941,
+   "CoverageInUniverse": 0.734009360374415
+  },
+  "theorem": {
+   "written": 8717,
+   "in_record": 7033,
+   "in_universe": 7031,
+   "CoverageInUniverse": 0.8065848342319606
+  },
+  "ALL": {
+   "written": 25735,
+   "in_universe": 15442,
+   "CoverageInUniverse": 0.6000388575869439
+  }
+ },
+ "results": {
+  "B0_random": {
+   "ranking": "B0_random",
+   "family": "baseline",
+   "universe": "U1",
+   "complexity": {
+    "features": 0,
+    "seeded": true
+   },
+   "doc": "Uniform random order within each proof. The floor.",
+   "source": {
+    "SourceHit@1": 0.2428806778065427,
+    "SourceMRR": 0.3867332863383473,
+    "SourceRecall@1": 0.0751590049308227,
+    "SourceRecall@2": 0.12836662422416095,
+    "SourceRecall@4": 0.19195683204399613,
+    "SourceRecall@8": 0.27119892514060556,
+    "by_target_depth": {
+     "0-10": {
+      "SourceHit@1": 0.44666666666666666,
+      "SourceRecall@4": 0.2838086419753087,
+      "n": 450
+     },
+     "11-25": {
+      "SourceHit@1": 0.22129086336965634,
+      "SourceRecall@4": 0.17034913369561963,
+      "n": 1193
+     },
+     "126+": {
+      "SourceHit@1": 0.21041666666666667,
+      "SourceRecall@4": 0.17105828713716195,
+      "n": 960
+     },
+     "26-50": {
+      "SourceHit@1": 0.24271844660194175,
+      "SourceRecall@4": 0.20026832211298232,
+      "n": 309
+     },
+     "51-75": {
+      "SourceHit@1": 0.2198100407055631,
+      "SourceRecall@4": 0.1941980747508445,
+      "n": 737
+     },
+     "76-125": {
+      "SourceHit@1": 0.21333333333333335,
+      "SourceRecall@4": 0.192435542818695,
+      "n": 600
+     }
+    },
+    "n_proofs": 4249
+   },
+   "role": {
+    "RoleAt1": {
+     "definition/construction": 0.29724641092021653,
+     "glue": 0.35325959049188044,
+     "theorem": 0.31583902094610494,
+     "constructor/recursor": 0.03365497764179807
+    },
+    "RoleGlueAt1": 0.35325959049188044,
+    "by_target_depth": {
+     "0-10": {
+      "theorem": 0.3022222222222222,
+      "definition/construction": 0.24444444444444444,
+      "glue": 0.3511111111111111,
+      "constructor/recursor": 0.10222222222222223
+     },
+     "11-25": {
+      "theorem": 0.24811399832355407,
+      "definition/construction": 0.32606873428331934,
+      "glue": 0.38055322715842416,
+      "constructor/recursor": 0.04526404023470243
+     },
+     "126+": {
+      "glue": 0.3802083333333333,
+      "definition/construction": 0.2552083333333333,
+      "theorem": 0.35833333333333334,
+      "constructor/recursor": 0.00625
+     },
+     "26-50": {
+      "theorem": 0.37540453074433655,
+      "definition/construction": 0.2977346278317152,
+      "glue": 0.29449838187702265,
+      "constructor/recursor": 0.032362459546925564
+     },
+     "51-75": {
+      "definition/construction": 0.32971506105834464,
+      "theorem": 0.3378561736770692,
+      "glue": 0.3175033921302578,
+      "constructor/recursor": 0.014925373134328358
+     },
+     "76-125": {
+      "glue": 0.33166666666666667,
+      "definition/construction": 0.30666666666666664,
+      "theorem": 0.335,
+      "constructor/recursor": 0.02666666666666667
+     }
+    }
+   },
+   "ties": {
+    "distinct_levels": 200000,
+    "median_tie_block": 1.0,
+    "p90_tie_block": 1.0,
+    "max_tie_block": 1,
+    "approx_frac_pairs_tied": 0.0,
+    "sampled": 200000
+   },
+   "graph": {
+    "top_k=1": {
+     "GraphEdges": 728753,
+     "GraphComponents": 34275,
+     "GraphGiantFraction": 0.07961710398190365,
+     "GraphSecondLargest": 48964,
+     "GraphEntropy": 6.280622719506784,
+     "GraphSusceptibility": 8531.704551053217,
+     "GraphActiveNodeFraction": 0.9819233133296724
+    },
+    "top_k=2": {
+     "GraphEdges": 1400784,
+     "GraphComponents": 10580,
+     "GraphGiantFraction": 0.9819193816208338,
+     "GraphSecondLargest": 54,
+     "GraphEntropy": 0.25526378088098955,
+     "GraphSusceptibility": 2.0737895042041172,
+     "GraphActiveNodeFraction": 0.988199631205711
+    },
+    "top_k=4": {
+     "GraphEdges": 2498534,
+     "GraphComponents": 6182,
+     "GraphGiantFraction": 0.989954483917345,
+     "GraphSecondLargest": 54,
+     "GraphEntropy": 0.1425321807338808,
+     "GraphSusceptibility": 2.09484670580561,
+     "GraphActiveNodeFraction": 0.9929569989004321
+    },
+    "top_k=8": {
+     "GraphEdges": 3976725,
+     "GraphComponents": 3575,
+     "GraphGiantFraction": 0.9936122837068675,
+     "GraphSecondLargest": 54,
+     "GraphEntropy": 0.08976425459909945,
+     "GraphSusceptibility": 2.590069757899056,
+     "GraphActiveNodeFraction": 0.9962229383757062
+    }
+   },
+   "seconds": 5.1
+  },
+  "B1_reverse_depth": {
+   "ranking": "B1_reverse_depth",
+   "family": "baseline",
+   "universe": "U1",
+   "complexity": {
+    "features": 1
+   },
+   "doc": "Shallowest cited declaration first: the anti-ranking.",
+   "source": {
+    "SourceHit@1": 0.12755942574723464,
+    "SourceMRR": 0.2556401317459224,
+    "SourceRecall@1": 0.039214984274345575,
+    "SourceRecall@2": 0.07776406571189211,
+    "SourceRecall@4": 0.12964336549167577,
+    "SourceRecall@8": 0.18412659743977378,
+    "by_target_depth": {
+     "0-10": {
+      "SourceHit@1": 0.35777777777777775,
+      "SourceRecall@4": 0.272373897707231,
+      "n": 450
+     },
+     "11-25": {
+      "SourceHit@1": 0.14836546521374686,
+      "SourceRecall@4": 0.14523849909338776,
+      "n": 1193
+     },
+     "126+": {
+      "SourceHit@1": 0.06875,
+      "SourceRecall@4": 0.08984720719095719,
+      "n": 960
+     },
+     "26-50": {
+      "SourceHit@1": 0.08737864077669903,
+      "SourceRecall@4": 0.11982577832092393,
+      "n": 309
+     },
+     "51-75": {
+      "SourceHit@1": 0.08276797829036635,
+      "SourceRecall@4": 0.1013482621970929,
+      "n": 737
+     },
+     "76-125": {
+      "SourceHit@1": 0.08333333333333333,
+      "SourceRecall@4": 0.09507287157287157,
+      "n": 600
+     }
+    },
+    "n_proofs": 4249
+   },
+   "role": {
+    "RoleAt1": {
+     "glue": 0.630501294422217,
+     "theorem": 0.12920687220522475,
+     "definition/construction": 0.20498940927277007,
+     "constructor/recursor": 0.035302424099788184
+    },
+    "RoleGlueAt1": 0.630501294422217,
+    "by_target_depth": {
+     "0-10": {
+      "theorem": 0.2,
+      "constructor/recursor": 0.12444444444444444,
+      "definition/construction": 0.3022222222222222,
+      "glue": 0.37333333333333335
+     },
+     "11-25": {
+      "theorem": 0.11232187761944677,
+      "glue": 0.6026823134953898,
+      "definition/construction": 0.24224643755238895,
+      "constructor/recursor": 0.04274937133277452
+     },
+     "126+": {
+      "definition/construction": 0.13229166666666667,
+      "glue": 0.715625,
+      "theorem": 0.146875,
+      "constructor/recursor": 0.005208333333333333
+     },
+     "26-50": {
+      "definition/construction": 0.24919093851132687,
+      "glue": 0.6148867313915858,
+      "theorem": 0.10355987055016182,
+      "constructor/recursor": 0.032362459546925564
+     },
+     "51-75": {
+      "glue": 0.7109905020352781,
+      "definition/construction": 0.1614654002713704,
+      "theorem": 0.11397557666214382,
+      "constructor/recursor": 0.013568521031207599
+     },
+     "76-125": {
+      "glue": 0.6516666666666666,
+      "definition/construction": 0.205,
+      "constructor/recursor": 0.03,
+      "theorem": 0.11333333333333333
+     }
+    }
+   },
+   "ties": {
+    "distinct_levels": 321,
+    "median_tie_block": 51.0,
+    "p90_tie_block": 725.0,
+    "max_tie_block": 37092,
+    "approx_frac_pairs_tied": 0.0886123036615183,
+    "sampled": 200000
+   },
+   "graph": {
+    "top_k=1": {
+     "GraphEdges": 728753,
+     "GraphComponents": 34274,
+     "GraphGiantFraction": 0.1319560120415136,
+     "GraphSecondLargest": 41928,
+     "GraphEntropy": 5.614832250919,
+     "GraphSusceptibility": 9780.381626684744,
+     "GraphActiveNodeFraction": 0.9726785552804815
+    },
+    "top_k=2": {
+     "GraphEdges": 1400784,
+     "GraphComponents": 17346,
+     "GraphGiantFraction": 0.9703155982684755,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.41814804309062376,
+     "GraphSusceptibility": 2.3731567328918324,
+     "GraphActiveNodeFraction": 0.9803113127058414
+    },
+    "top_k=4": {
+     "GraphEdges": 2498534,
+     "GraphComponents": 10291,
+     "GraphGiantFraction": 0.9837201042689184,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.23141217459136493,
+     "GraphSusceptibility": 2.1345999033971985,
+     "GraphActiveNodeFraction": 0.9879506229792655
+    },
+    "top_k=8": {
+     "GraphEdges": 3976725,
+     "GraphComponents": 5328,
+     "GraphGiantFraction": 0.9910409461264149,
+     "GraphSecondLargest": 54,
+     "GraphEntropy": 0.1266424881285588,
+     "GraphSusceptibility": 2.278232884727911,
+     "GraphActiveNodeFraction": 0.9940749147802109
+    }
+   },
+   "seconds": 3.1
+  },
+  "B2_popularity": {
+   "ranking": "B2_popularity",
+   "family": "baseline",
+   "universe": "U1",
+   "complexity": {
+    "features": 1
+   },
+   "doc": "Most globally cited first. Tests 'importance = citation count'.",
+   "source": {
+    "SourceHit@1": 0.11979289244528124,
+    "SourceMRR": 0.24282088209235175,
+    "SourceRecall@1": 0.038995515315376046,
+    "SourceRecall@2": 0.07459362817180573,
+    "SourceRecall@4": 0.12434618658765839,
+    "SourceRecall@8": 0.1760135074995296,
+    "by_target_depth": {
+     "0-10": {
+      "SourceHit@1": 0.36666666666666664,
+      "SourceRecall@4": 0.25369223985890654,
+      "n": 450
+     },
+     "11-25": {
+      "SourceHit@1": 0.1181894383906119,
+      "SourceRecall@4": 0.13289260750879336,
+      "n": 1193
+     },
+     "126+": {
+      "SourceHit@1": 0.07708333333333334,
+      "SourceRecall@4": 0.09288540163540163,
+      "n": 960
+     },
+     "26-50": {
+      "SourceHit@1": 0.08090614886731391,
+      "SourceRecall@4": 0.11336749370729954,
+      "n": 309
+     },
+     "51-75": {
+      "SourceHit@1": 0.06784260515603799,
+      "SourceRecall@4": 0.10033173387391602,
+      "n": 737
+     },
+     "76-125": {
+      "SourceHit@1": 0.09,
+      "SourceRecall@4": 0.09583254854307487,
+      "n": 600
+     }
+    },
+    "n_proofs": 4249
+   },
+   "role": {
+    "RoleAt1": {
+     "definition/construction": 0.30830783713815013,
+     "glue": 0.5641327371146152,
+     "theorem": 0.1070840197693575,
+     "constructor/recursor": 0.020475405977877146
+    },
+    "RoleGlueAt1": 0.5641327371146152,
+    "by_target_depth": {
+     "0-10": {
+      "theorem": 0.1688888888888889,
+      "constructor/recursor": 0.07333333333333333,
+      "definition/construction": 0.26,
+      "glue": 0.49777777777777776
+     },
+     "11-25": {
+      "definition/construction": 0.32523051131601005,
+      "glue": 0.5523889354568315,
+      "theorem": 0.09304274937133278,
+      "constructor/recursor": 0.02933780385582565
+     },
+     "126+": {
+      "definition/construction": 0.30104166666666665,
+      "glue": 0.58125,
+      "theorem": 0.11770833333333333
+     },
+     "26-50": {
+      "constructor/recursor": 0.025889967637540454,
+      "definition/construction": 0.3106796116504854,
+      "glue": 0.5728155339805825,
+      "theorem": 0.09061488673139159
+     },
+     "51-75": {
+      "definition/construction": 0.29579375848032563,
+      "glue": 0.6010854816824966,
+      "theorem": 0.09769335142469471,
+      "constructor/recursor": 0.005427408412483039
+     },
+     "76-125": {
+      "glue": 0.56,
+      "definition/construction": 0.33666666666666667,
+      "theorem": 0.09166666666666666,
+      "constructor/recursor": 0.011666666666666667
+     }
+    }
+   },
+   "ties": {
+    "distinct_levels": 1946,
+    "median_tie_block": 37.0,
+    "p90_tie_block": 164.0,
+    "max_tie_block": 6479,
+    "approx_frac_pairs_tied": 0.005762761763808819,
+    "sampled": 200000
+   },
+   "graph": {
+    "top_k=1": {
+     "GraphEdges": 728753,
+     "GraphComponents": 34274,
+     "GraphGiantFraction": 0.25639721792282577,
+     "GraphSecondLargest": 117769,
+     "GraphEntropy": 3.929099818784053,
+     "GraphSusceptibility": 49365.52796582239,
+     "GraphActiveNodeFraction": 0.9680981144834979
+    },
+    "top_k=2": {
+     "GraphEdges": 1400784,
+     "GraphComponents": 21381,
+     "GraphGiantFraction": 0.96105511338393,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.5448479975827303,
+     "GraphSusceptibility": 2.4811549333692287,
+     "GraphActiveNodeFraction": 0.9763442184876813
+    },
+    "top_k=4": {
+     "GraphEdges": 2498534,
+     "GraphComponents": 13312,
+     "GraphGiantFraction": 0.9794463367613466,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.2929838632789716,
+     "GraphSusceptibility": 1.948798061595358,
+     "GraphActiveNodeFraction": 0.9842181207218094
+    },
+    "top_k=8": {
+     "GraphEdges": 3976725,
+     "GraphComponents": 8319,
+     "GraphGiantFraction": 0.9868012534287778,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.18754062503335572,
+     "GraphSusceptibility": 2.250719888789594,
+     "GraphActiveNodeFraction": 0.9903227539785617
+    }
+   },
+   "seconds": 3.8
+  },
+  "B3_term_order": {
+   "ranking": "B3_term_order",
+   "family": "baseline",
+   "universe": "U1",
+   "complexity": {
+    "features": 1
+   },
+   "doc": "Order of first occurrence in the record: a structural arbitrary order.",
+   "source": {
+    "SourceHit@1": 0.2254648152506472,
+    "SourceMRR": 0.3750694672637871,
+    "SourceRecall@1": 0.06872062031478327,
+    "SourceRecall@2": 0.11922844047753771,
+    "SourceRecall@4": 0.19462855964270248,
+    "SourceRecall@8": 0.2782400364203865,
+    "by_target_depth": {
+     "0-10": {
+      "SourceHit@1": 0.4266666666666667,
+      "SourceRecall@4": 0.2952918871252204,
+      "n": 450
+     },
+     "11-25": {
+      "SourceHit@1": 0.22715842414082146,
+      "SourceRecall@4": 0.1772191104537141,
+      "n": 1193
+     },
+     "126+": {
+      "SourceHit@1": 0.15208333333333332,
+      "SourceRecall@4": 0.1554273387574471,
+      "n": 960
+     },
+     "26-50": {
+      "SourceHit@1": 0.2783171521035599,
+      "SourceRecall@4": 0.21818582352562935,
+      "n": 309
+     },
+     "51-75": {
+      "SourceHit@1": 0.21031207598371776,
+      "SourceRecall@4": 0.2202343279859963,
+      "n": 737
+     },
+     "76-125": {
+      "SourceHit@1": 0.18,
+      "SourceRecall@4": 0.17288439590327465,
+      "n": 600
+     }
+    },
+    "n_proofs": 4249
+   },
+   "role": {
+    "RoleAt1": {
+     "definition/construction": 0.2977171099082137,
+     "theorem": 0.2915980230642504,
+     "constructor/recursor": 0.03224288067780654,
+     "glue": 0.37844198634972936
+    },
+    "RoleGlueAt1": 0.37844198634972936,
+    "by_target_depth": {
+     "0-10": {
+      "theorem": 0.30666666666666664,
+      "constructor/recursor": 0.10222222222222223,
+      "definition/construction": 0.3111111111111111,
+      "glue": 0.28
+     },
+     "11-25": {
+      "definition/construction": 0.336127409891031,
+      "theorem": 0.2808046940486169,
+      "glue": 0.3336127409891031,
+      "constructor/recursor": 0.04945515507124895
+     },
+     "126+": {
+      "definition/construction": 0.26666666666666666,
+      "glue": 0.4375,
+      "theorem": 0.29270833333333335,
+      "constructor/recursor": 0.003125
+     },
+     "26-50": {
+      "constructor/recursor": 0.03559870550161812,
+      "definition/construction": 0.1941747572815534,
+      "theorem": 0.3883495145631068,
+      "glue": 0.3818770226537217
+     },
+     "51-75": {
+      "definition/construction": 0.23473541383989144,
+      "theorem": 0.2808683853459973,
+      "glue": 0.4681139755766621,
+      "constructor/recursor": 0.016282225237449117
+     },
+     "76-125": {
+      "definition/construction": 0.39166666666666666,
+      "theorem": 0.2633333333333333,
+      "glue": 0.335,
+      "constructor/recursor": 0.01
+     }
+    }
+   },
+   "ties": {
+    "distinct_levels": 200000,
+    "median_tie_block": 1.0,
+    "p90_tie_block": 1.0,
+    "max_tie_block": 1,
+    "approx_frac_pairs_tied": 0.0,
+    "sampled": 200000
+   },
+   "graph": {
+    "top_k=1": {
+     "GraphEdges": 728753,
+     "GraphComponents": 34276,
+     "GraphGiantFraction": 0.16264431009649724,
+     "GraphSecondLargest": 26383,
+     "GraphEntropy": 5.872410774170561,
+     "GraphSusceptibility": 5861.818434088508,
+     "GraphActiveNodeFraction": 0.9751266993173243
+    },
+    "top_k=2": {
+     "GraphEdges": 1400784,
+     "GraphComponents": 14464,
+     "GraphGiantFraction": 0.9770191618383098,
+     "GraphSecondLargest": 54,
+     "GraphEntropy": 0.32678203701309394,
+     "GraphSusceptibility": 1.8396920444824636,
+     "GraphActiveNodeFraction": 0.98318670243648
+    },
+    "top_k=4": {
+     "GraphEdges": 2498534,
+     "GraphComponents": 8728,
+     "GraphGiantFraction": 0.986342554064273,
+     "GraphSecondLargest": 54,
+     "GraphEntropy": 0.19455374335020748,
+     "GraphSusceptibility": 1.8807216198061607,
+     "GraphActiveNodeFraction": 0.9897867310068975
+    },
+    "top_k=8": {
+     "GraphEdges": 3976725,
+     "GraphComponents": 4898,
+     "GraphGiantFraction": 0.9918089399195572,
+     "GraphSecondLargest": 54,
+     "GraphEntropy": 0.11585136711919361,
+     "GraphSusceptibility": 2.2816,
+     "GraphActiveNodeFraction": 0.9945231295878127
+    }
+   },
+   "seconds": 2.6
+  },
+  "O_source": {
+   "ranking": "O_source",
+   "family": "baseline",
+   "universe": "U1",
+   "complexity": {
+    "features": "oracle"
+   },
+   "doc": "SourceOracle: identifiers the human wrote first, then depth.\n\n    NOT a keyness oracle (audit item 2). It is an upper bound for\n    Source* metrics only, and its ceiling below 100% measures CANDIDATE\n    COVERAGE, not ranking quality.",
+   "source": {
+    "SourceHit@1": 0.7594728171334432,
+    "SourceMRR": 0.7594728171334432,
+    "SourceRecall@1": 0.24614287823392916,
+    "SourceRecall@2": 0.32938528092028946,
+    "SourceRecall@4": 0.37527257625867944,
+    "SourceRecall@8": 0.3901534570594773,
+    "by_target_depth": {
+     "0-10": {
+      "SourceHit@1": 0.7288888888888889,
+      "SourceRecall@4": 0.34314638447971774,
+      "n": 450
+     },
+     "11-25": {
+      "SourceHit@1": 0.6010058675607711,
+      "SourceRecall@4": 0.28112121390362255,
+      "n": 1193
+     },
+     "126+": {
+      "SourceHit@1": 0.828125,
+      "SourceRecall@4": 0.38727010096277703,
+      "n": 960
+     },
+     "26-50": {
+      "SourceHit@1": 0.7993527508090615,
+      "SourceRecall@4": 0.3864215701594343,
+      "n": 309
+     },
+     "51-75": {
+      "SourceHit@1": 0.8914518317503393,
+      "SourceRecall@4": 0.4866891008827802,
+      "n": 737
+     },
+     "76-125": {
+      "SourceHit@1": 0.805,
+      "SourceRecall@4": 0.42477710977682376,
+      "n": 600
+     }
+    },
+    "n_proofs": 4249
+   },
+   "role": {
+    "RoleAt1": {
+     "definition/construction": 0.16192045187102846,
+     "theorem": 0.7262885384796423,
+     "constructor/recursor": 0.025417745351847494,
+     "glue": 0.08637326429748177
+    },
+    "RoleGlueAt1": 0.08637326429748177,
+    "by_target_depth": {
+     "0-10": {
+      "theorem": 0.4266666666666667,
+      "definition/construction": 0.17333333333333334,
+      "constructor/recursor": 0.10444444444444445,
+      "glue": 0.29555555555555557
+     },
+     "11-25": {
+      "definition/construction": 0.25901089689857504,
+      "theorem": 0.559094719195306,
+      "constructor/recursor": 0.03269069572506287,
+      "glue": 0.14920368818105617
+     },
+     "126+": {
+      "theorem": 0.8958333333333334,
+      "glue": 0.0125,
+      "definition/construction": 0.08125,
+      "constructor/recursor": 0.010416666666666666
+     },
+     "26-50": {
+      "theorem": 0.7864077669902912,
+      "definition/construction": 0.15857605177993528,
+      "glue": 0.045307443365695796,
+      "constructor/recursor": 0.009708737864077669
+     },
+     "51-75": {
+      "definition/construction": 0.11804613297150611,
+      "theorem": 0.858887381275441,
+      "constructor/recursor": 0.0027137042062415195,
+      "glue": 0.0203527815468114
+     },
+     "76-125": {
+      "definition/construction": 0.145,
+      "theorem": 0.8183333333333334,
+      "glue": 0.025,
+      "constructor/recursor": 0.011666666666666667
+     }
+    }
+   },
+   "ties": {
+    "distinct_levels": 389,
+    "median_tie_block": 31.0,
+    "p90_tie_block": 459.4,
+    "max_tie_block": 37083,
+    "approx_frac_pairs_tied": 0.08856690573452868,
+    "sampled": 200000
+   },
+   "graph": {
+    "top_k=1": {
+     "GraphEdges": 728753,
+     "GraphComponents": 34318,
+     "GraphGiantFraction": 0.08300361586156191,
+     "GraphSecondLargest": 56095,
+     "GraphEntropy": 5.539033001665797,
+     "GraphSusceptibility": 18668.79897755158,
+     "GraphActiveNodeFraction": 0.9784018127798885
+    },
+    "top_k=2": {
+     "GraphEdges": 1400784,
+     "GraphComponents": 12540,
+     "GraphGiantFraction": 0.9803296606804215,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.27984697787536794,
+     "GraphSusceptibility": 2.075754547271637,
+     "GraphActiveNodeFraction": 0.9853124463485565
+    },
+    "top_k=4": {
+     "GraphEdges": 2498534,
+     "GraphComponents": 8430,
+     "GraphGiantFraction": 0.9868720241878728,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.1869491627519697,
+     "GraphSusceptibility": 2.1544374563242488,
+     "GraphActiveNodeFraction": 0.9900829197394063
+    },
+    "top_k=8": {
+     "GraphEdges": 3976725,
+     "GraphComponents": 5357,
+     "GraphGiantFraction": 0.9911798665053793,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.12476244597347887,
+     "GraphSusceptibility": 2.6436849925705794,
+     "GraphActiveNodeFraction": 0.993891435034409
+    }
+   },
+   "seconds": 4.5
+  },
+  "R_depth": {
+   "ranking": "R_depth",
+   "family": "candidate",
+   "universe": "U1",
+   "complexity": {
+    "features": 1,
+    "thresholds": 0
+   },
+   "doc": "Deepest cited declaration first. The simplest real candidate.",
+   "source": {
+    "SourceHit@1": 0.5695457754765827,
+    "SourceMRR": 0.6362099213766006,
+    "SourceRecall@1": 0.18599926561884447,
+    "SourceRecall@2": 0.24894944038588995,
+    "SourceRecall@4": 0.32215025390582863,
+    "SourceRecall@8": 0.3650929108548703,
+    "by_target_depth": {
+     "0-10": {
+      "SourceHit@1": 0.5088888888888888,
+      "SourceRecall@4": 0.2932724867724868,
+      "n": 450
+     },
+     "11-25": {
+      "SourceHit@1": 0.3721709974853311,
+      "SourceRecall@4": 0.21861028951366232,
+      "n": 1193
+     },
+     "126+": {
+      "SourceHit@1": 0.6916666666666667,
+      "SourceRecall@4": 0.352963479530696,
+      "n": 960
+     },
+     "26-50": {
+      "SourceHit@1": 0.5631067961165048,
+      "SourceRecall@4": 0.3139119600284649,
+      "n": 309
+     },
+     "51-75": {
+      "SourceHit@1": 0.7340569877883311,
+      "SourceRecall@4": 0.4346931304492806,
+      "n": 737
+     },
+     "76-125": {
+      "SourceHit@1": 0.6133333333333333,
+      "SourceRecall@4": 0.36638193544844,
+      "n": 600
+     }
+    },
+    "n_proofs": 4249
+   },
+   "role": {
+    "RoleAt1": {
+     "definition/construction": 0.17392327606495647,
+     "theorem": 0.7354671687455872,
+     "glue": 0.06966345022358202,
+     "constructor/recursor": 0.020946104965874325
+    },
+    "RoleGlueAt1": 0.06966345022358202,
+    "by_target_depth": {
+     "0-10": {
+      "theorem": 0.43777777777777777,
+      "definition/construction": 0.19555555555555557,
+      "constructor/recursor": 0.11555555555555555,
+      "glue": 0.2511111111111111
+     },
+     "11-25": {
+      "definition/construction": 0.2799664710813076,
+      "theorem": 0.5800502933780386,
+      "constructor/recursor": 0.022632020117351215,
+      "glue": 0.1173512154233026
+     },
+     "126+": {
+      "theorem": 0.8864583333333333,
+      "glue": 0.0125,
+      "definition/construction": 0.096875,
+      "constructor/recursor": 0.004166666666666667
+     },
+     "26-50": {
+      "theorem": 0.8414239482200647,
+      "definition/construction": 0.12944983818770225,
+      "glue": 0.022653721682847898,
+      "constructor/recursor": 0.006472491909385114
+     },
+     "51-75": {
+      "definition/construction": 0.1248303934871099,
+      "theorem": 0.8616010854816825,
+      "glue": 0.013568521031207599
+     },
+     "76-125": {
+      "definition/construction": 0.15333333333333332,
+      "theorem": 0.8166666666666667,
+      "glue": 0.023333333333333334,
+      "constructor/recursor": 0.006666666666666667
+     }
+    }
+   },
+   "ties": {
+    "distinct_levels": 321,
+    "median_tie_block": 51.0,
+    "p90_tie_block": 725.0,
+    "max_tie_block": 37092,
+    "approx_frac_pairs_tied": 0.0886123036615183,
+    "sampled": 200000
+   },
+   "graph": {
+    "top_k=1": {
+     "GraphEdges": 728753,
+     "GraphComponents": 34318,
+     "GraphGiantFraction": 0.0830665232029797,
+     "GraphSecondLargest": 61775,
+     "GraphEntropy": 5.530214071470341,
+     "GraphSusceptibility": 19224.841133717815,
+     "GraphActiveNodeFraction": 0.9783900176533726
+    },
+    "top_k=2": {
+     "GraphEdges": 1400784,
+     "GraphComponents": 12554,
+     "GraphGiantFraction": 0.9803113127058414,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.2801141711327778,
+     "GraphSusceptibility": 2.074618917659589,
+     "GraphActiveNodeFraction": 0.9852954089435891
+    },
+    "top_k=4": {
+     "GraphEdges": 2498534,
+     "GraphComponents": 8439,
+     "GraphGiantFraction": 0.9868589184917441,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.18713779562748714,
+     "GraphSusceptibility": 2.1534855889099433,
+     "GraphActiveNodeFraction": 0.9900724351825033
+    },
+    "top_k=8": {
+     "GraphEdges": 3976725,
+     "GraphComponents": 5364,
+     "GraphGiantFraction": 0.9911706925180891,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.12489580074814788,
+     "GraphSusceptibility": 2.641977141160754,
+     "GraphActiveNodeFraction": 0.993882261047119
+    }
+   },
+   "seconds": 3.2
+  },
+  "R_introduced_depth": {
+   "ranking": "R_introduced_depth",
+   "family": "candidate",
+   "universe": "U1",
+   "complexity": {
+    "features": 2,
+    "thresholds": 0
+   },
+   "doc": "Citations the proof introduces first, then deepest. Current leader.",
+   "source": {
+    "SourceHit@1": 0.6032007531183808,
+    "SourceMRR": 0.6625315233830387,
+    "SourceRecall@1": 0.19884084925943968,
+    "SourceRecall@2": 0.2821063347454202,
+    "SourceRecall@4": 0.3461115446829536,
+    "SourceRecall@8": 0.37844047102386785,
+    "by_target_depth": {
+     "0-10": {
+      "SourceHit@1": 0.5666666666666667,
+      "SourceRecall@4": 0.31151322751322746,
+      "n": 450
+     },
+     "11-25": {
+      "SourceHit@1": 0.4266554903604359,
+      "SourceRecall@4": 0.24035887947264628,
+      "n": 1193
+     },
+     "126+": {
+      "SourceHit@1": 0.7135416666666666,
+      "SourceRecall@4": 0.37093998984636073,
+      "n": 960
+     },
+     "26-50": {
+      "SourceHit@1": 0.56957928802589,
+      "SourceRecall@4": 0.34108743647578593,
+      "n": 309
+     },
+     "51-75": {
+      "SourceHit@1": 0.7530529172320217,
+      "SourceRecall@4": 0.4635963180429583,
+      "n": 737
+     },
+     "76-125": {
+      "SourceHit@1": 0.6383333333333333,
+      "SourceRecall@4": 0.40088327207477664,
+      "n": 600
+     }
+    },
+    "n_proofs": 4249
+   },
+   "role": {
+    "RoleAt1": {
+     "definition/construction": 0.13297246410920216,
+     "theorem": 0.7719463403153684,
+     "glue": 0.07295834313956225,
+     "constructor/recursor": 0.022122852435867264
+    },
+    "RoleGlueAt1": 0.07295834313956225,
+    "by_target_depth": {
+     "0-10": {
+      "theorem": 0.45555555555555555,
+      "definition/construction": 0.1622222222222222,
+      "constructor/recursor": 0.12,
+      "glue": 0.26222222222222225
+     },
+     "11-25": {
+      "definition/construction": 0.2112321877619447,
+      "theorem": 0.6345347862531433,
+      "constructor/recursor": 0.025146689019279127,
+      "glue": 0.12908633696563285
+     },
+     "126+": {
+      "theorem": 0.9104166666666667,
+      "glue": 0.013541666666666667,
+      "definition/construction": 0.071875,
+      "constructor/recursor": 0.004166666666666667
+     },
+     "26-50": {
+      "theorem": 0.8576051779935275,
+      "definition/construction": 0.11326860841423948,
+      "glue": 0.022653721682847898,
+      "constructor/recursor": 0.006472491909385114
+     },
+     "51-75": {
+      "definition/construction": 0.09769335142469471,
+      "theorem": 0.8887381275440976,
+      "glue": 0.013568521031207599
+     },
+     "76-125": {
+      "definition/construction": 0.10666666666666667,
+      "theorem": 0.8733333333333333,
+      "glue": 0.013333333333333334,
+      "constructor/recursor": 0.006666666666666667
+     }
+    }
+   },
+   "ties": {
+    "distinct_levels": 602,
+    "median_tie_block": 31.0,
+    "p90_tie_block": 382.89999999999975,
+    "max_tie_block": 25620,
+    "approx_frac_pairs_tied": 0.05457235451177256,
+    "sampled": 200000
+   },
+   "graph": {
+    "top_k=1": {
+     "GraphEdges": 728753,
+     "GraphComponents": 34318,
+     "GraphGiantFraction": 0.142829808119503,
+     "GraphSecondLargest": 52762,
+     "GraphEntropy": 5.518532847097388,
+     "GraphSusceptibility": 14660.23168471846,
+     "GraphActiveNodeFraction": 0.9789981219537448
+    },
+    "top_k=2": {
+     "GraphEdges": 1400784,
+     "GraphComponents": 12864,
+     "GraphGiantFraction": 0.978387396514147,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.3053875394668056,
+     "GraphSusceptibility": 2.2001697895821963,
+     "GraphActiveNodeFraction": 0.9855011683728099
+    },
+    "top_k=4": {
+     "GraphEdges": 2498534,
+     "GraphComponents": 7680,
+     "GraphGiantFraction": 0.9879099953212664,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.1719432983046175,
+     "GraphSusceptibility": 2.2422764227642276,
+     "GraphActiveNodeFraction": 0.9910081818860932
+    },
+    "top_k=8": {
+     "GraphEdges": 3976725,
+     "GraphComponents": 4669,
+     "GraphGiantFraction": 0.9921313400443235,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.11101462660691755,
+     "GraphSusceptibility": 2.82145236508994,
+     "GraphActiveNodeFraction": 0.9947629638269682
+    }
+   },
+   "seconds": 3.4
+  },
+  "R_phase5_composite": {
+   "ranking": "R_phase5_composite",
+   "family": "candidate",
+   "universe": "U1",
+   "complexity": {
+    "features": 4,
+    "thresholds": 2
+   },
+   "doc": "Frozen as a weak comparator: role x statement x depth x idf.",
+   "source": {
+    "SourceHit@1": 0.560837844198635,
+    "SourceMRR": 0.6408802707843659,
+    "SourceRecall@1": 0.18740852371454755,
+    "SourceRecall@2": 0.2784855367744674,
+    "SourceRecall@4": 0.34634907962912803,
+    "SourceRecall@8": 0.37966964825075844,
+    "by_target_depth": {
+     "0-10": {
+      "SourceHit@1": 0.4955555555555556,
+      "SourceRecall@4": 0.3172354497354498,
+      "n": 450
+     },
+     "11-25": {
+      "SourceHit@1": 0.3914501257334451,
+      "SourceRecall@4": 0.24634036661467024,
+      "n": 1193
+     },
+     "126+": {
+      "SourceHit@1": 0.6958333333333333,
+      "SourceRecall@4": 0.36594765776932475,
+      "n": 960
+     },
+     "26-50": {
+      "SourceHit@1": 0.47896440129449835,
+      "SourceRecall@4": 0.34843163848018216,
+      "n": 309
+     },
+     "51-75": {
+      "SourceHit@1": 0.7055630936227951,
+      "SourceRecall@4": 0.4580940479102829,
+      "n": 737
+     },
+     "76-125": {
+      "SourceHit@1": 0.595,
+      "SourceRecall@4": 0.3973446475551739,
+      "n": 600
+     }
+    },
+    "n_proofs": 4249
+   },
+   "role": {
+    "RoleAt1": {
+     "definition/construction": 0.13862085196516827,
+     "constructor/recursor": 0.040715462461755704,
+     "theorem": 0.7651212049894093,
+     "glue": 0.055542480583666745
+    },
+    "RoleGlueAt1": 0.055542480583666745,
+    "by_target_depth": {
+     "0-10": {
+      "theorem": 0.44222222222222224,
+      "constructor/recursor": 0.17555555555555555,
+      "definition/construction": 0.18666666666666668,
+      "glue": 0.19555555555555557
+     },
+     "11-25": {
+      "constructor/recursor": 0.050293378038558254,
+      "definition/construction": 0.22045264040234702,
+      "theorem": 0.6320201173512154,
+      "glue": 0.0972338642078793
+     },
+     "126+": {
+      "theorem": 0.8989583333333333,
+      "glue": 0.013541666666666667,
+      "definition/construction": 0.07708333333333334,
+      "constructor/recursor": 0.010416666666666666
+     },
+     "26-50": {
+      "theorem": 0.8381877022653722,
+      "glue": 0.016181229773462782,
+      "definition/construction": 0.12297734627831715,
+      "constructor/recursor": 0.022653721682847898
+     },
+     "51-75": {
+      "definition/construction": 0.08005427408412483,
+      "theorem": 0.8995929443690638,
+      "constructor/recursor": 0.009497964721845319,
+      "glue": 0.010854816824966078
+     },
+     "76-125": {
+      "definition/construction": 0.11833333333333333,
+      "theorem": 0.855,
+      "constructor/recursor": 0.016666666666666666,
+      "glue": 0.01
+     }
+    }
+   },
+   "ties": {
+    "distinct_levels": 23735,
+    "median_tie_block": 2.0,
+    "p90_tie_block": 10.0,
+    "max_tie_block": 3889,
+    "approx_frac_pairs_tied": 0.002394444622223111,
+    "sampled": 200000
+   },
+   "graph": {
+    "top_k=1": {
+     "GraphEdges": 728753,
+     "GraphComponents": 34335,
+     "GraphGiantFraction": 0.052426716223672294,
+     "GraphSecondLargest": 36247,
+     "GraphEntropy": 6.900827972383414,
+     "GraphSusceptibility": 6415.423717608268,
+     "GraphActiveNodeFraction": 0.9835667676242125
+    },
+    "top_k=2": {
+     "GraphEdges": 1400784,
+     "GraphComponents": 7940,
+     "GraphGiantFraction": 0.987031913680643,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.18374337488852793,
+     "GraphSusceptibility": 2.3232945932289035,
+     "GraphActiveNodeFraction": 0.9908994046082249
+    },
+    "top_k=4": {
+     "GraphEdges": 2498534,
+     "GraphComponents": 4499,
+     "GraphGiantFraction": 0.9923056458028353,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.10841326460784528,
+     "GraphSusceptibility": 2.8644183273718276,
+     "GraphActiveNodeFraction": 0.9950132826230265
+    },
+    "top_k=8": {
+     "GraphEdges": 3976725,
+     "GraphComponents": 2294,
+     "GraphGiantFraction": 0.9953684469881144,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.06417805172085957,
+     "GraphSusceptibility": 3.9683078664402944,
+     "GraphActiveNodeFraction": 0.9977995536199898
+    }
+   },
+   "seconds": 4.5
+  },
+  "R_v8_all_kinds": {
+   "ranking": "R_v8_all_kinds",
+   "family": "candidate",
+   "universe": "U1",
+   "complexity": {
+    "features": 3,
+    "thresholds": 3
+   },
+   "doc": "V8's demotions, but declaration kind ignored so definitions compete.",
+   "source": {
+    "SourceHit@1": 0.5914332784184514,
+    "SourceMRR": 0.6554014169501551,
+    "SourceRecall@1": 0.19506096827904093,
+    "SourceRecall@2": 0.28039416717658056,
+    "SourceRecall@4": 0.3418397789496675,
+    "SourceRecall@8": 0.37557633685194475,
+    "by_target_depth": {
+     "0-10": {
+      "SourceHit@1": 0.5,
+      "SourceRecall@4": 0.30332539682539683,
+      "n": 450
+     },
+     "11-25": {
+      "SourceHit@1": 0.4149203688181056,
+      "SourceRecall@4": 0.23652505845525443,
+      "n": 1193
+     },
+     "126+": {
+      "SourceHit@1": 0.7083333333333334,
+      "SourceRecall@4": 0.3664695037352496,
+      "n": 960
+     },
+     "26-50": {
+      "SourceHit@1": 0.56957928802589,
+      "SourceRecall@4": 0.3330546116953884,
+      "n": 309
+     },
+     "51-75": {
+      "SourceHit@1": 0.7530529172320217,
+      "SourceRecall@4": 0.4616805720973616,
+      "n": 737
+     },
+     "76-125": {
+      "SourceHit@1": 0.6366666666666667,
+      "SourceRecall@4": 0.3980386953551999,
+      "n": 600
+     }
+    },
+    "n_proofs": 4249
+   },
+   "role": {
+    "RoleAt1": {
+     "definition/construction": 0.16851023770298895,
+     "theorem": 0.7801835726053189,
+     "glue": 0.026594492821840433,
+     "constructor/recursor": 0.02471169686985173
+    },
+    "RoleGlueAt1": 0.026594492821840433,
+    "by_target_depth": {
+     "0-10": {
+      "theorem": 0.4711111111111111,
+      "definition/construction": 0.28,
+      "constructor/recursor": 0.14,
+      "glue": 0.10888888888888888
+     },
+     "11-25": {
+      "definition/construction": 0.2766135792120704,
+      "theorem": 0.6538139145012574,
+      "constructor/recursor": 0.026823134953897737,
+      "glue": 0.04274937133277452
+     },
+     "126+": {
+      "theorem": 0.9125,
+      "definition/construction": 0.08125,
+      "glue": 0.0020833333333333333,
+      "constructor/recursor": 0.004166666666666667
+     },
+     "26-50": {
+      "theorem": 0.86084142394822,
+      "definition/construction": 0.12944983818770225,
+      "glue": 0.003236245954692557,
+      "constructor/recursor": 0.006472491909385114
+     },
+     "51-75": {
+      "definition/construction": 0.10176390773405698,
+      "theorem": 0.8900949796472184,
+      "glue": 0.008141112618724558
+     },
+     "76-125": {
+      "definition/construction": 0.11166666666666666,
+      "theorem": 0.875,
+      "constructor/recursor": 0.006666666666666667,
+      "glue": 0.006666666666666667
+     }
+    }
+   },
+   "ties": {
+    "distinct_levels": 886,
+    "median_tie_block": 18.0,
+    "p90_tie_block": 276.0,
+    "max_tie_block": 19298,
+    "approx_frac_pairs_tied": 0.03521875959379797,
+    "sampled": 200000
+   },
+   "graph": {
+    "top_k=1": {
+     "GraphEdges": 728753,
+     "GraphComponents": 34320,
+     "GraphGiantFraction": 0.07221893851724775,
+     "GraphSecondLargest": 31577,
+     "GraphEntropy": 6.299574513821583,
+     "GraphSusceptibility": 7252.656199411799,
+     "GraphActiveNodeFraction": 0.9805681843499641
+    },
+    "top_k=2": {
+     "GraphEdges": 1400784,
+     "GraphComponents": 11006,
+     "GraphGiantFraction": 0.981501309914328,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.2613498109481454,
+     "GraphSusceptibility": 2.2521431101664895,
+     "GraphActiveNodeFraction": 0.9875010976020507
+    },
+    "top_k=4": {
+     "GraphEdges": 2498534,
+     "GraphComponents": 6776,
+     "GraphGiantFraction": 0.9891642104407838,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.1538061919709962,
+     "GraphSusceptibility": 2.3759071117561685,
+     "GraphActiveNodeFraction": 0.9921208554874205
+    },
+    "top_k=8": {
+     "GraphEdges": 3976725,
+     "GraphComponents": 4068,
+     "GraphGiantFraction": 0.9929504460523677,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.09915689400473249,
+     "GraphSusceptibility": 3.0200780814277746,
+     "GraphActiveNodeFraction": 0.9955283364808847
+    }
+   },
+   "seconds": 3.5
+  },
+  "R_v8_faithful": {
+   "ranking": "R_v8_faithful",
+   "family": "candidate",
+   "universe": "U1",
+   "complexity": {
+    "features": 4,
+    "thresholds": 3
+   },
+   "doc": "Frozen V8 order, with what V8 filtered merely ranked last.",
+   "source": {
+    "SourceHit@1": 0.5871969875264769,
+    "SourceMRR": 0.6518806720611625,
+    "SourceRecall@1": 0.19470271404928752,
+    "SourceRecall@2": 0.28223254882965004,
+    "SourceRecall@4": 0.34342812723608795,
+    "SourceRecall@8": 0.3765531646626249,
+    "by_target_depth": {
+     "0-10": {
+      "SourceHit@1": 0.5444444444444444,
+      "SourceRecall@4": 0.3061031746031746,
+      "n": 450
+     },
+     "11-25": {
+      "SourceHit@1": 0.4107292539815591,
+      "SourceRecall@4": 0.24034229923812805,
+      "n": 1193
+     },
+     "126+": {
+      "SourceHit@1": 0.7041666666666667,
+      "SourceRecall@4": 0.36387257086487923,
+      "n": 960
+     },
+     "26-50": {
+      "SourceHit@1": 0.5533980582524272,
+      "SourceRecall@4": 0.3318154517183643,
+      "n": 309
+     },
+     "51-75": {
+      "SourceHit@1": 0.728629579375848,
+      "SourceRecall@4": 0.46594183171818715,
+      "n": 737
+     },
+     "76-125": {
+      "SourceHit@1": 0.6266666666666667,
+      "SourceRecall@4": 0.3991725807934332,
+      "n": 600
+     }
+    },
+    "n_proofs": 4249
+   },
+   "role": {
+    "RoleAt1": {
+     "glue": 0.11202635914332784,
+     "theorem": 0.8199576370910803,
+     "definition/construction": 0.058837373499646975,
+     "constructor/recursor": 0.009178630265944928
+    },
+    "RoleGlueAt1": 0.11202635914332784,
+    "by_target_depth": {
+     "0-10": {
+      "theorem": 0.5244444444444445,
+      "definition/construction": 0.1511111111111111,
+      "constructor/recursor": 0.057777777777777775,
+      "glue": 0.26666666666666666
+     },
+     "11-25": {
+      "theorem": 0.7091366303436715,
+      "glue": 0.22212908633696563,
+      "definition/construction": 0.06119027661357921,
+      "constructor/recursor": 0.0075440067057837385
+     },
+     "126+": {
+      "theorem": 0.9291666666666667,
+      "glue": 0.022916666666666665,
+      "definition/construction": 0.046875,
+      "constructor/recursor": 0.0010416666666666667
+     },
+     "26-50": {
+      "theorem": 0.9158576051779935,
+      "glue": 0.042071197411003236,
+      "definition/construction": 0.03559870550161812,
+      "constructor/recursor": 0.006472491909385114
+     },
+     "51-75": {
+      "glue": 0.04341926729986431,
+      "theorem": 0.9362279511533242,
+      "definition/construction": 0.0203527815468114
+     },
+     "76-125": {
+      "glue": 0.04,
+      "theorem": 0.895,
+      "definition/construction": 0.06333333333333334,
+      "constructor/recursor": 0.0016666666666666668
+     }
+    }
+   },
+   "ties": {
+    "distinct_levels": 1419,
+    "median_tie_block": 14.0,
+    "p90_tie_block": 190.20000000000005,
+    "max_tie_block": 18351,
+    "approx_frac_pairs_tied": 0.029324735973679867,
+    "sampled": 200000
+   },
+   "graph": {
+    "top_k=1": {
+     "GraphEdges": 728753,
+     "GraphComponents": 34318,
+     "GraphGiantFraction": 0.17486406116690498,
+     "GraphSecondLargest": 49683,
+     "GraphEntropy": 5.59574071015581,
+     "GraphSusceptibility": 11097.412369103607,
+     "GraphActiveNodeFraction": 0.9799443532142375
+    },
+    "top_k=2": {
+     "GraphEdges": 1400784,
+     "GraphComponents": 11324,
+     "GraphGiantFraction": 0.9809207275758263,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.2695109710124815,
+     "GraphSusceptibility": 2.238906443192746,
+     "GraphActiveNodeFraction": 0.987173455198833
+    },
+    "top_k=4": {
+     "GraphEdges": 2498534,
+     "GraphComponents": 6937,
+     "GraphGiantFraction": 0.9888798168347909,
+     "GraphSecondLargest": 56,
+     "GraphEntropy": 0.15776427620455086,
+     "GraphSusceptibility": 2.3991750147318798,
+     "GraphActiveNodeFraction": 0.9919203383366513
+    },
+    "top_k=8": {
+     "GraphEdges": 3976725,
+     "GraphComponents": 4229,
+     "GraphGiantFraction": 0.9928115256734035,
+     "GraphSecondLargest": 54,
+     "GraphEntropy": 0.10147724059879987,
+     "GraphSusceptibility": 2.409662716499544,
+     "GraphActiveNodeFraction": 0.9953134030643739
+    }
+   },
+   "seconds": 3.6
+  }
+ }
+}

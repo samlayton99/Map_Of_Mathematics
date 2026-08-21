@@ -1,0 +1,169 @@
+{
+ "real_purity": 0.6207676807224963,
+ "shuffled_purity": 0.4771876559780532,
+ "size_matched_purity": 0.11745517475971123,
+ "depth_matched_purity": 0.1262969882054442,
+ "lift_over_random": 5.285145435205025,
+ "lift_over_shuffled": 1.3008879692207433,
+ "verdict_subject_coherence": "REJECTED: real components ARE strongly subject-coherent, far above both controls. My 'not a subject atlas' claim was wrong.",
+ "n_components_real": 18293,
+ "n_components_shuffled": 20484,
+ "sinks": {
+  "n": 18249,
+  "median_depth": 4.0,
+  "glue_frac": 0.02361773247849197,
+  "definition_frac": 0.11940380294810675,
+  "top_used": [
+   {
+    "name": "OfNat.ofNat",
+    "used": 189803,
+    "depth": 2,
+    "glue": false
+   },
+   {
+    "name": "Eq",
+    "used": 182207,
+    "depth": 0,
+    "glue": true
+   },
+   {
+    "name": "Eq.refl",
+    "used": 157859,
+    "depth": 1,
+    "glue": true
+   },
+   {
+    "name": "id",
+    "used": 137705,
+    "depth": 0,
+    "glue": true
+   },
+   {
+    "name": "DFunLike.coe",
+    "used": 90615,
+    "depth": 2,
+    "glue": false
+   },
+   {
+    "name": "propext",
+    "used": 83720,
+    "depth": 1,
+    "glue": true
+   },
+   {
+    "name": "HAdd.hAdd",
+    "used": 82436,
+    "depth": 2,
+    "glue": false
+   },
+   {
+    "name": "Membership.mem",
+    "used": 69396,
+    "depth": 2,
+    "glue": false
+   },
+   {
+    "name": "HMul.hMul",
+    "used": 49329,
+    "depth": 2,
+    "glue": false
+   },
+   {
+    "name": "LE.le",
+    "used": 49102,
+    "depth": 1,
+    "glue": false
+   },
+   {
+    "name": "And",
+    "used": 44345,
+    "depth": 0,
+    "glue": true
+   },
+   {
+    "name": "Bool.true",
+    "used": 44170,
+    "depth": 1,
+    "glue": true
+   },
+   {
+    "name": "CategoryTheory.Functor.obj",
+    "used": 40576,
+    "depth": 2,
+    "glue": true
+   },
+   {
+    "name": "CategoryTheory.CategoryStruct.comp",
+    "used": 38668,
+    "depth": 1,
+    "glue": false
+   },
+   {
+    "name": "HSub.hSub",
+    "used": 33842,
+    "depth": 2,
+    "glue": false
+   },
+   {
+    "name": "List.nil",
+    "used": 32499,
+    "depth": 1,
+    "glue": true
+   },
+   {
+    "name": "LT.lt",
+    "used": 32019,
+    "depth": 1,
+    "glue": false
+   },
+   {
+    "name": "Nat",
+    "used": 30934,
+    "depth": 0,
+    "glue": true
+   },
+   {
+    "name": "Neg.neg",
+    "used": 28457,
+    "depth": 1,
+    "glue": false
+   },
+   {
+    "name": "List.cons",
+    "used": 28457,
+    "depth": 1,
+    "glue": true
+   },
+   {
+    "name": "Not",
+    "used": 27644,
+    "depth": 1,
+    "glue": true
+   },
+   {
+    "name": "Prod",
+    "used": 26741,
+    "depth": 0,
+    "glue": true
+   },
+   {
+    "name": "Subtype.val",
+    "used": 26561,
+    "depth": 1,
+    "glue": true
+   },
+   {
+    "name": "Bool.false",
+    "used": 24471,
+    "depth": 1,
+    "glue": true
+   },
+   {
+    "name": "HSMul.hSMul",
+    "used": 23965,
+    "depth": 2,
+    "glue": false
+   }
+  ]
+ }
+}

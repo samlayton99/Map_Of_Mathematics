@@ -1,0 +1,451 @@
+{
+ "per_k": [
+  {
+   "k": 1,
+   "edges_added": 728753,
+   "merges": 728707,
+   "components": 34320,
+   "giant": 0.0722,
+   "entropy": 6.2996,
+   "delta_components": 728707,
+   "merge_kinds": {
+    "theorem": 421519,
+    "other": 39472,
+    "definition/construction": 255990,
+    "glue": 11726
+   }
+  },
+  {
+   "k": 2,
+   "edges_added": 672031,
+   "merges": 23314,
+   "components": 11006,
+   "giant": 0.9815,
+   "entropy": 0.2613,
+   "delta_components": 23314,
+   "merge_kinds": {
+    "theorem": 3558,
+    "definition/construction": 12087,
+    "other": 7248,
+    "glue": 421
+   }
+  },
+  {
+   "k": 3,
+   "edges_added": 589873,
+   "merges": 2835,
+   "components": 8171,
+   "giant": 0.9871,
+   "entropy": 0.1836,
+   "delta_components": 2835,
+   "merge_kinds": {
+    "definition/construction": 2012,
+    "other": 419,
+    "theorem": 400,
+    "glue": 4
+   }
+  },
+  {
+   "k": 4,
+   "edges_added": 507877,
+   "merges": 1395,
+   "components": 6776,
+   "giant": 0.9892,
+   "entropy": 0.1538,
+   "delta_components": 1395,
+   "merge_kinds": {
+    "definition/construction": 997,
+    "theorem": 219,
+    "other": 177,
+    "glue": 2
+   }
+  },
+  {
+   "k": 5,
+   "edges_added": 435491,
+   "merges": 1013,
+   "components": 5763,
+   "giant": 0.9906,
+   "entropy": 0.1328,
+   "delta_components": 1013,
+   "merge_kinds": {
+    "definition/construction": 774,
+    "theorem": 151,
+    "other": 88
+   }
+  },
+  {
+   "k": 6,
+   "edges_added": 384538,
+   "merges": 697,
+   "components": 5066,
+   "giant": 0.9916,
+   "entropy": 0.119,
+   "delta_components": 697,
+   "merge_kinds": {
+    "definition/construction": 559,
+    "theorem": 79,
+    "other": 58,
+    "glue": 1
+   }
+  },
+  {
+   "k": 7,
+   "edges_added": 344997,
+   "merges": 554,
+   "components": 4512,
+   "giant": 0.9923,
+   "entropy": 0.108,
+   "delta_components": 554,
+   "merge_kinds": {
+    "definition/construction": 469,
+    "theorem": 43,
+    "other": 41,
+    "glue": 1
+   }
+  },
+  {
+   "k": 8,
+   "edges_added": 313165,
+   "merges": 444,
+   "components": 4068,
+   "giant": 0.993,
+   "entropy": 0.0992,
+   "delta_components": 444,
+   "merge_kinds": {
+    "definition/construction": 377,
+    "theorem": 40,
+    "other": 27
+   }
+  },
+  {
+   "k": 9,
+   "edges_added": 287621,
+   "merges": 407,
+   "components": 3661,
+   "giant": 0.9935,
+   "entropy": 0.0911,
+   "delta_components": 407,
+   "merge_kinds": {
+    "definition/construction": 345,
+    "theorem": 30,
+    "other": 32
+   }
+  },
+  {
+   "k": 10,
+   "edges_added": 265390,
+   "merges": 374,
+   "components": 3287,
+   "giant": 0.994,
+   "entropy": 0.0838,
+   "delta_components": 374,
+   "merge_kinds": {
+    "definition/construction": 330,
+    "theorem": 24,
+    "other": 20
+   }
+  },
+  {
+   "k": 11,
+   "edges_added": 246527,
+   "merges": 267,
+   "components": 3020,
+   "giant": 0.9944,
+   "entropy": 0.0786,
+   "delta_components": 267,
+   "merge_kinds": {
+    "theorem": 21,
+    "definition/construction": 227,
+    "other": 19
+   }
+  },
+  {
+   "k": 12,
+   "edges_added": 229588,
+   "merges": 226,
+   "components": 2794,
+   "giant": 0.9947,
+   "entropy": 0.0739,
+   "delta_components": 226,
+   "merge_kinds": {
+    "theorem": 16,
+    "definition/construction": 195,
+    "other": 14,
+    "glue": 1
+   }
+  },
+  {
+   "k": 13,
+   "edges_added": 213865,
+   "merges": 216,
+   "components": 2578,
+   "giant": 0.995,
+   "entropy": 0.0698,
+   "delta_components": 216,
+   "merge_kinds": {
+    "theorem": 16,
+    "definition/construction": 186,
+    "glue": 1,
+    "other": 13
+   }
+  },
+  {
+   "k": 14,
+   "edges_added": 198971,
+   "merges": 182,
+   "components": 2396,
+   "giant": 0.9952,
+   "entropy": 0.0661,
+   "delta_components": 182,
+   "merge_kinds": {
+    "definition/construction": 152,
+    "theorem": 15,
+    "other": 15
+   }
+  },
+  {
+   "k": 15,
+   "edges_added": 184534,
+   "merges": 147,
+   "components": 2249,
+   "giant": 0.9954,
+   "entropy": 0.0631,
+   "delta_components": 147,
+   "merge_kinds": {
+    "definition/construction": 125,
+    "theorem": 9,
+    "other": 13
+   }
+  },
+  {
+   "k": 16,
+   "edges_added": 171230,
+   "merges": 146,
+   "components": 2103,
+   "giant": 0.9957,
+   "entropy": 0.0595,
+   "delta_components": 146,
+   "merge_kinds": {
+    "definition/construction": 118,
+    "theorem": 13,
+    "other": 15
+   }
+  }
+ ],
+ "merge_kinds_total": {
+  "theorem": 426153,
+  "other": 47671,
+  "definition/construction": 274943,
+  "glue": 12157
+ },
+ "merge_kinds_k_ge_2": {
+  "theorem": 4634,
+  "definition/construction": 18953,
+  "other": 8199,
+  "glue": 431
+ },
+ "bridge_examples": [
+  {
+   "k": 2,
+   "kind": "theorem",
+   "theorem": "Nat.one_mem_properDivisors_iff_one_lt",
+   "cites": "one_dvd",
+   "depth_thm": 63,
+   "depth_cited": 6
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "Nat.properDivisors",
+   "cites": "Finset.Ico",
+   "depth_thm": 57,
+   "depth_cited": 3
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "Finset.instSetLike",
+   "cites": "Membership.mem",
+   "depth_thm": 53,
+   "depth_cited": 2
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "instLTNat",
+   "cites": "Nat.lt",
+   "depth_thm": 3,
+   "depth_cited": 2
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "SetLike.instMembership",
+   "cites": "SetLike.coe",
+   "depth_thm": 4,
+   "depth_cited": 2
+  },
+  {
+   "k": 2,
+   "kind": "theorem",
+   "theorem": "Monoid.toMulOneClass",
+   "cites": "Monoid.one_mul",
+   "depth_thm": 5,
+   "depth_cited": 1
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "congrArg",
+   "cites": "rfl",
+   "depth_thm": 3,
+   "depth_cited": 2
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "Nat.instMonoid",
+   "cites": "Nat",
+   "depth_thm": 18,
+   "depth_cited": 0
+  },
+  {
+   "k": 2,
+   "kind": "other",
+   "theorem": "semigroupDvd",
+   "cites": "Dvd.mk",
+   "depth_thm": 4,
+   "depth_cited": 1
+  },
+  {
+   "k": 2,
+   "kind": "glue",
+   "theorem": "and_iff_right",
+   "cites": "And.intro",
+   "depth_thm": 2,
+   "depth_cited": 1
+  },
+  {
+   "k": 2,
+   "kind": "theorem",
+   "theorem": "one_dvd",
+   "cites": "one_mul",
+   "depth_thm": 6,
+   "depth_cited": 2
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "One.toOfNat1",
+   "cites": "One.one",
+   "depth_thm": 3,
+   "depth_cited": 1
+  },
+  {
+   "k": 2,
+   "kind": "theorem",
+   "theorem": "Nat.mem_properDivisors",
+   "cites": "Nat.filter_dvd_eq_properDivisors",
+   "depth_thm": 62,
+   "depth_cited": 58
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "DirectedOn",
+   "cites": "And",
+   "depth_thm": 4,
+   "depth_cited": 0
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "BddAbove",
+   "cites": "Set.Nonempty",
+   "depth_thm": 5,
+   "depth_cited": 4
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "Set.Nonempty",
+   "cites": "Exists",
+   "depth_thm": 4,
+   "depth_cited": 0
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "ZFSet.singleton_inj._simp_1",
+   "cites": "Singleton.singleton",
+   "depth_thm": 25,
+   "depth_cited": 2
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "ZFSet",
+   "cites": "Quotient",
+   "depth_thm": 14,
+   "depth_cited": 2
+  },
+  {
+   "k": 2,
+   "kind": "other",
+   "theorem": "ZFSet.instSingleton",
+   "cites": "Singleton.mk",
+   "depth_thm": 18,
+   "depth_cited": 2
+  },
+  {
+   "k": 2,
+   "kind": "theorem",
+   "theorem": "ZFSet.singleton_inj",
+   "cites": "Function.Injective.eq_iff",
+   "depth_thm": 24,
+   "depth_cited": 4
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "Algebra.PreSubmersivePresentation.mk.sizeOf_spec",
+   "cites": "OfNat.ofNat",
+   "depth_thm": 102,
+   "depth_cited": 2
+  },
+  {
+   "k": 2,
+   "kind": "other",
+   "theorem": "Algebra.Presentation._sizeOf_inst",
+   "cites": "SizeOf.mk",
+   "depth_thm": 101,
+   "depth_cited": 1
+  },
+  {
+   "k": 2,
+   "kind": "definition/construction",
+   "theorem": "instHAdd",
+   "cites": "Add.add",
+   "depth_thm": 3,
+   "depth_cited": 1
+  },
+  {
+   "k": 2,
+   "kind": "theorem",
+   "theorem": "CommRing.toCommSemiring",
+   "cites": "CommRing.mul_comm",
+   "depth_thm": 5,
+   "depth_cited": 1
+  },
+  {
+   "k": 2,
+   "kind": "other",
+   "theorem": "Algebra.PreSubmersivePresentation._sizeOf_inst",
+   "cites": "SizeOf.mk",
+   "depth_thm": 103,
+   "depth_cited": 1
+  }
+ ],
+ "largest_giant_jump_at_k": 2
+}

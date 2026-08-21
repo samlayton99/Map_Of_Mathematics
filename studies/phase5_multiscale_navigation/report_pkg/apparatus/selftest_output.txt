@@ -1,0 +1,23 @@
+corpus: 18,721,317 incidences, universe U1 = 8,485,349
+
+  [PASS] T7 universes nest U1 <= U1D <= U0  8,485,349 <= 18,081,920 <= 18,721,317
+  [PASS] T1 B0_random is a permutation within every proof
+  [PASS] T1 B1_reverse_depth is a permutation within every proof
+  [PASS] T1 B2_popularity is a permutation within every proof
+  [PASS] T1 B3_term_order is a permutation within every proof
+  [PASS] T1 O_source is a permutation within every proof
+  [PASS] T1 R_depth is a permutation within every proof
+  [PASS] T1 R_introduced_depth is a permutation within every proof
+  [PASS] T1 R_phase5_composite is a permutation within every proof
+  [PASS] T1 R_v8_all_kinds is a permutation within every proof
+  [PASS] T1 R_v8_faithful is a permutation within every proof
+  [PASS] T2 candidate coverage identical across rankings  coverage=0.3936
+  [PASS] T3a top_k is nested  [728753, 1400784, 2498534, 3976725, 5774451]
+  [PASS] T3b top_pct is nested  [1248664, 2406562, 4427967, 8485349]
+  [PASS] T4 components non-increasing as edges are admitted  [34318, 12864, 7680, 4669]
+  [PASS] T4b giant fraction non-decreasing  [0.1428, 0.9784, 0.9879, 0.9921]
+  [PASS] T5 SourceOracle is optimal for SourceHit@1  oracle=0.7595 best_other=0.6032
+  [PASS] T6 oracle ceiling == fraction of proofs with a source ref present (it measures COVERAGE, not ranking)  oracle=0.7595 coverage=0.7595
+  [PASS] T8 no metric claims to be Semantic*
+
+all invariants hold
