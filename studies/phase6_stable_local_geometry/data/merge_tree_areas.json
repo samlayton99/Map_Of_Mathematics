@@ -1,0 +1,32 @@
+{
+ "E4_flat": {
+  "connected_share": 0.9908333333333333,
+  "auc_same_vs_cross_by_mergeheight": [
+   0.4688,
+   0.5011,
+   0.4896,
+   0.5063
+  ],
+  "median_merge_same": 13.0,
+  "median_merge_cross": 14.0,
+  "median_dip_same": 21.0,
+  "median_dip_cross": 21.0,
+  "cross_pairs_merging_at_foundations(<=10)": 0.403133423180593,
+  "same_pairs_merging_at_foundations(<=10)": 0.4193819281155526
+ },
+ "GAP": {
+  "connected_share": 0.9828333333333333,
+  "auc_same_vs_cross_by_mergeheight": [
+   0.4634,
+   0.47,
+   0.4709,
+   0.6337
+  ],
+  "median_merge_same": 35.0,
+  "median_merge_cross": 38.0,
+  "median_dip_same": 1.0,
+  "median_dip_cross": 1.0,
+  "cross_pairs_merging_at_foundations(<=10)": 0.10666440562998135,
+  "same_pairs_merging_at_foundations(<=10)": 0.12226555875869086
+ }
+}
