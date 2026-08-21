@@ -156,4 +156,49 @@ def hierDump (envProbe : System.FilePath) (namesPath : System.FilePath)
   let (_, _) ← act.toIO coreCtx { env }
   h.flush
 
+
+/-- Same dump over the STATEMENT (the declaration's type) instead of the
+value — the occurrence forest of what the theorem is about. Nesting-0
+items are the statement's principal structure; deeply nested items are
+statement plumbing (instance arguments, coercion machinery). -/
+def hierDumpType (envProbe : System.FilePath) (namesPath : System.FilePath)
+    (out : System.FilePath) : IO Unit := do
+  let pf ← Mathrecord.processFile envProbe mathlibOptions
+  let env := pf.env
+  IO.println s!"env loaded: {env.header.moduleNames.size} modules"
+  let names := (← IO.FS.readFile namesPath).splitOn "\n" |>.filter (· ≠ "")
+  let h ← IO.FS.Handle.mk out .write
+  let coreCtx : Core.Context := { fileName := pf.fileName, fileMap := default }
+  let exactCache ← IO.mkRef ({} : Std.HashMap Name (Array BinderInfo × Nat))
+  let act : CoreM Unit := do
+    let mut done := 0
+    for nm in names do
+      let n := nm.toName
+      let row ← match env.find? n with
+        | none => pure (Json.mkObj [("n", Json.str nm), ("ok", Json.bool false),
+            ("err", Json.str "absent")])
+        | some ci => do
+          let res ← try
+            let r ← Core.withCurrHeartbeats <|
+              ((occurrenceForest exactCache ci.type).run' : CoreM _)
+            pure (some r)
+          catch _ => pure none
+          match res with
+          | none => pure (Json.mkObj [("n", Json.str nm),
+              ("ok", Json.bool false), ("err", Json.str "walk failed")])
+          | some (occs, trunc) => do
+            let occJson := occs.map fun o => Json.arr #[
+              Json.str (toString o.const), Json.num o.parent,
+              Json.num o.role.toNat, Json.num o.argIdx,
+              Json.num o.nesting, Json.num o.nargs]
+            pure (Json.mkObj [("n", Json.str nm), ("ok", Json.bool true),
+              ("trunc", Json.bool trunc), ("occ", Json.arr occJson)])
+      h.putStrLn row.compress
+      done := done + 1
+      if done % 100 == 0 then
+        IO.println s!"  {done}/{names.length}"
+    IO.println s!"done: {done} declarations"
+  let (_, _) ← act.toIO coreCtx { env }
+  h.flush
+
 end Mathrecord.HierDump

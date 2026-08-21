@@ -177,6 +177,9 @@ unsafe def main (args : List String) : IO UInt32 := do
   | ["hierdump", envProbe, namesFile, out] => do
     Mathrecord.HierDump.hierDump envProbe namesFile out
     return 0
+  | ["hierdumpt", envProbe, namesFile, out] => do
+    Mathrecord.HierDump.hierDumpType envProbe namesFile out
+    return 0
   | ["provenance", file, out] => do
     Mathrecord.Provenance.provenance file out
     return 0
