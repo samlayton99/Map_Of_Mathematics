@@ -25,7 +25,7 @@ SPLIT = os.environ.get("SPLIT", "TEST-R")
 OUT = os.path.join(ROOT, "results", "social_choice")
 
 # ---- reference comparators (decimal weights, NOT part of our family) ------
-ROLE_W = np.array([0.0, 0.25, 0.35, 0.5, 0.85, 1.0])   # indexed by tier 1..5
+ROLE_W = np.array([0.0, 0.1, 0.25, 0.5, 0.85, 1.0])    # indexed by tier 1..5
 DPIN = 346.0            # pinned depth normaliser (constant, never a max())
 
 
@@ -66,26 +66,36 @@ def reference_scores(c, base, sig, tier):
     stmt = np.where(c.inc_in_stmt_world[base], 1.0, 1.5)
     idf = sig.IDF[d]
     return {
+        # closest reconstruction of the quoted 5-decimal reference line
+        "REF*_role5w_x_logdepth_x_rarity": -(rw * logd * idf),
         "REF_role5w_x_logdepth": -(rw * logd),
-        "REF_role5w_x_lindepth": -(rw * lind),
         "REF_role5w_x_rarity": -(rw * idf),
-        "REF_role5w_x_stmt_x_logdepth": -(rw * stmt * logd),
         "REF_role5w_x_stmt_x_logdepth_x_rarity": -(rw * stmt * logd * idf),
         "REF_role5w_x_stmt_x_rarity": -(rw * stmt * idf),
     }
 
 
-def scheme_scores(c, base, sig, keys, tier, want_all=True):
+def scheme_scores(c, base, sig, keys, tier, want_all=True, anchor=None):
     """Every social-choice scheme, as a score array over `base`."""
     out = {}
     t0 = time.time()
+    ctx = {"tier": tier.astype(np.float64)}
+    if anchor is not None:
+        ctx["anchor"] = anchor
+    ASYM = {"veto_below_t2": SC.make_veto(2), "veto_below_t3": SC.make_veto(3),
+            "role_lex": SC.role_lex}
+    if anchor is not None:
+        ASYM["condorcet_first_anchor"] = SC.condorcet_first_anchor
 
-    def agg(names, mult=None, tag=""):
-        a = SC.Aggregator(c, base, keys, names, mult=mult)
-        return a.run(SC.RULES)
+    def agg(names, mult=None, extra_rules=False):
+        a = SC.Aggregator(c, base, keys, names, mult=mult, ctx=ctx)
+        rules = dict(SC.RULES)
+        if extra_rules:
+            rules.update(ASYM)
+        return a.run(rules)
 
     # --- 6-voter symmetric panel
-    res6, ex6 = agg(SC.VOTERS)
+    res6, ex6 = agg(SC.VOTERS, extra_rules=True)
     for r, v in res6.items():
         out[f"{r}6"] = v
     condorcet6 = ex6["condorcet"]
@@ -97,6 +107,12 @@ def scheme_scores(c, base, sig, keys, tier, want_all=True):
     condorcet4 = ex4["condorcet"]
 
     if want_all:
+        # --- multiplicity 2 for EVERY voter in turn, so the role result is
+        # read against its own controls and is not cherry-picked
+        for v in SC.VOTERS:
+            r, _ = agg(SC.VOTERS, mult={v: 2})
+            out[f"borda6_{v}x2"] = r["borda"]
+            out[f"copeland6_{v}x2"] = r["copeland"]
         # --- role with integer ballot multiplicity
         for m in (2, 3):
             r, _ = agg(SC.VOTERS, mult={"role": m})
@@ -132,8 +148,27 @@ def main():
     print(f"eval base: {len(base)} incidences in {len(arts)} artifacts")
 
     sig, keys, tier = build(c, base)
-    scores, extras = scheme_scores(c, base, sig, keys, tier)
-    scores.update(reference_scores(c, base, sig, tier))
+    refs = reference_scores(c, base, sig, tier)
+    scores, extras = scheme_scores(c, base, sig, keys, tier,
+                                   anchor=refs["REF*_role5w_x_logdepth_x_rarity"])
+    scores.update(refs)
+
+    # --- anchored hybrids: social choice used only to pick rank 1 -------
+    for aname, asc in refs.items():
+        ctx = {"tier": tier.astype(np.float64), "anchor": asc}
+        a6 = SC.Aggregator(c, base, keys, SC.VOTERS, ctx=ctx)
+        rr, _ = a6.run({k: SC.make_first_anchor(k)
+                        for k in ("condorcet", "copeland", "borda")})
+        short = aname.split("_", 1)[1]
+        for k, v in rr.items():
+            scores[f"HYB_{k}_first__{short}"] = v
+        if aname.startswith("REF*"):
+            a6b = SC.Aggregator(c, base, keys, SC.VOTERS,
+                                mult={"role": 2}, ctx=ctx)
+            rr2, _ = a6b.run({k: SC.make_first_anchor(k)
+                              for k in ("condorcet", "copeland")})
+            for k, v in rr2.items():
+                scores[f"HYB_{k}_first_rolex2__{short}"] = v
 
     rows = {}
     for name, sc in scores.items():

@@ -135,19 +135,24 @@ class Aggregator:
     then evaluates every registered rule. Vectorised in groups of equal-size
     proofs so it runs over the whole corpus, not just the graded proofs."""
 
-    def __init__(self, c, base, keys, voter_names, mult=None, budget=1.5e8):
+    def __init__(self, c, base, keys, voter_names, mult=None, budget=1.5e8,
+                 ctx=None):
         self.c, self.base = c, base
         self.names = list(voter_names)
         self.mult = mult or {}
         self.budget = budget
         self.K = np.stack([keys[v] for v in self.names])       # (L, N)
         self.W = np.array([self.mult.get(v, 1) for v in self.names], float)
+        self.ctx = ctx or {}                                   # per-incidence
 
-    def run(self, rules):
+    def run(self, rules, as_ranks=False):
+        """Evaluate every rule. `as_ranks=True` returns int32 within-proof
+        ranks instead of scores (compact enough for the whole corpus)."""
         c, base = self.c, self.base
         order, starts, counts = group_by_artifact(c, base)
-        out = {r: np.empty(len(base)) for r in rules}
-        extra = defaultdict(lambda: np.zeros(len(base), np.int8))
+        dt = np.int32 if as_ranks else np.float64
+        out = {r: np.empty(len(base), dt) for r in rules}
+        extra = {"condorcet": np.zeros(len(base), np.int8)}
         L = len(self.names)
         for n, block in _pad_groups(order, starts, counts):
             per = max(1, int(self.budget // max(L * n * n, 1)))
@@ -156,18 +161,29 @@ class Aggregator:
                 X = self.K[:, blk]                              # (L, m, n)
                 # pref[l,m,a,b] = voter l strictly prefers a over b
                 pref = (X[:, :, :, None] < X[:, :, None, :])
-                nbet = pref.sum(axis=2).astype(np.float32)      # beaten-by a
-                nwor = pref.sum(axis=3).astype(np.float32)
+                nbet = pref.sum(axis=2).astype(np.float32)      # #better than b
+                nwor = pref.sum(axis=3).astype(np.float32)      # #a beats
                 nties = n - nbet - nwor                         # includes self
                 rk = nbet + (nties - 1.0) / 2.0                 # midrank
                 Wm = np.einsum("l,lmab->mab", self.W,
                                pref.astype(np.float32))
+                del pref, nbet, nwor, nties
+                cx = {k: v[blk] for k, v in self.ctx.items()}
                 for name, fn in rules.items():
-                    val = fn(rk, Wm, self.W, self.names)
-                    out[name][blk.ravel()] = np.asarray(val).ravel()
+                    val = np.asarray(fn(rk, Wm, self.W, self.names, cx))
+                    if as_ranks:
+                        # stable argsort: ties keep term order (append-safe)
+                        o = np.argsort(val, axis=1, kind="stable")
+                        r = np.empty_like(o)
+                        np.put_along_axis(
+                            r, o, np.arange(val.shape[1])[None, :]
+                            .repeat(val.shape[0], 0), axis=1)
+                        out[name][blk.ravel()] = r.ravel()
+                    else:
+                        out[name][blk.ravel()] = val.ravel()
                 cw = self._condorcet(Wm)
                 extra["condorcet"][blk.ravel()] = cw.ravel()
-        return out, {k: v for k, v in extra.items()}
+        return out, extra
 
     @staticmethod
     def _condorcet(Wm):
@@ -177,58 +193,68 @@ class Aggregator:
 
 
 # ------------------------------------------------------------------- rules
-def borda(rk, Wm, w, names):
+def borda(rk, Wm, w, names, cx=None):
     return (rk * w[:, None, None]).sum(axis=0)
 
 
-def _tiebreak(rk, Wm, w, names):
+def _tiebreak(rk, Wm, w, names, cx=None):
     """Borda, scaled below 1 so it can only break exact ties."""
-    return borda(rk, Wm, w, names) / (w.sum() * rk.shape[2] + 1.0)
+    return borda(rk, Wm, w, names, cx=None) / (w.sum() * rk.shape[2] + 1.0)
 
 
-def median_ranks(rk, Wm, w, names):
-    return np.median(rk, axis=0) + _tiebreak(rk, Wm, w, names)
+def median_ranks(rk, Wm, w, names, cx=None):
+    return np.median(rk, axis=0) + _tiebreak(rk, Wm, w, names, cx=None)
 
 
-def minimax_rank(rk, Wm, w, names):
+def minimax_rank(rk, Wm, w, names, cx=None):
     """'Only as good as its weakest qualification': the WORST rank any voter
     gives it. Borda as the stated tie-break (it is dense with ties)."""
-    return rk.max(axis=0) + _tiebreak(rk, Wm, w, names)
+    return rk.max(axis=0) + _tiebreak(rk, Wm, w, names, cx=None)
 
 
-def best_rank(rk, Wm, w, names):
+def best_rank(rk, Wm, w, names, cx=None):
     """The mirror image: a candidate is as good as its BEST qualification."""
-    return rk.min(axis=0) + _tiebreak(rk, Wm, w, names)
+    return rk.min(axis=0) + _tiebreak(rk, Wm, w, names, cx=None)
 
 
-def harmonic(rk, Wm, w, names):
+def harmonic(rk, Wm, w, names, cx=None):
     """Dowdall/harmonic positional rule: points 1/(1+rank). Rational weights
     fixed by the rule, no free parameter."""
     return -(w[:, None, None] / (1.0 + rk)).sum(axis=0)
 
 
-def copeland(rk, Wm, w, names):
+def copeland(rk, Wm, w, names, cx=None):
     beats = (Wm > Wm.transpose(0, 2, 1)).sum(axis=2)
     loses = (Wm < Wm.transpose(0, 2, 1)).sum(axis=2)
     return -(beats - loses).astype(np.float64)
 
 
-def maximin(rk, Wm, w, names):
+def maximin(rk, Wm, w, names, cx=None):
     """Simpson-Kramer: score = min over opponents of pairwise support."""
     n = Wm.shape[1]
     M = Wm + np.eye(n, dtype=Wm.dtype)[None] * 10 ** 6
     return -M.min(axis=2).astype(np.float64)
 
 
-def black(rk, Wm, w, names):
+def copeland_bt(rk, Wm, w, names, cx=None):
+    """Copeland with Borda as the stated tie-break instead of term order."""
+    return copeland(rk, Wm, w, names) + _tiebreak(rk, Wm, w, names)
+
+
+def maximin_bt(rk, Wm, w, names, cx=None):
+    """Maximin with Borda as the stated tie-break instead of term order."""
+    return maximin(rk, Wm, w, names) + _tiebreak(rk, Wm, w, names)
+
+
+def black(rk, Wm, w, names, cx=None):
     """Condorcet winner first if one exists, Borda otherwise (Black's rule,
     applied at the top only)."""
     cw = Aggregator._condorcet(Wm)
-    bd = borda(rk, Wm, w, names)
+    bd = borda(rk, Wm, w, names, cx=None)
     return np.where(cw, -1.0, 0.0) * (bd.max() + 1.0) + bd
 
 
-def kemeny(rk, Wm, w, names, max_passes=64):
+def kemeny(rk, Wm, w, names, cx=None, max_passes=64):
     """Kemeny-ish: minimise total pairwise disagreement.
 
     HEURISTIC, stated: seed with the Borda order, then run odd-even adjacent
@@ -241,7 +267,7 @@ def kemeny(rk, Wm, w, names, max_passes=64):
     m, n = Wm.shape[0], Wm.shape[1]
     if n == 1:
         return np.zeros((m, 1))
-    bd = borda(rk, Wm, w, names)
+    bd = borda(rk, Wm, w, names, cx=None)
     P = np.argsort(bd, axis=1, kind="stable")            # (m, n) positions
     rows = np.arange(m)[:, None]
     for p in range(max_passes):
@@ -267,11 +293,75 @@ def kemeny(rk, Wm, w, names, max_passes=64):
     return pos.astype(np.float64)
 
 
+def _rank_within(vals):
+    """Within-row 0-based rank, ties broken by term position (stable)."""
+    o = np.argsort(vals, axis=1, kind="stable")
+    r = np.empty_like(o)
+    np.put_along_axis(r, o, np.arange(vals.shape[1])[None, :]
+                      .repeat(vals.shape[0], 0), axis=1)
+    return r.astype(np.float64)
+
+
+def make_veto(min_tier):
+    """Role as a VETO. Every candidate whose role tier is below `min_tier`
+    is ranked after every candidate that is not vetoed; Borda inside each
+    block. Lexicographic, implemented with an offset that provably exceeds
+    the largest Borda score in the block."""
+    def rule(rk, Wm, w, names, cx=None):
+        big = w.sum() * rk.shape[2] + 1.0
+        return (cx["tier"] < min_tier) * big + borda(rk, Wm, w, names)
+    return rule
+
+
+def role_lex(rk, Wm, w, names, cx=None):
+    """Role as a DICTATOR with Borda as the tie-break: the extreme of
+    multiplicity. Included to show where the asymmetry argument breaks."""
+    big = w.sum() * rk.shape[2] + 1.0
+    return (5 - cx["tier"]) * big + borda(rk, Wm, w, names)
+
+
+def _unique_winner(score):
+    """Boolean mask of the unique minimiser per row; all-False when tied."""
+    mn = score.min(axis=1, keepdims=True)
+    at = score == mn
+    return at & (at.sum(axis=1, keepdims=True) == 1)
+
+
+def make_first_anchor(kind):
+    """Social choice used ONLY at the top: promote one candidate to rank 1
+    and leave the anchor ordering (a cardinal score in cx['anchor'])
+    otherwise untouched.
+
+      kind='condorcet'  the Condorcet winner, when one exists (Black at the
+                        top, with a cardinal fallback instead of Borda)
+      kind='copeland'   the unique Copeland winner (always defined up to ties)
+      kind='borda'      the unique Borda winner -- the CONTROL: if this does
+                        as well, nothing about Condorcet is doing the work
+    """
+    def rule(rk, Wm, w, names, cx=None):
+        n = rk.shape[2]
+        if kind == "condorcet":
+            promote = Aggregator._condorcet(Wm)
+        elif kind == "copeland":
+            promote = _unique_winner(copeland(rk, Wm, w, names))
+        elif kind == "borda":
+            promote = _unique_winner(borda(rk, Wm, w, names))
+        else:
+            raise KeyError(kind)
+        return np.where(promote, 0.0, float(n)) + _rank_within(cx["anchor"])
+    return rule
+
+
+condorcet_first_anchor = make_first_anchor("condorcet")
+
+
 RULES = {
     "borda": borda,
     "copeland": copeland,
     "kemeny": kemeny,
     "maximin_pairwise": maximin,
+    "maximin_bordatb": maximin_bt,
+    "copeland_bordatb": copeland_bt,
     "minimax_rank": minimax_rank,
     "best_rank": best_rank,
     "median_rank": median_ranks,

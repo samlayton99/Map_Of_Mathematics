@@ -1,0 +1,486 @@
+{
+ "HYB_borda_first6": {
+  "k": 4,
+  "nodes": 45531,
+  "all_edges": {
+   "components": 1967,
+   "giant_fraction": 0.7787002262194987,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 8150,
+   "giant_fraction": 0.5231161186883662,
+   "edges": 42424
+  },
+  "junk_only": {
+   "components": 34078,
+   "giant_fraction": 0.21897168961806243,
+   "edges": 15394
+  },
+  "junk_edge_share": 0.2662492649347954,
+  "giant_retained_without_junk": 0.6717811310111409,
+  "components_added_by_removing_junk": 6183
+ },
+ "HYB_condorcet_first6": {
+  "k": 4,
+  "nodes": 45564,
+  "all_edges": {
+   "components": 1973,
+   "giant_fraction": 0.7779387235536828,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 8158,
+   "giant_fraction": 0.5225397243437802,
+   "edges": 42458
+  },
+  "junk_only": {
+   "components": 34141,
+   "giant_fraction": 0.21762795189184445,
+   "edges": 15360
+  },
+  "junk_edge_share": 0.2656612127711093,
+  "giant_retained_without_junk": 0.67169779382723,
+  "components_added_by_removing_junk": 6185
+ },
+ "HYB_copeland_first6": {
+  "k": 4,
+  "nodes": 45599,
+  "all_edges": {
+   "components": 1969,
+   "giant_fraction": 0.7784819842540407,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 8168,
+   "giant_fraction": 0.5206035220070615,
+   "edges": 42447
+  },
+  "junk_only": {
+   "components": 34158,
+   "giant_fraction": 0.21827233053356435,
+   "edges": 15371
+  },
+  "junk_edge_share": 0.26585146494171363,
+  "giant_retained_without_junk": 0.6687419009521662,
+  "components_added_by_removing_junk": 6199
+ },
+ "REF*_role5w_x_logdepth_x_rarity": {
+  "k": 4,
+  "nodes": 45505,
+  "all_edges": {
+   "components": 1968,
+   "giant_fraction": 0.7787935391715196,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 8148,
+   "giant_fraction": 0.5225799362707395,
+   "edges": 42433
+  },
+  "junk_only": {
+   "components": 34071,
+   "giant_fraction": 0.21830568069442918,
+   "edges": 15385
+  },
+  "junk_edge_share": 0.2660936040679373,
+  "giant_retained_without_junk": 0.6710121617427128,
+  "components_added_by_removing_junk": 6180
+ },
+ "REF_role5w_x_logdepth": {
+  "k": 4,
+  "nodes": 42590,
+  "all_edges": {
+   "components": 1460,
+   "giant_fraction": 0.836088283634656,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7414,
+   "giant_fraction": 0.5568678093449166,
+   "edges": 40410
+  },
+  "junk_only": {
+   "components": 30404,
+   "giant_fraction": 0.2596149330828833,
+   "edges": 17408
+  },
+  "junk_edge_share": 0.30108270780725727,
+  "giant_retained_without_junk": 0.6660394844000113,
+  "components_added_by_removing_junk": 5954
+ },
+ "REF_role5w_x_rarity": {
+  "k": 4,
+  "nodes": 44850,
+  "all_edges": {
+   "components": 1901,
+   "giant_fraction": 0.7819397993311037,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 8360,
+   "giant_fraction": 0.524659977703456,
+   "edges": 41382
+  },
+  "junk_only": {
+   "components": 32886,
+   "giant_fraction": 0.2316164994425864,
+   "edges": 16436
+  },
+  "junk_edge_share": 0.2842713341865855,
+  "giant_retained_without_junk": 0.6709723410322213,
+  "components_added_by_removing_junk": 6459
+ },
+ "REF_role5w_x_stmt_x_logdepth_x_rarity": {
+  "k": 4,
+  "nodes": 45738,
+  "all_edges": {
+   "components": 2105,
+   "giant_fraction": 0.7624732170186715,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 8232,
+   "giant_fraction": 0.5106257378984652,
+   "edges": 42391
+  },
+  "junk_only": {
+   "components": 34352,
+   "giant_fraction": 0.21601294328567056,
+   "edges": 15427
+  },
+  "junk_edge_share": 0.2668200214466083,
+  "giant_retained_without_junk": 0.6696966221253656,
+  "components_added_by_removing_junk": 6127
+ },
+ "REF_role5w_x_stmt_x_rarity": {
+  "k": 4,
+  "nodes": 45218,
+  "all_edges": {
+   "components": 2049,
+   "giant_fraction": 0.7655137334689726,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 8436,
+   "giant_fraction": 0.5087575744172674,
+   "edges": 41418
+  },
+  "junk_only": {
+   "components": 33378,
+   "giant_fraction": 0.22632579946039189,
+   "edges": 16400
+  },
+  "junk_edge_share": 0.2836486907191532,
+  "giant_retained_without_junk": 0.6645962732919254,
+  "components_added_by_removing_junk": 6387
+ },
+ "best_rank6": {
+  "k": 4,
+  "nodes": 42549,
+  "all_edges": {
+   "components": 832,
+   "giant_fraction": 0.9187524971209664,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7554,
+   "giant_fraction": 0.5635385085430915,
+   "edges": 39497
+  },
+  "junk_only": {
+   "components": 28827,
+   "giant_fraction": 0.29843239559096574,
+   "edges": 18321
+  },
+  "junk_edge_share": 0.31687363796741497,
+  "giant_retained_without_junk": 0.6133735802721785,
+  "components_added_by_removing_junk": 6722
+ },
+ "black_condorcet6": {
+  "k": 4,
+  "nodes": 45223,
+  "all_edges": {
+   "components": 1825,
+   "giant_fraction": 0.7981779183159012,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7720,
+   "giant_fraction": 0.5325166397629525,
+   "edges": 42618
+  },
+  "junk_only": {
+   "components": 34091,
+   "giant_fraction": 0.21568670809101564,
+   "edges": 15200
+  },
+  "junk_edge_share": 0.2628939084714103,
+  "giant_retained_without_junk": 0.6671653368794326,
+  "components_added_by_removing_junk": 5895
+ },
+ "borda6": {
+  "k": 4,
+  "nodes": 45219,
+  "all_edges": {
+   "components": 1824,
+   "giant_fraction": 0.7982927530462859,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7722,
+   "giant_fraction": 0.5327406621110595,
+   "edges": 42612
+  },
+  "junk_only": {
+   "components": 34085,
+   "giant_fraction": 0.21568367279241027,
+   "edges": 15206
+  },
+  "junk_edge_share": 0.262997682382649,
+  "giant_retained_without_junk": 0.6673499916892902,
+  "components_added_by_removing_junk": 5898
+ },
+ "borda6_rolex2": {
+  "k": 4,
+  "nodes": 44195,
+  "all_edges": {
+   "components": 1696,
+   "giant_fraction": 0.8117886638760041,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7687,
+   "giant_fraction": 0.5372327186333296,
+   "edges": 41554
+  },
+  "junk_only": {
+   "components": 32493,
+   "giant_fraction": 0.23649734132820455,
+   "edges": 16264
+  },
+  "junk_edge_share": 0.281296482064409,
+  "giant_retained_without_junk": 0.6617888898179892,
+  "components_added_by_removing_junk": 5991
+ },
+ "copeland6": {
+  "k": 4,
+  "nodes": 45858,
+  "all_edges": {
+   "components": 2023,
+   "giant_fraction": 0.7750228967682847,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7899,
+   "giant_fraction": 0.5213485106197392,
+   "edges": 42944
+  },
+  "junk_only": {
+   "components": 34910,
+   "giant_fraction": 0.20602730167037375,
+   "edges": 14874
+  },
+  "junk_edge_share": 0.25725552596077345,
+  "giant_retained_without_junk": 0.6726878816015306,
+  "components_added_by_removing_junk": 5876
+ },
+ "copeland6_rolex2": {
+  "k": 4,
+  "nodes": 44473,
+  "all_edges": {
+   "components": 1781,
+   "giant_fraction": 0.8014300811728464,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7820,
+   "giant_fraction": 0.5201358127403144,
+   "edges": 41511
+  },
+  "junk_only": {
+   "components": 32643,
+   "giant_fraction": 0.23778472331526995,
+   "edges": 16307
+  },
+  "junk_edge_share": 0.28204019509495315,
+  "giant_retained_without_junk": 0.6490095954211325,
+  "components_added_by_removing_junk": 6039
+ },
+ "harmonic6": {
+  "k": 4,
+  "nodes": 43616,
+  "all_edges": {
+   "components": 1057,
+   "giant_fraction": 0.8912325752017608,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7675,
+   "giant_fraction": 0.5425302641232576,
+   "edges": 40387
+  },
+  "junk_only": {
+   "components": 30400,
+   "giant_fraction": 0.2795992296404989,
+   "edges": 17431
+  },
+  "junk_edge_share": 0.30148050780033897,
+  "giant_retained_without_junk": 0.6087415105988887,
+  "components_added_by_removing_junk": 6618
+ },
+ "kemeny6": {
+  "k": 4,
+  "nodes": 45523,
+  "all_edges": {
+   "components": 1935,
+   "giant_fraction": 0.7848340399358567,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7780,
+   "giant_fraction": 0.5280407705994772,
+   "edges": 42880
+  },
+  "junk_only": {
+   "components": 34555,
+   "giant_fraction": 0.2100037343760297,
+   "edges": 14938
+  },
+  "junk_edge_share": 0.2583624476806531,
+  "giant_retained_without_junk": 0.6728056426332288,
+  "components_added_by_removing_junk": 5845
+ },
+ "maximin_pairwise6": {
+  "k": 4,
+  "nodes": 38359,
+  "all_edges": {
+   "components": 512,
+   "giant_fraction": 0.9543001642378581,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7032,
+   "giant_fraction": 0.6119554732917959,
+   "edges": 36172
+  },
+  "junk_only": {
+   "components": 23684,
+   "giant_fraction": 0.36236606793712034,
+   "edges": 21646
+  },
+  "junk_edge_share": 0.374381680445536,
+  "giant_retained_without_junk": 0.6412609954652242,
+  "components_added_by_removing_junk": 6520
+ },
+ "median_rank6": {
+  "k": 4,
+  "nodes": 45197,
+  "all_edges": {
+   "components": 1902,
+   "giant_fraction": 0.7873531429077151,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7753,
+   "giant_fraction": 0.529172290196252,
+   "edges": 42613
+  },
+  "junk_only": {
+   "components": 34135,
+   "giant_fraction": 0.21304511361373543,
+   "edges": 15205
+  },
+  "junk_edge_share": 0.2629803867307759,
+  "giant_retained_without_junk": 0.672090147810937,
+  "components_added_by_removing_junk": 5851
+ },
+ "minimax_rank6": {
+  "k": 4,
+  "nodes": 44175,
+  "all_edges": {
+   "components": 1678,
+   "giant_fraction": 0.8147594793435201,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7535,
+   "giant_fraction": 0.5646406338426712,
+   "edges": 42532
+  },
+  "junk_only": {
+   "components": 33274,
+   "giant_fraction": 0.21521222410865876,
+   "edges": 15286
+  },
+  "junk_edge_share": 0.2643813345324985,
+  "giant_retained_without_junk": 0.6930151144698822,
+  "components_added_by_removing_junk": 5857
+ },
+ "role_lex6": {
+  "k": 4,
+  "nodes": 41101,
+  "all_edges": {
+   "components": 818,
+   "giant_fraction": 0.9154765090873701,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7705,
+   "giant_fraction": 0.518941144984307,
+   "edges": 37985
+  },
+  "junk_only": {
+   "components": 27047,
+   "giant_fraction": 0.323349796841926,
+   "edges": 19833
+  },
+  "junk_edge_share": 0.34302466359957107,
+  "giant_retained_without_junk": 0.566853589177984,
+  "components_added_by_removing_junk": 6887
+ },
+ "veto_below_t26": {
+  "k": 4,
+  "nodes": 43996,
+  "all_edges": {
+   "components": 1768,
+   "giant_fraction": 0.8009364487680698,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7850,
+   "giant_fraction": 0.5275025002272934,
+   "edges": 41114
+  },
+  "junk_only": {
+   "components": 32158,
+   "giant_fraction": 0.2414537685244113,
+   "edges": 16704
+  },
+  "junk_edge_share": 0.2889065688885814,
+  "giant_retained_without_junk": 0.6586071854248255,
+  "components_added_by_removing_junk": 6082
+ },
+ "veto_below_t36": {
+  "k": 4,
+  "nodes": 43798,
+  "all_edges": {
+   "components": 1752,
+   "giant_fraction": 0.8025252294625326,
+   "edges": 57818
+  },
+  "mathematics_only": {
+   "components": 7708,
+   "giant_fraction": 0.5308918215443628,
+   "edges": 41237
+  },
+  "junk_only": {
+   "components": 32036,
+   "giant_fraction": 0.24101557148728253,
+   "edges": 16581
+  },
+  "junk_edge_share": 0.28677920370818777,
+  "giant_retained_without_junk": 0.6615266437167486,
+  "components_added_by_removing_junk": 5956
+ }
+}
