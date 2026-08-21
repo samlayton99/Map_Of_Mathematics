@@ -13,13 +13,17 @@ Outputs (column arrays, one row per incidence):
 The statement-world flag is the expensive part: for each artifact we need to
 know whether each cited declaration is reachable from the certified theorem's
 STATEMENT closure. Computed exactly by reverse-reachability in batches of
-64-bit lanes, the same technique the certification rounds used.
+64-bit lanes, the same technique the certification rounds used. The closure
+follows type deps everywhere plus the bodies (value deps) of non-theorems
+only, so it never traverses another theorem's proof body.
+
+Depth is exact: SCC condensation + longest path on the condensation DAG
+(see depth_scc.py, which shares the implementation).
 """
 import json, os, sys
 import numpy as np
 
-SCRATCH = "/private/tmp/claude-501/-Users-sam-my-repos-research-Map-Of-Mathematics/b1ceda4c-2b8d-4f52-b481-6fdafa0f5cb5/scratchpad"
-DUMP = os.path.join(SCRATCH, "mathlib_deps7.jsonl")
+DUMP = os.path.expanduser("~/mathmap_data/mathlib_deps7.jsonl")
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.normpath(os.path.join(HERE, "..", "data"))
 LOAD_ROLES = (0, 1, 2, 7)
@@ -65,33 +69,12 @@ def main():
     # ---- depth over the citation graph (value side, falling back to type)
     deps = [dv if dv else dt for dv, dt in zip(deps_v, deps_t)]
     deps = [tuple(d for d in set(ds) if d != i) for i, ds in enumerate(deps)]
-    indeg = np.zeros(n, dtype=np.int32)
-    users = [[] for _ in range(n)]
-    for i, ds in enumerate(deps):
-        indeg[i] = len(ds)
-        for d in ds:
-            users[d].append(i)
-    from collections import deque
-    q = deque(np.where(indeg == 0)[0].tolist())
-    order = []
-    while q:
-        i = q.popleft(); order.append(i)
-        for u in users[i]:
-            indeg[u] -= 1
-            if indeg[u] == 0:
-                q.append(u)
-    depth = np.zeros(n, dtype=np.int32)
-    for i in order:
-        if deps[i]:
-            depth[i] = 1 + max(depth[d] for d in deps[i])
-    cyc = set(range(n)) - set(order)
-    for _ in range(3):
-        for i in cyc:
-            ds = [depth[d] for d in deps[i] if d not in cyc]
-            if ds:
-                depth[i] = 1 + max(ds)
-    del users
-    print(f"depth done (max {int(depth.max())}, {len(cyc)} in cycles)", flush=True)
+    # exact depth: SCC condensation + longest path on the condensation DAG
+    # (shared with depth_scc.py; replaces the old 3-pass cycle relaxation)
+    from depth_scc import deps_to_csr, scc_depth
+    depth, scc_id, scc_size = scc_depth(*deps_to_csr(deps, n), n)
+    print(f"depth done (max {int(depth.max())}, "
+          f"{int((scc_size > 1).sum())} in nontrivial SCCs, exact)", flush=True)
 
     # ---- in-degree and stated-count (library-relative node coordinates)
     in_degree = np.zeros(n, dtype=np.int32)
@@ -140,9 +123,29 @@ def main():
 
     # ---- statement-world membership, exactly, in lanes
     # For artifact a certifying T: is cited d reachable from T's statement refs?
+    # The closure must never traverse a theorem's PROOF BODY: theorems
+    # contribute their statement (type) deps only; every other declaration
+    # contributes its type deps plus its definition-body (value) deps.
     in_stmt = np.zeros(len(a_col), dtype=bool)
-    dep_arrays = [np.array(ds, dtype=np.int64) if ds else None for ds in deps]
-    rev = list(reversed(order))
+    stmt_deps = [tuple(set(dt).union(() if is_thm[i] else dv) - {i})
+                 for i, (dt, dv) in enumerate(zip(deps_t, deps_v))]
+    dep_arrays = [np.array(ds, dtype=np.int64) if ds else None
+                  for ds in stmt_deps]
+    # exact users-first processing order via SCC condensation of the closure
+    # graph: SCCs in decreasing condensation depth; a nontrivial SCC's
+    # members are iterated to fixpoint when reached.
+    sdepth, s_sid, s_ssz = scc_depth(*deps_to_csr(stmt_deps, n), n)
+    proc = np.lexsort((s_sid, -sdepth))
+    plan, j = [], 0
+    while j < n:
+        i = int(proc[j])
+        if s_ssz[i] == 1:
+            plan.append(i); j += 1
+        else:
+            k = j + 1
+            while k < n and s_sid[proc[k]] == s_sid[i]:
+                k += 1
+            plan.append(proc[j:k].astype(np.int64)); j = k
     # incidence ranges per artifact (a_col is non-decreasing by construction)
     starts = np.searchsorted(a_col, np.arange(len(art_decl)), side="left")
     ends = np.searchsorted(a_col, np.arange(len(art_decl)), side="right")
@@ -160,16 +163,28 @@ def main():
                 bit = np.zeros(nw, dtype=np.uint64)
                 bit[j >> 6] = np.uint64(1) << np.uint64(j & 63)
                 reach[seeds] |= bit
-        for i in rev:
-            row = reach[i]
-            if row.any():
-                ds = dep_arrays[i]
-                if ds is not None:
-                    reach[ds] |= row
-        for i in list(cyc) * 2:
-            row = reach[i]
-            if row.any() and dep_arrays[i] is not None:
-                reach[dep_arrays[i]] |= row
+        for g in plan:
+            if isinstance(g, (int, np.integer)):
+                row = reach[g]
+                if row.any():
+                    ds = dep_arrays[g]
+                    if ds is not None:
+                        reach[ds] |= row
+            else:
+                while True:
+                    changed = False
+                    for i in g:
+                        row = reach[i]
+                        if row.any():
+                            ds = dep_arrays[i]
+                            if ds is not None:
+                                before = reach[ds]
+                                after = before | row
+                                if (after != before).any():
+                                    reach[ds] = after
+                                    changed = True
+                    if not changed:
+                        break
         for j, a in enumerate(batch):
             s, e = starts[a], ends[a]
             if s == e:

@@ -1,0 +1,29 @@
+{
+ "precision@1": 0.975,
+ "precision@4": 0.7122905027932961,
+ "KeyMoveAt1": 0.825,
+ "recall_core@4": 0.9738219895287958,
+ "provenance": {
+  "ranking": "REF_weighted_role_x_rarity_5dec: -(W[tier5] * IDF50[decl]), W=[1.0,0.7,0.5,0.35,0.15], term-order tie-break (this file)",
+  "split": "TEST-R",
+  "labels": "review/sealed_r1/grades_*.json (median rater grade), keymap review/sealed_r1/keymap.json",
+  "universe": "U1D",
+  "apparatus": "mathmap_eval battery.local via navigation.per_proof_orders",
+  "n_proofs": 360,
+  "date": "2026-08-21",
+  "expected": {
+   "precision@1": 0.975,
+   "precision@4": 0.7123,
+   "KeyMoveAt1": 0.825,
+   "recall_core@4": 0.9738
+  },
+  "all_match": true,
+  "note": "registered R_phase5_composite is a different reconstruction and does not reproduce the quoted line; its values are in R_phase5_composite_actual"
+ },
+ "R_phase5_composite_actual": {
+  "precision@1": 0.9833333333333333,
+  "precision@4": 0.6892458100558659,
+  "KeyMoveAt1": 0.8861111111111111,
+  "recall_core@4": 0.9869109947643979
+ }
+}

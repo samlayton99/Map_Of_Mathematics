@@ -15,8 +15,7 @@ P4 = load_bearing AND is_claim AND NOT logic_only AND NOT machinery.
 import json, os
 import numpy as np
 
-SCRATCH = "/private/tmp/claude-501/-Users-sam-my-repos-research-Map-Of-Mathematics/b1ceda4c-2b8d-4f52-b481-6fdafa0f5cb5/scratchpad"
-DUMP = os.path.join(SCRATCH, "mathlib_deps7.jsonl")
+DUMP = os.path.expanduser("~/mathmap_data/mathlib_deps7.jsonl")
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.normpath(os.path.join(HERE, "..", "data"))
 LAMBDA, FLOOR, THETA = 20, 200, 0.02

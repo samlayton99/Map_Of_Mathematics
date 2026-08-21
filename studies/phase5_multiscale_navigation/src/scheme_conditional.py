@@ -82,7 +82,7 @@ _pop = np.bincount(c.inc_decl[FULL[_m]], minlength=c.n_nodes).astype(float)
 _nart = float(len(np.unique(c.inc_artifact[FULL[_m]])))
 IDF = np.maximum(np.log(_nart / np.maximum(_pop, 1.0)), 0.0)
 
-# evaluation works on the labelled proofs only; navigability uses FULL
+# evaluation works on the labelled proofs only
 LAB_ARTS = np.array(sorted({int(m["artifact"]) for m in keymap.values()}))
 base = FULL[np.isin(c.inc_artifact[FULL], LAB_ARTS)]
 
@@ -458,37 +458,6 @@ def sec_bands():
                   f"P@4 {r['precision@4']:.3f} core@4 {r['recall_core@4']:.3f}")
 
 
-def sec_nav():
-    """Whole-corpus graph question. Junk proxy: not-a-proof AND arity <= 2."""
-    f = signals(FULL)
-    n = len(FULL)
-    fa = f["ART"]
-    ft, fidf = f["TIER"], IDF[c.inc_decl[FULL]]
-    frd, frr = avg_rank(f["DEPTH"], fa), avg_rank(fidf, fa)
-    fev = avg_rank(-(frd + frr), fa)
-    frt, frs = avg_rank(ft, fa), avg_rank(-f["INSTMT"].astype(float), fa)
-    fcoarse = np.select([ft >= 3, ft >= 1], [2, 1], default=0)
-    fw = np.select([ft == 4, ft == 3], [1.0, 0.7], default=0.5)
-    junk = (f["ISPROOF"] == 0) & (f["ARITY"] <= 2)
-    sets = [
-        ("REF-W  role x frozen rarity", _ranks(fa, fw * fidf)),
-        ("REF-B  Borda", _ranks(fa, -(frt + frd + frr + frs))),
-        ("REF-LEX tier -> rarity", ranks_lex((-ft.astype(float), frr), fa, n)),
-        ("C2a merge {4,3}{2,1}{0}", ranks_lex((-fcoarse.astype(float), fev), fa, n)),
-        ("C3e escape rarity>=8 & tier>=1",
-         ranks_lex((-(ft + ((fidf >= 8) & (ft >= 1))).astype(float), fev), fa, n)),
-        ("C6  merge + escape",
-         ranks_lex((-(fcoarse + ((fidf >= 8) & (ft >= 1))).astype(float), fev),
-                   fa, n)),
-    ]
-    for nm, rk in sets:
-        v = B.navigability(c, FULL, rk, 4, junk)
-        print(f"  {nm:<34} junk edge share {v['junk_edge_share']:.3f}  giant "
-              f"{v['all_edges']['giant_fraction']:.3f} -> "
-              f"{v['mathematics_only']['giant_fraction']:.3f}  retained "
-              f"{v['giant_retained_without_junk']:.3f}")
-
-
 def sec_regimes():
     """Proof-level regimes: choose the ORDERING RULE from a proof-local fact."""
     npro = np.zeros(N)
@@ -517,7 +486,7 @@ def sec_regimes():
 
 SECTIONS = {"battery": sec_battery, "tiers": sec_tiers, "escape": sec_escape,
             "tree": sec_tree, "sweep": sec_sweep, "gradient": sec_gradient,
-            "bands": sec_bands, "nav": sec_nav, "regimes": sec_regimes}
+            "bands": sec_bands, "regimes": sec_regimes}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or ["battery"]

@@ -8,8 +8,11 @@ select what to pre-register, they promote nothing.
 
 Code: `src/social_choice.py` (voters + rules), `src/run_social_choice.py`
 (battery), `src/run_social_choice_nav.py` (whole-corpus navigability),
+`src/run_social_choice_shortcuts.py` (shortcut precision/recall),
 `src/social_choice_analysis.py` (Condorcet / Kemeny-exactness / IIA / ties),
-`src/sc_paired.py` (paired tests), `src/test_social_choice.py` (correctness).
+`src/sc_paired.py` (paired tests), `src/test_social_choice.py` (correctness:
+the batched aggregator is checked against a brute-force implementation of the
+definitions on 300 random tie-heavy profiles, 0 mismatches).
 
 ## 0. Headline, stated as a trade
 
@@ -18,7 +21,8 @@ Code: `src/social_choice.py` (voters + rules), `src/run_social_choice.py`
 | **Every purely ordinal rule trades P@4 down for KeyMove@1 up.** | best ordinal P@4 is 0.703 (`borda6_rarityx2`); reference 0.712. No exception in 40 schemes. |
 | **The one scheme that improves KeyMove@1 with no P@4 cost is a hybrid**: use the pairwise majority relation ONLY to pick rank 1, keep a cardinal score for the rest. | `HYB_copeland_first`: Key@1 0.897 vs 0.864 (Δ +0.033, 95% CI [+0.006,+0.061], McNemar p=0.023); P@4 0.712 vs 0.713 (Δ −0.0007, CI [−0.0021,+0.0000]). |
 | **It is the Condorcet property doing the work, not "a second opinion".** | promoting the *Borda* winner instead is the control: Key@1 0.853, Δ −0.011, p=0.62. |
-| **Cost of the hybrid**: core@4 0.984 → 0.982 (one core move moves out of the top 4), and it is NOT decimal-free — it inherits the anchor's weights. | see §7 |
+| **Cost of the hybrid**: core@4 0.984 → 0.982 (one core move moves out of the top 4), and it is NOT decimal-free — it inherits the anchor's weights. | see §3, §7 |
+| **No scheme in the family improves the MAP.** Top-4 junk edge share falls (0.267 → 0.237) but shortcut quality does not: junk hub concentration rises and real-mathematics hub recall falls slightly. | §5b |
 
 ## 1. Voters
 
@@ -174,9 +178,36 @@ Navigability separates the schemes only through **junk edge share**: the giant
 component is ~1.000 for every rule and 0.958–0.963 of it survives deleting
 machinery edges, a 0.005 spread. The junk share at k=4 spans 0.237
 (`copeland6_rarityx2`) to 0.377 (`maximin_pairwise6`) against 0.399 for the
-unranked candidate set. **`copeland6_rarityx2` and `borda6_rarityx2` build the
-cleanest map of anything tested, including the reference (0.237/0.244 vs
-0.267)** — a genuine win for the family that the per-proof metrics do not show.
+unranked candidate set. On this metric `copeland6_rarityx2` and
+`borda6_rarityx2` beat the reference (0.237/0.244 vs 0.267).
+
+### 5b. That reading does not survive the shortcut test
+
+`mathmap_eval/shortcuts.py` (added mid-study by a parallel line of work)
+established that the connectivity question above is the wrong one: junk edges
+do not hold the map together, they hold it too CLOSE. Re-run for this family
+at k=4 over the whole corpus, junk_node = `decl_logic_only` (3.1% of the nodes
+in the graph):
+
+| scheme | junk share of top-200 hubs | enrichment | degree mass on junk | mean dist all → maths-only | pairs +2 hops | pairs disconnected | graded maths in hub tail |
+|---|---|---|---|---|---|---|---|
+| `REF*` | 0.585 | 19.0x | **0.592** | 5.12 → 6.24 | **0.293** | 0.106 | **0.349** |
+| `HYB_copeland_first` | 0.590 | 19.2x | 0.598 | 5.12 → 6.26 | 0.310 | 0.052 | **0.350** |
+| `borda6` | 0.555 | 18.0x | 0.629 | 4.70 → 5.82 | 0.319 | **0.035** | 0.337 |
+| `borda6_rarityx2` | 0.550 | 17.9x | 0.627 | 4.98 → 6.38 | **0.410** | **0.034** | 0.332 |
+| `copeland6` | 0.535 | 17.4x | 0.619 | 4.90 → 6.14 | 0.345 | 0.035 | 0.334 |
+| `copeland6_rarityx2` | **0.520** | 16.9x | 0.610 | 5.40 → 6.56 | 0.313 | 0.050 | 0.330 |
+
+**The two graph metrics disagree, and the disagreement is the finding.** The
+ordinal rules admit fewer junk *declarations* among the top hubs (0.520 vs
+0.585) but concentrate MORE degree mass on the junk hubs they do admit (0.610
+vs 0.592), lengthen paths at least as much when junk is deleted, and reach the
+real-mathematics hub tail slightly less often (0.330 vs 0.349). Every scheme
+here is 17–19x enriched for machinery at the top of the degree distribution.
+
+**No scheme in this family fixes the shortcut problem, and none is clearly
+better than the reference on it.** The honest statement is: the family buys a
+lower junk *edge* share and pays it back in junk *hub* concentration.
 
 ## 6. Paired tests (TEST-R, 2,000-replicate proof-level bootstrap, exact McNemar)
 
@@ -348,7 +379,8 @@ is the one carrying magnitude, which rank aggregation throws away.
 
 `borda6_rarityx2` is nonetheless **not** a win over the reference: ΔKey@1
 +0.019 (CI crosses 0, p=0.28), ΔP@4 −0.011 (CI crosses 0). It is a wash on the
-per-proof battery that buys a materially cleaner map (junk 0.244 vs 0.267).
+per-proof battery, a win on top-4 junk edge share (0.244 vs 0.267), and a
+small loss on shortcut quality (§5b). Net: a wash.
 
 ## 13. Interpretability
 
@@ -375,12 +407,14 @@ per-proof battery that buys a materially cleaner map (junk 0.244 vs 0.267).
    to 0.129 of P@4 for its Key@1, and the loss is worst on the adversarial
    TEST-C split. Rank aggregation discards the magnitude of the rarity signal,
    which is what orders positions 2–4.
-3. **The family's real contribution is navigability, not per-proof precision.**
+3. **The map-level claim does not hold up, and I am retracting the version of
+   it I would have written from `battery.navigability` alone.**
    `copeland6_rarityx2` and `borda6_rarityx2` cut the junk share of the top-4
-   map from 0.267 to 0.237/0.244 — the cleanest whole-corpus map measured
-   anywhere in this programme — while the per-proof battery calls them a wash.
-   If the objective is the map rather than the headline item, that is the
-   result to follow up.
+   map from 0.267 to 0.237/0.244, which reads as the cleanest whole-corpus map
+   in the programme. The shortcut test (§5b) reverses it: those same schemes
+   put MORE degree mass on machinery hubs and recover slightly less real
+   mathematics in the hub tail than the reference does. **No scheme in this
+   family improves the map on the metric that discriminates.**
 4. **Two hypotheses falsified.** "A key move qualifies on every signal"
    (`minimax_rank`) and "role deserves multiplicity" both fail, the second
    with the sign reversed.

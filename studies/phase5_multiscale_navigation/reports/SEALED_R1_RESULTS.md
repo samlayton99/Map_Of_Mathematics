@@ -1,5 +1,10 @@
 # Sealed Round 1 — results
 
+> **THE PROMOTION IN THIS REPORT IS VOID.** `R_phase5_composite` violates
+> append-safety / the canonical-layer principle (library-wide citation counts,
+> `dmax` normaliser). See `../../phase6_stable_local_geometry/PROGRAM.md`.
+> The measurements below remain valid as data.
+
 Pre-registration `PREREGISTRATION_SEALED_R1.md`, sha256 `8765ace1fa4aa115…`,
 written and hashed **before** any sample was drawn. Analysis run **once**, in
 the pre-registered order. No ranking was tuned on these results.

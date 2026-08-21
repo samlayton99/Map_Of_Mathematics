@@ -2,6 +2,7 @@ import Mathrecord.Extract
 import Mathrecord.Validate
 import Mathrecord.Study
 import Mathrecord.DepDump
+import Mathrecord.HierDump
 import Mathrecord.Provenance
 import Mathrecord.Modules
 import Mathrecord.DefCheck
@@ -172,6 +173,9 @@ unsafe def main (args : List String) : IO UInt32 := do
     return 0
   | ["depdump", file, out] => do
     Mathrecord.DepDump.depDump file out
+    return 0
+  | ["hierdump", envProbe, namesFile, out] => do
+    Mathrecord.HierDump.hierDump envProbe namesFile out
     return 0
   | ["provenance", file, out] => do
     Mathrecord.Provenance.provenance file out

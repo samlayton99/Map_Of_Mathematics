@@ -10,22 +10,16 @@ from the invariant principles:
 
   P4 precision/recall at top-k, varying k, by depth       -> local()
   P4 gradient coherence, no inversions                    -> gradient()
-  P4 does MATHEMATICS connect the graph, or Lean junk?    -> navigability()
   P5 does it find the key move                            -> local()
   P8 the failures themselves                              -> failures()
 
-`navigability` is the one that was missing. It builds the graph a reader would
-actually traverse and asks whether it survives deleting the junk. If a graph
-holds together only because machinery edges bridge it, it is not a map of
-mathematics -- it is a map of Lean.
+The graph-level question (does the map lie via false proximity through Lean
+plumbing?) lives in mathmap_eval/shortcuts.py. A `navigability` connectivity
+test used to live here; it measured the wrong thing and was removed.
 """
 from __future__ import annotations
 
-from collections import defaultdict
-
 import numpy as np
-import scipy.sparse as sp
-from scipy.sparse.csgraph import connected_components
 
 BANDS = ["0-10", "11-25", "26-50", "51-75", "76-125", "126+"]
 EDGES = [0, 11, 26, 51, 76, 126, 10 ** 9]
@@ -154,63 +148,7 @@ def failures(per_proof, k=4):
             "n_proofs": len(per_proof)}
 
 
-def navigability(c, base, ranks, k, junk_mask):
-    """PRINCIPLE 7. Is the graph held together by mathematics or by Lean junk?
-
-    Builds the graph a reader would traverse at top-k over the WHOLE corpus,
-    then asks the decisive question: delete every edge whose cited declaration
-    is junk, and see what survives.
-
-    A map whose giant component collapses when machinery edges are removed is
-    a map of Lean's plumbing, not of mathematics. That is exactly the failure
-    principle 4 names.
-
-    `junk_mask` is a boolean over `base` marking edges we believe carry no
-    mathematics. Supply the best available estimate and say which one.
-    """
-    sel = ranks < k
-    u_all = c.inc_target[base[sel]]
-    v_all = c.inc_decl[base[sel]]
-    junk = junk_mask[sel]
-
-    touched = np.unique(np.concatenate([u_all, v_all]))
-    nid = -np.ones(c.n_nodes, dtype=np.int64)
-    nid[touched] = np.arange(len(touched))
-    N = len(touched)
-
-    def comps(mask):
-        if not mask.any():
-            return {"components": N, "giant_fraction": 1.0 / max(N, 1),
-                    "edges": 0}
-        g = sp.coo_matrix((np.ones(int(mask.sum()), np.int8),
-                           (nid[u_all[mask]], nid[v_all[mask]])), shape=(N, N))
-        _, lab = connected_components(g, directed=False)
-        sizes = np.bincount(lab)
-        sizes = sizes[sizes > 0]
-        return {"components": int(len(sizes)),
-                "giant_fraction": float(sizes.max() / sizes.sum()),
-                "edges": int(mask.sum())}
-
-    everything = comps(np.ones(len(junk), bool))
-    maths_only = comps(~junk)
-    junk_only = comps(junk)
-    return {
-        "k": k,
-        "nodes": int(N),
-        "all_edges": everything,
-        "mathematics_only": maths_only,
-        "junk_only": junk_only,
-        "junk_edge_share": float(junk.mean()),
-        # the headline: how much of the map survives deleting Lean's plumbing?
-        "giant_retained_without_junk": (
-            maths_only["giant_fraction"] / everything["giant_fraction"]
-            if everything["giant_fraction"] else None),
-        "components_added_by_removing_junk": (
-            maths_only["components"] - everything["components"]),
-    }
-
-
-def report(name, per_proof, nav=None):
+def report(name, per_proof):
     """One line per thing we care about. Never a single headline."""
     L = local(per_proof)
     G = gradient(per_proof)
@@ -225,10 +163,4 @@ def report(name, per_proof, nav=None):
              f"  failures: precision {F['precision_failures']} recall "
              f"{F['recall_failures']} gradient {F['gradient_inversions']} "
              f"(unwinnable {F['unwinnable']})"]
-    if nav:
-        lines.append(
-            f"  NAVIGABILITY k={nav['k']}: junk edges {nav['junk_edge_share']:.1%}, "
-            f"giant {nav['all_edges']['giant_fraction']:.3f} -> "
-            f"{nav['mathematics_only']['giant_fraction']:.3f} without junk "
-            f"({nav['giant_retained_without_junk']:.1%} retained)")
     return "\n".join(lines)

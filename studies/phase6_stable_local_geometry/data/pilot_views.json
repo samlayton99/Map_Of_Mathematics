@@ -1,0 +1,3716 @@
+{
+ "per_proof": [
+  {
+   "name": "GradeBoundedOrder.liftRight",
+   "depth": 7,
+   "kind": 1,
+   "n_load": 4,
+   "n_roots": 3,
+   "complete": true,
+   "views": {
+    "flat": [
+     "GradeBoundedOrder.mk",
+     "GradeMaxOrder.liftRight",
+     "GradeMinOrder.liftRight",
+     "GradeMaxOrder.isMax_grade"
+    ],
+    "owner": [
+     "GradeBoundedOrder.mk",
+     "GradeMaxOrder.liftRight",
+     "GradeMinOrder.liftRight",
+     "GradeMaxOrder.isMax_grade"
+    ],
+    "hier": [
+     "GradeBoundedOrder.mk",
+     "GradeMaxOrder.liftRight",
+     "GradeMinOrder.liftRight",
+     "GradeMaxOrder.isMax_grade"
+    ],
+    "hier_lanes": [
+     "GradeBoundedOrder.mk",
+     "GradeMaxOrder.liftRight",
+     "GradeMinOrder.liftRight",
+     "GradeMaxOrder.isMax_grade"
+    ],
+    "full": [
+     "GradeBoundedOrder.mk",
+     "GradeMaxOrder.liftRight",
+     "GradeMinOrder.liftRight",
+     "GradeMaxOrder.isMax_grade"
+    ],
+    "laned": [
+     "GradeBoundedOrder.mk",
+     "GradeMaxOrder.liftRight",
+     "GradeMinOrder.liftRight",
+     "GradeMaxOrder.isMax_grade"
+    ]
+   }
+  },
+  {
+   "name": "ExistsAndEq.instInhabitedVarQ",
+   "depth": 5,
+   "kind": 1,
+   "n_load": 5,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Inhabited.mk",
+     "Sigma.mk",
+     "Inhabited.default",
+     "Lean.Expr.sort",
+     "Qq.Quoted"
+    ],
+    "owner": [
+     "Inhabited.mk",
+     "Sigma.mk",
+     "Inhabited.default",
+     "Lean.Expr.sort",
+     "Qq.Quoted"
+    ],
+    "hier": [
+     "Inhabited.mk",
+     "Sigma.mk",
+     "Inhabited.default",
+     "Qq.Quoted",
+     "Lean.Expr.sort"
+    ],
+    "hier_lanes": [
+     "Inhabited.mk",
+     "Sigma.mk",
+     "Inhabited.default",
+     "Qq.Quoted",
+     "Lean.Expr.sort"
+    ],
+    "full": [
+     "Inhabited.mk",
+     "Sigma.mk",
+     "Inhabited.default",
+     "Qq.Quoted",
+     "Lean.Expr.sort"
+    ],
+    "laned": [
+     "Inhabited.mk",
+     "Sigma.mk",
+     "Inhabited.default",
+     "Qq.Quoted",
+     "Lean.Expr.sort"
+    ]
+   }
+  },
+  {
+   "name": "Functor.Comp.seq",
+   "depth": 3,
+   "kind": 1,
+   "n_load": 7,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Functor.Comp.seq.match_1",
+     "Functor.Comp.map.match_1",
+     "Functor.Comp.mk",
+     "Seq.seq",
+     "Functor.map",
+     "Unit.unit",
+     "Functor.Comp"
+    ],
+    "owner": [
+     "Functor.Comp.seq",
+     "Functor.Comp.map",
+     "Functor.Comp.mk",
+     "Seq.seq",
+     "Functor.map",
+     "Unit.unit",
+     "Functor.Comp"
+    ],
+    "hier": [
+     "Functor.Comp.seq.match_1",
+     "Functor.Comp.map.match_1",
+     "Functor.Comp",
+     "Functor.Comp.mk",
+     "Unit.unit",
+     "Seq.seq",
+     "Functor.map"
+    ],
+    "hier_lanes": [
+     "Functor.Comp",
+     "Functor.Comp.mk",
+     "Unit.unit",
+     "Seq.seq",
+     "Functor.map"
+    ],
+    "full": [
+     "Functor.Comp.map",
+     "Functor.Comp",
+     "Functor.Comp.mk",
+     "Unit.unit",
+     "Seq.seq",
+     "Functor.map"
+    ],
+    "laned": [
+     "Functor.Comp.map",
+     "Functor.Comp",
+     "Functor.Comp.mk",
+     "Unit.unit",
+     "Seq.seq",
+     "Functor.map"
+    ]
+   }
+  },
+  {
+   "name": "Std.Trichotomous.swap",
+   "depth": 4,
+   "kind": 0,
+   "n_load": 2,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "inferInstance",
+     "Function.swap"
+    ],
+    "owner": [
+     "inferInstance",
+     "Function.swap"
+    ],
+    "hier": [
+     "inferInstance",
+     "Function.swap"
+    ],
+    "hier_lanes": [
+     "inferInstance",
+     "Function.swap"
+    ],
+    "full": [
+     "inferInstance",
+     "Function.swap"
+    ],
+    "laned": [
+     "inferInstance",
+     "Function.swap"
+    ]
+   }
+  },
+  {
+   "name": "Function.Surjective.distrib",
+   "depth": 10,
+   "kind": 1,
+   "n_load": 7,
+   "n_roots": 3,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Distrib.mk",
+     "Function.Surjective.distrib._proof_2",
+     "Function.Surjective.distrib._proof_1",
+     "RightDistribClass.right_distrib",
+     "LeftDistribClass.left_distrib",
+     "HMul.hMul",
+     "HAdd.hAdd"
+    ],
+    "owner": [
+     "Distrib.mk",
+     "Function.Surjective.distrib",
+     "RightDistribClass.right_distrib",
+     "LeftDistribClass.left_distrib",
+     "HMul.hMul",
+     "HAdd.hAdd"
+    ],
+    "hier": [
+     "Distrib.mk",
+     "Function.Surjective.distrib._proof_2",
+     "Function.Surjective.distrib._proof_1",
+     "RightDistribClass.right_distrib",
+     "LeftDistribClass.left_distrib",
+     "HMul.hMul",
+     "HAdd.hAdd"
+    ],
+    "hier_lanes": [
+     "Distrib.mk",
+     "RightDistribClass.right_distrib",
+     "LeftDistribClass.left_distrib",
+     "HMul.hMul",
+     "HAdd.hAdd"
+    ],
+    "full": [
+     "Distrib.mk",
+     "RightDistribClass.right_distrib",
+     "LeftDistribClass.left_distrib",
+     "HMul.hMul",
+     "HAdd.hAdd"
+    ],
+    "laned": [
+     "Distrib.mk",
+     "RightDistribClass.right_distrib",
+     "LeftDistribClass.left_distrib",
+     "HMul.hMul",
+     "HAdd.hAdd"
+    ]
+   }
+  },
+  {
+   "name": "instApplicativeAddConstOfZeroOfAdd",
+   "depth": 4,
+   "kind": 1,
+   "n_load": 7,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Applicative.mk",
+     "Unit.unit",
+     "Functor.map",
+     "Function.const",
+     "id",
+     "HAdd.hAdd",
+     "OfNat.ofNat"
+    ],
+    "owner": [
+     "Applicative.mk",
+     "Unit.unit",
+     "Functor.map",
+     "Function.const",
+     "id",
+     "HAdd.hAdd",
+     "OfNat.ofNat"
+    ],
+    "hier": [
+     "Applicative.mk",
+     "Functor.map",
+     "HAdd.hAdd",
+     "OfNat.ofNat",
+     "Unit.unit",
+     "Function.const",
+     "id"
+    ],
+    "hier_lanes": [
+     "Applicative.mk",
+     "Functor.map",
+     "HAdd.hAdd",
+     "OfNat.ofNat",
+     "Unit.unit",
+     "Function.const",
+     "id"
+    ],
+    "full": [
+     "Applicative.mk",
+     "Functor.map",
+     "HAdd.hAdd",
+     "OfNat.ofNat",
+     "Unit.unit",
+     "Function.const",
+     "id"
+    ],
+    "laned": [
+     "HAdd.hAdd",
+     "OfNat.ofNat",
+     "Applicative.mk",
+     "Functor.map",
+     "Unit.unit",
+     "Function.const",
+     "id"
+    ]
+   }
+  },
+  {
+   "name": "ExceptT.seqLeft_eq",
+   "depth": 9,
+   "kind": 0,
+   "n_load": 34,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "id",
+     "Eq.mpr",
+     "ExceptT.ext",
+     "bind_congr",
+     "_private.Init.Control.Lawful.Instances.0.ExceptT.seqLeft_eq.match_1_2",
+     "Except.casesOn",
+     "Except",
+     "Eq.ndrec",
+     "Eq.symm",
+     "Except.ok",
+     "of_eq_true",
+     "eq_self"
+    ],
+    "owner": [
+     "id",
+     "Eq.mpr",
+     "ExceptT.ext",
+     "bind_congr",
+     "_private.Init.Control.Lawful.Instances.0.ExceptT.seqLeft_eq.match_1_2",
+     "Except.casesOn",
+     "Except",
+     "Eq.ndrec",
+     "Eq.symm",
+     "Except.ok",
+     "of_eq_true",
+     "eq_self"
+    ],
+    "hier": [
+     "id",
+     "Eq.mpr",
+     "ExceptT.ext",
+     "Seq.seq",
+     "SeqLeft.seqLeft",
+     "congrArg",
+     "Functor.map",
+     "bind_congr",
+     "Eq.symm",
+     "Eq",
+     "_private.Init.Control.Lawful.Instances.0.ExceptT.seqLeft_eq.match_1_2",
+     "Bind.bind"
+    ],
+    "hier_lanes": [
+     "id",
+     "Eq.mpr",
+     "ExceptT.ext",
+     "Seq.seq",
+     "SeqLeft.seqLeft",
+     "congrArg",
+     "Functor.map",
+     "bind_congr",
+     "Eq.symm",
+     "Eq",
+     "Bind.bind",
+     "ExceptT.bind_pure_comp"
+    ],
+    "full": [
+     "id",
+     "Eq.mpr",
+     "ExceptT.ext",
+     "Seq.seq",
+     "SeqLeft.seqLeft",
+     "congrArg",
+     "Functor.map",
+     "bind_congr",
+     "Eq.symm",
+     "Eq",
+     "Bind.bind",
+     "ExceptT.bind_pure_comp"
+    ],
+    "laned": [
+     "ExceptT.ext",
+     "bind_congr",
+     "ExceptT.bind_pure_comp",
+     "ExceptT.run_bind",
+     "LawfulMonad.bind_assoc",
+     "Except.casesOn",
+     "LawfulMonad.pure_bind",
+     "ExceptT.run_map",
+     "id",
+     "Eq.mpr",
+     "Seq.seq",
+     "SeqLeft.seqLeft"
+    ]
+   }
+  },
+  {
+   "name": "Std.Internal.Do.WPMonad.seq_le_wp_seq",
+   "depth": 9,
+   "kind": 0,
+   "n_load": 14,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Eq.mpr",
+     "Lean.Order.PartialOrder.rel_trans",
+     "Std.Internal.Do.WPMonad.bind_le_wp_bind",
+     "Functor.map",
+     "Std.Internal.Do.WP.wp_consequence",
+     "Std.Internal.Do.WPMonad.map_le_wp_map",
+     "Std.Internal.Do.WP.wp",
+     "Bind.bind",
+     "id",
+     "congrArg",
+     "Eq.symm",
+     "LawfulMonad.bind_map"
+    ],
+    "owner": [
+     "Eq.mpr",
+     "Lean.Order.PartialOrder.rel_trans",
+     "Std.Internal.Do.WPMonad.bind_le_wp_bind",
+     "Functor.map",
+     "Std.Internal.Do.WP.wp_consequence",
+     "Std.Internal.Do.WPMonad.map_le_wp_map",
+     "Std.Internal.Do.WP.wp",
+     "Bind.bind",
+     "id",
+     "congrArg",
+     "Eq.symm",
+     "LawfulMonad.bind_map"
+    ],
+    "hier": [
+     "Eq.mpr",
+     "Lean.Order.PartialOrder.rel_trans",
+     "id",
+     "Std.Internal.Do.WPMonad.bind_le_wp_bind",
+     "Std.Internal.Do.WP.wp_consequence",
+     "congrArg",
+     "Functor.map",
+     "Std.Internal.Do.WPMonad.map_le_wp_map",
+     "Std.Internal.Do.WP.wp",
+     "Bind.bind",
+     "Eq.symm",
+     "Lean.Order.PartialOrder.rel"
+    ],
+    "hier_lanes": [
+     "Eq.mpr",
+     "Lean.Order.PartialOrder.rel_trans",
+     "id",
+     "Std.Internal.Do.WPMonad.bind_le_wp_bind",
+     "Std.Internal.Do.WP.wp_consequence",
+     "congrArg",
+     "Functor.map",
+     "Std.Internal.Do.WPMonad.map_le_wp_map",
+     "Std.Internal.Do.WP.wp",
+     "Bind.bind",
+     "Eq.symm",
+     "Lean.Order.PartialOrder.rel"
+    ],
+    "full": [
+     "Eq.mpr",
+     "Lean.Order.PartialOrder.rel_trans",
+     "id",
+     "Std.Internal.Do.WPMonad.bind_le_wp_bind",
+     "Std.Internal.Do.WP.wp_consequence",
+     "congrArg",
+     "Functor.map",
+     "Std.Internal.Do.WPMonad.map_le_wp_map",
+     "Std.Internal.Do.WP.wp",
+     "Bind.bind",
+     "Eq.symm",
+     "Lean.Order.PartialOrder.rel"
+    ],
+    "laned": [
+     "Lean.Order.PartialOrder.rel_trans",
+     "Std.Internal.Do.WPMonad.bind_le_wp_bind",
+     "Std.Internal.Do.WP.wp_consequence",
+     "Std.Internal.Do.WPMonad.map_le_wp_map",
+     "Std.Internal.Do.WP.wp",
+     "LawfulMonad.bind_map",
+     "Eq.mpr",
+     "id",
+     "congrArg",
+     "Functor.map",
+     "Bind.bind",
+     "Eq.symm"
+    ]
+   }
+  },
+  {
+   "name": "MeasureTheory.Filtration.instTop",
+   "depth": 18,
+   "kind": 1,
+   "n_load": 3,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Top.mk",
+     "MeasureTheory.Filtration.const",
+     "MeasureTheory.Filtration.instInhabited._proof_1"
+    ],
+    "owner": [
+     "Top.mk",
+     "MeasureTheory.Filtration.const",
+     "MeasureTheory.Filtration.instInhabited"
+    ],
+    "hier": [
+     "Top.mk",
+     "MeasureTheory.Filtration.const",
+     "MeasureTheory.Filtration.instInhabited._proof_1"
+    ],
+    "hier_lanes": [
+     "Top.mk",
+     "MeasureTheory.Filtration.const"
+    ],
+    "full": [
+     "Top.mk",
+     "MeasureTheory.Filtration.const",
+     "MeasureTheory.Filtration.instInhabited"
+    ],
+    "laned": [
+     "MeasureTheory.Filtration.const",
+     "MeasureTheory.Filtration.instInhabited",
+     "Top.mk"
+    ]
+   }
+  },
+  {
+   "name": "Std.DTreeMap.valuesIter",
+   "depth": 20,
+   "kind": 1,
+   "n_load": 3,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Std.DTreeMap.Raw.valuesIter",
+     "Std.DTreeMap.Raw.mk",
+     "Std.DTreeMap.inner"
+    ],
+    "owner": [
+     "Std.DTreeMap.Raw.valuesIter",
+     "Std.DTreeMap.Raw.mk",
+     "Std.DTreeMap.inner"
+    ],
+    "hier": [
+     "Std.DTreeMap.Raw.valuesIter",
+     "Std.DTreeMap.Raw.mk",
+     "Std.DTreeMap.inner"
+    ],
+    "hier_lanes": [
+     "Std.DTreeMap.Raw.valuesIter",
+     "Std.DTreeMap.Raw.mk",
+     "Std.DTreeMap.inner"
+    ],
+    "full": [
+     "Std.DTreeMap.Raw.valuesIter",
+     "Std.DTreeMap.Raw.mk",
+     "Std.DTreeMap.inner"
+    ],
+    "laned": [
+     "Std.DTreeMap.Raw.valuesIter",
+     "Std.DTreeMap.Raw.mk",
+     "Std.DTreeMap.inner"
+    ]
+   }
+  },
+  {
+   "name": "CategoryTheory.Functor.OplaxMonoidal.ofBifunctor.bottomMap\u2097",
+   "depth": 24,
+   "kind": 1,
+   "n_load": 5,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "CategoryTheory.Functor.whiskerLeft",
+     "CategoryTheory.Functor.map",
+     "CategoryTheory.MonoidalCategoryStruct.tensorUnit",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.MonoidalCategory.curriedTensor"
+    ],
+    "owner": [
+     "CategoryTheory.Functor.whiskerLeft",
+     "CategoryTheory.Functor.map",
+     "CategoryTheory.MonoidalCategoryStruct.tensorUnit",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.MonoidalCategory.curriedTensor"
+    ],
+    "hier": [
+     "CategoryTheory.Functor.whiskerLeft",
+     "CategoryTheory.Functor.map",
+     "CategoryTheory.MonoidalCategoryStruct.tensorUnit",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.MonoidalCategory.curriedTensor"
+    ],
+    "hier_lanes": [
+     "CategoryTheory.Functor.whiskerLeft",
+     "CategoryTheory.Functor.map",
+     "CategoryTheory.MonoidalCategoryStruct.tensorUnit",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.MonoidalCategory.curriedTensor"
+    ],
+    "full": [
+     "CategoryTheory.Functor.whiskerLeft",
+     "CategoryTheory.Functor.map",
+     "CategoryTheory.MonoidalCategoryStruct.tensorUnit",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.MonoidalCategory.curriedTensor"
+    ],
+    "laned": [
+     "CategoryTheory.Functor.whiskerLeft",
+     "CategoryTheory.Functor.map",
+     "CategoryTheory.MonoidalCategoryStruct.tensorUnit",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.MonoidalCategory.curriedTensor"
+    ]
+   }
+  },
+  {
+   "name": "CategoryTheory.CommSq.LiftStruct.unopEquiv",
+   "depth": 14,
+   "kind": 1,
+   "n_load": 6,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Equiv.mk",
+     "CategoryTheory.CommSq.LiftStruct.unopEquiv._proof_4",
+     "CategoryTheory.CommSq.LiftStruct.unopEquiv._proof_2",
+     "CategoryTheory.CommSq.LiftStruct.op",
+     "CategoryTheory.CommSq.unop",
+     "CategoryTheory.CommSq.LiftStruct.unop"
+    ],
+    "owner": [
+     "Equiv.mk",
+     "CategoryTheory.CommSq.LiftStruct.unopEquiv",
+     "CategoryTheory.CommSq.LiftStruct.op",
+     "CategoryTheory.CommSq.unop",
+     "CategoryTheory.CommSq.LiftStruct.unop"
+    ],
+    "hier": [
+     "Equiv.mk",
+     "CategoryTheory.CommSq.LiftStruct.unopEquiv._proof_4",
+     "CategoryTheory.CommSq.LiftStruct.unopEquiv._proof_2",
+     "CategoryTheory.CommSq.LiftStruct.op",
+     "CategoryTheory.CommSq.LiftStruct.unop",
+     "CategoryTheory.CommSq.unop"
+    ],
+    "hier_lanes": [
+     "Equiv.mk",
+     "CategoryTheory.CommSq.LiftStruct.op",
+     "CategoryTheory.CommSq.LiftStruct.unop",
+     "CategoryTheory.CommSq.unop"
+    ],
+    "full": [
+     "Equiv.mk",
+     "CategoryTheory.CommSq.LiftStruct.op",
+     "CategoryTheory.CommSq.LiftStruct.unop",
+     "CategoryTheory.CommSq.unop"
+    ],
+    "laned": [
+     "Equiv.mk",
+     "CategoryTheory.CommSq.LiftStruct.op",
+     "CategoryTheory.CommSq.LiftStruct.unop",
+     "CategoryTheory.CommSq.unop"
+    ]
+   }
+  },
+  {
+   "name": "Associates.exists_mem_multiset_le_of_prime",
+   "depth": 21,
+   "kind": 0,
+   "n_load": 28,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Multiset.induction_on",
+     "Eq.mp",
+     "_private.Mathlib.Algebra.BigOperators.Associated.0.Associates.exists_mem_multiset_le_of_prime.match_1_5",
+     "_private.Mathlib.Algebra.BigOperators.Associated.0.Associates.exists_mem_multiset_le_of_prime.match_1_3",
+     "Exists.intro",
+     "And.intro",
+     "Multiset.mem_cons_of_mem",
+     "Associates",
+     "LE.le",
+     "Membership.mem",
+     "Multiset.cons",
+     "And"
+    ],
+    "owner": [
+     "Multiset.induction_on",
+     "Eq.mp",
+     "_private.Mathlib.Algebra.BigOperators.Associated.0.Associates.exists_mem_multiset_le_of_prime.match_1_5",
+     "_private.Mathlib.Algebra.BigOperators.Associated.0.Associates.exists_mem_multiset_le_of_prime.match_1_3",
+     "Exists.intro",
+     "And.intro",
+     "Multiset.mem_cons_of_mem",
+     "Associates",
+     "LE.le",
+     "Membership.mem",
+     "Multiset.cons",
+     "And"
+    ],
+    "hier": [
+     "Multiset.induction_on",
+     "Eq.mp",
+     "_private.Mathlib.Algebra.BigOperators.Associated.0.Associates.exists_mem_multiset_le_of_prime.match_1_5",
+     "Associates",
+     "_private.Mathlib.Algebra.BigOperators.Associated.0.Associates.exists_mem_multiset_le_of_prime.match_1_1",
+     "_private.Mathlib.Algebra.BigOperators.Associated.0.Associates.exists_mem_multiset_le_of_prime.match_1_3",
+     "Exists.intro",
+     "And",
+     "Exists",
+     "Multiset.prod",
+     "Associates.Prime.le_or_le",
+     "congrArg"
+    ],
+    "hier_lanes": [
+     "Multiset.induction_on",
+     "Eq.mp",
+     "Associates",
+     "Exists.intro",
+     "And",
+     "Exists",
+     "Multiset.prod",
+     "Associates.Prime.le_or_le",
+     "congrArg",
+     "HMul.hMul",
+     "False.elim",
+     "And.intro"
+    ],
+    "full": [
+     "Multiset.induction_on",
+     "Eq.mp",
+     "Associates",
+     "Exists.intro",
+     "And",
+     "Exists",
+     "Multiset.prod",
+     "Associates.Prime.le_or_le",
+     "congrArg",
+     "HMul.hMul",
+     "False.elim",
+     "And.intro"
+    ],
+    "laned": [
+     "Multiset.induction_on",
+     "Associates.Prime.le_or_le",
+     "HMul.hMul",
+     "Membership.mem",
+     "Multiset.prod_cons",
+     "Prime.ne_one",
+     "OfNat.ofNat",
+     "Multiset.mem_cons_self",
+     "Multiset.mem_cons_of_mem",
+     "mul_eq_one",
+     "Eq.mp",
+     "Associates"
+    ]
+   }
+  },
+  {
+   "name": "CategoryTheory.Functor.IsStronglyCocartesian.map_comp_map_assoc",
+   "depth": 13,
+   "kind": 0,
+   "n_load": 12,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "id",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map_comp_map._proof_1",
+     "Eq.mp",
+     "Mathlib.Tactic.Reassoc.eq_whisker'",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map_comp_map",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map",
+     "Eq",
+     "CategoryTheory.CategoryStruct.comp",
+     "forall_congr",
+     "congrFun'",
+     "congrArg",
+     "CategoryTheory.Category.assoc"
+    ],
+    "owner": [
+     "id",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map_comp_map",
+     "Eq.mp",
+     "Mathlib.Tactic.Reassoc.eq_whisker'",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map",
+     "Eq",
+     "CategoryTheory.CategoryStruct.comp",
+     "forall_congr",
+     "congrFun'",
+     "congrArg",
+     "CategoryTheory.Category.assoc"
+    ],
+    "hier": [
+     "id",
+     "Eq.mp",
+     "CategoryTheory.CategoryStruct.comp",
+     "Mathlib.Tactic.Reassoc.eq_whisker'",
+     "forall_congr",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map_comp_map",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map_comp_map._proof_1",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map",
+     "congrFun'",
+     "congrArg",
+     "Eq",
+     "CategoryTheory.Category.assoc"
+    ],
+    "hier_lanes": [
+     "id",
+     "Eq.mp",
+     "CategoryTheory.CategoryStruct.comp",
+     "Mathlib.Tactic.Reassoc.eq_whisker'",
+     "forall_congr",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map_comp_map",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map",
+     "congrFun'",
+     "congrArg",
+     "Eq",
+     "CategoryTheory.Category.assoc"
+    ],
+    "full": [
+     "id",
+     "Eq.mp",
+     "CategoryTheory.CategoryStruct.comp",
+     "Mathlib.Tactic.Reassoc.eq_whisker'",
+     "forall_congr",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map_comp_map",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map",
+     "congrFun'",
+     "congrArg",
+     "Eq",
+     "CategoryTheory.Category.assoc"
+    ],
+    "laned": [
+     "CategoryTheory.CategoryStruct.comp",
+     "Mathlib.Tactic.Reassoc.eq_whisker'",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map_comp_map",
+     "CategoryTheory.Functor.IsStronglyCocartesian.map",
+     "CategoryTheory.Category.assoc",
+     "id",
+     "Eq.mp",
+     "forall_congr",
+     "congrFun'",
+     "congrArg",
+     "Eq"
+    ]
+   }
+  },
+  {
+   "name": "normalizedGCDMonoidOfLCM",
+   "depth": 24,
+   "kind": 1,
+   "n_load": 17,
+   "n_roots": 4,
+   "complete": true,
+   "views": {
+    "flat": [
+     "NormalizedGCDMonoid.mk",
+     "inferInstance",
+     "gcdMonoidOfLCM",
+     "gcdMonoidOfLCM._proof_5",
+     "normalizedGCDMonoidOfLCM._proof_5",
+     "gcdMonoidOfLCM._proof_7",
+     "gcdMonoidOfLCM._proof_6",
+     "normalizedGCDMonoidOfLCM._proof_4",
+     "normalizedGCDMonoidOfLCM._proof_3",
+     "normalizedGCDMonoidOfLCM._proof_2",
+     "normalizedGCDMonoidOfLCM._proof_1",
+     "normalize"
+    ],
+    "owner": [
+     "NormalizedGCDMonoid.mk",
+     "inferInstance",
+     "gcdMonoidOfLCM",
+     "normalizedGCDMonoidOfLCM",
+     "normalize",
+     "ite",
+     "Classical.choose",
+     "Eq",
+     "HMul.hMul",
+     "OfNat.ofNat"
+    ],
+    "hier": [
+     "NormalizedGCDMonoid.mk",
+     "inferInstance",
+     "gcdMonoidOfLCM",
+     "gcdMonoidOfLCM._proof_5",
+     "normalizedGCDMonoidOfLCM._proof_5",
+     "normalize",
+     "HMul.hMul",
+     "gcdMonoidOfLCM._proof_7",
+     "gcdMonoidOfLCM._proof_6",
+     "normalizedGCDMonoidOfLCM._proof_4",
+     "normalizedGCDMonoidOfLCM._proof_3",
+     "normalizedGCDMonoidOfLCM._proof_2"
+    ],
+    "hier_lanes": [
+     "NormalizedGCDMonoid.mk",
+     "inferInstance",
+     "gcdMonoidOfLCM",
+     "normalize",
+     "HMul.hMul",
+     "ite",
+     "Eq",
+     "Classical.choose",
+     "OfNat.ofNat"
+    ],
+    "full": [
+     "NormalizedGCDMonoid.mk",
+     "inferInstance",
+     "gcdMonoidOfLCM",
+     "normalize",
+     "HMul.hMul",
+     "ite",
+     "Eq",
+     "Classical.choose",
+     "OfNat.ofNat"
+    ],
+    "laned": [
+     "NormalizedGCDMonoid.mk",
+     "gcdMonoidOfLCM",
+     "normalize",
+     "HMul.hMul",
+     "OfNat.ofNat",
+     "inferInstance",
+     "ite",
+     "Eq",
+     "Classical.choose"
+    ]
+   }
+  },
+  {
+   "name": "div_helper",
+   "depth": 25,
+   "kind": 0,
+   "n_load": 13,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Eq.mpr",
+     "Eq.refl",
+     "Inv.inv",
+     "id",
+     "congrArg",
+     "one_div",
+     "Eq",
+     "HDiv.hDiv",
+     "OfNat.ofNat",
+     "div_mul_cancel_left\u2080",
+     "HMul.hMul",
+     "one_mul"
+    ],
+    "owner": [
+     "Eq.mpr",
+     "Eq.refl",
+     "Inv.inv",
+     "id",
+     "congrArg",
+     "one_div",
+     "Eq",
+     "HDiv.hDiv",
+     "OfNat.ofNat",
+     "div_mul_cancel_left\u2080",
+     "HMul.hMul",
+     "one_mul"
+    ],
+    "hier": [
+     "Eq.mpr",
+     "id",
+     "OfNat.ofNat",
+     "congrArg",
+     "Eq",
+     "div_mul_eq_mul_div",
+     "Eq.refl",
+     "HDiv.hDiv",
+     "HMul.hMul",
+     "one_mul",
+     "Inv.inv",
+     "div_mul_cancel_left\u2080"
+    ],
+    "hier_lanes": [
+     "Eq.mpr",
+     "id",
+     "OfNat.ofNat",
+     "congrArg",
+     "Eq",
+     "div_mul_eq_mul_div",
+     "Eq.refl",
+     "HDiv.hDiv",
+     "HMul.hMul",
+     "one_mul",
+     "Inv.inv",
+     "div_mul_cancel_left\u2080"
+    ],
+    "full": [
+     "Eq.mpr",
+     "id",
+     "OfNat.ofNat",
+     "congrArg",
+     "Eq",
+     "div_mul_eq_mul_div",
+     "Eq.refl",
+     "HDiv.hDiv",
+     "HMul.hMul",
+     "one_mul",
+     "Inv.inv",
+     "div_mul_cancel_left\u2080"
+    ],
+    "laned": [
+     "OfNat.ofNat",
+     "div_mul_eq_mul_div",
+     "HDiv.hDiv",
+     "HMul.hMul",
+     "one_mul",
+     "div_mul_cancel_left\u2080",
+     "one_div",
+     "Eq.mpr",
+     "id",
+     "congrArg",
+     "Eq",
+     "Eq.refl"
+    ]
+   }
+  },
+  {
+   "name": "Mathlib.Meta.NormNum.Result.toRat'",
+   "depth": 38,
+   "kind": 1,
+   "n_load": 26,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Mathlib.Meta.NormNum.Result.toRat.match_1",
+     "Option.some",
+     "Prod.mk",
+     "Sigma.mk",
+     "Qq.Quoted",
+     "Lean.Expr.app",
+     "Qq.Quoted.unsafeMk",
+     "Lean.Expr.const",
+     "List.nil",
+     "Lean.Name.mkStr2",
+     "Lean.Name.mkStr1",
+     "List.cons"
+    ],
+    "owner": [
+     "Mathlib.Meta.NormNum.Result.toRat",
+     "Option.some",
+     "Prod.mk",
+     "Sigma.mk",
+     "Qq.Quoted",
+     "Lean.Expr.app",
+     "Qq.Quoted.unsafeMk",
+     "Lean.Expr.const",
+     "List.nil",
+     "Lean.Name.mkStr2",
+     "Lean.Name.mkStr1",
+     "List.cons"
+    ],
+    "hier": [
+     "Mathlib.Meta.NormNum.Result.toRat.match_1",
+     "Option.some",
+     "Lean.Expr.app",
+     "Option.none",
+     "Option",
+     "Lean.Expr.sort",
+     "Prod.mk",
+     "Lean.Expr.const",
+     "Prod",
+     "Lean.Level.succ",
+     "Sigma.mk",
+     "List.cons"
+    ],
+    "hier_lanes": [
+     "Option.some",
+     "Lean.Expr.app",
+     "Option.none",
+     "Option",
+     "Lean.Expr.sort",
+     "Prod.mk",
+     "Lean.Expr.const",
+     "Prod",
+     "Lean.Level.succ",
+     "Sigma.mk",
+     "List.cons",
+     "Sigma"
+    ],
+    "full": [
+     "Mathlib.Meta.NormNum.Result.toRat",
+     "Option.some",
+     "Lean.Expr.app",
+     "Option.none",
+     "Option",
+     "Lean.Expr.sort",
+     "Prod.mk",
+     "Lean.Expr.const",
+     "Prod",
+     "Lean.Level.succ",
+     "Sigma.mk",
+     "List.cons"
+    ],
+    "laned": [
+     "Mathlib.Meta.NormNum.Result.toRat",
+     "Qq.Quoted.unsafeMk",
+     "Option.some",
+     "Lean.Expr.app",
+     "Option.none",
+     "Option",
+     "Lean.Expr.sort",
+     "Prod.mk",
+     "Lean.Expr.const",
+     "Prod",
+     "Lean.Level.succ",
+     "Sigma.mk"
+    ]
+   }
+  },
+  {
+   "name": "CategoryTheory.Limits.createsLimitsOp",
+   "depth": 36,
+   "kind": 1,
+   "n_load": 1,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "CategoryTheory.Limits.createsLimitsOfSizeOp"
+    ],
+    "owner": [
+     "CategoryTheory.Limits.createsLimitsOfSizeOp"
+    ],
+    "hier": [
+     "CategoryTheory.Limits.createsLimitsOfSizeOp"
+    ],
+    "hier_lanes": [
+     "CategoryTheory.Limits.createsLimitsOfSizeOp"
+    ],
+    "full": [
+     "CategoryTheory.Limits.createsLimitsOfSizeOp"
+    ],
+    "laned": [
+     "CategoryTheory.Limits.createsLimitsOfSizeOp"
+    ]
+   }
+  },
+  {
+   "name": "Lean.Meta.whnfCoreUnfoldingAnnotations",
+   "depth": 34,
+   "kind": 1,
+   "n_load": 6,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Lean.Meta.whnfHeadPred",
+     "Pure.pure",
+     "Lean.Expr.isTypeAnnotation",
+     "Lean.Core.CoreM",
+     "Lean.Meta.State",
+     "IO.RealWorld"
+    ],
+    "owner": [
+     "Lean.Meta.whnfHeadPred",
+     "Pure.pure",
+     "Lean.Expr.isTypeAnnotation",
+     "Lean.Core.CoreM",
+     "Lean.Meta.State",
+     "IO.RealWorld"
+    ],
+    "hier": [
+     "Lean.Meta.whnfHeadPred",
+     "Pure.pure",
+     "Lean.Expr.isTypeAnnotation",
+     "Lean.Core.CoreM",
+     "Lean.Meta.State",
+     "IO.RealWorld"
+    ],
+    "hier_lanes": [
+     "Lean.Meta.whnfHeadPred",
+     "Pure.pure",
+     "Lean.Expr.isTypeAnnotation",
+     "Lean.Core.CoreM",
+     "Lean.Meta.State",
+     "IO.RealWorld"
+    ],
+    "full": [
+     "Lean.Meta.whnfHeadPred",
+     "Pure.pure",
+     "Lean.Expr.isTypeAnnotation",
+     "Lean.Core.CoreM",
+     "Lean.Meta.State",
+     "IO.RealWorld"
+    ],
+    "laned": [
+     "Lean.Meta.whnfHeadPred",
+     "Pure.pure",
+     "Lean.Expr.isTypeAnnotation",
+     "Lean.Core.CoreM",
+     "Lean.Meta.State",
+     "IO.RealWorld"
+    ]
+   }
+  },
+  {
+   "name": "AddMonCat.HasLimits.limitCone",
+   "depth": 28,
+   "kind": 1,
+   "n_load": 15,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "CategoryTheory.Limits.Cone.mk",
+     "CategoryTheory.NatTrans.mk",
+     "AddMonCat.HasLimits.limitCone._proof_1",
+     "AddMonCat.ofHom",
+     "AddMonCat.limit\u03c0AddMonoidHom",
+     "AddMonCat.carrier",
+     "CategoryTheory.Limits.Cone.pt",
+     "CategoryTheory.Limits.Types.Small.limitCone",
+     "CategoryTheory.Functor.comp",
+     "CategoryTheory.forget",
+     "AddMonCat",
+     "AddMonCat.of"
+    ],
+    "owner": [
+     "CategoryTheory.Limits.Cone.mk",
+     "CategoryTheory.NatTrans.mk",
+     "AddMonCat.HasLimits.limitCone._proof_1",
+     "AddMonCat.ofHom",
+     "AddMonCat.limit\u03c0AddMonoidHom",
+     "AddMonCat.carrier",
+     "CategoryTheory.Limits.Cone.pt",
+     "CategoryTheory.Limits.Types.Small.limitCone",
+     "CategoryTheory.Functor.comp",
+     "CategoryTheory.forget",
+     "AddMonCat",
+     "AddMonCat.of"
+    ],
+    "hier": [
+     "CategoryTheory.Limits.Cone.mk",
+     "CategoryTheory.NatTrans.mk",
+     "AddMonCat.of",
+     "Set.Elem",
+     "AddMonCat.HasLimits.limitCone._proof_1",
+     "AddMonCat.ofHom",
+     "CategoryTheory.Functor.sections",
+     "AddMonCat.limit\u03c0AddMonoidHom",
+     "CategoryTheory.Functor.comp",
+     "CategoryTheory.Functor.const",
+     "CategoryTheory.Limits.Cone.pt",
+     "CategoryTheory.Limits.Types.Small.limitCone"
+    ],
+    "hier_lanes": [
+     "CategoryTheory.Limits.Cone.mk",
+     "CategoryTheory.NatTrans.mk",
+     "AddMonCat.of",
+     "Set.Elem",
+     "AddMonCat.HasLimits.limitCone._proof_1",
+     "AddMonCat.ofHom",
+     "CategoryTheory.Functor.sections",
+     "AddMonCat.limit\u03c0AddMonoidHom",
+     "CategoryTheory.Functor.comp",
+     "CategoryTheory.Functor.const",
+     "CategoryTheory.Limits.Cone.pt",
+     "CategoryTheory.Limits.Types.Small.limitCone"
+    ],
+    "full": [
+     "CategoryTheory.Limits.Cone.mk",
+     "CategoryTheory.NatTrans.mk",
+     "AddMonCat.of",
+     "Set.Elem",
+     "AddMonCat.HasLimits.limitCone._proof_1",
+     "AddMonCat.ofHom",
+     "CategoryTheory.Functor.sections",
+     "AddMonCat.limit\u03c0AddMonoidHom",
+     "CategoryTheory.Functor.comp",
+     "CategoryTheory.Functor.const",
+     "CategoryTheory.Limits.Cone.pt",
+     "CategoryTheory.Limits.Types.Small.limitCone"
+    ],
+    "laned": [
+     "CategoryTheory.Limits.Cone.mk",
+     "CategoryTheory.NatTrans.mk",
+     "AddMonCat.HasLimits.limitCone._proof_1",
+     "AddMonCat.ofHom",
+     "CategoryTheory.Functor.sections",
+     "AddMonCat.limit\u03c0AddMonoidHom",
+     "CategoryTheory.Functor.comp",
+     "CategoryTheory.Functor.const",
+     "CategoryTheory.Limits.Cone.pt",
+     "CategoryTheory.Limits.Types.Small.limitCone",
+     "CategoryTheory.forget",
+     "AddMonCat.of"
+    ]
+   }
+  },
+  {
+   "name": "List.eraseIdx_set_lt",
+   "depth": 49,
+   "kind": 0,
+   "n_load": 45,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "List.ext_getElem",
+     "_private.Init.Data.List.Nat.Erase.0.List.eraseIdx_set_lt._proof_1_4",
+     "Eq.mpr",
+     "Decidable.casesOn",
+     "Eq.refl",
+     "id",
+     "congrArg",
+     "if_pos",
+     "GetElem.getElem",
+     "List.getElem_eraseIdx._proof_2",
+     "Eq.rec",
+     "List.length_set"
+    ],
+    "owner": [
+     "List.ext_getElem",
+     "_private.Init.Data.List.Nat.Erase.0.List.eraseIdx_set_lt._proof_1_4",
+     "Eq.mpr",
+     "Decidable.casesOn",
+     "Eq.refl",
+     "id",
+     "congrArg",
+     "if_pos",
+     "GetElem.getElem",
+     "List.getElem_eraseIdx",
+     "Eq.rec",
+     "List.length_set"
+    ],
+    "hier": [
+     "List.ext_getElem",
+     "Eq.mpr",
+     "of_eq_true",
+     "Decidable.casesOn",
+     "id",
+     "List.length",
+     "Eq.trans",
+     "List.eraseIdx",
+     "List.set",
+     "congr",
+     "Nat.decLt",
+     "eq_self"
+    ],
+    "hier_lanes": [
+     "List.ext_getElem",
+     "Eq.mpr",
+     "of_eq_true",
+     "Decidable.casesOn",
+     "id",
+     "List.length",
+     "Eq.trans",
+     "List.eraseIdx",
+     "List.set",
+     "congr",
+     "Nat.decLt",
+     "eq_self"
+    ],
+    "full": [
+     "List.ext_getElem",
+     "Eq.mpr",
+     "of_eq_true",
+     "Decidable.casesOn",
+     "id",
+     "List.length",
+     "Eq.trans",
+     "List.eraseIdx",
+     "List.set",
+     "congr",
+     "Nat.decLt",
+     "eq_self"
+    ],
+    "laned": [
+     "List.ext_getElem",
+     "Decidable.casesOn",
+     "Nat.decLt",
+     "HSub.hSub",
+     "GetElem.getElem",
+     "List.length_set",
+     "ite_congr",
+     "List.getElem_set",
+     "List.length_eraseIdx",
+     "HAdd.hAdd",
+     "List.getElem_eraseIdx",
+     "dite_congr"
+    ]
+   }
+  },
+  {
+   "name": "CategoryTheory.Limits.preservesBinaryProducts_of_isIso_prodComparison",
+   "depth": 36,
+   "kind": 0,
+   "n_load": 14,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "CategoryTheory.Limits.PreservesLimitsOfShape.mk",
+     "CategoryTheory.Limits.PreservesLimitPair.of_iso_prod_comparison",
+     "CategoryTheory.Limits.preservesLimit_of_iso_diagram",
+     "CategoryTheory.Iso.symm",
+     "CategoryTheory.Limits.diagramIsoPair",
+     "CategoryTheory.Limits.pair",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.Discrete.mk",
+     "CategoryTheory.Limits.WalkingPair.right",
+     "CategoryTheory.Limits.WalkingPair",
+     "CategoryTheory.Discrete",
+     "CategoryTheory.Limits.WalkingPair.left"
+    ],
+    "owner": [
+     "CategoryTheory.Limits.PreservesLimitsOfShape.mk",
+     "CategoryTheory.Limits.PreservesLimitPair.of_iso_prod_comparison",
+     "CategoryTheory.Limits.preservesLimit_of_iso_diagram",
+     "CategoryTheory.Iso.symm",
+     "CategoryTheory.Limits.diagramIsoPair",
+     "CategoryTheory.Limits.pair",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.Discrete.mk",
+     "CategoryTheory.Limits.WalkingPair.right",
+     "CategoryTheory.Limits.WalkingPair",
+     "CategoryTheory.Discrete",
+     "CategoryTheory.Limits.WalkingPair.left"
+    ],
+    "hier": [
+     "CategoryTheory.Limits.PreservesLimitsOfShape.mk",
+     "CategoryTheory.Limits.PreservesLimitPair.of_iso_prod_comparison",
+     "CategoryTheory.Limits.preservesLimit_of_iso_diagram",
+     "CategoryTheory.Limits.prodComparison",
+     "CategoryTheory.Iso.symm",
+     "CategoryTheory.Limits.pair",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.Limits.prod",
+     "CategoryTheory.Limits.diagramIsoPair",
+     "CategoryTheory.Discrete",
+     "CategoryTheory.Discrete.mk",
+     "CategoryTheory.Limits.WalkingPair.right"
+    ],
+    "hier_lanes": [
+     "CategoryTheory.Limits.PreservesLimitsOfShape.mk",
+     "CategoryTheory.Limits.PreservesLimitPair.of_iso_prod_comparison",
+     "CategoryTheory.Limits.preservesLimit_of_iso_diagram",
+     "CategoryTheory.Limits.prodComparison",
+     "CategoryTheory.Iso.symm",
+     "CategoryTheory.Limits.pair",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.Limits.prod",
+     "CategoryTheory.Limits.diagramIsoPair",
+     "CategoryTheory.Discrete",
+     "CategoryTheory.Discrete.mk",
+     "CategoryTheory.Limits.WalkingPair.right"
+    ],
+    "full": [
+     "CategoryTheory.Limits.PreservesLimitsOfShape.mk",
+     "CategoryTheory.Limits.PreservesLimitPair.of_iso_prod_comparison",
+     "CategoryTheory.Limits.preservesLimit_of_iso_diagram",
+     "CategoryTheory.Limits.prodComparison",
+     "CategoryTheory.Iso.symm",
+     "CategoryTheory.Limits.pair",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.Limits.prod",
+     "CategoryTheory.Limits.diagramIsoPair",
+     "CategoryTheory.Discrete",
+     "CategoryTheory.Discrete.mk",
+     "CategoryTheory.Limits.WalkingPair.right"
+    ],
+    "laned": [
+     "CategoryTheory.Limits.PreservesLimitsOfShape.mk",
+     "CategoryTheory.Limits.PreservesLimitPair.of_iso_prod_comparison",
+     "CategoryTheory.Limits.preservesLimit_of_iso_diagram",
+     "CategoryTheory.Limits.prodComparison",
+     "CategoryTheory.Iso.symm",
+     "CategoryTheory.Limits.pair",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.Limits.prod",
+     "CategoryTheory.Limits.diagramIsoPair",
+     "CategoryTheory.Discrete",
+     "CategoryTheory.Discrete.mk",
+     "CategoryTheory.Limits.WalkingPair.right"
+    ]
+   }
+  },
+  {
+   "name": "Bimod.triangle_bimod",
+   "depth": 49,
+   "kind": 0,
+   "n_load": 95,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "id",
+     "Bimod.hom_ext",
+     "CategoryTheory.Limits.coequalizer.hom_ext",
+     "Eq.mpr",
+     "Iff.mp",
+     "of_eq_true",
+     "Eq.trans",
+     "eq_self",
+     "CategoryTheory.CategoryStruct.comp",
+     "CategoryTheory.Limits.colimit.\u03b9",
+     "CategoryTheory.Limits.WalkingParallelPair.one",
+     "CategoryTheory.Limits.parallelPair"
+    ],
+    "owner": [
+     "id",
+     "Bimod.hom_ext",
+     "CategoryTheory.Limits.coequalizer.hom_ext",
+     "Eq.mpr",
+     "Iff.mp",
+     "of_eq_true",
+     "Eq.trans",
+     "eq_self",
+     "CategoryTheory.CategoryStruct.comp",
+     "CategoryTheory.Limits.colimit.\u03b9",
+     "CategoryTheory.Limits.WalkingParallelPair.one",
+     "CategoryTheory.Limits.parallelPair"
+    ],
+    "hier": [
+     "id",
+     "Bimod.hom_ext",
+     "CategoryTheory.MonoidalCategory.tensorRight",
+     "CategoryTheory.MonoidalCategory.tensorLeft",
+     "CategoryTheory.Limits.coequalizer.hom_ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "Bimod.whiskerRight",
+     "CategoryTheory.Iso.hom",
+     "Bimod.tensorBimod",
+     "Bimod.whiskerLeft",
+     "Bimod.rightUnitorBimod",
+     "Bimod.associatorBimod"
+    ],
+    "hier_lanes": [
+     "id",
+     "Bimod.hom_ext",
+     "CategoryTheory.MonoidalCategory.tensorRight",
+     "CategoryTheory.MonoidalCategory.tensorLeft",
+     "CategoryTheory.Limits.coequalizer.hom_ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "Bimod.whiskerRight",
+     "CategoryTheory.Iso.hom",
+     "Bimod.tensorBimod",
+     "Bimod.whiskerLeft",
+     "Bimod.rightUnitorBimod",
+     "Bimod.associatorBimod"
+    ],
+    "full": [
+     "id",
+     "Bimod.hom_ext",
+     "CategoryTheory.MonoidalCategory.tensorRight",
+     "CategoryTheory.MonoidalCategory.tensorLeft",
+     "CategoryTheory.Limits.coequalizer.hom_ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "Bimod.whiskerRight",
+     "CategoryTheory.Iso.hom",
+     "Bimod.tensorBimod",
+     "Bimod.whiskerLeft",
+     "Bimod.rightUnitorBimod",
+     "Bimod.associatorBimod"
+    ],
+    "laned": [
+     "Bimod.hom_ext",
+     "CategoryTheory.MonoidalCategory.tensorRight",
+     "CategoryTheory.MonoidalCategory.tensorLeft",
+     "CategoryTheory.Limits.coequalizer.hom_ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "Bimod.whiskerRight",
+     "CategoryTheory.Iso.hom",
+     "Bimod.tensorBimod",
+     "Bimod.whiskerLeft",
+     "Bimod.rightUnitorBimod",
+     "Bimod.associatorBimod",
+     "Bimod.regular"
+    ]
+   }
+  },
+  {
+   "name": "RingCat.FilteredColimits.colimitRing",
+   "depth": 41,
+   "kind": 1,
+   "n_load": 21,
+   "n_roots": 3,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Ring.mk",
+     "AddCommGrpCat.FilteredColimits.colimitAddCommGroup",
+     "SemiRingCat.semiring",
+     "RingCat.FilteredColimits.colimitRing._proof_2",
+     "RingCat.FilteredColimits.colimitRing._proof_1",
+     "Int.castDef",
+     "AddGrpCat.carrier",
+     "AddCommGrpCat.FilteredColimits.G",
+     "CategoryTheory.Functor.comp",
+     "CategoryTheory.forget\u2082",
+     "AddCommGrpCat.carrier",
+     "AddCommGrpCat"
+    ],
+    "owner": [
+     "Ring.mk",
+     "AddCommGrpCat.FilteredColimits.colimitAddCommGroup",
+     "SemiRingCat.semiring",
+     "RingCat.FilteredColimits.colimitRing",
+     "Int.castDef",
+     "AddGrpCat.carrier",
+     "AddCommGrpCat.FilteredColimits.G",
+     "CategoryTheory.Functor.comp",
+     "CategoryTheory.forget\u2082",
+     "AddCommGrpCat.carrier",
+     "AddCommGrpCat",
+     "RingCat.carrier"
+    ],
+    "hier": [
+     "Ring.mk",
+     "AddCommGrpCat.FilteredColimits.colimitAddCommGroup",
+     "SemiRingCat.semiring",
+     "RingCat.FilteredColimits.colimitRing._proof_2",
+     "RingCat.FilteredColimits.colimitRing._proof_1",
+     "AddGrpCat.carrier",
+     "CategoryTheory.Functor.comp",
+     "RingCat",
+     "SemiRingCat.carrier",
+     "RingCat.FilteredColimits.R",
+     "RingCat.FilteredColimits.colimitRing._proof_7",
+     "RingCat.FilteredColimits.colimitRing._proof_6"
+    ],
+    "hier_lanes": [
+     "Ring.mk",
+     "AddCommGrpCat.FilteredColimits.colimitAddCommGroup",
+     "SemiRingCat.semiring",
+     "AddGrpCat.carrier",
+     "CategoryTheory.Functor.comp",
+     "RingCat",
+     "SemiRingCat.carrier",
+     "RingCat.FilteredColimits.R",
+     "Int.castDef",
+     "AddCommGrpCat.FilteredColimits.G",
+     "CategoryTheory.forget\u2082",
+     "AddCommGrpCat"
+    ],
+    "full": [
+     "Ring.mk",
+     "AddCommGrpCat.FilteredColimits.colimitAddCommGroup",
+     "SemiRingCat.semiring",
+     "AddGrpCat.carrier",
+     "CategoryTheory.Functor.comp",
+     "RingCat",
+     "SemiRingCat.carrier",
+     "RingCat.FilteredColimits.R",
+     "Int.castDef",
+     "AddCommGrpCat.FilteredColimits.G",
+     "CategoryTheory.forget\u2082",
+     "AddCommGrpCat"
+    ],
+    "laned": [
+     "Ring.mk",
+     "AddCommGrpCat.FilteredColimits.colimitAddCommGroup",
+     "SemiRingCat.semiring",
+     "CategoryTheory.Functor.comp",
+     "RingCat.FilteredColimits.R",
+     "AddCommGrpCat.FilteredColimits.G",
+     "CategoryTheory.forget\u2082",
+     "AddGrpCat.carrier",
+     "RingCat",
+     "SemiRingCat.carrier",
+     "Int.castDef",
+     "AddCommGrpCat"
+    ]
+   }
+  },
+  {
+   "name": "Std.ExtDHashMap.Const.insertManyIfNewUnit",
+   "depth": 72,
+   "kind": 1,
+   "n_load": 13,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Id.run",
+     "Subtype.mk",
+     "Bind.bind",
+     "Pure.pure",
+     "Subtype.val",
+     "Std.ExtDHashMap.insertIfNew",
+     "Unit.unit",
+     "Unit",
+     "Id",
+     "Subtype",
+     "ForIn.forIn",
+     "ForInStep.yield"
+    ],
+    "owner": [
+     "Id.run",
+     "Subtype.mk",
+     "Bind.bind",
+     "Pure.pure",
+     "Subtype.val",
+     "Std.ExtDHashMap.insertIfNew",
+     "Unit.unit",
+     "Unit",
+     "Id",
+     "Subtype",
+     "ForIn.forIn",
+     "ForInStep.yield"
+    ],
+    "hier": [
+     "Id.run",
+     "Subtype.mk",
+     "Bind.bind",
+     "Id",
+     "Pure.pure",
+     "ForIn.forIn",
+     "Subtype.val",
+     "Std.ExtDHashMap.insertIfNew",
+     "ForInStep.yield",
+     "_private.Std.Data.ExtDHashMap.Basic.0.Std.ExtDHashMap.Const.insertManyIfNewUnit._proof_1",
+     "Unit.unit",
+     "Unit"
+    ],
+    "hier_lanes": [
+     "Id.run",
+     "Subtype.mk",
+     "Bind.bind",
+     "Id",
+     "Pure.pure",
+     "ForIn.forIn",
+     "Subtype.val",
+     "Std.ExtDHashMap.insertIfNew",
+     "ForInStep.yield",
+     "Unit.unit",
+     "Unit",
+     "Subtype"
+    ],
+    "full": [
+     "Id.run",
+     "Subtype.mk",
+     "Bind.bind",
+     "Id",
+     "Pure.pure",
+     "ForIn.forIn",
+     "Subtype.val",
+     "Std.ExtDHashMap.insertIfNew",
+     "ForInStep.yield",
+     "Unit.unit",
+     "Unit",
+     "Subtype"
+    ],
+    "laned": [
+     "ForIn.forIn",
+     "Std.ExtDHashMap.insertIfNew",
+     "Id.run",
+     "Subtype.mk",
+     "Bind.bind",
+     "Id",
+     "Pure.pure",
+     "Subtype.val",
+     "ForInStep.yield",
+     "Unit.unit",
+     "Unit",
+     "Subtype"
+    ]
+   }
+  },
+  {
+   "name": "HasCompactMulSupport.submonoid",
+   "depth": 90,
+   "kind": 1,
+   "n_load": 6,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Submonoid.mk",
+     "HasCompactMulSupport.submonoid._proof_1",
+     "Subsemigroup.mk",
+     "HasCompactMulSupport.mul",
+     "Set.ofPred",
+     "HasCompactMulSupport"
+    ],
+    "owner": [
+     "Submonoid.mk",
+     "HasCompactMulSupport.submonoid",
+     "Subsemigroup.mk",
+     "HasCompactMulSupport.mul",
+     "Set.ofPred",
+     "HasCompactMulSupport"
+    ],
+    "hier": [
+     "Submonoid.mk",
+     "HasCompactMulSupport.submonoid._proof_1",
+     "Subsemigroup.mk",
+     "HasCompactMulSupport.mul",
+     "Set.ofPred",
+     "HasCompactMulSupport"
+    ],
+    "hier_lanes": [
+     "Submonoid.mk",
+     "Subsemigroup.mk",
+     "HasCompactMulSupport.mul",
+     "Set.ofPred",
+     "HasCompactMulSupport"
+    ],
+    "full": [
+     "Submonoid.mk",
+     "Subsemigroup.mk",
+     "HasCompactMulSupport.mul",
+     "Set.ofPred",
+     "HasCompactMulSupport"
+    ],
+    "laned": [
+     "Submonoid.mk",
+     "Subsemigroup.mk",
+     "HasCompactMulSupport.mul",
+     "Set.ofPred",
+     "HasCompactMulSupport"
+    ]
+   }
+  },
+  {
+   "name": "CompHausLike.LocallyConstant.fiber",
+   "depth": 92,
+   "kind": 1,
+   "n_load": 11,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "CompHausLike.of",
+     "CompHausLike.toTop",
+     "Subtype.val",
+     "Set.range",
+     "Set.preimage",
+     "Singleton.singleton",
+     "DFunLike.coe",
+     "TopCat.carrier",
+     "Set",
+     "Set.Elem",
+     "Subtype"
+    ],
+    "owner": [
+     "CompHausLike.of",
+     "CompHausLike.toTop",
+     "Subtype.val",
+     "Set.range",
+     "Set.preimage",
+     "Singleton.singleton",
+     "DFunLike.coe",
+     "TopCat.carrier",
+     "Set",
+     "Set.Elem",
+     "Subtype"
+    ],
+    "hier": [
+     "CompHausLike.of",
+     "CompHausLike.toTop",
+     "DFunLike.coe",
+     "TopCat.carrier",
+     "Set.Elem",
+     "Subtype",
+     "Subtype.val",
+     "Set.range",
+     "Set.preimage",
+     "Set",
+     "Singleton.singleton"
+    ],
+    "hier_lanes": [
+     "CompHausLike.of",
+     "CompHausLike.toTop",
+     "DFunLike.coe",
+     "TopCat.carrier",
+     "Set.Elem",
+     "Subtype",
+     "Subtype.val",
+     "Set.range",
+     "Set.preimage",
+     "Set",
+     "Singleton.singleton"
+    ],
+    "full": [
+     "CompHausLike.of",
+     "CompHausLike.toTop",
+     "DFunLike.coe",
+     "TopCat.carrier",
+     "Set.Elem",
+     "Subtype",
+     "Subtype.val",
+     "Set.range",
+     "Set.preimage",
+     "Set",
+     "Singleton.singleton"
+    ],
+    "laned": [
+     "CompHausLike.of",
+     "CompHausLike.toTop",
+     "DFunLike.coe",
+     "Singleton.singleton",
+     "TopCat.carrier",
+     "Set.Elem",
+     "Subtype",
+     "Subtype.val",
+     "Set.range",
+     "Set.preimage",
+     "Set"
+    ]
+   }
+  },
+  {
+   "name": "CochainComplex.HomComplex.CohomologyClass.homAddEquiv_apply",
+   "depth": 83,
+   "kind": 0,
+   "n_load": 11,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Eq.refl",
+     "DFunLike.coe",
+     "CochainComplex.HomComplex.CohomologyClass.homAddEquiv",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.shiftFunctor",
+     "ComplexShape.up",
+     "Int",
+     "HomologicalComplex",
+     "HomotopyCategory.quotient",
+     "Quiver.Hom",
+     "CochainComplex.HomComplex.CohomologyClass"
+    ],
+    "owner": [
+     "Eq.refl",
+     "DFunLike.coe",
+     "CochainComplex.HomComplex.CohomologyClass.homAddEquiv",
+     "CategoryTheory.Functor.obj",
+     "CategoryTheory.shiftFunctor",
+     "ComplexShape.up",
+     "Int",
+     "HomologicalComplex",
+     "HomotopyCategory.quotient",
+     "Quiver.Hom",
+     "CochainComplex.HomComplex.CohomologyClass"
+    ],
+    "hier": [
+     "Eq.refl",
+     "DFunLike.coe",
+     "Int",
+     "CochainComplex.HomComplex.CohomologyClass.homAddEquiv",
+     "CategoryTheory.Functor.obj",
+     "HomotopyCategory.quotient",
+     "CategoryTheory.shiftFunctor",
+     "ComplexShape.up",
+     "Quiver.Hom",
+     "CochainComplex.HomComplex.CohomologyClass",
+     "HomologicalComplex"
+    ],
+    "hier_lanes": [
+     "Eq.refl",
+     "DFunLike.coe",
+     "Int",
+     "CochainComplex.HomComplex.CohomologyClass.homAddEquiv",
+     "CategoryTheory.Functor.obj",
+     "HomotopyCategory.quotient",
+     "CategoryTheory.shiftFunctor",
+     "ComplexShape.up",
+     "Quiver.Hom",
+     "CochainComplex.HomComplex.CohomologyClass",
+     "HomologicalComplex"
+    ],
+    "full": [
+     "Eq.refl",
+     "DFunLike.coe",
+     "Int",
+     "CochainComplex.HomComplex.CohomologyClass.homAddEquiv",
+     "CategoryTheory.Functor.obj",
+     "HomotopyCategory.quotient",
+     "CategoryTheory.shiftFunctor",
+     "ComplexShape.up",
+     "Quiver.Hom",
+     "CochainComplex.HomComplex.CohomologyClass",
+     "HomologicalComplex"
+    ],
+    "laned": [
+     "DFunLike.coe",
+     "CochainComplex.HomComplex.CohomologyClass.homAddEquiv",
+     "CategoryTheory.Functor.obj",
+     "HomotopyCategory.quotient",
+     "CategoryTheory.shiftFunctor",
+     "ComplexShape.up",
+     "CochainComplex.HomComplex.CohomologyClass",
+     "HomologicalComplex",
+     "Eq.refl",
+     "Int",
+     "Quiver.Hom"
+    ]
+   }
+  },
+  {
+   "name": "IntermediateField.adjoin_eq_algebra_adjoin",
+   "depth": 76,
+   "kind": 0,
+   "n_load": 10,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "le_antisymm",
+     "Iff.mpr",
+     "Algebra.adjoin",
+     "IntermediateField.algebra_adjoin_le_adjoin",
+     "Algebra.subset_adjoin",
+     "IntermediateField.adjoin_le_iff",
+     "IntermediateField.mk",
+     "SetLike.coe",
+     "IntermediateField.adjoin",
+     "Inv.inv"
+    ],
+    "owner": [
+     "le_antisymm",
+     "Iff.mpr",
+     "Algebra.adjoin",
+     "IntermediateField.algebra_adjoin_le_adjoin",
+     "Algebra.subset_adjoin",
+     "IntermediateField.adjoin_le_iff",
+     "IntermediateField.mk",
+     "SetLike.coe",
+     "IntermediateField.adjoin",
+     "Inv.inv"
+    ],
+    "hier": [
+     "le_antisymm",
+     "Iff.mpr",
+     "Algebra.adjoin",
+     "IntermediateField.algebra_adjoin_le_adjoin",
+     "Inv.inv",
+     "Algebra.subset_adjoin",
+     "IntermediateField.adjoin_le_iff",
+     "IntermediateField.adjoin",
+     "IntermediateField.mk",
+     "SetLike.coe"
+    ],
+    "hier_lanes": [
+     "le_antisymm",
+     "Iff.mpr",
+     "Algebra.adjoin",
+     "IntermediateField.algebra_adjoin_le_adjoin",
+     "Inv.inv",
+     "Algebra.subset_adjoin",
+     "IntermediateField.adjoin_le_iff",
+     "IntermediateField.adjoin",
+     "IntermediateField.mk",
+     "SetLike.coe"
+    ],
+    "full": [
+     "le_antisymm",
+     "Iff.mpr",
+     "Algebra.adjoin",
+     "IntermediateField.algebra_adjoin_le_adjoin",
+     "Inv.inv",
+     "Algebra.subset_adjoin",
+     "IntermediateField.adjoin_le_iff",
+     "IntermediateField.adjoin",
+     "IntermediateField.mk",
+     "SetLike.coe"
+    ],
+    "laned": [
+     "le_antisymm",
+     "Algebra.adjoin",
+     "IntermediateField.algebra_adjoin_le_adjoin",
+     "Algebra.subset_adjoin",
+     "IntermediateField.adjoin_le_iff",
+     "IntermediateField.adjoin",
+     "IntermediateField.mk",
+     "SetLike.coe",
+     "Iff.mpr",
+     "Inv.inv"
+    ]
+   }
+  },
+  {
+   "name": "AddOpposite.comap_op_rightUniformSpace",
+   "depth": 78,
+   "kind": 0,
+   "n_load": 30,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "UniformSpace.ext",
+     "of_eq_true",
+     "id",
+     "Eq.mpr",
+     "Eq.refl",
+     "Filter.comap",
+     "nhds",
+     "OfNat.ofNat",
+     "AddOpposite",
+     "Function.comp",
+     "Prod.mk",
+     "AddOpposite.op"
+    ],
+    "owner": [
+     "UniformSpace.ext",
+     "of_eq_true",
+     "id",
+     "Eq.mpr",
+     "Eq.refl",
+     "Filter.comap",
+     "nhds",
+     "OfNat.ofNat",
+     "AddOpposite",
+     "Function.comp",
+     "Prod.mk",
+     "AddOpposite.op"
+    ],
+    "hier": [
+     "UniformSpace.ext",
+     "id",
+     "of_eq_true",
+     "Eq.mpr",
+     "Eq.trans",
+     "uniformity",
+     "Prod",
+     "congrArg",
+     "congrFun'",
+     "eq_self",
+     "Eq.refl",
+     "Filter.comap"
+    ],
+    "hier_lanes": [
+     "UniformSpace.ext",
+     "id",
+     "of_eq_true",
+     "Eq.mpr",
+     "Eq.trans",
+     "uniformity",
+     "Prod",
+     "congrArg",
+     "congrFun'",
+     "eq_self",
+     "Eq.refl",
+     "Filter.comap"
+    ],
+    "full": [
+     "UniformSpace.ext",
+     "id",
+     "of_eq_true",
+     "Eq.mpr",
+     "Eq.trans",
+     "uniformity",
+     "Prod",
+     "congrArg",
+     "congrFun'",
+     "eq_self",
+     "Eq.refl",
+     "Filter.comap"
+    ],
+    "laned": [
+     "UniformSpace.ext",
+     "IsTopologicalAddGroup.rightUniformSpace",
+     "OfNat.ofNat",
+     "Filter.comap_comap",
+     "Homeomorph.comap_nhds_eq",
+     "DFunLike.coe",
+     "AddOpposite.opHomeomorph",
+     "AddOpposite.opHomeomorph_symm_apply",
+     "HAdd.hAdd",
+     "Homeomorph.symm",
+     "id",
+     "of_eq_true"
+    ]
+   }
+  },
+  {
+   "name": "SSet.boundary.hom_ext",
+   "depth": 89,
+   "kind": 0,
+   "n_load": 56,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "SSet.hom_ext",
+     "CategoryTheory.ConcreteCategory.ext",
+     "TypeCat.Fun.ext",
+     "funext",
+     "Subtype.casesOn",
+     "Exists.casesOn",
+     "Eq.ndrec",
+     "CategoryTheory.ConcreteCategory.congr_hom",
+     "ULift.up",
+     "CategoryTheory.Functor.obj",
+     "SimplexCategory.mk",
+     "CategoryTheory.yoneda"
+    ],
+    "owner": [
+     "SSet.hom_ext",
+     "CategoryTheory.ConcreteCategory.ext",
+     "TypeCat.Fun.ext",
+     "funext",
+     "Subtype.casesOn",
+     "Exists.casesOn",
+     "Eq.ndrec",
+     "CategoryTheory.ConcreteCategory.congr_hom",
+     "ULift.up",
+     "CategoryTheory.Functor.obj",
+     "SimplexCategory.mk",
+     "CategoryTheory.yoneda"
+    ],
+    "hier": [
+     "SSet.hom_ext",
+     "CategoryTheory.ConcreteCategory.ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "SSet.Subcomplex.toSSet",
+     "HAdd.hAdd",
+     "TypeCat.Fun.ext",
+     "CategoryTheory.Functor.obj",
+     "SSet.boundary.\u03b9",
+     "SSet.boundary",
+     "funext",
+     "SimplexCategory.mk",
+     "Subtype.casesOn"
+    ],
+    "hier_lanes": [
+     "SSet.hom_ext",
+     "CategoryTheory.ConcreteCategory.ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "SSet.Subcomplex.toSSet",
+     "HAdd.hAdd",
+     "TypeCat.Fun.ext",
+     "CategoryTheory.Functor.obj",
+     "SSet.boundary.\u03b9",
+     "SSet.boundary",
+     "funext",
+     "SimplexCategory.mk",
+     "Subtype.casesOn"
+    ],
+    "full": [
+     "SSet.hom_ext",
+     "CategoryTheory.ConcreteCategory.ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "SSet.Subcomplex.toSSet",
+     "HAdd.hAdd",
+     "TypeCat.Fun.ext",
+     "CategoryTheory.Functor.obj",
+     "SSet.boundary.\u03b9",
+     "SSet.boundary",
+     "funext",
+     "SimplexCategory.mk",
+     "Subtype.casesOn"
+    ],
+    "laned": [
+     "SSet.hom_ext",
+     "CategoryTheory.ConcreteCategory.ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "SSet.Subcomplex.toSSet",
+     "HAdd.hAdd",
+     "TypeCat.Fun.ext",
+     "CategoryTheory.Functor.obj",
+     "SSet.boundary.\u03b9",
+     "SSet.boundary",
+     "Subtype.casesOn",
+     "Exists.casesOn",
+     "CategoryTheory.ConcreteCategory.hom"
+    ]
+   }
+  },
+  {
+   "name": "instCommGroupPic",
+   "depth": 96,
+   "kind": 1,
+   "n_load": 23,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "CommGroup.mk",
+     "instCommGroupPic._proof_11",
+     "instCommGroupPic._proof_10",
+     "instCommGroupPic._proof_9",
+     "instCommGroupPic._proof_8",
+     "instCommGroupPic._proof_7",
+     "instCommGroupPic._proof_6",
+     "HPow.hPow",
+     "Equiv.toFun",
+     "Equiv.symm",
+     "equivShrink",
+     "Units"
+    ],
+    "owner": [
+     "CommGroup.mk",
+     "instCommGroupPic",
+     "HPow.hPow",
+     "Equiv.toFun",
+     "Equiv.symm",
+     "equivShrink",
+     "Units",
+     "SemimoduleCat",
+     "CategoryTheory.Skeleton",
+     "HDiv.hDiv",
+     "Inv.inv",
+     "OfNat.ofNat"
+    ],
+    "hier": [
+     "CommGroup.mk",
+     "instCommGroupPic._proof_11",
+     "instCommGroupPic._proof_10",
+     "instCommGroupPic._proof_9",
+     "instCommGroupPic._proof_8",
+     "instCommGroupPic._proof_7",
+     "instCommGroupPic._proof_6",
+     "HPow.hPow",
+     "Equiv.symm",
+     "HDiv.hDiv",
+     "Inv.inv",
+     "instCommGroupPic._proof_5"
+    ],
+    "hier_lanes": [
+     "CommGroup.mk",
+     "HPow.hPow",
+     "Equiv.symm",
+     "HDiv.hDiv",
+     "Inv.inv",
+     "Equiv.toFun",
+     "OfNat.ofNat",
+     "equivShrink",
+     "HMul.hMul",
+     "Units",
+     "CategoryTheory.Skeleton",
+     "SemimoduleCat"
+    ],
+    "full": [
+     "CommGroup.mk",
+     "HPow.hPow",
+     "Equiv.symm",
+     "HDiv.hDiv",
+     "Inv.inv",
+     "Equiv.toFun",
+     "OfNat.ofNat",
+     "equivShrink",
+     "HMul.hMul",
+     "Units",
+     "CategoryTheory.Skeleton",
+     "SemimoduleCat"
+    ],
+    "laned": [
+     "CommGroup.mk",
+     "HPow.hPow",
+     "HDiv.hDiv",
+     "OfNat.ofNat",
+     "equivShrink",
+     "HMul.hMul",
+     "Equiv.symm",
+     "Inv.inv",
+     "Equiv.toFun",
+     "Units",
+     "CategoryTheory.Skeleton",
+     "SemimoduleCat"
+    ]
+   }
+  },
+  {
+   "name": "String.Slice.Subslice.cast",
+   "depth": 101,
+   "kind": 1,
+   "n_load": 6,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "String.Slice.Subslice.mk",
+     "_private.Init.Data.String.Subslice.0.String.Slice.Subslice.cast._proof_1",
+     "String.Slice.Pos.cast",
+     "String.Slice.Subslice.endExclusive",
+     "String.Slice.Subslice.startInclusive",
+     "String.Slice.copy"
+    ],
+    "owner": [
+     "String.Slice.Subslice.mk",
+     "_private.Init.Data.String.Subslice.0.String.Slice.Subslice.cast._proof_1",
+     "String.Slice.Pos.cast",
+     "String.Slice.Subslice.endExclusive",
+     "String.Slice.Subslice.startInclusive",
+     "String.Slice.copy"
+    ],
+    "hier": [
+     "String.Slice.Subslice.mk",
+     "_private.Init.Data.String.Subslice.0.String.Slice.Subslice.cast._proof_1",
+     "String.Slice.Pos.cast",
+     "String.Slice.copy",
+     "String.Slice.Subslice.endExclusive",
+     "String.Slice.Subslice.startInclusive"
+    ],
+    "hier_lanes": [
+     "String.Slice.Subslice.mk",
+     "String.Slice.Pos.cast",
+     "String.Slice.copy",
+     "String.Slice.Subslice.endExclusive",
+     "String.Slice.Subslice.startInclusive"
+    ],
+    "full": [
+     "String.Slice.Subslice.mk",
+     "String.Slice.Pos.cast",
+     "String.Slice.copy",
+     "String.Slice.Subslice.endExclusive",
+     "String.Slice.Subslice.startInclusive"
+    ],
+    "laned": [
+     "String.Slice.Subslice.mk",
+     "String.Slice.Pos.cast",
+     "String.Slice.Subslice.endExclusive",
+     "String.Slice.Subslice.startInclusive",
+     "String.Slice.copy"
+    ]
+   }
+  },
+  {
+   "name": "Lean.Meta.ArgsPacker.Mutual.uncurry",
+   "depth": 131,
+   "kind": 1,
+   "n_load": 6,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Bind.bind",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryWithType",
+     "Lean.Expr",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryType",
+     "Array.mapM",
+     "Lean.Meta.inferType"
+    ],
+    "owner": [
+     "Bind.bind",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryWithType",
+     "Lean.Expr",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryType",
+     "Array.mapM",
+     "Lean.Meta.inferType"
+    ],
+    "hier": [
+     "Bind.bind",
+     "Array.mapM",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryWithType",
+     "Lean.Expr",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryType",
+     "Lean.Meta.inferType"
+    ],
+    "hier_lanes": [
+     "Bind.bind",
+     "Array.mapM",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryWithType",
+     "Lean.Expr",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryType",
+     "Lean.Meta.inferType"
+    ],
+    "full": [
+     "Bind.bind",
+     "Array.mapM",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryWithType",
+     "Lean.Expr",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryType",
+     "Lean.Meta.inferType"
+    ],
+    "laned": [
+     "Bind.bind",
+     "Array.mapM",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryWithType",
+     "Lean.Expr",
+     "Lean.Meta.ArgsPacker.Mutual.uncurryType",
+     "Lean.Meta.inferType"
+    ]
+   }
+  },
+  {
+   "name": "RKHS.tendstoUniformlyOn_of_norm_kerFun_le",
+   "depth": 190,
+   "kind": 0,
+   "n_load": 41,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Eq.mpr",
+     "Filter.Tendsto.mul_const",
+     "Filter.mp_mem",
+     "Filter.univ_mem'",
+     "id",
+     "lt_imp_lt_of_le_of_le",
+     "lt_of_lt_of_le",
+     "le_refl",
+     "Real",
+     "HMul.hMul",
+     "Norm.norm",
+     "HSub.hSub"
+    ],
+    "owner": [
+     "Eq.mpr",
+     "Filter.Tendsto.mul_const",
+     "Filter.mp_mem",
+     "Filter.univ_mem'",
+     "id",
+     "lt_imp_lt_of_le_of_le",
+     "lt_of_lt_of_le",
+     "le_refl",
+     "Real",
+     "HMul.hMul",
+     "Norm.norm",
+     "HSub.hSub"
+    ],
+    "hier": [
+     "Eq.mpr",
+     "Filter.Tendsto.mul_const",
+     "Filter.mp_mem",
+     "id",
+     "Norm.norm",
+     "nhds",
+     "Filter.univ_mem'",
+     "HMul.hMul",
+     "RKHS.kerFun",
+     "congrArg",
+     "Filter.Tendsto.eventually",
+     "OfNat.ofNat"
+    ],
+    "hier_lanes": [
+     "Eq.mpr",
+     "Filter.Tendsto.mul_const",
+     "Filter.mp_mem",
+     "id",
+     "Norm.norm",
+     "nhds",
+     "Filter.univ_mem'",
+     "HMul.hMul",
+     "RKHS.kerFun",
+     "congrArg",
+     "Filter.Tendsto.eventually",
+     "OfNat.ofNat"
+    ],
+    "full": [
+     "Eq.mpr",
+     "Filter.Tendsto.mul_const",
+     "Filter.mp_mem",
+     "id",
+     "Norm.norm",
+     "nhds",
+     "Filter.univ_mem'",
+     "HMul.hMul",
+     "RKHS.kerFun",
+     "congrArg",
+     "Filter.Tendsto.eventually",
+     "OfNat.ofNat"
+    ],
+    "laned": [
+     "Filter.Tendsto.mul_const",
+     "Filter.mp_mem",
+     "Filter.univ_mem'",
+     "HMul.hMul",
+     "RKHS.kerFun",
+     "Filter.Tendsto.eventually",
+     "OfNat.ofNat",
+     "RingHom.id",
+     "gt_mem_nhds",
+     "tendsto_iff_norm_sub_tendsto_zero",
+     "Metric.tendstoUniformlyOn_iff",
+     "HSub.hSub"
+    ]
+   }
+  },
+  {
+   "name": "ModularForm.instIsSMulApply\u211d",
+   "depth": 182,
+   "kind": 0,
+   "n_load": 8,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "IsSMulApply.mk",
+     "rfl",
+     "HSMul.hSMul",
+     "Complex",
+     "Real",
+     "OfNat.ofNat",
+     "Fin",
+     "Matrix.GeneralLinearGroup"
+    ],
+    "owner": [
+     "IsSMulApply.mk",
+     "rfl",
+     "HSMul.hSMul",
+     "Complex",
+     "Real",
+     "OfNat.ofNat",
+     "Fin",
+     "Matrix.GeneralLinearGroup"
+    ],
+    "hier": [
+     "IsSMulApply.mk",
+     "rfl",
+     "Complex",
+     "Real",
+     "Matrix.GeneralLinearGroup",
+     "Fin",
+     "HSMul.hSMul",
+     "OfNat.ofNat"
+    ],
+    "hier_lanes": [
+     "IsSMulApply.mk",
+     "rfl",
+     "Complex",
+     "Real",
+     "Matrix.GeneralLinearGroup",
+     "Fin",
+     "HSMul.hSMul",
+     "OfNat.ofNat"
+    ],
+    "full": [
+     "IsSMulApply.mk",
+     "rfl",
+     "Complex",
+     "Real",
+     "Matrix.GeneralLinearGroup",
+     "Fin",
+     "HSMul.hSMul",
+     "OfNat.ofNat"
+    ],
+    "laned": [
+     "IsSMulApply.mk",
+     "HSMul.hSMul",
+     "OfNat.ofNat",
+     "rfl",
+     "Complex",
+     "Real",
+     "Matrix.GeneralLinearGroup",
+     "Fin"
+    ]
+   }
+  },
+  {
+   "name": "ContMDiff.sumElim",
+   "depth": 171,
+   "kind": 0,
+   "n_load": 51,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Eq.mpr",
+     "And.intro",
+     "Sum.casesOn",
+     "Eq.refl",
+     "Sum",
+     "Eq.ndrec",
+     "Eq.symm",
+     "Sum.inr",
+     "ContDiffWithinAt.congr_of_eventuallyEq",
+     "PartialEquiv.toFun",
+     "OpenPartialHomeomorph.extend",
+     "OpenPartialHomeomorph.lift_openEmbedding"
+    ],
+    "owner": [
+     "Eq.mpr",
+     "And.intro",
+     "Sum.casesOn",
+     "Eq.refl",
+     "Sum",
+     "Eq.ndrec",
+     "Eq.symm",
+     "Sum.inr",
+     "ContDiffWithinAt.congr_of_eventuallyEq",
+     "PartialEquiv.toFun",
+     "OpenPartialHomeomorph.extend",
+     "OpenPartialHomeomorph.lift_openEmbedding"
+    ],
+    "hier": [
+     "Eq.mpr",
+     "And.intro",
+     "id",
+     "ENat",
+     "Sum.casesOn",
+     "congrArg",
+     "Continuous.continuousAt",
+     "Eq.refl",
+     "Eq.ndrec",
+     "PartialEquiv.toFun",
+     "Function.comp",
+     "Sum.elim"
+    ],
+    "hier_lanes": [
+     "Eq.mpr",
+     "And.intro",
+     "id",
+     "ENat",
+     "Sum.casesOn",
+     "congrArg",
+     "Continuous.continuousAt",
+     "Eq.refl",
+     "Eq.ndrec",
+     "PartialEquiv.toFun",
+     "Function.comp",
+     "Sum.elim"
+    ],
+    "full": [
+     "Eq.mpr",
+     "And.intro",
+     "id",
+     "ENat",
+     "Sum.casesOn",
+     "congrArg",
+     "Continuous.continuousAt",
+     "Eq.refl",
+     "Eq.ndrec",
+     "PartialEquiv.toFun",
+     "Function.comp",
+     "Sum.elim"
+    ],
+    "laned": [
+     "Sum.casesOn",
+     "Continuous.continuousAt",
+     "ContMDiffAt",
+     "Continuous.sumElim",
+     "ContDiffWithinAt.congr_of_eventuallyEq",
+     "extChartAt",
+     "ModelWithCorners.toFun'",
+     "contMDiffAt_iff",
+     "ContMDiff.continuous",
+     "ContDiffWithinAt",
+     "Eq.rec",
+     "Filter.univ_mem'"
+    ]
+   }
+  },
+  {
+   "name": "Aesop.withScriptStep",
+   "depth": 115,
+   "kind": 1,
+   "n_load": 29,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Bind.bind",
+     "Lean.MonadBacktrack.saveState",
+     "Pure.pure",
+     "ite",
+     "Unit.unit",
+     "Aesop.recordScriptStep",
+     "Aesop.Script.LazyStep.mk",
+     "_private.Aesop.Script.ScriptM.0.Aesop.withScriptStep._proof_1",
+     "List.toArray",
+     "List.cons",
+     "List.nil",
+     "ST"
+    ],
+    "owner": [
+     "Bind.bind",
+     "Lean.MonadBacktrack.saveState",
+     "Pure.pure",
+     "ite",
+     "Unit.unit",
+     "Aesop.recordScriptStep",
+     "Aesop.Script.LazyStep.mk",
+     "_private.Aesop.Script.ScriptM.0.Aesop.withScriptStep._proof_1",
+     "List.toArray",
+     "List.cons",
+     "List.nil",
+     "ST"
+    ],
+    "hier": [
+     "Bind.bind",
+     "Lean.MVarId",
+     "Pure.pure",
+     "ite",
+     "liftM",
+     "Unit.unit",
+     "Eq",
+     "Lean.MonadBacktrack.saveState",
+     "Bool.true",
+     "Aesop.recordScriptStep",
+     "Lean.Meta.SavedState",
+     "Aesop.Script.LazyStep.mk"
+    ],
+    "hier_lanes": [
+     "Bind.bind",
+     "Lean.MVarId",
+     "Pure.pure",
+     "ite",
+     "liftM",
+     "Unit.unit",
+     "Eq",
+     "Lean.MonadBacktrack.saveState",
+     "Bool.true",
+     "Aesop.recordScriptStep",
+     "Lean.Meta.SavedState",
+     "Aesop.Script.LazyStep.mk"
+    ],
+    "full": [
+     "Bind.bind",
+     "Lean.MVarId",
+     "Pure.pure",
+     "ite",
+     "liftM",
+     "Unit.unit",
+     "Eq",
+     "Lean.MonadBacktrack.saveState",
+     "Bool.true",
+     "Aesop.recordScriptStep",
+     "Lean.Meta.SavedState",
+     "Aesop.Script.LazyStep.mk"
+    ],
+    "laned": [
+     "Lean.MonadBacktrack.saveState",
+     "Aesop.recordScriptStep",
+     "Aesop.Script.LazyStep.mk",
+     "Bind.bind",
+     "Lean.MVarId",
+     "Pure.pure",
+     "ite",
+     "liftM",
+     "Unit.unit",
+     "Eq",
+     "Bool.true",
+     "Lean.Meta.SavedState"
+    ]
+   }
+  },
+  {
+   "name": "IsGaloisGroup.finite",
+   "depth": 134,
+   "kind": 0,
+   "n_load": 25,
+   "n_roots": 8,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Nat.finite_of_card_ne_zero",
+     "IsGaloisGroup.to_isFractionRing_of_isIntegral",
+     "Module.Finite.of_restrictScalars_finite",
+     "IsScalarTower.of_algebraMap_eq'",
+     "RingHom.toAlgebra",
+     "RingHom.range",
+     "IsFractionRing.mulSemiringAction",
+     "FractionRing.liftAlgebra",
+     "Eq.mpr",
+     "LT.lt.ne'",
+     "Module.finrank_pos",
+     "FractionRing"
+    ],
+    "owner": [
+     "Nat.finite_of_card_ne_zero",
+     "IsGaloisGroup.to_isFractionRing_of_isIntegral",
+     "Module.Finite.of_restrictScalars_finite",
+     "IsScalarTower.of_algebraMap_eq'",
+     "RingHom.toAlgebra",
+     "RingHom.range",
+     "IsFractionRing.mulSemiringAction",
+     "FractionRing.liftAlgebra",
+     "Eq.mpr",
+     "LT.lt.ne'",
+     "Module.finrank_pos",
+     "FractionRing"
+    ],
+    "hier": [
+     "Nat.finite_of_card_ne_zero",
+     "IsGaloisGroup.to_isFractionRing_of_isIntegral",
+     "Module.Finite.of_restrictScalars_finite",
+     "IsScalarTower.of_algebraMap_eq'",
+     "RingHom.toAlgebra",
+     "RingHom.range",
+     "IsFractionRing.mulSemiringAction",
+     "FractionRing.liftAlgebra",
+     "Eq.mpr",
+     "FractionRing",
+     "Subtype",
+     "rfl"
+    ],
+    "hier_lanes": [
+     "Nat.finite_of_card_ne_zero",
+     "IsGaloisGroup.to_isFractionRing_of_isIntegral",
+     "Module.Finite.of_restrictScalars_finite",
+     "IsScalarTower.of_algebraMap_eq'",
+     "RingHom.toAlgebra",
+     "RingHom.range",
+     "IsFractionRing.mulSemiringAction",
+     "FractionRing.liftAlgebra",
+     "Eq.mpr",
+     "FractionRing",
+     "Subtype",
+     "rfl"
+    ],
+    "full": [
+     "Nat.finite_of_card_ne_zero",
+     "IsGaloisGroup.to_isFractionRing_of_isIntegral",
+     "Module.Finite.of_restrictScalars_finite",
+     "IsScalarTower.of_algebraMap_eq'",
+     "RingHom.toAlgebra",
+     "RingHom.range",
+     "IsFractionRing.mulSemiringAction",
+     "FractionRing.liftAlgebra",
+     "Eq.mpr",
+     "FractionRing",
+     "Subtype",
+     "rfl"
+    ],
+    "laned": [
+     "Nat.finite_of_card_ne_zero",
+     "IsGaloisGroup.to_isFractionRing_of_isIntegral",
+     "Module.Finite.of_restrictScalars_finite",
+     "IsScalarTower.of_algebraMap_eq'",
+     "RingHom.toAlgebra",
+     "RingHom.range",
+     "IsFractionRing.mulSemiringAction",
+     "FractionRing.liftAlgebra",
+     "Algebra.algebraMap",
+     "RingHom.rangeRestrict",
+     "LT.lt.ne'",
+     "Membership.mem"
+    ]
+   }
+  },
+  {
+   "name": "UpperHalfPlane.\u03c3_eventuallyEq",
+   "depth": 161,
+   "kind": 0,
+   "n_load": 48,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "dite",
+     "Eq.mpr",
+     "IsOpen.mem_nhds",
+     "Filter.mp_mem",
+     "Filter.univ_mem'",
+     "id",
+     "of_eq_true",
+     "Eq.trans",
+     "eq_self",
+     "Complex.conjCAE",
+     "Complex",
+     "Real"
+    ],
+    "owner": [
+     "dite",
+     "Eq.mpr",
+     "IsOpen.mem_nhds",
+     "Filter.mp_mem",
+     "Filter.univ_mem'",
+     "id",
+     "of_eq_true",
+     "Eq.trans",
+     "eq_self",
+     "Complex.conjCAE",
+     "Complex",
+     "Real"
+    ],
+    "hier": [
+     "dite",
+     "Eq.mpr",
+     "IsOpen.mem_nhds",
+     "Filter.mp_mem",
+     "LT.lt",
+     "Filter.univ_mem'",
+     "id",
+     "Units.val",
+     "UpperHalfPlane.\u03c3",
+     "nhds",
+     "IsOpen.preimage",
+     "congrArg"
+    ],
+    "hier_lanes": [
+     "dite",
+     "Eq.mpr",
+     "IsOpen.mem_nhds",
+     "Filter.mp_mem",
+     "LT.lt",
+     "Filter.univ_mem'",
+     "id",
+     "Units.val",
+     "UpperHalfPlane.\u03c3",
+     "nhds",
+     "IsOpen.preimage",
+     "congrArg"
+    ],
+    "full": [
+     "dite",
+     "Eq.mpr",
+     "IsOpen.mem_nhds",
+     "Filter.mp_mem",
+     "LT.lt",
+     "Filter.univ_mem'",
+     "id",
+     "Units.val",
+     "UpperHalfPlane.\u03c3",
+     "nhds",
+     "IsOpen.preimage",
+     "congrArg"
+    ],
+    "laned": [
+     "IsOpen.mem_nhds",
+     "Filter.mp_mem",
+     "Filter.univ_mem'",
+     "Units.val",
+     "UpperHalfPlane.\u03c3",
+     "IsOpen.preimage",
+     "isOpen_Ioi",
+     "OfNat.ofNat",
+     "Membership.mem",
+     "isOpen_Iio",
+     "Continuous.matrix_det",
+     "Units.continuous_val"
+    ]
+   }
+  },
+  {
+   "name": "WithLp.normedSpaceSeminormedAddCommGroupToProd",
+   "depth": 220,
+   "kind": 1,
+   "n_load": 4,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "NormedSpace.mk",
+     "WithLp.normedSpaceSeminormedAddCommGroupToProd._proof_1",
+     "LE.le",
+     "OfNat.ofNat"
+    ],
+    "owner": [
+     "NormedSpace.mk",
+     "WithLp.normedSpaceSeminormedAddCommGroupToProd",
+     "LE.le",
+     "OfNat.ofNat"
+    ],
+    "hier": [
+     "NormedSpace.mk",
+     "WithLp.normedSpaceSeminormedAddCommGroupToProd._proof_1",
+     "LE.le",
+     "OfNat.ofNat"
+    ],
+    "hier_lanes": [
+     "NormedSpace.mk",
+     "LE.le",
+     "OfNat.ofNat"
+    ],
+    "full": [
+     "NormedSpace.mk",
+     "LE.le",
+     "OfNat.ofNat"
+    ],
+    "laned": [
+     "NormedSpace.mk",
+     "OfNat.ofNat",
+     "LE.le"
+    ]
+   }
+  },
+  {
+   "name": "ContDiffMapSupportedIn.supSeminorm",
+   "depth": 207,
+   "kind": 1,
+   "n_load": 5,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Finset.sup",
+     "ContDiffMapSupportedIn.seminorm",
+     "Finset.Iic",
+     "ContDiffMapSupportedIn",
+     "Real"
+    ],
+    "owner": [
+     "Finset.sup",
+     "ContDiffMapSupportedIn.seminorm",
+     "Finset.Iic",
+     "ContDiffMapSupportedIn",
+     "Real"
+    ],
+    "hier": [
+     "Finset.sup",
+     "ContDiffMapSupportedIn.seminorm",
+     "Finset.Iic",
+     "Real",
+     "ContDiffMapSupportedIn"
+    ],
+    "hier_lanes": [
+     "Finset.sup",
+     "ContDiffMapSupportedIn.seminorm",
+     "Finset.Iic",
+     "Real",
+     "ContDiffMapSupportedIn"
+    ],
+    "full": [
+     "Finset.sup",
+     "ContDiffMapSupportedIn.seminorm",
+     "Finset.Iic",
+     "Real",
+     "ContDiffMapSupportedIn"
+    ],
+    "laned": [
+     "Finset.sup",
+     "ContDiffMapSupportedIn.seminorm",
+     "Finset.Iic",
+     "ContDiffMapSupportedIn",
+     "Real"
+    ]
+   }
+  },
+  {
+   "name": "Complex.tendsto_limUnder_of_differentiable_on_punctured_nhds_of_isLittleO",
+   "depth": 278,
+   "kind": 0,
+   "n_load": 25,
+   "n_roots": 3,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Iff.mp",
+     "Complex.differentiableOn_update_limUnder_of_isLittleO",
+     "DifferentiableAt.differentiableWithinAt",
+     "DifferentiableAt.continuousAt",
+     "DifferentiableOn.differentiableAt",
+     "Eq.mp",
+     "congrArg",
+     "propext",
+     "eventually_nhdsWithin_iff",
+     "DifferentiableAt",
+     "Complex",
+     "Compl.compl"
+    ],
+    "owner": [
+     "Iff.mp",
+     "Complex.differentiableOn_update_limUnder_of_isLittleO",
+     "DifferentiableAt.differentiableWithinAt",
+     "DifferentiableAt.continuousAt",
+     "DifferentiableOn.differentiableAt",
+     "Eq.mp",
+     "congrArg",
+     "propext",
+     "eventually_nhdsWithin_iff",
+     "DifferentiableAt",
+     "Complex",
+     "Compl.compl"
+    ],
+    "hier": [
+     "Iff.mp",
+     "Complex.differentiableOn_update_limUnder_of_isLittleO",
+     "DifferentiableAt.differentiableWithinAt",
+     "DifferentiableAt.continuousAt",
+     "Eq.mp",
+     "DifferentiableAt",
+     "Complex",
+     "nhdsWithin",
+     "Set.ofPred",
+     "Function.update",
+     "continuousAt_update_same",
+     "And.left"
+    ],
+    "hier_lanes": [
+     "Iff.mp",
+     "Complex.differentiableOn_update_limUnder_of_isLittleO",
+     "DifferentiableAt.differentiableWithinAt",
+     "DifferentiableAt.continuousAt",
+     "Eq.mp",
+     "DifferentiableAt",
+     "Complex",
+     "nhdsWithin",
+     "Set.ofPred",
+     "Function.update",
+     "continuousAt_update_same",
+     "And.left"
+    ],
+    "full": [
+     "Iff.mp",
+     "Complex.differentiableOn_update_limUnder_of_isLittleO",
+     "DifferentiableAt.differentiableWithinAt",
+     "DifferentiableAt.continuousAt",
+     "Eq.mp",
+     "DifferentiableAt",
+     "Complex",
+     "nhdsWithin",
+     "Set.ofPred",
+     "Function.update",
+     "continuousAt_update_same",
+     "And.left"
+    ],
+    "laned": [
+     "Complex.differentiableOn_update_limUnder_of_isLittleO",
+     "DifferentiableAt.differentiableWithinAt",
+     "DifferentiableAt.continuousAt",
+     "DifferentiableAt",
+     "continuousAt_update_same",
+     "HSub.hSub",
+     "DifferentiableOn.differentiableAt",
+     "Singleton.singleton",
+     "eventually_nhdsWithin_iff",
+     "Membership.mem",
+     "Iff.mp",
+     "Eq.mp"
+    ]
+   }
+  },
+  {
+   "name": "Matrix.frobeniusNormedAlgebra",
+   "depth": 226,
+   "kind": 1,
+   "n_load": 8,
+   "n_roots": 3,
+   "complete": true,
+   "views": {
+    "flat": [
+     "NormedAlgebra.mk",
+     "Matrix.instAlgebra",
+     "Matrix.frobeniusNormedSpace",
+     "Matrix.frobeniusNormedAlgebra._proof_3",
+     "Matrix.frobeniusNormedAlgebra._proof_2",
+     "Matrix.frobeniusNormedAlgebra._proof_1",
+     "Algebra.algebraMap",
+     "Matrix"
+    ],
+    "owner": [
+     "NormedAlgebra.mk",
+     "Matrix.instAlgebra",
+     "Matrix.frobeniusNormedSpace",
+     "Matrix.frobeniusNormedAlgebra",
+     "Algebra.algebraMap",
+     "Matrix"
+    ],
+    "hier": [
+     "NormedAlgebra.mk",
+     "Matrix.instAlgebra",
+     "Matrix.frobeniusNormedSpace",
+     "Matrix.frobeniusNormedAlgebra._proof_3",
+     "Matrix",
+     "Matrix.frobeniusNormedAlgebra._proof_2",
+     "Matrix.frobeniusNormedAlgebra._proof_1",
+     "Algebra.algebraMap"
+    ],
+    "hier_lanes": [
+     "NormedAlgebra.mk",
+     "Matrix.instAlgebra",
+     "Matrix.frobeniusNormedSpace",
+     "Matrix",
+     "Algebra.algebraMap"
+    ],
+    "full": [
+     "NormedAlgebra.mk",
+     "Matrix.instAlgebra",
+     "Matrix.frobeniusNormedSpace",
+     "Matrix",
+     "Algebra.algebraMap"
+    ],
+    "laned": [
+     "NormedAlgebra.mk",
+     "Matrix.instAlgebra",
+     "Matrix.frobeniusNormedSpace",
+     "Algebra.algebraMap",
+     "Matrix"
+    ]
+   }
+  },
+  {
+   "name": "ProbabilityTheory.IsPreBrownianReal.indepFun_shift",
+   "depth": 315,
+   "kind": 0,
+   "n_load": 99,
+   "n_roots": 2,
+   "complete": true,
+   "views": {
+    "flat": [
+     "ProbabilityTheory.IsGaussianProcess.indepFun_of_covariance_eq_zero",
+     "ProbabilityTheory.IsGaussianProcess.isProbabilityMeasure",
+     "ProbabilityTheory.IsPreBrownianReal.aemeasurable",
+     "Subtype.casesOn",
+     "Eq.mpr",
+     "Eq.refl",
+     "OfNat.ofNat",
+     "Real",
+     "id",
+     "congrArg",
+     "sub_self",
+     "NNReal.toReal"
+    ],
+    "owner": [
+     "ProbabilityTheory.IsGaussianProcess.indepFun_of_covariance_eq_zero",
+     "ProbabilityTheory.IsGaussianProcess.isProbabilityMeasure",
+     "ProbabilityTheory.IsPreBrownianReal.aemeasurable",
+     "Subtype.casesOn",
+     "Eq.mpr",
+     "Eq.refl",
+     "OfNat.ofNat",
+     "Real",
+     "id",
+     "congrArg",
+     "sub_self",
+     "NNReal.toReal"
+    ],
+    "hier": [
+     "ProbabilityTheory.IsGaussianProcess.indepFun_of_covariance_eq_zero",
+     "ProbabilityTheory.IsPreBrownianReal.aemeasurable",
+     "Subtype.casesOn",
+     "Subtype.val",
+     "AEMeasurable.fun_sub",
+     "ProbabilityTheory.IsGaussianProcess.of_isGaussianProcess",
+     "ProbabilityTheory.IsGaussianProcess.isProbabilityMeasure",
+     "Eq.mpr",
+     "Set.Iic",
+     "HAdd.hAdd",
+     "ProbabilityTheory.IsPreBrownianReal.isGaussianProcess",
+     "Sum.casesOn"
+    ],
+    "hier_lanes": [
+     "ProbabilityTheory.IsGaussianProcess.indepFun_of_covariance_eq_zero",
+     "ProbabilityTheory.IsPreBrownianReal.aemeasurable",
+     "Subtype.casesOn",
+     "Subtype.val",
+     "AEMeasurable.fun_sub",
+     "ProbabilityTheory.IsGaussianProcess.of_isGaussianProcess",
+     "ProbabilityTheory.IsGaussianProcess.isProbabilityMeasure",
+     "Eq.mpr",
+     "Set.Iic",
+     "HAdd.hAdd",
+     "ProbabilityTheory.IsPreBrownianReal.isGaussianProcess",
+     "Sum.casesOn"
+    ],
+    "full": [
+     "ProbabilityTheory.IsGaussianProcess.indepFun_of_covariance_eq_zero",
+     "ProbabilityTheory.IsPreBrownianReal.aemeasurable",
+     "Subtype.casesOn",
+     "Subtype.val",
+     "AEMeasurable.fun_sub",
+     "ProbabilityTheory.IsGaussianProcess.of_isGaussianProcess",
+     "ProbabilityTheory.IsGaussianProcess.isProbabilityMeasure",
+     "Eq.mpr",
+     "Set.Iic",
+     "HAdd.hAdd",
+     "ProbabilityTheory.IsPreBrownianReal.isGaussianProcess",
+     "Sum.casesOn"
+    ],
+    "laned": [
+     "ProbabilityTheory.IsGaussianProcess.indepFun_of_covariance_eq_zero",
+     "ProbabilityTheory.IsPreBrownianReal.aemeasurable",
+     "Subtype.casesOn",
+     "AEMeasurable.fun_sub",
+     "ProbabilityTheory.IsGaussianProcess.of_isGaussianProcess",
+     "ProbabilityTheory.IsGaussianProcess.isProbabilityMeasure",
+     "HAdd.hAdd",
+     "ProbabilityTheory.IsPreBrownianReal.isGaussianProcess",
+     "Sum.casesOn",
+     "HSub.hSub",
+     "ProbabilityTheory.covariance",
+     "Insert.insert"
+    ]
+   }
+  },
+  {
+   "name": "SchwartzMap.smulLeftCLM_const",
+   "depth": 216,
+   "kind": 0,
+   "n_load": 19,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "ContinuousLinearMap.ext",
+     "Function.HasTemperateGrowth.const",
+     "SchwartzMap.ext",
+     "of_eq_true",
+     "Eq.trans",
+     "eq_self",
+     "HSMul.hSMul",
+     "DFunLike.coe",
+     "SchwartzMap",
+     "congr",
+     "smul_apply",
+     "Real"
+    ],
+    "owner": [
+     "ContinuousLinearMap.ext",
+     "Function.HasTemperateGrowth.const",
+     "SchwartzMap.ext",
+     "of_eq_true",
+     "Eq.trans",
+     "eq_self",
+     "HSMul.hSMul",
+     "DFunLike.coe",
+     "SchwartzMap",
+     "congr",
+     "smul_apply",
+     "Real"
+    ],
+    "hier": [
+     "ContinuousLinearMap.ext",
+     "SchwartzMap.ext",
+     "Real",
+     "Function.HasTemperateGrowth.const",
+     "of_eq_true",
+     "ContinuousLinearMap.id",
+     "Eq.trans",
+     "HSMul.hSMul",
+     "SchwartzMap",
+     "SchwartzMap.smulLeftCLM",
+     "eq_self",
+     "congr"
+    ],
+    "hier_lanes": [
+     "ContinuousLinearMap.ext",
+     "SchwartzMap.ext",
+     "Real",
+     "Function.HasTemperateGrowth.const",
+     "of_eq_true",
+     "ContinuousLinearMap.id",
+     "Eq.trans",
+     "HSMul.hSMul",
+     "SchwartzMap",
+     "SchwartzMap.smulLeftCLM",
+     "eq_self",
+     "congr"
+    ],
+    "full": [
+     "ContinuousLinearMap.ext",
+     "SchwartzMap.ext",
+     "Real",
+     "Function.HasTemperateGrowth.const",
+     "of_eq_true",
+     "ContinuousLinearMap.id",
+     "Eq.trans",
+     "HSMul.hSMul",
+     "SchwartzMap",
+     "SchwartzMap.smulLeftCLM",
+     "eq_self",
+     "congr"
+    ],
+    "laned": [
+     "ContinuousLinearMap.ext",
+     "SchwartzMap.ext",
+     "Function.HasTemperateGrowth.const",
+     "ContinuousLinearMap.id",
+     "HSMul.hSMul",
+     "SchwartzMap",
+     "SchwartzMap.smulLeftCLM",
+     "RingHom.id",
+     "DFunLike.coe",
+     "smul_apply",
+     "SchwartzMap.smulLeftCLM_apply_apply",
+     "Real"
+    ]
+   }
+  },
+  {
+   "name": "circleAverage_log_norm_sub_const_eq_log_radius_add_posLog",
+   "depth": 285,
+   "kind": 0,
+   "n_load": 161,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "Trans.trans",
+     "Iff.mpr",
+     "Or.casesOn",
+     "Eq.mpr",
+     "Eq.refl",
+     "Real.posLog",
+     "HMul.hMul",
+     "Norm.norm",
+     "HSub.hSub",
+     "Complex",
+     "Complex.instNorm",
+     "Inv.inv"
+    ],
+    "owner": [
+     "Trans.trans",
+     "Iff.mpr",
+     "Or.casesOn",
+     "Eq.mpr",
+     "Eq.refl",
+     "Real.posLog",
+     "HMul.hMul",
+     "Norm.norm",
+     "HSub.hSub",
+     "Complex",
+     "Complex.instNorm",
+     "Inv.inv"
+    ],
+    "hier": [
+     "Trans.trans",
+     "Or.casesOn",
+     "Eq.refl",
+     "Real.posLog",
+     "Real",
+     "Real.log",
+     "instHAdd",
+     "Eq.rec",
+     "Eq.mpr",
+     "HMul.hMul",
+     "of_eq_true",
+     "Ne.lt_or_gt"
+    ],
+    "hier_lanes": [
+     "Trans.trans",
+     "Or.casesOn",
+     "Eq.refl",
+     "Real.posLog",
+     "Real",
+     "Real.log",
+     "instHAdd",
+     "Eq.rec",
+     "Eq.mpr",
+     "HMul.hMul",
+     "of_eq_true",
+     "Ne.lt_or_gt"
+    ],
+    "full": [
+     "Trans.trans",
+     "Or.casesOn",
+     "Eq.refl",
+     "Real.posLog",
+     "Real",
+     "Real.log",
+     "instHAdd",
+     "Eq.rec",
+     "Eq.mpr",
+     "HMul.hMul",
+     "of_eq_true",
+     "Ne.lt_or_gt"
+    ],
+    "laned": [
+     "Trans.trans",
+     "Or.casesOn",
+     "instHAdd",
+     "Eq.rec",
+     "HMul.hMul",
+     "Ne.lt_or_gt",
+     "OfNat.ofNat",
+     "HAdd.hAdd",
+     "Real.circleAverage_congr_codiscreteWithin",
+     "HSub.hSub",
+     "Filter.mp_mem",
+     "abs_of_pos"
+    ]
+   }
+  },
+  {
+   "name": "AlgebraicGeometry.Scheme.Hom.normalization.hom_ext",
+   "depth": 212,
+   "kind": 0,
+   "n_load": 129,
+   "n_roots": 1,
+   "complete": true,
+   "views": {
+    "flat": [
+     "AlgebraicGeometry.Scheme.Cover.hom_ext",
+     "Eq.mpr",
+     "CategoryTheory.CategoryStruct.comp",
+     "RingHom.toAlgebra",
+     "of_eq_true",
+     "AlgebraicGeometry.IsAffineHom.of_comp",
+     "Eq.rec",
+     "AlgebraicGeometry.eq_of_SpecMap_comp_eq_of_isAffineOpen",
+     "Trans.simple",
+     "Eq.refl",
+     "CategoryTheory.PreZeroHypercover.f",
+     "Subtype.mk"
+    ],
+    "owner": [
+     "AlgebraicGeometry.Scheme.Cover.hom_ext",
+     "Eq.mpr",
+     "CategoryTheory.CategoryStruct.comp",
+     "RingHom.toAlgebra",
+     "of_eq_true",
+     "AlgebraicGeometry.IsAffineHom.of_comp",
+     "Eq.rec",
+     "AlgebraicGeometry.eq_of_SpecMap_comp_eq_of_isAffineOpen",
+     "Trans.simple",
+     "Eq.refl",
+     "CategoryTheory.PreZeroHypercover.f",
+     "Subtype.mk"
+    ],
+    "hier": [
+     "AlgebraicGeometry.Scheme.Cover.hom_ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "RingHom.toAlgebra",
+     "AlgebraicGeometry.IsAffineHom.of_comp",
+     "Eq.rec",
+     "AlgebraicGeometry.eq_of_SpecMap_comp_eq_of_isAffineOpen",
+     "AlgebraicGeometry.Scheme.Hom.normalizationOpenCover",
+     "AlgebraicGeometry.Scheme.Hom.normalization",
+     "AlgebraicGeometry.Scheme.Hom.fromNormalization",
+     "Eq.mpr",
+     "of_eq_true",
+     "Trans.simple"
+    ],
+    "hier_lanes": [
+     "AlgebraicGeometry.Scheme.Cover.hom_ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "RingHom.toAlgebra",
+     "AlgebraicGeometry.IsAffineHom.of_comp",
+     "Eq.rec",
+     "AlgebraicGeometry.eq_of_SpecMap_comp_eq_of_isAffineOpen",
+     "AlgebraicGeometry.Scheme.Hom.normalizationOpenCover",
+     "AlgebraicGeometry.Scheme.Hom.normalization",
+     "AlgebraicGeometry.Scheme.Hom.fromNormalization",
+     "Eq.mpr",
+     "of_eq_true",
+     "Trans.simple"
+    ],
+    "full": [
+     "AlgebraicGeometry.Scheme.Cover.hom_ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "RingHom.toAlgebra",
+     "AlgebraicGeometry.IsAffineHom.of_comp",
+     "Eq.rec",
+     "AlgebraicGeometry.eq_of_SpecMap_comp_eq_of_isAffineOpen",
+     "AlgebraicGeometry.Scheme.Hom.normalizationOpenCover",
+     "AlgebraicGeometry.Scheme.Hom.normalization",
+     "AlgebraicGeometry.Scheme.Hom.fromNormalization",
+     "Eq.mpr",
+     "of_eq_true",
+     "Trans.simple"
+    ],
+    "laned": [
+     "AlgebraicGeometry.Scheme.Cover.hom_ext",
+     "CategoryTheory.CategoryStruct.comp",
+     "RingHom.toAlgebra",
+     "AlgebraicGeometry.IsAffineHom.of_comp",
+     "Eq.rec",
+     "AlgebraicGeometry.eq_of_SpecMap_comp_eq_of_isAffineOpen",
+     "AlgebraicGeometry.Scheme.Hom.normalizationOpenCover",
+     "AlgebraicGeometry.Scheme.Hom.normalization",
+     "AlgebraicGeometry.Scheme.Hom.fromNormalization",
+     "Trans.simple",
+     "CategoryTheory.Precoverage.ZeroHypercover.toPreZeroHypercover",
+     "CommRingCat.Hom.hom"
+    ]
+   }
+  }
+ ],
+ "summary": {
+  "expansion_completeness": 1.0,
+  "root_compression": 0.16204321278159717,
+  "flat@1_gen_exposure": 0.0417,
+  "flat@1_foundational_exposure": 0.3958,
+  "flat@2_gen_exposure": 0.1146,
+  "flat@2_foundational_exposure": 0.3438,
+  "flat@4_gen_exposure": 0.1111,
+  "flat@4_foundational_exposure": 0.3594,
+  "flat@8_gen_exposure": 0.0978,
+  "flat@8_foundational_exposure": 0.3964,
+  "owner@1_gen_exposure": 0.0,
+  "owner@1_foundational_exposure": 0.375,
+  "owner@2_gen_exposure": 0.0208,
+  "owner@2_foundational_exposure": 0.3333,
+  "owner@4_gen_exposure": 0.0208,
+  "owner@4_foundational_exposure": 0.3646,
+  "owner@8_gen_exposure": 0.0165,
+  "owner@8_foundational_exposure": 0.4085,
+  "hier@1_gen_exposure": 0.0417,
+  "hier@1_foundational_exposure": 0.3958,
+  "hier@2_gen_exposure": 0.0938,
+  "hier@2_foundational_exposure": 0.3542,
+  "hier@4_gen_exposure": 0.0955,
+  "hier@4_foundational_exposure": 0.3594,
+  "hier@8_gen_exposure": 0.0874,
+  "hier@8_foundational_exposure": 0.3677,
+  "hier_lanes@1_gen_exposure": 0.0,
+  "hier_lanes@1_foundational_exposure": 0.3958,
+  "hier_lanes@2_gen_exposure": 0.0,
+  "hier_lanes@2_foundational_exposure": 0.3854,
+  "hier_lanes@4_gen_exposure": 0.0,
+  "hier_lanes@4_foundational_exposure": 0.3993,
+  "hier_lanes@8_gen_exposure": 0.0,
+  "hier_lanes@8_foundational_exposure": 0.3967,
+  "full@1_gen_exposure": 0.0,
+  "full@1_foundational_exposure": 0.375,
+  "full@2_gen_exposure": 0.0,
+  "full@2_foundational_exposure": 0.375,
+  "full@4_gen_exposure": 0.0,
+  "full@4_foundational_exposure": 0.3941,
+  "full@8_gen_exposure": 0.0,
+  "full@8_foundational_exposure": 0.3941,
+  "laned@1_gen_exposure": 0.0,
+  "laned@1_foundational_exposure": 0.2917,
+  "laned@2_gen_exposure": 0.0,
+  "laned@2_foundational_exposure": 0.2917,
+  "laned@4_gen_exposure": 0.0,
+  "laned@4_foundational_exposure": 0.3108,
+  "laned@8_gen_exposure": 0.0,
+  "laned@8_foundational_exposure": 0.3212
+ }
+}

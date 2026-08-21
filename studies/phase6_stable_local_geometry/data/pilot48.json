@@ -1,0 +1,511 @@
+{
+ "seed": 20260901,
+ "bands": [
+  [
+   1,
+   10
+  ],
+  [
+   11,
+   25
+  ],
+  [
+   26,
+   50
+  ],
+  [
+   51,
+   100
+  ],
+  [
+   101,
+   200
+  ],
+  [
+   201,
+   1000000000
+  ]
+ ],
+ "proofs": [
+  {
+   "artifact": 547752,
+   "decl": 570489,
+   "name": "GradeBoundedOrder.liftRight",
+   "depth": 7,
+   "kind": 1,
+   "n_inc": 16,
+   "has_let": true,
+   "inst_share": 0.25
+  },
+  {
+   "artifact": 376124,
+   "decl": 396767,
+   "name": "ExistsAndEq.instInhabitedVarQ",
+   "depth": 5,
+   "kind": 1,
+   "n_inc": 10,
+   "has_let": false,
+   "inst_share": 0.2
+  },
+  {
+   "artifact": 567178,
+   "decl": 590070,
+   "name": "Functor.Comp.seq",
+   "depth": 3,
+   "kind": 1,
+   "n_inc": 11,
+   "has_let": false,
+   "inst_share": 0.18181818181818182
+  },
+  {
+   "artifact": 368892,
+   "decl": 389412,
+   "name": "Std.Trichotomous.swap",
+   "depth": 4,
+   "kind": 0,
+   "n_inc": 4,
+   "has_let": false,
+   "inst_share": 0.25
+  },
+  {
+   "artifact": 110545,
+   "decl": 122468,
+   "name": "Function.Surjective.distrib",
+   "depth": 10,
+   "kind": 1,
+   "n_inc": 18,
+   "has_let": true,
+   "inst_share": 0.2222222222222222
+  },
+  {
+   "artifact": 675557,
+   "decl": 698953,
+   "name": "instApplicativeAddConstOfZeroOfAdd",
+   "depth": 4,
+   "kind": 1,
+   "n_inc": 18,
+   "has_let": true,
+   "inst_share": 0.3888888888888889
+  },
+  {
+   "artifact": 210621,
+   "decl": 227206,
+   "name": "ExceptT.seqLeft_eq",
+   "depth": 9,
+   "kind": 0,
+   "n_inc": 46,
+   "has_let": false,
+   "inst_share": 0.15217391304347827
+  },
+  {
+   "artifact": 66875,
+   "decl": 75612,
+   "name": "Std.Internal.Do.WPMonad.seq_le_wp_seq",
+   "depth": 9,
+   "kind": 0,
+   "n_inc": 28,
+   "has_let": false,
+   "inst_share": 0.32142857142857145
+  },
+  {
+   "artifact": 182907,
+   "decl": 198473,
+   "name": "MeasureTheory.Filtration.instTop",
+   "depth": 18,
+   "kind": 1,
+   "n_inc": 6,
+   "has_let": false,
+   "inst_share": 0.0
+  },
+  {
+   "artifact": 39223,
+   "decl": 45366,
+   "name": "Std.DTreeMap.valuesIter",
+   "depth": 20,
+   "kind": 1,
+   "n_inc": 5,
+   "has_let": false,
+   "inst_share": 0.0
+  },
+  {
+   "artifact": 382397,
+   "decl": 403140,
+   "name": "CategoryTheory.Functor.OplaxMonoidal.ofBifunctor.bottomMap\u2097",
+   "depth": 24,
+   "kind": 1,
+   "n_inc": 14,
+   "has_let": false,
+   "inst_share": 0.2857142857142857
+  },
+  {
+   "artifact": 257496,
+   "decl": 275505,
+   "name": "CategoryTheory.CommSq.LiftStruct.unopEquiv",
+   "depth": 14,
+   "kind": 1,
+   "n_inc": 17,
+   "has_let": false,
+   "inst_share": 0.23529411764705882
+  },
+  {
+   "artifact": 400996,
+   "decl": 422041,
+   "name": "Associates.exists_mem_multiset_le_of_prime",
+   "depth": 21,
+   "kind": 0,
+   "n_inc": 55,
+   "has_let": true,
+   "inst_share": 0.4
+  },
+  {
+   "artifact": 686510,
+   "decl": 709937,
+   "name": "CategoryTheory.Functor.IsStronglyCocartesian.map_comp_map_assoc",
+   "depth": 13,
+   "kind": 0,
+   "n_inc": 20,
+   "has_let": true,
+   "inst_share": 0.15
+  },
+  {
+   "artifact": 415430,
+   "decl": 436664,
+   "name": "normalizedGCDMonoidOfLCM",
+   "depth": 24,
+   "kind": 1,
+   "n_inc": 35,
+   "has_let": true,
+   "inst_share": 0.37142857142857144
+  },
+  {
+   "artifact": 718049,
+   "decl": 741520,
+   "name": "div_helper",
+   "depth": 25,
+   "kind": 0,
+   "n_inc": 41,
+   "has_let": false,
+   "inst_share": 0.6341463414634146
+  },
+  {
+   "artifact": 73846,
+   "decl": 83145,
+   "name": "Mathlib.Meta.NormNum.Result.toRat'",
+   "depth": 38,
+   "kind": 1,
+   "n_inc": 32,
+   "has_let": false,
+   "inst_share": 0.0625
+  },
+  {
+   "artifact": 190653,
+   "decl": 206487,
+   "name": "CategoryTheory.Limits.createsLimitsOp",
+   "depth": 36,
+   "kind": 1,
+   "n_inc": 4,
+   "has_let": false,
+   "inst_share": 0.0
+  },
+  {
+   "artifact": 358800,
+   "decl": 379139,
+   "name": "Lean.Meta.whnfCoreUnfoldingAnnotations",
+   "depth": 34,
+   "kind": 1,
+   "n_inc": 15,
+   "has_let": false,
+   "inst_share": 0.26666666666666666
+  },
+  {
+   "artifact": 156160,
+   "decl": 170525,
+   "name": "AddMonCat.HasLimits.limitCone",
+   "depth": 28,
+   "kind": 1,
+   "n_inc": 29,
+   "has_let": false,
+   "inst_share": 0.3103448275862069
+  },
+  {
+   "artifact": 307025,
+   "decl": 326287,
+   "name": "List.eraseIdx_set_lt",
+   "depth": 49,
+   "kind": 0,
+   "n_inc": 58,
+   "has_let": true,
+   "inst_share": 0.15517241379310345
+  },
+  {
+   "artifact": 725234,
+   "decl": 748711,
+   "name": "CategoryTheory.Limits.preservesBinaryProducts_of_isIso_prodComparison",
+   "depth": 36,
+   "kind": 0,
+   "n_inc": 22,
+   "has_let": true,
+   "inst_share": 0.18181818181818182
+  },
+  {
+   "artifact": 483299,
+   "decl": 505434,
+   "name": "Bimod.triangle_bimod",
+   "depth": 49,
+   "kind": 0,
+   "n_inc": 121,
+   "has_let": false,
+   "inst_share": 0.1487603305785124
+  },
+  {
+   "artifact": 409860,
+   "decl": 431031,
+   "name": "RingCat.FilteredColimits.colimitRing",
+   "depth": 41,
+   "kind": 1,
+   "n_inc": 49,
+   "has_let": true,
+   "inst_share": 0.42857142857142855
+  },
+  {
+   "artifact": 7423,
+   "decl": 9030,
+   "name": "Std.ExtDHashMap.Const.insertManyIfNewUnit",
+   "depth": 72,
+   "kind": 1,
+   "n_inc": 24,
+   "has_let": true,
+   "inst_share": 0.16666666666666666
+  },
+  {
+   "artifact": 261677,
+   "decl": 279809,
+   "name": "HasCompactMulSupport.submonoid",
+   "depth": 90,
+   "kind": 1,
+   "n_inc": 12,
+   "has_let": false,
+   "inst_share": 0.3333333333333333
+  },
+  {
+   "artifact": 8951,
+   "decl": 10854,
+   "name": "CompHausLike.LocallyConstant.fiber",
+   "depth": 92,
+   "kind": 1,
+   "n_inc": 25,
+   "has_let": false,
+   "inst_share": 0.32
+  },
+  {
+   "artifact": 705802,
+   "decl": 729262,
+   "name": "CochainComplex.HomComplex.CohomologyClass.homAddEquiv_apply",
+   "depth": 83,
+   "kind": 0,
+   "n_inc": 44,
+   "has_let": false,
+   "inst_share": 0.6363636363636364
+  },
+  {
+   "artifact": 276726,
+   "decl": 295300,
+   "name": "IntermediateField.adjoin_eq_algebra_adjoin",
+   "depth": 76,
+   "kind": 0,
+   "n_inc": 36,
+   "has_let": true,
+   "inst_share": 0.5
+  },
+  {
+   "artifact": 127378,
+   "decl": 140327,
+   "name": "AddOpposite.comap_op_rightUniformSpace",
+   "depth": 78,
+   "kind": 0,
+   "n_inc": 58,
+   "has_let": true,
+   "inst_share": 0.3793103448275862
+  },
+  {
+   "artifact": 318765,
+   "decl": 338285,
+   "name": "SSet.boundary.hom_ext",
+   "depth": 89,
+   "kind": 0,
+   "n_inc": 88,
+   "has_let": false,
+   "inst_share": 0.2727272727272727
+  },
+  {
+   "artifact": 61482,
+   "decl": 69720,
+   "name": "instCommGroupPic",
+   "depth": 96,
+   "kind": 1,
+   "n_inc": 64,
+   "has_let": false,
+   "inst_share": 0.5625
+  },
+  {
+   "artifact": 140768,
+   "decl": 154428,
+   "name": "String.Slice.Subslice.cast",
+   "depth": 101,
+   "kind": 1,
+   "n_inc": 10,
+   "has_let": false,
+   "inst_share": 0.0
+  },
+  {
+   "artifact": 436343,
+   "decl": 457856,
+   "name": "Lean.Meta.ArgsPacker.Mutual.uncurry",
+   "depth": 131,
+   "kind": 1,
+   "n_inc": 10,
+   "has_let": false,
+   "inst_share": 0.2
+  },
+  {
+   "artifact": 472405,
+   "decl": 494392,
+   "name": "RKHS.tendstoUniformlyOn_of_norm_kerFun_le",
+   "depth": 190,
+   "kind": 0,
+   "n_inc": 109,
+   "has_let": true,
+   "inst_share": 0.48623853211009177
+  },
+  {
+   "artifact": 154051,
+   "decl": 168329,
+   "name": "ModularForm.instIsSMulApply\u211d",
+   "depth": 182,
+   "kind": 0,
+   "n_inc": 41,
+   "has_let": false,
+   "inst_share": 0.5365853658536586
+  },
+  {
+   "artifact": 286162,
+   "decl": 304952,
+   "name": "ContMDiff.sumElim",
+   "depth": 171,
+   "kind": 0,
+   "n_inc": 73,
+   "has_let": true,
+   "inst_share": 0.1232876712328767
+  },
+  {
+   "artifact": 399080,
+   "decl": 420094,
+   "name": "Aesop.withScriptStep",
+   "depth": 115,
+   "kind": 1,
+   "n_inc": 52,
+   "has_let": true,
+   "inst_share": 0.3269230769230769
+  },
+  {
+   "artifact": 640218,
+   "decl": 663492,
+   "name": "IsGaloisGroup.finite",
+   "depth": 134,
+   "kind": 0,
+   "n_inc": 119,
+   "has_let": true,
+   "inst_share": 0.6722689075630253
+  },
+  {
+   "artifact": 634500,
+   "decl": 657759,
+   "name": "UpperHalfPlane.\u03c3_eventuallyEq",
+   "depth": 161,
+   "kind": 0,
+   "n_inc": 114,
+   "has_let": true,
+   "inst_share": 0.4824561403508772
+  },
+  {
+   "artifact": 677956,
+   "decl": 701361,
+   "name": "WithLp.normedSpaceSeminormedAddCommGroupToProd",
+   "depth": 220,
+   "kind": 1,
+   "n_inc": 22,
+   "has_let": false,
+   "inst_share": 0.5454545454545454
+  },
+  {
+   "artifact": 554693,
+   "decl": 577488,
+   "name": "ContDiffMapSupportedIn.supSeminorm",
+   "depth": 207,
+   "kind": 1,
+   "n_inc": 55,
+   "has_let": false,
+   "inst_share": 0.7090909090909091
+  },
+  {
+   "artifact": 314170,
+   "decl": 333600,
+   "name": "Complex.tendsto_limUnder_of_differentiable_on_punctured_nhds_of_isLittleO",
+   "depth": 278,
+   "kind": 0,
+   "n_inc": 110,
+   "has_let": true,
+   "inst_share": 0.6363636363636364
+  },
+  {
+   "artifact": 125326,
+   "decl": 138180,
+   "name": "Matrix.frobeniusNormedAlgebra",
+   "depth": 226,
+   "kind": 1,
+   "n_inc": 46,
+   "has_let": true,
+   "inst_share": 0.6304347826086957
+  },
+  {
+   "artifact": 257179,
+   "decl": 275181,
+   "name": "ProbabilityTheory.IsPreBrownianReal.indepFun_shift",
+   "depth": 315,
+   "kind": 0,
+   "n_inc": 216,
+   "has_let": true,
+   "inst_share": 0.4722222222222222
+  },
+  {
+   "artifact": 249406,
+   "decl": 267161,
+   "name": "SchwartzMap.smulLeftCLM_const",
+   "depth": 216,
+   "kind": 0,
+   "n_inc": 106,
+   "has_let": true,
+   "inst_share": 0.7264150943396226
+  },
+  {
+   "artifact": 561206,
+   "decl": 584049,
+   "name": "circleAverage_log_norm_sub_const_eq_log_radius_add_posLog",
+   "depth": 285,
+   "kind": 0,
+   "n_inc": 345,
+   "has_let": true,
+   "inst_share": 0.4956521739130435
+  },
+  {
+   "artifact": 535042,
+   "decl": 557671,
+   "name": "AlgebraicGeometry.Scheme.Hom.normalization.hom_ext",
+   "depth": 212,
+   "kind": 0,
+   "n_inc": 187,
+   "has_let": true,
+   "inst_share": 0.2192513368983957
+  }
+ ]
+}

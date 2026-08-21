@@ -1,0 +1,956 @@
+{
+ "HYB_copeland_first6": {
+  "k": 4,
+  "nodes": 770554,
+  "edges": 2891102,
+  "hubs": {
+   "top_n": 200,
+   "junk_share_of_top_hubs": 0.59,
+   "junk_share_of_all_nodes": 0.030814193424471226,
+   "enrichment": 19.14702072102426,
+   "degree_mass_on_junk": 0.597774672310163,
+   "top_hubs": [
+    {
+     "name": "propext",
+     "degree": 26309,
+     "junk": true
+    },
+    {
+     "name": "Eq.refl",
+     "degree": 18709,
+     "junk": true
+    },
+    {
+     "name": "rfl",
+     "degree": 18224,
+     "junk": true
+    },
+    {
+     "name": "OfNat.ofNat",
+     "degree": 14515,
+     "junk": false
+    },
+    {
+     "name": "Eq.symm",
+     "degree": 10603,
+     "junk": true
+    },
+    {
+     "name": "HAdd.hAdd",
+     "degree": 10306,
+     "junk": false
+    },
+    {
+     "name": "Nat",
+     "degree": 9775,
+     "junk": true
+    },
+    {
+     "name": "Membership.mem",
+     "degree": 8805,
+     "junk": false
+    },
+    {
+     "name": "RingHom.id",
+     "degree": 7210,
+     "junk": false
+    },
+    {
+     "name": "ENNReal",
+     "degree": 6227,
+     "junk": true
+    },
+    {
+     "name": "HMul.hMul",
+     "degree": 6051,
+     "junk": false
+    },
+    {
+     "name": "DFunLike.coe",
+     "degree": 5730,
+     "junk": false
+    },
+    {
+     "name": "SizeOf.sizeOf",
+     "degree": 5609,
+     "junk": false
+    },
+    {
+     "name": "Exists.casesOn",
+     "degree": 5348,
+     "junk": true
+    },
+    {
+     "name": "eq_true",
+     "degree": 5056,
+     "junk": true
+    },
+    {
+     "name": "Array.push",
+     "degree": 4823,
+     "junk": false
+    },
+    {
+     "name": "HSMul.hSMul",
+     "degree": 4703,
+     "junk": false
+    },
+    {
+     "name": "Unit",
+     "degree": 4540,
+     "junk": true
+    },
+    {
+     "name": "Lean.Syntax.node",
+     "degree": 4523,
+     "junk": false
+    },
+    {
+     "name": "Array.empty",
+     "degree": 4517,
+     "junk": false
+    },
+    {
+     "name": "LE.le",
+     "degree": 4480,
+     "junk": false
+    },
+    {
+     "name": "Unit.unit",
+     "degree": 4338,
+     "junk": false
+    },
+    {
+     "name": "Lean.mkAtom",
+     "degree": 4157,
+     "junk": false
+    },
+    {
+     "name": "Eq.ndrec",
+     "degree": 4135,
+     "junk": true
+    },
+    {
+     "name": "Eq.rec",
+     "degree": 4051,
+     "junk": true
+    }
+   ]
+  },
+  "distance": {
+   "n_sources": 58,
+   "n_pairs_compared": 41052201,
+   "mean_distance_all_edges": 5.122972529536236,
+   "mean_distance_mathematics_only": 6.256849200363216,
+   "mean_lengthening": 1.1338766708269796,
+   "median_lengthening": 1.0,
+   "pairs_unchanged": 0.3590934868510461,
+   "pairs_lengthened_2plus": 0.31047728719831613,
+   "pairs_disconnected_by_removing_junk": 0.05213849570257932
+  },
+  "recall": {
+   "hub_threshold_degree": 45.0,
+   "graded_real_maths_reaching_hub_tail": 0.350177304964539,
+   "graded_junk_reaching_hub_tail": 0.8097766671872559,
+   "median_degree_real_maths": 18.0,
+   "median_degree_junk": 437.0,
+   "n_real": 1128,
+   "n_junk": 6403
+  }
+ },
+ "REF*": {
+  "k": 4,
+  "nodes": 770552,
+  "edges": 2891101,
+  "hubs": {
+   "top_n": 200,
+   "junk_share_of_top_hubs": 0.585,
+   "junk_share_of_all_nodes": 0.03081297563305267,
+   "enrichment": 18.985508149770457,
+   "degree_mass_on_junk": 0.592141633894567,
+   "top_hubs": [
+    {
+     "name": "propext",
+     "degree": 26309,
+     "junk": true
+    },
+    {
+     "name": "rfl",
+     "degree": 18310,
+     "junk": true
+    },
+    {
+     "name": "Eq.refl",
+     "degree": 16797,
+     "junk": true
+    },
+    {
+     "name": "OfNat.ofNat",
+     "degree": 14797,
+     "junk": false
+    },
+    {
+     "name": "HAdd.hAdd",
+     "degree": 10758,
+     "junk": false
+    },
+    {
+     "name": "Eq.symm",
+     "degree": 10585,
+     "junk": true
+    },
+    {
+     "name": "Nat",
+     "degree": 9775,
+     "junk": true
+    },
+    {
+     "name": "Membership.mem",
+     "degree": 8934,
+     "junk": false
+    },
+    {
+     "name": "RingHom.id",
+     "degree": 7289,
+     "junk": false
+    },
+    {
+     "name": "ENNReal",
+     "degree": 6284,
+     "junk": true
+    },
+    {
+     "name": "HMul.hMul",
+     "degree": 6116,
+     "junk": false
+    },
+    {
+     "name": "DFunLike.coe",
+     "degree": 5811,
+     "junk": false
+    },
+    {
+     "name": "SizeOf.sizeOf",
+     "degree": 5732,
+     "junk": false
+    },
+    {
+     "name": "eq_true",
+     "degree": 5069,
+     "junk": true
+    },
+    {
+     "name": "Exists.casesOn",
+     "degree": 5043,
+     "junk": true
+    },
+    {
+     "name": "HSMul.hSMul",
+     "degree": 4825,
+     "junk": false
+    },
+    {
+     "name": "Array.push",
+     "degree": 4825,
+     "junk": false
+    },
+    {
+     "name": "Unit",
+     "degree": 4604,
+     "junk": true
+    },
+    {
+     "name": "Lean.Syntax.node",
+     "degree": 4523,
+     "junk": false
+    },
+    {
+     "name": "Array.empty",
+     "degree": 4517,
+     "junk": false
+    },
+    {
+     "name": "LE.le",
+     "degree": 4508,
+     "junk": false
+    },
+    {
+     "name": "Unit.unit",
+     "degree": 4359,
+     "junk": false
+    },
+    {
+     "name": "Lean.mkAtom",
+     "degree": 4157,
+     "junk": false
+    },
+    {
+     "name": "Eq.rec",
+     "degree": 4065,
+     "junk": true
+    },
+    {
+     "name": "SetLike.coe",
+     "degree": 3866,
+     "junk": false
+    }
+   ]
+  },
+  "distance": {
+   "n_sources": 56,
+   "n_pairs_compared": 37378819,
+   "mean_distance_all_edges": 5.119344541088899,
+   "mean_distance_mathematics_only": 6.237676155578912,
+   "mean_lengthening": 1.1183316144900137,
+   "median_lengthening": 1.0,
+   "pairs_unchanged": 0.3789087076293127,
+   "pairs_lengthened_2plus": 0.292854865211231,
+   "pairs_disconnected_by_removing_junk": 0.10612352510725406
+  },
+  "recall": {
+   "hub_threshold_degree": 45.0,
+   "graded_real_maths_reaching_hub_tail": 0.34929078014184395,
+   "graded_junk_reaching_hub_tail": 0.8105575511478994,
+   "median_degree_real_maths": 18.0,
+   "median_degree_junk": 421.0,
+   "n_real": 1128,
+   "n_junk": 6403
+  }
+ },
+ "borda6": {
+  "k": 4,
+  "nodes": 770470,
+  "edges": 2891100,
+  "hubs": {
+   "top_n": 200,
+   "junk_share_of_top_hubs": 0.555,
+   "junk_share_of_all_nodes": 0.030807169649694342,
+   "enrichment": 18.015286905965624,
+   "degree_mass_on_junk": 0.6286202720991524,
+   "top_hubs": [
+    {
+     "name": "propext",
+     "degree": 43163,
+     "junk": true
+    },
+    {
+     "name": "Eq.refl",
+     "degree": 31805,
+     "junk": true
+    },
+    {
+     "name": "Eq.symm",
+     "degree": 20361,
+     "junk": true
+    },
+    {
+     "name": "rfl",
+     "degree": 19099,
+     "junk": true
+    },
+    {
+     "name": "OfNat.ofNat",
+     "degree": 17738,
+     "junk": false
+    },
+    {
+     "name": "HAdd.hAdd",
+     "degree": 12976,
+     "junk": false
+    },
+    {
+     "name": "Membership.mem",
+     "degree": 12087,
+     "junk": false
+    },
+    {
+     "name": "Eq.ndrec",
+     "degree": 10050,
+     "junk": true
+    },
+    {
+     "name": "congrFun'",
+     "degree": 9648,
+     "junk": true
+    },
+    {
+     "name": "congrArg",
+     "degree": 8806,
+     "junk": true
+    },
+    {
+     "name": "Exists.casesOn",
+     "degree": 7598,
+     "junk": true
+    },
+    {
+     "name": "Nat",
+     "degree": 7235,
+     "junk": true
+    },
+    {
+     "name": "DFunLike.coe",
+     "degree": 6915,
+     "junk": false
+    },
+    {
+     "name": "congr",
+     "degree": 6397,
+     "junk": true
+    },
+    {
+     "name": "HMul.hMul",
+     "degree": 6161,
+     "junk": false
+    },
+    {
+     "name": "of_eq_true",
+     "degree": 6156,
+     "junk": true
+    },
+    {
+     "name": "id",
+     "degree": 5768,
+     "junk": true
+    },
+    {
+     "name": "Eq",
+     "degree": 5489,
+     "junk": true
+    },
+    {
+     "name": "eq_of_heq",
+     "degree": 5441,
+     "junk": false
+    },
+    {
+     "name": "eq_true",
+     "degree": 5217,
+     "junk": true
+    },
+    {
+     "name": "LE.le",
+     "degree": 5099,
+     "junk": false
+    },
+    {
+     "name": "SizeOf.sizeOf",
+     "degree": 5069,
+     "junk": false
+    },
+    {
+     "name": "Eq.mpr",
+     "degree": 4993,
+     "junk": true
+    },
+    {
+     "name": "And.intro",
+     "degree": 4926,
+     "junk": true
+    },
+    {
+     "name": "Array.push",
+     "degree": 4865,
+     "junk": false
+    }
+   ]
+  },
+  "distance": {
+   "n_sources": 59,
+   "n_pairs_compared": 42516204,
+   "mean_distance_all_edges": 4.697904003847568,
+   "mean_distance_mathematics_only": 5.82312880049216,
+   "mean_lengthening": 1.1252247966445923,
+   "median_lengthening": 1.0,
+   "pairs_unchanged": 0.37554034692278737,
+   "pairs_lengthened_2plus": 0.31938714472251567,
+   "pairs_disconnected_by_removing_junk": 0.034882507274202355
+  },
+  "recall": {
+   "hub_threshold_degree": 43.0,
+   "graded_real_maths_reaching_hub_tail": 0.33687943262411346,
+   "graded_junk_reaching_hub_tail": 0.8683429642355146,
+   "median_degree_real_maths": 17.0,
+   "median_degree_junk": 509.0,
+   "n_real": 1128,
+   "n_junk": 6403
+  }
+ },
+ "borda6_rarityx2": {
+  "k": 4,
+  "nodes": 770579,
+  "edges": 2891100,
+  "hubs": {
+   "top_n": 200,
+   "junk_share_of_top_hubs": 0.55,
+   "junk_share_of_all_nodes": 0.03080930053894539,
+   "enrichment": 17.85175224295523,
+   "degree_mass_on_junk": 0.6274851572528883,
+   "top_hubs": [
+    {
+     "name": "propext",
+     "degree": 32192,
+     "junk": true
+    },
+    {
+     "name": "Eq.refl",
+     "degree": 23396,
+     "junk": true
+    },
+    {
+     "name": "Eq.symm",
+     "degree": 14255,
+     "junk": true
+    },
+    {
+     "name": "rfl",
+     "degree": 13372,
+     "junk": true
+    },
+    {
+     "name": "OfNat.ofNat",
+     "degree": 9132,
+     "junk": false
+    },
+    {
+     "name": "Eq.ndrec",
+     "degree": 7195,
+     "junk": true
+    },
+    {
+     "name": "Nat",
+     "degree": 6947,
+     "junk": true
+    },
+    {
+     "name": "Exists.casesOn",
+     "degree": 6415,
+     "junk": true
+    },
+    {
+     "name": "HAdd.hAdd",
+     "degree": 6378,
+     "junk": false
+    },
+    {
+     "name": "id",
+     "degree": 5279,
+     "junk": true
+    },
+    {
+     "name": "Membership.mem",
+     "degree": 4982,
+     "junk": false
+    },
+    {
+     "name": "eq_true",
+     "degree": 4851,
+     "junk": true
+    },
+    {
+     "name": "SizeOf.sizeOf",
+     "degree": 4729,
+     "junk": false
+    },
+    {
+     "name": "eq_of_heq",
+     "degree": 4658,
+     "junk": false
+    },
+    {
+     "name": "congrFun'",
+     "degree": 4628,
+     "junk": true
+    },
+    {
+     "name": "Lean.Syntax.node",
+     "degree": 4537,
+     "junk": false
+    },
+    {
+     "name": "Array.push",
+     "degree": 4504,
+     "junk": false
+    },
+    {
+     "name": "Lean.mkAtom",
+     "degree": 4453,
+     "junk": false
+    },
+    {
+     "name": "instOfNatNat",
+     "degree": 4360,
+     "junk": false
+    },
+    {
+     "name": "Array.empty",
+     "degree": 4171,
+     "junk": false
+    },
+    {
+     "name": "Eq.propIntro",
+     "degree": 4047,
+     "junk": true
+    },
+    {
+     "name": "Unit.unit",
+     "degree": 4012,
+     "junk": false
+    },
+    {
+     "name": "Eq.rec",
+     "degree": 3852,
+     "junk": true
+    },
+    {
+     "name": "And.intro",
+     "degree": 3851,
+     "junk": true
+    },
+    {
+     "name": "Finset.instSetLike",
+     "degree": 3776,
+     "junk": false
+    }
+   ]
+  },
+  "distance": {
+   "n_sources": 58,
+   "n_pairs_compared": 41848317,
+   "mean_distance_all_edges": 4.977009589178939,
+   "mean_distance_mathematics_only": 6.382674194520177,
+   "mean_lengthening": 1.4056646053412376,
+   "median_lengthening": 1.0,
+   "pairs_unchanged": 0.2855756660417192,
+   "pairs_lengthened_2plus": 0.40956600476908067,
+   "pairs_disconnected_by_removing_junk": 0.0337659166982908
+  },
+  "recall": {
+   "hub_threshold_degree": 47.0,
+   "graded_real_maths_reaching_hub_tail": 0.3324468085106383,
+   "graded_junk_reaching_hub_tail": 0.8778697485553647,
+   "median_degree_real_maths": 18.0,
+   "median_degree_junk": 524.0,
+   "n_real": 1128,
+   "n_junk": 6403
+  }
+ },
+ "copeland6": {
+  "k": 4,
+  "nodes": 770469,
+  "edges": 2891094,
+  "hubs": {
+   "top_n": 200,
+   "junk_share_of_top_hubs": 0.535,
+   "junk_share_of_all_nodes": 0.030809805456157222,
+   "enrichment": 17.364601693487238,
+   "degree_mass_on_junk": 0.6189142699087887,
+   "top_hubs": [
+    {
+     "name": "propext",
+     "degree": 41273,
+     "junk": true
+    },
+    {
+     "name": "Eq.refl",
+     "degree": 29375,
+     "junk": true
+    },
+    {
+     "name": "Eq.symm",
+     "degree": 18503,
+     "junk": true
+    },
+    {
+     "name": "rfl",
+     "degree": 17318,
+     "junk": true
+    },
+    {
+     "name": "OfNat.ofNat",
+     "degree": 15981,
+     "junk": false
+    },
+    {
+     "name": "Membership.mem",
+     "degree": 15875,
+     "junk": false
+    },
+    {
+     "name": "HAdd.hAdd",
+     "degree": 12769,
+     "junk": false
+    },
+    {
+     "name": "Eq.ndrec",
+     "degree": 11086,
+     "junk": true
+    },
+    {
+     "name": "congrArg",
+     "degree": 9530,
+     "junk": true
+    },
+    {
+     "name": "congrFun'",
+     "degree": 8035,
+     "junk": true
+    },
+    {
+     "name": "DFunLike.coe",
+     "degree": 7922,
+     "junk": false
+    },
+    {
+     "name": "of_eq_true",
+     "degree": 7774,
+     "junk": true
+    },
+    {
+     "name": "Nat",
+     "degree": 7293,
+     "junk": true
+    },
+    {
+     "name": "Exists.casesOn",
+     "degree": 7258,
+     "junk": true
+    },
+    {
+     "name": "Eq.mpr",
+     "degree": 6301,
+     "junk": true
+    },
+    {
+     "name": "congr",
+     "degree": 6007,
+     "junk": true
+    },
+    {
+     "name": "HMul.hMul",
+     "degree": 5986,
+     "junk": false
+    },
+    {
+     "name": "id",
+     "degree": 5823,
+     "junk": true
+    },
+    {
+     "name": "LE.le",
+     "degree": 5412,
+     "junk": false
+    },
+    {
+     "name": "Eq",
+     "degree": 5301,
+     "junk": true
+    },
+    {
+     "name": "eq_of_heq",
+     "degree": 4930,
+     "junk": false
+    },
+    {
+     "name": "eq_true",
+     "degree": 4883,
+     "junk": true
+    },
+    {
+     "name": "Array.push",
+     "degree": 4880,
+     "junk": false
+    },
+    {
+     "name": "eq_self",
+     "degree": 4620,
+     "junk": true
+    },
+    {
+     "name": "And.intro",
+     "degree": 4606,
+     "junk": true
+    }
+   ]
+  },
+  "distance": {
+   "n_sources": 60,
+   "n_pairs_compared": 43230480,
+   "mean_distance_all_edges": 4.898139715311975,
+   "mean_distance_mathematics_only": 6.135260422738772,
+   "mean_lengthening": 1.237120707426797,
+   "median_lengthening": 1.0,
+   "pairs_unchanged": 0.36554338513012113,
+   "pairs_lengthened_2plus": 0.34462934485113284,
+   "pairs_disconnected_by_removing_junk": 0.03501621902514418
+  },
+  "recall": {
+   "hub_threshold_degree": 44.0,
+   "graded_real_maths_reaching_hub_tail": 0.3342198581560284,
+   "graded_junk_reaching_hub_tail": 0.8709979697017023,
+   "median_degree_real_maths": 18.0,
+   "median_degree_junk": 499.0,
+   "n_real": 1128,
+   "n_junk": 6403
+  }
+ },
+ "copeland6_rarityx2": {
+  "k": 4,
+  "nodes": 770537,
+  "edges": 2891096,
+  "hubs": {
+   "top_n": 200,
+   "junk_share_of_top_hubs": 0.52,
+   "junk_share_of_all_nodes": 0.030817468856135396,
+   "enrichment": 16.873546702602546,
+   "degree_mass_on_junk": 0.6100424467770064,
+   "top_hubs": [
+    {
+     "name": "propext",
+     "degree": 28995,
+     "junk": true
+    },
+    {
+     "name": "Eq.refl",
+     "degree": 21546,
+     "junk": true
+    },
+    {
+     "name": "Eq.symm",
+     "degree": 13568,
+     "junk": true
+    },
+    {
+     "name": "rfl",
+     "degree": 11767,
+     "junk": true
+    },
+    {
+     "name": "Eq.ndrec",
+     "degree": 8342,
+     "junk": true
+    },
+    {
+     "name": "Nat",
+     "degree": 7030,
+     "junk": true
+    },
+    {
+     "name": "Finset.instSetLike",
+     "degree": 6240,
+     "junk": false
+    },
+    {
+     "name": "OfNat.ofNat",
+     "degree": 5954,
+     "junk": false
+    },
+    {
+     "name": "id",
+     "degree": 5314,
+     "junk": true
+    },
+    {
+     "name": "Exists.casesOn",
+     "degree": 5233,
+     "junk": true
+    },
+    {
+     "name": "instOfNatNat",
+     "degree": 5050,
+     "junk": false
+    },
+    {
+     "name": "Lean.Syntax.node",
+     "degree": 4521,
+     "junk": false
+    },
+    {
+     "name": "Lean.mkAtom",
+     "degree": 4500,
+     "junk": false
+    },
+    {
+     "name": "Array.push",
+     "degree": 4418,
+     "junk": false
+    },
+    {
+     "name": "eq_true",
+     "degree": 4295,
+     "junk": true
+    },
+    {
+     "name": "Array.empty",
+     "degree": 4203,
+     "junk": false
+    },
+    {
+     "name": "Membership.mem",
+     "degree": 4081,
+     "junk": false
+    },
+    {
+     "name": "Nat.ne_of_beq_eq_false",
+     "degree": 4028,
+     "junk": false
+    },
+    {
+     "name": "Unit.unit",
+     "degree": 4023,
+     "junk": false
+    },
+    {
+     "name": "Unit",
+     "degree": 3928,
+     "junk": true
+    },
+    {
+     "name": "HAdd.hAdd",
+     "degree": 3904,
+     "junk": false
+    },
+    {
+     "name": "eq_of_heq",
+     "degree": 3852,
+     "junk": false
+    },
+    {
+     "name": "Eq.propIntro",
+     "degree": 3682,
+     "junk": true
+    },
+    {
+     "name": "congrFun'",
+     "degree": 3633,
+     "junk": true
+    },
+    {
+     "name": "SizeOf.sizeOf",
+     "degree": 3541,
+     "junk": false
+    }
+   ]
+  },
+  "distance": {
+   "n_sources": 58,
+   "n_pairs_compared": 41132337,
+   "mean_distance_all_edges": 5.402302475543755,
+   "mean_distance_mathematics_only": 6.563878950033887,
+   "mean_lengthening": 1.1615764744901318,
+   "median_lengthening": 1.0,
+   "pairs_unchanged": 0.358582859028895,
+   "pairs_lengthened_2plus": 0.31281901147508345,
+   "pairs_disconnected_by_removing_junk": 0.05024879585117044
+  },
+  "recall": {
+   "hub_threshold_degree": 48.0,
+   "graded_real_maths_reaching_hub_tail": 0.32978723404255317,
+   "graded_junk_reaching_hub_tail": 0.8909885990941746,
+   "median_degree_real_maths": 19.0,
+   "median_degree_junk": 506.0,
+   "n_real": 1128,
+   "n_junk": 6403
+  }
+ }
+}

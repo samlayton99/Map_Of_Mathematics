@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Run the social-choice family through the shared battery on TEST-R.
 
-Stage 1 (this script): per-proof metrics over the graded proofs.
-Stage 2 (--nav):       navigability over the WHOLE U1D corpus.
+Per-proof metrics over the graded proofs. Graph-level checks live in
+run_social_choice_shortcuts.py.
 """
 import json
 import os

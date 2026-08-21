@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Shortcut precision/recall for the social-choice schemes.
 
-`mathmap_eval/battery.navigability` asks whether the map stays CONNECTED
-without junk edges; `mathmap_eval/shortcuts` asks whether junk edges create
-FALSE PROXIMITY, which is the question that actually discriminates. Both are
-reported for this family, since the first flattered it.
+A since-removed `battery.navigability` test asked whether the map stays
+CONNECTED without junk edges; `mathmap_eval/shortcuts` asks whether junk edges
+create FALSE PROXIMITY, which is the question that actually discriminates.
 
 junk_node = `corpus.decl_logic_only` (frozen V8 per-declaration flag).
 """
