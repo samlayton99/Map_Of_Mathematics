@@ -1,2 +1,7 @@
 data/map20k_hier.jsonl
 data/pilot48_hier_v1_badsample.jsonl
+data/map/
+data/map_lpa/
+data/map_final_lpa/
+data/v7_backup/
+logs/
