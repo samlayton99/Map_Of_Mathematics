@@ -1,0 +1,10 @@
+{
+  "frac_edges_from_k1_artifacts": 0.2026509420177138,
+  "frac_artifacts_k1": 0.5047323870907149,
+  "k_median": 1.0,
+  "k_p90": 5.0,
+  "rfl_edges_total": 9900,
+  "rfl_from_k1": 5019,
+  "ofnat_total": 6285,
+  "ofnat_from_k1": 675
+}

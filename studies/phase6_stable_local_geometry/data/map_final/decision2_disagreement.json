@@ -1,0 +1,236 @@
+{
+  "GAP": {
+    "agreement": {
+      "both_lateral": {
+        "n": 667078,
+        "median_span": 1.0,
+        "median_rho": 0.046875,
+        "dst_math_frac": 0.857389990375938
+      },
+      "only_LATFIX": {
+        "n": 288513,
+        "median_span": 14.0,
+        "median_rho": 0.22666666666666666,
+        "dst_math_frac": 0.7869836021253809
+      },
+      "only_LATMED": {
+        "n": 69454,
+        "median_span": 27.0,
+        "median_rho": 0.7922077922077922,
+        "dst_math_frac": 0.5342528868027759
+      },
+      "neither": {
+        "n": 35710,
+        "median_span": 56.0,
+        "median_rho": 0.583969465648855,
+        "dst_math_frac": 0.7262111453374405
+      }
+    },
+    "interface_link_mass": {
+      "base_n": 29575,
+      "base_share": 0.027881084699105826,
+      "LATFIX_n": 10304,
+      "LATFIX_share": 0.010782855845230857,
+      "LATMED_n": 28016,
+      "LATMED_share": 0.0380377227330245,
+      "per_name": {
+        "OfNat.ofNat": {
+          "GAP_or_base": 6285,
+          "LATFIX": 3411,
+          "LATMED": 6166
+        },
+        "HAdd.hAdd": {
+          "GAP_or_base": 1095,
+          "LATFIX": 119,
+          "LATMED": 989
+        },
+        "HMul.hMul": {
+          "GAP_or_base": 621,
+          "LATFIX": 96,
+          "LATMED": 542
+        },
+        "DFunLike.coe": {
+          "GAP_or_base": 490,
+          "LATFIX": 9,
+          "LATMED": 392
+        },
+        "Membership.mem": {
+          "GAP_or_base": 863,
+          "LATFIX": 130,
+          "LATMED": 792
+        },
+        "HSMul.hSMul": {
+          "GAP_or_base": 587,
+          "LATFIX": 93,
+          "LATMED": 541
+        },
+        "HSub.hSub": {
+          "GAP_or_base": 376,
+          "LATFIX": 43,
+          "LATMED": 368
+        },
+        "rfl": {
+          "GAP_or_base": 9900,
+          "LATFIX": 1495,
+          "LATMED": 9876
+        },
+        "Eq.ndrec": {
+          "GAP_or_base": 3283,
+          "LATFIX": 2376,
+          "LATMED": 2436
+        },
+        "of_eq_true": {
+          "GAP_or_base": 1658,
+          "LATFIX": 938,
+          "LATMED": 1588
+        },
+        "Iff.rfl": {
+          "GAP_or_base": 1145,
+          "LATFIX": 393,
+          "LATMED": 1113
+        },
+        "eq_self": {
+          "GAP_or_base": 1142,
+          "LATFIX": 761,
+          "LATMED": 1083
+        },
+        "Inhabited.default": {
+          "GAP_or_base": 2130,
+          "LATFIX": 440,
+          "LATMED": 2130
+        }
+      }
+    },
+    "false_vertical_proxy": {
+      "LATFIX": {
+        "removed": 105164,
+        "removed_with_rho_le_0.25": 0,
+        "removed_with_span_le_5": 6419,
+        "removed_math_dst": 63039
+      },
+      "LATMED": {
+        "removed": 324223,
+        "removed_with_rho_le_0.25": 161496,
+        "removed_with_span_le_5": 64500,
+        "removed_math_dst": 252988
+      }
+    }
+  },
+  "GAPM": {
+    "agreement": {
+      "both_lateral": {
+        "n": 523907,
+        "median_span": 2.0,
+        "median_rho": 0.045454545454545456,
+        "dst_math_frac": 0.9062180883248363
+      },
+      "only_LATFIX": {
+        "n": 241508,
+        "median_span": 15.0,
+        "median_rho": 0.23185111989459817,
+        "dst_math_frac": 0.8363118406015536
+      },
+      "only_LATMED": {
+        "n": 48820,
+        "median_span": 31.0,
+        "median_rho": 0.7857142857142857,
+        "dst_math_frac": 0.6341868086849651
+      },
+      "neither": {
+        "n": 30403,
+        "median_span": 64.0,
+        "median_rho": 0.5833333333333334,
+        "dst_math_frac": 0.7901851790941683
+      }
+    },
+    "interface_link_mass": {
+      "base_n": 18665,
+      "base_share": 0.022098224328055333,
+      "LATFIX_n": 5575,
+      "LATFIX_share": 0.007283630448841478,
+      "LATMED_n": 17861,
+      "LATMED_share": 0.03118588786629581,
+      "per_name": {
+        "OfNat.ofNat": {
+          "GAP_or_base": 4147,
+          "LATFIX": 2090,
+          "LATMED": 4048
+        },
+        "HAdd.hAdd": {
+          "GAP_or_base": 838,
+          "LATFIX": 112,
+          "LATMED": 751
+        },
+        "HMul.hMul": {
+          "GAP_or_base": 524,
+          "LATFIX": 90,
+          "LATMED": 455
+        },
+        "DFunLike.coe": {
+          "GAP_or_base": 489,
+          "LATFIX": 9,
+          "LATMED": 392
+        },
+        "Membership.mem": {
+          "GAP_or_base": 844,
+          "LATFIX": 128,
+          "LATMED": 775
+        },
+        "HSMul.hSMul": {
+          "GAP_or_base": 571,
+          "LATFIX": 89,
+          "LATMED": 529
+        },
+        "HSub.hSub": {
+          "GAP_or_base": 273,
+          "LATFIX": 40,
+          "LATMED": 266
+        },
+        "rfl": {
+          "GAP_or_base": 7476,
+          "LATFIX": 1171,
+          "LATMED": 7456
+        },
+        "Eq.ndrec": {
+          "GAP_or_base": 713,
+          "LATFIX": 550,
+          "LATMED": 447
+        },
+        "of_eq_true": {
+          "GAP_or_base": 1026,
+          "LATFIX": 522,
+          "LATMED": 1012
+        },
+        "Iff.rfl": {
+          "GAP_or_base": 987,
+          "LATFIX": 320,
+          "LATMED": 958
+        },
+        "eq_self": {
+          "GAP_or_base": 627,
+          "LATFIX": 402,
+          "LATMED": 622
+        },
+        "Inhabited.default": {
+          "GAP_or_base": 150,
+          "LATFIX": 52,
+          "LATMED": 150
+        }
+      }
+    },
+    "false_vertical_proxy": {
+      "LATFIX": {
+        "removed": 79223,
+        "removed_with_rho_le_0.25": 0,
+        "removed_with_span_le_5": 2754,
+        "removed_math_dst": 54985
+      },
+      "LATMED": {
+        "removed": 271911,
+        "removed_with_rho_le_0.25": 131914,
+        "removed_with_span_le_5": 48966,
+        "removed_math_dst": 226000
+      }
+    }
+  }
+}

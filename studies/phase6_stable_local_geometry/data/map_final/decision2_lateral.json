@@ -1,0 +1,2193 @@
+{
+  "seed": 20260821,
+  "rules": {
+    "GAP": {
+      "ALL": {
+        "n_edges": 1060755,
+        "dst_class": {
+          "notation": 0.009726091321747246,
+          "generated": 0.0,
+          "transport": 0.18733355016002753,
+          "mathematics": 0.8029403585182252,
+          "n": 1060755,
+          "counts": {
+            "notation": 10317,
+            "generated": 0,
+            "transport": 198715,
+            "mathematics": 851723
+          }
+        },
+        "within_area_edge_share": 0.7867688580303651,
+        "cross_area_plumbing_share": 0.34990671394339173,
+        "top100_hubs": {
+          "share_of_all_links": 0.10917035507727986,
+          "class_counts": {
+            "notation": 5,
+            "generated": 0,
+            "transport": 53,
+            "mathematics": 42
+          },
+          "class_link_mass": {
+            "notation": 0.008909691681868103,
+            "generated": 0.0,
+            "transport": 0.06165325640699313,
+            "mathematics": 0.03860740698841863
+          },
+          "top25": [
+            {
+              "name": "rfl",
+              "in_deg": 9900,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "OfNat.ofNat",
+              "in_deg": 6285,
+              "class": "notation",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Lean.Syntax.isOfKind",
+              "in_deg": 3944,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "CategoryTheory.Functor.comp",
+              "in_deg": 3344,
+              "class": "mathematics",
+              "area": "CategoryTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Eq.ndrec",
+              "in_deg": 3283,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Name.mkStr1",
+              "in_deg": 2231,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.addMacroScope",
+              "in_deg": 2177,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Inhabited.default",
+              "in_deg": 2130,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.ParserDescr.node",
+              "in_deg": 2112,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "CategoryTheory.Functor.const",
+              "in_deg": 1916,
+              "class": "mathematics",
+              "area": "CategoryTheory",
+              "depth_stmt": 3
+            },
+            {
+              "name": "MeasureTheory.ae",
+              "in_deg": 1873,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Polynomial.C",
+              "in_deg": 1760,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 3
+            },
+            {
+              "name": "of_eq_true",
+              "in_deg": 1658,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "MeasureTheory.integral",
+              "in_deg": 1637,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Polynomial.X",
+              "in_deg": 1630,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 2
+            },
+            {
+              "name": "MeasureTheory.Measure.restrict",
+              "in_deg": 1583,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Finset.sum_congr",
+              "in_deg": 1525,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 3
+            },
+            {
+              "name": "Real.pi",
+              "in_deg": 1503,
+              "class": "transport",
+              "area": "Analysis",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Inhabited.mk",
+              "in_deg": 1474,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Std.DTreeMap.Internal.Impl.WF.balanced",
+              "in_deg": 1365,
+              "class": "mathematics",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "RingHom.id",
+              "in_deg": 1357,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 2
+            },
+            {
+              "name": "ENNReal",
+              "in_deg": 1322,
+              "class": "transport",
+              "area": "Data",
+              "depth_stmt": 0
+            },
+            {
+              "name": "Lean.Syntax.matchesNull",
+              "in_deg": 1244,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "congrArg",
+              "in_deg": 1207,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Iff.rfl",
+              "in_deg": 1145,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            }
+          ]
+        },
+        "span": {
+          "median": 4.0,
+          "p90": 44.0
+        }
+      },
+      "LATFIX": {
+        "n_edges": 955591,
+        "retained_frac": 0.9008592936163393,
+        "dst_class": {
+          "notation": 0.004082290435971038,
+          "generated": 0.0,
+          "transport": 0.16386717748492818,
+          "mathematics": 0.8320505320791007,
+          "n": 955591,
+          "counts": {
+            "notation": 3901,
+            "generated": 0,
+            "transport": 156590,
+            "mathematics": 795100
+          }
+        },
+        "within_area_edge_share": 0.8146435033398179,
+        "cross_area_plumbing_share": 0.29514184897671136,
+        "top100_hubs": {
+          "share_of_all_links": 0.09110696940427443,
+          "class_counts": {
+            "notation": 1,
+            "generated": 0,
+            "transport": 51,
+            "mathematics": 48
+          },
+          "class_link_mass": {
+            "notation": 0.003569518758548375,
+            "generated": 0.0,
+            "transport": 0.04709127649799967,
+            "mathematics": 0.04044617414772638
+          },
+          "top25": [
+            {
+              "name": "Lean.Syntax.isOfKind",
+              "in_deg": 3908,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "OfNat.ofNat",
+              "in_deg": 3411,
+              "class": "notation",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Eq.ndrec",
+              "in_deg": 2376,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Name.mkStr1",
+              "in_deg": 2171,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.addMacroScope",
+              "in_deg": 2166,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.ParserDescr.node",
+              "in_deg": 2112,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "CategoryTheory.Functor.comp",
+              "in_deg": 2037,
+              "class": "mathematics",
+              "area": "CategoryTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "CategoryTheory.Functor.const",
+              "in_deg": 1832,
+              "class": "mathematics",
+              "area": "CategoryTheory",
+              "depth_stmt": 3
+            },
+            {
+              "name": "Polynomial.C",
+              "in_deg": 1750,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 3
+            },
+            {
+              "name": "MeasureTheory.ae",
+              "in_deg": 1669,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "MeasureTheory.integral",
+              "in_deg": 1637,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Polynomial.X",
+              "in_deg": 1616,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 2
+            },
+            {
+              "name": "MeasureTheory.Measure.restrict",
+              "in_deg": 1583,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Real.pi",
+              "in_deg": 1503,
+              "class": "transport",
+              "area": "Analysis",
+              "depth_stmt": 1
+            },
+            {
+              "name": "rfl",
+              "in_deg": 1495,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Finset.sum_congr",
+              "in_deg": 1418,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 3
+            },
+            {
+              "name": "Std.DTreeMap.Internal.Impl.WF.balanced",
+              "in_deg": 1365,
+              "class": "mathematics",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Lean.Syntax.matchesNull",
+              "in_deg": 1231,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "MeasureTheory.lintegral",
+              "in_deg": 1142,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Std.DHashMap.Raw.WF.size_buckets_pos",
+              "in_deg": 1085,
+              "class": "mathematics",
+              "area": "Core",
+              "depth_stmt": 3
+            },
+            {
+              "name": "Finsupp.single",
+              "in_deg": 1051,
+              "class": "mathematics",
+              "area": "Data",
+              "depth_stmt": 2
+            },
+            {
+              "name": "MeasureTheory.Measure.map",
+              "in_deg": 1047,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "of_eq_true",
+              "in_deg": 938,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Finset.image",
+              "in_deg": 937,
+              "class": "transport",
+              "area": "Data",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Std.DTreeMap.Internal.Impl.WF.ordered",
+              "in_deg": 934,
+              "class": "mathematics",
+              "area": "Core",
+              "depth_stmt": 2
+            }
+          ]
+        },
+        "span": {
+          "median": 3.0,
+          "p90": 33.0
+        },
+        "n_sources_with_at_least_one": 380016,
+        "n_sources_in_base": 425895,
+        "removed": {
+          "n_edges": 105164,
+          "dst_class": {
+            "notation": 0.061009470921608154,
+            "generated": 0.0,
+            "transport": 0.40056483207181165,
+            "mathematics": 0.5384256970065802,
+            "n": 105164,
+            "counts": {
+              "notation": 6416,
+              "generated": 0,
+              "transport": 42125,
+              "mathematics": 56623
+            }
+          },
+          "span": {
+            "median": 34.0,
+            "p10": 7.0
+          }
+        },
+        "removed_math_sample": [
+          {
+            "src": "HasMFDerivWithinAt.continuousWithinAt",
+            "dst": "extChartAt",
+            "d_src": 62,
+            "d_dst": 24,
+            "span": 38,
+            "rho": 0.603,
+            "src_area": "Geometry",
+            "dst_area": "Geometry"
+          },
+          {
+            "src": "norm_star",
+            "dst": "NormedStarGroup.norm_star_le",
+            "d_src": 101,
+            "d_dst": 3,
+            "span": 98,
+            "rho": 0.961,
+            "src_area": "Analysis",
+            "dst_area": "Analysis"
+          },
+          {
+            "src": "CategoryTheory.GrothendieckTopology.toPlus_naturality",
+            "dst": "CategoryTheory.Limits.multiequalizer",
+            "d_src": 43,
+            "d_dst": 18,
+            "span": 25,
+            "rho": 0.568,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "CategoryTheory.MonoidalOpposite.tensorRightMopIso_hom_app_unmop",
+            "dst": "CategoryTheory.unmopFunctor",
+            "d_src": 29,
+            "d_dst": 13,
+            "span": 16,
+            "rho": 0.533,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "AlgebraicGeometry.HasRingHomProperty.of_source_openCover",
+            "dst": "AlgebraicGeometry.Scheme.basicOpen_le",
+            "d_src": 164,
+            "d_dst": 75,
+            "span": 89,
+            "rho": 0.539,
+            "src_area": "AlgebraicGeometry",
+            "dst_area": "AlgebraicGeometry"
+          },
+          {
+            "src": "AlgebraicGeometry.Proj.instUniversallyClosedToSpecZeroOfFiniteTypeSubtypeMemOfNatNat",
+            "dst": "AlgebraicGeometry.UniversallyClosed",
+            "d_src": 188,
+            "d_dst": 90,
+            "span": 98,
+            "rho": 0.519,
+            "src_area": "AlgebraicGeometry",
+            "dst_area": "AlgebraicGeometry"
+          },
+          {
+            "src": "_private.Mathlib.GroupTheory.SpecificGroups.Cyclic.Basic.0.AddSubgroup.isAddCyclic.match_5",
+            "dst": "And.casesOn",
+            "d_src": 17,
+            "d_dst": 3,
+            "span": 14,
+            "rho": 0.778,
+            "src_area": "GroupTheory",
+            "dst_area": "Core"
+          },
+          {
+            "src": "HomotopicalAlgebra.FibrantObject.instHasQuotientWeakEquivalencesHomRel",
+            "dst": "HomotopicalAlgebra.fibrantObjects",
+            "d_src": 79,
+            "d_dst": 26,
+            "span": 53,
+            "rho": 0.662,
+            "src_area": "AlgebraicTopology",
+            "dst_area": "AlgebraicTopology"
+          },
+          {
+            "src": "CategoryTheory.Pretriangulated.casesOn",
+            "dst": "CategoryTheory.shiftFunctor",
+            "d_src": 42,
+            "d_dst": 20,
+            "span": 22,
+            "rho": 0.512,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "OrderHom.equivalenceFunctor",
+            "dst": "CategoryTheory.Functor.mk",
+            "d_src": 22,
+            "d_dst": 9,
+            "span": 13,
+            "rho": 0.565,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "CategoryTheory.Presheaf.isPullback_\u03c7_truth",
+            "dst": "CategoryTheory.types_congr_hom",
+            "d_src": 71,
+            "d_dst": 13,
+            "span": 58,
+            "rho": 0.806,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "AddMonoidHom.ker_eq_top_iff",
+            "dst": "AddMonoidHom.ker",
+            "d_src": 68,
+            "d_dst": 17,
+            "span": 51,
+            "rho": 0.739,
+            "src_area": "Algebra",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "Int.ediv_lt_natAbs_self_of_lt_neg_one_of_lt_neg_one",
+            "dst": "Nat.mul_lt_mul_of_lt_of_le",
+            "d_src": 47,
+            "d_dst": 18,
+            "span": 29,
+            "rho": 0.604,
+            "src_area": "Core",
+            "dst_area": "Core"
+          },
+          {
+            "src": "CategoryTheory.Limits.preservesColimit_unop",
+            "dst": "CategoryTheory.Functor.unop",
+            "d_src": 31,
+            "d_dst": 12,
+            "span": 19,
+            "rho": 0.594,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "MultilinearMap.uncurrySum_smul",
+            "dst": "MultilinearMap",
+            "d_src": 33,
+            "d_dst": 2,
+            "span": 31,
+            "rho": 0.912,
+            "src_area": "LinearAlgebra",
+            "dst_area": "LinearAlgebra"
+          },
+          {
+            "src": "_private.Mathlib.FieldTheory.RatFunc.Luroth.0.RatFunc.Luroth.Q\u2082_natDegree",
+            "dst": "Polynomial.IsRoot",
+            "d_src": 156,
+            "d_dst": 66,
+            "span": 90,
+            "rho": 0.573,
+            "src_area": "FieldTheory",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "Matrix.instAddCancelMonoid",
+            "dst": "AddCancelMonoid.mk",
+            "d_src": 16,
+            "d_dst": 2,
+            "span": 14,
+            "rho": 0.824,
+            "src_area": "LinearAlgebra",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "CategoryTheory.Limits.Cocone.mapCoconeToOver_hom_hom",
+            "dst": "CategoryTheory.Functor.comp",
+            "d_src": 33,
+            "d_dst": 15,
+            "span": 18,
+            "rho": 0.529,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "Mathlib.Tactic.LinearCombination.div_lt_const_weak",
+            "dst": "div_le_div_of_nonneg_right",
+            "d_src": 45,
+            "d_dst": 21,
+            "span": 24,
+            "rho": 0.522,
+            "src_area": "Tactic",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "IsZLattice.basis",
+            "dst": "Module.Free.chooseBasis",
+            "d_src": 176,
+            "d_dst": 86,
+            "span": 90,
+            "rho": 0.508,
+            "src_area": "Algebra",
+            "dst_area": "LinearAlgebra"
+          }
+        ]
+      },
+      "LATMED": {
+        "n_edges": 736532,
+        "retained_frac": 0.6943469509924535,
+        "dst_class": {
+          "notation": 0.01329202261408873,
+          "generated": 0.0,
+          "transport": 0.17308141397793986,
+          "mathematics": 0.8136265634079715,
+          "n": 736532,
+          "counts": {
+            "notation": 9790,
+            "generated": 0,
+            "transport": 127480,
+            "mathematics": 599262
+          }
+        },
+        "within_area_edge_share": 0.820112364432231,
+        "cross_area_plumbing_share": 0.40784796177911287,
+        "top100_hubs": {
+          "share_of_all_links": 0.09993455817262523,
+          "class_counts": {
+            "notation": 7,
+            "generated": 0,
+            "transport": 50,
+            "mathematics": 43
+          },
+          "class_link_mass": {
+            "notation": 0.01329202261408873,
+            "generated": 0.0,
+            "transport": 0.062028533722906815,
+            "mathematics": 0.02461400183562968
+          },
+          "top25": [
+            {
+              "name": "rfl",
+              "in_deg": 9876,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "OfNat.ofNat",
+              "in_deg": 6166,
+              "class": "notation",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Eq.ndrec",
+              "in_deg": 2436,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Name.mkStr1",
+              "in_deg": 2231,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.addMacroScope",
+              "in_deg": 2157,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Inhabited.default",
+              "in_deg": 2130,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.ParserDescr.node",
+              "in_deg": 2112,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "of_eq_true",
+              "in_deg": 1588,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Inhabited.mk",
+              "in_deg": 1474,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Syntax.matchesNull",
+              "in_deg": 1235,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Std.DTreeMap.Internal.Impl.WF.balanced",
+              "in_deg": 1207,
+              "class": "mathematics",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Iff.rfl",
+              "in_deg": 1113,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "MeasureTheory.integral",
+              "in_deg": 1085,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "eq_self",
+              "in_deg": 1083,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Syntax.isOfKind",
+              "in_deg": 1009,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "HAdd.hAdd",
+              "in_deg": 989,
+              "class": "notation",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "eq_of_heq",
+              "in_deg": 946,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Name.mkStr2",
+              "in_deg": 915,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Std.DTreeMap.Internal.Impl.WF.ordered",
+              "in_deg": 886,
+              "class": "mathematics",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Std.DHashMap.Raw.WF.size_buckets_pos",
+              "in_deg": 874,
+              "class": "mathematics",
+              "area": "Core",
+              "depth_stmt": 3
+            },
+            {
+              "name": "Eq.mpr",
+              "in_deg": 868,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Polynomial.C",
+              "in_deg": 840,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 3
+            },
+            {
+              "name": "Lean.ParserDescr.trailingNode",
+              "in_deg": 816,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Name.mkStr",
+              "in_deg": 793,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Membership.mem",
+              "in_deg": 792,
+              "class": "notation",
+              "area": "Core",
+              "depth_stmt": 2
+            }
+          ]
+        },
+        "span": {
+          "median": 2.0,
+          "p90": 26.0
+        },
+        "n_sources_with_at_least_one": 425895,
+        "n_sources_in_base": 425895,
+        "removed": {
+          "n_edges": 324223,
+          "dst_class": {
+            "notation": 0.0016254244763634906,
+            "generated": 0.0,
+            "transport": 0.21970989103178984,
+            "mathematics": 0.7786646844918467,
+            "n": 324223,
+            "counts": {
+              "notation": 527,
+              "generated": 0,
+              "transport": 71235,
+              "mathematics": 252461
+            }
+          },
+          "span": {
+            "median": 16.0,
+            "p10": 4.0
+          }
+        },
+        "removed_math_sample": [
+          {
+            "src": "CategoryTheory.piEquivalenceFunctorDiscrete",
+            "dst": "CategoryTheory.Functor.id",
+            "d_src": 26,
+            "d_dst": 10,
+            "span": 16,
+            "rho": 0.593,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "SimpleGraph.nonempty_ends_of_infinite",
+            "dst": "SimpleGraph.componentComplFunctor",
+            "d_src": 87,
+            "d_dst": 62,
+            "span": 25,
+            "rho": 0.284,
+            "src_area": "Combinatorics",
+            "dst_area": "Combinatorics"
+          },
+          {
+            "src": "CategoryTheory.ShortComplex.RightHomologyMapData.ofNullHomotopic",
+            "dst": "CategoryTheory.ShortComplex.RightHomologyData.descQ",
+            "d_src": 30,
+            "d_dst": 25,
+            "span": 5,
+            "rho": 0.161,
+            "src_area": "Algebra",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "String.Pos.ofToSlice_prev",
+            "dst": "String.Pos.ofToSlice",
+            "d_src": 104,
+            "d_dst": 98,
+            "span": 6,
+            "rho": 0.057,
+            "src_area": "Core",
+            "dst_area": "Core"
+          },
+          {
+            "src": "LinearMap.exists_basis_basis_of_span_eq_top_of_mem_algebraMap",
+            "dst": "Fintype.equivOfCardEq",
+            "d_src": 120,
+            "d_dst": 60,
+            "span": 60,
+            "rho": 0.496,
+            "src_area": "LinearAlgebra",
+            "dst_area": "Data"
+          },
+          {
+            "src": "Polynomial.degree_C_mul_of_mul_ne_zero",
+            "dst": "Polynomial.leadingCoeff",
+            "d_src": 100,
+            "d_dst": 60,
+            "span": 40,
+            "rho": 0.396,
+            "src_area": "Algebra",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "Function.mulSupport_zero",
+            "dst": "zero_ne_one",
+            "d_src": 8,
+            "d_dst": 6,
+            "span": 2,
+            "rho": 0.222,
+            "src_area": "Algebra",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "PowerSeries.trunc_map",
+            "dst": "Polynomial.coeff",
+            "d_src": 99,
+            "d_dst": 59,
+            "span": 40,
+            "rho": 0.4,
+            "src_area": "RingTheory",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "NumberField.Units.dirichletUnitTheorem.seq_decreasing",
+            "dst": "NumberField.mixedEmbedding.minkowskiBound",
+            "d_src": 307,
+            "d_dst": 300,
+            "span": 7,
+            "rho": 0.023,
+            "src_area": "NumberTheory",
+            "dst_area": "NumberTheory"
+          },
+          {
+            "src": "PowerSeries.IsWeierstrassDivisorAt.mod_coe_eq_self",
+            "dst": "Polynomial.toPowerSeries",
+            "d_src": 114,
+            "d_dst": 60,
+            "span": 54,
+            "rho": 0.47,
+            "src_area": "RingTheory",
+            "dst_area": "RingTheory"
+          },
+          {
+            "src": "MeasureTheory.IntegrableOn.add_measure",
+            "dst": "MeasureTheory.Integrable",
+            "d_src": 202,
+            "d_dst": 170,
+            "span": 32,
+            "rho": 0.158,
+            "src_area": "MeasureTheory",
+            "dst_area": "MeasureTheory"
+          },
+          {
+            "src": "Lean.Server.findModuleRefs",
+            "dst": "Lean.Server.dedupReferences",
+            "d_src": 120,
+            "d_dst": 69,
+            "span": 51,
+            "rho": 0.421,
+            "src_area": "Core",
+            "dst_area": "Core"
+          },
+          {
+            "src": "antitone_of_hasDerivAt_nonpos",
+            "dst": "HasDerivAt.differentiableAt",
+            "d_src": 187,
+            "d_dst": 149,
+            "span": 38,
+            "rho": 0.202,
+            "src_area": "Analysis",
+            "dst_area": "Analysis"
+          },
+          {
+            "src": "_private.Mathlib.AlgebraicGeometry.IdealSheaf.Subscheme.0.AlgebraicGeometry.Scheme.IdealSheafData.glueDataObjIso_hom_\u03b9_assoc",
+            "dst": "AlgebraicGeometry.Scheme.Opens.\u03b9",
+            "d_src": 182,
+            "d_dst": 129,
+            "span": 53,
+            "rho": 0.29,
+            "src_area": "AlgebraicGeometry",
+            "dst_area": "AlgebraicGeometry"
+          },
+          {
+            "src": "CategoryTheory.Equivalence.leftOp_inverse_map",
+            "dst": "CategoryTheory.opOpEquivalence",
+            "d_src": 31,
+            "d_dst": 21,
+            "span": 10,
+            "rho": 0.312,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "instPreservesColimitsOfShapeSheafTypeUliftYonedaOfPreservesLimitsOfShapeOppositeObjFunctorIsSheaf",
+            "dst": "CategoryTheory.Presheaf.IsSheaf",
+            "d_src": 46,
+            "d_dst": 28,
+            "span": 18,
+            "rho": 0.383,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "CategoryTheory.Adjunction.rightOp_eq",
+            "dst": "CategoryTheory.Functor.op",
+            "d_src": 31,
+            "d_dst": 12,
+            "span": 19,
+            "rho": 0.594,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "RatFunc.Luroth.eq_adjoin_generator",
+            "dst": "Polynomial.Bivariate.swap",
+            "d_src": 160,
+            "d_dst": 107,
+            "span": 53,
+            "rho": 0.329,
+            "src_area": "FieldTheory",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "AlgebraicTopology.DoldKan.natTransPInfty_app",
+            "dst": "AlgebraicTopology.AlternatingFaceMapComplex.obj",
+            "d_src": 89,
+            "d_dst": 69,
+            "span": 20,
+            "rho": 0.222,
+            "src_area": "AlgebraicTopology",
+            "dst_area": "AlgebraicTopology"
+          },
+          {
+            "src": "USize.toUInt8_toUInt32",
+            "dst": "Nat.dvd_eq_true_of_mod_eq_zero",
+            "d_src": 28,
+            "d_dst": 26,
+            "span": 2,
+            "rho": 0.069,
+            "src_area": "Core",
+            "dst_area": "Core"
+          }
+        ]
+      }
+    },
+    "GAPM": {
+      "ALL": {
+        "n_edges": 844638,
+        "dst_class": {
+          "notation": 0.009099756345321902,
+          "generated": 0.0,
+          "transport": 0.13367028241684603,
+          "mathematics": 0.857229961237832,
+          "n": 844638,
+          "counts": {
+            "notation": 7686,
+            "generated": 0,
+            "transport": 112903,
+            "mathematics": 724049
+          }
+        },
+        "within_area_edge_share": 0.7441519325438827,
+        "cross_area_plumbing_share": 0.3326577170648638,
+        "top100_hubs": {
+          "share_of_all_links": 0.11173425775302556,
+          "class_counts": {
+            "notation": 6,
+            "generated": 0,
+            "transport": 45,
+            "mathematics": 49
+          },
+          "class_link_mass": {
+            "notation": 0.00877654095600719,
+            "generated": 0.0,
+            "transport": 0.053666777956947236,
+            "mathematics": 0.04929093884007113
+          },
+          "top25": [
+            {
+              "name": "rfl",
+              "in_deg": 7476,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "OfNat.ofNat",
+              "in_deg": 4147,
+              "class": "notation",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "CategoryTheory.Functor.comp",
+              "in_deg": 3342,
+              "class": "mathematics",
+              "area": "CategoryTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Lean.Syntax.isOfKind",
+              "in_deg": 3007,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "CategoryTheory.Functor.const",
+              "in_deg": 1916,
+              "class": "mathematics",
+              "area": "CategoryTheory",
+              "depth_stmt": 3
+            },
+            {
+              "name": "MeasureTheory.ae",
+              "in_deg": 1872,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Lean.addMacroScope",
+              "in_deg": 1776,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Polynomial.C",
+              "in_deg": 1756,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 3
+            },
+            {
+              "name": "MeasureTheory.integral",
+              "in_deg": 1636,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Polynomial.X",
+              "in_deg": 1629,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 2
+            },
+            {
+              "name": "MeasureTheory.Measure.restrict",
+              "in_deg": 1582,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Finset.sum_congr",
+              "in_deg": 1525,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 3
+            },
+            {
+              "name": "Real.pi",
+              "in_deg": 1503,
+              "class": "transport",
+              "area": "Analysis",
+              "depth_stmt": 1
+            },
+            {
+              "name": "RingHom.id",
+              "in_deg": 1357,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 2
+            },
+            {
+              "name": "ENNReal",
+              "in_deg": 1319,
+              "class": "transport",
+              "area": "Data",
+              "depth_stmt": 0
+            },
+            {
+              "name": "Lean.ParserDescr.node",
+              "in_deg": 1143,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "MeasureTheory.lintegral",
+              "in_deg": 1140,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Lean.Name.mkStr1",
+              "in_deg": 1085,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Finsupp.single",
+              "in_deg": 1062,
+              "class": "mathematics",
+              "area": "Data",
+              "depth_stmt": 2
+            },
+            {
+              "name": "ENNReal.ofNNReal",
+              "in_deg": 1062,
+              "class": "transport",
+              "area": "Data",
+              "depth_stmt": 1
+            },
+            {
+              "name": "MeasureTheory.Measure.map",
+              "in_deg": 1044,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "NNReal.toReal",
+              "in_deg": 1038,
+              "class": "transport",
+              "area": "Data",
+              "depth_stmt": 1
+            },
+            {
+              "name": "of_eq_true",
+              "in_deg": 1026,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Module.finrank",
+              "in_deg": 1006,
+              "class": "mathematics",
+              "area": "LinearAlgebra",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Polynomial.coeff",
+              "in_deg": 991,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 2
+            }
+          ]
+        },
+        "span": {
+          "median": 5.0,
+          "p90": 48.0
+        }
+      },
+      "LATFIX": {
+        "n_edges": 765415,
+        "retained_frac": 0.9062047883235185,
+        "dst_class": {
+          "notation": 0.00334197788128009,
+          "generated": 0.0,
+          "transport": 0.11583911995453447,
+          "mathematics": 0.8808189021641855,
+          "n": 765415,
+          "counts": {
+            "notation": 2558,
+            "generated": 0,
+            "transport": 88665,
+            "mathematics": 674192
+          }
+        },
+        "within_area_edge_share": 0.779539204222546,
+        "cross_area_plumbing_share": 0.2749016261318921,
+        "top100_hubs": {
+          "share_of_all_links": 0.09599759607533168,
+          "class_counts": {
+            "notation": 1,
+            "generated": 0,
+            "transport": 44,
+            "mathematics": 55
+          },
+          "class_link_mass": {
+            "notation": 0.002730544867816805,
+            "generated": 0.0,
+            "transport": 0.04285910257833986,
+            "mathematics": 0.050407948629175026
+          },
+          "top25": [
+            {
+              "name": "Lean.Syntax.isOfKind",
+              "in_deg": 3006,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "OfNat.ofNat",
+              "in_deg": 2090,
+              "class": "notation",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "CategoryTheory.Functor.comp",
+              "in_deg": 2035,
+              "class": "mathematics",
+              "area": "CategoryTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "CategoryTheory.Functor.const",
+              "in_deg": 1832,
+              "class": "mathematics",
+              "area": "CategoryTheory",
+              "depth_stmt": 3
+            },
+            {
+              "name": "Lean.addMacroScope",
+              "in_deg": 1774,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Polynomial.C",
+              "in_deg": 1746,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 3
+            },
+            {
+              "name": "MeasureTheory.ae",
+              "in_deg": 1668,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "MeasureTheory.integral",
+              "in_deg": 1636,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Polynomial.X",
+              "in_deg": 1615,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 2
+            },
+            {
+              "name": "MeasureTheory.Measure.restrict",
+              "in_deg": 1582,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Real.pi",
+              "in_deg": 1503,
+              "class": "transport",
+              "area": "Analysis",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Finset.sum_congr",
+              "in_deg": 1418,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 3
+            },
+            {
+              "name": "rfl",
+              "in_deg": 1171,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.ParserDescr.node",
+              "in_deg": 1143,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "MeasureTheory.lintegral",
+              "in_deg": 1140,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Lean.Name.mkStr1",
+              "in_deg": 1082,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Finsupp.single",
+              "in_deg": 1051,
+              "class": "mathematics",
+              "area": "Data",
+              "depth_stmt": 2
+            },
+            {
+              "name": "MeasureTheory.Measure.map",
+              "in_deg": 1044,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Lean.Syntax.matchesNull",
+              "in_deg": 972,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Finset.image",
+              "in_deg": 937,
+              "class": "transport",
+              "area": "Data",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Polynomial.coeff",
+              "in_deg": 881,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 2
+            },
+            {
+              "name": "ENNReal",
+              "in_deg": 858,
+              "class": "transport",
+              "area": "Data",
+              "depth_stmt": 0
+            },
+            {
+              "name": "Nat.card",
+              "in_deg": 839,
+              "class": "transport",
+              "area": "SetTheory",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Real.log",
+              "in_deg": 838,
+              "class": "transport",
+              "area": "Analysis",
+              "depth_stmt": 1
+            },
+            {
+              "name": "MeasureTheory.AEEqFun",
+              "in_deg": 830,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            }
+          ]
+        },
+        "span": {
+          "median": 4.0,
+          "p90": 37.0
+        },
+        "n_sources_with_at_least_one": 287887,
+        "n_sources_in_base": 320024,
+        "removed": {
+          "n_edges": 79223,
+          "dst_class": {
+            "notation": 0.06472867727806318,
+            "generated": 0.0,
+            "transport": 0.305946505434028,
+            "mathematics": 0.6293248172879088,
+            "n": 79223,
+            "counts": {
+              "notation": 5128,
+              "generated": 0,
+              "transport": 24238,
+              "mathematics": 49857
+            }
+          },
+          "span": {
+            "median": 41.0,
+            "p10": 9.0
+          }
+        },
+        "removed_math_sample": [
+          {
+            "src": "TopologicalSpace.CompactOpens.instMax",
+            "dst": "TopologicalSpace.CompactOpens.mk",
+            "d_src": 87,
+            "d_dst": 3,
+            "span": 84,
+            "rho": 0.955,
+            "src_area": "Topology",
+            "dst_area": "Topology"
+          },
+          {
+            "src": "CategoryTheory.MonoidalCategory.MonoidalRightAction.rightActionOfMonoidalOppositeLeftAction_actionHom",
+            "dst": "CategoryTheory.MonoidalCategory.MonoidalRightActionStruct.actionHom",
+            "d_src": 28,
+            "d_dst": 3,
+            "span": 25,
+            "rho": 0.862,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "CategoryTheory.ModObj.one_smul_self",
+            "dst": "CategoryTheory.ModObj.one_smul",
+            "d_src": 23,
+            "d_dst": 4,
+            "span": 19,
+            "rho": 0.792,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "DivisibleHull.coeOrderAddMonoidHom",
+            "dst": "nonZeroDivisors",
+            "d_src": 42,
+            "d_dst": 15,
+            "span": 27,
+            "rho": 0.628,
+            "src_area": "GroupTheory",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "QuadraticMap.IsOrtho.zero_left",
+            "dst": "zero_add",
+            "d_src": 41,
+            "d_dst": 2,
+            "span": 39,
+            "rho": 0.929,
+            "src_area": "LinearAlgebra",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "PresheafOfModules.Sheafify.instSubsingletonSMulCandidate",
+            "dst": "CategoryTheory.Presheaf.imageSieve",
+            "d_src": 49,
+            "d_dst": 22,
+            "span": 27,
+            "rho": 0.54,
+            "src_area": "Algebra",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "SimpleGraph.Path.reverse",
+            "dst": "SimpleGraph.Walk.reverse",
+            "d_src": 24,
+            "d_dst": 8,
+            "span": 16,
+            "rho": 0.64,
+            "src_area": "Combinatorics",
+            "dst_area": "Combinatorics"
+          },
+          {
+            "src": "CategoryTheory.comp_comparison_hasLimit",
+            "dst": "CategoryTheory.Functor.comp",
+            "d_src": 37,
+            "d_dst": 15,
+            "span": 22,
+            "rho": 0.579,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "Preord.hom_inv_apply",
+            "dst": "CategoryTheory.Iso.inv_hom_id_apply",
+            "d_src": 14,
+            "d_dst": 6,
+            "span": 8,
+            "rho": 0.533,
+            "src_area": "Order",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "CategoryTheory.AddGrp.id'",
+            "dst": "CategoryTheory.AddGrp.toAddMon",
+            "d_src": 18,
+            "d_dst": 4,
+            "span": 14,
+            "rho": 0.737,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "Flag.ext",
+            "dst": "SetLike.ext'",
+            "d_src": 11,
+            "d_dst": 3,
+            "span": 8,
+            "rho": 0.667,
+            "src_area": "Order",
+            "dst_area": "Data"
+          },
+          {
+            "src": "IsSelfAdjoint.norm_eq_max_norm_posPart_negPart",
+            "dst": "Continuous.continuousOn",
+            "d_src": 191,
+            "d_dst": 69,
+            "span": 122,
+            "rho": 0.635,
+            "src_area": "Analysis",
+            "dst_area": "Topology"
+          },
+          {
+            "src": "Real.hasDerivAt_fourier",
+            "dst": "HasDerivAt",
+            "d_src": 256,
+            "d_dst": 105,
+            "span": 151,
+            "rho": 0.588,
+            "src_area": "Analysis",
+            "dst_area": "Analysis"
+          },
+          {
+            "src": "AddSubsemigroup.map_le_of_le_comap",
+            "dst": "AddSubsemigroup.gc_map_comap",
+            "d_src": 23,
+            "d_dst": 10,
+            "span": 13,
+            "rho": 0.542,
+            "src_area": "Algebra",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "CategoryTheory.AddMod.forget._proof_1",
+            "dst": "CategoryTheory.AddMod.Hom.hom",
+            "d_src": 16,
+            "d_dst": 5,
+            "span": 11,
+            "rho": 0.647,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "HasStrictDerivAt.rpow",
+            "dst": "ContinuousMul.to_continuousSMul",
+            "d_src": 199,
+            "d_dst": 66,
+            "span": 133,
+            "rho": 0.665,
+            "src_area": "Analysis",
+            "dst_area": "Topology"
+          },
+          {
+            "src": "CategoryTheory.Sheaf.tensorProd_isSheaf",
+            "dst": "CategoryTheory.Presheaf.IsSheaf",
+            "d_src": 61,
+            "d_dst": 28,
+            "span": 33,
+            "rho": 0.532,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "MeasureTheory.Measure.haar.chaar_sup_eq",
+            "dst": "IsOpen.interior_eq",
+            "d_src": 147,
+            "d_dst": 61,
+            "span": 86,
+            "rho": 0.581,
+            "src_area": "MeasureTheory",
+            "dst_area": "Topology"
+          },
+          {
+            "src": "Representation.TensorProduct.rid_apply",
+            "dst": "Representation.trivial",
+            "d_src": 71,
+            "d_dst": 32,
+            "span": 39,
+            "rho": 0.542,
+            "src_area": "RepresentationTheory",
+            "dst_area": "RepresentationTheory"
+          },
+          {
+            "src": "ContMDiffMap.semigroup",
+            "dst": "Function.Injective.semigroup",
+            "d_src": 196,
+            "d_dst": 7,
+            "span": 189,
+            "rho": 0.959,
+            "src_area": "Geometry",
+            "dst_area": "Algebra"
+          }
+        ]
+      },
+      "LATMED": {
+        "n_edges": 572727,
+        "retained_frac": 0.6780739204250815,
+        "dst_class": {
+          "notation": 0.012599371079065592,
+          "generated": 0.0,
+          "transport": 0.11697021443026084,
+          "mathematics": 0.8704304144906736,
+          "n": 572727,
+          "counts": {
+            "notation": 7216,
+            "generated": 0,
+            "transport": 66992,
+            "mathematics": 498519
+          }
+        },
+        "within_area_edge_share": 0.7812552926612505,
+        "cross_area_plumbing_share": 0.3893168157980859,
+        "top100_hubs": {
+          "share_of_all_links": 0.08960988394121458,
+          "class_counts": {
+            "notation": 7,
+            "generated": 0,
+            "transport": 40,
+            "mathematics": 53
+          },
+          "class_link_mass": {
+            "notation": 0.012599371079065592,
+            "generated": 0.0,
+            "transport": 0.048520499295475854,
+            "mathematics": 0.028490013566673127
+          },
+          "top25": [
+            {
+              "name": "rfl",
+              "in_deg": 7456,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "OfNat.ofNat",
+              "in_deg": 4048,
+              "class": "notation",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Lean.addMacroScope",
+              "in_deg": 1776,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.ParserDescr.node",
+              "in_deg": 1143,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Name.mkStr1",
+              "in_deg": 1085,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "MeasureTheory.integral",
+              "in_deg": 1084,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "of_eq_true",
+              "in_deg": 1012,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Syntax.matchesNull",
+              "in_deg": 972,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Iff.rfl",
+              "in_deg": 958,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Polynomial.C",
+              "in_deg": 838,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 3
+            },
+            {
+              "name": "Membership.mem",
+              "in_deg": 775,
+              "class": "notation",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Lean.Name.mkNum",
+              "in_deg": 759,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Name.mkStr",
+              "in_deg": 759,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "HAdd.hAdd",
+              "in_deg": 751,
+              "class": "notation",
+              "area": "Core",
+              "depth_stmt": 2
+            },
+            {
+              "name": "CategoryTheory.Functor.comp",
+              "in_deg": 721,
+              "class": "mathematics",
+              "area": "CategoryTheory",
+              "depth_stmt": 2
+            },
+            {
+              "name": "forall_congr",
+              "in_deg": 708,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "RingHom.id",
+              "in_deg": 698,
+              "class": "mathematics",
+              "area": "Algebra",
+              "depth_stmt": 2
+            },
+            {
+              "name": "Eq.mpr",
+              "in_deg": 695,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.ParserDescr.trailingNode",
+              "in_deg": 658,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Name.mkStr2",
+              "in_deg": 643,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "eq_self",
+              "in_deg": 622,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Lean.Syntax.isOfKind",
+              "in_deg": 578,
+              "class": "transport",
+              "area": "Core",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Real.pi",
+              "in_deg": 573,
+              "class": "transport",
+              "area": "Analysis",
+              "depth_stmt": 1
+            },
+            {
+              "name": "Finset.image",
+              "in_deg": 572,
+              "class": "transport",
+              "area": "Data",
+              "depth_stmt": 1
+            },
+            {
+              "name": "MeasureTheory.Lp",
+              "in_deg": 568,
+              "class": "mathematics",
+              "area": "MeasureTheory",
+              "depth_stmt": 4
+            }
+          ]
+        },
+        "span": {
+          "median": 2.0,
+          "p90": 29.0
+        },
+        "n_sources_with_at_least_one": 320024,
+        "n_sources_in_base": 320024,
+        "removed": {
+          "n_edges": 271911,
+          "dst_class": {
+            "notation": 0.0017285067540481996,
+            "generated": 0.0,
+            "transport": 0.16884568847895084,
+            "mathematics": 0.829425804767001,
+            "n": 271911,
+            "counts": {
+              "notation": 470,
+              "generated": 0,
+              "transport": 45911,
+              "mathematics": 225530
+            }
+          },
+          "span": {
+            "median": 18.0,
+            "p10": 4.0
+          }
+        },
+        "removed_math_sample": [
+          {
+            "src": "MeasureTheory.Measure.compProd_eq_comp_prod",
+            "dst": "ProbabilityTheory.Kernel.const",
+            "d_src": 222,
+            "d_dst": 166,
+            "span": 56,
+            "rho": 0.251,
+            "src_area": "Probability",
+            "dst_area": "Probability"
+          },
+          {
+            "src": "ProbabilityTheory.Kernel.mutuallySingular_singularPart",
+            "dst": "ProbabilityTheory.Kernel.measurableSet_mutuallySingularSetSlice",
+            "d_src": 319,
+            "d_dst": 205,
+            "span": 114,
+            "rho": 0.356,
+            "src_area": "Probability",
+            "dst_area": "Probability"
+          },
+          {
+            "src": "Ordinal.left_le_veblenWith",
+            "dst": "Ordinal.veblenWith_right_strictMono",
+            "d_src": 92,
+            "d_dst": 87,
+            "span": 5,
+            "rho": 0.054,
+            "src_area": "SetTheory",
+            "dst_area": "SetTheory"
+          },
+          {
+            "src": "AlgebraicGeometry.Scheme.Hom.app_injective",
+            "dst": "AlgebraicGeometry.Scheme.Hom.app",
+            "d_src": 158,
+            "d_dst": 90,
+            "span": 68,
+            "rho": 0.428,
+            "src_area": "AlgebraicGeometry",
+            "dst_area": "AlgebraicGeometry"
+          },
+          {
+            "src": "LieAlgebra.IsKilling.sl2SubmoduleOfRoot_eq_sup",
+            "dst": "Submodule.mem_sup",
+            "d_src": 170,
+            "d_dst": 64,
+            "span": 106,
+            "rho": 0.62,
+            "src_area": "Algebra",
+            "dst_area": "LinearAlgebra"
+          },
+          {
+            "src": "Dense.eq_of_inner_left",
+            "dst": "inner_sub_left",
+            "d_src": 168,
+            "d_dst": 153,
+            "span": 15,
+            "rho": 0.089,
+            "src_area": "Analysis",
+            "dst_area": "Analysis"
+          },
+          {
+            "src": "FiniteDimensional.of_rank_eq_zero",
+            "dst": "Module.rank",
+            "d_src": 90,
+            "d_dst": 82,
+            "span": 8,
+            "rho": 0.088,
+            "src_area": "LinearAlgebra",
+            "dst_area": "LinearAlgebra"
+          },
+          {
+            "src": "ContinuousMap.continuous_curry",
+            "dst": "Homeomorph.prodAssoc",
+            "d_src": 86,
+            "d_dst": 74,
+            "span": 12,
+            "rho": 0.138,
+            "src_area": "Topology",
+            "dst_area": "Topology"
+          },
+          {
+            "src": "MeasureTheory.VectorMeasure.Integrable.add_vectorMeasure",
+            "dst": "MeasureTheory.VectorMeasure.variation",
+            "d_src": 205,
+            "d_dst": 164,
+            "span": 41,
+            "rho": 0.199,
+            "src_area": "MeasureTheory",
+            "dst_area": "MeasureTheory"
+          },
+          {
+            "src": "CategoryTheory.ReflQuiv.forget.Faithful",
+            "dst": "CategoryTheory.ReflQuiv.forget",
+            "d_src": 35,
+            "d_dst": 33,
+            "span": 2,
+            "rho": 0.056,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "PresheafOfModules.isColimitColimitCocone",
+            "dst": "RingCat.Hom.hom",
+            "d_src": 48,
+            "d_dst": 23,
+            "span": 25,
+            "rho": 0.51,
+            "src_area": "Algebra",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "ContinuousLinearMap.smul_compLp",
+            "dst": "MeasureTheory.AEEqFun.cast",
+            "d_src": 222,
+            "d_dst": 170,
+            "span": 52,
+            "rho": 0.233,
+            "src_area": "MeasureTheory",
+            "dst_area": "MeasureTheory"
+          },
+          {
+            "src": "Polynomial.monomial_natDegree_leadingCoeff_eq_self",
+            "dst": "Polynomial.monomial_zero_right",
+            "d_src": 99,
+            "d_dst": 90,
+            "span": 9,
+            "rho": 0.09,
+            "src_area": "Algebra",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "CategoryTheory.Limits.colim.mapShortComplex_X\u2081",
+            "dst": "CategoryTheory.Functor.const",
+            "d_src": 27,
+            "d_dst": 21,
+            "span": 6,
+            "rho": 0.214,
+            "src_area": "CategoryTheory",
+            "dst_area": "CategoryTheory"
+          },
+          {
+            "src": "MonomialOrder.degree_eq_zero_iff_totalDegree_eq_zero",
+            "dst": "MvPolynomial.totalDegree",
+            "d_src": 83,
+            "d_dst": 60,
+            "span": 23,
+            "rho": 0.274,
+            "src_area": "RingTheory",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "isAlmostIntegral_iff_isIntegral",
+            "dst": "IsIntegral.isAlmostIntegral",
+            "d_src": 125,
+            "d_dst": 106,
+            "span": 19,
+            "rho": 0.151,
+            "src_area": "RingTheory",
+            "dst_area": "RingTheory"
+          },
+          {
+            "src": "AddCommGrpCat.ker_eq_bot_of_mono",
+            "dst": "AddMonoidHom.ker",
+            "d_src": 26,
+            "d_dst": 17,
+            "span": 9,
+            "rho": 0.333,
+            "src_area": "Algebra",
+            "dst_area": "Algebra"
+          },
+          {
+            "src": "MeromorphicOn.divisor_sub_const_self",
+            "dst": "MeromorphicAt.id",
+            "d_src": 200,
+            "d_dst": 181,
+            "span": 19,
+            "rho": 0.095,
+            "src_area": "Analysis",
+            "dst_area": "Analysis"
+          },
+          {
+            "src": "rel_sup_mul",
+            "dst": "Fintype.prod_bool",
+            "d_src": 87,
+            "d_dst": 58,
+            "span": 29,
+            "rho": 0.33,
+            "src_area": "Topology",
+            "dst_area": "Data"
+          },
+          {
+            "src": "MeasureTheory.integral_abs_eq_two_mul_integral_negPart_add_integral",
+            "dst": "MeasureTheory.Integrable.const_mul",
+            "d_src": 245,
+            "d_dst": 192,
+            "span": 53,
+            "rho": 0.215,
+            "src_area": "MeasureTheory",
+            "dst_area": "MeasureTheory"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "GAP": {
+    "n_math_math_edges": 785870,
+    "within_area_share_mathonly": 0.7986320892768524,
+    "frac_edges_math_to_math": 0.7408591050713879,
+    "dst_in_meta_share": 0.25767684338042246,
+    "src_in_meta_share": 0.20609754373064468
+  },
+  "GAPM": {
+    "n_math_math_edges": 785870,
+    "within_area_share_mathonly": 0.7986320892768524,
+    "frac_edges_math_to_math": 0.9304222637390219,
+    "dst_in_meta_share": 0.06939540963110824,
+    "src_in_meta_share": 0.0029622157658073635
+  }
+}

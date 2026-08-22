@@ -1,0 +1,350 @@
+{
+  "n_edges_GAP": 1060755,
+  "n_edges_GAPM": 844638,
+  "edges_removed": 216117,
+  "edge_removal_frac": 0.20373884638771442,
+  "n_sources_GAP": 425895,
+  "n_sources_GAPM": 320024,
+  "sources_removed": 105871,
+  "source_removal_frac": 0.2485847450662722,
+  "removed_source_reasons": {
+    "Init": 35706,
+    "Std": 29686,
+    "Lean": 24427,
+    "Mathlib.Tactic.*": 6644,
+    "Batteries": 3801,
+    "Aesop": 2812,
+    "<absent>": 1772,
+    "ProofWidgets": 352,
+    "Plausible": 278,
+    "Qq": 259,
+    "LeanSearchClient": 90,
+    "ImportGraph": 42,
+    "Lake": 2
+  },
+  "n_dst_nodes_GAP": 227333,
+  "n_dst_nodes_GAPM": 175188,
+  "dst_nodes_lost": 52145,
+  "per_area": [
+    {
+      "area": "Core",
+      "src_edges_all": 201593,
+      "src_edges_kept": 0,
+      "src_edges_lost": 201593,
+      "src_frac_lost": 1.0,
+      "dst_edges_all": 264371,
+      "dst_edges_kept": 54771,
+      "dst_frac_lost": 0.7928252342352224
+    },
+    {
+      "area": "Tactic",
+      "src_edges_all": 14524,
+      "src_edges_kept": 0,
+      "src_edges_lost": 14524,
+      "src_frac_lost": 1.0,
+      "dst_edges_all": 7308,
+      "dst_edges_kept": 2373,
+      "dst_frac_lost": 0.6752873563218391
+    },
+    {
+      "area": "NumberTheory",
+      "src_edges_all": 25827,
+      "src_edges_kept": 25827,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 15325,
+      "dst_edges_kept": 15285,
+      "dst_frac_lost": 0.002610114192495905
+    },
+    {
+      "area": "Data",
+      "src_edges_all": 49826,
+      "src_edges_kept": 49826,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 79825,
+      "dst_edges_kept": 79458,
+      "dst_frac_lost": 0.004597557156279408
+    },
+    {
+      "area": "Algebra",
+      "src_edges_all": 129373,
+      "src_edges_kept": 129373,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 133813,
+      "dst_edges_kept": 133497,
+      "dst_frac_lost": 0.002361504487605859
+    },
+    {
+      "area": "Order",
+      "src_edges_all": 33205,
+      "src_edges_kept": 33205,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 35570,
+      "dst_edges_kept": 35522,
+      "dst_frac_lost": 0.0013494517852122856
+    },
+    {
+      "area": "SetTheory",
+      "src_edges_all": 7717,
+      "src_edges_kept": 7717,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 9405,
+      "dst_edges_kept": 9398,
+      "dst_frac_lost": 0.0007442849548112696
+    },
+    {
+      "area": "RingTheory",
+      "src_edges_all": 67732,
+      "src_edges_kept": 67732,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 46145,
+      "dst_edges_kept": 46132,
+      "dst_frac_lost": 0.0002817206631271496
+    },
+    {
+      "area": "LinearAlgebra",
+      "src_edges_all": 36792,
+      "src_edges_kept": 36792,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 35937,
+      "dst_edges_kept": 35921,
+      "dst_frac_lost": 0.000445223585719412
+    },
+    {
+      "area": "CategoryTheory",
+      "src_edges_all": 123052,
+      "src_edges_kept": 123052,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 122879,
+      "dst_edges_kept": 122637,
+      "dst_frac_lost": 0.001969417068823809
+    },
+    {
+      "area": "Analysis",
+      "src_edges_all": 87645,
+      "src_edges_kept": 87645,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 75116,
+      "dst_edges_kept": 74950,
+      "dst_frac_lost": 0.002209915330954826
+    },
+    {
+      "area": "MeasureTheory",
+      "src_edges_all": 50927,
+      "src_edges_kept": 50927,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 51735,
+      "dst_edges_kept": 51677,
+      "dst_frac_lost": 0.0011210979027737045
+    },
+    {
+      "area": "Combinatorics",
+      "src_edges_all": 21721,
+      "src_edges_kept": 21721,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 13939,
+      "dst_edges_kept": 13937,
+      "dst_frac_lost": 0.00014348231580452175
+    },
+    {
+      "area": "Logic",
+      "src_edges_all": 4465,
+      "src_edges_kept": 4465,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 7502,
+      "dst_edges_kept": 7488,
+      "dst_frac_lost": 0.0018661690215941995
+    },
+    {
+      "area": "GroupTheory",
+      "src_edges_all": 24907,
+      "src_edges_kept": 24907,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 18296,
+      "dst_edges_kept": 18294,
+      "dst_frac_lost": 0.00010931351114995547
+    },
+    {
+      "area": "Topology",
+      "src_edges_all": 65541,
+      "src_edges_kept": 65541,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 63383,
+      "dst_edges_kept": 63326,
+      "dst_frac_lost": 0.000899294763580194
+    },
+    {
+      "area": "Geometry",
+      "src_edges_all": 19842,
+      "src_edges_kept": 19842,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 14374,
+      "dst_edges_kept": 14369,
+      "dst_frac_lost": 0.0003478502852372056
+    },
+    {
+      "area": "Util",
+      "src_edges_all": 732,
+      "src_edges_kept": 732,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 773,
+      "dst_edges_kept": 667,
+      "dst_frac_lost": 0.13712807244501946
+    },
+    {
+      "area": "FieldTheory",
+      "src_edges_all": 12370,
+      "src_edges_kept": 12370,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 7394,
+      "dst_edges_kept": 7382,
+      "dst_frac_lost": 0.0016229375169055649
+    },
+    {
+      "area": "Condensed",
+      "src_edges_all": 1057,
+      "src_edges_kept": 1057,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 679,
+      "dst_edges_kept": 679,
+      "dst_frac_lost": 0.0
+    },
+    {
+      "area": "Computability",
+      "src_edges_all": 4972,
+      "src_edges_kept": 4972,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 3799,
+      "dst_edges_kept": 3799,
+      "dst_frac_lost": 0.0
+    },
+    {
+      "area": "AlgebraicGeometry",
+      "src_edges_all": 26672,
+      "src_edges_kept": 26672,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 20458,
+      "dst_edges_kept": 20458,
+      "dst_frac_lost": 0.0
+    },
+    {
+      "area": "RepresentationTheory",
+      "src_edges_all": 7423,
+      "src_edges_kept": 7423,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 5500,
+      "dst_edges_kept": 5499,
+      "dst_frac_lost": 0.0001818181818181719
+    },
+    {
+      "area": "AlgebraicTopology",
+      "src_edges_all": 13806,
+      "src_edges_kept": 13806,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 11572,
+      "dst_edges_kept": 11559,
+      "dst_frac_lost": 0.0011234013135154042
+    },
+    {
+      "area": "ModelTheory",
+      "src_edges_all": 4104,
+      "src_edges_kept": 4104,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 3034,
+      "dst_edges_kept": 3034,
+      "dst_frac_lost": 0.0
+    },
+    {
+      "area": "Lean",
+      "src_edges_all": 719,
+      "src_edges_kept": 719,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 361,
+      "dst_edges_kept": 284,
+      "dst_frac_lost": 0.21329639889196672
+    },
+    {
+      "area": "Probability",
+      "src_edges_all": 20137,
+      "src_edges_kept": 20137,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 10073,
+      "dst_edges_kept": 10053,
+      "dst_frac_lost": 0.001985505807604482
+    },
+    {
+      "area": "Dynamics",
+      "src_edges_all": 2124,
+      "src_edges_kept": 2124,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 1425,
+      "dst_edges_kept": 1425,
+      "dst_frac_lost": 0.0
+    },
+    {
+      "area": "Control",
+      "src_edges_all": 989,
+      "src_edges_kept": 989,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 503,
+      "dst_edges_kept": 503,
+      "dst_frac_lost": 0.0
+    },
+    {
+      "area": "InformationTheory",
+      "src_edges_all": 899,
+      "src_edges_kept": 899,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 245,
+      "dst_edges_kept": 245,
+      "dst_frac_lost": 0.0
+    },
+    {
+      "area": "Testing",
+      "src_edges_all": 59,
+      "src_edges_kept": 59,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 16,
+      "dst_edges_kept": 16,
+      "dst_frac_lost": 0.0
+    },
+    {
+      "area": "Init",
+      "src_edges_all": 3,
+      "src_edges_kept": 3,
+      "src_edges_lost": 0,
+      "src_frac_lost": 0.0,
+      "dst_edges_all": 0,
+      "dst_edges_kept": 0,
+      "dst_frac_lost": 1.0
+    }
+  ]
+}
