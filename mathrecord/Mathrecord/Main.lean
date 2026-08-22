@@ -5,6 +5,7 @@ import Mathrecord.DepDump
 import Mathrecord.HierDump
 import Mathrecord.Provenance
 import Mathrecord.Modules
+import Mathrecord.EnvFacts
 import Mathrecord.DefCheck
 
 /-! MathRecord CLI.
@@ -191,6 +192,9 @@ unsafe def main (args : List String) : IO UInt32 := do
     return 0
   | ["projflags", namesFile, envProbe, out] => do
     Mathrecord.Modules.projflags namesFile envProbe out
+    return 0
+  | ["envfacts", namesFile, envProbe, out] => do
+    Mathrecord.EnvFacts.envfacts namesFile envProbe out
     return 0
   | ["defcheck", namesFile, envProbe, out] => do
     Mathrecord.DefCheck.defcheck namesFile envProbe out
