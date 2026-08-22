@@ -1,0 +1,24 @@
+{
+ "atlas": {
+  "reach@8": 0.39,
+  "reach@16": 0.4875,
+  "reach@inf": 0.4975,
+  "cheapest_dip_found": 0.4975,
+  "median_dip": 0.0,
+  "mean_dip": 0.5150753768844221,
+  "frac_dip_zero": 0.7788944723618091,
+  "median_hops_at_min_dip": 4.0,
+  "median_climb": 1.0
+ },
+ "atlas+lambda": {
+  "reach@8": 0.5875,
+  "reach@16": 0.60625,
+  "reach@inf": 0.60625,
+  "cheapest_dip_found": 0.60625,
+  "median_dip": 0.0,
+  "mean_dip": 0.5628865979381443,
+  "frac_dip_zero": 0.8185567010309278,
+  "median_hops_at_min_dip": 3.0,
+  "median_climb": 0.0
+ }
+}

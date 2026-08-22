@@ -155,6 +155,10 @@ Where the misses come from:
   rendering had cut the citer path, Lambda does restore reach
   (0.390 -> 0.588 @8).
 
+Adding Lambda also makes the routes that exist FLATTER and SHORTER:
+zero-descent share 0.779 -> 0.819, median climb 1 -> 0, median hops
+4 -> 3. That is the signature of a lateral relation doing its job.
+
 Conclusion: route on the map, render the atlas. Lambda is a shortcut
 (a compiled up-and-down), not new structure. Residual 20.6% is
 statement items that appear in no zoom-1 edge at all.
