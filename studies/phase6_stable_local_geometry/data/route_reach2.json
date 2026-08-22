@@ -1,0 +1,20 @@
+{
+ "atlas": {
+  "both_endpoints_present": 0.55375,
+  "reach@16": 0.4875,
+  "reach_given_present": 0.8803611738148984,
+  "median_len": 3.0
+ },
+ "gapc": {
+  "both_endpoints_present": 0.79375,
+  "reach@16": 0.7425,
+  "reach_given_present": 0.9354330708661417,
+  "median_len": 4.0
+ },
+ "gapc+lambda": {
+  "both_endpoints_present": 0.79375,
+  "reach@16": 0.7425,
+  "reach_given_present": 0.9354330708661417,
+  "median_len": 3.0
+ }
+}

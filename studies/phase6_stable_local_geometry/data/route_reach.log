@@ -1,0 +1,10 @@
+atlas undirected adjacency: 295327 nodes
+lambda lateral pairs (holdout-blind): 1931498
+route tasks: 800
+  atlas cap 8: 0.390
+  atlas cap 16: 0.487
+  atlas cap 1000000: 0.497
+atlas {"reach@8": 0.39, "reach@16": 0.4875, "reach@inf": 0.4975, "cheapest_dip_found": 0.4975, "median_dip": 0.0, "mean_dip": 0.5150753768844221, "frac_dip_zero": 0.7788944723618091, "median_hops_at_min_dip": 4.0, "median_climb": 1.0}
+  atlas+lambda cap 8: 0.588
+  atlas+lambda cap 16: 0.606
+  atlas+lambda cap 1000000: 0.606

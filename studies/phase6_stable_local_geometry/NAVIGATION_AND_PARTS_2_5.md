@@ -45,11 +45,32 @@ nothing to these pairs.
   real but diluted ~3x vs move-pair positives. This is the external
   floor, the 12x is the move-level number.
 
-## Part 3c — chronological: script ready, NOT RUN
+## Part 3c — chronological validation (src/chrono_validation.py) — RUN
 
-src/chrono_validation.py + full mathlib4 file-date history extracted
-(blobless clone). Deliberately not run: Sam called validation sufficient
-mid-session. Run cost when wanted: ~2 minutes.
+Split by file first-appearance date from the mathlib4 git history
+(9,414 dated files; 457,263 dated declarations). Cutoff = 85th
+percentile by declaration count, 2025-08-29. Training graph = zoom-1
+edges with BOTH endpoints pre-cutoff (195,524 proofs). Positives =
+2,990 pairs of PRE-cutoff theorems co-used by POST-cutoff proofs
+(34,528 future proofs). Matched negatives as in 3a, from the
+pre-cutoff pool only.
+
+| | value |
+|---|---|
+| kinship, future-co-used pairs | 0.318 |
+| kinship, matched negatives | 0.024 |
+| **lift** | **13.5x** |
+| AUPRC multiscale / r2 (prior 0.091) | **0.364** / 0.327 |
+
+**Geometry built only from older mathematics predicts what future
+proofs use together as well as it predicts a random holdout** (13.5x
+vs 12x; AUPRC 0.364 vs 0.350). The structure is not an artifact of
+seeing the whole library at once.
+
+Caveats, stated: statements/proofs are in their current snapshot form,
+not their historical form -- this is a date-restricted subgraph, not a
+rebuild of an older Mathlib; and file date proxies declaration date, so
+a moved file counts as new.
 
 ## Part 4 — navigation benchmark (the new center)
 
@@ -102,8 +123,59 @@ Statement seed -> proof move, held-out proof's own edges excised.
 
 The trade is explicit: the atlas reaches less (sparser by design) but
 travels through mathematics; flat routes go through hubs 3.4x more.
-The 39% reachability is the open navigation problem to fix (portal
-edges, Lambda edges as traversal links).
+
+### v3b: diagnosing the 39% (src/route_reach.py, route_reach2.py)
+
+The 39% was an apparatus artifact, not a property of the mathematics.
+
+Cost, not reachability, is the right metric (a virtual root makes
+everything reachable by descending to foundations and climbing back).
+Measured with Dijkstra on (deepest descent, hops): **of atlas routes
+that exist, 78% need ZERO descent** -- median dip 0, median climb 1,
+median 4 hops. Existing routes are already lateral and cheap.
+
+Where the misses come from:
+
+| graph | both endpoints present | reach@16 | reach given present | median len |
+|---|---|---|---|---|
+| atlas (rendered) | 0.554 | 0.488 | 0.880 | 3 |
+| GAPC (unrendered map) | 0.794 | **0.743** | 0.935 | 4 |
+| GAPC + Lambda edges | 0.794 | 0.743 | 0.935 | **3** |
+| atlas + Lambda edges | -- | 0.606 | -- | -- |
+
+- Hop cap was minor: atlas 0.390 @8 -> 0.488 @16 -> 0.4975 unbounded.
+- The real cause is **rendering deletions**. The atlas drops
+  non-mathematics sources and every portal edge (rho > 1/2): ATLAS
+  contains 0.00% such edges, GAPC 9.88% (~102k). That removes 45% of
+  route pairs' endpoints from the graph entirely.
+- Routing on the unrendered map: **0.488 -> 0.743**.
+- Lambda adds NO connectivity to GAPC (0.743 either way) -- because a
+  Lambda pair is by construction already joined through its common
+  citer. It only SHORTENS routes (median 4 -> 3). On the atlas, where
+  rendering had cut the citer path, Lambda does restore reach
+  (0.390 -> 0.588 @8).
+
+Conclusion: route on the map, render the atlas. Lambda is a shortcut
+(a compiled up-and-down), not new structure. Residual 20.6% is
+statement items that appear in no zoom-1 edge at all.
+
+### Direction: statement -> move is an UPWARD trip
+
+Median depth of the statement seed: 21. Median depth of the proof's
+move: 67. The lemma a proof needs sits ~46 levels ABOVE the concepts
+its statement mentions.
+
+This mechanically explains the retrieval result. V searches DOWNWARD
+(shared prerequisites) and therefore searches away from the answer:
+recall@10 0.020. Lambda searches UPWARD (who else used this) and lands
+on it: 0.155. Down-and-up (V) is the kinship/structure relation;
+up-and-down (Lambda) is the find-what-to-use-next relation. They are
+not interchangeable and the benchmark now says which is for what.
+
+Caveat on using Lambda to route to a move: Lambda is derived from
+co-use, the same signal premise retrieval measures, so its routing
+gain is not independent evidence -- it is the same fact in a second
+apparatus.
 
 ## Part 5 — self-similarity across depth (src/depth_self_similarity.py)
 
@@ -140,6 +212,12 @@ ungraded), 3 independent blind raters, 658 slots, tag-free briefs
    only 39%.
 3. Def ranking honest number: 0.756, ceiling 0.944 -- real headroom,
    now measured on labels no rule ever saw.
-4. Open next: route reachability (add Lambda/portal traversal edges),
-   learned combination of Lambda+V+text for premise selection,
-   chronological run if ever wanted (script ready).
+4. Chronological validation passed at 13.5x -- the geometry extrapolates
+   forward in time, not just across a random holdout.
+5. Route reachability diagnosed and largely fixed: route on GAPC, not
+   the rendered atlas (0.488 -> 0.743). Lambda compresses routes but
+   adds no connectivity there.
+6. Open next: learned combination of Lambda + V + text for premise
+   selection; the 20.6% of statement items with no zoom-1 edge; and
+   whether route quality (math-lane share, hub avoidance) holds up on
+   GAPC the way it did on the atlas.
