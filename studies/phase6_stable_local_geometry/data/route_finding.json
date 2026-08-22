@@ -1,0 +1,26 @@
+{
+ "atlas": {
+  "found_frac": 0.39,
+  "median_len": 2.0,
+  "mean_len": 3.0801282051282053,
+  "intermediate_lane_mix": {
+   "math": 0.8736517719568567,
+   "transport": 0.1263482280431433,
+   "infra": 0.0,
+   "other": 0.0
+  },
+  "mean_hub_share_of_intermediates": 0.09348048232168403
+ },
+ "flat": {
+  "found_frac": 0.79125,
+  "median_len": 3.0,
+  "mean_len": 3.278041074249605,
+  "intermediate_lane_mix": {
+   "math": 0.6269070735090153,
+   "transport": 0.3710124826629681,
+   "infra": 0.0020804438280166435,
+   "other": 0.0
+  },
+  "mean_hub_share_of_intermediates": 0.3156846240179574
+ }
+}

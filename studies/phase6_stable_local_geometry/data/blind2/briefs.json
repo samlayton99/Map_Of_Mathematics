@@ -1,0 +1,3820 @@
+[
+ {
+  "id": "t001",
+  "target": "HomotopicalAlgebra.PrepathObject.p",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "noncomputable def p : P.P \u27f6 A \u2a2f A",
+  "proof_src": ":= prod.lift P.p\u2080 P.p\u2081",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "HomotopicalAlgebra.PrepathObject.P",
+    "statement_src": "P : C"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Limits.HasBinaryProduct",
+    "statement_src": "abbrev HasBinaryProduct (X Y : C)"
+   },
+   {
+    "n": 3,
+    "name": "HomotopicalAlgebra.PrepathObject",
+    "statement_src": "structure PrepathObject (A : C)"
+   },
+   {
+    "n": 4,
+    "name": "HomotopicalAlgebra.PrepathObject.p\u2081",
+    "statement_src": "p\u2081 : P \u27f6 A"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 6,
+    "name": "HomotopicalAlgebra.PrepathObject.p\u2080",
+    "statement_src": "p\u2080 : P \u27f6 A"
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.Limits.prod.lift",
+    "statement_src": "noncomputable abbrev prod.lift {W X Y : C} [HasBinaryProduct X Y]\n    (f : W \u27f6 X) (g : W \u27f6 Y) : W \u27f6 X \u2a2f Y"
+   }
+  ],
+  "shuffle_seed": 20268830
+ },
+ {
+  "id": "t002",
+  "target": "CategoryTheory.Bicategory.RightLift.IsKan.whiskerOfCommute",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "def whiskerOfCommute (s t : RightLift f g) (i : s \u2245 t) {x : B} (h : x \u27f6 c)\n    (P : IsKan (s.whisker h)) :\n    IsKan (t.whisker h)",
+  "proof_src": ":=\n  P.ofIsoKan <| whiskerIso i h",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.CategoryStruct.toQuiver",
+    "statement_src": "class CategoryStruct (obj : Type u) : Type max u (v + 1) extends Quiver.{v} obj"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Bicategory.RightLift.IsKan.ofIsoKan",
+    "statement_src": "def ofIsoKan (P : IsKan s) (i : s \u2245 t) : IsKan t"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Bicategory.homCategory",
+    "statement_src": "homCategory : \u2200 a b : B, Category.{w} (a \u27f6 b)"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Bicategory",
+    "statement_src": "class Bicategory (B : Type u) extends CategoryStruct.{v} B"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Bicategory.postcomp",
+    "statement_src": "def postcomp (a : B) (f : b \u27f6 c) : (a \u27f6 b) \u2964 (a \u27f6 c)"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Bicategory.toCategoryStruct",
+    "statement_src": "class Bicategory (B : Type u) extends CategoryStruct.{v} B"
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.instCategoryCostructuredArrow_1",
+    "statement_src": "CategoryTheory.instCategoryCostructuredArrow_1"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Bicategory.RightLift",
+    "statement_src": "abbrev RightLift (f : b \u27f6 a) (g : c \u27f6 a)"
+   },
+   {
+    "n": 9,
+    "name": "CategoryTheory.Bicategory.RightLift.whiskerIso",
+    "statement_src": "def whiskerIso (i : s \u2245 t) {x : B} (h : x \u27f6 c) :\n    s.whisker h \u2245 t.whisker h"
+   },
+   {
+    "n": 10,
+    "name": "CategoryTheory.Bicategory.RightLift.whisker",
+    "statement_src": "def whisker (t : RightLift f g) {x : B} (h : x \u27f6 c) : RightLift f (h \u226b g)"
+   },
+   {
+    "n": 11,
+    "name": "CategoryTheory.Iso",
+    "statement_src": "structure Iso {C : Type u} [Category.{v} C] (X Y : C)"
+   },
+   {
+    "n": 12,
+    "name": "Quiver.Hom",
+    "statement_src": "Hom : V \u2192 V \u2192 Type v"
+   },
+   {
+    "n": 13,
+    "name": "CategoryTheory.CategoryStruct.comp",
+    "statement_src": "comp : \u2200 {X Y Z : obj}, (X \u27f6 Y) \u2192 (Y \u27f6 Z) \u2192 (X \u27f6 Z)"
+   },
+   {
+    "n": 14,
+    "name": "CategoryTheory.Bicategory.RightLift.IsKan",
+    "statement_src": "abbrev IsKan (t : RightLift f g)"
+   }
+  ],
+  "shuffle_seed": 20276749
+ },
+ {
+  "id": "t003",
+  "target": "Computation.length",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "def length : \u2115",
+  "proof_src": ":=\n  Nat.find ((terminates_def _).1 h)",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "OfNat.ofNat",
+    "statement_src": "ofNat : \u03b1"
+   },
+   {
+    "n": 2,
+    "name": "Bool",
+    "statement_src": "inductive Bool : Type"
+   },
+   {
+    "n": 3,
+    "name": "instDecidableEqBool",
+    "statement_src": "instDecidableEqBool"
+   },
+   {
+    "n": 4,
+    "name": "HAdd.hAdd",
+    "statement_src": "hAdd : \u03b1 \u2192 \u03b2 \u2192 \u03b3"
+   },
+   {
+    "n": 5,
+    "name": "Nat",
+    "statement_src": "inductive Nat"
+   },
+   {
+    "n": 6,
+    "name": "Option.some",
+    "statement_src": "| some (val : \u03b1) : Option \u03b1"
+   },
+   {
+    "n": 7,
+    "name": "Subtype.val",
+    "statement_src": "val : \u03b1"
+   },
+   {
+    "n": 8,
+    "name": "instOfNatNat",
+    "statement_src": "instance instOfNatNat (n : Nat) : OfNat Nat n"
+   },
+   {
+    "n": 9,
+    "name": "Bool.true",
+    "statement_src": "| true : Bool"
+   },
+   {
+    "n": 10,
+    "name": "instAddNat",
+    "statement_src": "instance instAddNat : Add Nat"
+   },
+   {
+    "n": 11,
+    "name": "Stream'",
+    "statement_src": "def Stream' (\u03b1 : Type u)"
+   },
+   {
+    "n": 12,
+    "name": "Nat.find",
+    "statement_src": "protected def find : \u2115"
+   },
+   {
+    "n": 13,
+    "name": "Eq",
+    "statement_src": "inductive Eq : \u03b1 \u2192 \u03b1 \u2192 Prop"
+   },
+   {
+    "n": 14,
+    "name": "Computation.Terminates",
+    "statement_src": "class Terminates (s : Computation \u03b1) : Prop"
+   },
+   {
+    "n": 15,
+    "name": "Option",
+    "statement_src": "inductive Option (\u03b1 : Type u)"
+   },
+   {
+    "n": 16,
+    "name": "Computation",
+    "statement_src": "def Computation (\u03b1 : Type u) : Type u"
+   },
+   {
+    "n": 17,
+    "name": "instHAdd",
+    "statement_src": "instance instHAdd [Add \u03b1] : HAdd \u03b1 \u03b1 \u03b1"
+   },
+   {
+    "n": 18,
+    "name": "Option.isSome",
+    "statement_src": "@[inline, implicit_reducible] def isSome : Option \u03b1 \u2192 Bool\n  | some _ => true\n  | none   => false"
+   }
+  ],
+  "shuffle_seed": 20284668
+ },
+ {
+  "id": "t004",
+  "target": "Nat.instUniqueSubtypeMemFinsetIicOfNat",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "instance : Unique (Iic 0)",
+  "proof_src": ":= by\n  rw [\u2190 Nat.bot_eq_zero]\n  infer_instance",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Eq.mpr",
+    "statement_src": "@[macro_inline] def Eq.mpr {\u03b1 \u03b2 : Sort u} (h : \u03b1 = \u03b2) (b : \u03b2) : \u03b1"
+   },
+   {
+    "n": 2,
+    "name": "Nat.instLocallyFiniteOrder",
+    "statement_src": "instance instLocallyFiniteOrder : LocallyFiniteOrder \u2115"
+   },
+   {
+    "n": 3,
+    "name": "Finset.instSetLike",
+    "statement_src": "instance : SetLike (Finset \u03b1) \u03b1"
+   },
+   {
+    "n": 4,
+    "name": "LocallyFiniteOrder.toLocallyFiniteOrderBot",
+    "statement_src": "LocallyFiniteOrder.toLocallyFiniteOrderBot"
+   },
+   {
+    "n": 5,
+    "name": "Membership.mem",
+    "statement_src": "mem : \u03b3 \u2192 \u03b1 \u2192 Prop"
+   },
+   {
+    "n": 6,
+    "name": "Nat.instPreorder",
+    "statement_src": "instance : Preorder \u2115"
+   },
+   {
+    "n": 7,
+    "name": "Nat.instPartialOrder",
+    "statement_src": "instance : PartialOrder \u2115"
+   },
+   {
+    "n": 8,
+    "name": "Nat",
+    "statement_src": "inductive Nat"
+   },
+   {
+    "n": 9,
+    "name": "OfNat.ofNat",
+    "statement_src": "ofNat : \u03b1"
+   },
+   {
+    "n": 10,
+    "name": "SetLike.instMembership",
+    "statement_src": "instance (priority := 100) instMembership : Membership B A"
+   },
+   {
+    "n": 11,
+    "name": "Finset.instUniqueSubtypeMemIicBot",
+    "statement_src": "instance [OrderBot \u03b1] : Unique (Iic (\u22a5 : \u03b1))"
+   },
+   {
+    "n": 12,
+    "name": "Finset.Iic",
+    "statement_src": "Finset.Iic"
+   },
+   {
+    "n": 13,
+    "name": "OrderBot.toBot",
+    "statement_src": "@[to_dual] class OrderBot (\u03b1 : Type u) [LE \u03b1] extends Bot \u03b1"
+   },
+   {
+    "n": 14,
+    "name": "Bot.bot",
+    "statement_src": "bot : \u03b1"
+   },
+   {
+    "n": 15,
+    "name": "Nat.instOrderBot",
+    "statement_src": "instance instOrderBot : OrderBot \u2115"
+   },
+   {
+    "n": 16,
+    "name": "instOfNatNat",
+    "statement_src": "instance instOfNatNat (n : Nat) : OfNat Nat n"
+   },
+   {
+    "n": 17,
+    "name": "Finset",
+    "statement_src": "structure Finset (\u03b1 : Type*)"
+   },
+   {
+    "n": 18,
+    "name": "inferInstance",
+    "statement_src": "abbrev inferInstance {\u03b1 : Sort u} [i : \u03b1] : \u03b1"
+   },
+   {
+    "n": 19,
+    "name": "Unique",
+    "statement_src": "structure Unique (\u03b1 : Sort u) extends Inhabited \u03b1"
+   },
+   {
+    "n": 20,
+    "name": "Subtype",
+    "statement_src": "structure Subtype {\u03b1 : Sort u} (p : \u03b1 \u2192 Prop)"
+   },
+   {
+    "n": 21,
+    "name": "instLENat",
+    "statement_src": "instance instLENat : LE Nat"
+   }
+  ],
+  "shuffle_seed": 20292587
+ },
+ {
+  "id": "t005",
+  "target": "Circle.centeredArc",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "noncomputable def centeredArc (r : \u211d) : Set Circle",
+  "proof_src": ":=\n  exp '' {x | |x| < r}",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Circle",
+    "statement_src": "def Circle : Type"
+   },
+   {
+    "n": 2,
+    "name": "Real.instAddGroup",
+    "statement_src": "Real.instAddGroup"
+   },
+   {
+    "n": 3,
+    "name": "instTopologicalSpaceCircle",
+    "statement_src": "instTopologicalSpaceCircle"
+   },
+   {
+    "n": 4,
+    "name": "abs",
+    "statement_src": "abs"
+   },
+   {
+    "n": 5,
+    "name": "Set.image",
+    "statement_src": "def image {\u03b2 : Type v} (f : \u03b1 \u2192 \u03b2) (s : Set \u03b1) : Set \u03b2"
+   },
+   {
+    "n": 6,
+    "name": "Real.lattice",
+    "statement_src": "instance lattice : Lattice \u211d"
+   },
+   {
+    "n": 7,
+    "name": "PseudoMetricSpace.toUniformSpace",
+    "statement_src": "toUniformSpace : UniformSpace \u03b1"
+   },
+   {
+    "n": 8,
+    "name": "Circle.exp",
+    "statement_src": "def exp : C(\u211d, Circle)"
+   },
+   {
+    "n": 9,
+    "name": "ContinuousMap.instFunLike",
+    "statement_src": "instance instFunLike : FunLike C(X, Y) X Y"
+   },
+   {
+    "n": 10,
+    "name": "UniformSpace.toTopologicalSpace",
+    "statement_src": "class UniformSpace (\u03b1 : Type u) extends TopologicalSpace \u03b1"
+   },
+   {
+    "n": 11,
+    "name": "Real.pseudoMetricSpace",
+    "statement_src": "instance Real.pseudoMetricSpace : PseudoMetricSpace \u211d"
+   },
+   {
+    "n": 12,
+    "name": "Real",
+    "statement_src": "structure Real"
+   },
+   {
+    "n": 13,
+    "name": "Real.instLT",
+    "statement_src": "instance : LT \u211d"
+   },
+   {
+    "n": 14,
+    "name": "ContinuousMap",
+    "statement_src": "structure ContinuousMap (X Y : Type*) [TopologicalSpace X] [TopologicalSpace Y]"
+   },
+   {
+    "n": 15,
+    "name": "DFunLike.coe",
+    "statement_src": "coe : F \u2192 \u2200 a : \u03b1, \u03b2 a"
+   },
+   {
+    "n": 16,
+    "name": "LT.lt",
+    "statement_src": "lt : \u03b1 \u2192 \u03b1 \u2192 Prop"
+   },
+   {
+    "n": 17,
+    "name": "Set.ofPred",
+    "statement_src": "def Set.ofPred {\u03b1 : Type u} (p : \u03b1 \u2192 Prop) : Set \u03b1"
+   }
+  ],
+  "shuffle_seed": 20300506
+ },
+ {
+  "id": "t006",
+  "target": "Complex.instOne",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "instance : One \u2102",
+  "proof_src": ":=\n  \u27e8(1 : \u211d)\u27e9",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Real.instOne",
+    "statement_src": "instance : One \u211d"
+   },
+   {
+    "n": 2,
+    "name": "Complex",
+    "statement_src": "structure Complex : Type"
+   },
+   {
+    "n": 3,
+    "name": "One.toOfNat1",
+    "statement_src": "instance (priority := 300) One.toOfNat1 {\u03b1} [One \u03b1] : OfNat \u03b1 (nat_lit 1)"
+   },
+   {
+    "n": 4,
+    "name": "Complex.ofReal",
+    "statement_src": "def ofReal (r : \u211d) : \u2102"
+   },
+   {
+    "n": 5,
+    "name": "Real",
+    "statement_src": "structure Real"
+   },
+   {
+    "n": 6,
+    "name": "OfNat.ofNat",
+    "statement_src": "ofNat : \u03b1"
+   },
+   {
+    "n": 7,
+    "name": "One.mk",
+    "statement_src": "class One (\u03b1 : Type u)"
+   }
+  ],
+  "shuffle_seed": 20308425
+ },
+ {
+  "id": "t007",
+  "target": "CategoryTheory.MonoOver.pullbackSelf",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "def pullbackSelf {A B : C} (f : A \u27f6 B) [Mono f] : (pullback f).obj (mk f) \u2245 \u22a4",
+  "proof_src": ":=\n  iso_of_both_ways (leTop _) (topLEPullbackSelf _)",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.Limits.HasPullbacks",
+    "statement_src": "abbrev HasPullbacks"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.MonoOver.instTop",
+    "statement_src": "instance {X : C} : Top (MonoOver X)"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Mono",
+    "statement_src": "class Mono (f : X \u27f6 Y) : Prop"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.MonoOver",
+    "statement_src": "abbrev MonoOver (X : C)"
+   },
+   {
+    "n": 5,
+    "name": "Quiver.Hom",
+    "statement_src": "Hom : V \u2192 V \u2192 Type v"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.CategoryStruct.toQuiver",
+    "statement_src": "class CategoryStruct (obj : Type u) : Type max u (v + 1) extends Quiver.{v} obj"
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.iso_of_both_ways",
+    "statement_src": "def iso_of_both_ways {X Y : C} (f : X \u27f6 Y) (g : Y \u27f6 X) :\n    X \u2245 Y"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 9,
+    "name": "CategoryTheory.Over",
+    "statement_src": "def Over (X : T)"
+   },
+   {
+    "n": 10,
+    "name": "Top.top",
+    "statement_src": "top : \u03b1"
+   },
+   {
+    "n": 11,
+    "name": "CategoryTheory.Over.isMono",
+    "statement_src": "abbrev Over.isMono (X : C) : ObjectProperty (Over X)"
+   },
+   {
+    "n": 12,
+    "name": "CategoryTheory.MonoOver.leTop",
+    "statement_src": "def leTop (f : MonoOver X) : f \u27f6 \u22a4"
+   },
+   {
+    "n": 13,
+    "name": "CategoryTheory.MonoOver.pullback",
+    "statement_src": "def pullback (f : X \u27f6 Y) : MonoOver Y \u2964 MonoOver X"
+   },
+   {
+    "n": 14,
+    "name": "CategoryTheory.Category.toCategoryStruct",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 15,
+    "name": "CategoryTheory.ObjectProperty.FullSubcategory.category",
+    "statement_src": "instance FullSubcategory.category : Category.{v} P.FullSubcategory"
+   },
+   {
+    "n": 16,
+    "name": "CategoryTheory.MonoOver.mk",
+    "statement_src": "def mk {X A : C} (f : A \u27f6 X) [hf : Mono f] : MonoOver X"
+   },
+   {
+    "n": 17,
+    "name": "CategoryTheory.MonoOver.topLEPullbackSelf",
+    "statement_src": "def topLEPullbackSelf {A B : C} (f : A \u27f6 B) [Mono f] :\n    (\u22a4 : MonoOver A) \u27f6 (pullback f).obj (mk f)"
+   },
+   {
+    "n": 18,
+    "name": "CategoryTheory.Functor.obj",
+    "statement_src": "obj : C \u2192 D"
+   },
+   {
+    "n": 19,
+    "name": "CategoryTheory.instCategoryOver",
+    "statement_src": "CategoryTheory.instCategoryOver"
+   }
+  ],
+  "shuffle_seed": 20316344
+ },
+ {
+  "id": "t008",
+  "target": "HomologicalComplex.truncGE'.XIso",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "noncomputable def XIso {i : \u03b9} (hi : \u00ac e.BoundaryGE i) :\n    X K e i \u2245 K.X (e.f i)",
+  "proof_src": ":=\n  eqToIso (if_neg hi)",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "HomologicalComplex.X",
+    "statement_src": "X : \u03b9 \u2192 V"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Limits.HasZeroMorphisms",
+    "statement_src": "class HasZeroMorphisms"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.eqToIso",
+    "statement_src": "def eqToIso {X Y : C} (p : X = Y) : X \u2245 Y"
+   },
+   {
+    "n": 5,
+    "name": "ComplexShape",
+    "statement_src": "structure ComplexShape (\u03b9 : Type*)"
+   },
+   {
+    "n": 6,
+    "name": "HomologicalComplex.HasHomology",
+    "statement_src": "abbrev HasHomology"
+   },
+   {
+    "n": 7,
+    "name": "ComplexShape.Embedding.BoundaryGE",
+    "statement_src": "def BoundaryGE (j : \u03b9) : Prop"
+   },
+   {
+    "n": 8,
+    "name": "ComplexShape.Embedding.f",
+    "statement_src": "f : \u03b9 \u2192 \u03b9'"
+   },
+   {
+    "n": 9,
+    "name": "Not",
+    "statement_src": "@[implicit_reducible] def Not (a : Prop) : Prop"
+   },
+   {
+    "n": 10,
+    "name": "HomologicalComplex",
+    "statement_src": "structure HomologicalComplex (c : ComplexShape \u03b9)"
+   },
+   {
+    "n": 11,
+    "name": "HomologicalComplex.truncGE'.X",
+    "statement_src": "noncomputable def X (i : \u03b9) : C"
+   },
+   {
+    "n": 12,
+    "name": "ComplexShape.Embedding",
+    "statement_src": "structure Embedding"
+   }
+  ],
+  "shuffle_seed": 20324263
+ },
+ {
+  "id": "t009",
+  "target": "Subgroup.transferFocal",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "noncomputable def transferFocal [H.FiniteIndex] : G \u2192* H \u29f8 focalSubgroupOf H",
+  "proof_src": ":=\n  MonoidHom.transfer (QuotientGroup.mk' (focalSubgroupOf H))",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "HasQuotient.Quotient",
+    "statement_src": "HasQuotient.Quotient"
+   },
+   {
+    "n": 2,
+    "name": "Subgroup.instSetLike",
+    "statement_src": "instance : SetLike (Subgroup G) G"
+   },
+   {
+    "n": 3,
+    "name": "QuotientGroup.Quotient.group",
+    "statement_src": "instance Quotient.group : Group (G \u29f8 N)"
+   },
+   {
+    "n": 4,
+    "name": "Subgroup.toGroup",
+    "statement_src": "instance toGroup {G : Type*} [Group G] (H : Subgroup G) : Group H"
+   },
+   {
+    "n": 5,
+    "name": "Membership.mem",
+    "statement_src": "mem : \u03b3 \u2192 \u03b1 \u2192 Prop"
+   },
+   {
+    "n": 6,
+    "name": "Subgroup.focalSubgroupOf",
+    "statement_src": "def focalSubgroupOf : Subgroup H"
+   },
+   {
+    "n": 7,
+    "name": "IsMulCommutative.instCommGroup",
+    "statement_src": "IsMulCommutative.instCommGroup"
+   },
+   {
+    "n": 8,
+    "name": "Subgroup",
+    "statement_src": "structure Subgroup (G : Type*) [Group G] extends Submonoid G"
+   },
+   {
+    "n": 9,
+    "name": "QuotientGroup.mk'",
+    "statement_src": "def mk' : G \u2192* G \u29f8 N"
+   },
+   {
+    "n": 10,
+    "name": "SetLike.instMembership",
+    "statement_src": "instance (priority := 100) instMembership : Membership B A"
+   },
+   {
+    "n": 11,
+    "name": "QuotientGroup.instHasQuotientSubgroup",
+    "statement_src": "instance instHasQuotientSubgroup : HasQuotient \u03b1 (Subgroup \u03b1)"
+   },
+   {
+    "n": 12,
+    "name": "Subgroup.FiniteIndex",
+    "statement_src": "@[to_additive] class FiniteIndex : Prop"
+   },
+   {
+    "n": 13,
+    "name": "Group",
+    "statement_src": "class Group (G : Type u) extends DivInvMonoid G"
+   },
+   {
+    "n": 14,
+    "name": "Subtype",
+    "statement_src": "structure Subtype {\u03b1 : Sort u} (p : \u03b1 \u2192 Prop)"
+   },
+   {
+    "n": 15,
+    "name": "MonoidHom.transfer",
+    "statement_src": "def transfer [FiniteIndex H] : G \u2192* A"
+   }
+  ],
+  "shuffle_seed": 20332182
+ },
+ {
+  "id": "t010",
+  "target": "CategoryTheory.Cat.FreeRefl.instCategory",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "instance : Category (FreeRefl V)",
+  "proof_src": ":=\n  inferInstanceAs (Category (Quotient _))",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.ReflQuiver",
+    "statement_src": "class ReflQuiver (obj : Type u) : Type max u (v + 1) extends Quiver.{v} obj"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Category.mk",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Cat.FreeRefl",
+    "statement_src": "def FreeRefl"
+   }
+  ],
+  "shuffle_seed": 20340101
+ },
+ {
+  "id": "t011",
+  "target": "closedAbsConvexHull",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "def closedAbsConvexHull : ClosureOperator (Set E)",
+  "proof_src": ":=\n  .ofCompletePred (fun s => AbsConvex \ud835\udd5c s \u2227 IsClosed s) fun _ \u21a6 absConvex_closed_sInter",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "IsClosed",
+    "statement_src": "class IsClosed (s : Set X) : Prop"
+   },
+   {
+    "n": 2,
+    "name": "CompleteBooleanAlgebra.toCompleteLattice",
+    "statement_src": "class CompleteBooleanAlgebra (\u03b1) extends CompleteLattice \u03b1, BooleanAlgebra \u03b1"
+   },
+   {
+    "n": 3,
+    "name": "SMul",
+    "statement_src": "class SMul (M : Type u) (\u03b1 : Type v)"
+   },
+   {
+    "n": 4,
+    "name": "ClosureOperator.ofCompletePred",
+    "statement_src": "def ofCompletePred (p : \u03b1 \u2192 Prop) (hsinf : \u2200 s, (\u2200 a \u2208 s, p a) \u2192 p (sInf s)) : ClosureOperator \u03b1"
+   },
+   {
+    "n": 5,
+    "name": "SeminormedRing",
+    "statement_src": "class SeminormedRing (\u03b1 : Type*) extends Norm \u03b1, Ring \u03b1, PseudoMetricSpace \u03b1"
+   },
+   {
+    "n": 6,
+    "name": "AbsConvex",
+    "statement_src": "def AbsConvex (s : Set E) : Prop"
+   },
+   {
+    "n": 7,
+    "name": "AddCommMonoid",
+    "statement_src": "class AddCommMonoid (M : Type u) extends AddMonoid M, AddCommSemigroup M"
+   },
+   {
+    "n": 8,
+    "name": "Set",
+    "statement_src": "def Set (\u03b1 : Type u)"
+   },
+   {
+    "n": 9,
+    "name": "absConvex_closed_sInter",
+    "statement_src": "theorem absConvex_closed_sInter {S : Set (Set E)} (h : \u2200 s \u2208 S, AbsConvex \ud835\udd5c s \u2227 IsClosed s) :\n    AbsConvex \ud835\udd5c (\u22c2\u2080 S) \u2227 IsClosed (\u22c2\u2080 S)"
+   },
+   {
+    "n": 10,
+    "name": "Set.instCompleteAtomicBooleanAlgebra",
+    "statement_src": "instance instCompleteAtomicBooleanAlgebra : CompleteAtomicBooleanAlgebra (Set \u03b1)"
+   },
+   {
+    "n": 11,
+    "name": "CompleteAtomicBooleanAlgebra.toCompleteBooleanAlgebra",
+    "statement_src": "class CompleteAtomicBooleanAlgebra (\u03b1 : Type u) extends CompleteBooleanAlgebra \u03b1"
+   },
+   {
+    "n": 12,
+    "name": "And",
+    "statement_src": "structure And (a b : Prop) : Prop"
+   },
+   {
+    "n": 13,
+    "name": "TopologicalSpace",
+    "statement_src": "class TopologicalSpace (X : Type u)"
+   },
+   {
+    "n": 14,
+    "name": "PartialOrder",
+    "statement_src": "class PartialOrder (\u03b1 : Type*) extends Preorder \u03b1"
+   }
+  ],
+  "shuffle_seed": 20348020
+ },
+ {
+  "id": "t012",
+  "target": "CategoryTheory.Subgroupoid.generatedNormal",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "def generatedNormal : Subgroupoid C",
+  "proof_src": ":=\n  sInf {S : Subgroupoid C | (\u2200 c d, X c d \u2286 S.arrows c d) \u2227 S.IsNormal}",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "InfSet.sInf",
+    "statement_src": "sInf : Set \u03b1 \u2192 \u03b1"
+   },
+   {
+    "n": 2,
+    "name": "LE.le",
+    "statement_src": "le : \u03b1 \u2192 \u03b1 \u2192 Prop"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Subgroupoid.IsNormal",
+    "statement_src": "structure IsNormal : Prop extends IsWide S"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Groupoid.toCategory",
+    "statement_src": "class Groupoid (obj : Type u) : Type max u (v + 1) extends Category.{v} obj"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Groupoid",
+    "statement_src": "class Groupoid (obj : Type u) : Type max u (v + 1) extends Category.{v} obj"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.CategoryStruct.toQuiver",
+    "statement_src": "class CategoryStruct (obj : Type u) : Type max u (v + 1) extends Quiver.{v} obj"
+   },
+   {
+    "n": 7,
+    "name": "Set.instLE",
+    "statement_src": "instance : LE (Set \u03b1)"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Category.toCategoryStruct",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 9,
+    "name": "Set",
+    "statement_src": "def Set (\u03b1 : Type u)"
+   },
+   {
+    "n": 10,
+    "name": "CategoryTheory.Subgroupoid.arrows",
+    "statement_src": "arrows : \u2200 c d : C, Set (c \u27f6 d)"
+   },
+   {
+    "n": 11,
+    "name": "Quiver.Hom",
+    "statement_src": "Hom : V \u2192 V \u2192 Type v"
+   },
+   {
+    "n": 12,
+    "name": "Set.ofPred",
+    "statement_src": "def Set.ofPred {\u03b1 : Type u} (p : \u03b1 \u2192 Prop) : Set \u03b1"
+   },
+   {
+    "n": 13,
+    "name": "CategoryTheory.Subgroupoid",
+    "statement_src": "structure Subgroupoid (C : Type u) [Groupoid C]"
+   },
+   {
+    "n": 14,
+    "name": "CategoryTheory.Subgroupoid.instInfSet",
+    "statement_src": "instance : InfSet (Subgroupoid C)"
+   },
+   {
+    "n": 15,
+    "name": "And",
+    "statement_src": "structure And (a b : Prop) : Prop"
+   }
+  ],
+  "shuffle_seed": 20355939
+ },
+ {
+  "id": "t013",
+  "target": "Sigma.instLocallyFiniteOrderTop",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "instance instLocallyFiniteOrderTop : LocallyFiniteOrderTop (\u03a3 i, \u03b1 i)",
+  "proof_src": "where\n  finsetIci | \u27e8i, a\u27e9 => (Ici a).map (Embedding.sigmaMk i)\n  finsetIoi | \u27e8i, a\u27e9 => (Ioi a).map (Embedding.sigmaMk i)\n  finset_mem_Ici := fun \u27e8i, a\u27e9 \u27e8j, b\u27e9 => by\n    obtain rfl | hij := eq_or_ne i j\n    \u00b7 simp\n    \u00b7 simp [hij, le_def]\n  finset_mem_Ioi := fun \u27e8i, a\u27e9 \u27e8j, b\u27e9 => by\n    obtain rfl | hij := eq_or_ne i j\n    \u00b7 simp\n    \u00b7 simp [hij, lt_def]",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Finset.Ioi",
+    "statement_src": "def Ioi (a : \u03b1) : Finset \u03b1"
+   },
+   {
+    "n": 2,
+    "name": "Sigma.preorder",
+    "statement_src": "protected instance preorder [\u2200 i, Preorder (\u03b1 i)] : Preorder (\u03a3 i, \u03b1 i)"
+   },
+   {
+    "n": 3,
+    "name": "Preorder",
+    "statement_src": "class Preorder (\u03b1 : Type*) extends LE \u03b1, LT \u03b1"
+   },
+   {
+    "n": 4,
+    "name": "LocallyFiniteOrderTop.mk",
+    "statement_src": "class LocallyFiniteOrderTop (\u03b1 : Type*) [Preorder \u03b1]"
+   },
+   {
+    "n": 5,
+    "name": "Finset.map",
+    "statement_src": "def map (f : \u03b1 \u21aa \u03b2) (s : Finset \u03b1) : Finset \u03b2"
+   },
+   {
+    "n": 6,
+    "name": "Finset",
+    "statement_src": "structure Finset (\u03b1 : Type*)"
+   },
+   {
+    "n": 7,
+    "name": "Sigma.instLocallyFiniteOrderBot",
+    "statement_src": "instance instLocallyFiniteOrderBot : LocallyFiniteOrderBot (\u03a3 i, \u03b1 i)"
+   },
+   {
+    "n": 8,
+    "name": "Function.Embedding.sigmaMk",
+    "statement_src": "def sigmaMk (a : \u03b1) : \u03b2 a \u21aa \u03a3 x, \u03b2 x"
+   },
+   {
+    "n": 9,
+    "name": "Sigma",
+    "statement_src": "structure Sigma {\u03b1 : Type u} (\u03b2 : \u03b1 \u2192 Type v)"
+   },
+   {
+    "n": 10,
+    "name": "Finset.Ici",
+    "statement_src": "def Ici (a : \u03b1) : Finset \u03b1"
+   },
+   {
+    "n": 11,
+    "name": "LocallyFiniteOrderTop",
+    "statement_src": "class LocallyFiniteOrderTop (\u03b1 : Type*) [Preorder \u03b1]"
+   }
+  ],
+  "shuffle_seed": 20363858
+ },
+ {
+  "id": "t014",
+  "target": "OrderHom.Subtype.val",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "def Subtype.val (p : \u03b1 \u2192 Prop) : Subtype p \u2192o \u03b1",
+  "proof_src": ":=\n  \u27e8_root_.Subtype.val, fun _ _ h => h\u27e9",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Preorder.toLE",
+    "statement_src": "class Preorder (\u03b1 : Type*) extends LE \u03b1, LT \u03b1"
+   },
+   {
+    "n": 2,
+    "name": "Subtype",
+    "statement_src": "structure Subtype {\u03b1 : Sort u} (p : \u03b1 \u2192 Prop)"
+   },
+   {
+    "n": 3,
+    "name": "Preorder",
+    "statement_src": "class Preorder (\u03b1 : Type*) extends LE \u03b1, LT \u03b1"
+   },
+   {
+    "n": 4,
+    "name": "Subtype.val",
+    "statement_src": "val : \u03b1"
+   },
+   {
+    "n": 5,
+    "name": "OrderHom.mk",
+    "statement_src": "structure OrderHom (\u03b1 \u03b2 : Type*) [Preorder \u03b1] [Preorder \u03b2]"
+   },
+   {
+    "n": 6,
+    "name": "Subtype.preorder",
+    "statement_src": "instance preorder [Preorder \u03b1] (p : \u03b1 \u2192 Prop) : Preorder (Subtype p)"
+   },
+   {
+    "n": 7,
+    "name": "LE.le",
+    "statement_src": "le : \u03b1 \u2192 \u03b1 \u2192 Prop"
+   }
+  ],
+  "shuffle_seed": 20371777
+ },
+ {
+  "id": "t015",
+  "target": "MulAction.toPermHom",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "def MulAction.toPermHom : G \u2192* Equiv.Perm \u03b1",
+  "proof_src": "where\n  toFun := MulAction.toPerm\n  map_one' := Equiv.ext <| one_smul G\n  map_mul' u\u2081 u\u2082 := Equiv.ext <| mul_smul (u\u2081 : G) u\u2082",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "MonoidHom.mk",
+    "statement_src": "structure MonoidHom (M : Type*) (N : Type*) [MulOne M] [MulOne N]\n  extends OneHom M N, M \u2192\u2099* N"
+   },
+   {
+    "n": 2,
+    "name": "MulOneClass.toMulOne",
+    "statement_src": "class MulOneClass (M : Type u) extends MulOne M"
+   },
+   {
+    "n": 3,
+    "name": "Equiv.Perm",
+    "statement_src": "abbrev Equiv.Perm (\u03b1 : Sort*)"
+   },
+   {
+    "n": 4,
+    "name": "MulOne.toOne",
+    "statement_src": "class MulOne (M : Type*) extends One M, Mul M"
+   },
+   {
+    "n": 5,
+    "name": "Group.toDivInvMonoid",
+    "statement_src": "class Group (G : Type u) extends DivInvMonoid G"
+   },
+   {
+    "n": 6,
+    "name": "MulAction.toPerm",
+    "statement_src": "def MulAction.toPerm (a : \u03b1) : Equiv.Perm \u03b2"
+   },
+   {
+    "n": 7,
+    "name": "DivInvMonoid.toMonoid",
+    "statement_src": "class DivInvMonoid (G : Type u) extends Monoid G, Inv G, Div G, ZPow G"
+   },
+   {
+    "n": 8,
+    "name": "Equiv.Perm.permGroup",
+    "statement_src": "instance permGroup : Group (Perm \u03b1)"
+   },
+   {
+    "n": 9,
+    "name": "Monoid.toMulOneClass",
+    "statement_src": "class Monoid (M : Type u) extends Semigroup M, MulOneClass M, NPow M"
+   },
+   {
+    "n": 10,
+    "name": "Group",
+    "statement_src": "class Group (G : Type u) extends DivInvMonoid G"
+   },
+   {
+    "n": 11,
+    "name": "MulAction",
+    "statement_src": "class MulAction (\u03b1 : Type*) (\u03b2 : Type*) [Monoid \u03b1] extends SemigroupAction \u03b1 \u03b2"
+   },
+   {
+    "n": 12,
+    "name": "OneHom.mk",
+    "statement_src": "structure OneHom (M : Type*) (N : Type*) [One M] [One N]"
+   }
+  ],
+  "shuffle_seed": 20379696
+ },
+ {
+  "id": "t016",
+  "target": "Submodule.FG",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "def FG (N : Submodule R M) : Prop",
+  "proof_src": ":=\n  \u2203 S : Finset M, span R \u2191S = N",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Submodule",
+    "statement_src": "structure Submodule (R : Type u) (M : Type v) [Semiring R] [AddCommMonoid M] [Module R M] : Type v\n    extends AddSubmonoid M, SubMulAction R M"
+   },
+   {
+    "n": 2,
+    "name": "Submodule.span",
+    "statement_src": "def span (s : Set M) : Submodule R M"
+   },
+   {
+    "n": 3,
+    "name": "Finset.instSetLike",
+    "statement_src": "instance : SetLike (Finset \u03b1) \u03b1"
+   },
+   {
+    "n": 4,
+    "name": "Exists",
+    "statement_src": "inductive Exists {\u03b1 : Sort u} (p : \u03b1 \u2192 Prop) : Prop"
+   },
+   {
+    "n": 5,
+    "name": "AddCommMonoid",
+    "statement_src": "class AddCommMonoid (M : Type u) extends AddMonoid M, AddCommSemigroup M"
+   },
+   {
+    "n": 6,
+    "name": "SetLike.coe",
+    "statement_src": "protected coe : A \u2192 Set B"
+   },
+   {
+    "n": 7,
+    "name": "Eq",
+    "statement_src": "inductive Eq : \u03b1 \u2192 \u03b1 \u2192 Prop"
+   },
+   {
+    "n": 8,
+    "name": "Finset",
+    "statement_src": "structure Finset (\u03b1 : Type*)"
+   },
+   {
+    "n": 9,
+    "name": "Semiring",
+    "statement_src": "class Semiring (\u03b1 : Type u) extends AddCommMonoid \u03b1, MonoidWithZero \u03b1, NonUnitalSemiring \u03b1,\n  NonAssocSemiring \u03b1"
+   },
+   {
+    "n": 10,
+    "name": "Module",
+    "statement_src": "class Module (R : Type u) (M : Type v) [Semiring R] [AddCommMonoid M] extends\n  DistribMulAction R M"
+   }
+  ],
+  "shuffle_seed": 20387615
+ },
+ {
+  "id": "t017",
+  "target": "Complex.orthonormalBasisOneI",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "def Complex.orthonormalBasisOneI : OrthonormalBasis (Fin 2) \u211d \u2102",
+  "proof_src": ":=\n  Complex.basisOneI.toOrthonormalBasis\n    (by\n      rw [orthonormal_iff_ite]\n      intro i; fin_cases i <;> intro j <;> fin_cases j <;> simp [real_inner_eq_re_inner])",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Module.Basis.toOrthonormalBasis",
+    "statement_src": "def _root_.Module.Basis.toOrthonormalBasis (v : Basis \u03b9 \ud835\udd5c E) (hv : Orthonormal \ud835\udd5c v) :\n    OrthonormalBasis \u03b9 \ud835\udd5c E"
+   },
+   {
+    "n": 2,
+    "name": "Fin.fintype",
+    "statement_src": "instance Fin.fintype (n : \u2115) : Fintype (Fin n)"
+   },
+   {
+    "n": 3,
+    "name": "Real",
+    "statement_src": "structure Real"
+   },
+   {
+    "n": 4,
+    "name": "Nat",
+    "statement_src": "inductive Nat"
+   },
+   {
+    "n": 5,
+    "name": "Fin",
+    "statement_src": "structure Fin (n : Nat)"
+   },
+   {
+    "n": 6,
+    "name": "Complex",
+    "statement_src": "structure Complex : Type"
+   },
+   {
+    "n": 7,
+    "name": "OfNat.ofNat",
+    "statement_src": "ofNat : \u03b1"
+   },
+   {
+    "n": 8,
+    "name": "Complex.basisOneI",
+    "statement_src": "noncomputable def basisOneI : Basis (Fin 2) \u211d \u2102"
+   },
+   {
+    "n": 9,
+    "name": "Real.instRCLike",
+    "statement_src": "noncomputable instance Real.instRCLike : RCLike \u211d"
+   },
+   {
+    "n": 10,
+    "name": "instOfNatNat",
+    "statement_src": "instance instOfNatNat (n : Nat) : OfNat Nat n"
+   },
+   {
+    "n": 11,
+    "name": "instInnerProductSpaceRealComplex",
+    "statement_src": "instance : InnerProductSpace \u211d \u2102"
+   },
+   {
+    "n": 12,
+    "name": "Complex.instNormedAddCommGroup",
+    "statement_src": "instance instNormedAddCommGroup : NormedAddCommGroup \u2102"
+   }
+  ],
+  "shuffle_seed": 20395534
+ },
+ {
+  "id": "t018",
+  "target": "LinearMap.lTensorHom",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "def lTensorHom : (N \u2192\u2097[R] P) \u2192\u2097[R] M \u2297[R] N \u2192\u2097[R] M \u2297[R] P",
+  "proof_src": "where\n  toFun := lTensor M\n  map_add' f g := by\n    ext x y\n    simp only [compr\u2082\u209b\u2097_apply, mk_apply, add_apply, lTensor_tmul, tmul_add]\n  map_smul' r f := by\n    dsimp\n    ext x y\n    simp only [compr\u2082\u209b\u2097_apply, mk_apply, tmul_smul, smul_apply, lTensor_tmul]",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "AddCommSemigroup.toAddCommMagma",
+    "statement_src": "class AddCommSemigroup (G : Type u) extends AddSemigroup G, AddCommMagma G"
+   },
+   {
+    "n": 2,
+    "name": "CommSemiring",
+    "statement_src": "class CommSemiring (R : Type u) extends Semiring R, CommMonoid R"
+   },
+   {
+    "n": 3,
+    "name": "TensorProduct",
+    "statement_src": "def TensorProduct : Type _"
+   },
+   {
+    "n": 4,
+    "name": "RingHom.id",
+    "statement_src": "def id (\u03b1 : Type*) [NonAssocSemiring \u03b1] : \u03b1 \u2192+* \u03b1"
+   },
+   {
+    "n": 5,
+    "name": "LinearMap.module",
+    "statement_src": "instance module : Module S (M \u2192\u209b\u2097[\u03c3\u2081\u2082] M\u2082)"
+   },
+   {
+    "n": 6,
+    "name": "AddCommMonoid.toAddCommSemigroup",
+    "statement_src": "class AddCommMonoid (M : Type u) extends AddMonoid M, AddCommSemigroup M"
+   },
+   {
+    "n": 7,
+    "name": "Module",
+    "statement_src": "class Module (R : Type u) (M : Type v) [Semiring R] [AddCommMonoid M] extends\n  DistribMulAction R M"
+   },
+   {
+    "n": 8,
+    "name": "AddCommMagma.toAdd",
+    "statement_src": "class AddCommMagma (G : Type u) extends Add G"
+   },
+   {
+    "n": 9,
+    "name": "LinearMap.mk",
+    "statement_src": "structure LinearMap {R S : Type*} [Semiring R] [Semiring S] (\u03c3 : R \u2192+* S) (M : Type*)\n    (M\u2082 : Type*) [AddCommMonoid M] [AddCommMonoid M\u2082] [Module R M] [Module S M\u2082] extends\n    AddHom M M\u2082, MulActionHom \u03c3 M M\u2082"
+   },
+   {
+    "n": 10,
+    "name": "AddHom.mk",
+    "statement_src": "structure AddHom (M : Type*) (N : Type*) [Add M] [Add N]"
+   },
+   {
+    "n": 11,
+    "name": "Semiring.toNonAssocSemiring",
+    "statement_src": "class Semiring (\u03b1 : Type u) extends AddCommMonoid \u03b1, MonoidWithZero \u03b1, NonUnitalSemiring \u03b1,\n  NonAssocSemiring \u03b1"
+   },
+   {
+    "n": 12,
+    "name": "LinearMap.addCommMonoid",
+    "statement_src": "instance addCommMonoid : AddCommMonoid (M \u2192\u209b\u2097[\u03c3\u2081\u2082] M\u2082)"
+   },
+   {
+    "n": 13,
+    "name": "AddCommMonoid",
+    "statement_src": "class AddCommMonoid (M : Type u) extends AddMonoid M, AddCommSemigroup M"
+   },
+   {
+    "n": 14,
+    "name": "CommSemiring.toSemiring",
+    "statement_src": "class CommSemiring (R : Type u) extends Semiring R, CommMonoid R"
+   },
+   {
+    "n": 15,
+    "name": "TensorProduct.addCommMonoid",
+    "statement_src": "instance addCommMonoid : AddCommMonoid (M \u2297[R] N)"
+   },
+   {
+    "n": 16,
+    "name": "TensorProduct.instModule",
+    "statement_src": "instance : Module R (M \u2297[R] N)"
+   },
+   {
+    "n": 17,
+    "name": "LinearMap",
+    "statement_src": "structure LinearMap {R S : Type*} [Semiring R] [Semiring S] (\u03c3 : R \u2192+* S) (M : Type*)\n    (M\u2082 : Type*) [AddCommMonoid M] [AddCommMonoid M\u2082] [Module R M] [Module S M\u2082] extends\n    AddHom M M\u2082, MulActionHom \u03c3 M M\u2082"
+   },
+   {
+    "n": 18,
+    "name": "LinearMap.lTensor",
+    "statement_src": "def lTensor (f : N \u2192\u2097[R] P) : M \u2297[R] N \u2192\u2097[R] M \u2297[R] P"
+   }
+  ],
+  "shuffle_seed": 20403453
+ },
+ {
+  "id": "t019",
+  "target": "BooleanSubalgebra.instBotCoe",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "instance instBotCoe : Bot L",
+  "proof_src": "where bot := \u27e8\u22a5, bot_mem\u27e9",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Membership.mem",
+    "statement_src": "mem : \u03b3 \u2192 \u03b1 \u2192 Prop"
+   },
+   {
+    "n": 2,
+    "name": "Subtype",
+    "statement_src": "structure Subtype {\u03b1 : Sort u} (p : \u03b1 \u2192 Prop)"
+   },
+   {
+    "n": 3,
+    "name": "BooleanSubalgebra",
+    "statement_src": "structure BooleanSubalgebra [BooleanAlgebra \u03b1] extends Sublattice \u03b1"
+   },
+   {
+    "n": 4,
+    "name": "BooleanSubalgebra.instSetLike",
+    "statement_src": "instance instSetLike : SetLike (BooleanSubalgebra \u03b1) \u03b1"
+   },
+   {
+    "n": 5,
+    "name": "BooleanSubalgebra.bot_mem",
+    "statement_src": "@[simp] lemma bot_mem : \u22a5 \u2208 L"
+   },
+   {
+    "n": 6,
+    "name": "Subtype.mk",
+    "statement_src": "structure Subtype {\u03b1 : Sort u} (p : \u03b1 \u2192 Prop)"
+   },
+   {
+    "n": 7,
+    "name": "BooleanAlgebra.toBot",
+    "statement_src": "class BooleanAlgebra (\u03b1 : Type u) extends\n    DistribLattice \u03b1, Compl \u03b1, SDiff \u03b1, HImp \u03b1, Top \u03b1, Bot \u03b1"
+   },
+   {
+    "n": 8,
+    "name": "SetLike.instMembership",
+    "statement_src": "instance (priority := 100) instMembership : Membership B A"
+   },
+   {
+    "n": 9,
+    "name": "BooleanAlgebra",
+    "statement_src": "class BooleanAlgebra (\u03b1 : Type u) extends\n    DistribLattice \u03b1, Compl \u03b1, SDiff \u03b1, HImp \u03b1, Top \u03b1, Bot \u03b1"
+   },
+   {
+    "n": 10,
+    "name": "Bot.bot",
+    "statement_src": "bot : \u03b1"
+   },
+   {
+    "n": 11,
+    "name": "Bot.mk",
+    "statement_src": "class Bot (\u03b1 : Type*)"
+   }
+  ],
+  "shuffle_seed": 20411372
+ },
+ {
+  "id": "t020",
+  "target": "SemiNormedGrp\u2081.mkIso",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "def mkIso {M N : SemiNormedGrp} (f : M \u2245 N) (i : f.hom.hom.NormNoninc) (i' : f.inv.hom.NormNoninc) :\n    SemiNormedGrp\u2081.of M \u2245 SemiNormedGrp\u2081.of N",
+  "proof_src": "where\n  hom := mkHom f.hom.hom i\n  inv := mkHom f.inv.hom i'",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.Iso",
+    "statement_src": "structure Iso {C : Type u} [Category.{v} C] (X Y : C)"
+   },
+   {
+    "n": 2,
+    "name": "NormedAddGroupHom.NormNoninc",
+    "statement_src": "def NormNoninc (f : NormedAddGroupHom V W) : Prop"
+   },
+   {
+    "n": 3,
+    "name": "SemiNormedGrp.carrier",
+    "statement_src": "carrier : Type u"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Iso.hom",
+    "statement_src": "hom : X \u27f6 Y"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Iso.inv",
+    "statement_src": "inv : Y \u27f6 X"
+   },
+   {
+    "n": 6,
+    "name": "SemiNormedGrp\u2081.mkHom",
+    "statement_src": "abbrev mkHom {M N : Type u} [SeminormedAddCommGroup M] [SeminormedAddCommGroup N]\n    (f : NormedAddGroupHom M N) (i : f.NormNoninc) :\n    SemiNormedGrp\u2081.of M \u27f6 SemiNormedGrp\u2081.of N"
+   },
+   {
+    "n": 7,
+    "name": "SemiNormedGrp.instLargeCategory",
+    "statement_src": "SemiNormedGrp.instLargeCategory"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Iso.mk",
+    "statement_src": "structure Iso {C : Type u} [Category.{v} C] (X Y : C)"
+   },
+   {
+    "n": 9,
+    "name": "SemiNormedGrp.str",
+    "statement_src": "SemiNormedGrp.str"
+   },
+   {
+    "n": 10,
+    "name": "SemiNormedGrp\u2081.instLargeCategory",
+    "statement_src": "SemiNormedGrp\u2081.instLargeCategory"
+   },
+   {
+    "n": 11,
+    "name": "SemiNormedGrp\u2081",
+    "statement_src": "structure SemiNormedGrp\u2081 : Type (u + 1)"
+   },
+   {
+    "n": 12,
+    "name": "SemiNormedGrp",
+    "statement_src": "structure SemiNormedGrp : Type (u + 1)"
+   },
+   {
+    "n": 13,
+    "name": "SemiNormedGrp.Hom.hom",
+    "statement_src": "abbrev Hom.hom {M N : SemiNormedGrp.{u}} (f : Hom M N)"
+   }
+  ],
+  "shuffle_seed": 20419291
+ },
+ {
+  "id": "t021",
+  "target": "CategoryTheory.Limits.coequalizer.isoTargetOfSelf",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "noncomputable def coequalizer.isoTargetOfSelf : coequalizer f f \u2245 Y",
+  "proof_src": ":=\n  (asIso (coequalizer.\u03c0 f f)).symm",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.CategoryStruct.toQuiver",
+    "statement_src": "class CategoryStruct (obj : Type u) : Type max u (v + 1) extends Quiver.{v} obj"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Limits.coequalizer",
+    "statement_src": "noncomputable abbrev coequalizer : C"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Limits.coequalizer.\u03c0",
+    "statement_src": "noncomputable abbrev coequalizer.\u03c0 : Y \u27f6 coequalizer f g"
+   },
+   {
+    "n": 4,
+    "name": "Quiver.Hom",
+    "statement_src": "Hom : V \u2192 V \u2192 Type v"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Iso.symm",
+    "statement_src": "def symm (I : X \u2245 Y) : Y \u2245 X"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Category.toCategoryStruct",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.asIso",
+    "statement_src": "noncomputable def asIso (f : X \u27f6 Y) [IsIso f] : X \u2245 Y"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   }
+  ],
+  "shuffle_seed": 20427210
+ },
+ {
+  "id": "t022",
+  "target": "CategoryTheory.Limits.createsLimitsOfShapeOfRightOp",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "def createsLimitsOfShapeOfRightOp (F : C\u1d52\u1d56 \u2964 D) [CreatesColimitsOfShape J\u1d52\u1d56 F.rightOp] :\n    CreatesLimitsOfShape J F",
+  "proof_src": "where CreatesLimit {K} := createsLimitOfRightOp K F",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.Functor.rightOp",
+    "statement_src": "protected def rightOp (F : C\u1d52\u1d56 \u2964 D) : C \u2964 D\u1d52\u1d56"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Functor",
+    "statement_src": "structure Functor (C : Type u\u2081) [Category.{v\u2081} C] (D : Type u\u2082) [Category.{v\u2082} D] :\n    Type max v\u2081 v\u2082 u\u2081 u\u2082"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.CreatesLimitsOfShape.mk",
+    "statement_src": "class CreatesLimitsOfShape (J : Type w) [Category.{w'} J] (F : C \u2964 D)"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Limits.createsLimitOfRightOp",
+    "statement_src": "def createsLimitOfRightOp (K : J \u2964 C\u1d52\u1d56) (F : C\u1d52\u1d56 \u2964 D) [CreatesColimit K.leftOp F.rightOp] :\n    CreatesLimit K F"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.CreatesColimitsOfShape.CreatesColimit",
+    "statement_src": "CreatesColimit : \u2200 {K : J \u2964 C}, CreatesColimit K F"
+   },
+   {
+    "n": 7,
+    "name": "Opposite",
+    "statement_src": "structure Opposite"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Functor.leftOp",
+    "statement_src": "protected def leftOp (F : C \u2964 D\u1d52\u1d56) : C\u1d52\u1d56 \u2964 D"
+   },
+   {
+    "n": 9,
+    "name": "CategoryTheory.CreatesColimitsOfShape",
+    "statement_src": "class CreatesColimitsOfShape (J : Type w) [Category.{w'} J] (F : C \u2964 D)"
+   },
+   {
+    "n": 10,
+    "name": "CategoryTheory.Category.opposite",
+    "statement_src": "instance Category.opposite : Category.{v\u2081} C\u1d52\u1d56"
+   }
+  ],
+  "shuffle_seed": 20435129
+ },
+ {
+  "id": "t023",
+  "target": "CategoryTheory.StructuredArrow.ofDiagEquivalence.functor",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "def ofDiagEquivalence.functor (X : T \u00d7 T) :\n    StructuredArrow X (Functor.diag _) \u2964 StructuredArrow X.2 (Under.forget X.1)",
+  "proof_src": ":=\n  Functor.toStructuredArrow\n    (Functor.toUnder (StructuredArrow.proj X _) _\n      (fun f \u21a6 f.hom.1) (fun g \u21a6 by simp [\u2190 w g])) _ _\n    (fun f \u21a6 f.hom.2) (fun g \u21a6 by simp [\u2190 w g])",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Prod.snd",
+    "statement_src": "snd : \u03b2"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.uniformProd",
+    "statement_src": "instance uniformProd : Category (C \u00d7 D)"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Under",
+    "statement_src": "def Under (X : T)"
+   },
+   {
+    "n": 4,
+    "name": "Prod",
+    "statement_src": "structure Prod (\u03b1 : Type u) (\u03b2 : Type v)"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Under.forget",
+    "statement_src": "def forget : Under X \u2964 T"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Functor.obj",
+    "statement_src": "obj : C \u2192 D"
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.Category.toCategoryStruct",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.instCategoryUnder",
+    "statement_src": "CategoryTheory.instCategoryUnder"
+   },
+   {
+    "n": 9,
+    "name": "CategoryTheory.Functor.toUnder",
+    "statement_src": "def toUnder (F : S \u2964 T) (X : T) (f : (Y : S) \u2192 X \u27f6 F.obj Y)\n    (h : \u2200 {Y Z : S} (g : Y \u27f6 Z), f Y \u226b F.map g = f Z) : S \u2964 Under X"
+   },
+   {
+    "n": 10,
+    "name": "Prod.fst",
+    "statement_src": "fst : \u03b1"
+   },
+   {
+    "n": 11,
+    "name": "Quiver.Hom",
+    "statement_src": "Hom : V \u2192 V \u2192 Type v"
+   },
+   {
+    "n": 12,
+    "name": "CategoryTheory.StructuredArrow.proj",
+    "statement_src": "def proj (S : D) (T : C \u2964 D) : StructuredArrow S T \u2964 C"
+   },
+   {
+    "n": 13,
+    "name": "CategoryTheory.StructuredArrow.right",
+    "statement_src": "abbrev right (X : StructuredArrow S T) : C"
+   },
+   {
+    "n": 14,
+    "name": "CategoryTheory.Functor.toStructuredArrow",
+    "statement_src": "def toStructuredArrow (G : E \u2964 C) (X : D) (F : C \u2964 D) (f : (Y : E) \u2192 X \u27f6 F.obj (G.obj Y))\n    (h : \u2200 {Y Z : E} (g : Y \u27f6 Z), f Y \u226b F.map (G.map g) = f Z) : E \u2964 StructuredArrow X F"
+   },
+   {
+    "n": 15,
+    "name": "CategoryTheory.Functor.diag",
+    "statement_src": "def diag : C \u2964 C \u00d7 C"
+   },
+   {
+    "n": 16,
+    "name": "CategoryTheory.instCategoryStructuredArrow",
+    "statement_src": "CategoryTheory.instCategoryStructuredArrow"
+   },
+   {
+    "n": 17,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 18,
+    "name": "CategoryTheory.CategoryStruct.toQuiver",
+    "statement_src": "class CategoryStruct (obj : Type u) : Type max u (v + 1) extends Quiver.{v} obj"
+   },
+   {
+    "n": 19,
+    "name": "CategoryTheory.StructuredArrow",
+    "statement_src": "def StructuredArrow (S : D) (T : C \u2964 D)"
+   },
+   {
+    "n": 20,
+    "name": "CategoryTheory.StructuredArrow.hom",
+    "statement_src": "abbrev hom (X : StructuredArrow S T) : S \u27f6 T.obj X.right"
+   }
+  ],
+  "shuffle_seed": 20443048
+ },
+ {
+  "id": "t024",
+  "target": "Set.DefinableFun",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "def DefinableFun (f : (\u03b1 \u2192 M) \u2192 M) : Prop",
+  "proof_src": ":=\n  A.Definable L f.tupleGraph",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Set.Definable",
+    "statement_src": "def Definable (s : Set (\u03b1 \u2192 M)) : Prop"
+   },
+   {
+    "n": 2,
+    "name": "FirstOrder.Language.Structure",
+    "statement_src": "class Structure"
+   },
+   {
+    "n": 3,
+    "name": "Option",
+    "statement_src": "inductive Option (\u03b1 : Type u)"
+   },
+   {
+    "n": 4,
+    "name": "Set",
+    "statement_src": "def Set (\u03b1 : Type u)"
+   },
+   {
+    "n": 5,
+    "name": "FirstOrder.Language",
+    "statement_src": "structure Language"
+   },
+   {
+    "n": 6,
+    "name": "Function.tupleGraph",
+    "statement_src": "def tupleGraph (f : (\u03b1 \u2192 \u03b2) \u2192 \u03b2) : Set (Option \u03b1 \u2192 \u03b2)"
+   }
+  ],
+  "shuffle_seed": 20450967
+ },
+ {
+  "id": "t025",
+  "target": "GroupTopology.instTop",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "instance : Top (GroupTopology \u03b1)",
+  "proof_src": ":=\n  let _t : TopologicalSpace \u03b1 := \u22a4\n  \u27e8{  continuous_mul := continuous_top\n      continuous_inv := continuous_top }\u27e9",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "SemilatticeSup.toPartialOrder",
+    "statement_src": "class SemilatticeSup (\u03b1 : Type u) extends PartialOrder \u03b1"
+   },
+   {
+    "n": 2,
+    "name": "Top.mk",
+    "statement_src": "class Top (\u03b1 : Type*)"
+   },
+   {
+    "n": 3,
+    "name": "BoundedOrder.toOrderTop",
+    "statement_src": "class BoundedOrder (\u03b1 : Type u) [LE \u03b1] extends OrderTop \u03b1, OrderBot \u03b1"
+   },
+   {
+    "n": 4,
+    "name": "GroupTopology",
+    "statement_src": "structure GroupTopology (\u03b1 : Type u) [Group \u03b1] : Type u\n  extends TopologicalSpace \u03b1, IsTopologicalGroup \u03b1"
+   },
+   {
+    "n": 5,
+    "name": "CompleteLattice.toLattice",
+    "statement_src": "class CompleteLattice (\u03b1 : Type*) extends Lattice \u03b1, CompleteSemilatticeSup \u03b1,\n    CompleteSemilatticeInf \u03b1, BoundedOrder \u03b1"
+   },
+   {
+    "n": 6,
+    "name": "Group",
+    "statement_src": "class Group (G : Type u) extends DivInvMonoid G"
+   },
+   {
+    "n": 7,
+    "name": "Lattice.toSemilatticeSup",
+    "statement_src": "class Lattice (\u03b1 : Type u) extends SemilatticeSup \u03b1, SemilatticeInf \u03b1"
+   },
+   {
+    "n": 8,
+    "name": "GroupTopology.mk",
+    "statement_src": "structure GroupTopology (\u03b1 : Type u) [Group \u03b1] : Type u\n  extends TopologicalSpace \u03b1, IsTopologicalGroup \u03b1"
+   },
+   {
+    "n": 9,
+    "name": "CompleteLattice.toBoundedOrder",
+    "statement_src": "class CompleteLattice (\u03b1 : Type*) extends Lattice \u03b1, CompleteSemilatticeSup \u03b1,\n    CompleteSemilatticeInf \u03b1, BoundedOrder \u03b1"
+   },
+   {
+    "n": 10,
+    "name": "Top.top",
+    "statement_src": "top : \u03b1"
+   },
+   {
+    "n": 11,
+    "name": "OrderTop.toTop",
+    "statement_src": "class OrderTop (\u03b1 : Type u) [LE \u03b1] extends Top \u03b1"
+   },
+   {
+    "n": 12,
+    "name": "TopologicalSpace",
+    "statement_src": "class TopologicalSpace (X : Type u)"
+   },
+   {
+    "n": 13,
+    "name": "Preorder.toLE",
+    "statement_src": "class Preorder (\u03b1 : Type*) extends LE \u03b1, LT \u03b1"
+   },
+   {
+    "n": 14,
+    "name": "TopologicalSpace.instCompleteLattice",
+    "statement_src": "instance : CompleteLattice (TopologicalSpace \u03b1)"
+   },
+   {
+    "n": 15,
+    "name": "PartialOrder.toPreorder",
+    "statement_src": "class PartialOrder (\u03b1 : Type*) extends Preorder \u03b1"
+   }
+  ],
+  "shuffle_seed": 20458886
+ },
+ {
+  "id": "t026",
+  "target": "TopCat.toDeltaGenerated",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "abbrev TopCat.toDeltaGenerated : TopCat.{u} \u2964 DeltaGenerated.{u}",
+  "proof_src": ":=\n  TopCat.toGeneratedByTopCat",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "PseudoMetricSpace.toUniformSpace",
+    "statement_src": "toUniformSpace : UniformSpace \u03b1"
+   },
+   {
+    "n": 2,
+    "name": "Fin",
+    "statement_src": "structure Fin (n : Nat)"
+   },
+   {
+    "n": 3,
+    "name": "Pi.topologicalSpace",
+    "statement_src": "instance Pi.topologicalSpace {\u03b9 : Type*} {Y : \u03b9 \u2192 Type v} [t\u2082 : (i : \u03b9) \u2192 TopologicalSpace (Y i)] :\n    TopologicalSpace ((i : \u03b9) \u2192 Y i)"
+   },
+   {
+    "n": 4,
+    "name": "Nat",
+    "statement_src": "inductive Nat"
+   },
+   {
+    "n": 5,
+    "name": "UniformSpace.toTopologicalSpace",
+    "statement_src": "class UniformSpace (\u03b1 : Type u) extends TopologicalSpace \u03b1"
+   },
+   {
+    "n": 6,
+    "name": "Real.pseudoMetricSpace",
+    "statement_src": "instance Real.pseudoMetricSpace : PseudoMetricSpace \u211d"
+   },
+   {
+    "n": 7,
+    "name": "Real",
+    "statement_src": "structure Real"
+   },
+   {
+    "n": 8,
+    "name": "TopCat.toGeneratedByTopCat",
+    "statement_src": "def TopCat.toGeneratedByTopCat : TopCat.{v} \u2964 GeneratedByTopCat X"
+   }
+  ],
+  "shuffle_seed": 20466805
+ },
+ {
+  "id": "t027",
+  "target": "HomotopicalAlgebra.RightHomotopyRel.rightHomotopy",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "noncomputable def RightHomotopyRel.rightHomotopy\n    (h : RightHomotopyRel f g) (P : PathObject Y) [P.IsGood] :\n    P.RightHomotopy f g",
+  "proof_src": ":=\n  LeftHomotopyRel.rightHomotopy (by rwa [leftHomotopyRel_iff_rightHomotopyRel]) _",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "HomotopicalAlgebra.ModelCategory.categoryWithFibrations",
+    "statement_src": "categoryWithFibrations : CategoryWithFibrations C"
+   },
+   {
+    "n": 2,
+    "name": "Quiver.Hom",
+    "statement_src": "Hom : V \u2192 V \u2192 Type v"
+   },
+   {
+    "n": 3,
+    "name": "HomotopicalAlgebra.ModelCategory",
+    "statement_src": "class ModelCategory"
+   },
+   {
+    "n": 4,
+    "name": "HomotopicalAlgebra.IsFibrant",
+    "statement_src": "abbrev IsFibrant (X : C) : Prop"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.CategoryStruct.toQuiver",
+    "statement_src": "class CategoryStruct (obj : Type u) : Type max u (v + 1) extends Quiver.{v} obj"
+   },
+   {
+    "n": 6,
+    "name": "HomotopicalAlgebra.ModelCategory.categoryWithCofibrations",
+    "statement_src": "categoryWithCofibrations : CategoryWithCofibrations C"
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.Category.toCategoryStruct",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 8,
+    "name": "HomotopicalAlgebra.ModelCategory.categoryWithWeakEquivalences",
+    "statement_src": "categoryWithWeakEquivalences : CategoryWithWeakEquivalences C"
+   },
+   {
+    "n": 9,
+    "name": "HomotopicalAlgebra.PathObject.IsGood",
+    "statement_src": "class IsGood [HasBinaryProduct A A] [CategoryWithFibrations C] : Prop"
+   },
+   {
+    "n": 10,
+    "name": "HomotopicalAlgebra.LeftHomotopyRel.rightHomotopy",
+    "statement_src": "noncomputable def rightHomotopy (h : LeftHomotopyRel f g) (Q : PathObject Y) [Q.IsGood] :\n    Q.RightHomotopy f g"
+   },
+   {
+    "n": 11,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 12,
+    "name": "HomotopicalAlgebra.PathObject",
+    "statement_src": "structure PathObject [CategoryWithWeakEquivalences C] (A : C) extends PrepathObject A"
+   },
+   {
+    "n": 13,
+    "name": "HomotopicalAlgebra.RightHomotopyRel",
+    "statement_src": "def RightHomotopyRel [CategoryWithWeakEquivalences C] : HomRel C"
+   },
+   {
+    "n": 14,
+    "name": "HomotopicalAlgebra.IsCofibrant",
+    "statement_src": "abbrev IsCofibrant (X : C) : Prop"
+   }
+  ],
+  "shuffle_seed": 20474724
+ },
+ {
+  "id": "t028",
+  "target": "Complex.ofRealCLM",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "def ofRealCLM : \u211d \u2192L[\u211d] \u2102",
+  "proof_src": ":=\n  ofRealLI.toContinuousLinearMap",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "LinearIsometry.toContinuousLinearMap",
+    "statement_src": "def toContinuousLinearMap : E \u2192SL[\u03c3\u2081\u2082] E\u2082"
+   },
+   {
+    "n": 2,
+    "name": "Complex.ofRealLI",
+    "statement_src": "def ofRealLI : \u211d \u2192\u2097\u1d62[\u211d] \u2102"
+   },
+   {
+    "n": 3,
+    "name": "Real",
+    "statement_src": "structure Real"
+   },
+   {
+    "n": 4,
+    "name": "NormedSpace.toModule",
+    "statement_src": "class NormedSpace (\ud835\udd5c : Type*) (E : Type*) [NormedField \ud835\udd5c] [SeminormedAddCommGroup E]\n    extends Module \ud835\udd5c E"
+   },
+   {
+    "n": 5,
+    "name": "Complex.instNormedField",
+    "statement_src": "instance : NormedField \u2102"
+   },
+   {
+    "n": 6,
+    "name": "SeminormedCommRing.toNonUnitalSeminormedCommRing",
+    "statement_src": "instance (priority := 100) SeminormedCommRing.toNonUnitalSeminormedCommRing\n    [\u03b2 : SeminormedCommRing \u03b1] : NonUnitalSeminormedCommRing \u03b1"
+   },
+   {
+    "n": 7,
+    "name": "NormedField.toNormedSpace",
+    "statement_src": "instance NormedField.toNormedSpace : NormedSpace \ud835\udd5c \ud835\udd5c"
+   },
+   {
+    "n": 8,
+    "name": "Semiring.toNonAssocSemiring",
+    "statement_src": "class Semiring (\u03b1 : Type u) extends AddCommMonoid \u03b1, MonoidWithZero \u03b1, NonUnitalSemiring \u03b1,\n  NonAssocSemiring \u03b1"
+   },
+   {
+    "n": 9,
+    "name": "Semiring.toModule",
+    "statement_src": "instance (priority := 1100) Semiring.toModule [Semiring R] : Module R R"
+   },
+   {
+    "n": 10,
+    "name": "RingHom.id",
+    "statement_src": "def id (\u03b1 : Type*) [NonAssocSemiring \u03b1] : \u03b1 \u2192+* \u03b1"
+   },
+   {
+    "n": 11,
+    "name": "NormedSpace.complexToReal",
+    "statement_src": "instance (priority := 900) _root_.NormedSpace.complexToReal : NormedSpace \u211d E"
+   },
+   {
+    "n": 12,
+    "name": "Real.normedField",
+    "statement_src": "noncomputable instance Real.normedField : NormedField \u211d"
+   },
+   {
+    "n": 13,
+    "name": "NormedCommRing.toSeminormedCommRing",
+    "statement_src": "instance (priority := 100) NormedCommRing.toSeminormedCommRing [\u03b2 : NormedCommRing \u03b1] :\n    SeminormedCommRing \u03b1"
+   },
+   {
+    "n": 14,
+    "name": "Complex",
+    "statement_src": "structure Complex : Type"
+   },
+   {
+    "n": 15,
+    "name": "NonUnitalSeminormedRing.toSeminormedAddCommGroup",
+    "statement_src": "instance (priority := 100) NonUnitalSeminormedRing.toSeminormedAddCommGroup\n    [NonUnitalSeminormedRing \u03b1] : SeminormedAddCommGroup \u03b1"
+   },
+   {
+    "n": 16,
+    "name": "Real.semiring",
+    "statement_src": "instance semiring : Semiring \u211d"
+   },
+   {
+    "n": 17,
+    "name": "NormedField.toNormedCommRing",
+    "statement_src": "instance (priority := 100) NormedField.toNormedCommRing : NormedCommRing \u03b1"
+   },
+   {
+    "n": 18,
+    "name": "Real.normedCommRing",
+    "statement_src": "instance Real.normedCommRing : NormedCommRing \u211d"
+   },
+   {
+    "n": 19,
+    "name": "NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing",
+    "statement_src": "class NonUnitalSeminormedCommRing (\u03b1 : Type*)\n    extends NonUnitalSeminormedRing \u03b1, NonUnitalCommRing \u03b1"
+   }
+  ],
+  "shuffle_seed": 20482643
+ },
+ {
+  "id": "t029",
+  "target": "MeasureTheory.Measure.inv",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "protected noncomputable def inv [Inv G] (\u03bc : Measure G) : Measure G",
+  "proof_src": ":=\n  Measure.map inv \u03bc",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Inv",
+    "statement_src": "class Inv (\u03b1 : Type u)"
+   },
+   {
+    "n": 2,
+    "name": "MeasureTheory.Measure",
+    "statement_src": "structure Measure (\u03b1 : Type*) [MeasurableSpace \u03b1] extends OuterMeasure \u03b1"
+   },
+   {
+    "n": 3,
+    "name": "MeasurableSpace",
+    "statement_src": "@[class] structure MeasurableSpace (\u03b1 : Type*)"
+   },
+   {
+    "n": 4,
+    "name": "MeasureTheory.Measure.map",
+    "statement_src": "MeasureTheory.Measure.map"
+   },
+   {
+    "n": 5,
+    "name": "Inv.inv",
+    "statement_src": "inv : \u03b1 \u2192 \u03b1"
+   }
+  ],
+  "shuffle_seed": 20490562
+ },
+ {
+  "id": "t030",
+  "target": "Polynomial.natTrailingDegree",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "def natTrailingDegree (p : R[X]) : \u2115",
+  "proof_src": ":=\n  ENat.toNat (trailingDegree p)",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "ENat.toNat",
+    "statement_src": "def toNat : \u2115\u221e \u2192 \u2115"
+   },
+   {
+    "n": 2,
+    "name": "Polynomial.trailingDegree",
+    "statement_src": "def trailingDegree (p : R[X]) : \u2115\u221e"
+   },
+   {
+    "n": 3,
+    "name": "Semiring",
+    "statement_src": "class Semiring (\u03b1 : Type u) extends AddCommMonoid \u03b1, MonoidWithZero \u03b1, NonUnitalSemiring \u03b1,\n  NonAssocSemiring \u03b1"
+   },
+   {
+    "n": 4,
+    "name": "Polynomial",
+    "statement_src": "structure Polynomial (R : Type*) [Semiring R]"
+   }
+  ],
+  "shuffle_seed": 20498481
+ },
+ {
+  "id": "t031",
+  "target": "Rep.instMonoidalActionTypeLinearization",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "instance (f : A \u27f6 B) [Mono f] : Mono f.toModuleCatHom",
+  "proof_src": ":=\n  inferInstanceAs <| Mono ((forget\u2082 _ _).map f)",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Rep.instCategory",
+    "statement_src": "instance : Category (Rep.{w} k G)"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.types",
+    "statement_src": "instance CategoryTheory.types : Category.{u} (Type u)"
+   },
+   {
+    "n": 3,
+    "name": "Action",
+    "statement_src": "structure Action (G : Type*) [Monoid G]"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.SemiCartesianMonoidalCategory.toMonoidalCategory",
+    "statement_src": "class SemiCartesianMonoidalCategory (C : Type u) [Category.{v} C] extends MonoidalCategory C"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.typesCartesianMonoidalCategory",
+    "statement_src": "instance typesCartesianMonoidalCategory : CartesianMonoidalCategory (Type u)"
+   },
+   {
+    "n": 6,
+    "name": "Rep.instLaxMonoidalActionTypeLinearization",
+    "statement_src": "Rep.instLaxMonoidalActionTypeLinearization"
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.CartesianMonoidalCategory.toSemiCartesianMonoidalCategory",
+    "statement_src": "class CartesianMonoidalCategory (C : Type u) [Category.{v} C] extends\n    SemiCartesianMonoidalCategory C"
+   },
+   {
+    "n": 8,
+    "name": "Rep",
+    "statement_src": "structure Rep (k : Type u) (G : Type v) [Semiring k] [Monoid G]"
+   },
+   {
+    "n": 9,
+    "name": "CommSemiring.toSemiring",
+    "statement_src": "class CommSemiring (R : Type u) extends Semiring R, CommMonoid R"
+   },
+   {
+    "n": 10,
+    "name": "Rep.linearization",
+    "statement_src": "abbrev linearization : Action (Type w) G \u2964 Rep.{max w u} k G"
+   },
+   {
+    "n": 11,
+    "name": "CommRing",
+    "statement_src": "class CommRing (\u03b1 : Type u) extends Ring \u03b1, CommMonoid \u03b1"
+   },
+   {
+    "n": 12,
+    "name": "CategoryTheory.Functor.Monoidal.mk",
+    "statement_src": "class Monoidal (F : C \u2964 D) extends F.LaxMonoidal, F.OplaxMonoidal"
+   },
+   {
+    "n": 13,
+    "name": "Rep.instMonoidalCategory",
+    "statement_src": "Rep.instMonoidalCategory"
+   },
+   {
+    "n": 14,
+    "name": "Rep.instOplaxMonoidalActionTypeLinearization",
+    "statement_src": "Rep.instOplaxMonoidalActionTypeLinearization"
+   },
+   {
+    "n": 15,
+    "name": "Action.instMonoidalCategory",
+    "statement_src": "instance instMonoidalCategory : MonoidalCategory (Action V G)"
+   },
+   {
+    "n": 16,
+    "name": "Monoid",
+    "statement_src": "class Monoid (M : Type u) extends Semigroup M, MulOneClass M, NPow M"
+   },
+   {
+    "n": 17,
+    "name": "CommRing.toCommSemiring",
+    "statement_src": "instance (priority := 100) CommRing.toCommSemiring [s : CommRing \u03b1] : CommSemiring \u03b1"
+   },
+   {
+    "n": 18,
+    "name": "Action.instCategory",
+    "statement_src": "instance : Category (Action V G)"
+   }
+  ],
+  "shuffle_seed": 20506400
+ },
+ {
+  "id": "t032",
+  "target": "FractionalIdeal",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "def FractionalIdeal",
+  "proof_src": ":=\n  { I : Submodule R P // IsFractional S I }",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Semiring.toAddCommMonoid",
+    "statement_src": "class Semiring (\u03b1 : Type u) extends AddCommMonoid \u03b1, MonoidWithZero \u03b1, NonUnitalSemiring \u03b1,\n  NonAssocSemiring \u03b1"
+   },
+   {
+    "n": 2,
+    "name": "CommRing",
+    "statement_src": "class CommRing (\u03b1 : Type u) extends Ring \u03b1, CommMonoid \u03b1"
+   },
+   {
+    "n": 3,
+    "name": "Subtype",
+    "statement_src": "structure Subtype {\u03b1 : Sort u} (p : \u03b1 \u2192 Prop)"
+   },
+   {
+    "n": 4,
+    "name": "Submonoid",
+    "statement_src": "structure Submonoid (M : Type*) [MulOneClass M] extends Subsemigroup M"
+   },
+   {
+    "n": 5,
+    "name": "CommRing.toCommSemiring",
+    "statement_src": "instance (priority := 100) CommRing.toCommSemiring [s : CommRing \u03b1] : CommSemiring \u03b1"
+   },
+   {
+    "n": 6,
+    "name": "Algebra.toModule",
+    "statement_src": "instance (priority := 200) toModule {R A} {_ : CommSemiring R} {_ : Semiring A} [Algebra R A] :\n    Module R A"
+   },
+   {
+    "n": 7,
+    "name": "IsFractional",
+    "statement_src": "def IsFractional (I : Submodule R P)"
+   },
+   {
+    "n": 8,
+    "name": "CommSemiring.toSemiring",
+    "statement_src": "class CommSemiring (R : Type u) extends Semiring R, CommMonoid R"
+   },
+   {
+    "n": 9,
+    "name": "instMulZeroOneClassOfSemiring",
+    "statement_src": "instance [Semiring \u03b1] : MulZeroOneClass \u03b1"
+   },
+   {
+    "n": 10,
+    "name": "Submodule",
+    "statement_src": "structure Submodule (R : Type u) (M : Type v) [Semiring R] [AddCommMonoid M] [Module R M] : Type v\n    extends AddSubmonoid M, SubMulAction R M"
+   },
+   {
+    "n": 11,
+    "name": "Algebra",
+    "statement_src": "class Algebra (R : Type u) (A : Type v) [CommSemiring R] [Semiring A] extends SMul R A"
+   },
+   {
+    "n": 12,
+    "name": "MulZeroOneClass.toMulOneClass",
+    "statement_src": "class MulZeroOneClass (M\u2080 : Type u) extends MulOneClass M\u2080, MulZeroClass M\u2080"
+   }
+  ],
+  "shuffle_seed": 20514319
+ },
+ {
+  "id": "t033",
+  "target": "Rep.liftHomOfSurj",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "abbrev liftHomOfSurj {X Y : Rep k G} (hf : Function.Surjective f) (f' : res f X \u27f6 res f Y) :\n    X \u27f6 Y",
+  "proof_src": ":= ofHom \u27e8f'.hom.toLinearMap, fun g \u21a6 by obtain \u27e8h, rfl\u27e9 := hf g; simpa using f'.hom.2 h\u27e9",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Rep.hV2",
+    "statement_src": "Rep.hV2"
+   },
+   {
+    "n": 2,
+    "name": "MulOneClass.toMulOne",
+    "statement_src": "class MulOneClass (M : Type u) extends MulOne M"
+   },
+   {
+    "n": 3,
+    "name": "Semiring",
+    "statement_src": "class Semiring (\u03b1 : Type u) extends AddCommMonoid \u03b1, MonoidWithZero \u03b1, NonUnitalSemiring \u03b1,\n  NonAssocSemiring \u03b1"
+   },
+   {
+    "n": 4,
+    "name": "Monoid.toMulOneClass",
+    "statement_src": "class Monoid (M : Type u) extends Semigroup M, MulOneClass M, NPow M"
+   },
+   {
+    "n": 5,
+    "name": "Representation.IntertwiningMap.toLinearMap",
+    "statement_src": "Representation.IntertwiningMap.toLinearMap"
+   },
+   {
+    "n": 6,
+    "name": "Rep.\u03c1",
+    "statement_src": "Rep.\u03c1"
+   },
+   {
+    "n": 7,
+    "name": "Rep.instCategory",
+    "statement_src": "instance : Category (Rep.{w} k G)"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Category.toCategoryStruct",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 9,
+    "name": "Rep",
+    "statement_src": "structure Rep (k : Type u) (G : Type v) [Semiring k] [Monoid G]"
+   },
+   {
+    "n": 10,
+    "name": "Function.Surjective",
+    "statement_src": "def Surjective (f : \u03b1 \u2192 \u03b2) : Prop"
+   },
+   {
+    "n": 11,
+    "name": "Rep.ofHom",
+    "statement_src": "abbrev ofHom (f : \u03c1.IntertwiningMap \u03c3) : of \u03c1 \u27f6 of \u03c3"
+   },
+   {
+    "n": 12,
+    "name": "Rep.Hom.hom",
+    "statement_src": "abbrev Hom.hom (f : Hom A B)"
+   },
+   {
+    "n": 13,
+    "name": "AddCommGroup.toAddCommMonoid",
+    "statement_src": "class AddCommGroup (G : Type u) extends AddGroup G, AddCommMonoid G"
+   },
+   {
+    "n": 14,
+    "name": "CategoryTheory.CategoryStruct.toQuiver",
+    "statement_src": "class CategoryStruct (obj : Type u) : Type max u (v + 1) extends Quiver.{v} obj"
+   },
+   {
+    "n": 15,
+    "name": "Rep.V",
+    "statement_src": "V : Type w"
+   },
+   {
+    "n": 16,
+    "name": "Monoid",
+    "statement_src": "class Monoid (M : Type u) extends Semigroup M, MulOneClass M, NPow M"
+   },
+   {
+    "n": 17,
+    "name": "DFunLike.coe",
+    "statement_src": "coe : F \u2192 \u2200 a : \u03b1, \u03b2 a"
+   },
+   {
+    "n": 18,
+    "name": "MonoidHom.instFunLike",
+    "statement_src": "instance MonoidHom.instFunLike : FunLike (M \u2192* N) M N"
+   },
+   {
+    "n": 19,
+    "name": "Rep.hV1",
+    "statement_src": "Rep.hV1"
+   },
+   {
+    "n": 20,
+    "name": "Rep.res",
+    "statement_src": "abbrev res (f : H \u2192* G) (M : Rep k G)"
+   },
+   {
+    "n": 21,
+    "name": "MonoidHom",
+    "statement_src": "structure MonoidHom (M : Type*) (N : Type*) [MulOne M] [MulOne N]\n  extends OneHom M N, M \u2192\u2099* N"
+   },
+   {
+    "n": 22,
+    "name": "Representation.IntertwiningMap.mk",
+    "statement_src": "structure IntertwiningMap extends V \u2192\u2097[A] W"
+   },
+   {
+    "n": 23,
+    "name": "Quiver.Hom",
+    "statement_src": "Hom : V \u2192 V \u2192 Type v"
+   }
+  ],
+  "shuffle_seed": 20522238
+ },
+ {
+  "id": "t034",
+  "target": "NumberField.Units.complexEmbedding",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "protected def complexEmbedding (\u03c6 : K \u2192+* \u2102) : (\ud835\udcde K)\u02e3 \u2192* \u2102\u02e3",
+  "proof_src": ":=\n  (map \u03c6).comp (map (algebraMap (\ud835\udcde K) K).toMonoidHom)",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Field.toSemifield",
+    "statement_src": "instance (priority := 100) Field.toSemifield [Field K] : Semifield K"
+   },
+   {
+    "n": 2,
+    "name": "Semifield.toDivisionSemiring",
+    "statement_src": "class Semifield (K : Type*) extends CommSemiring K, DivisionSemiring K, CommGroupWithZero K"
+   },
+   {
+    "n": 3,
+    "name": "MonoidHomClass.toMonoidHom",
+    "statement_src": "def MonoidHomClass.toMonoidHom [MonoidHomClass F M N] (f : F) : M \u2192* N"
+   },
+   {
+    "n": 4,
+    "name": "RingHom",
+    "statement_src": "structure RingHom (\u03b1 : Type*) (\u03b2 : Type*) [NonAssocSemiring \u03b1] [NonAssocSemiring \u03b2] extends\n  \u03b1 \u2192* \u03b2, \u03b1 \u2192+ \u03b2, \u03b1 \u2192\u2099+* \u03b2, \u03b1 \u2192*\u2080 \u03b2"
+   },
+   {
+    "n": 5,
+    "name": "RingHom.instFunLike",
+    "statement_src": "instance instFunLike : FunLike (\u03b1 \u2192+* \u03b2) \u03b1 \u03b2"
+   },
+   {
+    "n": 6,
+    "name": "Field",
+    "statement_src": "class Field (K : Type u) extends CommRing K, DivisionRing K"
+   },
+   {
+    "n": 7,
+    "name": "NumberField.RingOfIntegers.instAlgebra_1",
+    "statement_src": "NumberField.RingOfIntegers.instAlgebra_1"
+   },
+   {
+    "n": 8,
+    "name": "CommRing.toCommSemiring",
+    "statement_src": "instance (priority := 100) CommRing.toCommSemiring [s : CommRing \u03b1] : CommSemiring \u03b1"
+   },
+   {
+    "n": 9,
+    "name": "DivisionSemiring.toSemiring",
+    "statement_src": "class DivisionSemiring (K : Type*) extends Semiring K, GroupWithZero K, NNRatCast K"
+   },
+   {
+    "n": 10,
+    "name": "Complex.instSemiring",
+    "statement_src": "instance : Semiring \u2102"
+   },
+   {
+    "n": 11,
+    "name": "CommSemiring.toSemiring",
+    "statement_src": "class CommSemiring (R : Type u) extends Semiring R, CommMonoid R"
+   },
+   {
+    "n": 12,
+    "name": "MonoidHom.comp",
+    "statement_src": "def MonoidHom.comp [MulOne M] [MulOne N] [MulOne P] (hnp : N \u2192* P) (hmn : M \u2192* N) :\n    M \u2192* P"
+   },
+   {
+    "n": 13,
+    "name": "Units.instMulOneClass",
+    "statement_src": "instance instMulOneClass : MulOneClass \u03b1\u02e3"
+   },
+   {
+    "n": 14,
+    "name": "Semiring.toNonAssocSemiring",
+    "statement_src": "class Semiring (\u03b1 : Type u) extends AddCommMonoid \u03b1, MonoidWithZero \u03b1, NonUnitalSemiring \u03b1,\n  NonAssocSemiring \u03b1"
+   },
+   {
+    "n": 15,
+    "name": "NumberField.instCommRingRingOfIntegers",
+    "statement_src": "NumberField.instCommRingRingOfIntegers"
+   },
+   {
+    "n": 16,
+    "name": "Units.map",
+    "statement_src": "def map (f : M \u2192* N) : M\u02e3 \u2192* N\u02e3"
+   },
+   {
+    "n": 17,
+    "name": "Semiring.toMonoid",
+    "statement_src": "Semiring.toMonoid"
+   },
+   {
+    "n": 18,
+    "name": "Monoid.toMulOneClass",
+    "statement_src": "class Monoid (M : Type u) extends Semigroup M, MulOneClass M, NPow M"
+   },
+   {
+    "n": 19,
+    "name": "RingHom.toMonoidHom",
+    "statement_src": "RingHom.toMonoidHom"
+   },
+   {
+    "n": 20,
+    "name": "NumberField.RingOfIntegers",
+    "statement_src": "def RingOfIntegers : Type _"
+   },
+   {
+    "n": 21,
+    "name": "Units",
+    "statement_src": "structure Units (\u03b1 : Type u) [Monoid \u03b1]"
+   },
+   {
+    "n": 22,
+    "name": "MulOneClass.toMulOne",
+    "statement_src": "class MulOneClass (M : Type u) extends MulOne M"
+   },
+   {
+    "n": 23,
+    "name": "Algebra.algebraMap",
+    "statement_src": "Algebra.algebraMap"
+   },
+   {
+    "n": 24,
+    "name": "Complex",
+    "statement_src": "structure Complex : Type"
+   }
+  ],
+  "shuffle_seed": 20530157
+ },
+ {
+  "id": "t035",
+  "target": "CategoryTheory.CostructuredArrow.costructuredArrowToOverEquivalence.inverse",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "def inverse : CostructuredArrow F Y.left \u2964 CostructuredArrow (toOver F X) Y",
+  "proof_src": "where\n  obj Z :=\n    CostructuredArrow.mk (Y := CostructuredArrow.mk (Z.hom \u226b Y.hom))\n      (Over.homMk Z.hom)\n  map f :=\n    CostructuredArrow.homMk\n      (CostructuredArrow.homMk f.left)\n        (by ext; exact CostructuredArrow.w f)",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.CostructuredArrow.toOver",
+    "statement_src": "def toOver (F : D \u2964 T) (X : T) : CostructuredArrow F X \u2964 Over X"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Over",
+    "statement_src": "def Over (X : T)"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.CommaMorphism.left",
+    "statement_src": "left : X.left \u27f6 Y.left"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Functor.mk",
+    "statement_src": "structure Functor (C : Type u\u2081) [Category.{v\u2081} C] (D : Type u\u2082) [Category.{v\u2082} D] :\n    Type max v\u2081 v\u2082 u\u2081 u\u2082"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.CostructuredArrow.left",
+    "statement_src": "abbrev left (X : CostructuredArrow S T) : C"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Functor.obj",
+    "statement_src": "obj : C \u2192 D"
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.CostructuredArrow",
+    "statement_src": "def CostructuredArrow (S : C \u2964 D) (T : D)"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.CategoryStruct.comp",
+    "statement_src": "comp : \u2200 {X Y Z : obj}, (X \u27f6 Y) \u2192 (Y \u27f6 Z) \u2192 (X \u27f6 Z)"
+   },
+   {
+    "n": 9,
+    "name": "CategoryTheory.Over.homMk",
+    "statement_src": "def homMk {U V : Over X} (f : U.left \u27f6 V.left) (w : f \u226b V.hom = U.hom := by cat_disch) : U \u27f6 V"
+   },
+   {
+    "n": 10,
+    "name": "CategoryTheory.Functor.fromPUnit",
+    "statement_src": "abbrev fromPUnit (X : C) : Discrete PUnit.{w + 1} \u2964 C"
+   },
+   {
+    "n": 11,
+    "name": "CategoryTheory.Discrete",
+    "statement_src": "structure Discrete (\u03b1 : Type u\u2081)"
+   },
+   {
+    "n": 12,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 13,
+    "name": "CategoryTheory.Functor",
+    "statement_src": "structure Functor (C : Type u\u2081) [Category.{v\u2081} C] (D : Type u\u2082) [Category.{v\u2082} D] :\n    Type max v\u2081 v\u2082 u\u2081 u\u2082"
+   },
+   {
+    "n": 14,
+    "name": "CategoryTheory.discreteCategory",
+    "statement_src": "instance discreteCategory (\u03b1 : Type u\u2081) : SmallCategory (Discrete \u03b1)"
+   },
+   {
+    "n": 15,
+    "name": "CategoryTheory.Over.hom",
+    "statement_src": "abbrev hom (f : Over X) : f.left \u27f6 X"
+   },
+   {
+    "n": 16,
+    "name": "CategoryTheory.CostructuredArrow.homMk",
+    "statement_src": "def homMk {f f' : CostructuredArrow S T} (g : f.left \u27f6 f'.left)\n    (w : S.map g \u226b f'.hom = f.hom := by cat_disch) : f \u27f6 f'"
+   },
+   {
+    "n": 17,
+    "name": "Quiver.Hom",
+    "statement_src": "Hom : V \u2192 V \u2192 Type v"
+   },
+   {
+    "n": 18,
+    "name": "CategoryTheory.CategoryStruct.toQuiver",
+    "statement_src": "class CategoryStruct (obj : Type u) : Type max u (v + 1) extends Quiver.{v} obj"
+   },
+   {
+    "n": 19,
+    "name": "CategoryTheory.CostructuredArrow.mk",
+    "statement_src": "def mk (f : S.obj Y \u27f6 T) : CostructuredArrow S T"
+   },
+   {
+    "n": 20,
+    "name": "CategoryTheory.Category.toCategoryStruct",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 21,
+    "name": "CategoryTheory.CostructuredArrow.hom",
+    "statement_src": "abbrev hom (X : CostructuredArrow S T) : S.obj X.left \u27f6 T"
+   },
+   {
+    "n": 22,
+    "name": "CategoryTheory.instCategoryOver",
+    "statement_src": "CategoryTheory.instCategoryOver"
+   },
+   {
+    "n": 23,
+    "name": "CategoryTheory.instCategoryCostructuredArrow_1",
+    "statement_src": "CategoryTheory.instCategoryCostructuredArrow_1"
+   },
+   {
+    "n": 24,
+    "name": "CategoryTheory.Over.left",
+    "statement_src": "abbrev left (f : Over X) : T"
+   },
+   {
+    "n": 25,
+    "name": "PUnit",
+    "statement_src": "inductive PUnit : Sort u"
+   }
+  ],
+  "shuffle_seed": 20538076
+ },
+ {
+  "id": "t036",
+  "target": "HurwitzZeta.completedHurwitzZetaEven\u2080",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "def completedHurwitzZetaEven\u2080 (a : UnitAddCircle) (s : \u2102) : \u2102",
+  "proof_src": ":=\n  ((hurwitzEvenFEPair a).\u039b\u2080 (s / 2)) / 2",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "instOfNatAtLeastTwo",
+    "statement_src": "instance (priority := 100) instOfNatAtLeastTwo {n : \u2115} [NatCast R] [Nat.AtLeastTwo n] :\n    OfNat R n"
+   },
+   {
+    "n": 2,
+    "name": "NormedAddCommGroup.toSeminormedAddCommGroup",
+    "statement_src": "NormedAddCommGroup.toSeminormedAddCommGroup"
+   },
+   {
+    "n": 3,
+    "name": "instHDiv",
+    "statement_src": "instance instHDiv [Div \u03b1] : HDiv \u03b1 \u03b1 \u03b1"
+   },
+   {
+    "n": 4,
+    "name": "Complex.instNormedAddCommGroup",
+    "statement_src": "instance instNormedAddCommGroup : NormedAddCommGroup \u2102"
+   },
+   {
+    "n": 5,
+    "name": "InnerProductSpace.toNormedSpace",
+    "statement_src": "class InnerProductSpace (\ud835\udd5c : Type*) (E : Type*) [RCLike \ud835\udd5c] [SeminormedAddCommGroup E] extends\n    NormedSpace \ud835\udd5c E, Inner \ud835\udd5c E"
+   },
+   {
+    "n": 6,
+    "name": "UnitAddCircle",
+    "statement_src": "abbrev UnitAddCircle"
+   },
+   {
+    "n": 7,
+    "name": "Complex.instDivInvMonoid",
+    "statement_src": "noncomputable instance instDivInvMonoid : DivInvMonoid \u2102"
+   },
+   {
+    "n": 8,
+    "name": "RCLike.innerProductSpace",
+    "statement_src": "instance RCLike.innerProductSpace : InnerProductSpace \ud835\udd5c \ud835\udd5c"
+   },
+   {
+    "n": 9,
+    "name": "Complex.instRCLike",
+    "statement_src": "noncomputable instance : RCLike \u2102"
+   },
+   {
+    "n": 10,
+    "name": "HDiv.hDiv",
+    "statement_src": "hDiv : \u03b1 \u2192 \u03b2 \u2192 \u03b3"
+   },
+   {
+    "n": 11,
+    "name": "OfNat.ofNat",
+    "statement_src": "ofNat : \u03b1"
+   },
+   {
+    "n": 12,
+    "name": "Complex.instNatCast",
+    "statement_src": "instance instNatCast : NatCast \u2102"
+   },
+   {
+    "n": 13,
+    "name": "DivInvMonoid.toDiv",
+    "statement_src": "class DivInvMonoid (G : Type u) extends Monoid G, Inv G, Div G, ZPow G"
+   },
+   {
+    "n": 14,
+    "name": "WeakFEPair.\u039b\u2080",
+    "statement_src": "def \u039b\u2080 : \u2102 \u2192 E"
+   },
+   {
+    "n": 15,
+    "name": "Complex",
+    "statement_src": "structure Complex : Type"
+   },
+   {
+    "n": 16,
+    "name": "HurwitzZeta.hurwitzEvenFEPair",
+    "statement_src": "def hurwitzEvenFEPair (a : UnitAddCircle) : WeakFEPair \u2102"
+   }
+  ],
+  "shuffle_seed": 20545995
+ },
+ {
+  "id": "t037",
+  "target": "CategoryTheory.inhabitedLiftsToColimit",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "instance inhabitedLiftsToColimit (K : J \u2964 C) (F : C \u2964 D) [CreatesColimit K F] (c : Cocone (K \u22d9 F))\n    (t : IsColimit c) : Inhabited (LiftsToColimit _ _ _ t)",
+  "proof_src": ":=\n  \u27e8liftsToColimitOfCreates K F c t\u27e9",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.Limits.Cocone",
+    "statement_src": "structure Cocone (F : J \u2964 C)"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.LiftsToColimit",
+    "statement_src": "structure LiftsToColimit (K : J \u2964 C) (F : C \u2964 D) (c : Cocone (K \u22d9 F)) (t : IsColimit c) extends\n  LiftableCocone K F c"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Limits.IsColimit",
+    "statement_src": "structure IsColimit (t : Cocone F)"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Functor",
+    "statement_src": "structure Functor (C : Type u\u2081) [Category.{v\u2081} C] (D : Type u\u2082) [Category.{v\u2082} D] :\n    Type max v\u2081 v\u2082 u\u2081 u\u2082"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 6,
+    "name": "Inhabited.mk",
+    "statement_src": "class Inhabited (\u03b1 : Sort u)"
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.liftsToColimitOfCreates",
+    "statement_src": "def liftsToColimitOfCreates (K : J \u2964 C) (F : C \u2964 D) [CreatesColimit K F] (c : Cocone (K \u22d9 F))\n    (t : IsColimit c) : LiftsToColimit K F c t"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.CreatesColimit",
+    "statement_src": "class CreatesColimit (K : J \u2964 C) (F : C \u2964 D) extends ReflectsColimit K F"
+   },
+   {
+    "n": 9,
+    "name": "CategoryTheory.Functor.comp",
+    "statement_src": "def comp (F : C \u2964 D) (G : D \u2964 E) : C \u2964 E"
+   }
+  ],
+  "shuffle_seed": 20553914
+ },
+ {
+  "id": "t038",
+  "target": "Lean.PrettyPrinter.Delaborator.annotateGoToSyntaxDef",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "def annotateGoToSyntaxDef (stx : Term) : DelabM Term",
+  "proof_src": ":= do\n  annotateGoToDef stx stx.raw.getKind",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Lean.Syntax.getKind",
+    "statement_src": "def getKind (stx : Syntax) : SyntaxNodeKind"
+   },
+   {
+    "n": 2,
+    "name": "Lean.PrettyPrinter.Delaborator.annotateGoToDef",
+    "statement_src": "def annotateGoToDef (stx : Term) (target : Name) : DelabM Term"
+   },
+   {
+    "n": 3,
+    "name": "Lean.Name.mkStr1",
+    "statement_src": "@[expose, reducible] def mkStr1 (s\u2081 : String) : Name"
+   },
+   {
+    "n": 4,
+    "name": "Lean.Syntax.Term",
+    "statement_src": "abbrev Term"
+   },
+   {
+    "n": 5,
+    "name": "Lean.SyntaxNodeKind",
+    "statement_src": "abbrev SyntaxNodeKind"
+   },
+   {
+    "n": 6,
+    "name": "Lean.TSyntax.raw",
+    "statement_src": "raw : Syntax"
+   },
+   {
+    "n": 7,
+    "name": "List.nil",
+    "statement_src": "| nil : List \u03b1"
+   }
+  ],
+  "shuffle_seed": 20561833
+ },
+ {
+  "id": "t039",
+  "target": "AffineMap.prodMap",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "def prodMap (f : P1 \u2192\u1d43[k] P2) (g : P3 \u2192\u1d43[k] P4) : P1 \u00d7 P3 \u2192\u1d43[k] P2 \u00d7 P4",
+  "proof_src": "where\n  toFun := Prod.map f g\n  linear := f.linear.prodMap g.linear\n  map_vadd' := by simp",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "AddCommGroup.toAddGroup",
+    "statement_src": "class AddCommGroup (G : Type u) extends AddGroup G, AddCommMonoid G"
+   },
+   {
+    "n": 2,
+    "name": "DFunLike.coe",
+    "statement_src": "coe : F \u2192 \u2200 a : \u03b1, \u03b2 a"
+   },
+   {
+    "n": 3,
+    "name": "Module",
+    "statement_src": "class Module (R : Type u) (M : Type v) [Semiring R] [AddCommMonoid M] extends\n  DistribMulAction R M"
+   },
+   {
+    "n": 4,
+    "name": "AffineMap.linear",
+    "statement_src": "linear : V1 \u2192\u2097[k] V2"
+   },
+   {
+    "n": 5,
+    "name": "Ring",
+    "statement_src": "class Ring (R : Type u) extends Semiring R, AddCommGroup R, AddGroupWithOne R"
+   },
+   {
+    "n": 6,
+    "name": "Prod.instAddTorsor",
+    "statement_src": "Prod.instAddTorsor"
+   },
+   {
+    "n": 7,
+    "name": "Prod.map",
+    "statement_src": "@[implicit_reducible] def Prod.map {\u03b1\u2081 : Type u\u2081} {\u03b1\u2082 : Type u\u2082} {\u03b2\u2081 : Type v\u2081} {\u03b2\u2082 : Type v\u2082}\n    (f : \u03b1\u2081 \u2192 \u03b1\u2082) (g : \u03b2\u2081 \u2192 \u03b2\u2082) : \u03b1\u2081 \u00d7 \u03b2\u2081 \u2192 \u03b1\u2082 \u00d7 \u03b2\u2082\n  | (a, b) => (f a, g b)"
+   },
+   {
+    "n": 8,
+    "name": "Prod",
+    "statement_src": "structure Prod (\u03b1 : Type u) (\u03b2 : Type v)"
+   },
+   {
+    "n": 9,
+    "name": "AddTorsor",
+    "statement_src": "class AddTorsor (G : outParam Type*) (P : Type*) [AddGroup G] extends AddAction G P,\n  VSub G P"
+   },
+   {
+    "n": 10,
+    "name": "Prod.instAddCommGroup",
+    "statement_src": "Prod.instAddCommGroup"
+   },
+   {
+    "n": 11,
+    "name": "AddCommGroup.toAddCommMonoid",
+    "statement_src": "class AddCommGroup (G : Type u) extends AddGroup G, AddCommMonoid G"
+   },
+   {
+    "n": 12,
+    "name": "LinearMap.prodMap",
+    "statement_src": "def prodMap (f : M \u2192\u2097[R] M\u2083) (g : M\u2082 \u2192\u2097[R] M\u2084) : M \u00d7 M\u2082 \u2192\u2097[R] M\u2083 \u00d7 M\u2084"
+   },
+   {
+    "n": 13,
+    "name": "AffineMap.mk",
+    "statement_src": "structure AffineMap (k : Type*) {V1 : Type*} (P1 : Type*) {V2 : Type*} (P2 : Type*) [Ring k]\n  [AddCommGroup V1] [Module k V1] [AffineSpace V1 P1] [AddCommGroup V2] [Module k V2]\n  [AffineSpace V2 P2]"
+   },
+   {
+    "n": 14,
+    "name": "AffineMap",
+    "statement_src": "structure AffineMap (k : Type*) {V1 : Type*} (P1 : Type*) {V2 : Type*} (P2 : Type*) [Ring k]\n  [AddCommGroup V1] [Module k V1] [AffineSpace V1 P1] [AddCommGroup V2] [Module k V2]\n  [AffineSpace V2 P2]"
+   },
+   {
+    "n": 15,
+    "name": "Prod.instModule",
+    "statement_src": "instance instModule [Semiring R] [AddCommMonoid M] [AddCommMonoid N] [Module R M] [Module R N] :\n    Module R (M \u00d7 N)"
+   },
+   {
+    "n": 16,
+    "name": "Ring.toSemiring",
+    "statement_src": "class Ring (R : Type u) extends Semiring R, AddCommGroup R, AddGroupWithOne R"
+   },
+   {
+    "n": 17,
+    "name": "AddCommGroup",
+    "statement_src": "class AddCommGroup (G : Type u) extends AddGroup G, AddCommMonoid G"
+   },
+   {
+    "n": 18,
+    "name": "AffineMap.instFunLike",
+    "statement_src": "instance AffineMap.instFunLike (k : Type*) {V1 : Type*} (P1 : Type*) {V2 : Type*} (P2 : Type*)\n    [Ring k] [AddCommGroup V1] [Module k V1] [AffineSpace V1 P1] [AddCommGroup V2] [Module k V2]\n    [AffineSpace V2 P2] : FunLike (P1 \u2192\u1d43[k] P2) P1 P2"
+   }
+  ],
+  "shuffle_seed": 20569752
+ },
+ {
+  "id": "t040",
+  "target": "CategoryTheory.Limits.Cotrident.\u03c0",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "abbrev Cotrident.\u03c0 (t : Cotrident f)",
+  "proof_src": ":=\n  t.\u03b9.app one",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.Functor.category",
+    "statement_src": "instance Functor.category : Category.{max u\u2081 v\u2082} (C \u2964 D)"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Category.toCategoryStruct",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Functor.obj",
+    "statement_src": "obj : C \u2192 D"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Functor.const",
+    "statement_src": "def const : C \u2964 J \u2964 C"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Limits.Cotrident",
+    "statement_src": "abbrev Cotrident"
+   },
+   {
+    "n": 7,
+    "name": "Quiver.Hom",
+    "statement_src": "Hom : V \u2192 V \u2192 Type v"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Limits.WalkingParallelFamily.one",
+    "statement_src": "| one : WalkingParallelFamily J"
+   },
+   {
+    "n": 9,
+    "name": "CategoryTheory.NatTrans.app",
+    "statement_src": "CategoryTheory.NatTrans.app"
+   },
+   {
+    "n": 10,
+    "name": "CategoryTheory.Limits.WalkingParallelFamily",
+    "statement_src": "inductive WalkingParallelFamily (J : Type w) : Type w\n  | zero : WalkingParallelFamily J\n  | one : WalkingParallelFamily J"
+   },
+   {
+    "n": 11,
+    "name": "CategoryTheory.Limits.WalkingParallelFamily.category",
+    "statement_src": "instance WalkingParallelFamily.category : SmallCategory (WalkingParallelFamily J)"
+   },
+   {
+    "n": 12,
+    "name": "CategoryTheory.Limits.parallelFamily",
+    "statement_src": "def parallelFamily : WalkingParallelFamily J \u2964 C"
+   },
+   {
+    "n": 13,
+    "name": "CategoryTheory.Functor",
+    "statement_src": "structure Functor (C : Type u\u2081) [Category.{v\u2081} C] (D : Type u\u2082) [Category.{v\u2082} D] :\n    Type max v\u2081 v\u2082 u\u2081 u\u2082"
+   },
+   {
+    "n": 14,
+    "name": "CategoryTheory.Limits.Cocone.pt",
+    "statement_src": "pt : C"
+   },
+   {
+    "n": 15,
+    "name": "CategoryTheory.Limits.Cocone.\u03b9",
+    "statement_src": "CategoryTheory.Limits.Cocone.\u03b9"
+   },
+   {
+    "n": 16,
+    "name": "CategoryTheory.CategoryStruct.toQuiver",
+    "statement_src": "class CategoryStruct (obj : Type u) : Type max u (v + 1) extends Quiver.{v} obj"
+   }
+  ],
+  "shuffle_seed": 20577671
+ },
+ {
+  "id": "t041",
+  "target": "ComplexShape.Embedding.extendHomotopyFunctor",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "noncomputable def extendHomotopyFunctor :\n    HomotopyCategory C c \u2964 HomotopyCategory C c'",
+  "proof_src": ":=\n  CategoryTheory.Quotient.lift _ (e.extendFunctor C \u22d9 HomotopyCategory.quotient C c') (by\n    rintro K L f\u2081 f\u2082 \u27e8h\u27e9\n    exact HomotopyCategory.eq_of_homotopy _ _ (h.extend e))",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "HomologicalComplex.instCategory",
+    "statement_src": "instance : Category (HomologicalComplex V c)"
+   },
+   {
+    "n": 2,
+    "name": "HomologicalComplex",
+    "statement_src": "structure HomologicalComplex (c : ComplexShape \u03b9)"
+   },
+   {
+    "n": 3,
+    "name": "homotopic",
+    "statement_src": "def homotopic : HomRel (HomologicalComplex V c)"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Functor.comp",
+    "statement_src": "def comp (F : C \u2964 D) (G : D \u2964 E) : C \u2964 E"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Quotient.lift",
+    "statement_src": "def lift (H : \u2200 (x y : C) (f\u2081 f\u2082 : x \u27f6 y), r f\u2081 f\u2082 \u2192 F.map f\u2081 = F.map f\u2082) : Quotient r \u2964 D"
+   },
+   {
+    "n": 7,
+    "name": "instCategoryHomotopyCategory",
+    "statement_src": "instance : Category (HomotopyCategory V c)"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Preadditive",
+    "statement_src": "class Preadditive"
+   },
+   {
+    "n": 9,
+    "name": "ComplexShape",
+    "statement_src": "structure ComplexShape (\u03b9 : Type*)"
+   },
+   {
+    "n": 10,
+    "name": "ComplexShape.Embedding.IsRelIff",
+    "statement_src": "class IsRelIff : Prop"
+   },
+   {
+    "n": 11,
+    "name": "ComplexShape.Embedding",
+    "statement_src": "structure Embedding"
+   },
+   {
+    "n": 12,
+    "name": "HomotopyCategory.quotient",
+    "statement_src": "def quotient : HomologicalComplex V c \u2964 HomotopyCategory V c"
+   },
+   {
+    "n": 13,
+    "name": "CategoryTheory.Preadditive.preadditiveHasZeroMorphisms",
+    "statement_src": "instance (priority := 100) preadditiveHasZeroMorphisms : HasZeroMorphisms C"
+   },
+   {
+    "n": 14,
+    "name": "ComplexShape.Embedding.extendFunctor",
+    "statement_src": "noncomputable def extendFunctor [HasZeroMorphisms C] :\n    HomologicalComplex C c \u2964 HomologicalComplex C c'"
+   },
+   {
+    "n": 15,
+    "name": "CategoryTheory.Limits.HasZeroObject",
+    "statement_src": "class HasZeroObject : Prop"
+   },
+   {
+    "n": 16,
+    "name": "HomotopyCategory",
+    "statement_src": "def HomotopyCategory"
+   }
+  ],
+  "shuffle_seed": 20585590
+ },
+ {
+  "id": "t042",
+  "target": "MaximalSpectrum.PiLocalization",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "abbrev PiLocalization : Type _",
+  "proof_src": ":= \u03a0 I : MaximalSpectrum R, Localization.AtPrime I.1",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Localization.AtPrime",
+    "statement_src": "protected abbrev Localization.AtPrime"
+   },
+   {
+    "n": 2,
+    "name": "MaximalSpectrum.asIdeal",
+    "statement_src": "asIdeal : Ideal R"
+   },
+   {
+    "n": 3,
+    "name": "MaximalSpectrum",
+    "statement_src": "structure MaximalSpectrum (R : Type*) [CommSemiring R]"
+   },
+   {
+    "n": 4,
+    "name": "CommSemiring",
+    "statement_src": "class CommSemiring (R : Type u) extends Semiring R, CommMonoid R"
+   }
+  ],
+  "shuffle_seed": 20593509
+ },
+ {
+  "id": "t043",
+  "target": "Nat.roughNumbersUpTo",
+  "kind": 1,
+  "band": "51-100",
+  "statement_src": "def roughNumbersUpTo (N k : \u2115) : Finset \u2115",
+  "proof_src": ":=\n  {n \u2208 Finset.range (N + 1) | n \u2260 0 \u2227 n \u2209 smoothNumbers k}",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Nat",
+    "statement_src": "inductive Nat"
+   },
+   {
+    "n": 2,
+    "name": "instDecidableAnd",
+    "statement_src": "instDecidableAnd"
+   },
+   {
+    "n": 3,
+    "name": "Finset.range",
+    "statement_src": "def range (n : \u2115) : Finset \u2115"
+   },
+   {
+    "n": 4,
+    "name": "Eq",
+    "statement_src": "inductive Eq : \u03b1 \u2192 \u03b1 \u2192 Prop"
+   },
+   {
+    "n": 5,
+    "name": "HAdd.hAdd",
+    "statement_src": "hAdd : \u03b1 \u2192 \u03b2 \u2192 \u03b3"
+   },
+   {
+    "n": 6,
+    "name": "instHAdd",
+    "statement_src": "instance instHAdd [Add \u03b1] : HAdd \u03b1 \u03b1 \u03b1"
+   },
+   {
+    "n": 7,
+    "name": "instDecidableNot",
+    "statement_src": "instDecidableNot"
+   },
+   {
+    "n": 8,
+    "name": "And",
+    "statement_src": "structure And (a b : Prop) : Prop"
+   },
+   {
+    "n": 9,
+    "name": "OfNat.ofNat",
+    "statement_src": "ofNat : \u03b1"
+   },
+   {
+    "n": 10,
+    "name": "Ne",
+    "statement_src": "@[reducible] def Ne {\u03b1 : Sort u} (a b : \u03b1)"
+   },
+   {
+    "n": 11,
+    "name": "Not",
+    "statement_src": "@[implicit_reducible] def Not (a : Prop) : Prop"
+   },
+   {
+    "n": 12,
+    "name": "Membership.mem",
+    "statement_src": "mem : \u03b3 \u2192 \u03b1 \u2192 Prop"
+   },
+   {
+    "n": 13,
+    "name": "instAddNat",
+    "statement_src": "instance instAddNat : Add Nat"
+   },
+   {
+    "n": 14,
+    "name": "Set.instMembership",
+    "statement_src": "instance : Membership \u03b1 (Set \u03b1)"
+   },
+   {
+    "n": 15,
+    "name": "Nat.instDecidablePredMemSetSmoothNumbers",
+    "statement_src": "Nat.instDecidablePredMemSetSmoothNumbers"
+   },
+   {
+    "n": 16,
+    "name": "Set",
+    "statement_src": "def Set (\u03b1 : Type u)"
+   },
+   {
+    "n": 17,
+    "name": "Nat.smoothNumbers",
+    "statement_src": "def smoothNumbers (n : \u2115) : Set \u2115"
+   },
+   {
+    "n": 18,
+    "name": "Finset.filter",
+    "statement_src": "def filter (s : Finset \u03b1) : Finset \u03b1"
+   },
+   {
+    "n": 19,
+    "name": "instOfNatNat",
+    "statement_src": "instance instOfNatNat (n : Nat) : OfNat Nat n"
+   },
+   {
+    "n": 20,
+    "name": "instDecidableEqNat",
+    "statement_src": "instDecidableEqNat"
+   }
+  ],
+  "shuffle_seed": 20601428
+ },
+ {
+  "id": "t044",
+  "target": "CochainComplex.shiftFunctorObjXIso",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "def shiftFunctorObjXIso (K : CochainComplex C \u2124) (n i m : \u2124) (hm : m = i + n) :\n    ((shiftFunctor C n).obj K).X i \u2245 K.X m",
+  "proof_src": ":= K.XIsoOfEq hm.symm",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "AddGroupWithOne.toAddMonoidWithOne",
+    "statement_src": "class AddGroupWithOne (R : Type u) extends IntCast R, AddMonoidWithOne R, AddGroup R"
+   },
+   {
+    "n": 2,
+    "name": "AddMonoidWithOne.toOne",
+    "statement_src": "class AddMonoidWithOne (R : Type*) extends NatCast R, AddMonoid R, One R"
+   },
+   {
+    "n": 3,
+    "name": "AddRightCancelSemigroup.toAddSemigroup",
+    "statement_src": "class AddRightCancelSemigroup (G : Type u) extends AddSemigroup G, IsRightCancelAdd G"
+   },
+   {
+    "n": 4,
+    "name": "CochainComplex",
+    "statement_src": "abbrev CochainComplex (\u03b1 : Type*) [AddRightCancelSemigroup \u03b1] [One \u03b1] : Type _"
+   },
+   {
+    "n": 5,
+    "name": "AddCancelMonoid.toAddRightCancelMonoid",
+    "statement_src": "class AddCancelMonoid (M : Type u) extends AddLeftCancelMonoid M, AddRightCancelMonoid M"
+   },
+   {
+    "n": 6,
+    "name": "Int.instRing",
+    "statement_src": "instance instRing         : Ring \u2124"
+   },
+   {
+    "n": 7,
+    "name": "Eq",
+    "statement_src": "inductive Eq : \u03b1 \u2192 \u03b1 \u2192 Prop"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Preadditive.preadditiveHasZeroMorphisms",
+    "statement_src": "instance (priority := 100) preadditiveHasZeroMorphisms : HasZeroMorphisms C"
+   },
+   {
+    "n": 9,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 10,
+    "name": "HomologicalComplex.XIsoOfEq",
+    "statement_src": "def XIsoOfEq (K : HomologicalComplex V c) {p q : \u03b9} (h : p = q) : K.X p \u2245 K.X q"
+   },
+   {
+    "n": 11,
+    "name": "Int.instAddGroup",
+    "statement_src": "instance instAddGroup         : AddGroup \u2124"
+   },
+   {
+    "n": 12,
+    "name": "CategoryTheory.Preadditive",
+    "statement_src": "class Preadditive"
+   },
+   {
+    "n": 13,
+    "name": "Int.instAdd",
+    "statement_src": "instance : Add Int"
+   },
+   {
+    "n": 14,
+    "name": "Int",
+    "statement_src": "inductive Int : Type"
+   },
+   {
+    "n": 15,
+    "name": "AddSemigroup.toAdd",
+    "statement_src": "class AddSemigroup (G : Type u) extends Add G"
+   },
+   {
+    "n": 16,
+    "name": "ComplexShape.up",
+    "statement_src": "def up (\u03b1 : Type*) [Add \u03b1] [IsRightCancelAdd \u03b1] [One \u03b1] : ComplexShape \u03b1"
+   },
+   {
+    "n": 17,
+    "name": "AddRightCancelMonoid.toAddRightCancelSemigroup",
+    "statement_src": "class AddRightCancelMonoid (M : Type u) extends AddMonoid M, AddRightCancelSemigroup M"
+   },
+   {
+    "n": 18,
+    "name": "AddGroup.toAddCancelMonoid",
+    "statement_src": "AddGroup.toAddCancelMonoid"
+   },
+   {
+    "n": 19,
+    "name": "Ring.toAddGroupWithOne",
+    "statement_src": "class Ring (R : Type u) extends Semiring R, AddCommGroup R, AddGroupWithOne R"
+   },
+   {
+    "n": 20,
+    "name": "instHAdd",
+    "statement_src": "instance instHAdd [Add \u03b1] : HAdd \u03b1 \u03b1 \u03b1"
+   },
+   {
+    "n": 21,
+    "name": "HAdd.hAdd",
+    "statement_src": "hAdd : \u03b1 \u2192 \u03b2 \u2192 \u03b3"
+   }
+  ],
+  "shuffle_seed": 20609347
+ },
+ {
+  "id": "t045",
+  "target": "CategoryTheory.Limits.IsLimit.ofWhiskerEquivalence",
+  "kind": 1,
+  "band": "26-50",
+  "statement_src": "def ofWhiskerEquivalence {s : Cone F} (e : K \u224c J) (P : IsLimit (s.whisker e.functor)) : IsLimit s",
+  "proof_src": ":=\n  equivIsoLimit ((Cone.whiskeringEquivalence e).unitIso.app s).symm\n    (ofRightAdjoint (Cone.whiskeringEquivalence e).toAdjunction P)",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.Functor.id",
+    "statement_src": "protected def id : C \u2964 C"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.Limits.IsLimit",
+    "statement_src": "structure IsLimit (t : Cone F)"
+   },
+   {
+    "n": 3,
+    "name": "DFunLike.coe",
+    "statement_src": "coe : F \u2192 \u2200 a : \u03b1, \u03b2 a"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Equivalence.inverse",
+    "statement_src": "inverse : D \u2964 C"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Limits.IsLimit.equivIsoLimit",
+    "statement_src": "def equivIsoLimit {r t : Cone F} (i : r \u2245 t) : IsLimit r \u2243 IsLimit t"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Iso.app",
+    "statement_src": "def app {F G : C \u2964 D} (\u03b1 : F \u2245 G) (X : C) :\n    F.obj X \u2245 G.obj X"
+   },
+   {
+    "n": 7,
+    "name": "CategoryTheory.Equivalence.toAdjunction",
+    "statement_src": "def toAdjunction : e.functor \u22a3 e.inverse"
+   },
+   {
+    "n": 8,
+    "name": "CategoryTheory.Equivalence.unitIso",
+    "statement_src": "unitIso : \ud835\udfed C \u2245 functor \u22d9 inverse"
+   },
+   {
+    "n": 9,
+    "name": "CategoryTheory.Equivalence.functor",
+    "statement_src": "functor : C \u2964 D"
+   },
+   {
+    "n": 10,
+    "name": "CategoryTheory.Equivalence",
+    "statement_src": "structure Equivalence (C : Type u\u2081) (D : Type u\u2082) [Category.{v\u2081} C] [Category.{v\u2082} D]"
+   },
+   {
+    "n": 11,
+    "name": "Equiv",
+    "statement_src": "structure Equiv (\u03b1 \u03b2 : Sort*)"
+   },
+   {
+    "n": 12,
+    "name": "EquivLike.toFunLike",
+    "statement_src": "instance (priority := 100) toFunLike : FunLike E \u03b1 \u03b2"
+   },
+   {
+    "n": 13,
+    "name": "CategoryTheory.Functor.comp",
+    "statement_src": "def comp (F : C \u2964 D) (G : D \u2964 E) : C \u2964 E"
+   },
+   {
+    "n": 14,
+    "name": "CategoryTheory.Functor.obj",
+    "statement_src": "obj : C \u2192 D"
+   },
+   {
+    "n": 15,
+    "name": "CategoryTheory.Limits.Cone.whisker",
+    "statement_src": "def whisker (E : K \u2964 J) (c : Cone F) : Cone (E \u22d9 F)"
+   },
+   {
+    "n": 16,
+    "name": "Equiv.instEquivLike",
+    "statement_src": "instance : EquivLike (\u03b1 \u2243 \u03b2) \u03b1 \u03b2"
+   },
+   {
+    "n": 17,
+    "name": "CategoryTheory.Limits.IsLimit.ofRightAdjoint",
+    "statement_src": "def ofRightAdjoint {D : Type u\u2084} [Category.{v\u2084} D] {G : K \u2964 D} {left : Cone F \u2964 Cone G}\n    {right : Cone G \u2964 Cone F}\n    (adj : left \u22a3 right) {c : Cone G} (t : IsLimit c) : IsLimit (right.obj c)"
+   },
+   {
+    "n": 18,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 19,
+    "name": "CategoryTheory.Limits.Cone.whiskeringEquivalence",
+    "statement_src": "def whiskeringEquivalence (e : K \u224c J) : Cone F \u224c Cone (e.functor \u22d9 F)"
+   },
+   {
+    "n": 20,
+    "name": "CategoryTheory.Limits.Cone.category",
+    "statement_src": "instance Cone.category : Category (Cone F)"
+   },
+   {
+    "n": 21,
+    "name": "CategoryTheory.Functor",
+    "statement_src": "structure Functor (C : Type u\u2081) [Category.{v\u2081} C] (D : Type u\u2082) [Category.{v\u2082} D] :\n    Type max v\u2081 v\u2082 u\u2081 u\u2082"
+   },
+   {
+    "n": 22,
+    "name": "CategoryTheory.Iso.symm",
+    "statement_src": "def symm (I : X \u2245 Y) : Y \u2245 X"
+   },
+   {
+    "n": 23,
+    "name": "CategoryTheory.Limits.Cone",
+    "statement_src": "structure Cone (F : J \u2964 C)"
+   }
+  ],
+  "shuffle_seed": 20617266
+ },
+ {
+  "id": "t046",
+  "target": "CategoryTheory.LeftExactFunctor.of",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "def LeftExactFunctor.of (F : C \u2964 D) [PreservesFiniteLimits F] : C \u2964\u2097 D",
+  "proof_src": ":=\n  \u27e8F, by simpa\u27e9",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "CategoryTheory.Category",
+    "statement_src": "class Category (obj : Type u) : Type max u (v + 1) extends CategoryStruct.{v} obj"
+   },
+   {
+    "n": 2,
+    "name": "CategoryTheory.ObjectProperty.FullSubcategory.mk",
+    "statement_src": "structure FullSubcategory"
+   },
+   {
+    "n": 3,
+    "name": "CategoryTheory.leftExactFunctor",
+    "statement_src": "def leftExactFunctor : ObjectProperty (C \u2964 D)"
+   },
+   {
+    "n": 4,
+    "name": "CategoryTheory.Limits.PreservesFiniteLimits",
+    "statement_src": "class PreservesFiniteLimits (F : C \u2964 D) : Prop"
+   },
+   {
+    "n": 5,
+    "name": "CategoryTheory.Functor",
+    "statement_src": "structure Functor (C : Type u\u2081) [Category.{v\u2081} C] (D : Type u\u2082) [Category.{v\u2082} D] :\n    Type max v\u2081 v\u2082 u\u2081 u\u2082"
+   },
+   {
+    "n": 6,
+    "name": "CategoryTheory.Functor.category",
+    "statement_src": "instance Functor.category : Category.{max u\u2081 v\u2082} (C \u2964 D)"
+   }
+  ],
+  "shuffle_seed": 20625185
+ },
+ {
+  "id": "t047",
+  "target": "PolyEquivTensor.toFunBilinear",
+  "kind": 1,
+  "band": "101+",
+  "statement_src": "def toFunBilinear : A \u2192\u2097[A] R[X] \u2192\u2097[R] A[X]",
+  "proof_src": ":=\n  LinearMap.toSpanSingleton A _ (aeval (Polynomial.X : A[X])).toLinearMap",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "LinearMap",
+    "statement_src": "structure LinearMap {R S : Type*} [Semiring R] [Semiring S] (\u03c3 : R \u2192+* S) (M : Type*)\n    (M\u2082 : Type*) [AddCommMonoid M] [AddCommMonoid M\u2082] [Module R M] [Module S M\u2082] extends\n    AddHom M M\u2082, MulActionHom \u03c3 M M\u2082"
+   },
+   {
+    "n": 2,
+    "name": "AlgHom.toLinearMap",
+    "statement_src": "def toLinearMap : A \u2192\u2097[R] B"
+   },
+   {
+    "n": 3,
+    "name": "Polynomial.module",
+    "statement_src": "instance module {S} [Semiring S] [Module S R] : Module S R[X]"
+   },
+   {
+    "n": 4,
+    "name": "LinearMap.toSpanSingleton",
+    "statement_src": "def toSpanSingleton (x : M) : R \u2192\u2097[R] M"
+   },
+   {
+    "n": 5,
+    "name": "Algebra.id",
+    "statement_src": "instance (priority := 1100) id : Algebra R R"
+   },
+   {
+    "n": 6,
+    "name": "Polynomial.algebraOfAlgebra",
+    "statement_src": "instance algebraOfAlgebra : Algebra R A[X]"
+   },
+   {
+    "n": 7,
+    "name": "Algebra",
+    "statement_src": "class Algebra (R : Type u) (A : Type v) [CommSemiring R] [Semiring A] extends SMul R A"
+   },
+   {
+    "n": 8,
+    "name": "Semiring.toAddCommMonoid",
+    "statement_src": "class Semiring (\u03b1 : Type u) extends AddCommMonoid \u03b1, MonoidWithZero \u03b1, NonUnitalSemiring \u03b1,\n  NonAssocSemiring \u03b1"
+   },
+   {
+    "n": 9,
+    "name": "Algebra.toModule",
+    "statement_src": "instance (priority := 200) toModule {R A} {_ : CommSemiring R} {_ : Semiring A} [Algebra R A] :\n    Module R A"
+   },
+   {
+    "n": 10,
+    "name": "Polynomial.semiring",
+    "statement_src": "instance semiring : Semiring R[X]"
+   },
+   {
+    "n": 11,
+    "name": "CommSemiring",
+    "statement_src": "class CommSemiring (R : Type u) extends Semiring R, CommMonoid R"
+   },
+   {
+    "n": 12,
+    "name": "Semiring",
+    "statement_src": "class Semiring (\u03b1 : Type u) extends AddCommMonoid \u03b1, MonoidWithZero \u03b1, NonUnitalSemiring \u03b1,\n  NonAssocSemiring \u03b1"
+   },
+   {
+    "n": 13,
+    "name": "Polynomial.X",
+    "statement_src": "def X : R[X]"
+   },
+   {
+    "n": 14,
+    "name": "Polynomial",
+    "statement_src": "structure Polynomial (R : Type*) [Semiring R]"
+   },
+   {
+    "n": 15,
+    "name": "LinearMap.module",
+    "statement_src": "instance module : Module S (M \u2192\u209b\u2097[\u03c3\u2081\u2082] M\u2082)"
+   },
+   {
+    "n": 16,
+    "name": "RingHom.id",
+    "statement_src": "def id (\u03b1 : Type*) [NonAssocSemiring \u03b1] : \u03b1 \u2192+* \u03b1"
+   },
+   {
+    "n": 17,
+    "name": "Polynomial.aeval",
+    "statement_src": "def aeval : R[X] \u2192\u2090[R] A"
+   },
+   {
+    "n": 18,
+    "name": "Semiring.toModule",
+    "statement_src": "instance (priority := 1100) Semiring.toModule [Semiring R] : Module R R"
+   },
+   {
+    "n": 19,
+    "name": "Semiring.toNonAssocSemiring",
+    "statement_src": "class Semiring (\u03b1 : Type u) extends AddCommMonoid \u03b1, MonoidWithZero \u03b1, NonUnitalSemiring \u03b1,\n  NonAssocSemiring \u03b1"
+   },
+   {
+    "n": 20,
+    "name": "LinearMap.addCommMonoid",
+    "statement_src": "instance addCommMonoid : AddCommMonoid (M \u2192\u209b\u2097[\u03c3\u2081\u2082] M\u2082)"
+   },
+   {
+    "n": 21,
+    "name": "CommSemiring.toSemiring",
+    "statement_src": "class CommSemiring (R : Type u) extends Semiring R, CommMonoid R"
+   }
+  ],
+  "shuffle_seed": 20633104
+ },
+ {
+  "id": "t048",
+  "target": "Filter.instSup",
+  "kind": 1,
+  "band": "11-25",
+  "statement_src": "instance instSup : Max (Filter \u03b1)",
+  "proof_src": "where\n  max f g := .copy (sSup {f, g}) {s | s \u2208 f \u2227 s \u2208 g} <| by simp",
+  "candidates": [
+   {
+    "n": 1,
+    "name": "Filter.instSupSet",
+    "statement_src": "instance instSupSet : SupSet (Filter \u03b1)"
+   },
+   {
+    "n": 2,
+    "name": "Filter.copy",
+    "statement_src": "protected def copy (f : Filter \u03b1) (S : Set (Set \u03b1)) (hmem : \u2200 s, s \u2208 S \u2194 s \u2208 f) : Filter \u03b1"
+   },
+   {
+    "n": 3,
+    "name": "Membership.mem",
+    "statement_src": "mem : \u03b3 \u2192 \u03b1 \u2192 Prop"
+   },
+   {
+    "n": 4,
+    "name": "Set.ofPred",
+    "statement_src": "def Set.ofPred {\u03b1 : Type u} (p : \u03b1 \u2192 Prop) : Set \u03b1"
+   },
+   {
+    "n": 5,
+    "name": "Set.instInsert",
+    "statement_src": "instance : Insert \u03b1 (Set \u03b1)"
+   },
+   {
+    "n": 6,
+    "name": "Set.instSingletonSet",
+    "statement_src": "instance instSingletonSet : Singleton \u03b1 (Set \u03b1)"
+   },
+   {
+    "n": 7,
+    "name": "Max.mk",
+    "statement_src": "class Max (\u03b1 : Type u)"
+   },
+   {
+    "n": 8,
+    "name": "Singleton.singleton",
+    "statement_src": "singleton : \u03b1 \u2192 \u03b2"
+   },
+   {
+    "n": 9,
+    "name": "And",
+    "statement_src": "structure And (a b : Prop) : Prop"
+   },
+   {
+    "n": 10,
+    "name": "Insert.insert",
+    "statement_src": "insert : \u03b1 \u2192 \u03b3 \u2192 \u03b3"
+   },
+   {
+    "n": 11,
+    "name": "Filter.instMembership",
+    "statement_src": "instance instMembership : Membership (Set \u03b1) (Filter \u03b1)"
+   },
+   {
+    "n": 12,
+    "name": "Set",
+    "statement_src": "def Set (\u03b1 : Type u)"
+   },
+   {
+    "n": 13,
+    "name": "Filter",
+    "statement_src": "structure Filter (\u03b1 : Type*)"
+   },
+   {
+    "n": 14,
+    "name": "SupSet.sSup",
+    "statement_src": "sSup : Set \u03b1 \u2192 \u03b1"
+   }
+  ],
+  "shuffle_seed": 20641023
+ }
+]
