@@ -23,4 +23,25 @@ def modules (namesPath : System.FilePath) (envProbe : System.FilePath)
   h.flush
   IO.println s!"modules: {names.length} names resolved -> {out}"
 
+
+/-- Dump per-name projection facts: is it a structure/class projection
+function, and is the parent structure a class? Kernel/env facts. -/
+def projflags (namesPath : System.FilePath) (envProbe : System.FilePath)
+    (out : System.FilePath) : IO Unit := do
+  let pf ← Mathrecord.processFile envProbe
+  let env := pf.env
+  let names := (← IO.FS.readFile namesPath).splitOn "\n" |>.filter (· ≠ "")
+  let h ← IO.FS.Handle.mk out .write
+  let mut cnt := 0
+  for nm in names do
+    let n := nm.toName
+    match env.getProjectionFnInfo? n with
+    | some info =>
+      let cls := Lean.isClass env info.ctorName.getPrefix
+      h.putStrLn s!"{nm}\t1\t{if cls then 1 else 0}"
+      cnt := cnt + 1
+    | none => pure ()
+  h.flush
+  IO.println s!"projflags: {cnt} projections among {names.length} names -> {out}"
+
 end Mathrecord.Modules

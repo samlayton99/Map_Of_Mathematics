@@ -189,6 +189,9 @@ unsafe def main (args : List String) : IO UInt32 := do
   | ["modules", namesFile, envProbe, out] => do
     Mathrecord.Modules.modules namesFile envProbe out
     return 0
+  | ["projflags", namesFile, envProbe, out] => do
+    Mathrecord.Modules.projflags namesFile envProbe out
+    return 0
   | ["defcheck", namesFile, envProbe, out] => do
     Mathrecord.DefCheck.defcheck namesFile envProbe out
     return 0
