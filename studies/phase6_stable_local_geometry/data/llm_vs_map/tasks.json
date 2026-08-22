@@ -1,0 +1,1295 @@
+{
+ "seed": 20260913,
+ "n": 60,
+ "topk": 10,
+ "tasks": [
+  {
+   "id": "q01",
+   "decl": 411447,
+   "target": "QuadraticForm.discr'_smul",
+   "module": "Mathlib.LinearAlgebra.QuadraticForm.Basic",
+   "statement": "theorem discr'_smul (a : R) : (a \u2022 Q).discr' = a ^ Fintype.card n * Q.discr'",
+   "n_stmt_world": 13,
+   "answers": [
+    "Matrix.det_smul_of_tower",
+    "QuadraticForm.toMatrix'_smul"
+   ],
+   "map_top10": [
+    "Matrix.det_transpose",
+    "Matrix.det_mul",
+    "RingHom.mapMatrix_apply",
+    "Matrix.det_one",
+    "Finset.sum_congr",
+    "LinearMap.det_toMatrix",
+    "RingHom.map_det",
+    "Finset.prod_congr",
+    "Matrix.det_fin_two",
+    "Matrix.det_diagonal"
+   ]
+  },
+  {
+   "id": "q02",
+   "decl": 524487,
+   "target": "Bornology.IsVonNBounded.restrict_scalars_of_nontrivial",
+   "module": "Mathlib.Analysis.LocallyConvex.Bounded",
+   "statement": "protected theorem Bornology.IsVonNBounded.restrict_scalars_of_nontrivial\n    [NormedField \ud835\udd5c] [NormedRing \ud835\udd5c'] [NormedAlgebra \ud835\udd5c \ud835\udd5c'] [Nontrivial \ud835\udd5c']\n    [Zero E] [TopologicalSpace E]\n    [SMul \ud835\udd5c E] [MulAction \ud835\udd5c' E] [IsScalarTower \ud835\udd5c \ud835\udd5c' E] {s : Set E}\n    (h : IsVonNBounded \ud835\udd5c' s) : IsVonNBounded \ud835\udd5c s",
+   "n_stmt_world": 12,
+   "answers": [
+    "nnnorm_smul",
+    "AntilipschitzWith.tendsto_cobounded",
+    "AntilipschitzWith.of_le_mul_nndist",
+    "nnnorm_ne_zero_iff",
+    "nndist_eq_nnnorm"
+   ],
+   "map_top10": [
+    "Filter.tendsto_map'_iff",
+    "Filter.map_map",
+    "Filter.IsBounded.mono",
+    "upperSemicontinuous_iff_frequently",
+    "lowerSemicontinuousAt_iff_frequently",
+    "upperSemicontinuousAt_iff_frequently",
+    "IsLinearTopology.tendsto_smul_zero",
+    "Bornology.isVonNBounded_union",
+    "Set.image_inter_nonempty_iff",
+    "IntermediateField.algebraMap_mem"
+   ]
+  },
+  {
+   "id": "q03",
+   "decl": 530618,
+   "target": "Turing.TM2to1.addBottom_map",
+   "module": "Mathlib.Computability.TuringMachine.StackTuringMachine",
+   "statement": "theorem addBottom_map (L : ListBlank (\u2200 k, Option (\u0393 k))) :\n    (addBottom L).map \u27e8Prod.snd, by rfl\u27e9 = L",
+   "n_stmt_world": 9,
+   "answers": [
+    "Turing.ListBlank.cons_head_tail",
+    "Turing.ListBlank.induction_on",
+    "Turing.ListBlank.map_cons"
+   ],
+   "map_top10": [
+    "Turing.ListBlank.head_cons",
+    "Turing.ListBlank.tail_cons",
+    "Turing.ListBlank.cons_head_tail",
+    "Turing.ListBlank.head_map",
+    "Turing.ListBlank.tail_map",
+    "Turing.ListBlank.nth_succ",
+    "Turing.Tape.move_right_n_head",
+    "Turing.Tape.mk'_nth_nat",
+    "Turing.TM2to1.stk_nth_val",
+    "Turing.TM2to1.addBottom_nth_snd"
+   ]
+  },
+  {
+   "id": "q04",
+   "decl": 298684,
+   "target": "MeasureTheory.pdf.IsUniform.pdf_eq_zero_of_measure_eq_zero_or_top",
+   "module": "Mathlib.Probability.Distributions.Uniform",
+   "statement": "theorem pdf_eq_zero_of_measure_eq_zero_or_top {X : \u03a9 \u2192 E} {s : Set E}\n    (hu : IsUniform X s \u2119 \u03bc) (h\u03bcs : \u03bc s = 0 \u2228 \u03bc s = \u221e) : pdf X \u2119 \u03bc =\u1d50[\u03bc] 0",
+   "n_stmt_world": 21,
+   "answers": [
+    "ENNReal.inv_zero",
+    "ENNReal.inv_top",
+    "MeasureTheory.Measure.restrict_eq_zero",
+    "MeasureTheory.Measure.MutuallySingular.zero_left",
+    "MeasureTheory.Measure.rnDeriv_eq_zero"
+   ],
+   "map_top10": [
+    "Measurable.aemeasurable",
+    "MeasureTheory.Measure.ext",
+    "MeasureTheory.Measure.restrict_apply",
+    "MeasureTheory.Measure.map_apply",
+    "MeasureTheory.Measure.measurable_rnDeriv",
+    "MeasureTheory.measure_mono",
+    "MeasureTheory.withDensity_apply",
+    "MeasureTheory.measure_ne_top",
+    "MeasureTheory.lintegral_congr_ae",
+    "MeasureTheory.ae_restrict_iff'"
+   ]
+  },
+  {
+   "id": "q05",
+   "decl": 496385,
+   "target": "Real.tendsto_mul_log_one_add_of_tendsto",
+   "module": "Mathlib.Analysis.SpecialFunctions.Complex.LogBounds",
+   "statement": "lemma tendsto_mul_log_one_add_of_tendsto {g : \u211d \u2192 \u211d} {t : \u211d}\n    (hg : Tendsto (fun x \u21a6 x * g x) atTop (\ud835\udcdd t)) :\n    Tendsto (fun x \u21a6 x * log (1 + g x)) atTop (\ud835\udcdd t)",
+   "n_stmt_world": 49,
+   "answers": [
+    "Complex.tendsto_mul_log_one_add_of_tendsto"
+   ],
+   "map_top10": [
+    "Complex.ofReal_mul",
+    "Complex.ofReal_inj",
+    "Real.log_one",
+    "Complex.mul_re",
+    "Complex.ofReal_div",
+    "Real.log_zero",
+    "Complex.ofReal_add",
+    "Complex.mul_im",
+    "Complex.ofReal_neg",
+    "Complex.norm_real"
+   ]
+  },
+  {
+   "id": "q06",
+   "decl": 388457,
+   "target": "ContinuousMultilinearMap.ofSubsingleton\u2097\u1d62",
+   "module": "Mathlib.Analysis.Normed.Module.Multilinear.Basic",
+   "statement": "def ofSubsingleton\u2097\u1d62 [Subsingleton \u03b9] (i : \u03b9) :\n    (G \u2192L[\ud835\udd5c] G') \u2243\u2097\u1d62[\ud835\udd5c] ContinuousMultilinearMap \ud835\udd5c (fun _ : \u03b9 \u21a6 G) G'",
+   "n_stmt_world": 7,
+   "answers": [
+    "ContinuousMultilinearMap.norm_ofSubsingleton"
+   ],
+   "map_top10": [
+    "LinearMap.ext",
+    "Submodule.ext",
+    "Submodule.mem_map",
+    "LinearMap.map_smul_of_tower",
+    "LinearMap.mem_ker",
+    "LinearEquiv.ext",
+    "map_sum",
+    "LinearPMap.mem_graph_iff",
+    "LinearEquiv.injective",
+    "Submodule.mem_prod"
+   ]
+  },
+  {
+   "id": "q07",
+   "decl": 351583,
+   "target": "mem_pathComponentIn_self",
+   "module": "Mathlib.Topology.Connected.PathConnected",
+   "statement": "theorem mem_pathComponentIn_self (h : x \u2208 F) : x \u2208 pathComponentIn F x",
+   "n_stmt_world": 2,
+   "answers": [
+    "JoinedIn.refl"
+   ],
+   "map_top10": [
+    "Part.mem_bind_iff"
+   ]
+  },
+  {
+   "id": "q08",
+   "decl": 79800,
+   "target": "MeasureTheory.ennrealPreVariation",
+   "module": "Mathlib.MeasureTheory.Measure.PreVariation",
+   "statement": "noncomputable def ennrealPreVariation (hf : IsSigmaSubadditiveSetFun f) (hf' : f \u2205 = 0) :\n    VectorMeasure X \u211d\u22650\u221e",
+   "n_stmt_world": 5,
+   "answers": [
+    "MeasureTheory.preVariation.iUnion",
+    "MeasureTheory.preVariation.empty"
+   ],
+   "map_top10": [
+    "MeasureTheory.measure_mono",
+    "MeasureTheory.Measure.ext",
+    "ENNReal.coe_ne_top",
+    "ENNReal.ofNat_ne_top",
+    "MeasureTheory.measure_empty",
+    "MeasureTheory.Measure.const_comp",
+    "Measurable.aemeasurable",
+    "MeasureTheory.measure_ne_top",
+    "ENNReal.smul_def",
+    "ENNReal.coe_eq_zero"
+   ]
+  },
+  {
+   "id": "q09",
+   "decl": 328756,
+   "target": "Real.one_div_sub_hasFPowerSeriesOnBall_zero",
+   "module": "Mathlib.Analysis.Analytic.Binomial",
+   "statement": "theorem one_div_sub_hasFPowerSeriesOnBall_zero {r : \u211d} (hr : r \u2260 0) :\n    HasFPowerSeriesOnBall (fun x \u21a6 1 / (r - x)) (.ofScalars \u211d fun n \u21a6 (r ^ (n + 1))\u207b\u00b9) 0 \u2016r\u2016\u2091",
+   "n_stmt_world": 38,
+   "answers": [
+    "Real.one_div_sub_pow_hasFPowerSeriesOnBall_zero"
+   ],
+   "map_top10": [
+    "MeasureTheory.measure_mono",
+    "MeasureTheory.Measure.ext",
+    "ENNReal.coe_ne_top",
+    "ENNReal.ofNat_ne_top",
+    "norm_nonneg",
+    "MeasureTheory.Measure.const_comp",
+    "MeasureTheory.measure_empty",
+    "IsBoundedSMul.continuousSMul",
+    "ENNReal.coe_le_coe",
+    "MeasureTheory.measure_ne_top"
+   ]
+  },
+  {
+   "id": "q10",
+   "decl": 513606,
+   "target": "Filter.hasBasis_smallSets",
+   "module": "Mathlib.Order.Filter.SmallSets",
+   "statement": "theorem hasBasis_smallSets (l : Filter \u03b1) :\n    HasBasis l.smallSets (fun t : Set \u03b1 => t \u2208 l) powerset",
+   "n_stmt_world": 2,
+   "answers": [
+    "Filter.HasBasis.smallSets"
+   ],
+   "map_top10": [
+    "Part.mem_bind_iff"
+   ]
+  },
+  {
+   "id": "q11",
+   "decl": 527676,
+   "target": "MeasureTheory.IsStoppingTime.piecewise_of_le",
+   "module": "Mathlib.Probability.Process.Stopping",
+   "statement": "theorem IsStoppingTime.piecewise_of_le (h\u03c4_st : IsStoppingTime \ud835\udca2 \u03c4) (h\u03b7_st : IsStoppingTime \ud835\udca2 \u03b7)\n    (h\u03c4 : \u2200 \u03c9, i \u2264 \u03c4 \u03c9) (h\u03b7 : \u2200 \u03c9, i \u2264 \u03b7 \u03c9) (hs : MeasurableSet[\ud835\udca2 i] s) :\n    IsStoppingTime \ud835\udca2 (s.piecewise \u03c4 \u03b7)",
+   "n_stmt_world": 8,
+   "answers": [
+    "MeasurableSet.inter",
+    "MeasurableSet.union"
+   ],
+   "map_top10": [
+    "Lean.Grind.of_eq_eq_true",
+    "Lean.Grind.not_and",
+    "Lean.Grind.not_not",
+    "Lean.Grind.iff_eq",
+    "Classical.byContradiction",
+    "Set.le_piecewise",
+    "Std.Internal.List.getValue?_eq_some_getValue",
+    "Part.mem_bind_iff",
+    "Lean.Grind.not_or",
+    "Bool.cond_eq_ite"
+   ]
+  },
+  {
+   "id": "q12",
+   "decl": 124622,
+   "target": "PartialEquiv.trans_refl",
+   "module": "Mathlib.Logic.Equiv.PartialEquiv",
+   "statement": "theorem trans_refl : e.trans (PartialEquiv.refl \u03b2) = e",
+   "n_stmt_world": 3,
+   "answers": [
+    "Set.inter_univ",
+    "PartialEquiv.ext"
+   ],
+   "map_top10": [
+    "Set.univ_inter",
+    "PartialEquiv.ext",
+    "PartialEquiv.trans_assoc",
+    "PartialEquiv.trans_source",
+    "PartialEquiv.transEquiv_eq_trans",
+    "Equiv.trans_toPartialEquiv",
+    "PartialEquiv.symm_image_target_inter_eq",
+    "PartialEquiv.trans_target''",
+    "ModelWithCorners.toPartialEquiv_coe",
+    "Bundle.Pretrivialization.symm_trans_source_eq"
+   ]
+  },
+  {
+   "id": "q13",
+   "decl": 701853,
+   "target": "Multiset.nodup_iff_pairwise",
+   "module": "Mathlib.Data.Multiset.Replicate",
+   "statement": "theorem nodup_iff_pairwise {\u03b1} {s : Multiset \u03b1} : Nodup s \u2194 Pairwise (\u00b7 \u2260 \u00b7) s",
+   "n_stmt_world": 6,
+   "answers": [
+    "Multiset.pairwise_coe_iff_pairwise"
+   ],
+   "map_top10": [
+    "Multiset.coe_eq_zero",
+    "Multiset.coe_toList",
+    "Multiset.sum_coe",
+    "Multiset.induction_on",
+    "Multiset.prod_coe",
+    "Multiset.nodup_cons",
+    "List.le_prod_nonempty_of_submultiplicative",
+    "List.le_sum_nonempty_of_subadditive_on_pred",
+    "List.le_sum_nonempty_of_subadditive",
+    "Multiset.powersetCardAux_eq_map_coe"
+   ]
+  },
+  {
+   "id": "q14",
+   "decl": 104223,
+   "target": "PerfectRing.lift_comp_lift_apply_eq_self",
+   "module": "Mathlib.FieldTheory.IsPerfectClosure",
+   "statement": "theorem lift_comp_lift_apply_eq_self [PerfectRing L p] (x : L) :\n    lift j i p (lift i j p x) = x",
+   "n_stmt_world": 3,
+   "answers": [
+    "PerfectRing.lift_comp_lift_apply",
+    "PerfectRing.lift_self_apply"
+   ],
+   "map_top10": [
+    "PerfectRing.lift_comp",
+    "PerfectRing.comp_lift",
+    "IsPRadical.injective_comp_of_perfect",
+    "PerfectRing.lift_comp_apply",
+    "PerfectRing.lift_comp_lift",
+    "iterateFrobeniusEquiv_zero",
+    "PerfectRing.lift_apply",
+    "WeierstrassCurve.map_\u0394",
+    "RingHom.algebraMap_toAlgebra",
+    "PerfectRing.lift_lift"
+   ]
+  },
+  {
+   "id": "q15",
+   "decl": 275343,
+   "target": "Matrix.permanent_zero",
+   "module": "Mathlib.LinearAlgebra.Matrix.Permanent",
+   "statement": "theorem permanent_zero [Nonempty n] : permanent (0 : Matrix n n R) = 0",
+   "n_stmt_world": 10,
+   "answers": [
+    "Fintype.card_ne_zero"
+   ],
+   "map_top10": [
+    "Multiset.map_map",
+    "Multiset.map_congr",
+    "Finset.sum_apply",
+    "Finset.prod_mul_distrib",
+    "Finset.sum_add_distrib",
+    "Finset.prod_const",
+    "Finset.sum_const",
+    "Finset.prod_apply",
+    "Multiset.card_map",
+    "Finset.prod_congr"
+   ]
+  },
+  {
+   "id": "q16",
+   "decl": 562899,
+   "target": "Finset.piecewise_piecewise_of_subset_left",
+   "module": "Mathlib.Data.Finset.Piecewise",
+   "statement": "lemma piecewise_piecewise_of_subset_left {s t : Finset \u03b9} [\u2200 i, Decidable (i \u2208 s)]\n    [\u2200 i, Decidable (i \u2208 t)] (h : s \u2286 t) (f\u2081 f\u2082 g : \u2200 a, \u03c0 a) :\n    s.piecewise (t.piecewise f\u2081 f\u2082) g = s.piecewise f\u2081 g",
+   "n_stmt_world": 4,
+   "answers": [
+    "Finset.piecewise_congr",
+    "Finset.piecewise_eq_of_mem"
+   ],
+   "map_top10": [
+    "Finset.piecewise_eq_of_mem",
+    "Finset.piecewise_eq_of_notMem",
+    "Finset.sum_congr",
+    "Finset.piecewise_empty",
+    "Finset.piecewise_insert",
+    "Finset.piecewise_univ",
+    "Finset.induction_on",
+    "Finset.prod_congr",
+    "Finset.prod_piecewise",
+    "Finset.update_eq_piecewise"
+   ]
+  },
+  {
+   "id": "q17",
+   "decl": 561312,
+   "target": "CategoryTheory.Limits.biproduct.matrixEquiv",
+   "module": "Mathlib.CategoryTheory.Limits.Shapes.Biproducts",
+   "statement": "def biproduct.matrixEquiv : (\u2a01 f \u27f6 \u2a01 g) \u2243 \u2200 j k, f j \u27f6 g k",
+   "n_stmt_world": 1,
+   "answers": [
+    "CategoryTheory.Limits.biproduct.components_matrix"
+   ],
+   "map_top10": []
+  },
+  {
+   "id": "q18",
+   "decl": 63503,
+   "target": "ciInf_mono",
+   "module": "Mathlib.Order.ConditionallyCompleteLattice.Indexed",
+   "statement": "theorem ciInf_mono {f g : \u03b9 \u2192 \u03b1} (B : BddBelow (range f)) (H : \u2200 x, f x \u2264 g x) : iInf f \u2264 iInf g",
+   "n_stmt_world": 3,
+   "answers": [
+    "ciSup_mono"
+   ],
+   "map_top10": []
+  },
+  {
+   "id": "q19",
+   "decl": 739840,
+   "target": "SubMulAction.val_preimage_orbit",
+   "module": "Mathlib.GroupTheory.GroupAction.SubMulAction",
+   "statement": "theorem val_preimage_orbit {p : SubMulAction R M} (m : p) :\n    Subtype.val \u207b\u00b9' MulAction.orbit R (m : M) = MulAction.orbit R m",
+   "n_stmt_world": 6,
+   "answers": [
+    "SubMulAction.val_image_orbit"
+   ],
+   "map_top10": [
+    "Part.mem_bind_iff"
+   ]
+  },
+  {
+   "id": "q20",
+   "decl": 195302,
+   "target": "IsLocallyConstant.of_constant_on_connected_clopens",
+   "module": "Mathlib.Topology.LocallyConstant.Basic",
+   "statement": "theorem of_constant_on_connected_clopens [LocallyConnectedSpace X] {f : X \u2192 Y}\n    (h : \u2200 U : Set X, IsConnected U \u2192 IsClopen U \u2192 \u2200 x \u2208 U, \u2200 y \u2208 U, f y = f x) :\n    IsLocallyConstant f",
+   "n_stmt_world": 4,
+   "answers": [
+    "isConnected_connectedComponent",
+    "isClopen_connectedComponent",
+    "IsLocallyConstant.of_constant_on_connected_components"
+   ],
+   "map_top10": [
+    "Part.mem_bind_iff"
+   ]
+  },
+  {
+   "id": "q21",
+   "decl": 93199,
+   "target": "CategoryTheory.Limits.pullbackZeroZeroIso_hom_fst",
+   "module": "Mathlib.CategoryTheory.Limits.Constructions.ZeroObjects",
+   "statement": "theorem pullbackZeroZeroIso_hom_fst (X Y : C) [HasBinaryProduct X Y] :\n    (pullbackZeroZeroIso X Y).hom \u226b prod.fst = pullback.fst 0 0",
+   "n_stmt_world": 9,
+   "answers": [
+    "CategoryTheory.Limits.pullbackZeroZeroIso_inv_fst"
+   ],
+   "map_top10": [
+    "CategoryTheory.Limits.pullback.condition",
+    "CategoryTheory.Limits.PullbackCone.mk_\u03c0_app",
+    "CategoryTheory.Limits.limit.lift_\u03c0_assoc",
+    "CategoryTheory.Limits.pullback.hom_ext",
+    "CategoryTheory.IsPullback.of_hasPullback",
+    "CategoryTheory.Limits.pullback.lift_fst",
+    "CategoryTheory.Limits.prod.comp_lift",
+    "CategoryTheory.Limits.pullback.lift_snd",
+    "CategoryTheory.Limits.prod.map_snd",
+    "CategoryTheory.Limits.prod.hom_ext"
+   ]
+  },
+  {
+   "id": "q22",
+   "decl": 304783,
+   "target": "Finset.not_disjoint_iff",
+   "module": "Mathlib.Data.Finset.Disjoint",
+   "statement": "theorem not_disjoint_iff : \u00acDisjoint s t \u2194 \u2203 a, a \u2208 s \u2227 a \u2208 t",
+   "n_stmt_world": 4,
+   "answers": [
+    "Finset.disjoint_left"
+   ],
+   "map_top10": [
+    "Finpartition.card_bind",
+    "SzemerediRegularity.card_aux\u2082",
+    "SzemerediRegularity.card_aux\u2081",
+    "SzemerediRegularity.a_add_one_le_four_pow_parts_card",
+    "Finset.sum_apply_dite._proof_1",
+    "Finset.univ_eq_attach",
+    "Finset.sum_const_nat",
+    "Finset.card_filter_add_card_filter_not",
+    "Part.mem_bind_iff",
+    "Finset.Nonempty.card_pos"
+   ]
+  },
+  {
+   "id": "q23",
+   "decl": 383548,
+   "target": "MulRingNormClass.toRingNormClass",
+   "module": "Mathlib.Algebra.Order.Hom.Basic",
+   "statement": "instance (priority := 100) MulRingNormClass.toRingNormClass [NonAssocRing \u03b1]\n    [Semiring \u03b2] [PartialOrder \u03b2] [MulRingNormClass F \u03b1 \u03b2] : RingNormClass F \u03b1 \u03b2",
+   "n_stmt_world": 1,
+   "answers": [
+    "MulRingSeminormClass.toRingSeminormClass"
+   ],
+   "map_top10": []
+  },
+  {
+   "id": "q24",
+   "decl": 476393,
+   "target": "CoxeterSystem.IsReflection.inv",
+   "module": "Mathlib.GroupTheory.Coxeter.Inversion",
+   "statement": "theorem inv : t\u207b\u00b9 = t",
+   "n_stmt_world": 2,
+   "answers": [
+    "CoxeterSystem.inv_simple"
+   ],
+   "map_top10": [
+    "CoxeterSystem.inv_simple",
+    "CoxeterSystem.simple_mul_simple_self",
+    "CoxeterSystem.wordProd_cons",
+    "CoxeterSystem.wordProd_nil",
+    "CoxeterSystem.lengthParity_simple",
+    "CoxeterSystem.wordProd_singleton",
+    "CoxeterSystem.isReflection_simple",
+    "CoxeterSystem.length_simple",
+    "CoxeterSystem.simple_mul_simple_cancel_left",
+    "CoxeterSystem.lengthParity_eq_ofAdd_length"
+   ]
+  },
+  {
+   "id": "q25",
+   "decl": 199421,
+   "target": "Real.one_sub_div_pow_le_exp_neg",
+   "module": "Mathlib.Analysis.Complex.Exponential",
+   "statement": "theorem one_sub_div_pow_le_exp_neg {n : \u2115} {t : \u211d} (ht' : t \u2264 n) : (1 - t / n) ^ n \u2264 exp (-t)",
+   "n_stmt_world": 33,
+   "answers": [
+    "Real.exp_nat_mul",
+    "Real.one_sub_le_exp_neg",
+    "Real.one_le_exp_iff"
+   ],
+   "map_top10": [
+    "Real.exp_pos",
+    "Real.exp_zero",
+    "Real.exp_log",
+    "Real.rpow_def_of_pos",
+    "Complex.ofReal_exp",
+    "Real.pi_pos",
+    "Real.exp_add",
+    "norm_nonneg",
+    "Real.exp_neg",
+    "Real.log_exp"
+   ]
+  },
+  {
+   "id": "q26",
+   "decl": 430502,
+   "target": "Matrix.diagonal_transvection_induction",
+   "module": "Mathlib.LinearAlgebra.Matrix.Transvection",
+   "statement": "theorem diagonal_transvection_induction (P : Matrix n n \ud835\udd5c \u2192 Prop) (M : Matrix n n \ud835\udd5c)\n    (hdiag : \u2200 D : n \u2192 \ud835\udd5c, det (diagonal D) = det M \u2192 P (diagonal D))\n    (htransvec : \u2200 t : TransvectionStruct n \ud835\udd5c, P t.toMatrix) (hmul : \u2200 A B, P A \u2192 P B \u2192 P (A * B)) :\n    P M",
+   "n_stmt_world": 12,
+   "answers": [
+    "Matrix.det_diagonal",
+    "Matrix.det_mul",
+    "Matrix.mul_assoc",
+    "Matrix.one_mul",
+    "Matrix.TransvectionStruct.det_toMatrix_prod",
+    "Matrix.Pivot.exists_list_transvec_mul_diagonal_mul_list_transvec"
+   ],
+   "map_top10": [
+    "Matrix.det_transpose",
+    "Matrix.det_mul",
+    "RingHom.mapMatrix_apply",
+    "Matrix.det_one",
+    "Finset.sum_congr",
+    "LinearMap.det_toMatrix",
+    "RingHom.map_det",
+    "Finset.prod_congr",
+    "Matrix.det_fin_two",
+    "Matrix.det_diagonal"
+   ]
+  },
+  {
+   "id": "q27",
+   "decl": 707134,
+   "target": "Ordinal.invVeblen\u2082_gamma",
+   "module": "Mathlib.SetTheory.Ordinal.Veblen",
+   "statement": "theorem invVeblen\u2082_gamma (o : Ordinal) : invVeblen\u2082 (\u0393_ o) = 0",
+   "n_stmt_world": 5,
+   "answers": [
+    "Ordinal.veblen_gamma_zero",
+    "Ordinal.veblen_pos",
+    "Ordinal.gamma_ne_zero",
+    "Ordinal.invVeblen\u2082_veblen"
+   ],
+   "map_top10": [
+    "Ordinal.veblen_invVeblen\u2081_invVeblen\u2082",
+    "Ordinal.enum_typein",
+    "Ordinal.typein_lt_type",
+    "Ordinal.type_toType",
+    "Ordinal.enum_lt_enum",
+    "Ordinal.veblen_le_veblen_iff_right",
+    "Order.lt_succ",
+    "_private.Mathlib.SetTheory.Ordinal.Exponential.0.Ordinal.opow_of_ne_zero",
+    "Ordinal.limitRecOn_limit",
+    "Ordinal.typein_lt_self"
+   ]
+  },
+  {
+   "id": "q28",
+   "decl": 654228,
+   "target": "legendreSym.eq_one_of_sq_sub_mul_sq_eq_zero'",
+   "module": "Mathlib.NumberTheory.LegendreSymbol.Basic",
+   "statement": "theorem eq_one_of_sq_sub_mul_sq_eq_zero' {p : \u2115} [Fact p.Prime] {a : \u2124} (ha : (a : ZMod p) \u2260 0)\n    {x y : ZMod p} (hx : x \u2260 0) (hxy : x ^ 2 - a * y ^ 2 = 0) : legendreSym p a = 1",
+   "n_stmt_world": 13,
+   "answers": [
+    "legendreSym.eq_one_of_sq_sub_mul_sq_eq_zero"
+   ],
+   "map_top10": [
+    "Nat.Prime.ne_one",
+    "Lean.Grind.of_eq_eq_true",
+    "Lean.Grind.not_and",
+    "Lean.Grind.not_not",
+    "Lean.Grind.iff_eq",
+    "Classical.byContradiction",
+    "Std.Iter.step_filterMap",
+    "Nat.Prime.pos",
+    "IntermediateField.algebraMap_mem",
+    "Subfield.closure_eq"
+   ]
+  },
+  {
+   "id": "q29",
+   "decl": 753228,
+   "target": "MonoidHom.ker_transferSylow_disjoint",
+   "module": "Mathlib.GroupTheory.Transfer",
+   "statement": "theorem ker_transferSylow_disjoint (Q : Subgroup G) (hQ : IsPGroup p Q) :\n    Disjoint (transferSylow P hP).ker Q",
+   "n_stmt_world": 13,
+   "answers": [
+    "Subgroup.card_eq_one",
+    "Subgroup.card_dvd_of_le",
+    "IsPGroup.card_eq_or_dvd",
+    "MonoidHom.not_dvd_card_ker_transferSylow"
+   ],
+   "map_top10": [
+    "Nat.card_eq_fintype_card",
+    "Nat.card_congr",
+    "Nat.card_eq_zero_of_infinite",
+    "Nat.card_pos",
+    "Nat.finite_of_card_ne_zero",
+    "Nat.card_prod",
+    "Fintype.card_eq_nat_card",
+    "Set.ncard_univ",
+    "nonempty_fintype",
+    "Nat.card_eq_one_iff_unique"
+   ]
+  },
+  {
+   "id": "q30",
+   "decl": 747984,
+   "target": "AddMonoidAlgebra.isGroupLikeElem_of",
+   "module": "Mathlib.RingTheory.Bialgebra.MonoidAlgebra",
+   "statement": "lemma isGroupLikeElem_of (m : M) : IsGroupLikeElem R (of A M m)",
+   "n_stmt_world": 2,
+   "answers": [
+    "AddMonoidAlgebra.isGroupLikeElem_single_one"
+   ],
+   "map_top10": [
+    "toAdd_ofAdd",
+    "ofAdd_toAdd",
+    "toAdd_mul",
+    "Multiplicative.toAdd_le",
+    "Multiplicative.toAdd_lt",
+    "WithZero.coe_lt_coe",
+    "WithZero.coe_le_coe",
+    "isAddLeftRegular_toAdd",
+    "isAddRightRegular_toAdd",
+    "Multiplicative.ext_iff"
+   ]
+  },
+  {
+   "id": "q31",
+   "decl": 683852,
+   "target": "Topology.IsEmbedding.piMap",
+   "module": "Mathlib.Topology.Constructions",
+   "statement": "protected lemma Topology.IsEmbedding.piMap {f : \u2200 i, A i \u2192 B i}\n    (hf : \u2200 i, IsEmbedding (f i)) : IsEmbedding (Pi.map f)",
+   "n_stmt_world": 1,
+   "answers": [
+    "Topology.IsInducing.piMap"
+   ],
+   "map_top10": [
+    "continuous_induced_rng",
+    "continuous_pi_iff",
+    "pi_generateFrom_eq",
+    "WeakBilin.coeFn_continuous",
+    "induced_compose",
+    "continuous_pi",
+    "induced_to_pi",
+    "LinearMap.IsWeak.continuous_eval",
+    "Topology.isInducing_iff",
+    "induced_iInf"
+   ]
+  },
+  {
+   "id": "q32",
+   "decl": 277424,
+   "target": "Finset.union_sdiff_self_eq_union",
+   "module": "Mathlib.Data.Finset.SDiff",
+   "statement": "theorem union_sdiff_self_eq_union : s \u222a t \\ s = s \u222a t",
+   "n_stmt_world": 1,
+   "answers": [
+    "sup_sdiff_self_right"
+   ],
+   "map_top10": []
+  },
+  {
+   "id": "q33",
+   "decl": 105553,
+   "target": "AlgebraicGeometry.LocallyRingedSpace.restrictStalkIso_inv_eq_germ",
+   "module": "Mathlib.Geometry.RingedSpace.LocallyRingedSpace",
+   "statement": "lemma restrictStalkIso_inv_eq_germ :\n    X.presheaf.germ (h.functor.obj V) (f x) \u27e8x, hx, rfl\u27e9 \u226b\n      (X.restrictStalkIso h x).inv = (X.restrict h).presheaf.germ _ x hx",
+   "n_stmt_world": 8,
+   "answers": [
+    "AlgebraicGeometry.PresheafedSpace.restrictStalkIso_inv_eq_germ"
+   ],
+   "map_top10": [
+    "Part.mem_bind_iff"
+   ]
+  },
+  {
+   "id": "q34",
+   "decl": 137592,
+   "target": "Nat.size_bit",
+   "module": "Mathlib.Data.Nat.Size",
+   "statement": "theorem size_bit {b n} (h : bit b n \u2260 0) : size (bit b n) = succ (size n)",
+   "n_stmt_world": 2,
+   "answers": [
+    "Nat.binaryRec_eq"
+   ],
+   "map_top10": []
+  },
+  {
+   "id": "q35",
+   "decl": 655293,
+   "target": "CategoryTheory.Localization.Preadditive.neg'_add'_self",
+   "module": "Mathlib.CategoryTheory.Localization.CalculusOfFractions.Preadditive",
+   "statement": "lemma neg'_add'_self (f : L.obj X \u27f6 L.obj Y) :\n    add' W (neg' W f) f = L.map 0",
+   "n_stmt_world": 9,
+   "answers": [
+    "CategoryTheory.Localization.Preadditive.add'_eq",
+    "CategoryTheory.Localization.Preadditive.neg'_eq"
+   ],
+   "map_top10": [
+    "CategoryTheory.Localization.Preadditive.add'_eq",
+    "CategoryTheory.Localization.exists_leftFraction\u2082",
+    "CategoryTheory.Localization.Preadditive.add'_comm",
+    "CategoryTheory.Localization.Preadditive.add'_zero",
+    "CategoryTheory.Localization.Preadditive.zero_add'",
+    "CategoryTheory.Localization.Preadditive.add'_assoc",
+    "ChainComplex.next_nat_succ",
+    "CochainComplex.prev_nat_succ",
+    "CategoryTheory.Preadditive.hasKernel_of_hasEqualizer",
+    "CategoryTheory.Preadditive.hasEqualizer_of_hasKernel"
+   ]
+  },
+  {
+   "id": "q36",
+   "decl": 652513,
+   "target": "completedRiemannZeta\u2080_zero",
+   "module": "Mathlib.NumberTheory.Harmonic.ZetaAsymp",
+   "statement": "lemma completedRiemannZeta\u2080_zero : completedRiemannZeta\u2080 0 = (\u03b3 - Complex.log (4 * \u03c0)) / 2 + 1",
+   "n_stmt_world": 21,
+   "answers": [
+    "completedRiemannZeta\u2080_one_sub",
+    "completedRiemannZeta\u2080_one"
+   ],
+   "map_top10": [
+    "Complex.ofReal_mul",
+    "Real.pi_pos",
+    "Complex.ofReal_inj",
+    "Complex.ofReal_div",
+    "Complex.ofReal_neg",
+    "Complex.ofReal_add",
+    "Complex.mul_im",
+    "Complex.mul_re",
+    "Complex.ofReal_cos",
+    "Complex.norm_real"
+   ]
+  },
+  {
+   "id": "q37",
+   "decl": 110464,
+   "target": "UniformOnFun.postcomp_uniformContinuous",
+   "module": "Mathlib.Topology.UniformSpace.UniformConvergenceTopology",
+   "statement": "protected theorem postcomp_uniformContinuous [UniformSpace \u03b3] {f : \u03b3 \u2192 \u03b2}\n    (hf : UniformContinuous f) : UniformContinuous (ofFun \ud835\udd16 \u2218 (f \u2218 \u00b7) \u2218 toFun \ud835\udd16)",
+   "n_stmt_world": 7,
+   "answers": [
+    "uniformContinuous_iff_le_comap",
+    "UniformOnFun.mono",
+    "UniformOnFun.comap_eq"
+   ],
+   "map_top10": [
+    "UniformSpace.comap_iInf",
+    "uniformContinuous_iff_le_comap",
+    "Pi.uniformSpace_eq",
+    "UniformSpace.ext",
+    "UniformSpace.replaceTopology_eq",
+    "UniformSpace.comap_inf",
+    "UniformOnFun.precomp_uniformContinuous",
+    "UniformSpace.comap_comap",
+    "IsProperMap.isCompact_preimage",
+    "iInf_uniformity"
+   ]
+  },
+  {
+   "id": "q38",
+   "decl": 232997,
+   "target": "AddLECancellable.tsub_eq_iff_eq_add_of_le",
+   "module": "Mathlib.Algebra.Order.Sub.Unbundled.Basic",
+   "statement": "protected theorem tsub_eq_iff_eq_add_of_le (hb : AddLECancellable b) (h : b \u2264 a) :\n    a - b = c \u2194 a = c + b",
+   "n_stmt_world": 1,
+   "answers": [
+    "AddLECancellable.eq_tsub_iff_add_eq_of_le"
+   ],
+   "map_top10": []
+  },
+  {
+   "id": "q39",
+   "decl": 295635,
+   "target": "hasSum_coe_mul_geometric_of_norm_lt_one",
+   "module": "Mathlib.Analysis.SpecificLimits.Normed",
+   "statement": "theorem hasSum_coe_mul_geometric_of_norm_lt_one {r : \ud835\udd5c} (hr : \u2016r\u2016 < 1) :\n    HasSum (fun n \u21a6 n * r ^ n : \u2115 \u2192 \ud835\udd5c) (r / (1 - r) ^ 2)",
+   "n_stmt_world": 7,
+   "answers": [
+    "hasSum_coe_mul_geometric_of_norm_lt_one'"
+   ],
+   "map_top10": [
+    "Summable.hasSum",
+    "Multipliable.hasProd",
+    "HasSum.tsum_eq",
+    "Finset.sum_congr",
+    "tsum_zero",
+    "ENNReal.summable",
+    "HasProd.tprod_eq",
+    "Finset.prod_congr",
+    "norm_nonneg",
+    "MeasureTheory.measure_mono"
+   ]
+  },
+  {
+   "id": "q40",
+   "decl": 57404,
+   "target": "finprod_mem_eq_finite_toFinset_prod",
+   "module": "Mathlib.Algebra.BigOperators.Finprod",
+   "statement": "theorem finprod_mem_eq_finite_toFinset_prod (f : \u03b1 \u2192 M) {s : Set \u03b1} (hs : s.Finite) :\n    \u220f\u1da0 i \u2208 s, f i = \u220f i \u2208 hs.toFinset, f i",
+   "n_stmt_world": 3,
+   "answers": [
+    "Set.Finite.coe_toFinset",
+    "finprod_mem_eq_prod_of_inter_mulSupport_eq"
+   ],
+   "map_top10": [
+    "Set.Finite.mem_toFinset",
+    "Set.Finite.coe_toFinset",
+    "Finset.finite_toSet",
+    "Finset.sum_congr",
+    "Set.Finite.subset",
+    "Filter.TendstoCofinite.finite_preimage_singleton",
+    "Set.ncard_eq_toFinset_card",
+    "finsum_eq_sum",
+    "Finset.ext",
+    "Set.toFinite_toFinset"
+   ]
+  },
+  {
+   "id": "q41",
+   "decl": 615087,
+   "target": "Metric.isBounded_range_of_cauchy_map_cofinite",
+   "module": "Mathlib.Topology.MetricSpace.Bounded",
+   "statement": "theorem isBounded_range_of_cauchy_map_cofinite {f : \u03b2 \u2192 \u03b1} (hf : Cauchy (map f cofinite)) :\n    IsBounded (range f)",
+   "n_stmt_world": 4,
+   "answers": [
+    "cauchy_map_iff",
+    "Metric.isBounded_range_of_tendsto_cofinite_uniformity"
+   ],
+   "map_top10": [
+    "compl_compl",
+    "Nat.cofinite_eq_atTop",
+    "Filter.mem_cofinite",
+    "Filter.cocompact_eq_cofinite",
+    "RestrictedProduct.continuous_inclusion",
+    "Filter.eventually_cofinite",
+    "Set.Finite.mem_toFinset",
+    "Set.Finite.subset",
+    "RestrictedProduct.nhds_eq_map_inclusion",
+    "Function.Injective.tendsto_cofinite"
+   ]
+  },
+  {
+   "id": "q42",
+   "decl": 692247,
+   "target": "Polynomial.leval_eq_smeval.linearMap",
+   "module": "Mathlib.Algebra.Polynomial.Smeval",
+   "statement": "theorem leval_eq_smeval.linearMap {R : Type*} [Semiring R] (r : R) :\n    leval r = smeval.linearMap R r",
+   "n_stmt_world": 10,
+   "answers": [
+    "Polynomial.eval_eq_smeval",
+    "Polynomial.leval_apply",
+    "Polynomial.smeval.linearMap_apply"
+   ],
+   "map_top10": [
+    "Polynomial.eval_X",
+    "Polynomial.eval_C",
+    "Polynomial.eval_mul",
+    "Polynomial.eval_sub",
+    "Polynomial.eval_add",
+    "Polynomial.eval_one",
+    "Polynomial.eval_pow",
+    "Polynomial.IsRoot.def",
+    "Finset.sum_congr",
+    "Polynomial.eval_map"
+   ]
+  },
+  {
+   "id": "q43",
+   "decl": 463987,
+   "target": "Real.differentiableAt_negMulLog_iff",
+   "module": "Mathlib.Analysis.SpecialFunctions.Log.NegMulLog",
+   "statement": "lemma differentiableAt_negMulLog_iff {x : \u211d} : DifferentiableAt \u211d negMulLog x \u2194 x \u2260 0",
+   "n_stmt_world": 19,
+   "answers": [
+    "Real.not_DifferentiableAt_log_mul_zero",
+    "Real.differentiableOn_negMulLog"
+   ],
+   "map_top10": [
+    "Real.log_one",
+    "Real.log_zero",
+    "Real.log_mul",
+    "Real.exp_log",
+    "Real.log_pos",
+    "Real.log_inv",
+    "IsBoundedSMul.continuousSMul",
+    "Real.rpow_pos_of_pos",
+    "Real.rpow_def_of_pos",
+    "Real.log_le_log"
+   ]
+  },
+  {
+   "id": "q44",
+   "decl": 352898,
+   "target": "Nat.le_fib_add_one",
+   "module": "Mathlib.Data.Nat.Fib.Basic",
+   "statement": "lemma le_fib_add_one : \u2200 n, n \u2264 fib n + 1\n  | 0 => zero_le_one\n  | 1 => one_le_two\n  | 2 => le_rfl\n  | 3 => le_rfl\n  | 4 => le_rfl\n  | _n + 5 => (le_fib_self le_add_self).trans <| le_succ _",
+   "n_stmt_world": 3,
+   "answers": [
+    "one_le_two",
+    "Nat.le_fib_self"
+   ],
+   "map_top10": []
+  },
+  {
+   "id": "q45",
+   "decl": 326356,
+   "target": "Module.End.lTensorAlgHom",
+   "module": "Mathlib.RingTheory.TensorProduct.Maps",
+   "statement": "def lTensorAlgHom : Module.End R M \u2192\u2090[R] Module.End R (N \u2297[R] M)",
+   "n_stmt_world": 7,
+   "answers": [
+    "LinearMap.lTensor_id",
+    "LinearMap.lTensor_mul"
+   ],
+   "map_top10": [
+    "TensorProduct.induction_on",
+    "Finset.sum_congr",
+    "TensorProduct.AlgebraTensorModule.curry_injective",
+    "TensorProduct.ext",
+    "TensorProduct.tmul_zero",
+    "TensorProduct.map_comp",
+    "TensorProduct.zero_tmul",
+    "TensorProduct.ext'",
+    "TensorProduct.AlgebraTensorModule.curry_apply",
+    "TensorProduct.add_tmul"
+   ]
+  },
+  {
+   "id": "q46",
+   "decl": 678908,
+   "target": "AlgHom.norm_apply_le_self_mul_norm_one",
+   "module": "Mathlib.Analysis.Normed.Algebra.Spectrum",
+   "statement": "theorem norm_apply_le_self_mul_norm_one [FunLike F A \ud835\udd5c] [AlgHomClass F \ud835\udd5c A \ud835\udd5c] (f : F) (a : A) :\n    \u2016f a\u2016 \u2264 \u2016a\u2016 * \u2016(1 : A)\u2016",
+   "n_stmt_world": 3,
+   "answers": [
+    "spectrum.norm_le_norm_mul_of_mem"
+   ],
+   "map_top10": [
+    "NNRat.instCharZero",
+    "Numbering.card_prefixed",
+    "Nat.cast_choose",
+    "Fintype.card_numbering",
+    "Finset.card_le_univ"
+   ]
+  },
+  {
+   "id": "q47",
+   "decl": 39825,
+   "target": "WithTop.untop\u2080_eq_zero",
+   "module": "Mathlib.Algebra.Order.WithTop.Untop0",
+   "statement": "lemma untop\u2080_eq_zero {a : WithTop \u03b1} :\n    a.untop\u2080 = 0 \u2194 a = 0 \u2228 a = \u22a4",
+   "n_stmt_world": 3,
+   "answers": [
+    "WithTop.untopD_eq_self_iff"
+   ],
+   "map_top10": []
+  },
+  {
+   "id": "q48",
+   "decl": 710404,
+   "target": "MvPolynomial.isWeightedHomogeneous_of_total_degree_zero",
+   "module": "Mathlib.RingTheory.MvPolynomial.WeightedHomogeneous",
+   "statement": "theorem isWeightedHomogeneous_of_total_degree_zero [SemilatticeSup M] [OrderBot M] (w : \u03c3 \u2192 M)\n    {p : MvPolynomial \u03c3 R} (hp : weightedTotalDegree w p = (\u22a5 : M)) :\n    IsWeightedHomogeneous w p (\u22a5 : M)",
+   "n_stmt_world": 17,
+   "answers": [
+    "Finset.le_sup",
+    "MvPolynomial.mem_support_iff",
+    "MvPolynomial.ne_zero_iff",
+    "MvPolynomial.weightedTotalDegree_coe"
+   ],
+   "map_top10": [
+    "MvPolynomial.mem_support_iff",
+    "MvPolynomial.ext",
+    "Finset.sum_congr",
+    "MvPolynomial.coeff_monomial",
+    "Finsupp.degree_eq_weight_one",
+    "MvPolynomial.coeff_add",
+    "MvPolynomial.coeff_weightedHomogeneousComponent",
+    "Finset.prod_congr",
+    "MvPowerSeries.coeff_eq_zero_of_lt_weightedOrder",
+    "Finset.sum_eq_zero"
+   ]
+  },
+  {
+   "id": "q49",
+   "decl": 571511,
+   "target": "MeasureTheory.condExp_min_stopping_time_ae_eq_restrict_le_const",
+   "module": "Mathlib.Probability.Process.Stopping",
+   "statement": "theorem condExp_min_stopping_time_ae_eq_restrict_le_const (h\u03c4 : IsStoppingTime \u2131 \u03c4) (i : \u03b9)\n    [SigmaFinite (\u03bc.trim (h\u03c4.min_const i).measurableSpace_le)] :\n    \u03bc[f | (h\u03c4.min_const i).measurableSpace] =\u1d50[\u03bc.restrict {x | \u03c4 x \u2264 i}]\n      \u03bc[f | h\u03c4.measurableSpace]",
+   "n_stmt_world": 17,
+   "answers": [
+    "MeasureTheory.sigmaFiniteTrim_mono",
+    "MeasureTheory.condExp_ae_eq_restrict_of_measurableSpace_eq_on"
+   ],
+   "map_top10": [
+    "MeasureTheory.Measure.restrict_apply",
+    "Measurable.aemeasurable",
+    "MeasureTheory.Measure.ext",
+    "MeasureTheory.ae_restrict_iff'",
+    "MeasureTheory.Integrable.integrableOn",
+    "MeasureTheory.integral_congr_ae",
+    "MeasureTheory.withDensity_apply",
+    "intervalIntegral.integral_of_le",
+    "MeasureTheory.ae_restrict_of_ae",
+    "MeasureTheory.AEStronglyMeasurable.ae_eq_mk"
+   ]
+  },
+  {
+   "id": "q50",
+   "decl": 46896,
+   "target": "Submodule.linearMap_qext",
+   "module": "Mathlib.LinearAlgebra.Quotient.Defs",
+   "statement": "theorem linearMap_qext \u2983f g : M \u29f8 p \u2192\u209b\u2097[\u03c4\u2081\u2082] M\u2082\u2984 (h : f.comp p.mkQ = g.comp p.mkQ) : f = g",
+   "n_stmt_world": 10,
+   "answers": [
+    "Submodule.Quotient.induction_on"
+   ],
+   "map_top10": [
+    "Submodule.ker_mkQ",
+    "LinearMap.ext",
+    "Submodule.mkQ_surjective",
+    "Submodule.Quotient.mk_eq_zero",
+    "Submodule.ext",
+    "Submodule.mkQ_apply",
+    "Submodule.range_subtype",
+    "Submodule.range_mkQ",
+    "LinearMap.mem_ker",
+    "Submodule.map_smul''"
+   ]
+  },
+  {
+   "id": "q51",
+   "decl": 240214,
+   "target": "Finsupp.mem_range_embDomain_iff",
+   "module": "Mathlib.Data.Finsupp.Basic",
+   "statement": "lemma mem_range_embDomain_iff [AddCommMonoid M] (f : \u03b1 \u21aa \u03b2) (x : \u03b2 \u2192\u2080 M) :\n    x \u2208 Set.range (embDomain f) \u2194 \u2191x.support \u2286 Set.range f",
+   "n_stmt_world": 9,
+   "answers": [
+    "Finsupp.ext",
+    "Finsupp.embDomain_eq_mapDomain",
+    "Finsupp.mem_range_mapDomain_iff"
+   ],
+   "map_top10": [
+    "Finsupp.ext",
+    "Finsupp.embDomain_apply_self",
+    "Finsupp.embDomain_eq_mapDomain",
+    "Finsupp.embDomain_apply",
+    "Finset.sum_congr",
+    "Finsupp.embDomain_of_notMem_range",
+    "Finsupp.sum_embDomain",
+    "Finsupp.embDomain_inj",
+    "Finsupp.coe_update",
+    "Finsupp.sum_single_index"
+   ]
+  },
+  {
+   "id": "q52",
+   "decl": 725830,
+   "target": "eventually_singleton_add_smul_subset",
+   "module": "Mathlib.Analysis.Normed.Module.Ball.Pointwise",
+   "statement": "theorem eventually_singleton_add_smul_subset {x : E} {s : Set E} (hs : Bornology.IsBounded s)\n    {u : Set E} (hu : u \u2208 \ud835\udcdd x) : \u2200\u1da0 r in \ud835\udcdd (0 : \ud835\udd5c), {x} + r \u2022 s \u2286 u",
+   "n_stmt_world": 23,
+   "answers": [
+    "norm_nonneg",
+    "Metric.nhds_basis_closedBall",
+    "mem_closedBall_zero_iff",
+    "Metric.closedBall_mem_nhds",
+    "Bornology.IsBounded.subset_closedBall_lt"
+   ],
+   "map_top10": [
+    "Complex.norm_real",
+    "Real.norm_of_nonneg",
+    "norm_nonneg",
+    "Finset.sum_congr",
+    "Convexity.iConvexComb_eq_sum",
+    "AEMeasurable.aestronglyMeasurable",
+    "MeasureTheory.Integrable.aestronglyMeasurable",
+    "Complex.ofReal_inj",
+    "Filter.tendsto_map'_iff",
+    "Filter.map_map"
+   ]
+  },
+  {
+   "id": "q53",
+   "decl": 509775,
+   "target": "Matrix.adjugate_fin_two",
+   "module": "Mathlib.LinearAlgebra.Matrix.Adjugate",
+   "statement": "theorem adjugate_fin_two (A : Matrix (Fin 2) (Fin 2) \u03b1) :\n    adjugate A = !![A 1 1, -A 0 1; -A 1 0, A 0 0]",
+   "n_stmt_world": 26,
+   "answers": [
+    "Matrix.det_unique",
+    "Matrix.adjugate_fin_succ_eq_det_submatrix"
+   ],
+   "map_top10": [
+    "Finset.sum_congr",
+    "Matrix.det_transpose",
+    "RingHom.mapMatrix_apply",
+    "Matrix.det_mul",
+    "Matrix.det_one",
+    "RingHom.map_det",
+    "Matrix.cons_val_succ",
+    "LinearMap.det_toMatrix",
+    "Finset.prod_congr",
+    "Matrix.cons_val_fin_one"
+   ]
+  },
+  {
+   "id": "q54",
+   "decl": 182025,
+   "target": "TopCat.nonempty_isColimit_iff_eq_coinduced",
+   "module": "Mathlib.Topology.Category.TopCat.Limits.Basic",
+   "statement": "lemma nonempty_isColimit_iff_eq_coinduced (c : Cocone F) (hc : IsColimit ((forget).mapCocone c)) :\n    Nonempty (IsColimit c) \u2194 c.pt.str = \u2a06 j, (F.obj j).str.coinduced (c.\u03b9.app j)",
+   "n_stmt_world": 14,
+   "answers": [
+    "TopCat.coinduced_of_isColimit"
+   ],
+   "map_top10": [
+    "CategoryTheory.NatTrans.ext'",
+    "CategoryTheory.Limits.PullbackCone.mk_\u03c0_app",
+    "CategoryTheory.Limits.limit.lift_\u03c0_assoc",
+    "CategoryTheory.Limits.IsColimit.hom_ext",
+    "CategoryTheory.NatTrans.congr_app",
+    "CategoryTheory.Iso.ext",
+    "CategoryTheory.Limits.IsLimit.hom_ext",
+    "CategoryTheory.Limits.colimit.hom_ext",
+    "CategoryTheory.Limits.limit.hom_ext",
+    "CategoryTheory.Limits.Cocone.w"
+   ]
+  },
+  {
+   "id": "q55",
+   "decl": 11078,
+   "target": "Set.uIoc_eq_union",
+   "module": "Mathlib.Order.Interval.Set.UnorderedInterval",
+   "statement": "lemma uIoc_eq_union : \u0399 a b = Ioc a b \u222a Ioc b a",
+   "n_stmt_world": 3,
+   "answers": [
+    "Set.Ioc_eq_empty"
+   ],
+   "map_top10": [
+    "Set.uIoc_of_le",
+    "Set.uIoc_comm",
+    "StrictMono.monotone",
+    "Monotone.map_min",
+    "Monotone.map_max",
+    "Set.uIoc_of_ge",
+    "Set.Ioc_union_Ioc_eq_Ioc",
+    "Fin.preimage_natAdd_Ioc_natAdd",
+    "OrderEmbedding.preimage_Ioc",
+    "Fin.image_val_Ioc"
+   ]
+  },
+  {
+   "id": "q56",
+   "decl": 118975,
+   "target": "Real.closedBall_eq_Icc",
+   "module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+   "statement": "theorem Real.closedBall_eq_Icc {x r : \u211d} : closedBall x r = Icc (x - r) (x + r)",
+   "n_stmt_world": 15,
+   "answers": [
+    "Real.dist_eq",
+    "Metric.mem_closedBall"
+   ],
+   "map_top10": [
+    "Metric.mem_closedBall",
+    "norm_nonneg",
+    "Metric.nhds_basis_closedBall",
+    "Metric.ball_subset_closedBall",
+    "norm_zero",
+    "IsBoundedSMul.continuousSMul",
+    "mem_closedBall_zero_iff",
+    "abs_of_nonneg",
+    "Real.norm_of_nonneg",
+    "Metric.mem_ball"
+   ]
+  },
+  {
+   "id": "q57",
+   "decl": 377727,
+   "target": "MeasureTheory.lpMeasToLpTrimLie_symm_indicator",
+   "module": "Mathlib.MeasureTheory.Function.ConditionalExpectation.AEMeasurable",
+   "statement": "theorem lpMeasToLpTrimLie_symm_indicator [one_le_p : Fact (1 \u2264 p)] [NormedSpace \u211d F] {hm : m \u2264 m0}\n    {s : Set \u03b1} {\u03bc : Measure \u03b1} (hs : MeasurableSet[m] s) (h\u03bcs : \u03bc.trim hm s \u2260 \u221e) (c : F) :\n    ((lpMeasToLpTrimLie F \u211d p \u03bc hm).symm (indicatorConstLp p hs h\u03bcs c) : Lp F p \u03bc) =\n      indicatorConstLp p (hm s hs) ((le_trim hm).trans_lt h\u03bcs.lt_top).ne c",
+   "n_stmt_world": 43,
+   "answers": [
+    "MeasureTheory.Lp.ext",
+    "MeasureTheory.ae_eq_of_ae_eq_trim",
+    "MeasureTheory.indicatorConstLp_coeFn",
+    "MeasureTheory.lpTrimToLpMeas_ae_eq"
+   ],
+   "map_top10": [
+    "MeasureTheory.integral_congr_ae",
+    "MeasureTheory.Lp.ext",
+    "MeasureTheory.MemLp.coeFn_toLp",
+    "MeasureTheory.measure_mono",
+    "Measurable.aemeasurable",
+    "norm_nonneg",
+    "MeasureTheory.Lp.memLp",
+    "MeasureTheory.lintegral_congr_ae",
+    "MeasureTheory.eLpNorm_congr_ae",
+    "MeasureTheory.AEStronglyMeasurable.stronglyMeasurable_mk"
+   ]
+  },
+  {
+   "id": "q58",
+   "decl": 615820,
+   "target": "Finset.inter_sdiff_left_comm",
+   "module": "Mathlib.Data.Finset.SDiff",
+   "statement": "lemma inter_sdiff_left_comm (s t u : Finset \u03b1) : s \u2229 (t \\ u) = t \u2229 (s \\ u)",
+   "n_stmt_world": 1,
+   "answers": [
+    "inf_sdiff_left_comm"
+   ],
+   "map_top10": []
+  },
+  {
+   "id": "q59",
+   "decl": 307665,
+   "target": "RCLike.ofReal_finsupp_sum",
+   "module": "Mathlib.Analysis.RCLike.Basic",
+   "statement": "theorem ofReal_finsupp_sum {\u03b1 M : Type*} [Zero M] (f : \u03b1 \u2192\u2080 M) (g : \u03b1 \u2192 M \u2192 \u211d) :\n    ((f.sum fun a b => g a b : \u211d) : K) = f.sum fun a b => (g a b : K)",
+   "n_stmt_world": 6,
+   "answers": [
+    "map_finsuppSum"
+   ],
+   "map_top10": [
+    "norm_nonneg",
+    "hasSum_geometric_of_lt_one",
+    "Finset.sum_le_sum",
+    "Finset.prod_congr",
+    "Finset.sum_congr",
+    "NNRat.instCharZero",
+    "Numbering.card_prefixed",
+    "Nat.cast_choose",
+    "Summable.mul_of_nonneg",
+    "BoundingSieve.siftedSum_le_sum_of_upperMoebius"
+   ]
+  },
+  {
+   "id": "q60",
+   "decl": 694180,
+   "target": "AddCircle.exists_gcd_eq_one_of_isOfFinAddOrder",
+   "module": "Mathlib.Topology.Instances.AddCircle.Defs",
+   "statement": "theorem exists_gcd_eq_one_of_isOfFinAddOrder {u : AddCircle p} (h : IsOfFinAddOrder u) :\n    \u2203 m : \u2115, m.gcd (addOrderOf u) = 1 \u2227 m < addOrderOf u \u2227 \u2191((m : \ud835\udd5c) / addOrderOf u * p) = u",
+   "n_stmt_world": 13,
+   "answers": [
+    "AddCircle.addOrderOf_eq_pos_iff"
+   ],
+   "map_top10": [
+    "QuotientAddGroup.eq",
+    "Nat.gcd_dvd_right",
+    "QuotientAddGroup.eq_zero_iff",
+    "Nat.gcd_comm",
+    "Nat.gcd_dvd_left",
+    "QuotientAddGroup.induction_on",
+    "Nat.gcd_zero_left",
+    "Nat.dvd_gcd",
+    "Nat.Coprime.gcd_eq_one",
+    "Nat.one_mul"
+   ]
+  }
+ ]
+}
