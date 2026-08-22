@@ -1,0 +1,80 @@
+tasks: 300
+lambda edges 1931498  |delta| median 7  zero-frac 0.085
+    25/300
+    50/300
+    75/300
+    100/300
+    125/300
+    150/300
+    175/300
+    200/300
+    225/300
+    250/300
+    275/300
+    300/300
+gapc/HOP {"found": 0.7366666666666667, "median_hops": 4.0, "mean_hops": 4.235294117647059, "median_vcost": 53.0, "mean_vcost": 87.63800904977376, "median_excess": 22.0, "mean_excess": 57.963800904977376, "median_dive": 0.0, "mean_dive": 6.013574660633484, "median_climb": 3.0, "mean_climb": 14.65158371040724, "frac_zero_excess": 0.17647058823529413, "frac_zero_dive": 0.502262443438914, "mean_lane_math": 0.8367720366383469, "mean_hub_share": 0.021689970754141877}
+    25/300
+    50/300
+    75/300
+    100/300
+    125/300
+    150/300
+    175/300
+    200/300
+    225/300
+    250/300
+    275/300
+    300/300
+gapc/W0 {"found": 0.7366666666666667, "median_hops": 6.0, "mean_hops": 6.597285067873303, "median_vcost": 31.0, "mean_vcost": 45.61085972850679, "median_excess": 6.0, "mean_excess": 15.936651583710407, "median_dive": 0.0, "mean_dive": 3.3846153846153846, "median_climb": 0.0, "mean_climb": 2.5384615384615383, "frac_zero_excess": 0.19004524886877827, "frac_zero_dive": 0.5429864253393665, "mean_lane_math": 0.8385483226314918, "mean_hub_share": 0.01920160944225115}
+    25/300
+    50/300
+    75/300
+    100/300
+    125/300
+    150/300
+    175/300
+    200/300
+    225/300
+    250/300
+    275/300
+    300/300
+gapc/W1 {"found": 0.7366666666666667, "median_hops": 5.0, "mean_hops": 5.547511312217194, "median_vcost": 31.0, "mean_vcost": 46.13574660633484, "median_excess": 8.0, "mean_excess": 16.46153846153846, "median_dive": 0.0, "mean_dive": 3.4027149321266967, "median_climb": 0.0, "mean_climb": 2.8597285067873304, "frac_zero_excess": 0.18552036199095023, "frac_zero_dive": 0.5429864253393665, "mean_lane_math": 0.840164796581909, "mean_hub_share": 0.020304264956671373}
+    25/300
+    50/300
+    75/300
+    100/300
+    125/300
+    150/300
+    175/300
+    200/300
+    225/300
+    250/300
+    275/300
+    300/300
+gapc+lambda/HOP {"found": 0.7366666666666667, "median_hops": 3.0, "mean_hops": 3.262443438914027, "median_vcost": 33.0, "mean_vcost": 55.97285067873303, "median_excess": 4.0, "mean_excess": 26.29864253393665, "median_dive": 0.0, "mean_dive": 4.819004524886878, "median_climb": 0.0, "mean_climb": 6.479638009049774, "frac_zero_excess": 0.33031674208144796, "frac_zero_dive": 0.5882352941176471, "mean_lane_math": 0.789403453689168, "mean_hub_share": 0.03563579277864992}
+    25/300
+    50/300
+    75/300
+    100/300
+    125/300
+    150/300
+    175/300
+    200/300
+    225/300
+    250/300
+    275/300
+    300/300
+gapc+lambda/W0 {"found": 0.7366666666666667, "median_hops": 4.0, "mean_hops": 4.009049773755656, "median_vcost": 20.0, "mean_vcost": 36.05429864253394, "median_excess": 0.0, "mean_excess": 6.380090497737557, "median_dive": 0.0, "mean_dive": 2.9592760180995477, "median_climb": 0.0, "mean_climb": 0.167420814479638, "frac_zero_excess": 0.6334841628959276, "frac_zero_dive": 0.6832579185520362, "mean_lane_math": 0.781885205437837, "mean_hub_share": 0.023916040100250627}
+    25/300
+    50/300
+    75/300
+    100/300
+    125/300
+    150/300
+    175/300
+    200/300
+    225/300
+    250/300
+    275/300
+    300/300
+gapc+lambda/W1 {"found": 0.7366666666666667, "median_hops": 4.0, "mean_hops": 3.83710407239819, "median_vcost": 20.0, "mean_vcost": 36.171945701357465, "median_excess": 0.0, "mean_excess": 6.497737556561086, "median_dive": 0.0, "mean_dive": 3.0, "median_climb": 0.0, "mean_climb": 0.18099547511312217, "frac_zero_excess": 0.6063348416289592, "frac_zero_dive": 0.669683257918552, "mean_lane_math": 0.7775396825396824, "mean_hub_share": 0.02361528822055138}

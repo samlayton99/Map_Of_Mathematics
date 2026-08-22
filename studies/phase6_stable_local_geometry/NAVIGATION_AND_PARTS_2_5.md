@@ -163,6 +163,55 @@ Conclusion: route on the map, render the atlas. Lambda is a shortcut
 (a compiled up-and-down), not new structure. Residual 20.6% is
 statement items that appear in no zoom-1 edge at all.
 
+### v3c: WEIGHTED routing, w = |depth(a) - depth(b)| (src/weighted_routes.py)
+
+Sam's proposal, and it was NOT what any earlier study did:
+route_finding.py minimised HOPS (a deep dive costs nothing);
+route_reach.py minimised the BOTTLENECK dip (a deep dive is charged
+once). Neither charges for the climb back. The production map carries
+no edge weights at all -- rho is a rendering threshold, not a cost.
+
+The additive metric is the one that makes foundations expensive,
+because for any path
+    sum |delta d|  =  |d(s) - d(t)|  +  2 x backtracking
+so every level you descend and must re-climb is paid for TWICE. A
+V-shaped route A -> C -> B costs |dA - dC| + |dC - dB|: the deeper the
+shared prerequisite C, the worse. Exactly the intended penalty.
+
+300 tasks, GAPC holdout-blind. HOP = w 1; W0 = w |delta d| (literal);
+W1 = w 1 + |delta d| (hop-penalised).
+
+| router | med hops | med vcost | mean excess | mean dive | mean climb | zero-excess |
+|---|---|---|---|---|---|---|
+| gapc / HOP | 4 | 53 | 58.0 | 6.0 | 14.7 | 0.18 |
+| gapc / W0 | 6 | 31 | 15.9 | 3.4 | 2.5 | 0.19 |
+| gapc / W1 | 5 | 31 | 16.5 | 3.4 | 2.9 | 0.19 |
+| gapc+L / HOP | 3 | 33 | 26.3 | 4.8 | 6.5 | 0.33 |
+| **gapc+L / W0** | 4 | **20** | **6.4** | 3.0 | **0.17** | **0.63** |
+| gapc+L / W1 | 4 | 20 | 6.5 | 3.0 | 0.18 | 0.61 |
+
+- **Fewest-hops routing wastes 58 levels of vertical travel on average;
+  the weighted router wastes 16 -- a 3.6x reduction**, and 6.4 with
+  Lambda. Median wasted travel 22 -> 6 -> 0.
+- Mean climb above both endpoints collapses 14.7 -> 2.5 -> 0.17. The
+  hop router was routinely detouring up over the target and back down.
+- With Lambda + weights, **63% of routes are perfectly monotone**: no
+  wasted vertical motion at all.
+- The identity checks out numerically: mean excess 6.38 vs
+  2 x (dive 2.96 + climb 0.17) = 6.25.
+- Reachability is identical (0.737) for every router -- weights change
+  which route you get, never whether one exists.
+
+Two caveats worth keeping:
+1. **W0 has a degeneracy**: same-depth edges cost 0, so a router can
+   drift laterally for free. Only 0.16% of map edges are zero-delta,
+   but 8.5% of Lambda edges are. W1 (`1 + |delta d|`) removes it and
+   costs almost nothing (median excess 8 vs 6 on the map, and it buys
+   a shorter path: 5 hops vs 6). **Recommend W1 as the default.**
+2. Lambda edges route through slightly less mathematics (math-lane
+   share 0.839 -> 0.782, hub share 0.019 -> 0.024). Efficiency up,
+   purity marginally down.
+
 ### Direction: statement -> move is an UPWARD trip
 
 Median depth of the statement seed: 21. Median depth of the proof's
