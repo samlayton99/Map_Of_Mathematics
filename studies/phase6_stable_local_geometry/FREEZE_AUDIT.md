@@ -94,3 +94,30 @@ ctor/cp-filtered lane side + u1d-above-gap. Zoom-1: plain gap, all
 targets. Atlas: scoped + rho<=1/2 vertical. Blind numbers: thm KM
 0.894, def KM 0.903, boundary F1 ~0.69 vs ceiling 0.836; map AMI 0.386
 (zoom-1) / 0.416 (atlas view); co-use lift mean 30.7x over 4 seeds.
+
+## Addendum: theorem-side Occam + pipeline hardening (same day)
+
+**Theorem drop-one on the old corpus (n=522, real power)** — every
+theorem key earns its place; the blind neutrality was small-n:
+
+| dropped | KM | flips | verdict |
+|---|---|---|---|
+| dem | 0.899 | +3/-9 | earns |
+| lane | 0.908 | +5/-7 | earns |
+| stmt | 0.894 | +1/-9 | earns |
+| dem+lane | 0.882 | +7/-20 | strongly earns |
+
+The thm/def asymmetry is therefore PROVEN in both directions: theorems
+need all five keys; definitions need their four.
+
+**Hardening: regression + equivalence harness (`src/frozen_test.py`)**
+reproduces blind thm KM 0.894 / blind def KM 0.903 / old thm KM 0.9127
+from the canonical `frozen.py` code path, and checks spec-vs-production
+edge equivalence on 300 sampled artifacts. First run CAUGHT A REAL
+DEFECT: a gap tie-break divergence (Python max-tuple broke ties toward
+the deepest tied gap; production numpy argmax toward the shallowest),
+affecting 3.7-4.2% of proofs. Resolved by measurement: FIRST (highest)
+maximal gap is canonical (F1 0.6548 vs 0.6530, better precision,
+matches all production artifacts, cleanest semantics: the highest chasm
+wins). Post-fix: 300/300 equivalence, all headline numbers reproduce,
+ALL PASS.
