@@ -82,7 +82,7 @@ for b in ob:
 check("old thm KM (frozen.py)", np.mean(okm), 0.9127, 0.005)
 
 # --- 2. production equivalence: zoom1 vs edges_GAP on 300 artifacts
-z = np.load(P6 + "/data/map_final/edges_GAP.npz")
+z = np.load(P6 + "/data/map_final/edges_GAPC.npz")
 gap_by_src = defaultdict(set)
 for s, d in zip(z["src_decl"], z["dst_decl"]):
     gap_by_src[int(s)].add(int(d))
@@ -100,11 +100,12 @@ for i in sample:
     if ti is None: continue
     F = frozen.candidate_features(r["occ"], tgt, node, hv.name_id, hv.owner_of,
                                   hv.depth_stmt, CLASSPROJ, set())
-    mine = {hv.name_id[c] for c in frozen.zoom1(F) if c in hv.name_id}
+    isdef = int(node["kind"][ti]) == 1   # kind 1 = def; rules validated there only
+    mine = {hv.name_id[c] for c in frozen.zoom1(F, isdef) if c in hv.name_id}
     prod = gap_by_src.get(int(ti), set())
     if mine != prod:
         mismatch += 1
-print(f"  {'PASS' if mismatch == 0 else 'FAIL'} zoom1 vs production edges_GAP: {mismatch}/300 artifacts mismatch")
+print(f"  {'PASS' if mismatch == 0 else 'FAIL'} zoom1 vs production edges_GAPC: {mismatch}/300 artifacts mismatch")
 if mismatch: fails.append("zoom1-equivalence")
 print("\nALL PASS" if not fails else f"FAILURES: {fails}")
 sys.exit(0 if not fails else 1)
