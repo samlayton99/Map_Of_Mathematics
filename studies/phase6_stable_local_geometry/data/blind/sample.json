@@ -1,0 +1,8586 @@
+{
+ "seed": 20260907,
+ "bands": [
+  "11-25",
+  "26-50",
+  "51-100",
+  "101+"
+ ],
+ "n_targets": 120,
+ "n_theorem": 84,
+ "n_def": 36,
+ "n_candidates": 1708,
+ "mean_candidates": 14.233333333333333,
+ "draw_stats": {
+  "kind0_11-25": {
+   "pool": 43140,
+   "examined": 38,
+   "drawn": 21,
+   "rejected_candidate_count": 6,
+   "rejected_no_source": 11
+  },
+  "kind0_26-50": {
+   "pool": 34426,
+   "examined": 67,
+   "drawn": 21,
+   "rejected_candidate_count": 26,
+   "rejected_no_source": 20
+  },
+  "kind0_51-100": {
+   "pool": 80825,
+   "examined": 61,
+   "drawn": 21,
+   "rejected_candidate_count": 33,
+   "rejected_no_source": 7
+  },
+  "kind0_101+": {
+   "pool": 65820,
+   "examined": 85,
+   "drawn": 21,
+   "rejected_candidate_count": 60,
+   "rejected_no_source": 4
+  },
+  "kind1_11-25": {
+   "pool": 11755,
+   "examined": 11,
+   "drawn": 9,
+   "rejected_candidate_count": 1,
+   "rejected_no_source": 1
+  },
+  "kind1_26-50": {
+   "pool": 10188,
+   "examined": 15,
+   "drawn": 9,
+   "rejected_candidate_count": 5,
+   "rejected_no_source": 1
+  },
+  "kind1_51-100": {
+   "pool": 13285,
+   "examined": 18,
+   "drawn": 9,
+   "rejected_candidate_count": 8,
+   "rejected_no_source": 1
+  },
+  "kind1_101+": {
+   "pool": 8085,
+   "examined": 15,
+   "drawn": 9,
+   "rejected_candidate_count": 4,
+   "rejected_no_source": 2
+  }
+ },
+ "targets": [
+  {
+   "artifact": 194791,
+   "decl": 210799,
+   "target": "EsakiaHom.coe_copy",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 12,
+   "module": "Mathlib.Topology.Order.Hom.Esakia",
+   "statement_src": "theorem coe_copy (f : EsakiaHom \u03b1 \u03b2) (f' : \u03b1 \u2192 \u03b2) (h : f' = f) : \u21d1(f.copy f' h) = f'",
+   "proof_src": ":= rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 97838,
+     "name": "EsakiaHom.instFunLike"
+    },
+    {
+     "decl": 210800,
+     "name": "EsakiaHom.copy"
+    },
+    {
+     "decl": 864,
+     "name": "TopologicalSpace"
+    },
+    {
+     "decl": 82440,
+     "name": "EsakiaHom"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    },
+    {
+     "decl": 868,
+     "name": "Preorder"
+    }
+   ]
+  },
+  {
+   "artifact": 447787,
+   "decl": 469430,
+   "target": "Fin.preimage_castAdd_Ici_castAdd",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 25,
+   "module": "Mathlib.Order.Interval.Set.Fin",
+   "statement_src": "theorem preimage_castAdd_Ici_castAdd (m) (i : Fin n) : castAdd m \u207b\u00b9' Ici (castAdd m i) = Ici i",
+   "proof_src": ":=\n  rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 471,
+     "name": "Set.Ici"
+    },
+    {
+     "decl": 30163,
+     "name": "Fin.castAdd"
+    },
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 55,
+     "name": "instHAdd"
+    },
+    {
+     "decl": 2931,
+     "name": "Fin.instPartialOrder"
+    },
+    {
+     "decl": 765,
+     "name": "Set.preimage"
+    },
+    {
+     "decl": 57,
+     "name": "HAdd.hAdd"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 61,
+     "name": "instAddNat"
+    },
+    {
+     "decl": 144,
+     "name": "Fin"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 524667,
+   "decl": 547191,
+   "target": "Cardinal.mk_set_ne_zero_iff",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 25,
+   "module": "Mathlib.SetTheory.Cardinal.Basic",
+   "statement_src": "theorem mk_set_ne_zero_iff {s : Set \u03b1} : #s \u2260 0 \u2194 s.Nonempty",
+   "proof_src": ":= by\n  rw [mk_ne_zero_iff, nonempty_coe_sort]",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 55127,
+     "name": "Cardinal.mk_ne_zero_iff"
+    },
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 1175,
+     "name": "Cardinal"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 102582,
+     "name": "Set.nonempty_coe_sort"
+    },
+    {
+     "decl": 18,
+     "name": "Iff.rfl"
+    },
+    {
+     "decl": 1176,
+     "name": "Cardinal.mk"
+    },
+    {
+     "decl": 473,
+     "name": "Set.Elem"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 91,
+     "name": "Ne"
+    },
+    {
+     "decl": 5,
+     "name": "Iff"
+    },
+    {
+     "decl": 37,
+     "name": "Set.Nonempty"
+    },
+    {
+     "decl": 26,
+     "name": "propext"
+    },
+    {
+     "decl": 967,
+     "name": "Nonempty"
+    },
+    {
+     "decl": 96,
+     "name": "Zero.toOfNat0"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 55126,
+     "name": "Cardinal.instZero"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 654965,
+   "decl": 678290,
+   "target": "AddSubsemigroup.mem_op",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 11,
+   "module": "Mathlib.Algebra.Group.Subsemigroup.MulOpposite",
+   "statement_src": "theorem mem_op {x : M\u1d50\u1d52\u1d56} {S : Subsemigroup M} : x \u2208 S.op \u2194 x.unop \u2208 S",
+   "proof_src": ":= Iff.rfl",
+   "statement_how": "lastcomp",
+   "candidates": [
+    {
+     "decl": 24978,
+     "name": "AddSubsemigroup.instSetLike"
+    },
+    {
+     "decl": 18,
+     "name": "Iff.rfl"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 8196,
+     "name": "AddOpposite"
+    },
+    {
+     "decl": 25801,
+     "name": "AddOpposite.instAdd"
+    },
+    {
+     "decl": 32432,
+     "name": "AddSubsemigroup.op"
+    },
+    {
+     "decl": 24982,
+     "name": "AddSubsemigroup"
+    },
+    {
+     "decl": 11,
+     "name": "SetLike.instMembership"
+    },
+    {
+     "decl": 3673,
+     "name": "Add"
+    }
+   ]
+  },
+  {
+   "artifact": 262212,
+   "decl": 280353,
+   "target": "List.rtakeWhile_concat_pos",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 13,
+   "module": "Mathlib.Data.List.DropRight",
+   "statement_src": "theorem rtakeWhile_concat_pos (x : \u03b1) (h : p x) :\n    rtakeWhile p (l ++ [x]) = rtakeWhile p l ++ [x]",
+   "proof_src": ":= by rw [rtakeWhile_concat, if_pos h]",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 233,
+     "name": "instDecidableEqBool"
+    },
+    {
+     "decl": 2084,
+     "name": "if_pos"
+    },
+    {
+     "decl": 240,
+     "name": "List.cons"
+    },
+    {
+     "decl": 212736,
+     "name": "List.rtakeWhile_concat"
+    },
+    {
+     "decl": 243,
+     "name": "Bool.true"
+    },
+    {
+     "decl": 784,
+     "name": "instHAppendOfAppend"
+    },
+    {
+     "decl": 371,
+     "name": "List"
+    },
+    {
+     "decl": 254,
+     "name": "Bool"
+    },
+    {
+     "decl": 65,
+     "name": "Eq.refl"
+    },
+    {
+     "decl": 212735,
+     "name": "List.rtakeWhile"
+    },
+    {
+     "decl": 786,
+     "name": "List.instAppend"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 787,
+     "name": "HAppend.hAppend"
+    },
+    {
+     "decl": 269,
+     "name": "List.nil"
+    },
+    {
+     "decl": 270,
+     "name": "ite"
+    }
+   ]
+  },
+  {
+   "artifact": 435010,
+   "decl": 456505,
+   "target": "tsub_eq_of_eq_add_rev",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 12,
+   "module": "Mathlib.Algebra.Order.Sub.Defs",
+   "statement_src": "theorem tsub_eq_of_eq_add_rev (h : a = b + c) : a - b = c",
+   "proof_src": ":=\n  Contravariant.AddLECancellable.tsub_eq_of_eq_add_rev h",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 514,
+     "name": "PartialOrder"
+    },
+    {
+     "decl": 27875,
+     "name": "OrderedSub"
+    },
+    {
+     "decl": 55,
+     "name": "instHAdd"
+    },
+    {
+     "decl": 57,
+     "name": "HAdd.hAdd"
+    },
+    {
+     "decl": 32912,
+     "name": "AddLeftReflectLE"
+    },
+    {
+     "decl": 718,
+     "name": "AddCommSemigroup.toAddCommMagma"
+    },
+    {
+     "decl": 22753,
+     "name": "AddCommSemigroup"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 139340,
+     "name": "Contravariant.AddLECancellable"
+    },
+    {
+     "decl": 81338,
+     "name": "AddLECancellable.tsub_eq_of_eq_add_rev"
+    },
+    {
+     "decl": 729,
+     "name": "AddCommMagma.toAdd"
+    },
+    {
+     "decl": 18786,
+     "name": "Sub"
+    }
+   ]
+  },
+  {
+   "artifact": 104055,
+   "decl": 115591,
+   "target": "iSup_or",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 13,
+   "module": "Mathlib.Order.CompleteLattice.Basic",
+   "statement_src": "theorem iSup_or {p q : Prop} {s : p \u2228 q \u2192 \u03b1} :\n    \u2a06 x, s x = (\u2a06 i, s (Or.inl i)) \u2294 \u2a06 j, s (Or.inr j)",
+   "proof_src": ":=\n  le_antisymm\n    (iSup_le fun i =>\n      match i with\n      | Or.inl _ => le_sup_of_le_left <| le_iSup (fun _ => s _) _\n      | Or.inr _ => le_sup_of_le_right <| le_iSup (fun _ => s _) _)\n    (sup_le (iSup_comp_le _ _) (iSup_comp_le _ _))",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1772,
+     "name": "Lattice.toSemilatticeSup"
+    },
+    {
+     "decl": 1773,
+     "name": "CompleteLattice.toLattice"
+    },
+    {
+     "decl": 2231,
+     "name": "iSup"
+    },
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 3313,
+     "name": "SemilatticeSup.toMax"
+    },
+    {
+     "decl": 33289,
+     "name": "le_sup_of_le_left"
+    },
+    {
+     "decl": 6671,
+     "name": "le_iSup"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 2361,
+     "name": "CompleteLattice.toCompleteSemilatticeInf"
+    },
+    {
+     "decl": 1950,
+     "name": "le_antisymm"
+    },
+    {
+     "decl": 2363,
+     "name": "CompleteSemilatticeInf.toPartialOrder"
+    },
+    {
+     "decl": 2197,
+     "name": "Max.max"
+    },
+    {
+     "decl": 144665,
+     "name": "le_sup_of_le_right"
+    },
+    {
+     "decl": 6672,
+     "name": "iSup_le"
+    },
+    {
+     "decl": 2239,
+     "name": "CompleteSemilatticeSup.toSupSet"
+    },
+    {
+     "decl": 3774,
+     "name": "sup_le"
+    },
+    {
+     "decl": 2596,
+     "name": "Or.inl"
+    },
+    {
+     "decl": 118,
+     "name": "Or"
+    },
+    {
+     "decl": 2241,
+     "name": "CompleteLattice.toCompleteSemilatticeSup"
+    },
+    {
+     "decl": 3683,
+     "name": "CompleteLattice"
+    },
+    {
+     "decl": 266913,
+     "name": "iSup_comp_le"
+    },
+    {
+     "decl": 2597,
+     "name": "Or.inr"
+    }
+   ]
+  },
+  {
+   "artifact": 681319,
+   "decl": 704733,
+   "target": "Topology.WithUpper.toUpper_symm",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 12,
+   "module": "Mathlib.Topology.Order.LowerUpperTopology",
+   "statement_src": "@[simp] lemma toUpper_symm {\u03b1} : (@toUpper \u03b1).symm = ofUpper",
+   "proof_src": ":= rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 46194,
+     "name": "Topology.WithUpper"
+    },
+    {
+     "decl": 973,
+     "name": "Equiv"
+    },
+    {
+     "decl": 149226,
+     "name": "Topology.WithUpper.toUpper"
+    },
+    {
+     "decl": 976,
+     "name": "Equiv.symm"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    }
+   ]
+  },
+  {
+   "artifact": 708085,
+   "decl": 731547,
+   "target": "NonUnitalRingHom.coe_srangeRestrict",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 22,
+   "module": "Mathlib.RingTheory.NonUnitalSubsemiring.Basic",
+   "statement_src": "theorem coe_srangeRestrict (f : F) (x : R) : (srangeRestrict f x : S) = f x",
+   "proof_src": ":=\n  rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 121128,
+     "name": "NonUnitalRingHom.srange"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 158,
+     "name": "Subtype"
+    },
+    {
+     "decl": 6907,
+     "name": "NonUnitalRingHom.instFunLike"
+    },
+    {
+     "decl": 6910,
+     "name": "NonUnitalSubsemiring.instSetLike"
+    },
+    {
+     "decl": 2425,
+     "name": "NonUnitalSubsemiring"
+    },
+    {
+     "decl": 121129,
+     "name": "NonUnitalRingHom.srangeRestrict"
+    },
+    {
+     "decl": 27344,
+     "name": "NonUnitalRingHomClass"
+    },
+    {
+     "decl": 65910,
+     "name": "NonUnitalSubsemiringClass.toNonUnitalNonAssocSemiring"
+    },
+    {
+     "decl": 6912,
+     "name": "NonUnitalRingHom"
+    },
+    {
+     "decl": 3813,
+     "name": "NonUnitalNonAssocSemiring"
+    },
+    {
+     "decl": 195,
+     "name": "Subtype.val"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 11,
+     "name": "SetLike.instMembership"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    },
+    {
+     "decl": 488,
+     "name": "FunLike"
+    }
+   ]
+  },
+  {
+   "artifact": 157215,
+   "decl": 171617,
+   "target": "BoundarylessManifold.isInteriorPoint",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 14,
+   "module": "Mathlib.Geometry.Manifold.IsManifold.InteriorBoundary",
+   "statement_src": "lemma _root_.BoundarylessManifold.isInteriorPoint {x : M} [BoundarylessManifold I M] :\n    IsInteriorPoint I x",
+   "proof_src": ":= BoundarylessManifold.isInteriorPoint' x",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 814,
+     "name": "NormedSpace"
+    },
+    {
+     "decl": 169909,
+     "name": "BoundarylessManifold.isInteriorPoint'"
+    },
+    {
+     "decl": 864,
+     "name": "TopologicalSpace"
+    },
+    {
+     "decl": 1599,
+     "name": "ModelWithCorners"
+    },
+    {
+     "decl": 821,
+     "name": "NontriviallyNormedField"
+    },
+    {
+     "decl": 823,
+     "name": "NontriviallyNormedField.toNormedField"
+    },
+    {
+     "decl": 825,
+     "name": "NormedAddCommGroup.toSeminormedAddCommGroup"
+    },
+    {
+     "decl": 826,
+     "name": "NormedAddCommGroup"
+    },
+    {
+     "decl": 30492,
+     "name": "BoundarylessManifold"
+    },
+    {
+     "decl": 1609,
+     "name": "ChartedSpace"
+    }
+   ]
+  },
+  {
+   "artifact": 46514,
+   "decl": 53371,
+   "target": "ciSup_le",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 11,
+   "module": "Mathlib.Order.ConditionallyCompleteLattice.Indexed",
+   "statement_src": "theorem ciSup_le [Nonempty \u03b9] {f : \u03b9 \u2192 \u03b1} {c : \u03b1} (H : \u2200 x, f x \u2264 c) : iSup f \u2264 c",
+   "proof_src": ":=\n  csSup_le (range_nonempty f) (by rwa [forall_mem_range])",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 2125,
+     "name": "Set.forall_mem_range"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 3144,
+     "name": "ConditionallyCompleteLattice"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 278,
+     "name": "SemilatticeInf.toPartialOrder"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 31021,
+     "name": "Set.range_nonempty"
+    },
+    {
+     "decl": 26,
+     "name": "propext"
+    },
+    {
+     "decl": 967,
+     "name": "Nonempty"
+    },
+    {
+     "decl": 40,
+     "name": "ConditionallyCompletePartialOrderSup.toPartialOrder"
+    },
+    {
+     "decl": 2240,
+     "name": "ConditionallyCompleteLattice.toConditionallyCompletePartialOrder"
+    },
+    {
+     "decl": 190,
+     "name": "Set.range"
+    },
+    {
+     "decl": 2242,
+     "name": "ConditionallyCompletePartialOrder.toConditionallyCompletePartialOrderSup"
+    },
+    {
+     "decl": 3767,
+     "name": "ConditionallyCompleteLattice.toLattice"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 479,
+     "name": "Set.instMembership"
+    },
+    {
+     "decl": 157849,
+     "name": "csSup_le"
+    },
+    {
+     "decl": 287,
+     "name": "Lattice.toSemilatticeInf"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 621483,
+   "decl": 644696,
+   "target": "ModelWithCorners.toPartialEquiv_coe_symm",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 13,
+   "module": "Mathlib.Geometry.Manifold.IsManifold.Basic",
+   "statement_src": "theorem toPartialEquiv_coe_symm : (I.toPartialEquiv.symm : E \u2192 H) = I.symm",
+   "proof_src": ":=\n  rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 814,
+     "name": "NormedSpace"
+    },
+    {
+     "decl": 23594,
+     "name": "ModelWithCorners.toPartialEquiv"
+    },
+    {
+     "decl": 9785,
+     "name": "PartialEquiv.symm"
+    },
+    {
+     "decl": 864,
+     "name": "TopologicalSpace"
+    },
+    {
+     "decl": 1599,
+     "name": "ModelWithCorners"
+    },
+    {
+     "decl": 821,
+     "name": "NontriviallyNormedField"
+    },
+    {
+     "decl": 823,
+     "name": "NontriviallyNormedField.toNormedField"
+    },
+    {
+     "decl": 6774,
+     "name": "PartialEquiv.toFun"
+    },
+    {
+     "decl": 825,
+     "name": "NormedAddCommGroup.toSeminormedAddCommGroup"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    },
+    {
+     "decl": 826,
+     "name": "NormedAddCommGroup"
+    }
+   ]
+  },
+  {
+   "artifact": 623534,
+   "decl": 646754,
+   "target": "Function.Injective.exists_ne",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 12,
+   "module": "Mathlib.Logic.Nontrivial.Defs",
+   "statement_src": "protected theorem Function.Injective.exists_ne [Nontrivial \u03b1] {f : \u03b1 \u2192 \u03b2}\n    (hf : Function.Injective f) (y : \u03b2) : \u2203 x, f x \u2260 y",
+   "proof_src": ":= by\n  rcases exists_pair_ne \u03b1 with \u27e8x\u2081, x\u2082, hx\u27e9\n  by_cases h : f x\u2082 = y\n  \u00b7 exact \u27e8x\u2081, (hf.ne_iff' h).2 hx\u27e9\n  \u00b7 exact \u27e8x\u2082, h\u27e9",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1771,
+     "name": "Nontrivial"
+    },
+    {
+     "decl": 681,
+     "name": "Iff.mpr"
+    },
+    {
+     "decl": 528,
+     "name": "Classical.propDecidable"
+    },
+    {
+     "decl": 529,
+     "name": "Exists"
+    },
+    {
+     "decl": 91,
+     "name": "Ne"
+    },
+    {
+     "decl": 534,
+     "name": "dite"
+    },
+    {
+     "decl": 353,
+     "name": "Exists.casesOn"
+    },
+    {
+     "decl": 355,
+     "name": "Exists.intro"
+    },
+    {
+     "decl": 297804,
+     "name": "Function.Injective.ne_iff'"
+    },
+    {
+     "decl": 63,
+     "name": "Function.Injective"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 120,
+     "name": "Not"
+    },
+    {
+     "decl": 94690,
+     "name": "exists_pair_ne"
+    }
+   ]
+  },
+  {
+   "artifact": 344751,
+   "decl": 364785,
+   "target": "ContinuousMap.congr_arg",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 14,
+   "module": "Mathlib.Topology.ContinuousMap.Defs",
+   "statement_src": "protected theorem congr_arg (f : C(X, Y)) {x y : X} (h : x = y) : f x = f y",
+   "proof_src": ":=\n  h \u25b8 rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1849,
+     "name": "ContinuousMap"
+    },
+    {
+     "decl": 774,
+     "name": "Eq.rec"
+    },
+    {
+     "decl": 864,
+     "name": "TopologicalSpace"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 1858,
+     "name": "ContinuousMap.instFunLike"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    }
+   ]
+  },
+  {
+   "artifact": 408360,
+   "decl": 429503,
+   "target": "MonoidHom.mrangeRestrict_surjective",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 20,
+   "module": "Mathlib.Algebra.Group.Submonoid.Operations",
+   "statement_src": "theorem mrangeRestrict_surjective (f : M \u2192* N) : Function.Surjective f.mrangeRestrict",
+   "proof_src": ":=\n  fun \u27e8_, \u27e8x, rfl\u27e9\u27e9 => \u27e8x, rfl\u27e9",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1686,
+     "name": "MonoidHom.instFunLike"
+    },
+    {
+     "decl": 1688,
+     "name": "MonoidHom"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 529,
+     "name": "Exists"
+    },
+    {
+     "decl": 158,
+     "name": "Subtype"
+    },
+    {
+     "decl": 14292,
+     "name": "Submonoid.toMulOneClass"
+    },
+    {
+     "decl": 188,
+     "name": "Subtype.mk"
+    },
+    {
+     "decl": 22,
+     "name": "MulOneClass.toMulOne"
+    },
+    {
+     "decl": 355,
+     "name": "Exists.intro"
+    },
+    {
+     "decl": 14913,
+     "name": "MonoidHom.mrange"
+    },
+    {
+     "decl": 146285,
+     "name": "MonoidHom.mrangeRestrict"
+    },
+    {
+     "decl": 1661,
+     "name": "Submonoid.instSetLike"
+    },
+    {
+     "decl": 7653,
+     "name": "MulOneClass"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 11,
+     "name": "SetLike.instMembership"
+    },
+    {
+     "decl": 1663,
+     "name": "Submonoid"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    }
+   ]
+  },
+  {
+   "artifact": 260674,
+   "decl": 278784,
+   "target": "Encodable.instAntisymmPreimageNatCoeEmbeddingEncode'Le",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 15,
+   "module": "Mathlib.Logic.Encodable.Basic",
+   "statement_src": "instance {\u03b1} [Encodable \u03b1] : Std.Antisymm (Encodable.encode' \u03b1 \u207b\u00b9'o (\u00b7 \u2264 \u00b7))",
+   "proof_src": ":=\n  (RelEmbedding.preimage _ _).antisymm",
+   "statement_how": "anon-instance",
+   "candidates": [
+    {
+     "decl": 308162,
+     "name": "RelEmbedding.antisymm"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 306,
+     "name": "instLENat"
+    },
+    {
+     "decl": 278782,
+     "name": "Encodable.encode'"
+    },
+    {
+     "decl": 18134,
+     "name": "Function.Embedding"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 567513,
+     "name": "RelEmbedding.preimage"
+    },
+    {
+     "decl": 18144,
+     "name": "Function.instFunLikeEmbedding"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 12961,
+     "name": "Order.Preimage"
+    },
+    {
+     "decl": 2494,
+     "name": "Encodable"
+    }
+   ]
+  },
+  {
+   "artifact": 322032,
+   "decl": 341621,
+   "target": "Set.ordConnected_range",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 25,
+   "module": "Mathlib.Order.Interval.Set.OrdConnected",
+   "statement_src": "theorem ordConnected_range {E : Type*} [EquivLike E \u03b1 \u03b2] [OrderIsoClass E \u03b1 \u03b2] (e : E) :\n    OrdConnected (range e)",
+   "proof_src": ":= by\n  simp_rw [\u2190 image_univ]\n  exact ordConnected_image (e : \u03b1 \u2243o \u03b2)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 1528,
+     "name": "Set.univ"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 4333,
+     "name": "OrderIso"
+    },
+    {
+     "decl": 16203,
+     "name": "OrderIso.instEquivLike"
+    },
+    {
+     "decl": 442834,
+     "name": "Set.ordConnected_image"
+    },
+    {
+     "decl": 18860,
+     "name": "OrderIsoClass"
+    },
+    {
+     "decl": 341622,
+     "name": "OrderIsoClass.toOrderIso"
+    },
+    {
+     "decl": 9024,
+     "name": "EquivLike"
+    },
+    {
+     "decl": 19581,
+     "name": "Set.OrdConnected"
+    },
+    {
+     "decl": 194,
+     "name": "Set.image"
+    },
+    {
+     "decl": 190,
+     "name": "Set.range"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 868,
+     "name": "Preorder"
+    },
+    {
+     "decl": 455,
+     "name": "EquivLike.toFunLike"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 40845,
+   "decl": 47168,
+   "target": "MulArchimedeanClass.mk_out",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 21,
+   "module": "Mathlib.Algebra.Order.Archimedean.Class",
+   "statement_src": "theorem mk_out (A : MulArchimedeanClass M) : mk A.out = A",
+   "proof_src": ":= Quotient.out_eq' A",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 17988,
+     "name": "Quotient.out_eq'"
+    },
+    {
+     "decl": 17989,
+     "name": "AntisymmRel.setoid"
+    },
+    {
+     "decl": 1319,
+     "name": "IsOrderedMonoid"
+    },
+    {
+     "decl": 276,
+     "name": "LinearOrder"
+    },
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 278,
+     "name": "SemilatticeInf.toPartialOrder"
+    },
+    {
+     "decl": 280,
+     "name": "DistribLattice.toLattice"
+    },
+    {
+     "decl": 35556,
+     "name": "MulArchimedeanOrder.instLE"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 878,
+     "name": "CommGroup"
+    },
+    {
+     "decl": 881,
+     "name": "CommGroup.toGroup"
+    },
+    {
+     "decl": 20520,
+     "name": "MulArchimedeanClass"
+    },
+    {
+     "decl": 285,
+     "name": "instDistribLatticeOfLinearOrder"
+    },
+    {
+     "decl": 35557,
+     "name": "MulArchimedeanOrder"
+    },
+    {
+     "decl": 287,
+     "name": "Lattice.toSemilatticeInf"
+    },
+    {
+     "decl": 890,
+     "name": "CommGroup.toCommMonoid"
+    }
+   ]
+  },
+  {
+   "artifact": 396636,
+   "decl": 417614,
+   "target": "NonUnitalRingHom.coe_snd",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 17,
+   "module": "Mathlib.Algebra.Ring.Prod",
+   "statement_src": "theorem coe_snd : \u21d1(snd R S) = Prod.snd",
+   "proof_src": ":=\n  rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 32474,
+     "name": "Prod.instNonUnitalNonAssocSemiring"
+    },
+    {
+     "decl": 6907,
+     "name": "NonUnitalRingHom.instFunLike"
+    },
+    {
+     "decl": 6912,
+     "name": "NonUnitalRingHom"
+    },
+    {
+     "decl": 750,
+     "name": "Prod"
+    },
+    {
+     "decl": 3813,
+     "name": "NonUnitalNonAssocSemiring"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    },
+    {
+     "decl": 238475,
+     "name": "NonUnitalRingHom.snd"
+    }
+   ]
+  },
+  {
+   "artifact": 37933,
+   "decl": 43943,
+   "target": "CompleteSublattice.coe_sInf",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 17,
+   "module": "Mathlib.Order.CompleteSublattice",
+   "statement_src": "@[simp] theorem coe_sInf (S : Set L) : (\u2191(sInf S) : \u03b1) = sInf {(s : \u03b1) | s \u2208 S}",
+   "proof_src": ":= rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 43940,
+     "name": "CompleteSublattice.instInfSet"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 158,
+     "name": "Subtype"
+    },
+    {
+     "decl": 42901,
+     "name": "CompleteSublattice.instSetLike"
+    },
+    {
+     "decl": 42902,
+     "name": "CompleteSublattice"
+    },
+    {
+     "decl": 3683,
+     "name": "CompleteLattice"
+    },
+    {
+     "decl": 195,
+     "name": "Subtype.val"
+    },
+    {
+     "decl": 11,
+     "name": "SetLike.instMembership"
+    },
+    {
+     "decl": 3148,
+     "name": "InfSet.sInf"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 673200,
+   "decl": 696590,
+   "target": "AffineMap.id_linear",
+   "kind": 0,
+   "band": "11-25",
+   "depth": 23,
+   "module": "Mathlib.LinearAlgebra.AffineSpace.AffineMap",
+   "statement_src": "theorem id_linear : (id k P1).linear = LinearMap.id",
+   "proof_src": ":=\n  rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 152,
+     "name": "AddCommGroup.toAddCommMonoid"
+    },
+    {
+     "decl": 155,
+     "name": "AddCommGroup.toAddGroup"
+    },
+    {
+     "decl": 157,
+     "name": "AddCommGroup"
+    },
+    {
+     "decl": 136,
+     "name": "LinearMap"
+    },
+    {
+     "decl": 19452,
+     "name": "AffineMap.linear"
+    },
+    {
+     "decl": 1780,
+     "name": "AddTorsor"
+    },
+    {
+     "decl": 121492,
+     "name": "AffineMap.id"
+    },
+    {
+     "decl": 101,
+     "name": "Module"
+    },
+    {
+     "decl": 145,
+     "name": "RingHom.id"
+    },
+    {
+     "decl": 146,
+     "name": "Semiring.toNonAssocSemiring"
+    },
+    {
+     "decl": 339,
+     "name": "Ring.toSemiring"
+    },
+    {
+     "decl": 480,
+     "name": "Ring"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    }
+   ]
+  },
+  {
+   "artifact": 727724,
+   "decl": 751204,
+   "target": "QuadraticAlgebra.im_intCast",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 40,
+   "module": "Mathlib.Algebra.QuadraticAlgebra.Defs",
+   "statement_src": "theorem im_intCast (n : \u2124) : (n : QuadraticAlgebra R a b).im = 0",
+   "proof_src": ":= rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1067,
+     "name": "Int.cast"
+    },
+    {
+     "decl": 38324,
+     "name": "AddCommGroupWithOne"
+    },
+    {
+     "decl": 33188,
+     "name": "QuadraticAlgebra"
+    },
+    {
+     "decl": 558,
+     "name": "Int"
+    },
+    {
+     "decl": 70993,
+     "name": "QuadraticAlgebra.instAddCommGroupWithOne"
+    },
+    {
+     "decl": 1056,
+     "name": "AddGroupWithOne.toIntCast"
+    },
+    {
+     "decl": 43900,
+     "name": "QuadraticAlgebra.im"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    },
+    {
+     "decl": 1066,
+     "name": "AddCommGroupWithOne.toAddGroupWithOne"
+    }
+   ]
+  },
+  {
+   "artifact": 457642,
+   "decl": 479453,
+   "target": "DirectSum.lmap_injective",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 26,
+   "module": "Mathlib.Algebra.DirectSum.Module",
+   "statement_src": "theorem lmap_injective : Function.Injective (lmap f) \u2194 \u2200 i, Function.Injective (f i)",
+   "proof_src": ":= by\n  exact DFinsupp.mapRange_injective (hf := fun _ \u21a6 map_zero _)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 86,
+     "name": "AddMonoid.toAddZeroClass"
+    },
+    {
+     "decl": 134,
+     "name": "LinearMap.instFunLike"
+    },
+    {
+     "decl": 327,
+     "name": "RingHom"
+    },
+    {
+     "decl": 89,
+     "name": "AddZeroClass.toAddZero"
+    },
+    {
+     "decl": 3816,
+     "name": "map_zero"
+    },
+    {
+     "decl": 136,
+     "name": "LinearMap"
+    },
+    {
+     "decl": 92,
+     "name": "AddCommMonoid"
+    },
+    {
+     "decl": 289167,
+     "name": "DFinsupp.mapRange_injective"
+    },
+    {
+     "decl": 93,
+     "name": "AddZero.toZero"
+    },
+    {
+     "decl": 332,
+     "name": "RingHom.instFunLike"
+    },
+    {
+     "decl": 94,
+     "name": "Semiring.toMonoid"
+    },
+    {
+     "decl": 95,
+     "name": "Semiring"
+    },
+    {
+     "decl": 98,
+     "name": "Module.toDistribMulAction"
+    },
+    {
+     "decl": 100,
+     "name": "AddCommMonoid.toAddMonoid"
+    },
+    {
+     "decl": 101,
+     "name": "Module"
+    },
+    {
+     "decl": 145,
+     "name": "RingHom.id"
+    },
+    {
+     "decl": 146,
+     "name": "Semiring.toNonAssocSemiring"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    }
+   ]
+  },
+  {
+   "artifact": 533929,
+   "decl": 556551,
+   "target": "CategoryTheory.Limits.preservesColimit_iff_isColimit_mapCocone",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 31,
+   "module": "Mathlib.CategoryTheory.Limits.Preserves.Basic",
+   "statement_src": "lemma preservesColimit_iff_isColimit_mapCocone {F : C \u2964 D} {t : Cocone K} (h : IsColimit t) :\n    PreservesColimit K F \u2194 Nonempty (IsColimit (F.mapCocone t))",
+   "proof_src": ":=\n  \u27e8fun _ \u21a6 \u27e8isColimitOfPreserves _ h\u27e9,\n    fun h' \u21a6 preservesColimit_of_preserves_colimit_cocone h h'.some\u27e9",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 198,
+     "name": "CategoryTheory.Functor"
+    },
+    {
+     "decl": 7944,
+     "name": "CategoryTheory.Limits.Cocone"
+    },
+    {
+     "decl": 28193,
+     "name": "CategoryTheory.Functor.mapCocone"
+    },
+    {
+     "decl": 1563,
+     "name": "CategoryTheory.Functor.comp"
+    },
+    {
+     "decl": 4666,
+     "name": "CategoryTheory.Limits.IsColimit"
+    },
+    {
+     "decl": 7717,
+     "name": "Nonempty.some"
+    },
+    {
+     "decl": 1803,
+     "name": "Nonempty.intro"
+    },
+    {
+     "decl": 645,
+     "name": "Iff.intro"
+    },
+    {
+     "decl": 967,
+     "name": "Nonempty"
+    },
+    {
+     "decl": 51351,
+     "name": "CategoryTheory.Limits.preservesColimit_of_preserves_colimit_cocone"
+    },
+    {
+     "decl": 28195,
+     "name": "CategoryTheory.Limits.PreservesColimit"
+    },
+    {
+     "decl": 28197,
+     "name": "CategoryTheory.Limits.isColimitOfPreserves"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    }
+   ]
+  },
+  {
+   "artifact": 742598,
+   "decl": 766083,
+   "target": "LinearMap.BilinMap.toQuadraticMap_list_sum",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 45,
+   "module": "Mathlib.LinearAlgebra.QuadraticForm.Basic",
+   "statement_src": "theorem toQuadraticMap_list_sum (B : List (BilinMap R M N)) :\n    B.sum.toQuadraticMap = (B.map toQuadraticMap).sum",
+   "proof_src": ":=\n  map_list_sum (toQuadraticMapAddMonoidHom R M) B",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 51,
+     "name": "CommSemiring.toSemiring"
+    },
+    {
+     "decl": 21110,
+     "name": "LinearMap.BilinMap"
+    },
+    {
+     "decl": 86,
+     "name": "AddMonoid.toAddZeroClass"
+    },
+    {
+     "decl": 89,
+     "name": "AddZeroClass.toAddZero"
+    },
+    {
+     "decl": 21112,
+     "name": "QuadraticMap.instAddCommMonoid"
+    },
+    {
+     "decl": 160,
+     "name": "LinearMap.module"
+    },
+    {
+     "decl": 136,
+     "name": "LinearMap"
+    },
+    {
+     "decl": 92,
+     "name": "AddCommMonoid"
+    },
+    {
+     "decl": 120406,
+     "name": "map_list_sum"
+    },
+    {
+     "decl": 138,
+     "name": "CommSemiring"
+    },
+    {
+     "decl": 371,
+     "name": "List"
+    },
+    {
+     "decl": 2304,
+     "name": "LinearMap.addMonoid"
+    },
+    {
+     "decl": 169,
+     "name": "LinearMap.addCommMonoid"
+    },
+    {
+     "decl": 100,
+     "name": "AddCommMonoid.toAddMonoid"
+    },
+    {
+     "decl": 101,
+     "name": "Module"
+    },
+    {
+     "decl": 1283,
+     "name": "AddMonoidHom"
+    },
+    {
+     "decl": 1287,
+     "name": "AddMonoidHom.instFunLike"
+    },
+    {
+     "decl": 145,
+     "name": "RingHom.id"
+    },
+    {
+     "decl": 146,
+     "name": "Semiring.toNonAssocSemiring"
+    },
+    {
+     "decl": 21115,
+     "name": "QuadraticMap"
+    },
+    {
+     "decl": 442164,
+     "name": "LinearMap.BilinMap.toQuadraticMapAddMonoidHom"
+    }
+   ]
+  },
+  {
+   "artifact": 666747,
+   "decl": 690117,
+   "target": "CategoryTheory.Functor.isDenseAt_iff",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 33,
+   "module": "Mathlib.CategoryTheory.Functor.KanExtension.DenseAt",
+   "statement_src": "lemma isDenseAt_iff {X : D} :\n    F.isDenseAt X \u2194 Nonempty (IsColimit <| (LeftExtension.mk (\ud835\udfed D) F.rightUnitor.inv).coconeAt X)",
+   "proof_src": ":=\n  .rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 198,
+     "name": "CategoryTheory.Functor"
+    },
+    {
+     "decl": 18,
+     "name": "Iff.rfl"
+    },
+    {
+     "decl": 56510,
+     "name": "CategoryTheory.Functor.isDenseAt"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    }
+   ]
+  },
+  {
+   "artifact": 612726,
+   "decl": 635893,
+   "target": "Nat.coprime_add_mul_right_left",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 34,
+   "module": "Mathlib.Data.Nat.GCD.Basic",
+   "statement_src": "theorem coprime_add_mul_right_left (m n k : \u2115) : Coprime (m + k * n) n \u2194 Coprime m n",
+   "proof_src": ":= by\n  rw [Coprime, Coprime, gcd_add_mul_right_left]",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 5777,
+     "name": "Nat.gcd"
+    },
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 22559,
+     "name": "Nat.Coprime"
+    },
+    {
+     "decl": 290,
+     "name": "HMul.hMul"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 18,
+     "name": "Iff.rfl"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 294,
+     "name": "instMulNat"
+    },
+    {
+     "decl": 3,
+     "name": "instOfNatNat"
+    },
+    {
+     "decl": 254757,
+     "name": "Nat.gcd_add_mul_right_left"
+    },
+    {
+     "decl": 55,
+     "name": "instHAdd"
+    },
+    {
+     "decl": 5,
+     "name": "Iff"
+    },
+    {
+     "decl": 57,
+     "name": "HAdd.hAdd"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 61,
+     "name": "instAddNat"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 299,
+     "name": "instHMul"
+    }
+   ]
+  },
+  {
+   "artifact": 227519,
+   "decl": 244621,
+   "target": "PiTensorProduct.instNonemptyElemFreeAddMonoidProdForallLifts",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 42,
+   "module": "Mathlib.LinearAlgebra.PiTensorProduct.Basic",
+   "statement_src": "instance (x : \u2a02[R] i, s i) : Nonempty \u2191x.lifts",
+   "proof_src": ":= nonempty_subtype.mpr (nonempty_lifts x)",
+   "statement_how": "anon-instance",
+   "candidates": [
+    {
+     "decl": 681,
+     "name": "Iff.mpr"
+    },
+    {
+     "decl": 51,
+     "name": "CommSemiring.toSemiring"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 529,
+     "name": "Exists"
+    },
+    {
+     "decl": 234692,
+     "name": "PiTensorProduct.lifts"
+    },
+    {
+     "decl": 158,
+     "name": "Subtype"
+    },
+    {
+     "decl": 92,
+     "name": "AddCommMonoid"
+    },
+    {
+     "decl": 138,
+     "name": "CommSemiring"
+    },
+    {
+     "decl": 138478,
+     "name": "nonempty_subtype"
+    },
+    {
+     "decl": 967,
+     "name": "Nonempty"
+    },
+    {
+     "decl": 5865,
+     "name": "PiTensorProduct"
+    },
+    {
+     "decl": 101,
+     "name": "Module"
+    },
+    {
+     "decl": 750,
+     "name": "Prod"
+    },
+    {
+     "decl": 479,
+     "name": "Set.instMembership"
+    },
+    {
+     "decl": 37016,
+     "name": "FreeAddMonoid"
+    },
+    {
+     "decl": 644879,
+     "name": "PiTensorProduct.nonempty_lifts"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 648619,
+   "decl": 671918,
+   "target": "CategoryTheory.Functor.final_of_comp_full_faithful'",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 49,
+   "module": "Mathlib.CategoryTheory.Limits.Final",
+   "statement_src": "theorem final_of_comp_full_faithful' [Full G] [Faithful G] [Final (F \u22d9 G)] : Final G",
+   "proof_src": ":=\n  have := final_of_comp_full_faithful F G\n  final_of_final_comp F G",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 198,
+     "name": "CategoryTheory.Functor"
+    },
+    {
+     "decl": 350703,
+     "name": "CategoryTheory.Functor.final_of_final_comp"
+    },
+    {
+     "decl": 1563,
+     "name": "CategoryTheory.Functor.comp"
+    },
+    {
+     "decl": 4856,
+     "name": "CategoryTheory.Functor.Faithful"
+    },
+    {
+     "decl": 51853,
+     "name": "CategoryTheory.Functor.Final"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    },
+    {
+     "decl": 10568,
+     "name": "CategoryTheory.Functor.Full"
+    },
+    {
+     "decl": 576664,
+     "name": "CategoryTheory.Functor.final_of_comp_full_faithful"
+    }
+   ]
+  },
+  {
+   "artifact": 429055,
+   "decl": 450475,
+   "target": "CategoryTheory.ObjectProperty.isClosedUnderColimitsOfShape_iff_unop",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 50,
+   "module": "Mathlib.CategoryTheory.ObjectProperty.ColimitsOfShape",
+   "statement_src": "lemma isClosedUnderColimitsOfShape_iff_unop :\n    Q.IsClosedUnderColimitsOfShape J \u2194\n      Q.unop.IsClosedUnderLimitsOfShape J\u1d52\u1d56",
+   "proof_src": ":=\n  (Q.unop.isClosedUnderLimitsOfShape_op_iff_op J).symm",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 71586,
+     "name": "CategoryTheory.ObjectProperty.IsClosedUnderColimitsOfShape"
+    },
+    {
+     "decl": 199,
+     "name": "Opposite"
+    },
+    {
+     "decl": 2404,
+     "name": "CategoryTheory.CategoryStruct.opposite"
+    },
+    {
+     "decl": 43298,
+     "name": "CategoryTheory.ObjectProperty.unop"
+    },
+    {
+     "decl": 26552,
+     "name": "CategoryTheory.ObjectProperty.IsClosedUnderLimitsOfShape"
+    },
+    {
+     "decl": 207,
+     "name": "CategoryTheory.Category.opposite"
+    },
+    {
+     "decl": 637794,
+     "name": "CategoryTheory.ObjectProperty.isClosedUnderLimitsOfShape_op_iff_op"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 50144,
+     "name": "CategoryTheory.ObjectProperty.op"
+    },
+    {
+     "decl": 1967,
+     "name": "Iff.symm"
+    },
+    {
+     "decl": 6160,
+     "name": "CategoryTheory.ObjectProperty"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    }
+   ]
+  },
+  {
+   "artifact": 659518,
+   "decl": 682861,
+   "target": "LTSeries.head_le",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 32,
+   "module": "Mathlib.Order.RelSeries",
+   "statement_src": "lemma head_le (x : LTSeries \u03b1) (n : Fin (x.length + 1)) : x.head \u2264 x n",
+   "proof_src": ":=\n  x.monotone (Fin.zero_le n)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 274,
+     "name": "Preorder.toLT"
+    },
+    {
+     "decl": 2578,
+     "name": "Set.ofPred"
+    },
+    {
+     "decl": 84289,
+     "name": "FiniteDimensionalOrder"
+    },
+    {
+     "decl": 4490,
+     "name": "Fin.instOfNat"
+    },
+    {
+     "decl": 4138,
+     "name": "RelSeries.length"
+    },
+    {
+     "decl": 93664,
+     "name": "Fin.zero_le"
+    },
+    {
+     "decl": 3,
+     "name": "instOfNatNat"
+    },
+    {
+     "decl": 55,
+     "name": "instHAdd"
+    },
+    {
+     "decl": 57,
+     "name": "HAdd.hAdd"
+    },
+    {
+     "decl": 14840,
+     "name": "LTSeries"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 8,
+     "name": "LT.lt"
+    },
+    {
+     "decl": 61,
+     "name": "instAddNat"
+    },
+    {
+     "decl": 750,
+     "name": "Prod"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 144,
+     "name": "Fin"
+    },
+    {
+     "decl": 868,
+     "name": "Preorder"
+    },
+    {
+     "decl": 236585,
+     "name": "LTSeries.monotone"
+    }
+   ]
+  },
+  {
+   "artifact": 514483,
+   "decl": 536922,
+   "target": "Ordinal.one_toType_eq",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 39,
+   "module": "Mathlib.SetTheory.Ordinal.Basic",
+   "statement_src": "theorem one_toType_eq (x : ToType 1) : x = enum (\u00b7 < \u00b7) \u27e80, by simp\u27e9",
+   "proof_src": ":=\n  Unique.eq_default x",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 366913,
+     "name": "Ordinal.uniqueToTypeOne"
+    },
+    {
+     "decl": 13630,
+     "name": "Unique.eq_default"
+    },
+    {
+     "decl": 5884,
+     "name": "Ordinal.one"
+    },
+    {
+     "decl": 28,
+     "name": "One.toOfNat1"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 33457,
+     "name": "Ordinal.ToType"
+    },
+    {
+     "decl": 1113,
+     "name": "Ordinal"
+    }
+   ]
+  },
+  {
+   "artifact": 526486,
+   "decl": 549039,
+   "target": "CategoryTheory.AddMon.leftUnitor_hom_hom",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 34,
+   "module": "Mathlib.CategoryTheory.Monoidal.Mon",
+   "statement_src": "lemma leftUnitor_hom_hom (X : Mon C) : (\u03bb_ X).hom.hom = (\u03bb_ X.X).hom",
+   "proof_src": ":= rfl",
+   "statement_how": "lastcomp",
+   "candidates": [
+    {
+     "decl": 397,
+     "name": "CategoryTheory.CategoryStruct.toQuiver"
+    },
+    {
+     "decl": 398,
+     "name": "Quiver.Hom"
+    },
+    {
+     "decl": 2525,
+     "name": "CategoryTheory.MonoidalCategory"
+    },
+    {
+     "decl": 4405,
+     "name": "CategoryTheory.MonoidalCategoryStruct.leftUnitor"
+    },
+    {
+     "decl": 52594,
+     "name": "CategoryTheory.AddMon.monMonoidalStruct"
+    },
+    {
+     "decl": 8173,
+     "name": "CategoryTheory.AddMon.instCategory"
+    },
+    {
+     "decl": 9966,
+     "name": "CategoryTheory.BraidedCategory"
+    },
+    {
+     "decl": 8175,
+     "name": "CategoryTheory.AddMon.X"
+    },
+    {
+     "decl": 1765,
+     "name": "CategoryTheory.MonoidalCategoryStruct.tensorObj"
+    },
+    {
+     "decl": 2532,
+     "name": "CategoryTheory.MonoidalCategoryStruct.tensorUnit"
+    },
+    {
+     "decl": 8178,
+     "name": "CategoryTheory.AddMon.Hom.hom"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 8174,
+     "name": "CategoryTheory.AddMon"
+    },
+    {
+     "decl": 938,
+     "name": "CategoryTheory.Iso.hom"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    }
+   ]
+  },
+  {
+   "artifact": 485244,
+   "decl": 507399,
+   "target": "orderOf_map_dvd",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 32,
+   "module": "Mathlib.GroupTheory.OrderOfElement",
+   "statement_src": "theorem orderOf_map_dvd {H : Type*} [Monoid H] (\u03c8 : G \u2192* H) (x : G) :\n    orderOf (\u03c8 x) \u2223 orderOf x",
+   "proof_src": ":= by\n  apply orderOf_dvd_of_pow_eq_one\n  rw [\u2190 map_pow, pow_orderOf_eq_one]\n  apply map_one",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1681,
+     "name": "Monoid"
+    },
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 13,
+     "name": "MulOne.toOne"
+    },
+    {
+     "decl": 1686,
+     "name": "MonoidHom.instFunLike"
+    },
+    {
+     "decl": 1688,
+     "name": "MonoidHom"
+    },
+    {
+     "decl": 15,
+     "name": "Monoid.toMulOneClass"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 120408,
+     "name": "orderOf_dvd_of_pow_eq_one"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 10502,
+     "name": "map_pow"
+    },
+    {
+     "decl": 623,
+     "name": "NPow.toPow"
+    },
+    {
+     "decl": 743,
+     "name": "pow_orderOf_eq_one"
+    },
+    {
+     "decl": 737,
+     "name": "orderOf"
+    },
+    {
+     "decl": 22,
+     "name": "MulOneClass.toMulOne"
+    },
+    {
+     "decl": 563,
+     "name": "HPow.hPow"
+    },
+    {
+     "decl": 2910,
+     "name": "map_one"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 28,
+     "name": "One.toOfNat1"
+    },
+    {
+     "decl": 570,
+     "name": "instHPow"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 663,
+     "name": "Eq.symm"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 667,
+     "name": "Monoid.toNPow"
+    }
+   ]
+  },
+  {
+   "artifact": 390040,
+   "decl": 410915,
+   "target": "MeasurableSpace.generateMeasurableRec_subset",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 40,
+   "module": "Mathlib.MeasureTheory.MeasurableSpace.Card",
+   "statement_src": "theorem generateMeasurableRec_subset (s : Set (Set \u03b1)) (i : Ordinal) :\n    generateMeasurableRec s i \u2286 { t | GenerateMeasurable s t }",
+   "proof_src": ":= by\n  apply WellFoundedLT.induction i\n  exact fun i IH t ht => generateMeasurableRec_induction .basic .empty\n    (fun u _ \u27e8j, hj, hj'\u27e9 => .compl _ (IH j hj hj')) (fun f H => .iUnion _ fun n => (H n).1) ht",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 274,
+     "name": "Preorder.toLT"
+    },
+    {
+     "decl": 1093,
+     "name": "Ordinal.partialOrder"
+    },
+    {
+     "decl": 124825,
+     "name": "MeasurableSpace.generateMeasurableRec"
+    },
+    {
+     "decl": 2578,
+     "name": "Set.ofPred"
+    },
+    {
+     "decl": 5255,
+     "name": "Compl.compl"
+    },
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 48556,
+     "name": "MeasurableSpace.GenerateMeasurable.iUnion"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 529,
+     "name": "Exists"
+    },
+    {
+     "decl": 48557,
+     "name": "MeasurableSpace.GenerateMeasurable"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 5268,
+     "name": "Set.instCompl"
+    },
+    {
+     "decl": 164592,
+     "name": "WellFoundedLT.induction"
+    },
+    {
+     "decl": 48558,
+     "name": "MeasurableSpace.GenerateMeasurable.basic"
+    },
+    {
+     "decl": 23,
+     "name": "And"
+    },
+    {
+     "decl": 48559,
+     "name": "MeasurableSpace.GenerateMeasurable.compl"
+    },
+    {
+     "decl": 1808,
+     "name": "Set.instLE"
+    },
+    {
+     "decl": 1257,
+     "name": "And.left"
+    },
+    {
+     "decl": 48560,
+     "name": "MeasurableSpace.GenerateMeasurable.empty"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 8,
+     "name": "LT.lt"
+    },
+    {
+     "decl": 342200,
+     "name": "MeasurableSpace.generateMeasurableRec_induction"
+    },
+    {
+     "decl": 479,
+     "name": "Set.instMembership"
+    },
+    {
+     "decl": 1113,
+     "name": "Ordinal"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 599796,
+   "decl": 622895,
+   "target": "SimpleGraph.ediam_ne_top_of_diam_ne_zero",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 36,
+   "module": "Mathlib.Combinatorics.SimpleGraph.Diam",
+   "statement_src": "lemma ediam_ne_top_of_diam_ne_zero (h : G.diam \u2260 0) : G.ediam \u2260 \u22a4",
+   "proof_src": ":=\n  mt diam_eq_zero_of_ediam_eq_top h",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 980,
+     "name": "instTopENat"
+    },
+    {
+     "decl": 124229,
+     "name": "SimpleGraph.diam_eq_zero_of_ediam_eq_top"
+    },
+    {
+     "decl": 1868,
+     "name": "mt"
+    },
+    {
+     "decl": 22228,
+     "name": "SimpleGraph.ediam"
+    },
+    {
+     "decl": 91,
+     "name": "Ne"
+    },
+    {
+     "decl": 3,
+     "name": "instOfNatNat"
+    },
+    {
+     "decl": 1676,
+     "name": "SimpleGraph"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 991,
+     "name": "ENat"
+    },
+    {
+     "decl": 191,
+     "name": "Top.top"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 124230,
+     "name": "SimpleGraph.diam"
+    }
+   ]
+  },
+  {
+   "artifact": 633720,
+   "decl": 656975,
+   "target": "NNRat.ext_num_den_iff",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 45,
+   "module": "Mathlib.Data.NNRat.Defs",
+   "statement_src": "theorem ext_num_den_iff : p = q \u2194 p.num = q.num \u2227 p.den = q.den",
+   "proof_src": ":=\n  \u27e8by rintro rfl; exact \u27e8rfl, rfl\u27e9, fun h \u21a6 ext_num_den h.1 h.2\u27e9",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 5779,
+     "name": "NNRat"
+    },
+    {
+     "decl": 5780,
+     "name": "NNRat.num"
+    },
+    {
+     "decl": 442024,
+     "name": "NNRat.ext_num_den"
+    },
+    {
+     "decl": 23,
+     "name": "And"
+    },
+    {
+     "decl": 5781,
+     "name": "NNRat.den"
+    },
+    {
+     "decl": 1256,
+     "name": "And.right"
+    },
+    {
+     "decl": 1257,
+     "name": "And.left"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 311,
+     "name": "And.intro"
+    },
+    {
+     "decl": 645,
+     "name": "Iff.intro"
+    },
+    {
+     "decl": 312,
+     "name": "Eq.ndrec"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    }
+   ]
+  },
+  {
+   "artifact": 652714,
+   "decl": 676032,
+   "target": "CategoryTheory.Mon.whiskerLeft_hom",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 34,
+   "module": "Mathlib.CategoryTheory.Monoidal.Mon",
+   "statement_src": "lemma whiskerLeft_hom {X Y : Mon C} (f : X \u27f6 Y) (Z : Mon C) : (f \u25b7 Z).hom = f.hom \u25b7 Z.X",
+   "proof_src": ":= rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 397,
+     "name": "CategoryTheory.CategoryStruct.toQuiver"
+    },
+    {
+     "decl": 398,
+     "name": "Quiver.Hom"
+    },
+    {
+     "decl": 2525,
+     "name": "CategoryTheory.MonoidalCategory"
+    },
+    {
+     "decl": 21568,
+     "name": "CategoryTheory.Mon.Hom.hom"
+    },
+    {
+     "decl": 9966,
+     "name": "CategoryTheory.BraidedCategory"
+    },
+    {
+     "decl": 4406,
+     "name": "CategoryTheory.MonoidalCategoryStruct.whiskerRight"
+    },
+    {
+     "decl": 5943,
+     "name": "CategoryTheory.Mon"
+    },
+    {
+     "decl": 5945,
+     "name": "CategoryTheory.Mon.X"
+    },
+    {
+     "decl": 5946,
+     "name": "CategoryTheory.Mon.instCategory"
+    },
+    {
+     "decl": 1765,
+     "name": "CategoryTheory.MonoidalCategoryStruct.tensorObj"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 33138,
+     "name": "CategoryTheory.Mon.monMonoidalStruct"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    }
+   ]
+  },
+  {
+   "artifact": 362305,
+   "decl": 382719,
+   "target": "CategoryTheory.to_initial_isIso",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 30,
+   "module": "Mathlib.CategoryTheory.Monoidal.Closed.Cartesian",
+   "statement_src": "instance to_initial_isIso [HasInitial C] (f : A \u27f6 \u22a5_ C) : IsIso f",
+   "proof_src": ":=\n  strict_initial initialIsInitial _",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 397,
+     "name": "CategoryTheory.CategoryStruct.toQuiver"
+    },
+    {
+     "decl": 398,
+     "name": "Quiver.Hom"
+    },
+    {
+     "decl": 34628,
+     "name": "CategoryTheory.Limits.initialIsInitial"
+    },
+    {
+     "decl": 1758,
+     "name": "CategoryTheory.SemiCartesianMonoidalCategory.toMonoidalCategory"
+    },
+    {
+     "decl": 225918,
+     "name": "CategoryTheory.strict_initial"
+    },
+    {
+     "decl": 1759,
+     "name": "CategoryTheory.CartesianMonoidalCategory"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 20660,
+     "name": "CategoryTheory.Closed"
+    },
+    {
+     "decl": 5808,
+     "name": "CategoryTheory.Limits.initial"
+    },
+    {
+     "decl": 5809,
+     "name": "CategoryTheory.Limits.HasInitial"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    },
+    {
+     "decl": 1762,
+     "name": "CategoryTheory.CartesianMonoidalCategory.toSemiCartesianMonoidalCategory"
+    }
+   ]
+  },
+  {
+   "artifact": 553866,
+   "decl": 576654,
+   "target": "DirectSum.component.lof_self",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 27,
+   "module": "Mathlib.Algebra.DirectSum.Module",
+   "statement_src": "theorem component.lof_self [DecidableEq \u03b9] (i : \u03b9) (b : M i) :\n    component R \u03b9 M i ((lof R \u03b9 M i) b) = b",
+   "proof_src": ":=\n  lof_apply R i b",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 92,
+     "name": "AddCommMonoid"
+    },
+    {
+     "decl": 81045,
+     "name": "DirectSum.lof_apply"
+    },
+    {
+     "decl": 95,
+     "name": "Semiring"
+    },
+    {
+     "decl": 101,
+     "name": "Module"
+    },
+    {
+     "decl": 522,
+     "name": "DecidableEq"
+    }
+   ]
+  },
+  {
+   "artifact": 68683,
+   "decl": 77537,
+   "target": "Fin.append_right_cons",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 32,
+   "module": "Mathlib.Data.Fin.Tuple.Basic",
+   "statement_src": "theorem append_right_cons {n m} {\u03b1 : Sort*} (xs : Fin n \u2192 \u03b1) (y : \u03b1) (ys : Fin m \u2192 \u03b1) :\n    Fin.append xs (Fin.cons y ys) =\n      Fin.append (Fin.snoc xs y) ys \u2218 Fin.cast (Nat.succ_add_eq_add_succ ..).symm",
+   "proof_src": ":= by\n  rw [append_left_snoc]; rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 35834,
+     "name": "Fin.cons"
+    },
+    {
+     "decl": 1115,
+     "name": "Function.comp"
+    },
+    {
+     "decl": 77540,
+     "name": "Fin.append_left_snoc"
+    },
+    {
+     "decl": 30878,
+     "name": "Fin.snoc"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 3,
+     "name": "instOfNatNat"
+    },
+    {
+     "decl": 55,
+     "name": "instHAdd"
+    },
+    {
+     "decl": 1413,
+     "name": "Fin.cast"
+    },
+    {
+     "decl": 57,
+     "name": "HAdd.hAdd"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 61,
+     "name": "instAddNat"
+    },
+    {
+     "decl": 65,
+     "name": "Eq.refl"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 663,
+     "name": "Eq.symm"
+    },
+    {
+     "decl": 144,
+     "name": "Fin"
+    },
+    {
+     "decl": 147,
+     "name": "Nat.succ"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 77538,
+     "name": "Nat.succ_add_eq_add_succ"
+    },
+    {
+     "decl": 77539,
+     "name": "Fin.append"
+    }
+   ]
+  },
+  {
+   "artifact": 576893,
+   "decl": 599860,
+   "target": "LinearEquiv.coe_injective",
+   "kind": 0,
+   "band": "26-50",
+   "depth": 26,
+   "module": "Mathlib.Algebra.Module.Equiv.Defs",
+   "statement_src": "theorem coe_injective : @Injective (M \u2243\u209b\u2097[\u03c3] M\u2082) (M \u2192 M\u2082) DFunLike.coe",
+   "proof_src": ":=\n  DFunLike.coe_injective",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 327,
+     "name": "RingHom"
+    },
+    {
+     "decl": 92,
+     "name": "AddCommMonoid"
+    },
+    {
+     "decl": 5653,
+     "name": "RingHomInvPair"
+    },
+    {
+     "decl": 4307,
+     "name": "DFunLike.coe_injective"
+    },
+    {
+     "decl": 1734,
+     "name": "LinearEquiv"
+    },
+    {
+     "decl": 95,
+     "name": "Semiring"
+    },
+    {
+     "decl": 1735,
+     "name": "LinearEquiv.instEquivLike"
+    },
+    {
+     "decl": 101,
+     "name": "Module"
+    },
+    {
+     "decl": 146,
+     "name": "Semiring.toNonAssocSemiring"
+    },
+    {
+     "decl": 455,
+     "name": "EquivLike.toFunLike"
+    }
+   ]
+  },
+  {
+   "artifact": 674130,
+   "decl": 697523,
+   "target": "Monoid.Coprod.lift_swap",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 68,
+   "module": "Mathlib.GroupTheory.Coprod.Basic",
+   "statement_src": "theorem lift_swap (f : M \u2192* P) (g : N \u2192* P) (x : N \u2217 M) : lift f g (swap N M x) = lift g f x",
+   "proof_src": ":=\n  DFunLike.congr_fun (lift_comp_swap f g) x",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1681,
+     "name": "Monoid"
+    },
+    {
+     "decl": 1182,
+     "name": "DFunLike.congr_fun"
+    },
+    {
+     "decl": 1686,
+     "name": "MonoidHom.instFunLike"
+    },
+    {
+     "decl": 28124,
+     "name": "Monoid.Coprod.lift"
+    },
+    {
+     "decl": 1688,
+     "name": "MonoidHom"
+    },
+    {
+     "decl": 15,
+     "name": "Monoid.toMulOneClass"
+    },
+    {
+     "decl": 28125,
+     "name": "Monoid.Coprod.swap"
+    },
+    {
+     "decl": 2262,
+     "name": "MonoidHom.comp"
+    },
+    {
+     "decl": 22,
+     "name": "MulOneClass.toMulOne"
+    },
+    {
+     "decl": 28123,
+     "name": "Monoid.Coprod.lift_comp_swap"
+    },
+    {
+     "decl": 28126,
+     "name": "Monoid.Coprod.instMulOneClass"
+    },
+    {
+     "decl": 7653,
+     "name": "MulOneClass"
+    },
+    {
+     "decl": 28127,
+     "name": "Monoid.Coprod"
+    }
+   ]
+  },
+  {
+   "artifact": 347813,
+   "decl": 367904,
+   "target": "Ordinal.cof_lsub_le_lift",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 89,
+   "module": "Mathlib.SetTheory.Cardinal.Cofinality.Ordinal",
+   "statement_src": "theorem cof_lsub_le_lift {\u03b9} (f : \u03b9 \u2192 Ordinal) :\n    cof (lsub.{u, v} f) \u2264 Cardinal.lift.{v, u} #\u03b9",
+   "proof_src": ":= by\n  rw [\u2190 lift_id'.{u} (lsub f), \u2190 Cardinal.lift_umax.{u, v}]\n  exact cof_lift_iSup_add_one_le _",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 1175,
+     "name": "Cardinal"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 4331,
+     "name": "Cardinal.lift"
+    },
+    {
+     "decl": 4327,
+     "name": "Ordinal.lift"
+    },
+    {
+     "decl": 1176,
+     "name": "Cardinal.mk"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 4334,
+     "name": "Cardinal.instLE"
+    },
+    {
+     "decl": 48101,
+     "name": "Ordinal.lsub"
+    },
+    {
+     "decl": 62641,
+     "name": "Cardinal.lift_umax"
+    },
+    {
+     "decl": 484001,
+     "name": "Ordinal.cof_lift_iSup_add_one_le"
+    },
+    {
+     "decl": 62642,
+     "name": "Ordinal.lift_id'"
+    },
+    {
+     "decl": 37605,
+     "name": "Ordinal.cof"
+    },
+    {
+     "decl": 663,
+     "name": "Eq.symm"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 1113,
+     "name": "Ordinal"
+    }
+   ]
+  },
+  {
+   "artifact": 375506,
+   "decl": 396137,
+   "target": "Subgroup.top_lowerCentralSeries_pi_of_finite",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 74,
+   "module": "Mathlib.GroupTheory.Nilpotent",
+   "statement_src": "theorem Subgroup.top_lowerCentralSeries_pi_of_finite [Finite \u03b7] (n : \u2115) :\n    (\u22a4 : Subgroup (\u2200 i, Gs i)).lowerCentralSeries n = Subgroup.pi Set.univ\n      fun i => (\u22a4 : Subgroup (Gs i)).lowerCentralSeries n",
+   "proof_src": ":= by\n  rw [\u2190 pi_top (I := Set.univ), lowerCentralSeries_pi_of_finite]",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 74434,
+     "name": "Subgroup.pi_top"
+    },
+    {
+     "decl": 1528,
+     "name": "Set.univ"
+    },
+    {
+     "decl": 734,
+     "name": "Finite"
+    },
+    {
+     "decl": 439,
+     "name": "Group"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 4304,
+     "name": "Pi.group"
+    },
+    {
+     "decl": 443,
+     "name": "Subgroup"
+    },
+    {
+     "decl": 39626,
+     "name": "Subgroup.lowerCentralSeries"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 396138,
+     "name": "Subgroup.lowerCentralSeries_pi_of_finite"
+    },
+    {
+     "decl": 20298,
+     "name": "Subgroup.instTop"
+    },
+    {
+     "decl": 65,
+     "name": "Eq.refl"
+    },
+    {
+     "decl": 191,
+     "name": "Top.top"
+    },
+    {
+     "decl": 663,
+     "name": "Eq.symm"
+    },
+    {
+     "decl": 7744,
+     "name": "Subgroup.pi"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    }
+   ]
+  },
+  {
+   "artifact": 377673,
+   "decl": 398339,
+   "target": "HomogeneousIdeal.eq_bot_iff",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 93,
+   "module": "Mathlib.RingTheory.GradedAlgebra.Homogeneous.Ideal",
+   "statement_src": "theorem eq_bot_iff (I : HomogeneousIdeal \ud835\udc9c) : I = \u22a5 \u2194 I.toIdeal = \u22a5",
+   "proof_src": ":=\n  toIdeal_injective.eq_iff.symm",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 408,
+     "name": "SetLike"
+    },
+    {
+     "decl": 433,
+     "name": "NonAssocSemiring.toAddCommMonoidWithOne"
+    },
+    {
+     "decl": 86,
+     "name": "AddMonoid.toAddZeroClass"
+    },
+    {
+     "decl": 3641,
+     "name": "Function.Injective.eq_iff"
+    },
+    {
+     "decl": 7050,
+     "name": "AddSubmonoidClass"
+    },
+    {
+     "decl": 3679,
+     "name": "Bot.bot"
+    },
+    {
+     "decl": 444,
+     "name": "AddCommMonoidWithOne.toAddMonoidWithOne"
+    },
+    {
+     "decl": 125829,
+     "name": "HomogeneousIdeal.toIdeal_injective"
+    },
+    {
+     "decl": 329,
+     "name": "Ideal"
+    },
+    {
+     "decl": 127291,
+     "name": "HomogeneousIdeal.instBot"
+    },
+    {
+     "decl": 11850,
+     "name": "GradedRing"
+    },
+    {
+     "decl": 4465,
+     "name": "AddMonoid"
+    },
+    {
+     "decl": 95,
+     "name": "Semiring"
+    },
+    {
+     "decl": 12403,
+     "name": "HomogeneousIdeal"
+    },
+    {
+     "decl": 450,
+     "name": "AddMonoidWithOne.toAddMonoid"
+    },
+    {
+     "decl": 45501,
+     "name": "HomogeneousIdeal.toIdeal"
+    },
+    {
+     "decl": 146,
+     "name": "Semiring.toNonAssocSemiring"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 1967,
+     "name": "Iff.symm"
+    },
+    {
+     "decl": 522,
+     "name": "DecidableEq"
+    }
+   ]
+  },
+  {
+   "artifact": 602781,
+   "decl": 625905,
+   "target": "Fin.map_valEmbedding_Ioc",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 79,
+   "module": "Mathlib.Order.Interval.Finset.Fin",
+   "statement_src": "theorem map_valEmbedding_Ioc : (Ioc a b).map Fin.valEmbedding = Ioc (a : \u2115) b",
+   "proof_src": ":=\n  map_valEmbedding_attachFin _",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 5337,
+     "name": "Nat.instLocallyFiniteOrder"
+    },
+    {
+     "decl": 4149,
+     "name": "Fin.val"
+    },
+    {
+     "decl": 39782,
+     "name": "Fin.instLocallyFiniteOrder"
+    },
+    {
+     "decl": 2198,
+     "name": "Nat.instPreorder"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 92679,
+     "name": "Finset.map_valEmbedding_attachFin"
+    },
+    {
+     "decl": 144,
+     "name": "Fin"
+    },
+    {
+     "decl": 26514,
+     "name": "Finset.Ioc"
+    }
+   ]
+  },
+  {
+   "artifact": 41757,
+   "decl": 48143,
+   "target": "Set.coe_toFinset",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 56,
+   "module": "Mathlib.Data.Fintype.Sets",
+   "statement_src": "theorem coe_toFinset (s : Set \u03b1) [Fintype s] : (\u2191s.toFinset : Set \u03b1) = s",
+   "proof_src": ":=\n  Set.ext fun _ => mem_toFinset",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 2587,
+     "name": "Set.ext"
+    },
+    {
+     "decl": 1,
+     "name": "Finset"
+    },
+    {
+     "decl": 473,
+     "name": "Set.Elem"
+    },
+    {
+     "decl": 3849,
+     "name": "Set.toFinset"
+    },
+    {
+     "decl": 519,
+     "name": "Fintype"
+    },
+    {
+     "decl": 1375,
+     "name": "SetLike.coe"
+    },
+    {
+     "decl": 6,
+     "name": "Finset.instSetLike"
+    },
+    {
+     "decl": 77524,
+     "name": "Set.mem_toFinset"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 457731,
+   "decl": 479542,
+   "target": "IsLocalExtrOn.isLocalExtr",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 52,
+   "module": "Mathlib.Topology.Order.LocalExtr",
+   "statement_src": "theorem IsLocalExtrOn.isLocalExtr (hf : IsLocalExtrOn f s a) (hs : s \u2208 \ud835\udcdd a) : IsLocalExtr f a",
+   "proof_src": ":=\n  hf.elim (fun hf => (hf.isLocalMin hs).isExtr) fun hf => (hf.isLocalMax hs).isExtr",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 5996,
+     "name": "Filter.instMembership"
+    },
+    {
+     "decl": 46353,
+     "name": "IsLocalMinOn"
+    },
+    {
+     "decl": 224178,
+     "name": "IsLocalMinOn.isLocalMin"
+    },
+    {
+     "decl": 40251,
+     "name": "IsLocalExtr"
+    },
+    {
+     "decl": 206913,
+     "name": "IsLocalExtrOn"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 608,
+     "name": "nhds"
+    },
+    {
+     "decl": 46354,
+     "name": "IsLocalMaxOn"
+    },
+    {
+     "decl": 864,
+     "name": "TopologicalSpace"
+    },
+    {
+     "decl": 239245,
+     "name": "IsMinFilter.isExtr"
+    },
+    {
+     "decl": 510164,
+     "name": "IsLocalMaxOn.isLocalMax"
+    },
+    {
+     "decl": 239246,
+     "name": "IsMaxFilter.isExtr"
+    },
+    {
+     "decl": 454269,
+     "name": "IsLocalExtrOn.elim"
+    },
+    {
+     "decl": 574,
+     "name": "Filter"
+    },
+    {
+     "decl": 868,
+     "name": "Preorder"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 532340,
+   "decl": 554940,
+   "target": "CategoryTheory.hasExactColimitsOfShape_discrete_finite",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 71,
+   "module": "Mathlib.CategoryTheory.Abelian.GrothendieckAxioms.Basic",
+   "statement_src": "noncomputable instance hasExactColimitsOfShape_discrete_finite (J : Type*) [Finite J] :\n    HasExactColimitsOfShape (Discrete J) C",
+   "proof_src": "where\n  preservesFiniteLimits := preservesFiniteLimits_of_natIso HasBiproductsOfShape.colimIsoLim.symm",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 2372,
+     "name": "CategoryTheory.Limits.HasZeroMorphisms"
+    },
+    {
+     "decl": 198,
+     "name": "CategoryTheory.Functor"
+    },
+    {
+     "decl": 34936,
+     "name": "CategoryTheory.Limits.colim"
+    },
+    {
+     "decl": 734,
+     "name": "Finite"
+    },
+    {
+     "decl": 14760,
+     "name": "CategoryTheory.Limits.HasFiniteBiproducts"
+    },
+    {
+     "decl": 1560,
+     "name": "CategoryTheory.Functor.category"
+    },
+    {
+     "decl": 23273,
+     "name": "CategoryTheory.Limits.lim"
+    },
+    {
+     "decl": 43000,
+     "name": "CategoryTheory.HasExactColimitsOfShape.mk"
+    },
+    {
+     "decl": 2796,
+     "name": "CategoryTheory.discreteCategory"
+    },
+    {
+     "decl": 2991,
+     "name": "CategoryTheory.Iso.symm"
+    },
+    {
+     "decl": 398958,
+     "name": "CategoryTheory.Limits.HasBiproductsOfShape.colimIsoLim"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    },
+    {
+     "decl": 139668,
+     "name": "CategoryTheory.Limits.preservesFiniteLimits_of_natIso"
+    },
+    {
+     "decl": 2802,
+     "name": "CategoryTheory.Discrete"
+    }
+   ]
+  },
+  {
+   "artifact": 231399,
+   "decl": 248611,
+   "target": "Ordinal.isInitial_omega",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 85,
+   "module": "Mathlib.SetTheory.Cardinal.Aleph",
+   "statement_src": "theorem isInitial_omega (o : Ordinal) : IsInitial (omega o)",
+   "proof_src": ":=\n  isInitial_preOmega _",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1087,
+     "name": "Ordinal.instLinearOrder"
+    },
+    {
+     "decl": 165511,
+     "name": "Ordinal.isInitial_preOmega"
+    },
+    {
+     "decl": 35951,
+     "name": "Ordinal.omega0"
+    },
+    {
+     "decl": 250798,
+     "name": "OrderEmbedding.addLeft"
+    },
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 278,
+     "name": "SemilatticeInf.toPartialOrder"
+    },
+    {
+     "decl": 280,
+     "name": "DistribLattice.toLattice"
+    },
+    {
+     "decl": 41746,
+     "name": "RelEmbedding.toEmbedding"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 18134,
+     "name": "Function.Embedding"
+    },
+    {
+     "decl": 27848,
+     "name": "Ordinal.add"
+    },
+    {
+     "decl": 18144,
+     "name": "Function.instFunLikeEmbedding"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 285,
+     "name": "instDistribLatticeOfLinearOrder"
+    },
+    {
+     "decl": 287,
+     "name": "Lattice.toSemilatticeInf"
+    },
+    {
+     "decl": 1113,
+     "name": "Ordinal"
+    }
+   ]
+  },
+  {
+   "artifact": 479392,
+   "decl": 501485,
+   "target": "AlgebraicTopology.alternatingFaceMapComplex_obj_X",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 74,
+   "module": "Mathlib.AlgebraicTopology.AlternatingFaceMapComplex",
+   "statement_src": "theorem alternatingFaceMapComplex_obj_X (X : SimplicialObject C) (n : \u2115) :\n    ((alternatingFaceMapComplex C).obj X).X n = X _\u298bn\u298c",
+   "proof_src": ":=\n  rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 2373,
+     "name": "ChainComplex"
+    },
+    {
+     "decl": 2374,
+     "name": "HomologicalComplex.instCategory"
+    },
+    {
+     "decl": 199,
+     "name": "Opposite"
+    },
+    {
+     "decl": 829,
+     "name": "Nat.instOne"
+    },
+    {
+     "decl": 1560,
+     "name": "CategoryTheory.Functor.category"
+    },
+    {
+     "decl": 2376,
+     "name": "AddRightCancelSemigroup.toAddSemigroup"
+    },
+    {
+     "decl": 2377,
+     "name": "AddCancelMonoid.toAddRightCancelMonoid"
+    },
+    {
+     "decl": 2378,
+     "name": "Nat.instAddCancelCommMonoid"
+    },
+    {
+     "decl": 4755,
+     "name": "CategoryTheory.Preadditive"
+    },
+    {
+     "decl": 2005,
+     "name": "AddSemigroup.toAdd"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 2344,
+     "name": "SimplexCategory"
+    },
+    {
+     "decl": 2835,
+     "name": "CategoryTheory.Preadditive.preadditiveHasZeroMorphisms"
+    },
+    {
+     "decl": 207,
+     "name": "CategoryTheory.Category.opposite"
+    },
+    {
+     "decl": 3009,
+     "name": "HomologicalComplex.X"
+    },
+    {
+     "decl": 35790,
+     "name": "AlgebraicTopology.alternatingFaceMapComplex"
+    },
+    {
+     "decl": 2382,
+     "name": "AddRightCancelMonoid.toAddRightCancelSemigroup"
+    },
+    {
+     "decl": 2347,
+     "name": "SimplexCategory.smallCategory"
+    },
+    {
+     "decl": 2383,
+     "name": "ComplexShape.down"
+    },
+    {
+     "decl": 2385,
+     "name": "AddCancelCommMonoid.toAddCancelMonoid"
+    },
+    {
+     "decl": 210,
+     "name": "CategoryTheory.Functor.obj"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    },
+    {
+     "decl": 7047,
+     "name": "CategoryTheory.SimplicialObject"
+    }
+   ]
+  },
+  {
+   "artifact": 590617,
+   "decl": 613669,
+   "target": "AlgebraicGeometry.PresheafedSpace.IsOpenImmersion.toLocallyRingedSpace_toSheafedSpace",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 90,
+   "module": "Mathlib.Geometry.RingedSpace.OpenImmersion",
+   "statement_src": "theorem toLocallyRingedSpace_toSheafedSpace :\n    (toLocallyRingedSpace Y f).toSheafedSpace = toSheafedSpace Y.1 f",
+   "proof_src": ":=\n  rfl",
+   "statement_how": "lastcomp",
+   "candidates": [
+    {
+     "decl": 8875,
+     "name": "AlgebraicGeometry.SheafedSpace"
+    },
+    {
+     "decl": 397,
+     "name": "CategoryTheory.CategoryStruct.toQuiver"
+    },
+    {
+     "decl": 398,
+     "name": "Quiver.Hom"
+    },
+    {
+     "decl": 5303,
+     "name": "CommRingCat"
+    },
+    {
+     "decl": 5305,
+     "name": "CommRingCat.instCategory"
+    },
+    {
+     "decl": 5307,
+     "name": "AlgebraicGeometry.LocallyRingedSpace.toSheafedSpace"
+    },
+    {
+     "decl": 5351,
+     "name": "AlgebraicGeometry.LocallyRingedSpace"
+    },
+    {
+     "decl": 14094,
+     "name": "AlgebraicGeometry.PresheafedSpace.IsOpenImmersion"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 5309,
+     "name": "AlgebraicGeometry.SheafedSpace.toPresheafedSpace"
+    },
+    {
+     "decl": 3256,
+     "name": "AlgebraicGeometry.PresheafedSpace"
+    },
+    {
+     "decl": 8880,
+     "name": "AlgebraicGeometry.PresheafedSpace.categoryOfPresheafedSpaces"
+    },
+    {
+     "decl": 129,
+     "name": "rfl"
+    },
+    {
+     "decl": 113115,
+     "name": "AlgebraicGeometry.PresheafedSpace.IsOpenImmersion.toLocallyRingedSpace"
+    }
+   ]
+  },
+  {
+   "artifact": 392701,
+   "decl": 413625,
+   "target": "Cycle.nodup_reverse_iff",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 64,
+   "module": "Mathlib.Data.List.Cycle",
+   "statement_src": "theorem nodup_reverse_iff {s : Cycle \u03b1} : s.reverse.Nodup \u2194 s.Nodup",
+   "proof_src": ":=\n  Quot.inductionOn s fun _ => nodup_reverse",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 147272,
+     "name": "List.nodup_reverse"
+    },
+    {
+     "decl": 22476,
+     "name": "List.IsRotated.setoid"
+    },
+    {
+     "decl": 9944,
+     "name": "Quot.inductionOn"
+    },
+    {
+     "decl": 371,
+     "name": "List"
+    },
+    {
+     "decl": 5,
+     "name": "Iff"
+    },
+    {
+     "decl": 106458,
+     "name": "Cycle.reverse"
+    },
+    {
+     "decl": 22474,
+     "name": "Cycle.Nodup"
+    },
+    {
+     "decl": 22475,
+     "name": "Cycle"
+    },
+    {
+     "decl": 360,
+     "name": "Setoid.r"
+    }
+   ]
+  },
+  {
+   "artifact": 557634,
+   "decl": 580450,
+   "target": "UniformFunOn.uniformContinuousConstSMul",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 75,
+   "module": "Mathlib.Topology.Algebra.UniformConvergence",
+   "statement_src": "instance UniformFunOn.uniformContinuousConstSMul {\ud835\udd16 : Set (Set \u03b1)} :\n    UniformContinuousConstSMul M (\u03b1 \u2192\u1d64[\ud835\udd16] X)",
+   "proof_src": "where\n  uniformContinuous_const_smul c := UniformOnFun.postcomp_uniformContinuous <|\n    uniformContinuous_const_smul c",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 2055,
+     "name": "UniformSpace"
+    },
+    {
+     "decl": 84,
+     "name": "instHSMul"
+    },
+    {
+     "decl": 147102,
+     "name": "UniformContinuousConstSMul.mk"
+    },
+    {
+     "decl": 484,
+     "name": "SMul"
+    },
+    {
+     "decl": 110464,
+     "name": "UniformOnFun.postcomp_uniformContinuous"
+    },
+    {
+     "decl": 29191,
+     "name": "UniformOnFun.uniformSpace"
+    },
+    {
+     "decl": 97,
+     "name": "HSMul.hSMul"
+    },
+    {
+     "decl": 17486,
+     "name": "UniformOnFun"
+    },
+    {
+     "decl": 21339,
+     "name": "UniformContinuousConstSMul"
+    },
+    {
+     "decl": 107732,
+     "name": "instNSMulUniformOnFun"
+    },
+    {
+     "decl": 445861,
+     "name": "UniformContinuousConstSMul.uniformContinuous_const_smul"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 202921,
+   "decl": 219235,
+   "target": "FreeRing.of_ne_one",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 82,
+   "module": "Mathlib.RingTheory.FreeRing",
+   "statement_src": "theorem of_ne_one (x : \u03b1) : of x \u2260 1",
+   "proof_src": ":= FreeAbelianGroup.of_injective.ne <| FreeMonoid.of_ne_one _",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 13,
+     "name": "MulOne.toOne"
+    },
+    {
+     "decl": 19085,
+     "name": "CancelMonoid.toRightCancelMonoid"
+    },
+    {
+     "decl": 24642,
+     "name": "FreeMonoid"
+    },
+    {
+     "decl": 65803,
+     "name": "FreeMonoid.of_ne_one"
+    },
+    {
+     "decl": 15,
+     "name": "Monoid.toMulOneClass"
+    },
+    {
+     "decl": 24643,
+     "name": "FreeMonoid.instCancelMonoid"
+    },
+    {
+     "decl": 1149,
+     "name": "Function.Injective.ne"
+    },
+    {
+     "decl": 22,
+     "name": "MulOneClass.toMulOne"
+    },
+    {
+     "decl": 29944,
+     "name": "FreeMonoid.of"
+    },
+    {
+     "decl": 1155,
+     "name": "FreeAbelianGroup.of"
+    },
+    {
+     "decl": 1156,
+     "name": "FreeAbelianGroup.of_injective"
+    },
+    {
+     "decl": 28,
+     "name": "One.toOfNat1"
+    },
+    {
+     "decl": 24647,
+     "name": "RightCancelMonoid.toMonoid"
+    },
+    {
+     "decl": 1158,
+     "name": "FreeAbelianGroup"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    }
+   ]
+  },
+  {
+   "artifact": 607709,
+   "decl": 630854,
+   "target": "Unit.borelSpace",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 67,
+   "module": "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+   "statement_src": "instance Unit.borelSpace : BorelSpace Unit",
+   "proof_src": ":=\n  \u27e8borel_eq_top_of_discrete.symm\u27e9",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1772,
+     "name": "Lattice.toSemilatticeSup"
+    },
+    {
+     "decl": 1773,
+     "name": "CompleteLattice.toLattice"
+    },
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 102186,
+     "name": "borel_eq_top_of_discrete"
+    },
+    {
+     "decl": 1774,
+     "name": "CompleteLattice.toBoundedOrder"
+    },
+    {
+     "decl": 4107,
+     "name": "borel"
+    },
+    {
+     "decl": 390,
+     "name": "MeasurableSpace"
+    },
+    {
+     "decl": 923,
+     "name": "Unit"
+    },
+    {
+     "decl": 1778,
+     "name": "OrderTop.toTop"
+    },
+    {
+     "decl": 253,
+     "name": "PUnit"
+    },
+    {
+     "decl": 1779,
+     "name": "BoundedOrder.toOrderTop"
+    },
+    {
+     "decl": 4109,
+     "name": "BorelSpace.mk"
+    },
+    {
+     "decl": 46781,
+     "name": "MeasurableSpace.instCompleteLattice"
+    },
+    {
+     "decl": 15931,
+     "name": "PUnit.instMeasurableSpace"
+    },
+    {
+     "decl": 378,
+     "name": "SemilatticeSup.toPartialOrder"
+    },
+    {
+     "decl": 26503,
+     "name": "instTopologicalSpacePUnit"
+    },
+    {
+     "decl": 191,
+     "name": "Top.top"
+    },
+    {
+     "decl": 663,
+     "name": "Eq.symm"
+    }
+   ]
+  },
+  {
+   "artifact": 104639,
+   "decl": 116200,
+   "target": "Polynomial.coeff_ofNat_mul",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 94,
+   "module": "Mathlib.Algebra.Polynomial.Coeff",
+   "statement_src": "@[simp] lemma coeff_ofNat_mul {a k : \u2115} [Nat.AtLeastTwo a] :\n    coeff ((ofNat(a) : R[X]) * p) k = ofNat(a) * coeff p k",
+   "proof_src": ":= coeff_C_mul _",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 433,
+     "name": "NonAssocSemiring.toAddCommMonoidWithOne"
+    },
+    {
+     "decl": 50276,
+     "name": "Polynomial.coeff_C_mul"
+    },
+    {
+     "decl": 1074,
+     "name": "AddMonoidWithOne.toNatCast"
+    },
+    {
+     "decl": 444,
+     "name": "AddCommMonoidWithOne.toAddMonoidWithOne"
+    },
+    {
+     "decl": 1057,
+     "name": "Nat.cast"
+    },
+    {
+     "decl": 348,
+     "name": "Polynomial"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 95,
+     "name": "Semiring"
+    },
+    {
+     "decl": 146,
+     "name": "Semiring.toNonAssocSemiring"
+    },
+    {
+     "decl": 6654,
+     "name": "Nat.AtLeastTwo"
+    }
+   ]
+  },
+  {
+   "artifact": 6450,
+   "decl": 7814,
+   "target": "IsCompact.of_isClosed_subset",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 77,
+   "module": "Mathlib.Topology.Compactness.Compact",
+   "statement_src": "theorem IsCompact.of_isClosed_subset (hs : IsCompact s) (ht : IsClosed t) (h : t \u2286 s) :\n    IsCompact t",
+   "proof_src": ":=\n  inter_eq_self_of_subset_right h \u25b8 hs.inter_right ht",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 774,
+     "name": "Eq.rec"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 2674,
+     "name": "Set.instInter"
+    },
+    {
+     "decl": 2688,
+     "name": "Inter.inter"
+    },
+    {
+     "decl": 4385,
+     "name": "IsClosed"
+    },
+    {
+     "decl": 864,
+     "name": "TopologicalSpace"
+    },
+    {
+     "decl": 1808,
+     "name": "Set.instLE"
+    },
+    {
+     "decl": 17963,
+     "name": "Set.inter_eq_self_of_subset_right"
+    },
+    {
+     "decl": 37681,
+     "name": "IsCompact.inter_right"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 4386,
+     "name": "IsCompact"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 627666,
+   "decl": 650902,
+   "target": "Matroid.closure_disjoint_coloops_of_disjoint_coloops",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 99,
+   "module": "Mathlib.Combinatorics.Matroid.Loop",
+   "statement_src": "lemma closure_disjoint_coloops_of_disjoint_coloops (hX : Disjoint X (M.coloops)) :\n    Disjoint (M.closure X) M.coloops",
+   "proof_src": ":=\n  closure_disjoint_of_disjoint_of_subset_coloops hX Subset.rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 2229,
+     "name": "ChainCompletePartialOrder.instOfCompleteLattice"
+    },
+    {
+     "decl": 2355,
+     "name": "CompleteBooleanAlgebra.toCompleteDistribLattice"
+    },
+    {
+     "decl": 91250,
+     "name": "Matroid.coloops"
+    },
+    {
+     "decl": 2654,
+     "name": "Disjoint"
+    },
+    {
+     "decl": 650903,
+     "name": "Matroid.closure_disjoint_of_disjoint_of_subset_coloops"
+    },
+    {
+     "decl": 2236,
+     "name": "ChainCompletePartialOrder.toPartialOrder"
+    },
+    {
+     "decl": 2695,
+     "name": "Set.Subset.rfl"
+    },
+    {
+     "decl": 2721,
+     "name": "CompleteDistribLattice.toFrame"
+    },
+    {
+     "decl": 2237,
+     "name": "CompleteBooleanAlgebra.toCompleteLattice"
+    },
+    {
+     "decl": 2748,
+     "name": "Order.Frame.toHeytingAlgebra"
+    },
+    {
+     "decl": 2759,
+     "name": "HeytingAlgebra.toOrderBot"
+    },
+    {
+     "decl": 12061,
+     "name": "Matroid"
+    },
+    {
+     "decl": 2244,
+     "name": "CompleteAtomicBooleanAlgebra.toCompleteBooleanAlgebra"
+    },
+    {
+     "decl": 2245,
+     "name": "Set.instCompleteAtomicBooleanAlgebra"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 683311,
+   "decl": 706728,
+   "target": "List.sortedLT_iff_isChain",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 67,
+   "module": "Mathlib.Data.List.Sort",
+   "statement_src": "theorem sortedLT_iff_isChain : l.SortedLT \u2194 IsChain (\u00b7 < \u00b7) l",
+   "proof_src": ":=\n  sortedLT_iff_pairwise.trans isChain_iff_pairwise.symm",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 40911,
+     "name": "List.SortedLT"
+    },
+    {
+     "decl": 274,
+     "name": "Preorder.toLT"
+    },
+    {
+     "decl": 6940,
+     "name": "List.Pairwise"
+    },
+    {
+     "decl": 150864,
+     "name": "List.sortedLT_iff_pairwise"
+    },
+    {
+     "decl": 4139,
+     "name": "List.IsChain"
+    },
+    {
+     "decl": 371,
+     "name": "List"
+    },
+    {
+     "decl": 8,
+     "name": "LT.lt"
+    },
+    {
+     "decl": 652,
+     "name": "Iff.trans"
+    },
+    {
+     "decl": 150866,
+     "name": "instTransLT"
+    },
+    {
+     "decl": 173502,
+     "name": "List.isChain_iff_pairwise"
+    },
+    {
+     "decl": 1967,
+     "name": "Iff.symm"
+    },
+    {
+     "decl": 868,
+     "name": "Preorder"
+    }
+   ]
+  },
+  {
+   "artifact": 456803,
+   "decl": 478607,
+   "target": "OpenPartialHomeomorph.isOpen_image_iff_of_subset_source",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 80,
+   "module": "Mathlib.Topology.OpenPartialHomeomorph.Basic",
+   "statement_src": "theorem isOpen_image_iff_of_subset_source {s : Set X} (hs : s \u2286 e.source) :\n    IsOpen (e '' s) \u2194 IsOpen s",
+   "proof_src": ":= by\n  rw [\u2190 e.symm.isOpen_symm_image_iff_of_subset_target hs, e.symm_symm]",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 18,
+     "name": "Iff.rfl"
+    },
+    {
+     "decl": 1591,
+     "name": "PartialHomeomorph.toPartialEquiv"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 1593,
+     "name": "OpenPartialHomeomorph.toPartialHomeomorph"
+    },
+    {
+     "decl": 6742,
+     "name": "OpenPartialHomeomorph.toFun'"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 864,
+     "name": "TopologicalSpace"
+    },
+    {
+     "decl": 597478,
+     "name": "OpenPartialHomeomorph.isOpen_symm_image_iff_of_subset_target"
+    },
+    {
+     "decl": 5,
+     "name": "Iff"
+    },
+    {
+     "decl": 1808,
+     "name": "Set.instLE"
+    },
+    {
+     "decl": 26,
+     "name": "propext"
+    },
+    {
+     "decl": 1602,
+     "name": "PartialEquiv.source"
+    },
+    {
+     "decl": 194,
+     "name": "Set.image"
+    },
+    {
+     "decl": 1645,
+     "name": "IsOpen"
+    },
+    {
+     "decl": 173370,
+     "name": "OpenPartialHomeomorph.symm_symm"
+    },
+    {
+     "decl": 663,
+     "name": "Eq.symm"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 4764,
+     "name": "OpenPartialHomeomorph"
+    },
+    {
+     "decl": 13189,
+     "name": "OpenPartialHomeomorph.symm"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 265243,
+   "decl": 283474,
+   "target": "Disjoint.frontier_right",
+   "kind": 0,
+   "band": "51-100",
+   "depth": 62,
+   "module": "Mathlib.Topology.Closure",
+   "statement_src": "theorem Disjoint.frontier_right (hs : IsOpen s) (hd : Disjoint s t) : Disjoint s (frontier t)",
+   "proof_src": ":=\n  (hd.symm.frontier_left hs).symm",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 40109,
+     "name": "frontier"
+    },
+    {
+     "decl": 2355,
+     "name": "CompleteBooleanAlgebra.toCompleteDistribLattice"
+    },
+    {
+     "decl": 2654,
+     "name": "Disjoint"
+    },
+    {
+     "decl": 2234,
+     "name": "CompleteLattice.toConditionallyCompleteLattice"
+    },
+    {
+     "decl": 864,
+     "name": "TopologicalSpace"
+    },
+    {
+     "decl": 9790,
+     "name": "Disjoint.symm"
+    },
+    {
+     "decl": 2721,
+     "name": "CompleteDistribLattice.toFrame"
+    },
+    {
+     "decl": 2237,
+     "name": "CompleteBooleanAlgebra.toCompleteLattice"
+    },
+    {
+     "decl": 40,
+     "name": "ConditionallyCompletePartialOrderSup.toPartialOrder"
+    },
+    {
+     "decl": 1645,
+     "name": "IsOpen"
+    },
+    {
+     "decl": 2240,
+     "name": "ConditionallyCompleteLattice.toConditionallyCompletePartialOrder"
+    },
+    {
+     "decl": 2242,
+     "name": "ConditionallyCompletePartialOrder.toConditionallyCompletePartialOrderSup"
+    },
+    {
+     "decl": 2748,
+     "name": "Order.Frame.toHeytingAlgebra"
+    },
+    {
+     "decl": 2759,
+     "name": "HeytingAlgebra.toOrderBot"
+    },
+    {
+     "decl": 283475,
+     "name": "Disjoint.frontier_left"
+    },
+    {
+     "decl": 2244,
+     "name": "CompleteAtomicBooleanAlgebra.toCompleteBooleanAlgebra"
+    },
+    {
+     "decl": 2245,
+     "name": "Set.instCompleteAtomicBooleanAlgebra"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 553008,
+   "decl": 575789,
+   "target": "MeasureTheory.Measure.ae_ae_of_ae_prod",
+   "kind": 0,
+   "band": "101+",
+   "depth": 211,
+   "module": "Mathlib.MeasureTheory.Measure.Prod",
+   "statement_src": "theorem ae_ae_of_ae_prod {p : \u03b1 \u00d7 \u03b2 \u2192 Prop} (h : \u2200\u1d50 z \u2202\u03bc.prod \u03bd, p z) :\n    \u2200\u1d50 x \u2202\u03bc, \u2200\u1d50 y \u2202\u03bd, p (x, y)",
+   "proof_src": ":=\n  measure_ae_null_of_prod_null h",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1492,
+     "name": "MeasureTheory.ae"
+    },
+    {
+     "decl": 1493,
+     "name": "MeasureTheory.Measure"
+    },
+    {
+     "decl": 2578,
+     "name": "Set.ofPred"
+    },
+    {
+     "decl": 5255,
+     "name": "Compl.compl"
+    },
+    {
+     "decl": 597,
+     "name": "Filter.Eventually"
+    },
+    {
+     "decl": 499694,
+     "name": "MeasureTheory.Measure.measure_ae_null_of_prod_null"
+    },
+    {
+     "decl": 5268,
+     "name": "Set.instCompl"
+    },
+    {
+     "decl": 390,
+     "name": "MeasurableSpace"
+    },
+    {
+     "decl": 9909,
+     "name": "MeasureTheory.SFinite"
+    },
+    {
+     "decl": 4542,
+     "name": "MeasureTheory.Measure.prod"
+    },
+    {
+     "decl": 750,
+     "name": "Prod"
+    },
+    {
+     "decl": 1499,
+     "name": "MeasureTheory.Measure.instFunLike"
+    },
+    {
+     "decl": 4545,
+     "name": "Prod.instMeasurableSpace"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 651487,
+   "decl": 674802,
+   "target": "LightCondSet.LocallyConstant.instFaithfulLightCondensedTypeDiscrete",
+   "kind": 0,
+   "band": "101+",
+   "depth": 159,
+   "module": "Mathlib.Condensed.Discrete.LocallyConstant",
+   "statement_src": "noncomputable instance : functor.Faithful",
+   "proof_src": ":= functorFullyFaithful.faithful",
+   "statement_how": "anon-instance",
+   "candidates": [
+    {
+     "decl": 198,
+     "name": "CategoryTheory.Functor"
+    },
+    {
+     "decl": 199,
+     "name": "Opposite"
+    },
+    {
+     "decl": 4100,
+     "name": "SecondCountableTopology"
+    },
+    {
+     "decl": 153346,
+     "name": "LightCondensed"
+    },
+    {
+     "decl": 1560,
+     "name": "CategoryTheory.Functor.category"
+    },
+    {
+     "decl": 4777,
+     "name": "TotallyDisconnectedSpace"
+    },
+    {
+     "decl": 1851,
+     "name": "TopCat.str"
+    },
+    {
+     "decl": 23,
+     "name": "And"
+    },
+    {
+     "decl": 1852,
+     "name": "TopCat.carrier"
+    },
+    {
+     "decl": 1572,
+     "name": "CategoryTheory.types"
+    },
+    {
+     "decl": 1854,
+     "name": "CompHausLike.category"
+    },
+    {
+     "decl": 207,
+     "name": "CategoryTheory.Category.opposite"
+    },
+    {
+     "decl": 90725,
+     "name": "LightCondSet.LocallyConstant.functor"
+    },
+    {
+     "decl": 622310,
+     "name": "LightCondSet.LocallyConstant.iso"
+    },
+    {
+     "decl": 1855,
+     "name": "TopCat"
+    },
+    {
+     "decl": 1576,
+     "name": "CategoryTheory.Presheaf.IsSheaf"
+    },
+    {
+     "decl": 8440,
+     "name": "LightProfinite"
+    },
+    {
+     "decl": 203786,
+     "name": "CategoryTheory.Functor.Faithful.of_iso"
+    },
+    {
+     "decl": 153349,
+     "name": "LightCondensed.discrete"
+    },
+    {
+     "decl": 2349,
+     "name": "CategoryTheory.ObjectProperty.FullSubcategory.category"
+    },
+    {
+     "decl": 23579,
+     "name": "CategoryTheory.coherentTopology"
+    }
+   ]
+  },
+  {
+   "artifact": 580531,
+   "decl": 603524,
+   "target": "MeasureTheory.MeasurePreserving.restrict_preimage_emb",
+   "kind": 0,
+   "band": "101+",
+   "depth": 195,
+   "module": "Mathlib.Dynamics.Ergodic.MeasurePreserving",
+   "statement_src": "theorem restrict_preimage_emb {f : \u03b1 \u2192 \u03b2} (hf : MeasurePreserving f \u03bca \u03bcb)\n    (h\u2082 : MeasurableEmbedding f) (s : Set \u03b2) :\n    MeasurePreserving f (\u03bca.restrict (f \u207b\u00b9' s)) (\u03bcb.restrict s)",
+   "proof_src": ":=\n  \u27e8hf.measurable, by rw [\u2190 hf.map_eq, h\u2082.restrict_map]\u27e9",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 34034,
+     "name": "MeasureTheory.MeasurePreserving"
+    },
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 1493,
+     "name": "MeasureTheory.Measure"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 34036,
+     "name": "MeasureTheory.MeasurePreserving.mk"
+    },
+    {
+     "decl": 314367,
+     "name": "MeasurableEmbedding.restrict_map"
+    },
+    {
+     "decl": 2607,
+     "name": "MeasureTheory.Measure.restrict"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 157672,
+     "name": "MeasureTheory.MeasurePreserving.map_eq"
+    },
+    {
+     "decl": 390,
+     "name": "MeasurableSpace"
+    },
+    {
+     "decl": 765,
+     "name": "Set.preimage"
+    },
+    {
+     "decl": 5323,
+     "name": "MeasureTheory.Measure.map"
+    },
+    {
+     "decl": 280188,
+     "name": "MeasureTheory.MeasurePreserving.measurable"
+    },
+    {
+     "decl": 21957,
+     "name": "MeasurableEmbedding"
+    },
+    {
+     "decl": 65,
+     "name": "Eq.refl"
+    },
+    {
+     "decl": 663,
+     "name": "Eq.symm"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 14127,
+   "decl": 16828,
+   "target": "Matroid.Dep.of_isMinor",
+   "kind": 0,
+   "band": "101+",
+   "depth": 104,
+   "module": "Mathlib.Combinatorics.Matroid.Minor.Order",
+   "statement_src": "lemma Dep.of_isMinor {D : Set \u03b1} (hD : M.Dep D) (hDN : D \u2286 N.E) (hNM : N \u2264m M) : N.Dep D",
+   "proof_src": ":=\n  \u27e8fun h \u21a6 hD.not_indep <| h.of_isMinor hNM, hDN\u27e9",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 74416,
+     "name": "Matroid.Dep.not_indep"
+    },
+    {
+     "decl": 16826,
+     "name": "Matroid.Dep"
+    },
+    {
+     "decl": 12059,
+     "name": "Matroid.E"
+    },
+    {
+     "decl": 22607,
+     "name": "Matroid.Indep"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 16824,
+     "name": "Matroid.IsMinor"
+    },
+    {
+     "decl": 1808,
+     "name": "Set.instLE"
+    },
+    {
+     "decl": 399576,
+     "name": "Matroid.Indep.of_isMinor"
+    },
+    {
+     "decl": 311,
+     "name": "And.intro"
+    },
+    {
+     "decl": 12061,
+     "name": "Matroid"
+    },
+    {
+     "decl": 120,
+     "name": "Not"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 148472,
+   "decl": 162502,
+   "target": "AlgebraicGeometry.Scheme.Hom.normalizationPullback_snd",
+   "kind": 0,
+   "band": "101+",
+   "depth": 198,
+   "module": "Mathlib.AlgebraicGeometry.Normalization",
+   "statement_src": "lemma normalizationPullback_snd :\n    f.normalizationPullback g \u226b pullback.snd _ _ = (pullback.snd f g).fromNormalization",
+   "proof_src": ":=\n  (pullback.snd f g).normalizationDesc_comp ..",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 17918,
+     "name": "AlgebraicGeometry.Scheme.Hom.fromNormalization"
+    },
+    {
+     "decl": 2554,
+     "name": "CategoryTheory.Limits.pullback"
+    },
+    {
+     "decl": 2068,
+     "name": "AlgebraicGeometry.Scheme"
+    },
+    {
+     "decl": 397,
+     "name": "CategoryTheory.CategoryStruct.toQuiver"
+    },
+    {
+     "decl": 398,
+     "name": "Quiver.Hom"
+    },
+    {
+     "decl": 5542,
+     "name": "CategoryTheory.Limits.pullback.snd"
+    },
+    {
+     "decl": 162505,
+     "name": "AlgebraicGeometry.Scheme.Hom.normalizationPullback"
+    },
+    {
+     "decl": 399,
+     "name": "CategoryTheory.CategoryStruct.id"
+    },
+    {
+     "decl": 162506,
+     "name": "AlgebraicGeometry.Scheme.Hom.normalizationDesc_comp"
+    },
+    {
+     "decl": 17914,
+     "name": "AlgebraicGeometry.Scheme.Hom.toNormalization"
+    },
+    {
+     "decl": 12191,
+     "name": "CategoryTheory.Limits.pullback.map"
+    },
+    {
+     "decl": 17915,
+     "name": "AlgebraicGeometry.QuasiCompact"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 2073,
+     "name": "AlgebraicGeometry.Scheme.instCategory"
+    },
+    {
+     "decl": 17916,
+     "name": "AlgebraicGeometry.QuasiSeparated"
+    },
+    {
+     "decl": 17917,
+     "name": "AlgebraicGeometry.Scheme.Hom.normalization"
+    }
+   ]
+  },
+  {
+   "artifact": 663051,
+   "decl": 686407,
+   "target": "Meromorphic.iterated_deriv",
+   "kind": 0,
+   "band": "101+",
+   "depth": 193,
+   "module": "Mathlib.Analysis.Meromorphic.Basic",
+   "statement_src": "lemma iterated_deriv [CompleteSpace E] {n : \u2115} (hf : Meromorphic f) :\n    Meromorphic (deriv^[n] f)",
+   "proof_src": ":= fun x \u21a6 (hf x).iterated_deriv",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 5314,
+     "name": "CompleteSpace"
+    },
+    {
+     "decl": 28626,
+     "name": "Meromorphic"
+    },
+    {
+     "decl": 814,
+     "name": "NormedSpace"
+    },
+    {
+     "decl": 551,
+     "name": "PseudoMetricSpace.toUniformSpace"
+    },
+    {
+     "decl": 287194,
+     "name": "MeromorphicAt.iterated_deriv"
+    },
+    {
+     "decl": 819,
+     "name": "SeminormedAddCommGroup.toPseudoMetricSpace"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 821,
+     "name": "NontriviallyNormedField"
+    },
+    {
+     "decl": 823,
+     "name": "NontriviallyNormedField.toNormedField"
+    },
+    {
+     "decl": 825,
+     "name": "NormedAddCommGroup.toSeminormedAddCommGroup"
+    },
+    {
+     "decl": 826,
+     "name": "NormedAddCommGroup"
+    }
+   ]
+  },
+  {
+   "artifact": 42112,
+   "decl": 48520,
+   "target": "MeasureTheory.IntegrableOn.mono_set_ae",
+   "kind": 0,
+   "band": "101+",
+   "depth": 191,
+   "module": "Mathlib.MeasureTheory.Integral.IntegrableOn",
+   "statement_src": "theorem IntegrableOn.mono_set_ae (h : IntegrableOn f t \u03bc) (hst : s \u2264\u1d50[\u03bc] t) : IntegrableOn f s \u03bc",
+   "proof_src": ":=\n  h.integrable.mono_measure <| Measure.restrict_mono_ae hst",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1492,
+     "name": "MeasureTheory.ae"
+    },
+    {
+     "decl": 48521,
+     "name": "MeasureTheory.Integrable.mono_measure"
+    },
+    {
+     "decl": 1493,
+     "name": "MeasureTheory.Measure"
+    },
+    {
+     "decl": 19220,
+     "name": "Prop.le"
+    },
+    {
+     "decl": 2607,
+     "name": "MeasureTheory.Measure.restrict"
+    },
+    {
+     "decl": 27961,
+     "name": "MeasureTheory.IntegrableOn"
+    },
+    {
+     "decl": 27149,
+     "name": "ContinuousENorm"
+    },
+    {
+     "decl": 390,
+     "name": "MeasurableSpace"
+    },
+    {
+     "decl": 864,
+     "name": "TopologicalSpace"
+    },
+    {
+     "decl": 48522,
+     "name": "MeasureTheory.Measure.restrict_mono_ae"
+    },
+    {
+     "decl": 48523,
+     "name": "MeasureTheory.IntegrableOn.integrable"
+    },
+    {
+     "decl": 7385,
+     "name": "Filter.EventuallyLE"
+    },
+    {
+     "decl": 1499,
+     "name": "MeasureTheory.Measure.instFunLike"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 601915,
+   "decl": 625033,
+   "target": "ENNReal.ofReal_eq_ofNat",
+   "kind": 0,
+   "band": "101+",
+   "depth": 117,
+   "module": "Mathlib.Data.ENNReal.Real",
+   "statement_src": "lemma ofReal_eq_ofNat {r : \u211d} {n : \u2115} [n.AtLeastTwo] :\n    ENNReal.ofReal r = ofNat(n) \u2194 r = OfNat.ofNat n",
+   "proof_src": ":=\n  ofReal_eq_natCast (NeZero.ne n)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 828,
+     "name": "Nat.instMulZeroClass"
+    },
+    {
+     "decl": 583,
+     "name": "Real"
+    },
+    {
+     "decl": 383322,
+     "name": "ENNReal.ofReal_eq_natCast"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 104,
+     "name": "MulZeroClass.toZero"
+    },
+    {
+     "decl": 6654,
+     "name": "Nat.AtLeastTwo"
+    },
+    {
+     "decl": 21679,
+     "name": "NeZero.ne"
+    }
+   ]
+  },
+  {
+   "artifact": 111652,
+   "decl": 123642,
+   "target": "ENNReal.mul_inv_cancel_right",
+   "kind": 0,
+   "band": "101+",
+   "depth": 126,
+   "module": "Mathlib.Data.ENNReal.Inv",
+   "statement_src": "protected lemma mul_inv_cancel_right (hb\u2080 : b \u2260 0) (hb : b \u2260 \u221e) : a * b * b\u207b\u00b9 = a",
+   "proof_src": ":=\n  ENNReal.mul_inv_cancel_right' (by simp [hb\u2080]) (by simp [hb])",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 107,
+     "name": "False"
+    },
+    {
+     "decl": 108,
+     "name": "eq_false"
+    },
+    {
+     "decl": 123643,
+     "name": "ENNReal.mul_inv_cancel_right'"
+    },
+    {
+     "decl": 91,
+     "name": "Ne"
+    },
+    {
+     "decl": 1340,
+     "name": "implies_congr"
+    },
+    {
+     "decl": 114,
+     "name": "True"
+    },
+    {
+     "decl": 2616,
+     "name": "ENNReal"
+    },
+    {
+     "decl": 116,
+     "name": "of_eq_true"
+    },
+    {
+     "decl": 96,
+     "name": "Zero.toOfNat0"
+    },
+    {
+     "decl": 65,
+     "name": "Eq.refl"
+    },
+    {
+     "decl": 2737,
+     "name": "ENNReal.instTop"
+    },
+    {
+     "decl": 2745,
+     "name": "ENNReal.instZero"
+    },
+    {
+     "decl": 191,
+     "name": "Top.top"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 61898,
+     "name": "IsEmpty.forall_iff"
+    },
+    {
+     "decl": 121,
+     "name": "Eq.trans"
+    }
+   ]
+  },
+  {
+   "artifact": 26491,
+   "decl": 31054,
+   "target": "Matroid.IsBasis.eRk_eq_encard",
+   "kind": 0,
+   "band": "101+",
+   "depth": 107,
+   "module": "Mathlib.Combinatorics.Matroid.Rank.ENat",
+   "statement_src": "lemma IsBasis.eRk_eq_encard (hIX : M.IsBasis I X) : M.eRk X = I.encard",
+   "proof_src": ":= by\n  rw [\u2190 hIX.eRk_eq_eRk, hIX.indep.eRk_eq_encard]",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 7684,
+     "name": "Set.encard"
+    },
+    {
+     "decl": 23144,
+     "name": "Matroid.Indep.eRk_eq_encard"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 991,
+     "name": "ENat"
+    },
+    {
+     "decl": 314886,
+     "name": "Matroid.IsBasis.eRk_eq_eRk"
+    },
+    {
+     "decl": 23142,
+     "name": "Matroid.eRk"
+    },
+    {
+     "decl": 65,
+     "name": "Eq.refl"
+    },
+    {
+     "decl": 35728,
+     "name": "Matroid.IsBasis.indep"
+    },
+    {
+     "decl": 31066,
+     "name": "Matroid.IsBasis"
+    },
+    {
+     "decl": 663,
+     "name": "Eq.symm"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 12061,
+     "name": "Matroid"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 573291,
+   "decl": 596227,
+   "target": "AlgebraicGeometry.Scheme.IdealSheafData.comap_sup",
+   "kind": 0,
+   "band": "101+",
+   "depth": 216,
+   "module": "Mathlib.AlgebraicGeometry.IdealSheaf.Functorial",
+   "statement_src": "@[simp] lemma comap_sup : comap (J\u2081 \u2294 J\u2082) f = comap J\u2081 f \u2294 comap J\u2082 f",
+   "proof_src": ":= (map_gc f).l_sup",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 2068,
+     "name": "AlgebraicGeometry.Scheme"
+    },
+    {
+     "decl": 397,
+     "name": "CategoryTheory.CategoryStruct.toQuiver"
+    },
+    {
+     "decl": 398,
+     "name": "Quiver.Hom"
+    },
+    {
+     "decl": 102585,
+     "name": "AlgebraicGeometry.Scheme.IdealSheafData.map"
+    },
+    {
+     "decl": 155986,
+     "name": "AlgebraicGeometry.Scheme.IdealSheafData.instIdemCommSemiring"
+    },
+    {
+     "decl": 377,
+     "name": "IdemSemiring.toSemilatticeSup"
+    },
+    {
+     "decl": 81765,
+     "name": "AlgebraicGeometry.Scheme.IdealSheafData.comap"
+    },
+    {
+     "decl": 27059,
+     "name": "AlgebraicGeometry.Scheme.IdealSheafData"
+    },
+    {
+     "decl": 155987,
+     "name": "IdemCommSemiring.toIdemSemiring"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 2073,
+     "name": "AlgebraicGeometry.Scheme.instCategory"
+    },
+    {
+     "decl": 32430,
+     "name": "GaloisConnection.l_sup"
+    },
+    {
+     "decl": 367580,
+     "name": "AlgebraicGeometry.Scheme.IdealSheafData.map_gc"
+    }
+   ]
+  },
+  {
+   "artifact": 424288,
+   "decl": 445648,
+   "target": "PiLp.antilipschitzWith_toLp",
+   "kind": 0,
+   "band": "101+",
+   "depth": 213,
+   "module": "Mathlib.Analysis.Normed.Lp.PiLp",
+   "statement_src": "lemma antilipschitzWith_toLp [\u2200 i, PseudoEMetricSpace (\u03b2 i)] :\n    AntilipschitzWith 1 (@toLp p (\u2200 i, \u03b2 i))",
+   "proof_src": ":=\n  (lipschitzWith_ofLp p \u03b2).to_rightInverse (ofLp_toLp p)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 6512,
+     "name": "WithLp"
+    },
+    {
+     "decl": 3347,
+     "name": "Fact"
+    },
+    {
+     "decl": 30391,
+     "name": "pseudoEMetricSpacePi"
+    },
+    {
+     "decl": 527805,
+     "name": "PiLp.lipschitzWith_ofLp"
+    },
+    {
+     "decl": 2609,
+     "name": "NNReal"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 6036,
+     "name": "PseudoEMetricSpace"
+    },
+    {
+     "decl": 240519,
+     "name": "LipschitzWith.to_rightInverse"
+    },
+    {
+     "decl": 519,
+     "name": "Fintype"
+    },
+    {
+     "decl": 2615,
+     "name": "ENNReal.instLE"
+    },
+    {
+     "decl": 2616,
+     "name": "ENNReal"
+    },
+    {
+     "decl": 28,
+     "name": "One.toOfNat1"
+    },
+    {
+     "decl": 9726,
+     "name": "ENNReal.instOne"
+    },
+    {
+     "decl": 286641,
+     "name": "PiLp.instPseudoEMetricSpace"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 7734,
+     "name": "WithLp.ofLp"
+    },
+    {
+     "decl": 7800,
+     "name": "NNReal.instOne"
+    },
+    {
+     "decl": 355911,
+     "name": "WithLp.ofLp_toLp"
+    }
+   ]
+  },
+  {
+   "artifact": 567154,
+   "decl": 590046,
+   "target": "legendreSym.eq_one_iff",
+   "kind": 0,
+   "band": "101+",
+   "depth": 138,
+   "module": "Mathlib.NumberTheory.LegendreSymbol.Basic",
+   "statement_src": "theorem eq_one_iff {a : \u2124} (ha0 : (a : ZMod p) \u2260 0) : legendreSym p a = 1 \u2194 IsSquare (a : ZMod p)",
+   "proof_src": ":=\n  quadraticChar_one_iff_isSquare ha0",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1067,
+     "name": "Int.cast"
+    },
+    {
+     "decl": 3334,
+     "name": "Nat.Prime"
+    },
+    {
+     "decl": 24107,
+     "name": "ZMod.fintype"
+    },
+    {
+     "decl": 24108,
+     "name": "ZMod.decidableEq"
+    },
+    {
+     "decl": 555,
+     "name": "Field.toDivisionRing"
+    },
+    {
+     "decl": 3347,
+     "name": "Fact"
+    },
+    {
+     "decl": 91,
+     "name": "Ne"
+    },
+    {
+     "decl": 613,
+     "name": "DivisionRing.toRing"
+    },
+    {
+     "decl": 558,
+     "name": "Int"
+    },
+    {
+     "decl": 1056,
+     "name": "AddGroupWithOne.toIntCast"
+    },
+    {
+     "decl": 559,
+     "name": "Field.toSemifield"
+    },
+    {
+     "decl": 3366,
+     "name": "ZMod"
+    },
+    {
+     "decl": 3368,
+     "name": "ZMod.instField"
+    },
+    {
+     "decl": 562,
+     "name": "Semifield.toDivisionSemiring"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 567,
+     "name": "DivisionSemiring.toSemiring"
+    },
+    {
+     "decl": 96,
+     "name": "Zero.toOfNat0"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 664,
+     "name": "Ring.toAddGroupWithOne"
+    },
+    {
+     "decl": 104,
+     "name": "MulZeroClass.toZero"
+    },
+    {
+     "decl": 67378,
+     "name": "quadraticChar_one_iff_isSquare"
+    },
+    {
+     "decl": 105,
+     "name": "instMulZeroClassOfSemiring"
+    }
+   ]
+  },
+  {
+   "artifact": 249204,
+   "decl": 266950,
+   "target": "MeasureTheory.Measure.comap_apply",
+   "kind": 0,
+   "band": "101+",
+   "depth": 185,
+   "module": "Mathlib.MeasureTheory.Measure.Comap",
+   "statement_src": "theorem comap_apply (f : \u03b1 \u2192 \u03b2) (hfi : Injective f)\n    (hf : \u2200 s, MeasurableSet s \u2192 MeasurableSet (f '' s)) (\u03bc : Measure \u03b2) (hs : MeasurableSet s) :\n    comap f \u03bc s = \u03bc (f '' s)",
+   "proof_src": ":=\n  comap_apply\u2080 f \u03bc hfi (fun s hs => (hf s hs).nullMeasurableSet) hs.nullMeasurableSet",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1493,
+     "name": "MeasureTheory.Measure"
+    },
+    {
+     "decl": 2603,
+     "name": "MeasurableSet"
+    },
+    {
+     "decl": 55553,
+     "name": "MeasurableSet.nullMeasurableSet"
+    },
+    {
+     "decl": 227982,
+     "name": "MeasureTheory.Measure.comap_apply\u2080"
+    },
+    {
+     "decl": 390,
+     "name": "MeasurableSpace"
+    },
+    {
+     "decl": 46721,
+     "name": "MeasureTheory.Measure.comap"
+    },
+    {
+     "decl": 194,
+     "name": "Set.image"
+    },
+    {
+     "decl": 63,
+     "name": "Function.Injective"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 536059,
+   "decl": 558703,
+   "target": "IsUltrametricDist.isUltrametricDist_iff_isNonarchimedean_nnnorm",
+   "kind": 0,
+   "band": "101+",
+   "depth": 114,
+   "module": "Mathlib.Analysis.Normed.Group.Ultra",
+   "statement_src": "lemma isUltrametricDist_iff_isNonarchimedean_nnnorm {R} [SeminormedAddCommGroup R] :\n    IsUltrametricDist R \u2194 IsNonarchimedean (\u2016\u00b7\u2016\u208a : R \u2192 \u211d)",
+   "proof_src": ":=\n  \u27e8fun h => h.isNonarchimedean_norm, IsUltrametricDist.isUltrametricDist_of_isNonarchimedean_norm\u27e9",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 337060,
+     "name": "IsUltrametricDist.isNonarchimedean_norm"
+    },
+    {
+     "decl": 583,
+     "name": "Real"
+    },
+    {
+     "decl": 4170,
+     "name": "SeminormedAddCommGroup"
+    },
+    {
+     "decl": 152,
+     "name": "AddCommGroup.toAddCommMonoid"
+    },
+    {
+     "decl": 2645,
+     "name": "SeminormedAddGroup.toNNNorm"
+    },
+    {
+     "decl": 2647,
+     "name": "NNNorm.nnnorm"
+    },
+    {
+     "decl": 1465,
+     "name": "SeminormedAddCommGroup.toSeminormedAddGroup"
+    },
+    {
+     "decl": 819,
+     "name": "SeminormedAddCommGroup.toPseudoMetricSpace"
+    },
+    {
+     "decl": 1951,
+     "name": "SeminormedAddCommGroup.toAddCommGroup"
+    },
+    {
+     "decl": 645,
+     "name": "Iff.intro"
+    },
+    {
+     "decl": 718,
+     "name": "AddCommSemigroup.toAddCommMagma"
+    },
+    {
+     "decl": 2743,
+     "name": "PseudoMetricSpace.toDist"
+    },
+    {
+     "decl": 66847,
+     "name": "IsNonarchimedean"
+    },
+    {
+     "decl": 1654,
+     "name": "AddCommMonoid.toAddCommSemigroup"
+    },
+    {
+     "decl": 2765,
+     "name": "NNReal.toReal"
+    },
+    {
+     "decl": 17855,
+     "name": "IsUltrametricDist"
+    },
+    {
+     "decl": 728,
+     "name": "Real.linearOrder"
+    },
+    {
+     "decl": 729,
+     "name": "AddCommMagma.toAdd"
+    },
+    {
+     "decl": 534649,
+     "name": "IsUltrametricDist.isUltrametricDist_of_isNonarchimedean_norm"
+    }
+   ]
+  },
+  {
+   "artifact": 344768,
+   "decl": 364802,
+   "target": "IsometryEquiv.preimage_sphere",
+   "kind": 0,
+   "band": "101+",
+   "depth": 151,
+   "module": "Mathlib.Topology.MetricSpace.Isometry",
+   "statement_src": "theorem preimage_sphere (h : \u03b1 \u2243\u1d62 \u03b2) (x : \u03b2) (r : \u211d) :\n    h \u207b\u00b9' Metric.sphere x r = Metric.sphere (h.symm x) r",
+   "proof_src": ":= by\n  rw [\u2190 h.isometry.preimage_sphere (h.symm x) r, h.apply_symm_apply]",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 279866,
+     "name": "IsometryEquiv.apply_symm_apply"
+    },
+    {
+     "decl": 583,
+     "name": "Real"
+    },
+    {
+     "decl": 51184,
+     "name": "IsometryEquiv.instEquivLike"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 51185,
+     "name": "IsometryEquiv.symm"
+    },
+    {
+     "decl": 274178,
+     "name": "Isometry.preimage_sphere"
+    },
+    {
+     "decl": 3209,
+     "name": "PseudoMetricSpace"
+    },
+    {
+     "decl": 765,
+     "name": "Set.preimage"
+    },
+    {
+     "decl": 65,
+     "name": "Eq.refl"
+    },
+    {
+     "decl": 663,
+     "name": "Eq.symm"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 23101,
+     "name": "IsometryEquiv"
+    },
+    {
+     "decl": 56564,
+     "name": "IsometryEquiv.isometry"
+    },
+    {
+     "decl": 455,
+     "name": "EquivLike.toFunLike"
+    },
+    {
+     "decl": 1482,
+     "name": "PseudoMetricSpace.toPseudoEMetricSpace"
+    },
+    {
+     "decl": 11590,
+     "name": "Metric.sphere"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 142979,
+   "decl": 156745,
+   "target": "Metric.toUniformSpace_eq",
+   "kind": 0,
+   "band": "101+",
+   "depth": 112,
+   "module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+   "statement_src": "theorem toUniformSpace_eq :\n    \u2039PseudoMetricSpace \u03b1\u203a.toUniformSpace = .ofDist dist dist_self dist_comm dist_triangle",
+   "proof_src": ":=\n  UniformSpace.ext PseudoMetricSpace.uniformity_dist",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 20933,
+     "name": "dist_triangle"
+    },
+    {
+     "decl": 551,
+     "name": "PseudoMetricSpace.toUniformSpace"
+    },
+    {
+     "decl": 28617,
+     "name": "dist_comm"
+    },
+    {
+     "decl": 54818,
+     "name": "PseudoMetricSpace.uniformity_dist"
+    },
+    {
+     "decl": 9076,
+     "name": "dist_self"
+    },
+    {
+     "decl": 140330,
+     "name": "UniformSpace.ext"
+    },
+    {
+     "decl": 3209,
+     "name": "PseudoMetricSpace"
+    },
+    {
+     "decl": 10812,
+     "name": "UniformSpace.ofDist"
+    },
+    {
+     "decl": 2742,
+     "name": "Dist.dist"
+    },
+    {
+     "decl": 2743,
+     "name": "PseudoMetricSpace.toDist"
+    }
+   ]
+  },
+  {
+   "artifact": 211053,
+   "decl": 227648,
+   "target": "NNReal.continuousOn_rpow_const_compl_zero",
+   "kind": 0,
+   "band": "101+",
+   "depth": 201,
+   "module": "Mathlib.Analysis.SpecialFunctions.Pow.Continuity",
+   "statement_src": "theorem continuousOn_rpow_const_compl_zero {r : \u211d} :\n    ContinuousOn (fun z : \u211d\u22650 => z ^ r) {0}\u1d9c",
+   "proof_src": ":=\n  fun _ h => ContinuousAt.continuousWithinAt <| NNReal.continuousAt_rpow_const (.inl h)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 2622,
+     "name": "NNReal.instTopologicalSpace"
+    },
+    {
+     "decl": 582,
+     "name": "Real.instLE"
+    },
+    {
+     "decl": 583,
+     "name": "Real"
+    },
+    {
+     "decl": 1446,
+     "name": "Real.instZero"
+    },
+    {
+     "decl": 5255,
+     "name": "Compl.compl"
+    },
+    {
+     "decl": 35379,
+     "name": "ContinuousAt.continuousWithinAt"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 834,
+     "name": "Set.instSingletonSet"
+    },
+    {
+     "decl": 2609,
+     "name": "NNReal"
+    },
+    {
+     "decl": 91,
+     "name": "Ne"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 5268,
+     "name": "Set.instCompl"
+    },
+    {
+     "decl": 2611,
+     "name": "NNReal.instZero"
+    },
+    {
+     "decl": 50821,
+     "name": "NNReal.continuousAt_rpow_const"
+    },
+    {
+     "decl": 563,
+     "name": "HPow.hPow"
+    },
+    {
+     "decl": 20379,
+     "name": "NNReal.instPowReal"
+    },
+    {
+     "decl": 96,
+     "name": "Zero.toOfNat0"
+    },
+    {
+     "decl": 2596,
+     "name": "Or.inl"
+    },
+    {
+     "decl": 570,
+     "name": "instHPow"
+    },
+    {
+     "decl": 47,
+     "name": "Singleton.singleton"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 479,
+     "name": "Set.instMembership"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 434564,
+   "decl": 456055,
+   "target": "CongruenceSubgroup.Gamma0_is_congruence",
+   "kind": 0,
+   "band": "101+",
+   "depth": 116,
+   "module": "Mathlib.NumberTheory.ModularForms.CongruenceSubgroups",
+   "statement_src": "theorem Gamma0_is_congruence (N : \u2115) [NeZero N] : IsCongruenceSubgroup (Gamma0 N)",
+   "proof_src": ":=\n  isCongruenceSubgroup_trans _ _ (Gamma1_in_Gamma0 N) (Gamma1_is_congruence N)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 828,
+     "name": "Nat.instMulZeroClass"
+    },
+    {
+     "decl": 691039,
+     "name": "CongruenceSubgroup.Gamma1_in_Gamma0"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 23107,
+     "name": "CongruenceSubgroup.Gamma0"
+    },
+    {
+     "decl": 4534,
+     "name": "NeZero"
+    },
+    {
+     "decl": 23105,
+     "name": "CongruenceSubgroup.Gamma1"
+    },
+    {
+     "decl": 216402,
+     "name": "CongruenceSubgroup.Gamma1_is_congruence"
+    },
+    {
+     "decl": 104,
+     "name": "MulZeroClass.toZero"
+    },
+    {
+     "decl": 50393,
+     "name": "CongruenceSubgroup.isCongruenceSubgroup_trans"
+    }
+   ]
+  },
+  {
+   "artifact": 590440,
+   "decl": 613490,
+   "target": "ProbabilityTheory.iIndepSet_iff_iIndepSets_singleton",
+   "kind": 0,
+   "band": "101+",
+   "depth": 198,
+   "module": "Mathlib.Probability.Independence.Basic",
+   "statement_src": "theorem iIndepSet_iff_iIndepSets_singleton {f : \u03b9 \u2192 Set \u03a9} (hf : \u2200 i, MeasurableSet (f i)) :\n    iIndepSet f \u03bc \u2194 iIndepSets (fun i \u21a6 {f i}) \u03bc",
+   "proof_src": ":=\n  Kernel.iIndepSet_iff_iIndepSets_singleton hf",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 920,
+     "name": "Unit.unit"
+    },
+    {
+     "decl": 1493,
+     "name": "MeasureTheory.Measure"
+    },
+    {
+     "decl": 2603,
+     "name": "MeasurableSet"
+    },
+    {
+     "decl": 7661,
+     "name": "MeasureTheory.Measure.dirac"
+    },
+    {
+     "decl": 390,
+     "name": "MeasurableSpace"
+    },
+    {
+     "decl": 923,
+     "name": "Unit"
+    },
+    {
+     "decl": 15931,
+     "name": "PUnit.instMeasurableSpace"
+    },
+    {
+     "decl": 15932,
+     "name": "ProbabilityTheory.Kernel.const"
+    },
+    {
+     "decl": 373940,
+     "name": "ProbabilityTheory.Kernel.iIndepSet_iff_iIndepSets_singleton"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 40165,
+   "decl": 46421,
+   "target": "edist_nndist",
+   "kind": 0,
+   "band": "101+",
+   "depth": 113,
+   "module": "Mathlib.Topology.MetricSpace.Pseudo.Defs",
+   "statement_src": "theorem edist_nndist (x y : \u03b1) : edist x y = nndist x y",
+   "proof_src": ":= by\n  rw [edist_dist, dist_nndist, ENNReal.ofReal_coe_nnreal]",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 12,
+     "name": "Eq.mpr"
+    },
+    {
+     "decl": 9246,
+     "name": "NNDist.nndist"
+    },
+    {
+     "decl": 583,
+     "name": "Real"
+    },
+    {
+     "decl": 2601,
+     "name": "ENNReal.ofNNReal"
+    },
+    {
+     "decl": 2604,
+     "name": "ENNReal.ofReal"
+    },
+    {
+     "decl": 16,
+     "name": "congrArg"
+    },
+    {
+     "decl": 9247,
+     "name": "PseudoMetricSpace.toNNDist"
+    },
+    {
+     "decl": 20,
+     "name": "id"
+    },
+    {
+     "decl": 61588,
+     "name": "dist_nndist"
+    },
+    {
+     "decl": 3209,
+     "name": "PseudoMetricSpace"
+    },
+    {
+     "decl": 149603,
+     "name": "edist_dist"
+    },
+    {
+     "decl": 54817,
+     "name": "PseudoMetricSpace.toEDist"
+    },
+    {
+     "decl": 2717,
+     "name": "ENNReal.ofReal_coe_nnreal"
+    },
+    {
+     "decl": 2616,
+     "name": "ENNReal"
+    },
+    {
+     "decl": 65,
+     "name": "Eq.refl"
+    },
+    {
+     "decl": 2742,
+     "name": "Dist.dist"
+    },
+    {
+     "decl": 2743,
+     "name": "PseudoMetricSpace.toDist"
+    },
+    {
+     "decl": 8749,
+     "name": "EDist.edist"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 2765,
+     "name": "NNReal.toReal"
+    }
+   ]
+  },
+  {
+   "artifact": 414920,
+   "decl": 436149,
+   "target": "CategoryTheory.Arrow.leftHomotopic",
+   "kind": 1,
+   "band": "11-25",
+   "depth": 15,
+   "module": "Mathlib.CategoryTheory.Preadditive.FreydCategory.Homotopy",
+   "statement_src": "def leftHomotopic : HomRel (Arrow V)",
+   "proof_src": ":= fun _ _ f g => Nonempty (LeftHomotopy f g)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 398,
+     "name": "Quiver.Hom"
+    },
+    {
+     "decl": 4755,
+     "name": "CategoryTheory.Preadditive"
+    },
+    {
+     "decl": 78836,
+     "name": "CategoryTheory.Arrow.LeftHomotopy"
+    },
+    {
+     "decl": 967,
+     "name": "Nonempty"
+    },
+    {
+     "decl": 11998,
+     "name": "CategoryTheory.Arrow"
+    },
+    {
+     "decl": 42405,
+     "name": "CategoryTheory.instQuiverArrow"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    }
+   ]
+  },
+  {
+   "artifact": 14865,
+   "decl": 17652,
+   "target": "Submonoid.topEquiv",
+   "kind": 1,
+   "band": "11-25",
+   "depth": 16,
+   "module": "Mathlib.Algebra.Group.Submonoid.Operations",
+   "statement_src": "def topEquiv : (\u22a4 : Submonoid M) \u2243* M",
+   "proof_src": "where\n  toFun x := x\n  invFun x := \u27e8x, mem_top x\u27e9\n  left_inv x := x.eta _\n  map_mul' _ _ := rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 29881,
+     "name": "Submonoid.mem_top"
+    },
+    {
+     "decl": 7888,
+     "name": "Submonoid.mul"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 6739,
+     "name": "Equiv.mk"
+    },
+    {
+     "decl": 441,
+     "name": "MulOne.toMul"
+    },
+    {
+     "decl": 158,
+     "name": "Subtype"
+    },
+    {
+     "decl": 9481,
+     "name": "Submonoid.instTop"
+    },
+    {
+     "decl": 188,
+     "name": "Subtype.mk"
+    },
+    {
+     "decl": 22,
+     "name": "MulOneClass.toMulOne"
+    },
+    {
+     "decl": 1661,
+     "name": "Submonoid.instSetLike"
+    },
+    {
+     "decl": 7653,
+     "name": "MulOneClass"
+    },
+    {
+     "decl": 191,
+     "name": "Top.top"
+    },
+    {
+     "decl": 195,
+     "name": "Subtype.val"
+    },
+    {
+     "decl": 452,
+     "name": "MulEquiv.mk"
+    },
+    {
+     "decl": 11,
+     "name": "SetLike.instMembership"
+    },
+    {
+     "decl": 1663,
+     "name": "Submonoid"
+    }
+   ]
+  },
+  {
+   "artifact": 348410,
+   "decl": 368520,
+   "target": "SimpleGraph.Hom.map",
+   "kind": 1,
+   "band": "11-25",
+   "depth": 18,
+   "module": "Mathlib.Combinatorics.SimpleGraph.Maps",
+   "statement_src": "protected def map (f : V \u2192 W) (G : SimpleGraph V) (h : \u2200 {u v}, G.Adj u v \u2192 f u \u2260 f v) :\n    G \u2192g G.map f",
+   "proof_src": "where\n  toFun := f\n  map_rel' {u v} hadj := \u27e8h hadj, u, v, hadj, rfl, rfl\u27e9",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 6467,
+     "name": "SimpleGraph.Adj"
+    },
+    {
+     "decl": 91,
+     "name": "Ne"
+    },
+    {
+     "decl": 1676,
+     "name": "SimpleGraph"
+    },
+    {
+     "decl": 21619,
+     "name": "RelHom.mk"
+    },
+    {
+     "decl": 83138,
+     "name": "SimpleGraph.map"
+    }
+   ]
+  },
+  {
+   "artifact": 8117,
+   "decl": 9854,
+   "target": "CategoryTheory.Idempotents.Karoubi.instCategory",
+   "kind": 1,
+   "band": "11-25",
+   "depth": 12,
+   "module": "Mathlib.CategoryTheory.Idempotents.Karoubi",
+   "statement_src": "instance : Category (Karoubi C)",
+   "proof_src": "where\n  Hom := Karoubi.Hom\n  id P := \u27e8P.p, by repeat' rw [P.idem]\u27e9\n  comp f g := \u27e8f.f \u226b g.f, Karoubi.comp_proof g f\u27e9",
+   "statement_how": "anon-instance",
+   "candidates": [
+    {
+     "decl": 9850,
+     "name": "CategoryTheory.Idempotents.Karoubi.Hom.f"
+    },
+    {
+     "decl": 9851,
+     "name": "CategoryTheory.Idempotents.Karoubi"
+    },
+    {
+     "decl": 34537,
+     "name": "CategoryTheory.Category.mk"
+    },
+    {
+     "decl": 9852,
+     "name": "CategoryTheory.Idempotents.Karoubi.p"
+    },
+    {
+     "decl": 548635,
+     "name": "CategoryTheory.Idempotents.Karoubi.comp_proof"
+    },
+    {
+     "decl": 9853,
+     "name": "CategoryTheory.Idempotents.Karoubi.X"
+    },
+    {
+     "decl": 54475,
+     "name": "CategoryTheory.Idempotents.Karoubi.Hom"
+    },
+    {
+     "decl": 401,
+     "name": "CategoryTheory.CategoryStruct.comp"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 28118,
+     "name": "CategoryTheory.Idempotents.Karoubi.Hom.mk"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    }
+   ]
+  },
+  {
+   "artifact": 308728,
+   "decl": 328020,
+   "target": "FirstOrder.Language.Embedding.domRestrict",
+   "kind": 1,
+   "band": "11-25",
+   "depth": 20,
+   "module": "Mathlib.ModelTheory.Substructures",
+   "statement_src": "def domRestrict (f : M \u21aa[L] N) (p : L.Substructure M) : p \u21aa[L] N",
+   "proof_src": ":=\n  f.comp p.subtype",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 7785,
+     "name": "FirstOrder.Language.Embedding.comp"
+    },
+    {
+     "decl": 8707,
+     "name": "FirstOrder.Language.Substructure.inducedStructure"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 8708,
+     "name": "FirstOrder.Language.Substructure.instSetLike"
+    },
+    {
+     "decl": 158,
+     "name": "Subtype"
+    },
+    {
+     "decl": 7786,
+     "name": "FirstOrder.Language.Embedding"
+    },
+    {
+     "decl": 8709,
+     "name": "FirstOrder.Language.Substructure"
+    },
+    {
+     "decl": 2583,
+     "name": "FirstOrder.Language.Structure"
+    },
+    {
+     "decl": 2585,
+     "name": "FirstOrder.Language"
+    },
+    {
+     "decl": 8717,
+     "name": "FirstOrder.Language.Substructure.subtype"
+    },
+    {
+     "decl": 11,
+     "name": "SetLike.instMembership"
+    }
+   ]
+  },
+  {
+   "artifact": 15257,
+   "decl": 18138,
+   "target": "RelIso.instFunLike",
+   "kind": 1,
+   "band": "11-25",
+   "depth": 20,
+   "module": "Mathlib.Order.RelIso.Basic",
+   "statement_src": "instance : FunLike (r \u2243r s) \u03b1 \u03b2",
+   "proof_src": "where\n  coe x := x\n  coe_injective := Equiv.coe_fn_injective.comp toEquiv_injective",
+   "statement_how": "anon-instance",
+   "candidates": [
+    {
+     "decl": 33166,
+     "name": "DFunLike.mk"
+    },
+    {
+     "decl": 18136,
+     "name": "RelIso"
+    },
+    {
+     "decl": 758,
+     "name": "RelEmbedding"
+    },
+    {
+     "decl": 25791,
+     "name": "RelIso.toRelEmbedding"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 760,
+     "name": "RelEmbedding.instFunLike"
+    }
+   ]
+  },
+  {
+   "artifact": 372189,
+   "decl": 392763,
+   "target": "OpenAddSubgroup.instInhabited",
+   "kind": 1,
+   "band": "11-25",
+   "depth": 15,
+   "module": "Mathlib.Topology.Algebra.OpenSubgroup",
+   "statement_src": "instance : Inhabited (OpenSubgroup G)",
+   "proof_src": ":=\n  \u27e8\u22a4\u27e9",
+   "statement_how": "anon-instance",
+   "candidates": [
+    {
+     "decl": 84656,
+     "name": "OpenAddSubgroup.instTop"
+    },
+    {
+     "decl": 864,
+     "name": "TopologicalSpace"
+    },
+    {
+     "decl": 60858,
+     "name": "OpenAddSubgroup"
+    },
+    {
+     "decl": 283,
+     "name": "AddGroup"
+    },
+    {
+     "decl": 191,
+     "name": "Top.top"
+    },
+    {
+     "decl": 2788,
+     "name": "Inhabited.mk"
+    }
+   ]
+  },
+  {
+   "artifact": 187797,
+   "decl": 203534,
+   "target": "WithTop.subtypeOrderIso",
+   "kind": 1,
+   "band": "11-25",
+   "depth": 21,
+   "module": "Mathlib.Order.Hom.WithTopBot",
+   "statement_src": "def subtypeOrderIso [PartialOrder \u03b1] [OrderTop \u03b1] [DecidablePred (\u00b7 = (\u22a4 : \u03b1))] :\n    WithTop {a : \u03b1 // a \u2260 \u22a4} \u2243o \u03b1",
+   "proof_src": "where\n  toFun a := (a.map (\u2191)).untopD \u22a4\n  invFun a := if h : a = \u22a4 then \u22a4 else .some \u27e8a, h\u27e9\n  left_inv\n  | .some \u27e8a, h\u27e9 => by simp [h]\n  | \u22a4 => by simp\n  right_inv a := by dsimp only; split_ifs <;> simp [*]\n  map_rel_iff' {a b} := match a, b with\n  | .some a, .some b => by simp\n  | \u22a4, .some \u27e8b, h\u27e9 => by simp [h]\n  | a, \u22a4 => by simp",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 13464,
+     "name": "RelIso.mk"
+    },
+    {
+     "decl": 14533,
+     "name": "WithTop.instPreorder"
+    },
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 15269,
+     "name": "WithTop.map"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 6739,
+     "name": "Equiv.mk"
+    },
+    {
+     "decl": 514,
+     "name": "PartialOrder"
+    },
+    {
+     "decl": 158,
+     "name": "Subtype"
+    },
+    {
+     "decl": 91,
+     "name": "Ne"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 10113,
+     "name": "OrderTop"
+    },
+    {
+     "decl": 986,
+     "name": "WithTop.some"
+    },
+    {
+     "decl": 534,
+     "name": "dite"
+    },
+    {
+     "decl": 188,
+     "name": "Subtype.mk"
+    },
+    {
+     "decl": 1778,
+     "name": "OrderTop.toTop"
+    },
+    {
+     "decl": 6645,
+     "name": "WithTop.top"
+    },
+    {
+     "decl": 899,
+     "name": "DecidablePred"
+    },
+    {
+     "decl": 91575,
+     "name": "WithTop.untopD"
+    },
+    {
+     "decl": 191,
+     "name": "Top.top"
+    },
+    {
+     "decl": 195,
+     "name": "Subtype.val"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 120,
+     "name": "Not"
+    },
+    {
+     "decl": 9350,
+     "name": "Subtype.preorder"
+    },
+    {
+     "decl": 1449,
+     "name": "WithTop"
+    }
+   ]
+  },
+  {
+   "artifact": 7582,
+   "decl": 9227,
+   "target": "CategoryTheory.ShortComplex.instPreadditive",
+   "kind": 1,
+   "band": "11-25",
+   "depth": 23,
+   "module": "Mathlib.Algebra.Homology.ShortComplex.Preadditive",
+   "statement_src": "instance : Preadditive (ShortComplex C)",
+   "proof_src": "where",
+   "statement_how": "anon-instance",
+   "candidates": [
+    {
+     "decl": 10180,
+     "name": "CategoryTheory.Preadditive.mk"
+    },
+    {
+     "decl": 397,
+     "name": "CategoryTheory.CategoryStruct.toQuiver"
+    },
+    {
+     "decl": 398,
+     "name": "Quiver.Hom"
+    },
+    {
+     "decl": 2822,
+     "name": "CategoryTheory.ShortComplex"
+    },
+    {
+     "decl": 4754,
+     "name": "CategoryTheory.ShortComplex.instCategory"
+    },
+    {
+     "decl": 1991,
+     "name": "inferInstance"
+    },
+    {
+     "decl": 157,
+     "name": "AddCommGroup"
+    },
+    {
+     "decl": 4755,
+     "name": "CategoryTheory.Preadditive"
+    },
+    {
+     "decl": 295752,
+     "name": "CategoryTheory.ShortComplex.instAddCommGroupHom"
+    },
+    {
+     "decl": 2835,
+     "name": "CategoryTheory.Preadditive.preadditiveHasZeroMorphisms"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    }
+   ]
+  },
+  {
+   "artifact": 154854,
+   "decl": 169165,
+   "target": "OrderType.instOrderBot",
+   "kind": 1,
+   "band": "26-50",
+   "depth": 31,
+   "module": "Mathlib.Order.Types.Defs",
+   "statement_src": "instance : OrderBot OrderType",
+   "proof_src": "where\n  bot := 0\n  bot_le := OrderType.zero_le",
+   "statement_how": "anon-instance",
+   "candidates": [
+    {
+     "decl": 157654,
+     "name": "OrderType.instPreorder"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 23496,
+     "name": "OrderBot.mk"
+    },
+    {
+     "decl": 341163,
+     "name": "OrderType.zero_le"
+    },
+    {
+     "decl": 96,
+     "name": "Zero.toOfNat0"
+    },
+    {
+     "decl": 28908,
+     "name": "OrderType"
+    },
+    {
+     "decl": 28909,
+     "name": "OrderType.instZero"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    }
+   ]
+  },
+  {
+   "artifact": 346305,
+   "decl": 366366,
+   "target": "derangements.Equiv.RemoveNone.fiber",
+   "kind": 1,
+   "band": "26-50",
+   "depth": 26,
+   "module": "Mathlib.Combinatorics.Derangements.Basic",
+   "statement_src": "def RemoveNone.fiber (a : Option \u03b1) : Set (Perm \u03b1)",
+   "proof_src": ":=\n  { f : Perm \u03b1 | (a, f) \u2208 Equiv.Perm.decomposeOption '' derangements (Option \u03b1) }",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 971,
+     "name": "Equiv.instEquivLike"
+    },
+    {
+     "decl": 130063,
+     "name": "Equiv.Perm.decomposeOption"
+    },
+    {
+     "decl": 2578,
+     "name": "Set.ofPred"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 973,
+     "name": "Equiv"
+    },
+    {
+     "decl": 749,
+     "name": "Prod.mk"
+    },
+    {
+     "decl": 4133,
+     "name": "Equiv.Perm"
+    },
+    {
+     "decl": 194,
+     "name": "Set.image"
+    },
+    {
+     "decl": 750,
+     "name": "Prod"
+    },
+    {
+     "decl": 479,
+     "name": "Set.instMembership"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 65223,
+     "name": "derangements"
+    },
+    {
+     "decl": 455,
+     "name": "EquivLike.toFunLike"
+    },
+    {
+     "decl": 509,
+     "name": "Option"
+    },
+    {
+     "decl": 522,
+     "name": "DecidableEq"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 107064,
+   "decl": 118789,
+   "target": "HomotopicalAlgebra.instCategoryWithFibrationsOver",
+   "kind": 1,
+   "band": "26-50",
+   "depth": 29,
+   "module": "Mathlib.AlgebraicTopology.ModelCategory.Over",
+   "statement_src": "instance : CategoryWithFibrations (Over S)",
+   "proof_src": "where\n  fibrations := (fibrations C).over",
+   "statement_how": "anon-instance",
+   "candidates": [
+    {
+     "decl": 3789,
+     "name": "CategoryTheory.Over"
+    },
+    {
+     "decl": 11794,
+     "name": "HomotopicalAlgebra.fibrations"
+    },
+    {
+     "decl": 3793,
+     "name": "CategoryTheory.instCategoryOver"
+    },
+    {
+     "decl": 183926,
+     "name": "CategoryTheory.MorphismProperty.over"
+    },
+    {
+     "decl": 109142,
+     "name": "HomotopicalAlgebra.CategoryWithFibrations.mk"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    },
+    {
+     "decl": 6793,
+     "name": "HomotopicalAlgebra.CategoryWithFibrations"
+    }
+   ]
+  },
+  {
+   "artifact": 407369,
+   "decl": 428507,
+   "target": "CategoryTheory.ShortComplex.asIsoHomology\u03c0",
+   "kind": 1,
+   "band": "26-50",
+   "depth": 38,
+   "module": "Mathlib.Algebra.Homology.ShortComplex.Homology",
+   "statement_src": "noncomputable def asIsoHomology\u03c0 (hf : S.f = 0) [S.HasHomology] :\n    S.cycles \u2245 S.homology",
+   "proof_src": ":= by\n  have := S.isIso_homology\u03c0 hf\n  exact asIso S.homology\u03c0",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 2372,
+     "name": "CategoryTheory.Limits.HasZeroMorphisms"
+    },
+    {
+     "decl": 56779,
+     "name": "CategoryTheory.ShortComplex.homology\u03c0"
+    },
+    {
+     "decl": 2069,
+     "name": "CategoryTheory.IsIso"
+    },
+    {
+     "decl": 502932,
+     "name": "CategoryTheory.ShortComplex.isIso_homology\u03c0"
+    },
+    {
+     "decl": 397,
+     "name": "CategoryTheory.CategoryStruct.toQuiver"
+    },
+    {
+     "decl": 398,
+     "name": "Quiver.Hom"
+    },
+    {
+     "decl": 2822,
+     "name": "CategoryTheory.ShortComplex"
+    },
+    {
+     "decl": 3159,
+     "name": "CategoryTheory.ShortComplex.HasHomology"
+    },
+    {
+     "decl": 4753,
+     "name": "CategoryTheory.ShortComplex.X\u2081"
+    },
+    {
+     "decl": 2379,
+     "name": "CategoryTheory.Limits.HasZeroMorphisms.zero"
+    },
+    {
+     "decl": 3162,
+     "name": "CategoryTheory.ShortComplex.homology"
+    },
+    {
+     "decl": 96,
+     "name": "Zero.toOfNat0"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 4758,
+     "name": "CategoryTheory.ShortComplex.f"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 46047,
+     "name": "CategoryTheory.ShortComplex.cycles"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 20649,
+     "name": "CategoryTheory.asIso"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    },
+    {
+     "decl": 2387,
+     "name": "CategoryTheory.ShortComplex.X\u2082"
+    }
+   ]
+  },
+  {
+   "artifact": 340540,
+   "decl": 360492,
+   "target": "Scott.Is\u03c9Sup",
+   "kind": 1,
+   "band": "26-50",
+   "depth": 26,
+   "module": "Mathlib.Topology.OmegaCompletePartialOrder",
+   "statement_src": "def Is\u03c9Sup {\u03b1 : Type u} [Preorder \u03b1] (c : Chain \u03b1) (x : \u03b1) : Prop",
+   "proof_src": ":=\n  (\u2200 i, c i \u2264 x) \u2227 \u2200 y, (\u2200 i, c i \u2264 y) \u2192 x \u2264 y",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 23,
+     "name": "And"
+    },
+    {
+     "decl": 56138,
+     "name": "OmegaCompletePartialOrder.Chain"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 109738,
+     "name": "OmegaCompletePartialOrder.Chain.instFunLikeNat"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 868,
+     "name": "Preorder"
+    }
+   ]
+  },
+  {
+   "artifact": 28083,
+   "decl": 32845,
+   "target": "HomologicalComplex\u2082.D\u2082",
+   "kind": 1,
+   "band": "26-50",
+   "depth": 36,
+   "module": "Mathlib.Algebra.Homology.TotalComplex",
+   "statement_src": "noncomputable def D\u2082 (i\u2081\u2082 i\u2081\u2082' : I\u2081\u2082) :\n    K.toGradedObject.mapObj (ComplexShape.\u03c0 c\u2081 c\u2082 c\u2081\u2082) i\u2081\u2082 \u27f6\n      K.toGradedObject.mapObj (ComplexShape.\u03c0 c\u2081 c\u2082 c\u2081\u2082) i\u2081\u2082'",
+   "proof_src": ":=\n  GradedObject.descMapObj _ (ComplexShape.\u03c0 c\u2081 c\u2082 c\u2081\u2082)\n    (fun \u27e8i\u2081, i\u2082\u27e9 _ => K.d\u2082 c\u2081\u2082 i\u2081 i\u2082 i\u2081\u2082')",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 397,
+     "name": "CategoryTheory.CategoryStruct.toQuiver"
+    },
+    {
+     "decl": 398,
+     "name": "Quiver.Hom"
+    },
+    {
+     "decl": 32844,
+     "name": "HomologicalComplex\u2082.toGradedObject"
+    },
+    {
+     "decl": 65316,
+     "name": "CategoryTheory.GradedObject.descMapObj"
+    },
+    {
+     "decl": 19537,
+     "name": "HomologicalComplex\u2082.HasTotal"
+    },
+    {
+     "decl": 749,
+     "name": "Prod.mk"
+    },
+    {
+     "decl": 3004,
+     "name": "ComplexShape"
+    },
+    {
+     "decl": 4755,
+     "name": "CategoryTheory.Preadditive"
+    },
+    {
+     "decl": 65319,
+     "name": "HomologicalComplex\u2082.D\u2081"
+    },
+    {
+     "decl": 202292,
+     "name": "HomologicalComplex\u2082.d\u2082"
+    },
+    {
+     "decl": 32846,
+     "name": "ComplexShape.\u03c0"
+    },
+    {
+     "decl": 8281,
+     "name": "TotalComplexShape"
+    },
+    {
+     "decl": 2835,
+     "name": "CategoryTheory.Preadditive.preadditiveHasZeroMorphisms"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 32847,
+     "name": "CategoryTheory.GradedObject.mapObj"
+    },
+    {
+     "decl": 750,
+     "name": "Prod"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    },
+    {
+     "decl": 19544,
+     "name": "HomologicalComplex\u2082"
+    },
+    {
+     "decl": 522,
+     "name": "DecidableEq"
+    }
+   ]
+  },
+  {
+   "artifact": 45054,
+   "decl": 51779,
+   "target": "TensorProduct.liftAux",
+   "kind": 1,
+   "band": "26-50",
+   "depth": 47,
+   "module": "Mathlib.LinearAlgebra.TensorProduct.Basic",
+   "statement_src": "def liftAux : M \u2297[R] N \u2192+ P\u2082",
+   "proof_src": ":=\n  liftAddHom (LinearMap.toAddMonoidHom'.comp <| f'.toAddMonoidHom)\n    fun r m n => by dsimp; rw [LinearMap.map_smul\u209b\u2097\u2082, map_smul\u209b\u2097]",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 47066,
+     "name": "LinearMap.toAddMonoidHom"
+    },
+    {
+     "decl": 51,
+     "name": "CommSemiring.toSemiring"
+    },
+    {
+     "decl": 86,
+     "name": "AddMonoid.toAddZeroClass"
+    },
+    {
+     "decl": 327,
+     "name": "RingHom"
+    },
+    {
+     "decl": 89,
+     "name": "AddZeroClass.toAddZero"
+    },
+    {
+     "decl": 235751,
+     "name": "LinearMap.toAddMonoidHom'"
+    },
+    {
+     "decl": 3226,
+     "name": "AddMonoidHom.instAddCommMonoid"
+    },
+    {
+     "decl": 160,
+     "name": "LinearMap.module"
+    },
+    {
+     "decl": 136,
+     "name": "LinearMap"
+    },
+    {
+     "decl": 92,
+     "name": "AddCommMonoid"
+    },
+    {
+     "decl": 138,
+     "name": "CommSemiring"
+    },
+    {
+     "decl": 2304,
+     "name": "LinearMap.addMonoid"
+    },
+    {
+     "decl": 143214,
+     "name": "TensorProduct.liftAddHom"
+    },
+    {
+     "decl": 169,
+     "name": "LinearMap.addCommMonoid"
+    },
+    {
+     "decl": 100,
+     "name": "AddCommMonoid.toAddMonoid"
+    },
+    {
+     "decl": 101,
+     "name": "Module"
+    },
+    {
+     "decl": 1283,
+     "name": "AddMonoidHom"
+    },
+    {
+     "decl": 146,
+     "name": "Semiring.toNonAssocSemiring"
+    },
+    {
+     "decl": 3929,
+     "name": "AddMonoidHom.comp"
+    }
+   ]
+  },
+  {
+   "artifact": 480381,
+   "decl": 502484,
+   "target": "Flag.instGradeOrderSubtypeMem",
+   "kind": 1,
+   "band": "26-50",
+   "depth": 28,
+   "module": "Mathlib.Order.Grade",
+   "statement_src": "instance [GradeOrder \ud835\udd46 \u03b1] (s : Flag \u03b1) : GradeOrder \ud835\udd46 s",
+   "proof_src": ":=\n  .liftRight _ (Subtype.strictMono_coe _) fun _ _ \u21a6 coe_covBy_coe.2",
+   "statement_how": "anon-instance",
+   "candidates": [
+    {
+     "decl": 494883,
+     "name": "GradeOrder.liftRight"
+    },
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 2,
+     "name": "Membership.mem"
+    },
+    {
+     "decl": 514,
+     "name": "PartialOrder"
+    },
+    {
+     "decl": 158,
+     "name": "Subtype"
+    },
+    {
+     "decl": 86154,
+     "name": "Flag.instSetLike"
+    },
+    {
+     "decl": 86155,
+     "name": "Flag"
+    },
+    {
+     "decl": 195,
+     "name": "Subtype.val"
+    },
+    {
+     "decl": 11,
+     "name": "SetLike.instMembership"
+    },
+    {
+     "decl": 868,
+     "name": "Preorder"
+    },
+    {
+     "decl": 91817,
+     "name": "GradeOrder"
+    },
+    {
+     "decl": 9350,
+     "name": "Subtype.preorder"
+    }
+   ]
+  },
+  {
+   "artifact": 145278,
+   "decl": 159148,
+   "target": "partialFunEquivPointed",
+   "kind": 1,
+   "band": "26-50",
+   "depth": 26,
+   "module": "Mathlib.CategoryTheory.Category.PartialFun",
+   "statement_src": "noncomputable def partialFunEquivPointed : PartialFun.{u} \u224c Pointed",
+   "proof_src": "where\n  functor := partialFunToPointed\n  inverse := pointedToPartialFun\n  unitIso := NatIso.ofComponents (fun X => PartialFun.Iso.mk\n      { toFun := fun a => \u27e8some a, some_ne_none a\u27e9\n        invFun := fun a => Option.get _ (Option.ne_none_iff_isSome.1 a.2)\n        left_inv := fun _ => Option.get_some _ _\n        right_inv := fun a => by simp only [some_get, Subtype.coe_eta] })\n      fun f =>\n        PFun.ext fun a b => by\n          dsimp [PartialFun.Iso.mk, CategoryStruct.comp, pointedToPartialFun]\n          rw [Part.bind_some]\n          refine (Part.mem_bind_iff.trans ?_).trans PFun.mem_toSubtype_iff.symm\n          obtain \u27e8b | b, hb\u27e9 := b\n          \u00b7 exact (hb rfl).elim\n          \u00b7 simp only [ne_eq, Part.mem_some_iff]\n            classical\n            refine \u27e8fun \u27e8w, hw, h\u27e9 \u21a6 ?_, fun h \u21a6 \u27e8b, Part.mem_toOption.mp h.symm, rfl\u27e9\u27e9\n            rw [Subtype.ext_iff] at h\n            dsimp at h\n            rw [h]\n            rw [\u2190 Part.mem_toOption, mem_def] at hw\n            exact hw.symm\n  counitIso :=\n    NatIso.ofComponents\n      (fun X \u21a6 Pointed.Iso.mk (by classical exact Equiv.optionSubtypeNe X.point) rfl)\n      fun {X Y} f \u21a6 Pointed.Hom.ext <| funext fun a \u21a6 by\n        obtain _ | \u27e8a, ha\u27e9 := a\n        \u00b7 exact f.map_point.symm\n        simp_all [Equiv.optionSubtypeNe, Equiv.optionSubtype,\n          Option.casesOn'_eq_elim, Part.elim_toOption]\n  functor_unitIso_comp X := by\n    ext (_ | x)\n    \u00b7 rfl\n    \u00b7 simp\n      rfl",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1563,
+     "name": "CategoryTheory.Functor.comp"
+    },
+    {
+     "decl": 528,
+     "name": "Classical.propDecidable"
+    },
+    {
+     "decl": 13806,
+     "name": "Pointed"
+    },
+    {
+     "decl": 859,
+     "name": "Option.some"
+    },
+    {
+     "decl": 3243,
+     "name": "CategoryTheory.Functor.id"
+    },
+    {
+     "decl": 6739,
+     "name": "Equiv.mk"
+    },
+    {
+     "decl": 91,
+     "name": "Ne"
+    },
+    {
+     "decl": 13809,
+     "name": "Pointed.largeCategory"
+    },
+    {
+     "decl": 19335,
+     "name": "CategoryTheory.Equivalence.mk'"
+    },
+    {
+     "decl": 188,
+     "name": "Subtype.mk"
+    },
+    {
+     "decl": 21932,
+     "name": "Pointed.point"
+    },
+    {
+     "decl": 182115,
+     "name": "Pointed.Iso.mk"
+    },
+    {
+     "decl": 4577,
+     "name": "Option.get"
+    },
+    {
+     "decl": 152844,
+     "name": "pointedToPartialFun"
+    },
+    {
+     "decl": 21927,
+     "name": "PartialFun.largeCategory"
+    },
+    {
+     "decl": 9293,
+     "name": "Equiv.optionSubtypeNe"
+    },
+    {
+     "decl": 185732,
+     "name": "PartialFun.Iso.mk"
+    },
+    {
+     "decl": 21928,
+     "name": "PartialFun"
+    },
+    {
+     "decl": 195,
+     "name": "Subtype.val"
+    },
+    {
+     "decl": 21929,
+     "name": "Pointed.X"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 210,
+     "name": "CategoryTheory.Functor.obj"
+    },
+    {
+     "decl": 152845,
+     "name": "partialFunToPointed"
+    },
+    {
+     "decl": 11321,
+     "name": "CategoryTheory.NatIso.ofComponents"
+    }
+   ]
+  },
+  {
+   "artifact": 3561,
+   "decl": 4330,
+   "target": "Ordinal.preOmega",
+   "kind": 1,
+   "band": "51-100",
+   "depth": 86,
+   "module": "Mathlib.SetTheory.Cardinal.Aleph",
+   "statement_src": "def preOmega : Ordinal.{u} \u21aao Ordinal.{u}",
+   "proof_src": "where\n  toFun := enumOrd {x | IsInitial x}\n  inj' _ _ h := enumOrd_injective not_bddAbove_isInitial h\n  map_rel_iff' := enumOrd_le_enumOrd not_bddAbove_isInitial",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 22422,
+     "name": "RelEmbedding.mk"
+    },
+    {
+     "decl": 1093,
+     "name": "Ordinal.partialOrder"
+    },
+    {
+     "decl": 2578,
+     "name": "Set.ofPred"
+    },
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 22423,
+     "name": "Function.Embedding.mk"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 65807,
+     "name": "Ordinal.enumOrd"
+    },
+    {
+     "decl": 35952,
+     "name": "Ordinal.IsInitial"
+    },
+    {
+     "decl": 1113,
+     "name": "Ordinal"
+    }
+   ]
+  },
+  {
+   "artifact": 276649,
+   "decl": 295216,
+   "target": "CategoryTheory.Functor.mapTriangleOpCompTriangleOpEquivalenceFunctorApp",
+   "kind": 1,
+   "band": "51-100",
+   "depth": 67,
+   "module": "Mathlib.CategoryTheory.Triangulated.Opposite.Functor",
+   "statement_src": "noncomputable def mapTriangleOpCompTriangleOpEquivalenceFunctorApp (T : Triangle C) :\n    (triangleOpEquivalence D).functor.obj (op (F.mapTriangle.obj T)) \u2245\n      F.op.mapTriangle.obj ((triangleOpEquivalence C).functor.obj (op T))",
+   "proof_src": ":=\n  Triangle.isoMk _ _ (Iso.refl _) (Iso.refl _) (Iso.refl _) (by simp) (by simp)\n      (by simp [shift_map_op, map_opShiftFunctorEquivalence_counitIso_inv_app_unop])",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 1554,
+     "name": "CategoryTheory.Functor.op"
+    },
+    {
+     "decl": 198,
+     "name": "CategoryTheory.Functor"
+    },
+    {
+     "decl": 199,
+     "name": "Opposite"
+    },
+    {
+     "decl": 13773,
+     "name": "CategoryTheory.Pretriangulated.Triangle.obj\u2081"
+    },
+    {
+     "decl": 2820,
+     "name": "CategoryTheory.Pretriangulated.Triangle.obj\u2083"
+    },
+    {
+     "decl": 2924,
+     "name": "CategoryTheory.Iso.refl"
+    },
+    {
+     "decl": 3792,
+     "name": "CategoryTheory.Equivalence.functor"
+    },
+    {
+     "decl": 558,
+     "name": "Int"
+    },
+    {
+     "decl": 2826,
+     "name": "Int.instAddMonoid"
+    },
+    {
+     "decl": 13775,
+     "name": "CategoryTheory.Pretriangulated.Triangle"
+    },
+    {
+     "decl": 19306,
+     "name": "CategoryTheory.Pretriangulated.Opposite.instHasShiftOppositeInt"
+    },
+    {
+     "decl": 42138,
+     "name": "CategoryTheory.Functor.mapTriangle"
+    },
+    {
+     "decl": 101487,
+     "name": "CategoryTheory.Pretriangulated.triangleOpEquivalence"
+    },
+    {
+     "decl": 100776,
+     "name": "CategoryTheory.Pretriangulated.Triangle.isoMk"
+    },
+    {
+     "decl": 1570,
+     "name": "Opposite.op"
+    },
+    {
+     "decl": 13776,
+     "name": "CategoryTheory.Pretriangulated.triangleCategory"
+    },
+    {
+     "decl": 207,
+     "name": "CategoryTheory.Category.opposite"
+    },
+    {
+     "decl": 2839,
+     "name": "CategoryTheory.Pretriangulated.Triangle.obj\u2082"
+    },
+    {
+     "decl": 97189,
+     "name": "CategoryTheory.Pretriangulated.Opposite.commShiftFunctorOpInt"
+    },
+    {
+     "decl": 6715,
+     "name": "CategoryTheory.HasShift"
+    },
+    {
+     "decl": 210,
+     "name": "CategoryTheory.Functor.obj"
+    },
+    {
+     "decl": 10250,
+     "name": "CategoryTheory.Functor.CommShift"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    }
+   ]
+  },
+  {
+   "artifact": 361467,
+   "decl": 381864,
+   "target": "CategoryTheory.LocalizerMorphism.inv",
+   "kind": 1,
+   "band": "51-100",
+   "depth": 61,
+   "module": "Mathlib.CategoryTheory.Localization.LocalizerMorphism",
+   "statement_src": "noncomputable def inv : LocalizerMorphism W\u2082 W\u2081",
+   "proof_src": "where\n  functor := \u03a6.functor.inv\n  map := by\n    simp only [\u2190 \u03a6.inverseImage_eq]\n    intro X Y f hf\n    exact (W\u2082.arrow_mk_iso_iff\n      (Arrow.isoMk (\u03a6.functor.asEquivalence.counitIso.app _)\n        (\u03a6.functor.asEquivalence.counitIso.app _))).2 hf",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 2067,
+     "name": "CategoryTheory.MorphismProperty"
+    },
+    {
+     "decl": 74937,
+     "name": "CategoryTheory.LocalizerMorphism.IsInduced"
+    },
+    {
+     "decl": 10587,
+     "name": "CategoryTheory.LocalizerMorphism.functor"
+    },
+    {
+     "decl": 2072,
+     "name": "CategoryTheory.MorphismProperty.RespectsIso"
+    },
+    {
+     "decl": 45345,
+     "name": "CategoryTheory.LocalizerMorphism.mk"
+    },
+    {
+     "decl": 33657,
+     "name": "CategoryTheory.Functor.inv"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 9403,
+     "name": "CategoryTheory.Functor.IsEquivalence"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    },
+    {
+     "decl": 24655,
+     "name": "CategoryTheory.LocalizerMorphism"
+    }
+   ]
+  },
+  {
+   "artifact": 84711,
+   "decl": 94824,
+   "target": "LocallyConstant.congrRight\u2090",
+   "kind": 1,
+   "band": "51-100",
+   "depth": 83,
+   "module": "Mathlib.Topology.LocallyConstant.Algebra",
+   "statement_src": "def congrRight\u2090 (R : Type*) [CommSemiring R] [Semiring Y] [Algebra R Y] [Semiring Z] [Algebra R Z]\n    (e : Y \u2243\u2090[R] Z) : LocallyConstant X Y \u2243\u2090[R] LocallyConstant X Z",
+   "proof_src": "where\n  toEquiv := congrRight e\n  __ := map\u2090 R e.toAlgHom",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 5755,
+     "name": "AlgEquiv.instEquivLike"
+    },
+    {
+     "decl": 12784,
+     "name": "AlgEquiv.toAlgHom"
+    },
+    {
+     "decl": 2545,
+     "name": "AlgHom"
+    },
+    {
+     "decl": 93529,
+     "name": "LocallyConstant.instSemiring"
+    },
+    {
+     "decl": 52,
+     "name": "Algebra"
+    },
+    {
+     "decl": 973,
+     "name": "Equiv"
+    },
+    {
+     "decl": 1100,
+     "name": "LocallyConstant"
+    },
+    {
+     "decl": 33308,
+     "name": "AlgEquiv.mk"
+    },
+    {
+     "decl": 138,
+     "name": "CommSemiring"
+    },
+    {
+     "decl": 864,
+     "name": "TopologicalSpace"
+    },
+    {
+     "decl": 93530,
+     "name": "LocallyConstant.instAlgebra"
+    },
+    {
+     "decl": 3433,
+     "name": "AlgEquiv"
+    },
+    {
+     "decl": 461798,
+     "name": "LocallyConstant.map\u2090"
+    },
+    {
+     "decl": 454921,
+     "name": "LocallyConstant.congrRight"
+    },
+    {
+     "decl": 95,
+     "name": "Semiring"
+    },
+    {
+     "decl": 453,
+     "name": "EquivLike.toEquiv"
+    }
+   ]
+  },
+  {
+   "artifact": 103396,
+   "decl": 114892,
+   "target": "AddGroup.nilpotencyClass",
+   "kind": 1,
+   "band": "51-100",
+   "depth": 86,
+   "module": "Mathlib.GroupTheory.Nilpotent",
+   "statement_src": "noncomputable def Group.nilpotencyClass : \u2115",
+   "proof_src": ":=\n  if hG : IsNilpotent G then Nat.find hG.nilpotent else 0",
+   "statement_how": "lastcomp",
+   "candidates": [
+    {
+     "decl": 6012,
+     "name": "AddGroup.IsNilpotent"
+    },
+    {
+     "decl": 528,
+     "name": "Classical.propDecidable"
+    },
+    {
+     "decl": 3,
+     "name": "instOfNatNat"
+    },
+    {
+     "decl": 534,
+     "name": "dite"
+    },
+    {
+     "decl": 3024,
+     "name": "AddSubgroup"
+    },
+    {
+     "decl": 129549,
+     "name": "AddGroup.IsNilpotent.nilpotent"
+    },
+    {
+     "decl": 283,
+     "name": "AddGroup"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 47311,
+     "name": "AddSubgroup.upperCentralSeries"
+    },
+    {
+     "decl": 11173,
+     "name": "Nat.find"
+    },
+    {
+     "decl": 191,
+     "name": "Top.top"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 30789,
+     "name": "AddSubgroup.instTop"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 120,
+     "name": "Not"
+    }
+   ]
+  },
+  {
+   "artifact": 293316,
+   "decl": 312269,
+   "target": "PreAbstractSimplicialComplex.instSetLikeFinset",
+   "kind": 1,
+   "band": "51-100",
+   "depth": 59,
+   "module": "Mathlib.AlgebraicTopology.SimplicialComplex.Basic",
+   "statement_src": "instance : SetLike (PreAbstractSimplicialComplex \u03b9) (Finset \u03b9)",
+   "proof_src": "where\n  coe K := K.faces\n  coe_injective K _ _ := by\n    cases K\n    congr",
+   "statement_how": "anon-instance",
+   "candidates": [
+    {
+     "decl": 14426,
+     "name": "PreAbstractSimplicialComplex.faces"
+    },
+    {
+     "decl": 1,
+     "name": "Finset"
+    },
+    {
+     "decl": 18340,
+     "name": "SetLike.mk"
+    },
+    {
+     "decl": 14429,
+     "name": "PreAbstractSimplicialComplex"
+    },
+    {
+     "decl": 30,
+     "name": "Eq"
+    },
+    {
+     "decl": 43,
+     "name": "Set"
+    }
+   ]
+  },
+  {
+   "artifact": 93593,
+   "decl": 104397,
+   "target": "LinearMap.HasFiniteRange",
+   "kind": 1,
+   "band": "51-100",
+   "depth": 55,
+   "module": "Mathlib.Algebra.Module.LinearMap.FiniteRange",
+   "statement_src": "def HasFiniteRange (f : V \u2192\u2097[K] V\u2082) : Prop",
+   "proof_src": ":=\n  f.range.FG",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 833,
+     "name": "LinearMap.range"
+    },
+    {
+     "decl": 136,
+     "name": "LinearMap"
+    },
+    {
+     "decl": 31539,
+     "name": "Submodule.FG"
+    },
+    {
+     "decl": 92,
+     "name": "AddCommMonoid"
+    },
+    {
+     "decl": 95,
+     "name": "Semiring"
+    },
+    {
+     "decl": 101,
+     "name": "Module"
+    },
+    {
+     "decl": 145,
+     "name": "RingHom.id"
+    },
+    {
+     "decl": 146,
+     "name": "Semiring.toNonAssocSemiring"
+    }
+   ]
+  },
+  {
+   "artifact": 57287,
+   "decl": 65174,
+   "target": "IsFractionRing.ringEquivOfRingEquiv",
+   "kind": 1,
+   "band": "51-100",
+   "depth": 58,
+   "module": "Mathlib.RingTheory.Localization.FractionRing",
+   "statement_src": "noncomputable def ringEquivOfRingEquiv : K \u2243+* L",
+   "proof_src": ":=\n  IsLocalization.ringEquivOfRingEquiv K L h (MulEquivClass.map_nonZeroDivisors h)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 50,
+     "name": "CommRing"
+    },
+    {
+     "decl": 51,
+     "name": "CommSemiring.toSemiring"
+    },
+    {
+     "decl": 3701,
+     "name": "IsFractionRing"
+    },
+    {
+     "decl": 52,
+     "name": "Algebra"
+    },
+    {
+     "decl": 3899,
+     "name": "nonZeroDivisors"
+    },
+    {
+     "decl": 1072,
+     "name": "Distrib.toAdd"
+    },
+    {
+     "decl": 144424,
+     "name": "IsLocalization.ringEquivOfRingEquiv"
+    },
+    {
+     "decl": 162,
+     "name": "instDistribOfSemiring"
+    },
+    {
+     "decl": 56,
+     "name": "CommRing.toCommSemiring"
+    },
+    {
+     "decl": 167,
+     "name": "Distrib.toMul"
+    },
+    {
+     "decl": 7396,
+     "name": "RingEquiv"
+    },
+    {
+     "decl": 2223,
+     "name": "Semiring.toMonoidWithZero"
+    }
+   ]
+  },
+  {
+   "artifact": 111283,
+   "decl": 123248,
+   "target": "AlgebraicGeometry.PresheafedSpace.forget",
+   "kind": 1,
+   "band": "51-100",
+   "depth": 82,
+   "module": "Mathlib.Geometry.RingedSpace.PresheafedSpace",
+   "statement_src": "def forget : PresheafedSpace C \u2964 TopCat",
+   "proof_src": "where\n  obj X := (X : TopCat)\n  map f := f.base",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 3238,
+     "name": "AlgebraicGeometry.PresheafedSpace.carrier"
+    },
+    {
+     "decl": 397,
+     "name": "CategoryTheory.CategoryStruct.toQuiver"
+    },
+    {
+     "decl": 398,
+     "name": "Quiver.Hom"
+    },
+    {
+     "decl": 3240,
+     "name": "TopCat.instCategory"
+    },
+    {
+     "decl": 3735,
+     "name": "CategoryTheory.Functor.mk"
+    },
+    {
+     "decl": 7379,
+     "name": "AlgebraicGeometry.PresheafedSpace.Hom.base"
+    },
+    {
+     "decl": 402,
+     "name": "CategoryTheory.Category.toCategoryStruct"
+    },
+    {
+     "decl": 1855,
+     "name": "TopCat"
+    },
+    {
+     "decl": 3256,
+     "name": "AlgebraicGeometry.PresheafedSpace"
+    },
+    {
+     "decl": 8880,
+     "name": "AlgebraicGeometry.PresheafedSpace.categoryOfPresheafedSpaces"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    }
+   ]
+  },
+  {
+   "artifact": 119728,
+   "decl": 132263,
+   "target": "Complex.conjAe",
+   "kind": 1,
+   "band": "101+",
+   "depth": 109,
+   "module": "Mathlib.LinearAlgebra.Complex.Module",
+   "statement_src": "def conjAe : \u2102 \u2243\u2090[\u211d] \u2102",
+   "proof_src": ":=\n  { conj with\n    invFun := conj\n    left_inv := star_star\n    right_inv := star_star\n    commutes' := conj_ofReal }",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 13,
+     "name": "MulOne.toOne"
+    },
+    {
+     "decl": 583,
+     "name": "Real"
+    },
+    {
+     "decl": 51,
+     "name": "CommSemiring.toSemiring"
+    },
+    {
+     "decl": 327,
+     "name": "RingHom"
+    },
+    {
+     "decl": 6739,
+     "name": "Equiv.mk"
+    },
+    {
+     "decl": 1187,
+     "name": "Algebra.id"
+    },
+    {
+     "decl": 2904,
+     "name": "NonAssocSemiring.toMulZeroOneClass"
+    },
+    {
+     "decl": 33308,
+     "name": "AlgEquiv.mk"
+    },
+    {
+     "decl": 1124,
+     "name": "MulZeroOneClass.toMulOneClass"
+    },
+    {
+     "decl": 22,
+     "name": "MulOneClass.toMulOne"
+    },
+    {
+     "decl": 332,
+     "name": "RingHom.instFunLike"
+    },
+    {
+     "decl": 2434,
+     "name": "OneHom.toFun"
+    },
+    {
+     "decl": 7878,
+     "name": "Complex.instCommSemiring"
+    },
+    {
+     "decl": 7880,
+     "name": "Complex.instStarRing"
+    },
+    {
+     "decl": 2436,
+     "name": "MonoidHom.toOneHom"
+    },
+    {
+     "decl": 25639,
+     "name": "Complex.conj_ofReal"
+    },
+    {
+     "decl": 679,
+     "name": "Complex"
+    },
+    {
+     "decl": 10479,
+     "name": "RingHom.toMonoidHom"
+    },
+    {
+     "decl": 7882,
+     "name": "starRingEnd"
+    },
+    {
+     "decl": 54463,
+     "name": "Algebra.complexToReal"
+    },
+    {
+     "decl": 146,
+     "name": "Semiring.toNonAssocSemiring"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 2031,
+     "name": "Real.instCommSemiring"
+    },
+    {
+     "decl": 2906,
+     "name": "Complex.instSemiring"
+    }
+   ]
+  },
+  {
+   "artifact": 11708,
+   "decl": 14063,
+   "target": "CategoryTheory.Abelian.FreydMitchell.EmbeddingRing",
+   "kind": 1,
+   "band": "101+",
+   "depth": 122,
+   "module": "Mathlib.CategoryTheory.Abelian.FreydMitchell",
+   "statement_src": "def EmbeddingRing : Type (max u v)",
+   "proof_src": ":=\n  IsGrothendieckAbelian.OppositeModuleEmbedding.EmbeddingRing\n    (Ind.yoneda (C := (AsSmall.{max u v} C)\u1d52\u1d56)).rightOp",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 2399,
+     "name": "CategoryTheory.Abelian.IsGrothendieckAbelian.OppositeModuleEmbedding.EmbeddingRing"
+    },
+    {
+     "decl": 199,
+     "name": "Opposite"
+    },
+    {
+     "decl": 14064,
+     "name": "CategoryTheory.Ind"
+    },
+    {
+     "decl": 2400,
+     "name": "CategoryTheory.Abelian"
+    },
+    {
+     "decl": 8063,
+     "name": "CategoryTheory.instAbelianOpposite"
+    },
+    {
+     "decl": 14065,
+     "name": "CategoryTheory.instAbelianInd"
+    },
+    {
+     "decl": 9400,
+     "name": "CategoryTheory.instSmallCategoryAsSmall"
+    },
+    {
+     "decl": 14066,
+     "name": "CategoryTheory.Ind.yoneda"
+    },
+    {
+     "decl": 14067,
+     "name": "CategoryTheory.AsSmall.abelian"
+    },
+    {
+     "decl": 9402,
+     "name": "CategoryTheory.AsSmall"
+    },
+    {
+     "decl": 207,
+     "name": "CategoryTheory.Category.opposite"
+    },
+    {
+     "decl": 9552,
+     "name": "CategoryTheory.Functor.rightOp"
+    },
+    {
+     "decl": 14070,
+     "name": "CategoryTheory.instCategoryInd"
+    },
+    {
+     "decl": 211,
+     "name": "CategoryTheory.Category"
+    }
+   ]
+  },
+  {
+   "artifact": 254249,
+   "decl": 272151,
+   "target": "RatFunc.mapRingHom",
+   "kind": 1,
+   "band": "101+",
+   "depth": 107,
+   "module": "Mathlib.FieldTheory.RatFunc.Basic",
+   "statement_src": "def mapRingHom [RingHomClass F R[X] S[X]] (\u03c6 : F) (h\u03c6 : R[X]\u2070 \u2264 S[X]\u2070.comap \u03c6) :\n    R\u27eeX\u27ef \u2192+* S\u27eeX\u27ef",
+   "proof_src": ":=\n  { map \u03c6 h\u03c6 with\n    map_zero' := by\n      simp_rw [MonoidHom.toFun_eq_coe, \u2190 ofFractionRing_zero, \u2190 Localization.mk_zero (1 : R[X]\u2070),\n        \u2190 Localization.mk_zero (1 : S[X]\u2070), map_apply_ofFractionRing_mk, map_zero,\n        Localization.mk_eq_mk', IsLocalization.mk'_zero]\n    map_add' := by\n      rintro \u27e8x\u27e9 \u27e8y\u27e9\n      induction x using Localization.induction_on\n      induction y using Localization.induction_on\n      \u00b7 simp only [\u2190 ofFractionRing_add, Localization.add_mk, map_add, map_mul,\n          MonoidHom.toFun_eq_coe, map_apply_ofFractionRing_mk, Submonoid.coe_mul,\n          -- We have to specify `S[X]\u2070` to `mk_mul_mk`, otherwise it will try to rewrite\n          -- the wrong occurrence.\n          Submonoid.mk_mul_mk S[X]\u2070] }",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 50,
+     "name": "CommRing"
+    },
+    {
+     "decl": 11854,
+     "name": "RingHom.mk"
+    },
+    {
+     "decl": 1688,
+     "name": "MonoidHom"
+    },
+    {
+     "decl": 51,
+     "name": "CommSemiring.toSemiring"
+    },
+    {
+     "decl": 32,
+     "name": "PartialOrder.toPreorder"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 3899,
+     "name": "nonZeroDivisors"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 98233,
+     "name": "RatFunc.instCommRing"
+    },
+    {
+     "decl": 348,
+     "name": "Polynomial"
+    },
+    {
+     "decl": 1124,
+     "name": "MulZeroOneClass.toMulOneClass"
+    },
+    {
+     "decl": 1658,
+     "name": "instMulZeroOneClassOfSemiring"
+    },
+    {
+     "decl": 22,
+     "name": "MulOneClass.toMulOne"
+    },
+    {
+     "decl": 56,
+     "name": "CommRing.toCommSemiring"
+    },
+    {
+     "decl": 3602,
+     "name": "RatFunc"
+    },
+    {
+     "decl": 22371,
+     "name": "Submonoid.comap"
+    },
+    {
+     "decl": 635,
+     "name": "MonoidWithZero.toMulZeroOneClass"
+    },
+    {
+     "decl": 195475,
+     "name": "RatFunc.map"
+    },
+    {
+     "decl": 17278,
+     "name": "Submonoid.instPartialOrder"
+    },
+    {
+     "decl": 4440,
+     "name": "Polynomial.semiring"
+    },
+    {
+     "decl": 146,
+     "name": "Semiring.toNonAssocSemiring"
+    },
+    {
+     "decl": 1663,
+     "name": "Submonoid"
+    },
+    {
+     "decl": 488,
+     "name": "FunLike"
+    },
+    {
+     "decl": 2223,
+     "name": "Semiring.toMonoidWithZero"
+    },
+    {
+     "decl": 6165,
+     "name": "RingHomClass"
+    }
+   ]
+  },
+  {
+   "artifact": 220928,
+   "decl": 237825,
+   "target": "Metric.unitClosedBall.instSemigroupWithZero",
+   "kind": 1,
+   "band": "101+",
+   "depth": 118,
+   "module": "Mathlib.Analysis.Normed.Field.UnitBall",
+   "statement_src": "instance Metric.unitClosedBall.instSemigroupWithZero [NonUnitalSeminormedRing \ud835\udd5c] :\n    SemigroupWithZero (closedBall (0 : \ud835\udd5c) 1)",
+   "proof_src": "where\n  zero_mul _ := Subtype.ext <| zero_mul _\n  mul_zero _ := Subtype.ext <| mul_zero _",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 46823,
+     "name": "NonUnitalSeminormedRing"
+    },
+    {
+     "decl": 583,
+     "name": "Real"
+    },
+    {
+     "decl": 237827,
+     "name": "Metric.unitClosedBall.instZero"
+    },
+    {
+     "decl": 4512,
+     "name": "NonUnitalNonAssocSemiring.toMulZeroClass"
+    },
+    {
+     "decl": 3052,
+     "name": "NonUnitalRing.toNonUnitalNonAssocRing"
+    },
+    {
+     "decl": 473,
+     "name": "Set.Elem"
+    },
+    {
+     "decl": 515,
+     "name": "NonUnitalNonAssocRing.toNonUnitalNonAssocSemiring"
+    },
+    {
+     "decl": 237829,
+     "name": "Metric.unitClosedBall.instSemigroup"
+    },
+    {
+     "decl": 1970,
+     "name": "Real.instOne"
+    },
+    {
+     "decl": 136499,
+     "name": "SemigroupWithZero.mk"
+    },
+    {
+     "decl": 28,
+     "name": "One.toOfNat1"
+    },
+    {
+     "decl": 96,
+     "name": "Zero.toOfNat0"
+    },
+    {
+     "decl": 14221,
+     "name": "NonUnitalSeminormedRing.toPseudoMetricSpace"
+    },
+    {
+     "decl": 4427,
+     "name": "Metric.closedBall"
+    },
+    {
+     "decl": 6922,
+     "name": "NonUnitalSeminormedRing.toNonUnitalRing"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 104,
+     "name": "MulZeroClass.toZero"
+    }
+   ]
+  },
+  {
+   "artifact": 219058,
+   "decl": 235889,
+   "target": "IsometryEquiv.piCongrLeft'",
+   "kind": 1,
+   "band": "101+",
+   "depth": 145,
+   "module": "Mathlib.Topology.MetricSpace.Isometry",
+   "statement_src": "def piCongrLeft' {\u03b9' : Type*} [Fintype \u03b9] [Fintype \u03b9'] {Y : \u03b9 \u2192 Type*}\n    [\u2200 j, PseudoEMetricSpace (Y j)] (e : \u03b9 \u2243 \u03b9') : (\u2200 i, Y i) \u2243\u1d62 \u2200 j, Y (e.symm j)",
+   "proof_src": "where\n  toEquiv := Equiv.piCongrLeft' _ e\n  isometry_toFun x1 x2 := by\n    simp_rw [edist_pi_def, Finset.sup_univ_eq_iSup]\n    exact (Equiv.iSup_comp (g := fun b \u21a6 edist (x1 b) (x2 b)) e.symm)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 971,
+     "name": "Equiv.instEquivLike"
+    },
+    {
+     "decl": 973,
+     "name": "Equiv"
+    },
+    {
+     "decl": 30391,
+     "name": "pseudoEMetricSpacePi"
+    },
+    {
+     "decl": 6036,
+     "name": "PseudoEMetricSpace"
+    },
+    {
+     "decl": 519,
+     "name": "Fintype"
+    },
+    {
+     "decl": 23100,
+     "name": "IsometryEquiv.mk"
+    },
+    {
+     "decl": 7701,
+     "name": "Equiv.piCongrLeft'"
+    },
+    {
+     "decl": 976,
+     "name": "Equiv.symm"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 455,
+     "name": "EquivLike.toFunLike"
+    }
+   ]
+  },
+  {
+   "artifact": 186906,
+   "decl": 202617,
+   "target": "FiniteField.Extension.frob",
+   "kind": 1,
+   "band": "101+",
+   "depth": 175,
+   "module": "Mathlib.FieldTheory.Finite.Extension",
+   "statement_src": "noncomputable def Extension.frob :\n    Gal(Extension k p n / k)",
+   "proof_src": ":=\n  haveI := Fintype.ofFinite k\n  FiniteField.frobeniusAlgEquivOfAlgebraic _ _",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 38985,
+     "name": "FiniteField.instAlgebraExtension"
+    },
+    {
+     "decl": 828,
+     "name": "Nat.instMulZeroClass"
+    },
+    {
+     "decl": 3334,
+     "name": "Nat.Prime"
+    },
+    {
+     "decl": 5867,
+     "name": "Fintype.ofFinite"
+    },
+    {
+     "decl": 734,
+     "name": "Finite"
+    },
+    {
+     "decl": 599,
+     "name": "AddGroupWithOne.toAddMonoidWithOne"
+    },
+    {
+     "decl": 555,
+     "name": "Field.toDivisionRing"
+    },
+    {
+     "decl": 3347,
+     "name": "Fact"
+    },
+    {
+     "decl": 613,
+     "name": "DivisionRing.toRing"
+    },
+    {
+     "decl": 38987,
+     "name": "FiniteField.instFieldExtension"
+    },
+    {
+     "decl": 31923,
+     "name": "FiniteField.frobeniusAlgEquivOfAlgebraic"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 2162,
+     "name": "CharP"
+    },
+    {
+     "decl": 4534,
+     "name": "NeZero"
+    },
+    {
+     "decl": 1381,
+     "name": "Field"
+    },
+    {
+     "decl": 664,
+     "name": "Ring.toAddGroupWithOne"
+    },
+    {
+     "decl": 3362,
+     "name": "FiniteField.Extension"
+    },
+    {
+     "decl": 104,
+     "name": "MulZeroClass.toZero"
+    }
+   ]
+  },
+  {
+   "artifact": 80324,
+   "decl": 90100,
+   "target": "Matrix.instPartialOrder",
+   "kind": 1,
+   "band": "101+",
+   "depth": 161,
+   "module": "Mathlib.Analysis.Matrix.Order",
+   "statement_src": "abbrev instPartialOrder : PartialOrder (Matrix n n \ud835\udd5c)",
+   "proof_src": "where\n  le_antisymm A B h\u2081 h\u2082 := by\n    simpa [sub_eq_zero, eq_comm] using le_antisymm_aux h\u2081\n     (by simpa only [\u2190 neg_sub B, le_iff] using h\u2082)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 513,
+     "name": "Matrix"
+    },
+    {
+     "decl": 33,
+     "name": "Preorder.toLE"
+    },
+    {
+     "decl": 35,
+     "name": "LE.le"
+    },
+    {
+     "decl": 3136,
+     "name": "RCLike"
+    },
+    {
+     "decl": 73103,
+     "name": "Matrix.instPreOrder"
+    },
+    {
+     "decl": 23880,
+     "name": "PartialOrder.mk"
+    }
+   ]
+  },
+  {
+   "artifact": 304598,
+   "decl": 323794,
+   "target": "Stirling.stirlingSeq",
+   "kind": 1,
+   "band": "101+",
+   "depth": 141,
+   "module": "Mathlib.Analysis.SpecialFunctions.Stirling",
+   "statement_src": "noncomputable def stirlingSeq (n : \u2115) : \u211d",
+   "proof_src": ":=\n  n ! / (\u221a(2 * n : \u211d) * (n / exp 1) ^ n)",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 583,
+     "name": "Real"
+    },
+    {
+     "decl": 585,
+     "name": "instHDiv"
+    },
+    {
+     "decl": 290,
+     "name": "HMul.hMul"
+    },
+    {
+     "decl": 1937,
+     "name": "Real.instDivInvMonoid"
+    },
+    {
+     "decl": 610,
+     "name": "HDiv.hDiv"
+    },
+    {
+     "decl": 1460,
+     "name": "Real.exp"
+    },
+    {
+     "decl": 1057,
+     "name": "Nat.cast"
+    },
+    {
+     "decl": 623,
+     "name": "NPow.toPow"
+    },
+    {
+     "decl": 1970,
+     "name": "Real.instOne"
+    },
+    {
+     "decl": 988,
+     "name": "Real.instMonoid"
+    },
+    {
+     "decl": 563,
+     "name": "HPow.hPow"
+    },
+    {
+     "decl": 7931,
+     "name": "Nat.factorial"
+    },
+    {
+     "decl": 7,
+     "name": "Nat"
+    },
+    {
+     "decl": 990,
+     "name": "Real.instMul"
+    },
+    {
+     "decl": 647,
+     "name": "DivInvMonoid.toDiv"
+    },
+    {
+     "decl": 28,
+     "name": "One.toOfNat1"
+    },
+    {
+     "decl": 6042,
+     "name": "Real.sqrt"
+    },
+    {
+     "decl": 570,
+     "name": "instHPow"
+    },
+    {
+     "decl": 10,
+     "name": "OfNat.ofNat"
+    },
+    {
+     "decl": 2618,
+     "name": "instOfNatAtLeastTwo"
+    },
+    {
+     "decl": 667,
+     "name": "Monoid.toNPow"
+    },
+    {
+     "decl": 299,
+     "name": "instHMul"
+    },
+    {
+     "decl": 2034,
+     "name": "Real.instNatCast"
+    }
+   ]
+  },
+  {
+   "artifact": 699071,
+   "decl": 722522,
+   "target": "LinearIsometryEquiv.Simps.symm_apply",
+   "kind": 1,
+   "band": "101+",
+   "depth": 152,
+   "module": "Mathlib.Analysis.Normed.Operator.LinearIsometry",
+   "statement_src": "def Simps.symm_apply (\u03c3\u2081\u2082 : R \u2192+* R\u2082) {\u03c3\u2082\u2081 : R\u2082 \u2192+* R} [RingHomInvPair \u03c3\u2081\u2082 \u03c3\u2082\u2081]\n    [RingHomInvPair \u03c3\u2082\u2081 \u03c3\u2081\u2082] (E E\u2082 : Type*) [SeminormedAddCommGroup E] [SeminormedAddCommGroup E\u2082]\n    [Module R E] [Module R\u2082 E\u2082] (h : E \u2243\u209b\u2097\u1d62[\u03c3\u2081\u2082] E\u2082) : E\u2082 \u2192 E",
+   "proof_src": ":=\n  h.symm",
+   "statement_how": "exact",
+   "candidates": [
+    {
+     "decl": 8988,
+     "name": "LinearIsometryEquiv.instEquivLike"
+    },
+    {
+     "decl": 4170,
+     "name": "SeminormedAddCommGroup"
+    },
+    {
+     "decl": 17739,
+     "name": "LinearIsometryEquiv.symm"
+    },
+    {
+     "decl": 152,
+     "name": "AddCommGroup.toAddCommMonoid"
+    },
+    {
+     "decl": 327,
+     "name": "RingHom"
+    },
+    {
+     "decl": 5653,
+     "name": "RingHomInvPair"
+    },
+    {
+     "decl": 1951,
+     "name": "SeminormedAddCommGroup.toAddCommGroup"
+    },
+    {
+     "decl": 8991,
+     "name": "LinearIsometryEquiv"
+    },
+    {
+     "decl": 95,
+     "name": "Semiring"
+    },
+    {
+     "decl": 101,
+     "name": "Module"
+    },
+    {
+     "decl": 146,
+     "name": "Semiring.toNonAssocSemiring"
+    },
+    {
+     "decl": 78,
+     "name": "DFunLike.coe"
+    },
+    {
+     "decl": 455,
+     "name": "EquivLike.toFunLike"
+    }
+   ]
+  }
+ ]
+}
