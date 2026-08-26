@@ -1,0 +1,193 @@
+== IsClosed.and  (theorem, depth 4)
+   statement cone 4 | proof cone 41 | new 37 (90% of proof cone) | boundary nodes 37
+
+-- To understand the statement (dependency order, most-used first per layer):
+   d 0  Set.ofPred  (def, used by 1 in cone)
+   d 0  TopologicalSpace  (inductive, used by 1 in cone)
+   d 0  And  (inductive, used by 0 in cone)
+   d 0  IsClosed  (inductive, used by 0 in cone)
+
+-- What the proof actually adds, deepest first (the moves):
+   d 3  IsClosed.inter  (theorem)
+   d 2  IsOpen.union  (theorem)
+   d 1  isOpen_compl_iff  (theorem)
+   d 1  isOpen_iUnion  (theorem)
+   d 0  Bool  (inductive)
+   d 0  Bool.false  (constructor)
+   d 0  Bool.forall_bool  (axiom)
+   d 0  Bool.true  (constructor)
+   d 0  Eq  (inductive)
+   d 0  IsClosed.mk  (constructor)
+   d 0  IsOpen  (def)
+   d 0  Set  (def)
+        ... +7 more new mathematical facts
+   (+18 machinery/glue also entered the proof: structure-projection 6, eq-machinery 6, typeclass-instance 4)
+
+== Real.log_mul  (theorem, depth 11)
+   statement cone 146 | proof cone 174 | new 28 (16% of proof cone) | boundary nodes 124
+
+-- To understand the statement (dependency order, most-used first per layer):
+   d 0  SemilatticeSup  (inductive, used by 15 in cone)
+   d 0  SemilatticeInf  (inductive, used by 12 in cone)
+   d 0  Lattice  (inductive, used by 8 in cone)
+   d 0  Eq  (inductive, used by 5 in cone)
+   d 0  LinearOrder  (inductive, used by 4 in cone)
+   d 0  Real  (inductive, used by 3 in cone)
+   d 0  ... +39 more, 57 machinery
+   d 1  SemilatticeInf.mk  (constructor, used by 3 in cone)
+   d 1  SemilatticeSup.mk  (constructor, used by 1 in cone)
+   d 1  neg_sub  (theorem, used by 1 in cone)
+   d 1  ... 17 machinery
+   d 2  Lattice.mk  (constructor, used by 1 in cone)
+   d 2  inf_le_left  (theorem, used by 1 in cone)
+   d 2  inf_le_right  (theorem, used by 1 in cone)
+   d 2  le_inf  (theorem, used by 1 in cone)
+   d 2  le_sup_left  (theorem, used by 1 in cone)
+   d 2  le_sup_right  (theorem, used by 1 in cone)
+   d 2  ... +1 more, 4 machinery
+   d 3  DistribLattice.mk  (constructor, used by 1 in cone)
+   d 3  inf_le_of_left_le  (theorem, used by 1 in cone)
+   d 3  inf_le_of_right_le  (theorem, used by 1 in cone)
+   d 3  le_sup_of_le_left  (theorem, used by 1 in cone)
+   d 3  le_sup_of_le_right  (theorem, used by 1 in cone)
+   d 3  ... 2 machinery
+   d 4  sup_le_sup  (theorem, used by 1 in cone)
+   d 5  sup_le_sup_left  (theorem, used by 1 in cone)
+   d 6  ... 1 machinery
+   d 7  ... 1 machinery
+   d 8  ... 1 machinery
+   d 9  Real.log  (def, used by 1 in cone)
+
+-- What the proof actually adds, deepest first (the moves):
+   d10  Real.exp_log_eq_abs  (theorem)
+   d 9  Real.log_of_ne_zero  (theorem)
+   d 0  OrderIso.apply_symm_apply  (axiom)
+   d 0  Real.coe_expOrderIso_apply  (axiom)
+   d 0  Real.exp  (def)
+   d 0  Real.exp_add  (axiom)
+   d 0  Real.exp_injective  (axiom)
+   d 0  Subtype.coe_mk  (axiom)
+   d 0  abs_mul  (axiom)
+   d 0  dif_neg  (axiom)
+   d 0  mul_ne_zero  (axiom)
+   (+17 machinery/glue also entered the proof: typeclass-instance 13, structure-projection 4, eq-machinery 3)
+
+== Nat.gcd_greatest  (theorem, depth 1)
+   statement cone 5 | proof cone 16 | new 12 (75% of proof cone) | boundary nodes 17
+
+-- To understand the statement (dependency order, most-used first per layer):
+   d 0  Nat  (inductive, used by 1 in cone)
+   d 0  Nat.gcd  (axiom, used by 1 in cone)
+   d 0  Eq  (inductive, used by 0 in cone)
+   d 0  ... 2 machinery
+
+-- What the proof actually adds, deepest first (the moves):
+   d 0  Nat.dvd_gcd  (axiom)
+   d 0  Nat.gcd_dvd_left  (axiom)
+   d 0  Nat.gcd_dvd_right  (axiom)
+   d 0  Units  (inductive)
+   d 0  dvd_antisymm  (axiom)
+   (+7 machinery/glue also entered the proof: typeclass-instance 6, eq-machinery 1, structure-projection 1)
+
+== inf_sup_left  (theorem, depth 9)
+   statement cone 26 | proof cone 101 | new 75 (74% of proof cone) | boundary nodes 47
+
+-- To understand the statement (dependency order, most-used first per layer):
+   d 0  Lattice  (inductive, used by 6 in cone)
+   d 0  SemilatticeInf  (inductive, used by 3 in cone)
+   d 0  SemilatticeSup  (inductive, used by 3 in cone)
+   d 0  DistribLattice  (inductive, used by 2 in cone)
+   d 0  Eq  (inductive, used by 1 in cone)
+   d 0  Max.mk  (constructor, used by 1 in cone)
+   d 0  ... +2 more, 5 machinery
+   d 1  SemilatticeInf.mk  (constructor, used by 1 in cone)
+   d 1  ... 9 machinery
+   d 2  ... 3 machinery
+
+-- What the proof actually adds, deepest first (the moves):
+   d 8  sup_inf_right  (theorem)
+   d 7  sup_inf_left  (theorem)
+   d 7  sup_inf_self  (theorem)
+   d 6  inf_sup_self  (theorem)
+   d 6  sup_inf_le  (theorem)
+   d 6  sup_of_le_left  (theorem)
+   d 5  inf_of_le_left  (theorem)
+   d 5  sup_comm  (theorem)
+   d 5  sup_eq_left  (theorem)
+   d 5  sup_le_sup_left  (theorem)
+   d 4  inf_assoc  (theorem)
+   d 4  inf_eq_left  (theorem)
+        ... +33 more new mathematical facts
+   (+30 machinery/glue also entered the proof: structure-projection 10, eq-machinery 8, internal-detail 6)
+
+== mul_inv  (theorem, depth 4)
+   statement cone 40 | proof cone 45 | new 5 (11% of proof cone) | boundary nodes 42
+
+-- To understand the statement (dependency order, most-used first per layer):
+   d 0  DivisionMonoid  (inductive, used by 3 in cone)
+   d 0  Eq  (inductive, used by 3 in cone)
+   d 0  True  (inductive, used by 2 in cone)
+   d 0  congrFun'  (axiom, used by 2 in cone)
+   d 0  eq_self  (axiom, used by 2 in cone)
+   d 0  inv_inv  (axiom, used by 2 in cone)
+   d 0  ... +7 more, 24 machinery
+   d 1  inv_div  (theorem, used by 1 in cone)
+   d 2  ... 1 machinery
+   d 3  ... 1 machinery
+
+-- What the proof actually adds, deepest first (the moves):
+   d 0  mul_comm  (axiom)
+   (+4 machinery/glue also entered the proof: typeclass-instance 4, structure-projection 1)
+
+== Real.tendsto_log_atTop  (theorem, depth 13)
+   statement cone 144 | proof cone 167 | new 23 (14% of proof cone) | boundary nodes 115
+
+-- To understand the statement (dependency order, most-used first per layer):
+   d 0  SemilatticeSup  (inductive, used by 15 in cone)
+   d 0  SemilatticeInf  (inductive, used by 12 in cone)
+   d 0  Lattice  (inductive, used by 8 in cone)
+   d 0  Eq  (inductive, used by 5 in cone)
+   d 0  LinearOrder  (inductive, used by 4 in cone)
+   d 0  Real  (inductive, used by 3 in cone)
+   d 0  ... +41 more, 53 machinery
+   d 1  SemilatticeInf.mk  (constructor, used by 3 in cone)
+   d 1  SemilatticeSup.mk  (constructor, used by 1 in cone)
+   d 1  neg_sub  (theorem, used by 1 in cone)
+   d 1  ... 17 machinery
+   d 2  Lattice.mk  (constructor, used by 1 in cone)
+   d 2  inf_le_left  (theorem, used by 1 in cone)
+   d 2  inf_le_right  (theorem, used by 1 in cone)
+   d 2  le_inf  (theorem, used by 1 in cone)
+   d 2  le_sup_left  (theorem, used by 1 in cone)
+   d 2  le_sup_right  (theorem, used by 1 in cone)
+   d 2  ... +1 more, 4 machinery
+   d 3  DistribLattice.mk  (constructor, used by 1 in cone)
+   d 3  inf_le_of_left_le  (theorem, used by 1 in cone)
+   d 3  inf_le_of_right_le  (theorem, used by 1 in cone)
+   d 3  le_sup_of_le_left  (theorem, used by 1 in cone)
+   d 3  le_sup_of_le_right  (theorem, used by 1 in cone)
+   d 3  ... 2 machinery
+   d 4  sup_le_sup  (theorem, used by 1 in cone)
+   d 5  sup_le_sup_left  (theorem, used by 1 in cone)
+   d 6  ... 1 machinery
+   d 7  ... 1 machinery
+   d 8  ... 1 machinery
+   d 9  Real.log  (def, used by 1 in cone)
+
+-- What the proof actually adds, deepest first (the moves):
+   d12  Real.log_exp  (theorem)
+   d11  Real.exp_log  (theorem)
+   d10  Real.exp_log_eq_abs  (theorem)
+   d 9  Real.log_of_ne_zero  (theorem)
+   d 0  Filter  (inductive)
+   d 0  Filter.tendsto_id  (axiom)
+   d 0  LT.lt.ne'  (axiom)
+   d 0  OrderIso.apply_symm_apply  (axiom)
+   d 0  Real.coe_expOrderIso_apply  (axiom)
+   d 0  Real.exp  (def)
+   d 0  Real.exp_injective  (axiom)
+   d 0  Real.exp_pos  (axiom)
+        ... +4 more new mathematical facts
+   (+7 machinery/glue also entered the proof: eq-machinery 4, structure-projection 2, logic-core 1)
+
+wrote tools/output/showcase_paths.json
