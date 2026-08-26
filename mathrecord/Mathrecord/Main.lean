@@ -2,6 +2,7 @@ import Mathrecord.Extract
 import Mathrecord.Validate
 import Mathrecord.Study
 import Mathrecord.DepDump
+import Mathrecord.HeadDump
 
 /-! MathRecord CLI.
 
@@ -169,6 +170,9 @@ unsafe def main (args : List String) : IO UInt32 := do
     return 0
   | ["depdump", file, out] => do
     Mathrecord.DepDump.depDump file out
+    return 0
+  | ["headdump", file, out] => do
+    Mathrecord.HeadDump.headDump file out
     return 0
   | ["alpha", a, b] => alpha a b
   | ["inspect", recordPath, declName] => inspect recordPath declName
