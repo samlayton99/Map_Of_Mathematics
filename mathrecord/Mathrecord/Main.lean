@@ -5,6 +5,7 @@ import Mathrecord.DepDump
 import Mathrecord.HeadDump
 import Mathrecord.ModDump
 import Mathrecord.LegalityProbe
+import Mathrecord.Prover
 
 /-! MathRecord CLI.
 
@@ -181,6 +182,9 @@ unsafe def main (args : List String) : IO UInt32 := do
     return 0
   | ["probe", file, inp, out] => do
     Mathrecord.LegalityProbe.probe file inp out
+    return 0
+  | ["prove", file, inp, out, banks, budget] => do
+    Mathrecord.Prover.prove file inp out banks (budget.toNat!)
     return 0
   | ["alpha", a, b] => alpha a b
   | ["inspect", recordPath, declName] => inspect recordPath declName
