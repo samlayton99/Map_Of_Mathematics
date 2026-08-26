@@ -112,6 +112,32 @@ def prepRw (env : Environment) (names : Array Name) : Array RwCand := Id.run do
     | none => pure ()
   return out
 
+/-- Boolean-per-module import closure of the target's module: the modules a
+proof at that source location may legally draw from. -/
+def allowedModules (env : Environment) (own : Nat) : Array Bool := Id.run do
+  let names := env.header.moduleNames
+  let data := env.header.moduleData
+  let mut idxOf : Std.HashMap Name Nat := {}
+  for i in [0:names.size] do
+    idxOf := idxOf.insert names[i]! i
+  let mut allowed := (Array.range names.size).map (fun _ => false)
+  let mut stack : Array Nat := #[own]
+  allowed := allowed.set! own true
+  while stack.size > 0 do
+    let m := stack.back!
+    stack := stack.pop
+    match data[m]? with
+    | none => pure ()
+    | some md =>
+      for imp in md.imports do
+        match idxOf.get? imp.module with
+        | some j =>
+          if !(allowed[j]?.getD true) then
+            allowed := allowed.set! j true
+            stack := stack.push j
+        | none => pure ()
+  return allowed
+
 abbrev Attempt := MetaM (List MVarId)
 
 /-- Run one action attempt from the parent state; return child goals of the
@@ -177,9 +203,17 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
       let selfStr := task.name.toString
       let forbidSet : Std.HashSet Name :=
         task.forbid.foldl (init := {}) (·.insert ·)
+      let ownIdx := (env.getModuleIdxFor? task.name).map (·.toNat)
+      let allowedMod := match ownIdx with
+        | some o => allowedModules env o
+        | none => #[]
       let dirty := usedNames.any fun c =>
         c == task.name || (c.toString).startsWith (selfStr ++ ".") ||
-        forbidSet.contains c
+        forbidSet.contains c ||
+        (match ownIdx, env.getModuleIdxFor? c with
+         | some o, some m =>
+           m.toNat != o && !((allowedMod[m.toNat]?).getD true)
+         | _, _ => false)
       if ok && !dirty then
         return { solved := true, verified := ok, path := node.path.reverse,
                  callsUsed := calls, stats, frontierLeft := frontier.size,
