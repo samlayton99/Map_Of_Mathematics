@@ -91,8 +91,12 @@ class Accessibility:
 
     def mask(self, node):
         """Boolean over atlas nodes: the legal premise universe at node's
-        source location (imported modules fully; own module strictly
-        earlier declarations).  Unmapped constants are excluded."""
+        source location - transitively imported modules plus the node's own
+        module IN FULL.  (ModuleData.constNames is serialization order, not
+        source order - validated: all mask violations were same-module, none
+        cross-module - so intra-module position cannot be used for a strict
+        earlier-only cut.  Own-module-in-full is mildly optimistic at file
+        granularity, the standard fallback absent source line numbers.)"""
         m = self.mod_of[node]
         if m < 0:
             return None
@@ -100,6 +104,4 @@ class Accessibility:
         ok = np.zeros(self.atlas.n, dtype=bool)
         mapped = self.mod_of >= 0
         ok[mapped] = vis[self.mod_of[mapped]]
-        own = self.mod_of == m
-        ok[own] = self.pos_of[own] < self.pos_of[node]
         return ok

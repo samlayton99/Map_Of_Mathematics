@@ -116,6 +116,10 @@ def main():
             else:
                 move_kind["OTHER_CONST"] += 1
     census = {
+        "note": ("head of the FINISHED proof term after stripping lambdas - "
+                 "the outer certificate constructor. Not necessarily the "
+                 "author's first tactic, the discovery-time first decision, or "
+                 "the best opening action for another valid proof."),
         "kinds": dict(move_kind),
         "top_move_constants": [
             {"name": n, "count": c} for n, c in move_const.most_common(25)],
@@ -214,8 +218,8 @@ def main():
                 "head+LHS-head match (refined); ranked by global citation count",
     }
 
-    out = {"pools": pools, "top_move_census": census,
-           "head_match": headmatch, "next_move_frequency_baseline": nextmove}
+    out = {"pools": pools, "top_certificate_head_census": census,
+           "head_match": headmatch, "certificate_head_prediction_baseline": nextmove}
     OUT.mkdir(exist_ok=True)
     (OUT / "mathlib_heads_analysis.json").write_text(json.dumps(out, indent=1))
     print(json.dumps(out, indent=1))
