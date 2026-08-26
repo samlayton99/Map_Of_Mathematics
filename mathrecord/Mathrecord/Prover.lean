@@ -34,6 +34,7 @@ structure Task where
   name : Name
   bw   : Array Name
   rw   : Array Name
+  forbid : Array Name := #[]   -- own-module constants outside the statement cone
 
 structure Node where
   saved : Meta.SavedState
@@ -57,9 +58,13 @@ def parseTasks (j : Json) : Except String (Array Task) := do
     let n ← (← t.getObjVal? "n").getStr?
     let bw ← (← t.getObjVal? "bw").getArr?
     let rw ← (← t.getObjVal? "rw").getArr?
+    let fb := match t.getObjVal? "fb" with
+      | .ok v => (v.getArr?).toOption.getD #[]
+      | .error _ => #[]
     pure { name := String.toName n,
            bw := ← bw.mapM (fun c => do pure (String.toName (← c.getStr?))),
-           rw := ← rw.mapM (fun c => do pure (String.toName (← c.getStr?))) }
+           rw := ← rw.mapM (fun c => do pure (String.toName (← c.getStr?))),
+           forbid := fb.filterMap (fun c => (c.getStr?).toOption.map String.toName) }
 
 /-- Canonical-ish key for a state: sorted rendered goal types. -/
 def stateKey (goals : List MVarId) : MetaM String := do
@@ -158,17 +163,29 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
     | some last => frontier := (frontier.set! best last).pop
     | none => frontier := frontier.pop
     if node.goals.isEmpty then
-      -- success: verify the proof term
+      -- candidate success: verify, then enforce source-cleanliness -
+      -- a proof citing the target, its derived auxiliaries, or forbidden
+      -- own-module facts is REJECTED and the search continues (dirty
+      -- proofs must not shadow clean ones)
       node.saved.restore
       let proof ← instantiateMVars root
       let ok ← try
         Meta.check proof
         isDefEq (← inferType proof) ci.type
       catch _ => pure false
-      let used := proof.getUsedConstantsAsSet.toArray.map toString
-      return { solved := true, verified := ok, path := node.path.reverse,
-               callsUsed := calls, stats, frontierLeft := frontier.size,
-               usedConsts := used }
+      let usedNames := proof.getUsedConstantsAsSet.toArray
+      let selfStr := task.name.toString
+      let forbidSet : Std.HashSet Name :=
+        task.forbid.foldl (init := {}) (·.insert ·)
+      let dirty := usedNames.any fun c =>
+        c == task.name || (c.toString).startsWith (selfStr ++ ".") ||
+        forbidSet.contains c
+      if ok && !dirty then
+        return { solved := true, verified := ok, path := node.path.reverse,
+                 callsUsed := calls, stats, frontierLeft := frontier.size,
+                 usedConsts := usedNames.map toString }
+      stats := { stats with attempts := bump stats.attempts "dirty_rejected" }
+      continue
     stats := { stats with expansions := stats.expansions + 1 }
     node.saved.restore
     -- goal selection: with 'g', expand the syntactically smallest goal

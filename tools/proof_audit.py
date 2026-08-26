@@ -54,16 +54,20 @@ def main():
                 continue
             vis = acc.module_visible(t)
             own_mod = int(acc.mod_of[t])
+            # statement-referenced constants are given by the problem itself:
+            # anything in the statement's dependency closure is legitimate.
+            stmt_ok = a.cone_from(a.type_deps(t))
             viol_same, viol_future, viol_unmapped, self_use = [], [], [], False
             for cn in r.get("used_consts", []):
-                if cn == r["n"]:
+                # the target and its derived auxiliaries are always forbidden
+                if cn == r["n"] or cn.startswith(r["n"] + "."):
                     self_use = True
                     continue
                 ci = a.idx.get(cn)
                 if ci is None:
-                    # constant not in the atlas name table (e.g. universe-
-                    # polymorphic auxiliaries): resolve via module table
                     viol_unmapped.append(cn)
+                    continue
+                if ci in stmt_ok:
                     continue
                 m = int(acc.mod_of[ci])
                 if m < 0:

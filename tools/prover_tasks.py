@@ -109,9 +109,17 @@ def main(argv=None):
         order = ids[np.argsort(-scores[ids], kind="stable")]
         bw = order[:args.cap]
         rw_ids = order[is_eqiff[order]][:args.cap // 2]
+        # forbid: own-module constants OUTSIDE the statement's dependency
+        # closure (statement-referenced constants are given by the problem)
+        own = acc.mod_of[r]
+        own_members = np.where(acc.mod_of == own)[0]
+        stmt_ok = a.cone_from(a.type_deps(r))
+        forbid = [a.names[int(c)] for c in own_members
+                  if int(c) not in stmt_ok and int(c) != r]
         tasks.append({"n": a.names[r],
                       "bw": [a.names[c] for c in bw],
-                      "rw": [a.names[c] for c in rw_ids]})
+                      "rw": [a.names[c] for c in rw_ids],
+                      "fb": forbid})
         meta.append({"n": a.names[r],
                      "module": acc.mod_names[acc.mod_of[r]],
                      "target": [a.names[c] for c in target],
