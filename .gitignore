@@ -13,3 +13,4 @@ learning/cpp/cpp_intro
 __pycache__/
 *.pyc
 .DS_Store
+bigdata/
