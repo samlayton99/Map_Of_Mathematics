@@ -3,6 +3,8 @@ import Mathrecord.Validate
 import Mathrecord.Study
 import Mathrecord.DepDump
 import Mathrecord.HeadDump
+import Mathrecord.ModDump
+import Mathrecord.LegalityProbe
 
 /-! MathRecord CLI.
 
@@ -173,6 +175,12 @@ unsafe def main (args : List String) : IO UInt32 := do
     return 0
   | ["headdump", file, out] => do
     Mathrecord.HeadDump.headDump file out
+    return 0
+  | ["moddump", file, out] => do
+    Mathrecord.ModDump.modDump file out
+    return 0
+  | ["probe", file, inp, out] => do
+    Mathrecord.LegalityProbe.probe file inp out
     return 0
   | ["alpha", a, b] => alpha a b
   | ["inspect", recordPath, declName] => inspect recordPath declName
