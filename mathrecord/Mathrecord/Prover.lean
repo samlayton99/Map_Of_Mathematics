@@ -126,6 +126,7 @@ structure RunResult where
   callsUsed : Nat := 0
   stats : Stats := {}
   frontierLeft : Nat := 0
+  usedConsts : Array String := #[]   -- constants in the discovered proof term
 
 def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
     MetaM RunResult := do
@@ -164,12 +165,31 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
         Meta.check proof
         isDefEq (← inferType proof) ci.type
       catch _ => pure false
+      let used := proof.getUsedConstantsAsSet.toArray.map toString
       return { solved := true, verified := ok, path := node.path.reverse,
-               callsUsed := calls, stats, frontierLeft := frontier.size }
+               callsUsed := calls, stats, frontierLeft := frontier.size,
+               usedConsts := used }
     stats := { stats with expansions := stats.expansions + 1 }
-    let g := node.goals.head!
-    let rest := node.goals.tail!
     node.saved.restore
+    -- goal selection: with 'g', expand the syntactically smallest goal
+    -- (later goals can be easy or instantiate shared metavariables)
+    let (g, rest) ← do
+      if banks.contains 'g' && node.goals.length > 1 then
+        let arr := node.goals.toArray
+        let mut bi := 0
+        let mut bsz := 1000000
+        for i in [0:arr.size] do
+          let sz ← try
+            pure (toString (← instantiateMVars (← arr[i]!.getType))).length
+          catch _ => pure 1000000
+          if sz < bsz then
+            bsz := sz
+            bi := i
+        let rest := (List.range arr.size).filterMap
+          (fun i => if i == bi then none else arr[i]?)
+        pure (arr[bi]!, rest)
+      else
+        pure (node.goals.head!, node.goals.tail!)
     let ghead ← try goalHead g catch _ => pure "?"
     let gconsts ← try
       pure (← instantiateMVars (← g.getType)).getUsedConstantsAsSet
@@ -205,21 +225,16 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
           acts := acts.push ("backward", s!"apply {c.name}", 1.0,
             do g.apply (← mkConstWithFreshMVarLevels c.name))
     if banks.contains 'r' then
+      -- rewrite v2: forward (simp) orientation only, tight cap - the v1
+      -- bidirectional bank was measured net-negative at fixed budget
       let mut nr := 0
       for c in rwCands do
-        if nr < 30 && c.name.toString != task.name.toString then
+        if nr < 15 && c.name.toString != task.name.toString then
           if gconsts.contains (String.toName c.lhs) then
             nr := nr + 1
             acts := acts.push ("rewrite", s!"rw {c.name}", 1.2, do
               let r ← g.rewrite (← g.getType)
                         (← mkConstWithFreshMVarLevels c.name) false
-              let g' ← g.replaceTargetEq r.eNew r.eqProof
-              pure (g' :: r.mvarIds))
-          else if gconsts.contains (String.toName c.rhs) then
-            nr := nr + 1
-            acts := acts.push ("rewrite", s!"rw <- {c.name}", 1.2, do
-              let r ← g.rewrite (← g.getType)
-                        (← mkConstWithFreshMVarLevels c.name) true
               let g' ← g.replaceTargetEq r.eNew r.eqProof
               pure (g' :: r.mvarIds))
     if banks.contains 'p' then
@@ -289,6 +304,7 @@ def prove (path : System.FilePath) (inp : System.FilePath)
       ("calls", toJson res.callsUsed),
       ("path", Json.arr (res.path.toArray.map Json.str)),
       ("frontier_left", toJson res.frontierLeft),
+      ("used_consts", Json.arr (res.usedConsts.map Json.str)),
       ("stats", statsJson res.stats)]
     h.putStrLn row.compress
     count := count + 1
