@@ -148,6 +148,30 @@ def test_corpus_build_path_agrees(corpus, catlas):
            {m["name"] for m in r1["proof_moves"][:10]}
 
 
+def test_load_dump_streaming_parser_and_cache(tmp_path):
+    """Deps referenced before their own rows get ids early; CSR rows must be
+    permuted back to node-id order, and the npz cache must round-trip."""
+    import json
+    from atlas import load_dump
+    rows = [
+        {"n": "T", "k": "theorem", "c": [], "t": ["S1"], "v": ["M1", "M2"]},
+        {"n": "S1", "k": "theorem", "c": [], "t": [], "v": ["B"]},
+        {"n": "M1", "k": "theorem", "c": ["internal-detail"], "t": [], "v": ["L"]},
+        {"n": "M2", "k": "theorem", "c": [], "t": [], "v": ["B"]},
+        {"n": "L", "k": "def", "c": [], "t": [], "v": ["B"]},
+        {"n": "B", "k": "def", "c": [], "t": [], "v": []},
+    ]
+    dump = tmp_path / "dump.jsonl"
+    dump.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
+    a = load_dump(dump, tmp_path / "c.npz", tmp_path / "n.txt")
+    r1 = build_path(a, "T")
+    assert (r1["statement_cone_size"], r1["proof_cone_size"],
+            r1["new_count"]) == (2, 4, 3)
+    a2 = load_dump(dump, tmp_path / "c.npz", tmp_path / "n.txt")  # from cache
+    assert a2.names == a.names and build_path(a2, "T") == r1
+    assert a2.cls[a2.idx["M1"]] == ("internal-detail",)
+
+
 def test_run_index_counters_and_rows(tmp_path, corpus, catlas):
     from atlas import run_index
     roots = theorem_roots(catlas)[:64]

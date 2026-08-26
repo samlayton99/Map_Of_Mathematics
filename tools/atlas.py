@@ -209,11 +209,16 @@ def load_dump(dump=DUMP, cache=CACHE, names_cache=NAMES_CACHE):
         return Atlas(names, kind, cls, z["t_indptr"], z["t_indices"],
                      z["v_indptr"], z["v_indices"])
 
+    from array import array
     idx, names = {}, []
     kind, clsmask = [], []
-    t_lists, v_lists = [], []
     kind_vocab, kv_idx = [], {}
     cls_vocab, cv_idx = [], {}
+    # CSR built incrementally; rows arrive in dump order, which we make node
+    # order by registering each row's name before its deps.
+    t_flat, v_flat = array("i"), array("i")
+    t_ptr, v_ptr = array("q", [0]), array("q", [0])
+    row_of = {}                       # node id -> row number in CSR
 
     def nid(nm):
         i = idx.get(nm)
@@ -223,8 +228,6 @@ def load_dump(dump=DUMP, cache=CACHE, names_cache=NAMES_CACHE):
             names.append(nm)
             kind.append(0)
             clsmask.append(0)
-            t_lists.append(())
-            v_lists.append(())
         return i
 
     def kid(k):
@@ -243,20 +246,51 @@ def load_dump(dump=DUMP, cache=CACHE, names_cache=NAMES_CACHE):
         for ln, line in enumerate(f):
             r = json.loads(line)
             i = nid(r["n"])
+            row_of[i] = len(t_ptr) - 1
             kind[i] = kid(r["k"])
             m = 0
             for c in r["c"]:
                 m |= 1 << cid(c)
             clsmask[i] = m
-            t_lists[i] = [nid(d) for d in r["t"]]
-            v_lists[i] = [nid(d) for d in r["v"]]
+            for d in r["t"]:
+                t_flat.append(nid(d))
+            t_ptr.append(len(t_flat))
+            for d in r["v"]:
+                v_flat.append(nid(d))
+            v_ptr.append(len(v_flat))
             if ln % 100000 == 0:
                 print(f"  parsed {ln} rows", file=sys.stderr)
 
-    t_indptr, t_indices = _csr_from_lists(t_lists)
-    del t_lists
-    v_indptr, v_indices = _csr_from_lists(v_lists)
-    del v_lists
+    n = len(names)
+    # nodes referenced but never dumped (should not happen; be safe): empty rows
+    for i in range(n):
+        if i not in row_of:
+            row_of[i] = len(t_ptr) - 1
+            t_ptr.append(len(t_flat))
+            v_ptr.append(len(v_flat))
+    # permute CSR rows from dump order to node-id order
+    rows = np.empty(n, dtype=np.int64)
+    for i, rw in row_of.items():
+        rows[i] = rw
+    tp = np.frombuffer(t_ptr, dtype=np.int64)
+    vp = np.frombuffer(v_ptr, dtype=np.int64)
+    tf = np.frombuffer(t_flat, dtype=np.int32)
+    vf = np.frombuffer(v_flat, dtype=np.int32)
+
+    def permute(ptr, flat):
+        counts = (ptr[1:] - ptr[:-1])[rows]
+        indptr = np.zeros(n + 1, dtype=np.int64)
+        np.cumsum(counts, out=indptr[1:])
+        indices = np.empty(len(flat), dtype=np.int32)
+        for i in range(n):
+            rw = rows[i]
+            indices[indptr[i]:indptr[i + 1]] = flat[ptr[rw]:ptr[rw + 1]]
+        return indptr, indices
+
+    t_indptr, t_indices = permute(tp, tf)
+    del t_flat
+    v_indptr, v_indices = permute(vp, vf)
+    del v_flat
     np.savez_compressed(
         cache,
         kind=np.array(kind, dtype=np.int8),
