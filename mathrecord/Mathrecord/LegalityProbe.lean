@@ -61,23 +61,24 @@ def probeGoal (env : Environment) (spec : GoalSpec) : MetaM Json := do
   let some ci := env.find? spec.name
     | return Json.mkObj [("n", Json.str (toString spec.name)),
                          ("error", Json.str "not found")]
-  let mut legal : Array Json := #[]
-  let mut nerr := 0
-  let res ← forallTelescopeReducing ci.type fun _ g => do
-    let mut acc : Array Json := #[]
-    for c in spec.cands do
-      match ← tryCandidate env c g with
-      | some (ne, ni) =>
-        acc := acc.push (Json.mkObj [("c", Json.str (toString c)),
-                                     ("ng", toJson ne), ("ni", toJson ni)])
-      | none => pure ()
-    pure acc
-  legal := res
-  return Json.mkObj [
-    ("n", Json.str (toString spec.name)),
-    ("legal", Json.arr legal),
-    ("n_cands", toJson spec.cands.size),
-    ("n_err", toJson nerr)]
+  try
+    let res ← withOptions (fun o => o.set `maxHeartbeats (100000 : Nat)) do
+      forallTelescope ci.type fun _ g => do
+        let mut acc : Array Json := #[]
+        for c in spec.cands do
+          match ← tryCandidate env c g with
+          | some (ne, ni) =>
+            acc := acc.push (Json.mkObj [("c", Json.str (toString c)),
+                                         ("ng", toJson ne), ("ni", toJson ni)])
+          | none => pure ()
+        pure acc
+    return Json.mkObj [
+      ("n", Json.str (toString spec.name)),
+      ("legal", Json.arr res),
+      ("n_cands", toJson spec.cands.size)]
+  catch _ =>
+    return Json.mkObj [("n", Json.str (toString spec.name)),
+                       ("error", Json.str "goal-level exception")]
 
 def probe (path : System.FilePath) (inp : System.FilePath)
     (out : System.FilePath) : IO Unit := do
@@ -93,7 +94,12 @@ def probe (path : System.FilePath) (inp : System.FilePath)
   let mut count := 0
   for spec in specs do
     let act : MetaM Json := probeGoal env spec
-    let (row, _) ← (act.run' {} {}).toIO coreCtx { env }
+    let row ← try
+      let (row, _) ← (act.run' {} {}).toIO coreCtx { env }
+      pure row
+    catch _ =>
+      pure (Json.mkObj [("n", Json.str (toString spec.name)),
+                        ("error", Json.str "io-level exception")])
     h.putStrLn row.compress
     count := count + 1
     if count % 50 == 0 then
