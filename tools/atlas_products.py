@@ -66,35 +66,53 @@ def interface_atlas(rows, limit=250, min_proof=200):
     return out
 
 
-def moves_vocabulary(atlas_names, atlas_kind, atlas_cls, counters,
-                     per_ns=15, global_top=120):
-    """Rank constants by how often they appear as a NEW move in a proof."""
+DEPTH_BANDS = [(0, 20, "logic-glue"), (20, 60, "data-arithmetic"),
+               (60, 100, "algebra-combinatorics"), (100, 10 ** 9, "analysis-topology")]
+
+
+def moves_vocabulary(atlas, counters, per_band=25, per_ns=10, top_ns=40):
+    """Rank constants by how often they appear as a NEW move in a proof.
+
+    Three views: depth bands (the strata of mathematical practice), tactic
+    certificate lemmas (Lean.* facts injected by omega/ring/simp — invisible
+    in source, ubiquitous in proof terms), and per top-level namespace."""
     asNew = counters["asNew"]
     inP = counters["inP"]
+    names, kind, cls, depth = atlas.names, atlas.kind, atlas.cls, atlas.depth
     order = np.argsort(-asNew, kind="stable")
-    vocab, ns_vocab = [], defaultdict(list)
+
+    def entry(i):
+        return {"name": names[i], "depth": int(depth[i]),
+                "times_as_new_move": int(asNew[i]),
+                "times_in_proof_cones": int(inP[i])}
+
+    bands = {label: [] for _, _, label in DEPTH_BANDS}
+    tactic = []
+    ns_count = Counter()
+    ns_vocab = defaultdict(list)
     for i in order:
         i = int(i)
         if asNew[i] == 0:
             break
-        if atlas_kind[i] != "theorem" or atlas_cls[i]:
+        if kind[i] != "theorem" or cls[i]:
             continue
-        entry = {"name": atlas_names[i],
-                 "times_as_new_move": int(asNew[i]),
-                 "times_in_proof_cones": int(inP[i])}
-        if len(vocab) < global_top:
-            vocab.append(entry)
-        ns = top_namespace(atlas_names[i])
+        is_tactic = names[i].startswith(("Lean.", "Mathlib.Tactic"))
+        if is_tactic:
+            if len(tactic) < per_band:
+                tactic.append(entry(i))
+            continue
+        for lo, hi, label in DEPTH_BANDS:
+            if lo <= depth[i] < hi and len(bands[label]) < per_band:
+                bands[label].append(entry(i))
+                break
+        ns = top_namespace(names[i])
+        ns_count[ns] += int(asNew[i])
         if len(ns_vocab[ns]) < per_ns:
-            ns_vocab[ns].append(entry)
-        if len(vocab) >= global_top and \
-                all(len(v) >= per_ns for v in ns_vocab.values()) and \
-                len(ns_vocab) > 60:
-            break
-    big_ns = {ns: v for ns, v in sorted(ns_vocab.items(),
-                                        key=lambda kv: -kv[1][0]["times_as_new_move"])
-              if v[0]["times_as_new_move"] >= 25}
-    return {"global": vocab, "by_namespace": big_ns}
+            ns_vocab[ns].append(entry(i))
+    keep = [ns for ns, _ in ns_count.most_common(top_ns)]
+    return {"by_depth_band": bands,
+            "tactic_certificate_lemmas": tactic,
+            "by_namespace": {ns: ns_vocab[ns] for ns in keep}}
 
 
 def summary(rows, counters):
@@ -133,10 +151,11 @@ def main():
         json.dumps(ia, indent=1))
     print(f"interface atlas: {len(ia)} theorems")
 
-    mv = moves_vocabulary(atlas.names, atlas.kind, atlas.cls, counters)
+    mv = moves_vocabulary(atlas, counters)
     (OUT / "mathlib_moves_vocabulary.json").write_text(
         json.dumps(mv, indent=1))
-    print(f"moves vocabulary: {len(mv['global'])} global, "
+    print(f"moves vocabulary: {len(mv['by_depth_band'])} bands, "
+          f"{len(mv['tactic_certificate_lemmas'])} tactic lemmas, "
           f"{len(mv['by_namespace'])} namespaces")
 
     s = summary(rows, counters)
