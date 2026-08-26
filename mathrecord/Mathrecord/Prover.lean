@@ -198,20 +198,25 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
               do g.applyConst ctor)
       | _ => pure ()
     if banks.contains 'b' then
+      let mut nb := 0
       for c in bwCands do
-        if c.concl == ghead && c.name.toString != task.name.toString then
+        if nb < 50 && c.concl == ghead && c.name.toString != task.name.toString then
+          nb := nb + 1
           acts := acts.push ("backward", s!"apply {c.name}", 1.0,
             do g.apply (← mkConstWithFreshMVarLevels c.name))
     if banks.contains 'r' then
+      let mut nr := 0
       for c in rwCands do
-        if c.name.toString != task.name.toString then
+        if nr < 30 && c.name.toString != task.name.toString then
           if gconsts.contains (String.toName c.lhs) then
+            nr := nr + 1
             acts := acts.push ("rewrite", s!"rw {c.name}", 1.2, do
               let r ← g.rewrite (← g.getType)
                         (← mkConstWithFreshMVarLevels c.name) false
               let g' ← g.replaceTargetEq r.eNew r.eqProof
               pure (g' :: r.mvarIds))
           else if gconsts.contains (String.toName c.rhs) then
+            nr := nr + 1
             acts := acts.push ("rewrite", s!"rw <- {c.name}", 1.2, do
               let r ← g.rewrite (← g.getType)
                         (← mkConstWithFreshMVarLevels c.name) true
