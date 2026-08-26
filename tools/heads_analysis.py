@@ -42,16 +42,33 @@ def main():
     a = load_dump()
     log("loading heads dump...")
     ch = {}     # name -> conclusion head tag
+    ca = {}     # name -> head tags of first conclusion args
     vh = {}     # name -> value head tag (top-level move)
     ne = {}
     with open(HEADS) as f:
         for line in f:
             r = json.loads(line)
             ch[r["n"]] = r["ch"]
+            ca[r["n"]] = r.get("ca", [])
             if r["vh"] is not None:
                 vh[r["n"]] = r["vh"]
             ne[r["n"]] = r["ne"]
     log(f"{len(ch):,} head rows")
+
+    def refined_key(nm):
+        """Goal index key: head, refined by the LHS head for the huge
+        relational classes (Eq/Iff/orders) where the bare head is vacuous."""
+        h = ch.get(nm)
+        if h is None:
+            return None
+        args = ca.get(nm, [])
+        if h in ("Eq", "HEq", "Ne") and len(args) >= 2:
+            return (h, args[1])
+        if h == "Iff" and len(args) >= 1:
+            return (h, args[0])
+        if h in ("LE.le", "LT.lt", "GE.ge", "GT.gt") and len(args) >= 3:
+            return (h, args[2])
+        return (h,)
 
     roots = theorem_roots(a)
     root_names = [a.names[r] for r in roots]
@@ -127,47 +144,74 @@ def main():
         "head_match_rate_math": round(match_math / tot_math, 4) if tot_math else None,
     }
 
+    # ---- 1b. refined pools: relational goals indexed by LHS head too
+    rpool = Counter()
+    for i in range(a.n):
+        if a.kind[i] in ("theorem", "constructor"):
+            k = refined_key(a.names[i])
+            if k:
+                rpool[k] += 1
+    rsizes = []
+    for nm in root_names:
+        k = refined_key(nm)
+        if k:
+            rsizes.append(rpool.get(k, 0))
+    rsizes = np.array(rsizes)
+    pools["refined_goal_weighted_pool"] = {
+        "median": int(np.median(rsizes)), "mean": round(float(rsizes.mean()), 1),
+        "p90": int(np.percentile(rsizes, 90)), "max": int(rsizes.max()),
+        "note": "Eq/Iff/order goals additionally keyed by LHS head",
+    }
+
     # ---- 4. next-move prediction: frequency-ranked pool, recall@K
     log("next-move prediction eval...")
     cite = np.zeros(a.n, dtype=np.int64)          # direct citation prior
     for r in roots:
         cite[np.unique(a.v_indices[a.v_indptr[r]:a.v_indptr[r + 1]])] += 1
     by_head = defaultdict(list)
+    by_ref = defaultdict(list)
     for i in range(a.n):
         if a.kind[i] in ("theorem", "constructor"):
             h = ch.get(a.names[i])
             if h:
                 by_head[h].append(i)
-    for h in by_head:
-        ids = np.array(by_head[h])
-        by_head[h] = ids[np.argsort(-cite[ids], kind="stable")]
+            k = refined_key(a.names[i])
+            if k:
+                by_ref[k].append(i)
+    for d in (by_head, by_ref):
+        for h in d:
+            ids = np.array(d[h])
+            d[h] = ids[np.argsort(-cite[ids], kind="stable")]
 
     rng = np.random.default_rng(0)
     sample = rng.choice(len(roots), size=8000, replace=False)
-    rec = {K: [0, 0] for K in KS}     # hits, total
+    rec = {K: [0, 0] for K in KS}      # coarse pool: hits, total
+    rrec = {K: [0, 0] for K in KS}     # refined pool
     for pos in sample:
         nm = root_names[pos]
         v = vh.get(nm)
         if v is None or v not in isthm_math:
             continue                   # eval where the top move is a math theorem
-        g = ch.get(nm)
-        cands = by_head.get(g)
-        if cands is None:
-            continue
         vi = a.idx[v]
-        # leave-one-out: drop the theorem itself from its pool ranking
-        for K in KS:
-            top = cands[:K + 1]
-            top = top[top != roots[pos]][:K]
-            rec[K][1] += 1
-            if vi in top:
-                rec[K][0] += 1
+        for pools_d, key, acc in ((by_head, ch.get(nm), rec),
+                                  (by_ref, refined_key(nm), rrec)):
+            cands = pools_d.get(key)
+            if cands is None:
+                continue
+            for K in KS:
+                top = cands[:K + 1]
+                top = top[top != roots[pos]][:K]   # leave-one-out
+                acc[K][1] += 1
+                if vi in top:
+                    acc[K][0] += 1
     nextmove = {
         "eval_theorems": rec[KS[0]][1],
         "recall_at": {K: round(h / t, 4) if t else None
                       for K, (h, t) in rec.items()},
-        "note": "candidates restricted to conclusion-head match; "
-                "ranked by global citation count",
+        "recall_at_refined": {K: round(h / t, 4) if t else None
+                              for K, (h, t) in rrec.items()},
+        "note": "candidates restricted to conclusion-head match (coarse) or "
+                "head+LHS-head match (refined); ranked by global citation count",
     }
 
     out = {"pools": pools, "top_move_census": census,

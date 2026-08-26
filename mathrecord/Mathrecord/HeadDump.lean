@@ -63,10 +63,13 @@ def headDump (path : System.FilePath) (out : System.FilePath) : IO Unit := do
     let vh : Json := match ci.value? (allowOpaque := true) with
       | some v => Json.str (headTag (stripLams v))
       | none => Json.null
+    let ca : Array Json :=
+      (concl.getAppArgs.toList.take 3).toArray.map (fun a => Json.str (headTag a))
     let j := Json.mkObj [
       ("n", Json.str (toString n)),
       ("k", Json.str (kindString ci)),
       ("ch", Json.str (headTag concl)),
+      ("ca", Json.arr ca),
       ("ph", Json.arr ph),
       ("ne", toJson ne), ("ni", toJson ninst), ("nm", toJson nimp),
       ("vh", vh)]
