@@ -162,6 +162,7 @@ structure RunResult where
   goalHeads : List String := []      -- per-decision goal heads (winning path)
   partsData : Array String := #[]    -- oracle data parts provided (custom runs)
   partsProp : Array String := #[]
+  guidedErrs : Array String := #[]   -- guided-act failure messages (capped)
 
 /-- Extract ORACLE CUSTOM PARTS from a reference proof body: data-typed
 subterms (witnesses, functions, motives - never proof-typed subterms, which
@@ -220,6 +221,97 @@ def collectCustomParts (xs : Array Expr) (val? : Option Expr) :
     | _ => pure ()
   return (data, props)
 
+/-- Assign the oracle occurrence term directly at a data goal. -/
+def oracleAssign (g : MVarId) (e : Expr) : Attempt := do
+  if ← isDefEq (mkMVar g) e then pure []
+  else throwError "oracle data mismatch"
+
+/-- GUIDED DESCENT.  Apply the head of reference application `e` at `g`
+through the engine's own unification: iterative bounded metavariable
+telescope (over-applied heads re-telescoped after each assignment round),
+conclusion unified last.  Proof-argument metavariables become new goals,
+registered in the guide map with their reference subterms; data-argument
+metavariables are assigned from the reference when `assignData`, else
+registered (for the occurrence-oracle mode) and left to unification, with
+a synthesis attempt for closed class-typed holes (mirroring `apply`). -/
+def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
+    (g : MVarId) (e : Expr) (assignData : Bool) : MetaM (List MVarId) := do
+  let fn := e.getAppFn.consumeMData
+  let args := e.getAppArgs
+  let hType ← inferType fn
+  let mut curType := hType
+  let mut allMvs : Array Expr := #[]
+  let mut idx := 0
+  for _ in [0:args.size] do
+    if idx ≥ args.size then break
+    let (mvs, _, concl) ← forallMetaBoundedTelescope curType (args.size - idx)
+    if mvs.size == 0 then throwError "guided telescope stalled"
+    for i in [0:mvs.size] do
+      let a := args[idx + i]!
+      let aP ← try Meta.isProp (← inferType a) catch _ => pure false
+      if aP then
+        guide.modify (·.insert mvs[i]!.mvarId!.name a)
+      else if assignData then
+        unless ← isDefEq mvs[i]! a do throwError "guided data-arg mismatch"
+      else
+        guide.modify (·.insert mvs[i]!.mvarId!.name a)
+    allMvs := allMvs ++ mvs
+    curType ← instantiateMVars concl
+    idx := idx + mvs.size
+  unless ← isDefEq curType (← g.getType) do
+    throwError "guided conclusion mismatch"
+  for mv in allMvs do
+    let m := mv.mvarId!
+    unless ← m.isAssigned do
+      let τ ← instantiateMVars (← m.getType)
+      let isCls ← try pure (← Meta.isClass? τ).isSome catch _ => pure false
+      if isCls && !τ.hasExprMVar then
+        try m.assign (← synthInstance τ) catch _ => pure ()
+  g.assign (mkAppN fn allMvs)
+  let mut out : List MVarId := []
+  for mv in allMvs.reverse do
+    let m := mv.mvarId!
+    unless ← m.isAssigned do out := m :: out
+  pure out
+
+/-- One guided step at goal `g` whose reference subterm is `e`: lambda ->
+intro; let (elaborated `have`) -> assert; application with const/fvar head
+-> guidedApply; anything else -> direct assignment of the reference term.
+Target-attached auxiliaries (`T._proof_*` etc.) are delta-unfolded first,
+so the constructed proof never cites them. -/
+partial def guidedAct (guide : IO.Ref (Std.HashMap Name Expr))
+    (env : Environment) (selfStr : String)
+    (g : MVarId) (e : Expr) (assignData : Bool) : MetaM (List MVarId) := do
+  let e := e.consumeMData
+  let fn0 := e.getAppFn.consumeMData
+  if let .const c lvls := fn0 then
+    if c.toString == selfStr || (c.toString).startsWith (selfStr ++ ".") then
+      if let some ci := env.find? c then
+        if let some v := ci.value? (allowOpaque := true) then
+          let v := v.instantiateLevelParams ci.levelParams lvls
+          return ← guidedAct guide env selfStr g (v.beta e.getAppArgs) assignData
+  match e with
+  | .lam _ _ b _ =>
+    let (fv, g') ← g.intro1P
+    guide.modify (·.insert g'.name (b.instantiate1 (mkFVar fv)))
+    pure [g']
+  | .letE _ t v b _ =>
+    let pm ← mkFreshExprMVar t
+    let g2 ← g.assert `hguided t pm
+    let (fv, g3) ← g2.intro1P
+    guide.modify (·.insert pm.mvarId!.name v)
+    guide.modify (·.insert g3.name (b.instantiate1 (mkFVar fv)))
+    pure [pm.mvarId!, g3]
+  | .app .. =>
+    let fn := e.getAppFn.consumeMData
+    if fn.isConst || fn.isFVar then
+      guidedApply guide g e assignData
+    else if ← isDefEq (mkMVar g) e then pure []
+    else throwError "guided direct-assign failed"
+  | _ =>
+    if ← isDefEq (mkMVar g) e then pure []
+    else throwError "guided direct-assign failed"
+
 def searchCore (env : Environment) (task : Task) (banks : String)
     (budget : Nat) (ci : ConstantInfo) (xs : Array Expr) (concl : Expr) :
     MetaM RunResult := do
@@ -236,6 +328,19 @@ def searchCore (env : Environment) (task : Task) (banks : String)
       pure (some st)
     else pure none
   let root ← mkFreshExprMVar concl
+  let selfStr := task.name.toString
+  -- guided modes: '1' exact heads + oracle data (G1), '2' exact heads
+  -- only (G2), '3' reference head as top-priority hint (G3), 'c'
+  -- occurrence-specific data oracle (Condition C)
+  let gmode : Char :=
+    if banks.contains '1' then '1' else if banks.contains '2' then '2'
+    else if banks.contains '3' then '3' else if banks.contains 'c' then 'c'
+    else ' '
+  let guide ← IO.mkRef ({} : Std.HashMap Name Expr)
+  let gerrs ← IO.mkRef (#[] : Array String)
+  if gmode != ' ' then
+    if let some val := ci.value? (allowOpaque := true) then
+      guide.modify (·.insert root.mvarId!.name (val.beta xs))
   -- oracle custom parts ('w'/'v'): read the reference proof ONLY here
   let (dparts, pparts) ←
     if banks.contains 'w' || banks.contains 'v' then
@@ -261,19 +366,26 @@ def searchCore (env : Environment) (task : Task) (banks : String)
     match frontier.back? with
     | some last => frontier := (frontier.set! best last).pop
     | none => frontier := frontier.pop
-    if node.goals.isEmpty then
+    node.saved.restore
+    -- goals whose metavariable was already assigned through coupling
+    -- (sibling solving, conclusion unification) are closed; drop them
+    let mut live : List MVarId := []
+    for gg in node.goals do
+      let dead ← try
+        pure ((← gg.isAssigned) || (← gg.isDelayedAssigned))
+      catch _ => pure false
+      if !dead then live := live ++ [gg]
+    if live.isEmpty then
       -- candidate success: verify, then enforce source-cleanliness -
       -- a proof citing the target, its derived auxiliaries, or forbidden
       -- own-module facts is REJECTED and the search continues (dirty
       -- proofs must not shadow clean ones)
-      node.saved.restore
       let proof ← mkLambdaFVars xs (← instantiateMVars root)
       let ok ← try
         Meta.check proof
         isDefEq (← inferType proof) ci.type
       catch _ => pure false
       let usedNames := proof.getUsedConstantsAsSet.toArray
-      let selfStr := task.name.toString
       let forbidSet : Std.HashSet Name :=
         task.forbid.foldl (init := {}) (·.insert ·)
       let ownIdx := (env.getModuleIdxFor? task.name).map (·.toNat)
@@ -293,17 +405,32 @@ def searchCore (env : Environment) (task : Task) (banks : String)
                  usedConsts := usedNames.map toString,
                  goalHeads := node.heads.reverse,
                  partsData := dparts.map (fun e => ((toString e).take 300).toString),
-                 partsProp := pparts.map (fun e => ((toString e).take 300).toString) }
+                 partsProp := pparts.map (fun e => ((toString e).take 300).toString),
+                 guidedErrs := ← gerrs.get }
       stats := { stats with attempts := bump stats.attempts "dirty_rejected" }
       continue
     stats := { stats with expansions := stats.expansions + 1 }
-    node.saved.restore
     -- goal selection: with 'g', expand the syntactically smallest goal
     -- (later goals can be easy or instantiate shared metavariables)
     let (g, rest) ← do
+      let arr0 := live.toArray
+      if gmode == '2' then
+        -- exact-head rung without a data oracle: expand PROOF goals
+        -- first, so metavariable coupling can determine the data holes
+        let mut pidx : Option Nat := none
+        for i in [0:arr0.size] do
+          if pidx.isNone then
+            let isP ← try
+              Meta.isProp (← instantiateMVars (← arr0[i]!.getType))
+            catch _ => pure true
+            if isP then pidx := some i
+        let sel := pidx.getD 0
+        let rest := (List.range arr0.size).filterMap
+          (fun i => if i == sel then none else arr0[i]?)
+        pure (arr0[sel]!, rest)
+      else do
       -- FIRST-CLASS DATA HOLES: non-proof goals are fabrication holes;
       -- resolve them first - they are cheap and unlock proof goals
-      let arr0 := node.goals.toArray
       let mut dataIdx : Option Nat := none
       for i in [0:arr0.size] do
         if dataIdx.isNone then
@@ -315,22 +442,21 @@ def searchCore (env : Environment) (task : Task) (banks : String)
         let rest := (List.range arr0.size).filterMap
           (fun i => if i == di then none else arr0[i]?)
         pure (arr0[di]!, rest)
-      else if banks.contains 'g' && node.goals.length > 1 then
-        let arr := node.goals.toArray
+      else if banks.contains 'g' && arr0.size > 1 then
         let mut bi := 0
         let mut bsz := 1000000
-        for i in [0:arr.size] do
+        for i in [0:arr0.size] do
           let sz ← try
-            pure (toString (← instantiateMVars (← arr[i]!.getType))).length
+            pure (toString (← instantiateMVars (← arr0[i]!.getType))).length
           catch _ => pure 1000000
           if sz < bsz then
             bsz := sz
             bi := i
-        let rest := (List.range arr.size).filterMap
-          (fun i => if i == bi then none else arr[i]?)
-        pure (arr[bi]!, rest)
+        let rest := (List.range arr0.size).filterMap
+          (fun i => if i == bi then none else arr0[i]?)
+        pure (arr0[bi]!, rest)
       else
-        pure (node.goals.head!, node.goals.tail!)
+        pure (arr0[0]!, arr0.toList.tail)
     let ghead ← try goalHead g catch _ => pure "?"
     let gIsProp ← try
       Meta.isProp (← instantiateMVars (← g.getType))
@@ -338,12 +464,21 @@ def searchCore (env : Environment) (task : Task) (banks : String)
     let gconsts ← try
       pure (← instantiateMVars (← g.getType)).getUsedConstantsAsSet
     catch _ => pure default
+    -- guided modes: the reference subterm tracked for this goal, if any
+    let gEntry : Option Expr ←
+      if gmode == ' ' then pure none
+      else do pure ((← guide.get).get? g.name)
 
     -- assemble the action list for this goal
     let mut acts : Array (String × String × Float × Attempt) := #[]  -- (bank, label, cost, act)
     if banks.contains 's' then
       acts := acts.push ("structural", "intro", 0.3,
-        do let (_, g') ← g.intro1P; pure [g'])
+        do let (fv, g') ← g.intro1P
+           if gmode == 'c' then
+             if let some e := gEntry then
+               if let .lam _ _ b _ := e.consumeMData then
+                 guide.modify (·.insert g'.name (b.instantiate1 (mkFVar fv)))
+           pure [g'])
       acts := acts.push ("structural", "assumption", 0.2,
         do if ← g.assumptionCore then pure []
            else throwError "no assumption")
@@ -358,8 +493,17 @@ def searchCore (env : Environment) (task : Task) (banks : String)
       | some (.inductInfo iv) =>
         if gIsProp && iv.ctors.length ≤ 4 then
           for ctor in iv.ctors do
-            acts := acts.push ("structural", s!"ctor {ctor}", 0.5,
-              do g.applyConst ctor)
+            let guidedCtor := gmode == 'c' &&
+              (match gEntry with
+               | some e =>
+                 e.consumeMData.getAppFn.consumeMData.constName? == some ctor
+               | none => false)
+            if guidedCtor then
+              acts := acts.push ("structural", s!"ctor {ctor} (guided)", 0.5,
+                guidedApply guide g ((gEntry.getD default).consumeMData) false)
+            else
+              acts := acts.push ("structural", s!"ctor {ctor}", 0.5,
+                do g.applyConst ctor)
       | _ => pure ()
     if banks.contains 'h' then
       -- head refinement with local hypotheses: apply any hypothesis, with
@@ -370,8 +514,16 @@ def searchCore (env : Environment) (task : Task) (banks : String)
             |>.filter (fun d => !d.isImplementationDetail))
       catch _ => pure []
       for d in decls do
-        acts := acts.push ("hyp", s!"apply hyp {d.userName}", 0.6,
-          do g.apply (mkFVar d.fvarId))
+        let guidedHyp := gmode == 'c' &&
+          (match gEntry with
+           | some e => e.consumeMData.getAppFn.consumeMData == mkFVar d.fvarId
+           | none => false)
+        if guidedHyp then
+          acts := acts.push ("hyp", s!"apply hyp {d.userName} (guided)", 0.6,
+            guidedApply guide g ((gEntry.getD default).consumeMData) false)
+        else
+          acts := acts.push ("hyp", s!"apply hyp {d.userName}", 0.6,
+            do g.apply (mkFVar d.fvarId))
     if banks.contains 'b' && gIsProp then
       let small := bwCands.size ≤ 48   -- oracle supports: try everything
       let mut nb := 0
@@ -379,8 +531,20 @@ def searchCore (env : Environment) (task : Task) (banks : String)
         if nb < 50 && (small || c.concl == ghead) &&
            c.name.toString != task.name.toString then
           nb := nb + 1
-          acts := acts.push ("backward", s!"apply {c.name}", 1.0,
-            do g.apply (← mkConstWithFreshMVarLevels c.name))
+          let guidedHead := gmode == 'c' &&
+            (match gEntry with
+             | some e =>
+               e.consumeMData.getAppFn.consumeMData.constName? == some c.name
+             | none => false)
+          if guidedHead then
+            -- Condition C: the same head the free search would try, but
+            -- applied through guidedApply so its argument holes acquire
+            -- occurrence-specific reference terms (same cost, same slot)
+            acts := acts.push ("backward", s!"apply {c.name} (guided)", 1.0,
+              guidedApply guide g ((gEntry.getD default).consumeMData) false)
+          else
+            acts := acts.push ("backward", s!"apply {c.name}", 1.0,
+              do g.apply (← mkConstWithFreshMVarLevels c.name))
     if banks.contains 'r' && gIsProp then
       -- rewrite v2: forward (simp) orientation only, tight cap - the v1
       -- bidirectional bank was measured net-negative at fixed budget
@@ -428,6 +592,43 @@ def searchCore (env : Environment) (task : Task) (banks : String)
         | none => pure []
         | some (_, g') => pure [g'])
     | none => pure ()
+    -- guided-mode actions
+    if let some e := gEntry then
+      let logged (assignData : Bool) : Attempt := do
+        try guidedAct guide env selfStr g e assignData
+        catch ex =>
+          let msg ← try ex.toMessageData.toString catch _ => pure "?"
+          gerrs.modify (fun a =>
+            if a.size < 24 then a.push s!"{ghead}: {(msg.take 160).toString}" else a)
+          throw ex
+      if gmode == '1' then
+        if gIsProp then
+          acts := #[("guided", "guided", 0.1, logged true)]
+        else
+          acts := #[("guided", "oracle_data", 0.1, oracleAssign g e)]
+      else if gmode == '2' then
+        if gIsProp then
+          acts := #[("guided", "guided", 0.1, logged false)]
+      else if gmode == '3' then
+        if gIsProp then
+          -- PREPEND: the guided child must claim the duplicate-state key
+          -- before the plain backward child of the same head does, or the
+          -- correspondence registrations are discarded with it
+          acts := #[(("guided", "guided_pri", 0.05,
+            guidedAct guide env selfStr g e false) :
+              String × String × Float × Attempt)] ++ acts
+      else if gmode == 'c' then
+        if !gIsProp then
+          acts := #[(("guided", "oracle_data", 0.05,
+            oracleAssign g e) : String × String × Float × Attempt)] ++ acts
+
+    -- guided-exact diagnostics: a node dying with no action is a
+    -- correspondence loss - record where and what kind of goal
+    if (gmode == '1' || gmode == '2') && acts.isEmpty then
+      let kind := if gIsProp then "P" else "D"
+      let hasE := if gEntry.isSome then "entry" else "noentry"
+      stats := { stats with
+        attempts := bump stats.attempts s!"dead_{kind}_{hasE}_{ghead}" }
 
     -- execute attempts
     for (bank, label, acost, act) in acts do
@@ -441,7 +642,11 @@ def searchCore (env : Environment) (task : Task) (banks : String)
         stats := { stats with legal := bump stats.legal bank }
         let goals' := newGoals ++ rest
         let key ← try stateKey goals' catch _ => pure s!"?{calls}"
-        if seen.contains key then
+        -- guided children carry correspondence registrations and may
+        -- legitimately re-render an earlier state key (id / Eq.mpr-style
+        -- steps); suppressing them kills the branch-factor-1 rungs
+        let guidedChild := bank == "guided" || label.endsWith "(guided)"
+        if seen.contains key && !guidedChild then
           stats := { stats with dups := stats.dups + 1 }
         else
           seen := seen.insert key
@@ -453,7 +658,8 @@ def searchCore (env : Environment) (task : Task) (banks : String)
   return { solved := false, callsUsed := calls, stats,
            frontierLeft := frontier.size,
            partsData := dparts.map (fun e => ((toString e).take 300).toString),
-           partsProp := pparts.map (fun e => ((toString e).take 300).toString) }
+           partsProp := pparts.map (fun e => ((toString e).take 300).toString),
+           guidedErrs := ← gerrs.get }
 
 def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
     MetaM RunResult := do
@@ -516,6 +722,7 @@ def prove (path : System.FilePath) (inp : System.FilePath)
       ("goal_heads", Json.arr (res.goalHeads.toArray.map Json.str)),
       ("parts_data", Json.arr (res.partsData.map Json.str)),
       ("parts_prop", Json.arr (res.partsProp.map Json.str)),
+      ("guided_errors", Json.arr (res.guidedErrs.map Json.str)),
       ("stats", statsJson res.stats)]
     h.putStrLn row.compress
     count := count + 1
