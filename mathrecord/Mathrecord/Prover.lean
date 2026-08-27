@@ -222,7 +222,7 @@ def collectCustomParts (xs : Array Expr) (val? : Option Expr) :
   return (data, props)
 
 /-- Assign the oracle occurrence term directly at a data goal. -/
-def oracleAssign (g : MVarId) (e : Expr) : Attempt := do
+def oracleAssign (g : MVarId) (e : Expr) : Attempt := g.withContext do
   if ← isDefEq (mkMVar g) e then pure []
   else throwError "oracle data mismatch"
 
@@ -235,7 +235,8 @@ metavariables are assigned from the reference when `assignData`, else
 registered (for the occurrence-oracle mode) and left to unification, with
 a synthesis attempt for closed class-typed holes (mirroring `apply`). -/
 def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
-    (g : MVarId) (e : Expr) (assignData : Bool) : MetaM (List MVarId) := do
+    (g : MVarId) (e : Expr) (assignData : Bool) : MetaM (List MVarId) :=
+    g.withContext do
   let fn := e.getAppFn.consumeMData
   let args := e.getAppArgs
   let hType ← inferType fn
@@ -252,13 +253,26 @@ def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
       if aP then
         guide.modify (·.insert mvs[i]!.mvarId!.name a)
       else if assignData then
-        unless ← isDefEq mvs[i]! a do throwError "guided data-arg mismatch"
+        -- checkpointed assignment: an argument whose in-place unification
+        -- fails (open sibling proof metavariables in its expected type)
+        -- is deferred - registered for goal-time oracle assignment
+        let s ← Meta.saveState
+        let okA ← try isDefEq mvs[i]! a catch _ => pure false
+        unless okA do
+          s.restore
+          guide.modify (·.insert mvs[i]!.mvarId!.name a)
       else
         guide.modify (·.insert mvs[i]!.mvarId!.name a)
     allMvs := allMvs ++ mvs
     curType ← instantiateMVars concl
     idx := idx + mvs.size
-  unless ← isDefEq curType (← g.getType) do
+  let gType ← g.getType
+  let cOk ← isDefEq curType gType
+  let cOk ← if cOk then pure true else
+    -- composed search states can render defeq-but-unification-hard forms;
+    -- escalate transparency before giving up
+    withTransparency TransparencyMode.all (isDefEq curType gType)
+  unless cOk do
     throwError "guided conclusion mismatch"
   for mv in allMvs do
     let m := mv.mvarId!
@@ -281,11 +295,18 @@ Target-attached auxiliaries (`T._proof_*` etc.) are delta-unfolded first,
 so the constructed proof never cites them. -/
 partial def guidedAct (guide : IO.Ref (Std.HashMap Name Expr))
     (env : Environment) (selfStr : String)
-    (g : MVarId) (e : Expr) (assignData : Bool) : MetaM (List MVarId) := do
+    (g : MVarId) (e : Expr) (assignData : Bool) : MetaM (List MVarId) :=
+    g.withContext do
   let e := e.consumeMData
   let fn0 := e.getAppFn.consumeMData
   if let .const c lvls := fn0 then
-    if c.toString == selfStr || (c.toString).startsWith (selfStr ++ ".") then
+    -- target-attached auxiliaries appear both as `T._proof_*` and in
+    -- private form `_private.<Module>.0.T._proof_*`
+    let s := c.toString
+    let isAux := s == selfStr || s.startsWith (selfStr ++ ".") ||
+      (s.startsWith "_private." &&
+        (s.splitOn ("." ++ selfStr ++ ".")).length > 1)
+    if isAux then
       if let some ci := env.find? c then
         if let some v := ci.value? (allowOpaque := true) then
           let v := v.instantiateLevelParams ci.levelParams lvls

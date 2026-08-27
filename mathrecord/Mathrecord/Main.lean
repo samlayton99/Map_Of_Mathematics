@@ -193,6 +193,9 @@ unsafe def main (args : List String) : IO UInt32 := do
   | ["replay", file, inp, out] => do
     Mathrecord.Replay.replay file inp out
     return 0
+  | ["replay", file, inp, out, mode] => do
+    Mathrecord.Replay.replay file inp out mode
+    return 0
   | ["alpha", a, b] => alpha a b
   | ["inspect", recordPath, declName] => inspect recordPath declName
   | _ => do

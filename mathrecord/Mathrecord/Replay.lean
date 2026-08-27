@@ -39,6 +39,10 @@ structure Ctx where
   fuel : IO.Ref Nat
   rows : IO.Ref (Array Json)
   bad  : IO.Ref Nat
+  withShadow : Bool := true
+  -- support candidates (name, statement type) for hard-negative emission:
+  -- at every proof node, which of these heads is Lean-legal at the goal
+  cands : Array (Name × Expr) := #[]
 
 /-- Iteratively metavariable-telescope `hType` against `args`, assigning
 reference arguments positionally, then unify the final conclusion with `t`.
@@ -105,7 +109,22 @@ def shadowTiers (hType : Expr) (args : Array Expr) (t : Expr) (j : Nat) :
     else detStatus wh args[j]!
   return (t1, t2)
 
-partial def walk (ctx : Ctx) (e : Expr) : MetaM Unit := do
+/-- Which support heads are Lean-legal at goal type `t` (conclusion
+unifies through a fresh metavariable telescope) - the hard negatives for
+the head-selection dataset. -/
+def legalHeads (cands : Array (Name × Expr)) (t : Expr) :
+    MetaM (Array String) := do
+  let mut legal : Array String := #[]
+  for (cn, cty) in cands do
+    let ok ← withoutModifyingState do
+      try
+        let (_, _, ccl) ← forallMetaTelescope cty
+        isDefEq ccl t
+      catch _ => pure false
+    if ok then legal := legal.push (toString cn)
+  pure legal
+
+partial def walk (ctx : Ctx) (e : Expr) (depth : Nat := 0) : MetaM Unit := do
   if (← ctx.fuel.get) == 0 then return ()
   ctx.fuel.set ((← ctx.fuel.get) - 1)
   let e := e.consumeMData
@@ -114,17 +133,17 @@ partial def walk (ctx : Ctx) (e : Expr) : MetaM Unit := do
   if !isP then return ()               -- only proof nodes drive assembly
   match e with
   | .lam .. =>
-    lambdaTelescope e fun _ body => walk ctx body
+    lambdaTelescope e fun _ body => walk ctx body (depth + 1)
   | .letE nm ty val body _ =>
-    walk ctx val
-    withLetDecl nm ty val fun x => walk ctx (body.instantiate1 x)
+    walk ctx val (depth + 1)
+    withLetDecl nm ty val fun x => walk ctx (body.instantiate1 x) (depth + 1)
   | .app .. =>
     let fn := e.getAppFn.consumeMData
     let args := e.getAppArgs
     -- beta-redex / letFun: recurse through both sides
     if fn.isLambda then
-      walk ctx fn
-      for a in args do walk ctx a
+      walk ctx fn (depth + 1)
+      for a in args do walk ctx a (depth + 1)
       return ()
     -- stepwise reconstruction: does OUR pipeline accept this exact step?
     let res ← try
@@ -150,7 +169,7 @@ partial def walk (ctx : Ctx) (e : Expr) : MetaM Unit := do
             else if (← Meta.isClass? τ).isSome then pure "instance"
             else pure "value"
           catch _ => pure "value"
-          let (s1, s2) ← if ok then
+          let (s1, s2) ← if ok && ctx.withShadow then
               try shadowTiers hType args t j catch _ => pure ("err", "err")
             else pure ("untested", "untested")
           recs := recs.push (Json.mkObj [
@@ -170,56 +189,78 @@ partial def walk (ctx : Ctx) (e : Expr) : MetaM Unit := do
       | .const c _ => toString c
       | .fvar _ => "FVAR"
       | _ => "OTHER"
+    let legal ← try legalHeads ctx.cands t catch _ => pure #[]
     ctx.rows.modify (·.push (Json.mkObj [
       ("head", Json.str headStr),
       ("ok", toJson stepOk),
       ("goal", Json.str (((toString t).take 240).toString)),
+      ("depth", toJson depth),
+      ("legal_heads", Json.arr (legal.map Json.str)),
       ("n_proof_args", toJson nProof),
       ("n_data_args", toJson nData),
       ("data_args", Json.arr argRecs)]))
     if !stepOk then ctx.bad.modify (· + 1)
-    for a in args do walk ctx a          -- recurse (walk filters non-proof)
+    for a in args do walk ctx a (depth + 1)  -- recurse (walk filters non-proof)
   | .proj _ _ s =>
-    walk ctx s
+    walk ctx s (depth + 1)
   | _ =>
     -- leaf proof: a hypothesis or a bare constant - trivially replayable
     let headStr := match e with
       | .const c _ => toString c
       | .fvar _ => "FVAR"
       | _ => "LEAF"
+    let legal ← try legalHeads ctx.cands t catch _ => pure #[]
     ctx.rows.modify (·.push (Json.mkObj [
       ("head", Json.str headStr), ("ok", toJson true),
       ("goal", Json.str (((toString t).take 240).toString)),
+      ("depth", toJson depth),
+      ("legal_heads", Json.arr (legal.map Json.str)),
       ("n_proof_args", toJson 0), ("n_data_args", toJson 0),
       ("data_args", Json.arr #[])]))
 
 def replay (path : System.FilePath) (inp : System.FilePath)
-    (out : System.FilePath) : IO Unit := do
+    (out : System.FilePath) (mode : String := "") : IO Unit := do
   let pf ← Mathrecord.processFile path Mathrecord.Study.mathlibOptions
   let env := pf.env
-  IO.println s!"env loaded: {env.header.moduleNames.size} modules"
+  IO.println s!"env loaded: {env.header.moduleNames.size} modules; mode={mode}"
   let raw ← IO.FS.readFile inp
   let j ← IO.ofExcept (Json.parse raw)
   let ts ← IO.ofExcept ((← IO.ofExcept (j.getObjVal? "goals" <|> j.getObjVal? "tasks")).getArr?)
-  let names := ts.filterMap (fun t => (do
-    (← t.getObjVal? "n").getStr? : Except String String).toOption)
-  IO.println s!"{names.size} theorems to replay"
+  -- "neg": emit Lean-legal support heads per node (hard negatives for the
+  -- assembler dataset), shadow tiers off for speed
+  let withNeg := mode == "neg"
+  let withShadow := mode != "neg"
+  IO.println s!"{ts.size} theorems to replay"
   let h ← IO.FS.Handle.mk out .write
   let coreCtx : Core.Context := { fileName := pf.fileName, fileMap := default }
   let mut count := 0
   let mut allOkCount := 0
-  for nm in names do
+  for tj in ts do
+    let nm := ((do (← tj.getObjVal? "n").getStr? :
+      Except String String)).toOption.getD ""
+    if nm == "" then continue
+    let bwNames : Array Name :=
+      if withNeg then
+        match (do (← tj.getObjVal? "bw").getArr? : Except String (Array Json)) with
+        | .ok arr =>
+          (arr.filterMap (fun c => (c.getStr?).toOption.map String.toName)).extract 0 120
+        | .error _ => #[]
+      else #[]
     let n := String.toName nm
     let act : MetaM Json := do
       let some ci := env.find? n
         | return Json.mkObj [("n", Json.str nm), ("error", Json.str "not found")]
       let some val := ci.value? (allowOpaque := true)
         | return Json.mkObj [("n", Json.str nm), ("error", Json.str "no value")]
+      let cands : Array (Name × Expr) := bwNames.filterMap fun c =>
+        match env.find? c with
+        | some cci => some (c, cci.type)
+        | none => none
       Meta.forallTelescope ci.type fun xs _ => do
         let fuel ← IO.mkRef 400
         let rows ← IO.mkRef (#[] : Array Json)
         let bad ← IO.mkRef 0
-        walk { fuel, rows, bad } (val.beta xs)
+        walk { fuel, rows, bad, withShadow, cands } (val.beta xs)
         let rs ← rows.get
         let nb ← bad.get
         return Json.mkObj [
@@ -237,7 +278,7 @@ def replay (path : System.FilePath) (inp : System.FilePath)
     h.putStrLn row.compress
     count := count + 1
     if count % 25 == 0 then
-      IO.println s!"  {count}/{names.size} replayed, {allOkCount} fully ok"
+      IO.println s!"  {count}/{ts.size} replayed, {allOkCount} fully ok"
       h.flush
   IO.println s!"done: {allOkCount}/{count} fully replayable"
   h.flush
