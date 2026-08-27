@@ -1,4 +1,5 @@
 import Mathrecord.HeadDump
+import Mathrecord.Ho
 
 /-! Mechanical replay of reference proofs + occurrence-level trace extraction
 + the inference-shadow test.
@@ -125,7 +126,8 @@ def legalHeads (cands : Array (Name × Expr)) (t : Expr) :
             -- has RIGID universe params and understates legality
             let ce ← mkConstWithFreshMVarLevels cn
             let (_, _, ccl) ← forallMetaTelescope (← inferType ce)
-            isDefEq ccl t
+            if ← isDefEq ccl t then pure true
+            else Mathrecord.Ho.tryMotiveSynth ccl t
       catch _ => pure false
     if ok then legal := legal.push (toString cn)
   pure legal

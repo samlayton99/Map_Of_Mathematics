@@ -798,7 +798,14 @@ def searchCore (env : Environment) (task : Task) (banks : String)
           acts := #[("guided", "oracle_data", 0.1, oracleAssign g e)]
       else if gmode == '2' then
         if gIsProp then
-          acts := #[("guided", "guided", 0.1, logged false)]
+          -- 'f': keep bank actions (e.g. simp) as FALLBACK when the exact
+          -- head is not mechanically executable - tests whether the
+          -- residual gap is simp-certificate reconstruction fragility
+          if banks.contains 'f' then
+            acts := #[(("guided", "guided", 0.1, logged false) :
+              String × String × Float × Attempt)] ++ acts
+          else
+            acts := #[("guided", "guided", 0.1, logged false)]
         else if banks.contains 'o' then
           -- G2a: mechanical synthesis first-class, oracle only for the
           -- RESIDUAL data holes that survive it
