@@ -40,7 +40,7 @@ from collections import deque
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "studies" / "phase3_structural_separability" / "data"
+DATA = ROOT / "archive" / "studies" / "phase3_structural_separability" / "data"
 P3 = ["typeclass-instance", "structure-projection", "recursor", "generated",
       "internal-detail", "eq-machinery", "logic-core", "coercion"]
 
