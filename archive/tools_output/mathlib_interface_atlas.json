@@ -1,0 +1,3752 @@
+[
+ {
+  "name": "AlgebraicGeometry.Scheme.Birational.trans",
+  "leverage": 6798.0,
+  "statement_cone": 4,
+  "proof_cone": 27192,
+  "new": 27188,
+  "new_share": 0.9999,
+  "top_math_moves": [
+   "AlgebraicGeometry.IsClosedImmersion.isAffine_surjective_of_isAffine",
+   "AlgebraicGeometry.Scheme.Hom.stalkFunctor_toImage_injective",
+   "AlgebraicGeometry.Scheme.Hom.toImage_app_injective",
+   "AlgebraicGeometry.Scheme.Hom.toImage_app",
+   "AlgebraicGeometry.Scheme.Hom.toImage_image\u03b9"
+  ]
+ },
+ {
+  "name": "Finite.isDomain_to_isField",
+  "leverage": 5367.3,
+  "statement_cone": 6,
+  "proof_cone": 32204,
+  "new": 32198,
+  "new_share": 0.9998,
+  "top_math_moves": [
+   "Polynomial.sub_one_lt_natAbs_cyclotomic_eval",
+   "Polynomial.sub_one_pow_totient_lt_natAbs_cyclotomic_eval",
+   "Polynomial.sub_one_pow_totient_lt_cyclotomic_eval",
+   "Polynomial.cyclotomic_nonneg",
+   "Polynomial.cyclotomic_pos'"
+  ]
+ },
+ {
+  "name": "MeasureTheory.Measure.haveLebesgueDecomposition_of_finiteMeasure",
+  "leverage": 4788.2,
+  "statement_cone": 4,
+  "proof_cone": 19153,
+  "new": 19149,
+  "new_share": 0.9998,
+  "top_math_moves": [
+   "MeasureTheory.Measure.LebesgueDecomposition.iSup_mem_measurableLE'",
+   "MeasureTheory.Measure.LebesgueDecomposition.iSup_mem_measurableLE",
+   "MeasureTheory.Measure.LebesgueDecomposition.sup_mem_measurableLE",
+   "MeasureTheory.setLIntegral_max",
+   "MeasureTheory.Measure.exists_positive_of_not_mutuallySingular"
+  ]
+ },
+ {
+  "name": "Topology.IsClosedEmbedding.polishSpace",
+  "leverage": 4346.7,
+  "statement_cone": 3,
+  "proof_cone": 13040,
+  "new": 13037,
+  "new_share": 0.9998,
+  "top_math_moves": [
+   "Topology.IsEmbedding.to_isometry",
+   "Isometry.of_dist_eq",
+   "Isometry.isUniformInducing",
+   "isometry_iff_dist_eq",
+   "Isometry.uniformContinuous"
+  ]
+ },
+ {
+  "name": "Topology.IsClosedEmbedding.IsCompletelyMetrizableSpace",
+  "leverage": 4205.3,
+  "statement_cone": 3,
+  "proof_cone": 12616,
+  "new": 12613,
+  "new_share": 0.9998,
+  "top_math_moves": [
+   "Topology.IsEmbedding.to_isometry",
+   "Isometry.of_dist_eq",
+   "Isometry.isUniformInducing",
+   "isometry_iff_dist_eq",
+   "Isometry.uniformContinuous"
+  ]
+ },
+ {
+  "name": "MeasureTheory.Conservative.id",
+  "leverage": 4127.8,
+  "statement_cone": 4,
+  "proof_cone": 16511,
+  "new": 16507,
+  "new_share": 0.9998,
+  "top_math_moves": [
+   "MeasureTheory.Measure.QuasiMeasurePreserving.id",
+   "MeasureTheory.Measure.map_id",
+   "MeasureTheory.Measure.map_apply",
+   "MeasureTheory.Measure.map_apply_of_aemeasurable",
+   "MeasureTheory.Measure.map_apply\u2080"
+  ]
+ },
+ {
+  "name": "AlgebraicGeometry.Scheme.Birational.symm",
+  "leverage": 4103.8,
+  "statement_cone": 4,
+  "proof_cone": 16415,
+  "new": 16411,
+  "new_share": 0.9998,
+  "top_math_moves": [
+   "AlgebraicGeometry.Scheme.exists_affine_mem_range_and_range_subset",
+   "AlgebraicGeometry.Spec.locallyRingedSpaceMap_id",
+   "AlgebraicGeometry.Spec.locallyRingedSpaceMap_comp",
+   "AlgebraicGeometry.Spec.locallyRingedSpaceMap_toHom",
+   "AlgebraicGeometry.isIso_SpecMap_stakMap_localization"
+  ]
+ },
+ {
+  "name": "Topology.IsClosedEmbedding.IsCompletelyPseudoMetrizableSpace",
+  "leverage": 4103.7,
+  "statement_cone": 3,
+  "proof_cone": 12311,
+  "new": 12308,
+  "new_share": 0.9998,
+  "top_math_moves": [
+   "Topology.IsEmbedding.to_isometry",
+   "Isometry.of_dist_eq",
+   "Isometry.isUniformInducing",
+   "isometry_iff_dist_eq",
+   "Isometry.uniformContinuous"
+  ]
+ },
+ {
+  "name": "AlgebraicGeometry.Scheme.Birational.refl",
+  "leverage": 4103.0,
+  "statement_cone": 4,
+  "proof_cone": 16412,
+  "new": 16409,
+  "new_share": 0.9998,
+  "top_math_moves": [
+   "AlgebraicGeometry.Scheme.exists_affine_mem_range_and_range_subset",
+   "AlgebraicGeometry.Spec.locallyRingedSpaceMap_id",
+   "AlgebraicGeometry.Spec.locallyRingedSpaceMap_comp",
+   "AlgebraicGeometry.Spec.locallyRingedSpaceMap_toHom",
+   "AlgebraicGeometry.isIso_SpecMap_stakMap_localization"
+  ]
+ },
+ {
+  "name": "MeasureTheory.Measure.HaveLebesgueDecomposition.sfinite_of_isFiniteMeasure",
+  "leverage": 3915.6,
+  "statement_cone": 5,
+  "proof_cone": 19578,
+  "new": 19573,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "MeasureTheory.Measure.singularPart_add_rnDeriv",
+   "MeasureTheory.Measure.measurable_rnDeriv",
+   "MeasureTheory.Measure.mutuallySingular_singularPart",
+   "MeasureTheory.Measure.haveLebesgueDecomposition_add",
+   "MeasureTheory.Measure.haveLebesgueDecomposition_spec"
+  ]
+ },
+ {
+  "name": "Infinite.nonempty_field",
+  "leverage": 3895.7,
+  "statement_cone": 3,
+  "proof_cone": 11687,
+  "new": 11684,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "Cardinal.mk_fractionRing",
+   "IsLocalization.cardinalMk",
+   "AddMonoidAlgebra.cardinalMk_eq_max_lift_of_infinite",
+   "IsLocalization.lift_cardinalMk",
+   "Cardinal.mk_finsupp_lift_of_infinite"
+  ]
+ },
+ {
+  "name": "MeasureTheory.nonempty_of_isProbabilityMeasure",
+  "leverage": 3866.0,
+  "statement_cone": 4,
+  "proof_cone": 15464,
+  "new": 15460,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "MeasureTheory.Measure.toOuterMeasure_injective",
+   "ENNReal.exists_pos_sum_of_countable",
+   "NNReal.exists_pos_sum_of_countable",
+   "Real.uniformContinuous_add",
+   "Metric.isOpen_eball"
+  ]
+ },
+ {
+  "name": "AlgebraicGeometry.PresheafedSpace.IsOpenImmersion.scheme_eq_of_locallyRingedSpace_eq",
+  "leverage": 3769.5,
+  "statement_cone": 4,
+  "proof_cone": 15078,
+  "new": 15074,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "AlgebraicGeometry.Spec.locallyRingedSpaceMap_id",
+   "AlgebraicGeometry.Spec.locallyRingedSpaceMap_comp",
+   "AlgebraicGeometry.Spec.locallyRingedSpaceMap_toHom",
+   "AlgebraicGeometry.localRingHom_comp_stalkIso",
+   "AlgebraicGeometry.stalkMap_toStalk_apply"
+  ]
+ },
+ {
+  "name": "ContinuousMap.HomotopyEquiv.simplyConnectedSpace",
+  "leverage": 3691.7,
+  "statement_cone": 3,
+  "proof_cone": 11075,
+  "new": 11072,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "FundamentalGroupoid.map_map",
+   "FundamentalGroupoid.map_comp",
+   "FundamentalGroupoid.map_id",
+   "Path.Homotopic.Quotient.eq",
+   "Path.Homotopic.Quotient.mk_surjective"
+  ]
+ },
+ {
+  "name": "Topology.IsOpenEmbedding.locPathConnectedSpace",
+  "leverage": 3575.7,
+  "statement_cone": 3,
+  "proof_cone": 10727,
+  "new": 10724,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "Topology.IsOpenEmbedding.locallyPathConnectedSpace",
+   "Topology.IsInducing.isPathConnected_iff",
+   "Topology.IsInducing.joinedIn_image",
+   "JoinedIn.trans",
+   "Joined.trans"
+  ]
+ },
+ {
+  "name": "Topology.IsOpenEmbedding.locallyPathConnectedSpace",
+  "leverage": 3575.3,
+  "statement_cone": 3,
+  "proof_cone": 10726,
+  "new": 10723,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "Topology.IsInducing.isPathConnected_iff",
+   "Topology.IsInducing.joinedIn_image",
+   "JoinedIn.trans",
+   "Joined.trans",
+   "joinedIn_iff_joined"
+  ]
+ },
+ {
+  "name": "MeasureTheory.isSeparable_of_sigmaFinite",
+  "leverage": 3536.2,
+  "statement_cone": 5,
+  "proof_cone": 17681,
+  "new": 17676,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "MeasureTheory.Measure.MeasureDense.of_generateFrom_isSetAlgebra_sigmaFinite",
+   "MeasureTheory.Measure.MeasureDense.of_generateFrom_isSetAlgebra_finite",
+   "MeasureTheory.tendsto_measure_iUnion_accumulate",
+   "MeasureTheory.tendsto_measure_iUnion_atTop",
+   "MeasureTheory.measure_iUnion_eq_iSup_accumulate"
+  ]
+ },
+ {
+  "name": "MeasureTheory.Measure.isHaarMeasure_eq_of_isProbabilityMeasure",
+  "leverage": 3497.9,
+  "statement_cone": 10,
+  "proof_cone": 34979,
+  "new": 34969,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "MeasureTheory.Measure.measure_isMulInvariant_eq_smul_of_isCompact_closure",
+   "MeasureTheory.Measure.measure_isMulInvariant_eq_smul_of_isCompact_closure_of_measurableSet",
+   "MeasureTheory.Measure.measure_isMulInvariant_eq_smul_of_isCompact_closure_of_innerRegularCompactLTTop",
+   "MeasureTheory.Measure.smul_measure_isMulInvariant_le_of_isCompact_closure",
+   "MeasureTheory.Measure.measure_preimage_isMulLeftInvariant_eq_smul_of_hasCompactSupport"
+  ]
+ },
+ {
+  "name": "MeasureTheory.Measure.isAddHaarMeasure_eq_of_isProbabilityMeasure",
+  "leverage": 3485.9,
+  "statement_cone": 10,
+  "proof_cone": 34859,
+  "new": 34849,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "MeasureTheory.Measure.measure_isAddInvariant_eq_smul_of_isCompact_closure",
+   "MeasureTheory.Measure.measure_isAddInvariant_eq_smul_of_isCompact_closure_of_measurableSet",
+   "MeasureTheory.Measure.measure_isAddInvariant_eq_smul_of_isCompact_closure_of_innerRegularCompactLTTop",
+   "MeasureTheory.Measure.smul_measure_isAddInvariant_le_of_isCompact_closure",
+   "MeasureTheory.Measure.measure_preimage_isAddLeftInvariant_eq_smul_of_hasCompactSupport"
+  ]
+ },
+ {
+  "name": "AlexandrovDiscrete.locPathConnectedSpace",
+  "leverage": 3447.7,
+  "statement_cone": 3,
+  "proof_cone": 10343,
+  "new": 10340,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "JoinedIn.symm",
+   "joinedIn_iff_joined",
+   "JoinedIn.joined_subtype",
+   "Path.map_coe",
+   "Joined.symm"
+  ]
+ },
+ {
+  "name": "nonempty_ring_iff",
+  "leverage": 3399.3,
+  "statement_cone": 3,
+  "proof_cone": 10198,
+  "new": 10195,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "Cardinal.mk_freeCommRing",
+   "Cardinal.mk_multiset_of_nonempty",
+   "Cardinal.mk_finsupp_nat",
+   "Cardinal.mk_freeAbelianGroup",
+   "Cardinal.mk_finsupp_lift_of_infinite'"
+  ]
+ },
+ {
+  "name": "nonempty_commSemiring_iff",
+  "leverage": 3399.3,
+  "statement_cone": 3,
+  "proof_cone": 10198,
+  "new": 10195,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "Cardinal.mk_freeCommRing",
+   "Cardinal.mk_multiset_of_nonempty",
+   "Cardinal.mk_finsupp_nat",
+   "Cardinal.mk_freeAbelianGroup",
+   "Cardinal.mk_finsupp_lift_of_infinite'"
+  ]
+ },
+ {
+  "name": "nonempty_semiring_iff",
+  "leverage": 3399.3,
+  "statement_cone": 3,
+  "proof_cone": 10198,
+  "new": 10195,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "Cardinal.mk_freeCommRing",
+   "Cardinal.mk_multiset_of_nonempty",
+   "Cardinal.mk_finsupp_nat",
+   "Cardinal.mk_freeAbelianGroup",
+   "Cardinal.mk_finsupp_lift_of_infinite'"
+  ]
+ },
+ {
+  "name": "nonempty_commRing_iff",
+  "leverage": 3399.3,
+  "statement_cone": 3,
+  "proof_cone": 10198,
+  "new": 10195,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "Cardinal.mk_freeCommRing",
+   "Cardinal.mk_multiset_of_nonempty",
+   "Cardinal.mk_finsupp_nat",
+   "Cardinal.mk_freeAbelianGroup",
+   "Cardinal.mk_finsupp_lift_of_infinite'"
+  ]
+ },
+ {
+  "name": "Topology.IsOpenEmbedding.stronglyLocallyContractibleSpace",
+  "leverage": 3392.7,
+  "statement_cone": 3,
+  "proof_cone": 10178,
+  "new": 10175,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "Homeomorph.contractibleSpace_iff",
+   "ContinuousMap.HomotopyEquiv.contractibleSpace_iff",
+   "ContinuousMap.HomotopyEquiv.contractibleSpace",
+   "ContinuousMap.Homotopic.comp",
+   "ContinuousMap.Homotopic.trans"
+  ]
+ },
+ {
+  "name": "Homeomorph.contractibleSpace",
+  "leverage": 3364.0,
+  "statement_cone": 3,
+  "proof_cone": 10092,
+  "new": 10089,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "ContinuousMap.HomotopyEquiv.contractibleSpace",
+   "ContinuousMap.Homotopic.comp",
+   "ContinuousMap.Homotopic.trans",
+   "ContinuousMap.Homotopic.refl",
+   "ContinuousMap.Homotopy.curry_zero"
+  ]
+ },
+ {
+  "name": "ContinuousMap.HomotopyEquiv.contractibleSpace",
+  "leverage": 3357.7,
+  "statement_cone": 3,
+  "proof_cone": 10073,
+  "new": 10070,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "ContinuousMap.Homotopic.comp",
+   "ContinuousMap.Homotopic.trans",
+   "ContinuousMap.Homotopic.refl",
+   "ContinuousMap.Homotopy.curry_zero",
+   "ContinuousMap.Homotopy.extend_of_mem_I"
+  ]
+ },
+ {
+  "name": "ChartedSpace.locPathConnectedSpace",
+  "leverage": 3326.0,
+  "statement_cone": 3,
+  "proof_cone": 9978,
+  "new": 9975,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "ChartedSpace.locallyPathConnectedSpace",
+   "pathComponentIn_mem_nhds",
+   "IsOpen.pathComponentIn",
+   "IsPathConnected.subset_pathComponentIn",
+   "IsPathConnected.joinedIn"
+  ]
+ },
+ {
+  "name": "ChartedSpace.locallyPathConnectedSpace",
+  "leverage": 3325.7,
+  "statement_cone": 3,
+  "proof_cone": 9977,
+  "new": 9974,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "pathComponentIn_mem_nhds",
+   "IsOpen.pathComponentIn",
+   "IsPathConnected.subset_pathComponentIn",
+   "IsPathConnected.joinedIn",
+   "pathComponentIn_congr"
+  ]
+ },
+ {
+  "name": "Topology.IsQuotientMap.locPathConnectedSpace",
+  "leverage": 3308.0,
+  "statement_cone": 3,
+  "proof_cone": 9924,
+  "new": 9921,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "Topology.IsQuotientMap.locallyPathConnectedSpace",
+   "LocallyPathConnectedSpace.coinduced",
+   "locallyPathConnectedSpace_iff_isOpen_pathComponentIn",
+   "IsOpen.pathComponentIn",
+   "IsPathConnected.subset_pathComponentIn"
+  ]
+ },
+ {
+  "name": "Topology.IsQuotientMap.locallyPathConnectedSpace",
+  "leverage": 3307.7,
+  "statement_cone": 3,
+  "proof_cone": 9923,
+  "new": 9920,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "LocallyPathConnectedSpace.coinduced",
+   "locallyPathConnectedSpace_iff_isOpen_pathComponentIn",
+   "IsOpen.pathComponentIn",
+   "IsPathConnected.subset_pathComponentIn",
+   "IsPathConnected.joinedIn"
+  ]
+ },
+ {
+  "name": "MeasureTheory.Measure.FiniteSpanningSetsIn.sigmaFinite",
+  "leverage": 3092.8,
+  "statement_cone": 5,
+  "proof_cone": 15464,
+  "new": 15459,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "MeasureTheory.Measure.toOuterMeasure_injective",
+   "ENNReal.exists_pos_sum_of_countable",
+   "NNReal.exists_pos_sum_of_countable",
+   "Real.uniformContinuous_add",
+   "Metric.isOpen_eball"
+  ]
+ },
+ {
+  "name": "Topology.IsEmbedding.t35Space",
+  "leverage": 2986.0,
+  "statement_cone": 3,
+  "proof_cone": 8958,
+  "new": 8955,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "Topology.IsInducing.completelyRegularSpace",
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe",
+   "Real.mk_le_of_forall_le"
+  ]
+ },
+ {
+  "name": "MeasureTheory.exists_isHahnDecomposition",
+  "leverage": 2900.7,
+  "statement_cone": 6,
+  "proof_cone": 17404,
+  "new": 17398,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "MeasureTheory.hahn_decomposition",
+   "MeasureTheory.tendsto_measure_iInter_atTop",
+   "Antitone.measure_iInter",
+   "Monotone.measure_iInter",
+   "MeasureTheory.tendsto_measure_iUnion_atTop"
+  ]
+ },
+ {
+  "name": "CategoryTheory.hasProjectiveDimensionLT_of_iso",
+  "leverage": 2893.0,
+  "statement_cone": 5,
+  "proof_cone": 14465,
+  "new": 14460,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "CategoryTheory.Retract.hasProjectiveDimensionLT",
+   "CategoryTheory.hasProjectiveDimensionLT_iff",
+   "CategoryTheory.Abelian.Ext.eq_zero_of_hasProjectiveDimensionLT",
+   "CategoryTheory.HasProjectiveDimensionLT.mk",
+   "CategoryTheory.HasProjectiveDimensionLT.subsingleton"
+  ]
+ },
+ {
+  "name": "CategoryTheory.hasInjectiveDimensionLT_of_iso",
+  "leverage": 2892.8,
+  "statement_cone": 5,
+  "proof_cone": 14464,
+  "new": 14459,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "CategoryTheory.Retract.hasInjectiveDimensionLT",
+   "CategoryTheory.hasInjectiveDimensionLT_iff",
+   "CategoryTheory.HasInjectiveDimensionLT.mk",
+   "CategoryTheory.Abelian.Ext.eq_zero_of_hasInjectiveDimensionLT",
+   "CategoryTheory.Abelian.Ext.zero_comp"
+  ]
+ },
+ {
+  "name": "CategoryTheory.Retract.hasProjectiveDimensionLT",
+  "leverage": 2892.0,
+  "statement_cone": 5,
+  "proof_cone": 14460,
+  "new": 14455,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "CategoryTheory.hasProjectiveDimensionLT_iff",
+   "CategoryTheory.Abelian.Ext.eq_zero_of_hasProjectiveDimensionLT",
+   "CategoryTheory.HasProjectiveDimensionLT.mk",
+   "CategoryTheory.HasProjectiveDimensionLT.subsingleton",
+   "CategoryTheory.Abelian.Ext.comp_zero"
+  ]
+ },
+ {
+  "name": "CategoryTheory.Retract.hasInjectiveDimensionLT",
+  "leverage": 2891.8,
+  "statement_cone": 5,
+  "proof_cone": 14459,
+  "new": 14454,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "CategoryTheory.hasInjectiveDimensionLT_iff",
+   "CategoryTheory.HasInjectiveDimensionLT.mk",
+   "CategoryTheory.Abelian.Ext.eq_zero_of_hasInjectiveDimensionLT",
+   "CategoryTheory.Abelian.Ext.zero_comp",
+   "CategoryTheory.HasInjectiveDimensionLT.subsingleton"
+  ]
+ },
+ {
+  "name": "Topology.IsInducing.completelyRegularSpace",
+  "leverage": 2880.0,
+  "statement_cone": 3,
+  "proof_cone": 8640,
+  "new": 8637,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe",
+   "Real.mk_le_of_forall_le",
+   "Real.le_mk_of_forall_le"
+  ]
+ },
+ {
+  "name": "Real.HolderTriple.symm",
+  "leverage": 2866.5,
+  "statement_cone": 2,
+  "proof_cone": 5733,
+  "new": 5731,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "Real.cauchy_mul",
+   "Real.ext_cauchy",
+   "Real.cauchy_add",
+   "Real.cauchy_neg",
+   "Real.ext_cauchy_iff"
+  ]
+ },
+ {
+  "name": "ContinuousMap.HomotopyEquiv.simplyConnectedSpace_iff",
+  "leverage": 2769.8,
+  "statement_cone": 4,
+  "proof_cone": 11079,
+  "new": 11075,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "ContinuousMap.HomotopyEquiv.simplyConnectedSpace",
+   "FundamentalGroupoid.map_map",
+   "FundamentalGroupoid.map_comp",
+   "FundamentalGroupoid.map_id",
+   "Path.Homotopic.Quotient.eq"
+  ]
+ },
+ {
+  "name": "MeasureTheory.ProbabilityMeasure.nonempty",
+  "leverage": 2578.0,
+  "statement_cone": 6,
+  "proof_cone": 15468,
+  "new": 15462,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "MeasureTheory.nonempty_of_isProbabilityMeasure",
+   "MeasureTheory.Measure.toOuterMeasure_injective",
+   "ENNReal.exists_pos_sum_of_countable",
+   "NNReal.exists_pos_sum_of_countable",
+   "Real.uniformContinuous_add"
+  ]
+ },
+ {
+  "name": "MeasureTheory.JordanDecomposition.ext",
+  "leverage": 2576.8,
+  "statement_cone": 6,
+  "proof_cone": 15461,
+  "new": 15455,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "MeasureTheory.Measure.toOuterMeasure_injective",
+   "ENNReal.exists_pos_sum_of_countable",
+   "NNReal.exists_pos_sum_of_countable",
+   "Real.uniformContinuous_add",
+   "Metric.isOpen_eball"
+  ]
+ },
+ {
+  "name": "MeasureTheory.Measure.toOuterMeasure_injective",
+  "leverage": 2574.7,
+  "statement_cone": 6,
+  "proof_cone": 15448,
+  "new": 15442,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "ENNReal.exists_pos_sum_of_countable",
+   "NNReal.exists_pos_sum_of_countable",
+   "Real.uniformContinuous_add",
+   "Metric.isOpen_eball",
+   "Metric.complete_of_cauchySeq_tendsto"
+  ]
+ },
+ {
+  "name": "TopologicalSpace.IsCompletelyMetrizableSpace_of_isCompletelyPseudoMetrizableSpace",
+  "leverage": 2571.2,
+  "statement_cone": 4,
+  "proof_cone": 10285,
+  "new": 10281,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "Metric.inseparable_iff",
+   "Metric.inseparable_iff_nndist",
+   "EMetric.inseparable_iff",
+   "Metric.isOpen_eball",
+   "EMetric.isOpen_iff"
+  ]
+ },
+ {
+  "name": "Homeomorph.contractibleSpace_iff",
+  "leverage": 2523.5,
+  "statement_cone": 4,
+  "proof_cone": 10094,
+  "new": 10090,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "ContinuousMap.HomotopyEquiv.contractibleSpace_iff",
+   "ContinuousMap.HomotopyEquiv.contractibleSpace",
+   "ContinuousMap.Homotopic.comp",
+   "ContinuousMap.Homotopic.trans",
+   "ContinuousMap.Homotopic.refl"
+  ]
+ },
+ {
+  "name": "ContinuousMap.HomotopyEquiv.contractibleSpace_iff",
+  "leverage": 2518.8,
+  "statement_cone": 4,
+  "proof_cone": 10075,
+  "new": 10071,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "ContinuousMap.HomotopyEquiv.contractibleSpace",
+   "ContinuousMap.Homotopic.comp",
+   "ContinuousMap.Homotopic.trans",
+   "ContinuousMap.Homotopic.refl",
+   "ContinuousMap.Homotopy.curry_zero"
+  ]
+ },
+ {
+  "name": "ContractibleSpace.hequiv",
+  "leverage": 2517.5,
+  "statement_cone": 4,
+  "proof_cone": 10070,
+  "new": 10066,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "ContinuousMap.Homotopic.comp",
+   "ContinuousMap.Homotopic.trans",
+   "ContinuousMap.Homotopic.refl",
+   "ContinuousMap.Homotopy.curry_zero",
+   "ContinuousMap.Homotopy.extend_of_mem_I"
+  ]
+ },
+ {
+  "name": "PathConnectedSpace.of_locPathConnectedSpace",
+  "leverage": 2473.5,
+  "statement_cone": 4,
+  "proof_cone": 9894,
+  "new": 9890,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "PathConnectedSpace.of_locallyPathConnectedSpace",
+   "IsClopen.pathComponent",
+   "IsOpen.pathComponent",
+   "IsOpen.pathComponentIn",
+   "IsPathConnected.subset_pathComponentIn"
+  ]
+ },
+ {
+  "name": "PathConnectedSpace.of_locallyPathConnectedSpace",
+  "leverage": 2473.2,
+  "statement_cone": 4,
+  "proof_cone": 9893,
+  "new": 9889,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "IsClopen.pathComponent",
+   "IsOpen.pathComponent",
+   "IsOpen.pathComponentIn",
+   "IsPathConnected.subset_pathComponentIn",
+   "IsClosed.pathComponent"
+  ]
+ },
+ {
+  "name": "Joined.trans",
+  "leverage": 2441.8,
+  "statement_cone": 4,
+  "proof_cone": 9767,
+  "new": 9763,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "Continuous.pathExtend",
+   "Path.extend_apply",
+   "Metric.nhds_basis_ball",
+   "Metric.uniformity_basis_dist",
+   "Metric.toUniformSpace_eq"
+  ]
+ },
+ {
+  "name": "univLE_total",
+  "leverage": 2389.5,
+  "statement_cone": 2,
+  "proof_cone": 4779,
+  "new": 4777,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "univLE_iff_cardinal_le",
+   "Cardinal.small_iff_lift_mk_lt_univ",
+   "Cardinal.lt_univ'",
+   "Cardinal.lt_univ",
+   "Cardinal.ord_univ"
+  ]
+ },
+ {
+  "name": "Joined.symm",
+  "leverage": 2292.2,
+  "statement_cone": 4,
+  "proof_cone": 9169,
+  "new": 9165,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "unitInterval.continuous_symm",
+   "Metric.nhds_basis_ball",
+   "Metric.uniformity_basis_dist",
+   "Metric.toUniformSpace_eq",
+   "UniformSpace.ofDist_aux"
+  ]
+ },
+ {
+  "name": "isFiniteMeasure_iff_isFiniteMeasureOnCompacts_of_compactSpace",
+  "leverage": 2265.4,
+  "statement_cone": 7,
+  "proof_cone": 15858,
+  "new": 15851,
+  "new_share": 0.9996,
+  "top_math_moves": [
+   "MeasureTheory.Measure.finiteAt_nhdsWithin",
+   "MeasureTheory.Measure.FiniteAtFilter.inf_of_left",
+   "MeasureTheory.Measure.FiniteAtFilter.filter_mono",
+   "MeasureTheory.Measure.finiteAtFilter_of_finite",
+   "MeasureTheory.measure_lt_top"
+  ]
+ },
+ {
+  "name": "CompletelyRegularSpace.of_exists_uniformSpace",
+  "leverage": 2218.0,
+  "statement_cone": 6,
+  "proof_cone": 13308,
+  "new": 13302,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "Urysohns.CU.continuous_lim",
+   "Urysohns.CU.lim_eq_midpoint",
+   "Urysohns.CU.tendsto_approx_atTop",
+   "Urysohns.CU.approx_mono",
+   "Urysohns.CU.lim_mem_Icc"
+  ]
+ },
+ {
+  "name": "MeasureTheory.measureDense_measurableSet",
+  "leverage": 2210.0,
+  "statement_cone": 7,
+  "proof_cone": 15470,
+  "new": 15463,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "MeasureTheory.Measure.toOuterMeasure_injective",
+   "ENNReal.exists_pos_sum_of_countable",
+   "NNReal.exists_pos_sum_of_countable",
+   "Real.uniformContinuous_add",
+   "Metric.isOpen_eball"
+  ]
+ },
+ {
+  "name": "CompletelyRegularSpace.exists_uniformSpace",
+  "leverage": 2193.3,
+  "statement_cone": 6,
+  "proof_cone": 13160,
+  "new": 13154,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "isInducing_stoneCechUnit",
+   "Metric.inseparable_iff",
+   "Metric.inseparable_iff_nndist",
+   "EMetric.inseparable_iff",
+   "Metric.isOpen_eball"
+  ]
+ },
+ {
+  "name": "nontrivial_of_hasRankNullity",
+  "leverage": 2160.7,
+  "statement_cone": 3,
+  "proof_cone": 6482,
+  "new": 6479,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "rank_subsingleton",
+   "Module.rank_def",
+   "LinearIndepOn.of_subsingleton",
+   "linearIndependent_of_subsingleton",
+   "linearIndependent_iff\u209b"
+  ]
+ },
+ {
+  "name": "Joined.refl",
+  "leverage": 2150.0,
+  "statement_cone": 4,
+  "proof_cone": 8600,
+  "new": 8597,
+  "new_share": 0.9997,
+  "top_math_moves": [
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe",
+   "Real.mk_le_of_forall_le",
+   "Real.le_mk_of_forall_le"
+  ]
+ },
+ {
+  "name": "completelyRegularSpace_iff_exists_uniformSpace",
+  "leverage": 2114.1,
+  "statement_cone": 7,
+  "proof_cone": 14799,
+  "new": 14792,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "CompletelyRegularSpace.of_exists_uniformSpace",
+   "Urysohns.CU.continuous_lim",
+   "Urysohns.CU.lim_eq_midpoint",
+   "Urysohns.CU.tendsto_approx_atTop",
+   "Urysohns.CU.approx_mono"
+  ]
+ },
+ {
+  "name": "IsKleinFour.instFinite",
+  "leverage": 2103.0,
+  "statement_cone": 3,
+  "proof_cone": 6309,
+  "new": 6306,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "Nat.finite_of_card_ne_zero",
+   "Nat.card_ne_zero",
+   "Nat.card_eq_zero",
+   "Cardinal.toNat_eq_zero",
+   "Cardinal.toENat_eq_top"
+  ]
+ },
+ {
+  "name": "IsAddKleinFour.instFinite",
+  "leverage": 2102.7,
+  "statement_cone": 3,
+  "proof_cone": 6308,
+  "new": 6305,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "Nat.finite_of_card_ne_zero",
+   "Nat.card_ne_zero",
+   "Nat.card_eq_zero",
+   "Cardinal.toNat_eq_zero",
+   "Cardinal.toENat_eq_top"
+  ]
+ },
+ {
+  "name": "pathConnectedSpace_iff_connectedSpace",
+  "leverage": 2076.8,
+  "statement_cone": 5,
+  "proof_cone": 10384,
+  "new": 10379,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "PathConnectedSpace.of_locallyPathConnectedSpace",
+   "IsClopen.pathComponent",
+   "pathConnectedSpace_iff_univ",
+   "IsOpen.pathComponent",
+   "IsOpen.pathComponentIn"
+  ]
+ },
+ {
+  "name": "ContinuousMap.HomotopicWith.trans",
+  "leverage": 2010.2,
+  "statement_cone": 5,
+  "proof_cone": 10051,
+  "new": 10046,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "ContinuousMap.Homotopy.curry_zero",
+   "ContinuousMap.Homotopy.extend_of_mem_I",
+   "ContinuousMap.Homotopy.curry_one",
+   "Metric.nhds_basis_ball",
+   "ContinuousMap.Homotopy.continuous"
+  ]
+ },
+ {
+  "name": "ContinuousMap.Homotopic.trans",
+  "leverage": 2008.4,
+  "statement_cone": 5,
+  "proof_cone": 10042,
+  "new": 10037,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "ContinuousMap.Homotopy.curry_zero",
+   "ContinuousMap.Homotopy.extend_of_mem_I",
+   "ContinuousMap.Homotopy.curry_one",
+   "Metric.nhds_basis_ball",
+   "ContinuousMap.Homotopy.continuous"
+  ]
+ },
+ {
+  "name": "Topology.CWComplex.isClosed",
+  "leverage": 1940.0,
+  "statement_cone": 6,
+  "proof_cone": 11640,
+  "new": 11634,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "Topology.RelCWComplex.isClosed",
+   "Topology.RelCWComplex.closed",
+   "Topology.RelCWComplex.isClosed_closedCell",
+   "Topology.RelCWComplex.isCompact_closedCell",
+   "ProperSpace.of_isCompact_closedBall_of_le"
+  ]
+ },
+ {
+  "name": "Topology.RelCWComplex.isClosed",
+  "leverage": 1939.8,
+  "statement_cone": 6,
+  "proof_cone": 11639,
+  "new": 11633,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "Topology.RelCWComplex.closed",
+   "Topology.RelCWComplex.isClosed_closedCell",
+   "Topology.RelCWComplex.isCompact_closedCell",
+   "ProperSpace.of_isCompact_closedBall_of_le",
+   "Metric.isClosed_closedBall"
+  ]
+ },
+ {
+  "name": "Topology.IsClosedEmbedding.noncompactSpace",
+  "leverage": 1938.0,
+  "statement_cone": 3,
+  "proof_cone": 5814,
+  "new": 5811,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "Topology.IsClosedEmbedding.tendsto_cocompact",
+   "noncompactSpace_of_neBot",
+   "IsCompact.compl_mem_cocompact",
+   "Filter.hasBasis_cocompact",
+   "IsCompact.union"
+  ]
+ },
+ {
+  "name": "MeasureTheory.JordanDecomposition.ext_iff",
+  "leverage": 1932.8,
+  "statement_cone": 8,
+  "proof_cone": 15462,
+  "new": 15454,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "MeasureTheory.JordanDecomposition.ext",
+   "MeasureTheory.Measure.toOuterMeasure_injective",
+   "ENNReal.exists_pos_sum_of_countable",
+   "NNReal.exists_pos_sum_of_countable",
+   "Real.uniformContinuous_add"
+  ]
+ },
+ {
+  "name": "IsometryEquiv.completeSpace",
+  "leverage": 1918.6,
+  "statement_cone": 5,
+  "proof_cone": 9593,
+  "new": 9588,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "IsometryEquiv.completeSpace_iff",
+   "IsometryEquiv.range_eq_univ",
+   "IsometryEquiv.toEquiv_injective",
+   "Isometry.isUniformInducing",
+   "Isometry.uniformContinuous"
+  ]
+ },
+ {
+  "name": "Homeomorph.t5Space",
+  "leverage": 1846.0,
+  "statement_cone": 3,
+  "proof_cone": 5538,
+  "new": 5535,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "Topology.IsEmbedding.t5Space",
+   "Topology.IsEmbedding.t1Space",
+   "t1Space_of_injective_of_continuous",
+   "Specializes.eq",
+   "t1Space_iff_specializes_imp_eq"
+  ]
+ },
+ {
+  "name": "Homeomorph.t4Space",
+  "leverage": 1838.0,
+  "statement_cone": 3,
+  "proof_cone": 5514,
+  "new": 5511,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "Topology.IsClosedEmbedding.t4Space",
+   "Topology.IsEmbedding.t1Space",
+   "t1Space_of_injective_of_continuous",
+   "Specializes.eq",
+   "t1Space_iff_specializes_imp_eq"
+  ]
+ },
+ {
+  "name": "ContinuousMap.HomotopicWith.symm",
+  "leverage": 1835.8,
+  "statement_cone": 5,
+  "proof_cone": 9179,
+  "new": 9174,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "unitInterval.continuous_symm",
+   "Metric.nhds_basis_ball",
+   "Metric.uniformity_basis_dist",
+   "Metric.toUniformSpace_eq",
+   "UniformSpace.ofDist_aux"
+  ]
+ },
+ {
+  "name": "ContinuousMap.Homotopic.symm",
+  "leverage": 1834.4,
+  "statement_cone": 5,
+  "proof_cone": 9172,
+  "new": 9167,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "unitInterval.continuous_symm",
+   "Metric.nhds_basis_ball",
+   "Metric.uniformity_basis_dist",
+   "Metric.toUniformSpace_eq",
+   "UniformSpace.ofDist_aux"
+  ]
+ },
+ {
+  "name": "PseudoMetricSpace.ext",
+  "leverage": 1821.5,
+  "statement_cone": 4,
+  "proof_cone": 7286,
+  "new": 7282,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "Real.mk_le",
+   "Real.mk_lt",
+   "Real.mk_sup",
+   "Real.mk_inf",
+   "Real.mk_eq"
+  ]
+ },
+ {
+  "name": "Topology.IsEmbedding.t5Space",
+  "leverage": 1811.0,
+  "statement_cone": 3,
+  "proof_cone": 5433,
+  "new": 5430,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "Topology.IsEmbedding.t1Space",
+   "t1Space_of_injective_of_continuous",
+   "Specializes.eq",
+   "t1Space_iff_specializes_imp_eq",
+   "t1Space_TFAE"
+  ]
+ },
+ {
+  "name": "Topology.IsClosedEmbedding.sigmaCompactSpace",
+  "leverage": 1810.7,
+  "statement_cone": 3,
+  "proof_cone": 5432,
+  "new": 5429,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "isCompact_compactCovering",
+   "isCompact_accumulate",
+   "Set.Finite.isCompact_biUnion",
+   "Ultrafilter.finite_biUnion_mem_iff",
+   "Set.Finite.image"
+  ]
+ },
+ {
+  "name": "Topology.IsClosedEmbedding.t4Space",
+  "leverage": 1803.7,
+  "statement_cone": 3,
+  "proof_cone": 5411,
+  "new": 5408,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "Topology.IsEmbedding.t1Space",
+   "t1Space_of_injective_of_continuous",
+   "Specializes.eq",
+   "t1Space_iff_specializes_imp_eq",
+   "t1Space_TFAE"
+  ]
+ },
+ {
+  "name": "Homeomorph.t1Space",
+  "leverage": 1803.3,
+  "statement_cone": 3,
+  "proof_cone": 5410,
+  "new": 5407,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "Topology.IsEmbedding.t1Space",
+   "t1Space_of_injective_of_continuous",
+   "Specializes.eq",
+   "t1Space_iff_specializes_imp_eq",
+   "t1Space_TFAE"
+  ]
+ },
+ {
+  "name": "CategoryTheory.injective_iff_hasInjectiveDimensionLT_one",
+  "leverage": 1801.7,
+  "statement_cone": 10,
+  "proof_cone": 18017,
+  "new": 18007,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "CategoryTheory.injective_iff_subsingleton_ext_one",
+   "CategoryTheory.Abelian.Ext.contravariant_sequence_exact\u2081",
+   "CategoryTheory.Abelian.Ext.contravariant_sequence_exact\u2081'",
+   "CategoryTheory.ShortComplex.ShortExact.extClass_comp_assoc",
+   "CategoryTheory.ShortComplex.ShortExact.extClass_comp"
+  ]
+ },
+ {
+  "name": "ChartedSpace.t1Space",
+  "leverage": 1797.3,
+  "statement_cone": 3,
+  "proof_cone": 5392,
+  "new": 5389,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "t1Space_iff_exists_open",
+   "t1Space_TFAE",
+   "CofiniteTopology.isClosed_iff",
+   "CofiniteTopology.isOpen_iff'",
+   "Set.Finite.isClosed"
+  ]
+ },
+ {
+  "name": "WeakPseudoEMetricSpace.ext",
+  "leverage": 1796.8,
+  "statement_cone": 5,
+  "proof_cone": 8984,
+  "new": 8979,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "ENNReal.half_pos",
+   "ENNReal.div_pos",
+   "ENNReal.inv_ne_zero",
+   "ENNReal.add_halves",
+   "ENNReal.inv_two_add_inv_two"
+  ]
+ },
+ {
+  "name": "CategoryTheory.projective_iff_hasProjectiveDimensionLT_one",
+  "leverage": 1788.2,
+  "statement_cone": 10,
+  "proof_cone": 17882,
+  "new": 17872,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "CategoryTheory.projective_iff_subsingleton_ext_one",
+   "CategoryTheory.Abelian.Ext.covariant_sequence_exact\u2083",
+   "CategoryTheory.Abelian.Ext.covariant_sequence_exact\u2083'",
+   "CategoryTheory.ShortComplex.ShortExact.comp_extClass",
+   "CategoryTheory.ShortComplex.ShortExact.singleTriangle_distinguished"
+  ]
+ },
+ {
+  "name": "Subgroup.isFiniteRelIndex_of_finiteIndex",
+  "leverage": 1787.5,
+  "statement_cone": 4,
+  "proof_cone": 7150,
+  "new": 7146,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "Subgroup.isFiniteRelIndex_of_le_right",
+   "Subgroup.relIndex_eq_zero_of_le_right",
+   "Finite.card_eq_zero_of_embedding",
+   "Subgroup.isFiniteRelIndex_top_iff",
+   "Subgroup.relIndex_top_right"
+  ]
+ },
+ {
+  "name": "Topology.IsEmbedding.t1Space",
+  "leverage": 1784.0,
+  "statement_cone": 3,
+  "proof_cone": 5352,
+  "new": 5349,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "t1Space_of_injective_of_continuous",
+   "Specializes.eq",
+   "t1Space_iff_specializes_imp_eq",
+   "t1Space_TFAE",
+   "CofiniteTopology.isClosed_iff"
+  ]
+ },
+ {
+  "name": "Continuous.measurableEmbedding",
+  "leverage": 1784.0,
+  "statement_cone": 9,
+  "proof_cone": 16056,
+  "new": 16047,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "MeasurableSet.image_of_continuousOn_injOn",
+   "IsClosed.measurableSet_image_of_continuousOn_injOn",
+   "MeasurableSet.isClopenable",
+   "MeasureTheory.measurableSet_range_of_continuous_injective",
+   "PolishSpace.IsClopenable.iUnion"
+  ]
+ },
+ {
+  "name": "AddSubgroup.isFiniteRelIndex_of_finiteIndex",
+  "leverage": 1782.2,
+  "statement_cone": 4,
+  "proof_cone": 7129,
+  "new": 7125,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "AddSubgroup.isFiniteRelIndex_of_le_right",
+   "AddSubgroup.relIndex_eq_zero_of_le_right",
+   "Finite.card_eq_zero_of_embedding",
+   "AddSubgroup.isFiniteRelIndex_top_iff",
+   "Finite.card_eq_zero_of_injective"
+  ]
+ },
+ {
+  "name": "ContinuousMap.HomotopicWith.refl",
+  "leverage": 1744.0,
+  "statement_cone": 5,
+  "proof_cone": 8720,
+  "new": 8716,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe",
+   "Real.mk_le_of_forall_le",
+   "Real.le_mk_of_forall_le"
+  ]
+ },
+ {
+  "name": "LieEquiv.isKilling",
+  "leverage": 1736.4,
+  "statement_cone": 5,
+  "proof_cone": 8682,
+  "new": 8677,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "LieAlgebra.isKilling_of_equiv",
+   "LieAlgebra.killingForm_of_equiv_apply",
+   "LinearMap.trace_conj'",
+   "LinearMap.trace_comp_comm'",
+   "LinearMap.trace_comp_comm"
+  ]
+ },
+ {
+  "name": "LieAlgebra.isKilling_of_equiv",
+  "leverage": 1736.2,
+  "statement_cone": 5,
+  "proof_cone": 8681,
+  "new": 8676,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "LieAlgebra.killingForm_of_equiv_apply",
+   "LinearMap.trace_conj'",
+   "LinearMap.trace_comp_comm'",
+   "LinearMap.trace_comp_comm",
+   "LieAlgebra.IsKilling.ker_killingForm_eq_bot"
+  ]
+ },
+ {
+  "name": "Joined.map",
+  "leverage": 1735.0,
+  "statement_cone": 5,
+  "proof_cone": 8675,
+  "new": 8670,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "Path.continuous",
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe",
+   "Real.mk_le_of_forall_le"
+  ]
+ },
+ {
+  "name": "ContinuousMap.Homotopic.refl",
+  "leverage": 1734.2,
+  "statement_cone": 5,
+  "proof_cone": 8671,
+  "new": 8667,
+  "new_share": 0.9995,
+  "top_math_moves": [
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe",
+   "Real.mk_le_of_forall_le",
+   "Real.le_mk_of_forall_le"
+  ]
+ },
+ {
+  "name": "IsSimpleGroup.finite",
+  "leverage": 1708.4,
+  "statement_cone": 5,
+  "proof_cone": 8542,
+  "new": 8537,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "IsSimpleGroup.prime_card",
+   "orderOf_eq_card_of_forall_mem_zpowers",
+   "Nat.finite_of_card_ne_zero",
+   "Nat.card_zpowers",
+   "Nat.card_ne_zero"
+  ]
+ },
+ {
+  "name": "PseudoEMetricSpace.ext",
+  "leverage": 1702.0,
+  "statement_cone": 4,
+  "proof_cone": 6808,
+  "new": 6804,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "Real.mk_le",
+   "Real.zero_lt_one",
+   "Real.ratCast_lt",
+   "Real.mk_add",
+   "Real.mk_pos"
+  ]
+ },
+ {
+  "name": "Topology.IsClosedEmbedding.nonLindelofSpace",
+  "leverage": 1688.0,
+  "statement_cone": 3,
+  "proof_cone": 5064,
+  "new": 5061,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "Topology.IsClosedEmbedding.tendsto_coLindelof",
+   "nonLindelofSpace_of_neBot",
+   "IsLindelof.compl_mem_coLindelof",
+   "hasBasis_coLindelof",
+   "IsLindelof.union"
+  ]
+ },
+ {
+  "name": "SimpleGraph.IsTree.of_subsingleton",
+  "leverage": 1687.0,
+  "statement_cone": 4,
+  "proof_cone": 6748,
+  "new": 6744,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "SimpleGraph.IsAcyclic.of_subsingleton",
+   "SimpleGraph.IsAcyclic.of_card_le_two",
+   "List.Nodup.length_le_enatCard",
+   "ENat.card_eq_coe_natCard",
+   "List.Nodup.length_le_natCard"
+  ]
+ },
+ {
+  "name": "ContinuousMap.Homotopic.equivalence",
+  "leverage": 1678.5,
+  "statement_cone": 6,
+  "proof_cone": 10071,
+  "new": 10065,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "ContinuousMap.Homotopic.symm",
+   "ContinuousMap.Homotopic.trans",
+   "unitInterval.continuous_symm",
+   "ContinuousMap.Homotopic.refl",
+   "ContinuousMap.Homotopy.curry_zero"
+  ]
+ },
+ {
+  "name": "Function.Surjective.pathConnectedSpace",
+  "leverage": 1640.3,
+  "statement_cone": 6,
+  "proof_cone": 9842,
+  "new": 9836,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "isPathConnected_range",
+   "isPathConnected_univ",
+   "pathConnectedSpace_iff_univ",
+   "isPathConnected_iff",
+   "IsPathConnected.joinedIn"
+  ]
+ },
+ {
+  "name": "CategoryTheory.isZero_of_hasInjectiveDimensionLT_zero",
+  "leverage": 1613.7,
+  "statement_cone": 9,
+  "proof_cone": 14523,
+  "new": 14514,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "CategoryTheory.Abelian.Ext.homEquiv\u2080_symm_apply",
+   "CategoryTheory.Abelian.Ext.eq_zero_of_hasInjectiveDimensionLT",
+   "CategoryTheory.Abelian.Ext.mk\u2080_zero",
+   "CategoryTheory.HasInjectiveDimensionLT.subsingleton",
+   "CategoryTheory.Abelian.Ext.mk\u2080_bijective"
+  ]
+ },
+ {
+  "name": "CategoryTheory.isZero_of_hasProjectiveDimensionLT_zero",
+  "leverage": 1613.7,
+  "statement_cone": 9,
+  "proof_cone": 14523,
+  "new": 14514,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "CategoryTheory.Abelian.Ext.homEquiv\u2080_symm_apply",
+   "CategoryTheory.Abelian.Ext.eq_zero_of_hasProjectiveDimensionLT",
+   "CategoryTheory.Abelian.Ext.mk\u2080_zero",
+   "CategoryTheory.HasProjectiveDimensionLT.subsingleton",
+   "CategoryTheory.Abelian.Ext.mk\u2080_bijective"
+  ]
+ },
+ {
+  "name": "CategoryTheory.Limits.IsZero.hasInjectiveDimensionLT_zero",
+  "leverage": 1603.7,
+  "statement_cone": 9,
+  "proof_cone": 14433,
+  "new": 14424,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "CategoryTheory.hasInjectiveDimensionLT_iff",
+   "CategoryTheory.HasInjectiveDimensionLT.mk",
+   "CategoryTheory.Abelian.Ext.eq_zero_of_hasInjectiveDimensionLT",
+   "CategoryTheory.Abelian.Ext.mk\u2080_zero",
+   "CategoryTheory.Abelian.Ext.comp_zero"
+  ]
+ },
+ {
+  "name": "CategoryTheory.Limits.IsZero.hasProjectiveDimensionLT_zero",
+  "leverage": 1603.0,
+  "statement_cone": 9,
+  "proof_cone": 14427,
+  "new": 14418,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "CategoryTheory.hasProjectiveDimensionLT_iff",
+   "CategoryTheory.Abelian.Ext.eq_zero_of_hasProjectiveDimensionLT",
+   "CategoryTheory.HasProjectiveDimensionLT.mk",
+   "CategoryTheory.Abelian.Ext.mk\u2080_zero",
+   "CategoryTheory.HasProjectiveDimensionLT.subsingleton"
+  ]
+ },
+ {
+  "name": "IsometryEquiv.completeSpace_iff",
+  "leverage": 1598.7,
+  "statement_cone": 6,
+  "proof_cone": 9592,
+  "new": 9586,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "IsometryEquiv.range_eq_univ",
+   "IsometryEquiv.toEquiv_injective",
+   "Isometry.isUniformInducing",
+   "Isometry.uniformContinuous",
+   "LipschitzWith.uniformContinuous"
+  ]
+ },
+ {
+  "name": "IsSimpleAddGroup.finite",
+  "leverage": 1597.4,
+  "statement_cone": 5,
+  "proof_cone": 7987,
+  "new": 7982,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "IsSimpleAddGroup.prime_card",
+   "addOrderOf_eq_card_of_forall_mem_zmultiples",
+   "Nat.finite_of_card_ne_zero",
+   "Nat.card_zmultiples",
+   "Nat.card_ne_zero"
+  ]
+ },
+ {
+  "name": "CategoryTheory.hasProjectiveDimensionLT_of_ge",
+  "leverage": 1592.9,
+  "statement_cone": 9,
+  "proof_cone": 14336,
+  "new": 14327,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "CategoryTheory.hasProjectiveDimensionLT_iff",
+   "CategoryTheory.Abelian.Ext.eq_zero_of_hasProjectiveDimensionLT",
+   "CategoryTheory.HasProjectiveDimensionLT.mk",
+   "CategoryTheory.HasProjectiveDimensionLT.subsingleton",
+   "CategoryTheory.HasExt.standard"
+  ]
+ },
+ {
+  "name": "CategoryTheory.hasInjectiveDimensionLT_of_ge",
+  "leverage": 1592.9,
+  "statement_cone": 9,
+  "proof_cone": 14336,
+  "new": 14327,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "CategoryTheory.hasInjectiveDimensionLT_iff",
+   "CategoryTheory.HasInjectiveDimensionLT.mk",
+   "CategoryTheory.Abelian.Ext.eq_zero_of_hasInjectiveDimensionLT",
+   "CategoryTheory.HasInjectiveDimensionLT.subsingleton",
+   "CategoryTheory.HasExt.standard"
+  ]
+ },
+ {
+  "name": "CategoryTheory.isCofiltered_of_representablyFlat",
+  "leverage": 1569.0,
+  "statement_cone": 4,
+  "proof_cone": 6276,
+  "new": 6272,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "CategoryTheory.isFiltered_of_representablyCoflat",
+   "CategoryTheory.isFiltered_of_isFiltered_costructuredArrow",
+   "CategoryTheory.isFiltered_of_nonempty_limit_colimit_to_colimit_limit",
+   "CategoryTheory.IsFiltered.iff_nonempty_limit",
+   "CategoryTheory.IsFiltered.iff_cocone_nonempty"
+  ]
+ },
+ {
+  "name": "Topology.IsClosedEmbedding.paracompactSpace",
+  "leverage": 1566.7,
+  "statement_cone": 3,
+  "proof_cone": 4700,
+  "new": 4697,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "precise_refinement_set",
+   "precise_refinement",
+   "Set.Finite.image",
+   "Topology.IsClosedEmbedding.continuous",
+   "Topology.IsEmbedding.continuous"
+  ]
+ },
+ {
+  "name": "IsometryEquiv.toEquiv_inj",
+  "leverage": 1558.0,
+  "statement_cone": 6,
+  "proof_cone": 9348,
+  "new": 9342,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "IsometryEquiv.toEquiv_injective",
+   "Metric.isOpen_eball",
+   "EMetric.isOpen_iff",
+   "EMetric.mem_nhds_iff",
+   "Metric.nhds_basis_eball"
+  ]
+ },
+ {
+  "name": "IsometryEquiv.toEquiv_injective",
+  "leverage": 1557.8,
+  "statement_cone": 6,
+  "proof_cone": 9347,
+  "new": 9341,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "Metric.isOpen_eball",
+   "EMetric.isOpen_iff",
+   "EMetric.mem_nhds_iff",
+   "Metric.nhds_basis_eball",
+   "uniformity_basis_edist"
+  ]
+ },
+ {
+  "name": "CategoryTheory.isFiltered_of_representablyCoflat",
+  "leverage": 1547.5,
+  "statement_cone": 4,
+  "proof_cone": 6190,
+  "new": 6186,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "CategoryTheory.isFiltered_of_isFiltered_costructuredArrow",
+   "CategoryTheory.isFiltered_of_nonempty_limit_colimit_to_colimit_limit",
+   "CategoryTheory.IsFiltered.iff_nonempty_limit",
+   "CategoryTheory.IsFiltered.iff_cocone_nonempty",
+   "CategoryTheory.IsFiltered.of_cocone_nonempty"
+  ]
+ },
+ {
+  "name": "ChartedSpace.secondCountable_of_sigmaCompact",
+  "leverage": 1543.2,
+  "statement_cone": 4,
+  "proof_cone": 6173,
+  "new": 6169,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "countable_cover_nhds_of_sigmaCompact",
+   "countable_cover_nhdsWithin_of_sigmaCompact",
+   "isCompact_compactCovering",
+   "isCompact_accumulate",
+   "ChartedSpace.secondCountable_of_countable_cover"
+  ]
+ },
+ {
+  "name": "LindelofSpace.CompactSpace",
+  "leverage": 1522.2,
+  "statement_cone": 4,
+  "proof_cone": 6089,
+  "new": 6085,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "LindelofSpace.compactSpace",
+   "IsLindelof.isCompact",
+   "isCountablyCompact_iff_countable_open_cover",
+   "IsCountablyCompact.elim_finite_subcover",
+   "IsCountablyCompact.elim_directed_cover"
+  ]
+ },
+ {
+  "name": "LindelofSpace.compactSpace",
+  "leverage": 1522.0,
+  "statement_cone": 4,
+  "proof_cone": 6088,
+  "new": 6084,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "IsLindelof.isCompact",
+   "isCountablyCompact_iff_countable_open_cover",
+   "IsCountablyCompact.elim_finite_subcover",
+   "IsCountablyCompact.elim_directed_cover",
+   "Filter.HasBasis.iInf"
+  ]
+ },
+ {
+  "name": "EMetric.t4Space",
+  "leverage": 1511.5,
+  "statement_cone": 8,
+  "proof_cone": 12092,
+  "new": 12084,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "Metric.t4Space",
+   "EMetric.inseparable_iff",
+   "Metric.eball_mem_nhds",
+   "Metric.isOpen_eball",
+   "EMetric.isOpen_iff"
+  ]
+ },
+ {
+  "name": "Metric.t4Space",
+  "leverage": 1511.4,
+  "statement_cone": 8,
+  "proof_cone": 12091,
+  "new": 12083,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "EMetric.inseparable_iff",
+   "Metric.eball_mem_nhds",
+   "Metric.isOpen_eball",
+   "EMetric.isOpen_iff",
+   "uniformity_basis_edist_inv_two_pow"
+  ]
+ },
+ {
+  "name": "WeakPseudoEMetricSpace.ext_iff",
+  "leverage": 1497.5,
+  "statement_cone": 6,
+  "proof_cone": 8985,
+  "new": 8979,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "WeakPseudoEMetricSpace.ext",
+   "ENNReal.half_pos",
+   "ENNReal.div_pos",
+   "ENNReal.inv_ne_zero",
+   "ENNReal.add_halves"
+  ]
+ },
+ {
+  "name": "MeasurableSpace.measurableSingletonClass_of_countablySeparated",
+  "leverage": 1495.7,
+  "statement_cone": 3,
+  "proof_cone": 4487,
+  "new": 4484,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "MeasurableSpace.measurable_injection_nat_bool_of_countablySeparated",
+   "MeasurableSpace.injective_mapNatBool",
+   "MeasurableSpace.generateFrom_natGeneratingSequence",
+   "MeasurableSpace.measurable_mapNatBool",
+   "MeasurableSpace.measurableSet_natGeneratingSequence"
+  ]
+ },
+ {
+  "name": "Topology.IsEmbedding.t6Space",
+  "leverage": 1483.7,
+  "statement_cone": 3,
+  "proof_cone": 4451,
+  "new": 4448,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "Topology.IsEmbedding.t0Space",
+   "t0Space_of_injective_of_continuous",
+   "Inseparable.map",
+   "Inseparable.map_of_continuousAt",
+   "Inseparable.map_of_continuousWithinAt"
+  ]
+ },
+ {
+  "name": "CategoryTheory.hasInjectiveDimensionLT_zero_iff_isZero",
+  "leverage": 1457.9,
+  "statement_cone": 10,
+  "proof_cone": 14579,
+  "new": 14569,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "CategoryTheory.Limits.IsZero.hasInjectiveDimensionLT_zero",
+   "CategoryTheory.hasInjectiveDimensionLT_iff",
+   "CategoryTheory.isZero_of_hasInjectiveDimensionLT_zero",
+   "CategoryTheory.Abelian.Ext.homEquiv\u2080_symm_apply",
+   "CategoryTheory.HasInjectiveDimensionLT.mk"
+  ]
+ },
+ {
+  "name": "PseudoMetricSpace.ext_iff",
+  "leverage": 1457.4,
+  "statement_cone": 5,
+  "proof_cone": 7287,
+  "new": 7282,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "PseudoMetricSpace.ext",
+   "Real.mk_le",
+   "Real.mk_lt",
+   "Real.mk_sup",
+   "Real.mk_inf"
+  ]
+ },
+ {
+  "name": "CategoryTheory.hasProjectiveDimensionLT_zero_iff_isZero",
+  "leverage": 1457.3,
+  "statement_cone": 10,
+  "proof_cone": 14573,
+  "new": 14563,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "CategoryTheory.Limits.IsZero.hasProjectiveDimensionLT_zero",
+   "CategoryTheory.isZero_of_hasProjectiveDimensionLT_zero",
+   "CategoryTheory.hasProjectiveDimensionLT_iff",
+   "CategoryTheory.Abelian.Ext.homEquiv\u2080_symm_apply",
+   "CategoryTheory.Abelian.Ext.eq_zero_of_hasProjectiveDimensionLT"
+  ]
+ },
+ {
+  "name": "homotopic_of_indiscrete",
+  "leverage": 1450.8,
+  "statement_cone": 6,
+  "proof_cone": 8705,
+  "new": 8700,
+  "new_share": 0.9994,
+  "top_math_moves": [
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe",
+   "Real.mk_le_of_forall_le",
+   "Real.le_mk_of_forall_le"
+  ]
+ },
+ {
+  "name": "FiberBundle.t1Space",
+  "leverage": 1442.5,
+  "statement_cone": 4,
+  "proof_cone": 5770,
+  "new": 5766,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "Homeomorph.t1Space",
+   "Topology.IsEmbedding.t1Space",
+   "t1Space_of_injective_of_continuous",
+   "Specializes.eq",
+   "t1Space_iff_specializes_imp_eq"
+  ]
+ },
+ {
+  "name": "StieltjesFunction.ext",
+  "leverage": 1416.0,
+  "statement_cone": 6,
+  "proof_cone": 8496,
+  "new": 8490,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "StieltjesFunction.mk.inj",
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe",
+   "Real.mk_le_of_forall_le"
+  ]
+ },
+ {
+  "name": "CategoryTheory.IsFiltered.of_hasFiniteColimits",
+  "leverage": 1416.0,
+  "statement_cone": 3,
+  "proof_cone": 4248,
+  "new": 4245,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "CategoryTheory.IsFiltered.of_cocone_nonempty",
+   "List.toFinset_cons",
+   "Multiset.nodup_dedup",
+   "List.Perm.dedup",
+   "List.count_eq_one_of_mem"
+  ]
+ },
+ {
+  "name": "CategoryTheory.IsCofiltered.of_hasFiniteLimits",
+  "leverage": 1408.7,
+  "statement_cone": 3,
+  "proof_cone": 4226,
+  "new": 4223,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "CategoryTheory.IsCofiltered.of_cone_nonempty",
+   "List.toFinset_cons",
+   "Multiset.nodup_dedup",
+   "List.Perm.dedup",
+   "List.count_eq_one_of_mem"
+  ]
+ },
+ {
+  "name": "Topology.IsEmbedding.perfectlyNormalSpace",
+  "leverage": 1378.7,
+  "statement_cone": 3,
+  "proof_cone": 4136,
+  "new": 4133,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "Topology.IsInducing.perfectlyNormalSpace",
+   "Topology.IsInducing.continuous",
+   "Topology.IsInducing.continuous_iff",
+   "Topology.IsInducing.continuousAt_iff",
+   "Topology.IsInducing.completelyNormalSpace"
+  ]
+ },
+ {
+  "name": "Topology.IsInducing.perfectlyNormalSpace",
+  "leverage": 1378.3,
+  "statement_cone": 3,
+  "proof_cone": 4135,
+  "new": 4132,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "Topology.IsInducing.continuous",
+   "Topology.IsInducing.continuous_iff",
+   "Topology.IsInducing.continuousAt_iff",
+   "Topology.IsInducing.completelyNormalSpace",
+   "Topology.IsInducing.tendsto_nhds_iff"
+  ]
+ },
+ {
+  "name": "Algebra.IsLocalIso.of_algEquiv",
+  "leverage": 1371.3,
+  "statement_cone": 6,
+  "proof_cone": 8228,
+  "new": 8222,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "Algebra.IsLocalIso.trans",
+   "Algebra.IsLocalIso.of_span_range_eq_top",
+   "Algebra.IsStandardOpenImmersion.of_isPushout",
+   "PrimeSpectrum.localization_away_comap_range",
+   "PrimeSpectrum.localization_comap_range"
+  ]
+ },
+ {
+  "name": "PseudoEMetricSpace.ext_iff",
+  "leverage": 1361.8,
+  "statement_cone": 5,
+  "proof_cone": 6809,
+  "new": 6804,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "PseudoEMetricSpace.ext",
+   "Real.mk_le",
+   "Real.zero_lt_one",
+   "Real.ratCast_lt",
+   "Real.mk_add"
+  ]
+ },
+ {
+  "name": "isProperMap_const",
+  "leverage": 1360.2,
+  "statement_cone": 4,
+  "proof_cone": 5441,
+  "new": 5437,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "isProperMap_const_iff",
+   "Set.Finite.isCompact",
+   "Set.Finite.isCompact_biUnion",
+   "Ultrafilter.finite_biUnion_mem_iff",
+   "isProperMap_iff_isClosedMap_and_compact_fibers"
+  ]
+ },
+ {
+  "name": "Finsupp.Uncountable.of_moduleFinite",
+  "leverage": 1356.0,
+  "statement_cone": 5,
+  "proof_cone": 6780,
+  "new": 6775,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "Finsupp.Countable.of_moduleFinite",
+   "Module.Finite.exists_fin",
+   "Submodule.fg_iff_exists_fin_generating_family",
+   "Finsupp.toDFinsupp_toFinsupp",
+   "DFinsupp.toFinsupp_toDFinsupp"
+  ]
+ },
+ {
+  "name": "Finsupp.Countable.of_moduleFinite",
+  "leverage": 1354.4,
+  "statement_cone": 5,
+  "proof_cone": 6772,
+  "new": 6767,
+  "new_share": 0.9993,
+  "top_math_moves": [
+   "Module.Finite.exists_fin",
+   "Submodule.fg_iff_exists_fin_generating_family",
+   "Finsupp.toDFinsupp_toFinsupp",
+   "DFinsupp.toFinsupp_toDFinsupp",
+   "Finsupp.mem_span_range_iff_exists_finsupp"
+  ]
+ },
+ {
+  "name": "compactSpace_iff_seqCompactSpace",
+  "leverage": 1329.6,
+  "statement_cone": 5,
+  "proof_cone": 6648,
+  "new": 6643,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "isCompact_iff_isSeqCompact",
+   "IsCompact.isSeqCompact",
+   "IsSeqCompact.isCompact",
+   "isCompact_iff_totallyBounded_isComplete",
+   "MapClusterPt.tendsto_subseq"
+  ]
+ },
+ {
+  "name": "Matroid.not_rankInfinite",
+  "leverage": 1320.6,
+  "statement_cone": 5,
+  "proof_cone": 6603,
+  "new": 6598,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Matroid.IsBase.infinite",
+   "Matroid.IsBase.finite",
+   "Matroid.IsBase.infinite_of_infinite",
+   "Matroid.IsBase.finite_of_finite",
+   "Matroid.IsBase.encard_eq_encard_of_isBase"
+  ]
+ },
+ {
+  "name": "Matroid.not_rankFinite",
+  "leverage": 1320.6,
+  "statement_cone": 5,
+  "proof_cone": 6603,
+  "new": 6598,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Matroid.IsBase.infinite",
+   "Matroid.IsBase.finite",
+   "Matroid.IsBase.infinite_of_infinite",
+   "Matroid.IsBase.finite_of_finite",
+   "Matroid.IsBase.encard_eq_encard_of_isBase"
+  ]
+ },
+ {
+  "name": "Module.finite_of_finite",
+  "leverage": 1310.4,
+  "statement_cone": 5,
+  "proof_cone": 6552,
+  "new": 6547,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Module.Finite.exists_fin'",
+   "Submodule.fg_iff_exists_fin_linearMap",
+   "Module.Basis.constr_range",
+   "Module.Basis.constr_def",
+   "Module.Basis.ext"
+  ]
+ },
+ {
+  "name": "UpperHalfPlane.ext",
+  "leverage": 1304.5,
+  "statement_cone": 4,
+  "proof_cone": 5218,
+  "new": 5214,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Rat.num_div_den",
+   "Rat.lt_iff_le_not_ge",
+   "Rat.le_total",
+   "Rat.le_antisymm",
+   "Rat.neg_mul"
+  ]
+ },
+ {
+  "name": "Topology.IsEmbedding.separableSpace",
+  "leverage": 1300.8,
+  "statement_cone": 4,
+  "proof_cone": 5203,
+  "new": 5199,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "TopologicalSpace.IsTopologicalBasis.dense_iff",
+   "TopologicalSpace.nonempty_of_mem_countableBasis",
+   "TopologicalSpace.isBasis_countableBasis",
+   "TopologicalSpace.countable_countableBasis",
+   "TopologicalSpace.IsTopologicalBasis.mem_closure_iff"
+  ]
+ },
+ {
+  "name": "MeasureTheory.Measure.MeasureDense.nonempty",
+  "leverage": 1288.8,
+  "statement_cone": 12,
+  "proof_cone": 15465,
+  "new": 15453,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "MeasureTheory.Measure.toOuterMeasure_injective",
+   "ENNReal.exists_pos_sum_of_countable",
+   "NNReal.exists_pos_sum_of_countable",
+   "Real.uniformContinuous_add",
+   "Metric.isOpen_eball"
+  ]
+ },
+ {
+  "name": "WeakEMetricSpace.ext",
+  "leverage": 1284.3,
+  "statement_cone": 7,
+  "proof_cone": 8990,
+  "new": 8983,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "WeakPseudoEMetricSpace.ext",
+   "ENNReal.half_pos",
+   "ENNReal.div_pos",
+   "ENNReal.inv_ne_zero",
+   "ENNReal.add_halves"
+  ]
+ },
+ {
+  "name": "baire_of_finite",
+  "leverage": 1275.0,
+  "statement_cone": 3,
+  "proof_cone": 3825,
+  "new": 3822,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Set.Finite.dense_sInter",
+   "Set.Finite.isOpen_sInter",
+   "Set.Finite.induction_on",
+   "Dense.inter_of_isOpen_right",
+   "Dense.inter_of_isOpen_left"
+  ]
+ },
+ {
+  "name": "Continuous.isProperMap",
+  "leverage": 1256.0,
+  "statement_cone": 5,
+  "proof_cone": 6280,
+  "new": 6275,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "t1Space_iff_disjoint_pure_nhds",
+   "t1Space_TFAE",
+   "isProperMap_iff_isClosedMap_and_tendsto_cofinite",
+   "Filter.mem_cocompact",
+   "IsCompact.compl_mem_cocompact"
+  ]
+ },
+ {
+  "name": "finite_of_compact_of_discrete",
+  "leverage": 1246.5,
+  "statement_cone": 4,
+  "proof_cone": 4986,
+  "new": 4982,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "IsCompact.finite_of_discrete",
+   "IsCompact.elim_nhds_subcover",
+   "IsCompact.elim_nhds_subcover_nhdsSet",
+   "IsCompact.elim_nhds_subcover_nhdsSet'",
+   "Finset.set_biUnion_finset_image"
+  ]
+ },
+ {
+  "name": "Module.Finite.small",
+  "leverage": 1241.0,
+  "statement_cone": 5,
+  "proof_cone": 6205,
+  "new": 6200,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Submodule.FG.small",
+   "Submodule.fg_iff_exists_fin_generating_family",
+   "Set.finite_range",
+   "Fintype.range_linearCombination",
+   "Finsupp.range_linearCombination"
+  ]
+ },
+ {
+  "name": "Joined.inv",
+  "leverage": 1239.7,
+  "statement_cone": 7,
+  "proof_cone": 8678,
+  "new": 8671,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Path.continuous",
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe",
+   "Real.mk_le_of_forall_le"
+  ]
+ },
+ {
+  "name": "Joined.neg",
+  "leverage": 1239.7,
+  "statement_cone": 7,
+  "proof_cone": 8678,
+  "new": 8671,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Path.continuous",
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe",
+   "Real.mk_le_of_forall_le"
+  ]
+ },
+ {
+  "name": "MeasurableSet.isClopenable'",
+  "leverage": 1236.8,
+  "statement_cone": 13,
+  "proof_cone": 16078,
+  "new": 16065,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "MeasureTheory.borel_eq_borel_of_le",
+   "Continuous.measurableEmbedding",
+   "MeasurableSet.image_of_continuousOn_injOn",
+   "IsClosed.measurableSet_image_of_continuousOn_injOn",
+   "MeasurableSet.isClopenable"
+  ]
+ },
+ {
+  "name": "Group.Generators.fg",
+  "leverage": 1231.0,
+  "statement_cone": 4,
+  "proof_cone": 4924,
+  "new": 4920,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Group.fg_of_surjective",
+   "Group.fg_iff_monoid_fg",
+   "Subgroup.fg_iff_submonoid_fg",
+   "Set.Finite.inv",
+   "Set.finite_inv"
+  ]
+ },
+ {
+  "name": "TopologicalSpace.PositiveCompacts.locallyCompactSpace_of_group",
+  "leverage": 1225.2,
+  "statement_cone": 5,
+  "proof_cone": 6126,
+  "new": 6121,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "IsCompact.locallyCompactSpace_of_mem_nhds_of_group",
+   "isCompact_isClosed_basis_nhds",
+   "IsCompact.isCompact_isClosed_basis_nhds",
+   "IsCompact.closure",
+   "IsCompact.closure_subset_of_isOpen"
+  ]
+ },
+ {
+  "name": "TopologicalSpace.PositiveCompacts.locallyCompactSpace_of_addGroup",
+  "leverage": 1224.8,
+  "statement_cone": 5,
+  "proof_cone": 6124,
+  "new": 6119,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "IsCompact.locallyCompactSpace_of_mem_nhds_of_addGroup",
+   "isCompact_isClosed_basis_nhds",
+   "IsCompact.isCompact_isClosed_basis_nhds",
+   "IsCompact.closure",
+   "IsCompact.closure_subset_of_isOpen"
+  ]
+ },
+ {
+  "name": "countable_of_Lindelof_of_discrete",
+  "leverage": 1215.5,
+  "statement_cone": 4,
+  "proof_cone": 4862,
+  "new": 4858,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "IsLindelof.countable_of_discrete",
+   "IsLindelof.elim_nhds_subcover",
+   "IsLindelof.elim_nhds_subcover'",
+   "IsLindelof.elim_countable_subcover",
+   "IsLindelof.induction_on"
+  ]
+ },
+ {
+  "name": "MetricSpace.ext",
+  "leverage": 1215.3,
+  "statement_cone": 6,
+  "proof_cone": 7292,
+  "new": 7286,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "PseudoMetricSpace.ext",
+   "Real.mk_le",
+   "Real.mk_lt",
+   "Real.mk_sup",
+   "Real.mk_inf"
+  ]
+ },
+ {
+  "name": "StieltjesFunction.ext_iff",
+  "leverage": 1213.9,
+  "statement_cone": 7,
+  "proof_cone": 8497,
+  "new": 8490,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "StieltjesFunction.ext",
+   "StieltjesFunction.mk.inj",
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe"
+  ]
+ },
+ {
+  "name": "Homeomorph.paracompactSpace_iff",
+  "leverage": 1210.8,
+  "statement_cone": 4,
+  "proof_cone": 4843,
+  "new": 4839,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Topology.IsClosedEmbedding.paracompactSpace",
+   "precise_refinement_set",
+   "precise_refinement",
+   "Set.Finite.image",
+   "Topology.IsClosedEmbedding.continuous"
+  ]
+ },
+ {
+  "name": "Polynomial.forall_eq_iff_forall_eq",
+  "leverage": 1207.5,
+  "statement_cone": 4,
+  "proof_cone": 4830,
+  "new": 4826,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Polynomial.subsingleton_iff_subsingleton",
+   "Polynomial.monomial_zero_right",
+   "Polynomial.monomial_mul_monomial",
+   "Polynomial.C_injective",
+   "Polynomial.toFinsupp_smul"
+  ]
+ },
+ {
+  "name": "Polynomial.subsingleton_iff_subsingleton",
+  "leverage": 1206.8,
+  "statement_cone": 4,
+  "proof_cone": 4827,
+  "new": 4823,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Polynomial.monomial_zero_right",
+   "Polynomial.monomial_mul_monomial",
+   "Polynomial.C_injective",
+   "Polynomial.toFinsupp_smul",
+   "Polynomial.monomial_injective"
+  ]
+ },
+ {
+  "name": "CategoryTheory.IsSifted.of_final_functor_from_sifted",
+  "leverage": 1198.5,
+  "statement_cone": 4,
+  "proof_cone": 4794,
+  "new": 4790,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "CategoryTheory.IsSifted.of_final_functor_from_sifted'",
+   "CategoryTheory.Limits.PreservesFiniteProducts.of_preserves_binary_and_terminal",
+   "CategoryTheory.preservesFinOfPreservesBinaryAndTerminal",
+   "CategoryTheory.IsSifted.of_colim_preservesFiniteProducts",
+   "CategoryTheory.IsSifted.isSiftedOrEmpty_of_colim_preservesFiniteProducts"
+  ]
+ },
+ {
+  "name": "CategoryTheory.Limits.has_limits_of_finite_and_cofiltered",
+  "leverage": 1197.8,
+  "statement_cone": 4,
+  "proof_cone": 4791,
+  "new": 4787,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "List.toFinset_cons",
+   "Multiset.nodup_dedup",
+   "List.Perm.dedup",
+   "List.count_eq_one_of_mem",
+   "CategoryTheory.Limits.hasProducts_of_finite_and_cofiltered"
+  ]
+ },
+ {
+  "name": "Infinite.sigma_of_right",
+  "leverage": 1196.0,
+  "statement_cone": 2,
+  "proof_cone": 2392,
+  "new": 2390,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Infinite.of_injective",
+   "Finite.of_injective",
+   "Fintype.finite",
+   "Finset.mem_univ_val",
+   "List.idxOf_lt_length_iff"
+  ]
+ },
+ {
+  "name": "Pi.infinite_of_exists_right",
+  "leverage": 1194.5,
+  "statement_cone": 2,
+  "proof_cone": 2389,
+  "new": 2387,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Infinite.of_injective",
+   "Finite.of_injective",
+   "Fintype.finite",
+   "Finset.mem_univ_val",
+   "List.idxOf_lt_length_iff"
+  ]
+ },
+ {
+  "name": "Finite.sum_right",
+  "leverage": 1192.5,
+  "statement_cone": 2,
+  "proof_cone": 2385,
+  "new": 2383,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Finite.of_injective",
+   "Fintype.finite",
+   "Finset.mem_univ_val",
+   "List.idxOf_lt_length_iff",
+   "List.nodup_finRange"
+  ]
+ },
+ {
+  "name": "Finite.psum_left",
+  "leverage": 1192.5,
+  "statement_cone": 2,
+  "proof_cone": 2385,
+  "new": 2383,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Finite.of_injective",
+   "Fintype.finite",
+   "Finset.mem_univ_val",
+   "List.idxOf_lt_length_iff",
+   "List.nodup_finRange"
+  ]
+ },
+ {
+  "name": "Finite.sum_left",
+  "leverage": 1192.5,
+  "statement_cone": 2,
+  "proof_cone": 2385,
+  "new": 2383,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Finite.of_injective",
+   "Fintype.finite",
+   "Finset.mem_univ_val",
+   "List.idxOf_lt_length_iff",
+   "List.nodup_finRange"
+  ]
+ },
+ {
+  "name": "Finite.psum_right",
+  "leverage": 1192.5,
+  "statement_cone": 2,
+  "proof_cone": 2385,
+  "new": 2383,
+  "new_share": 0.9992,
+  "top_math_moves": [
+   "Finite.of_injective",
+   "Fintype.finite",
+   "Finset.mem_univ_val",
+   "List.idxOf_lt_length_iff",
+   "List.nodup_finRange"
+  ]
+ },
+ {
+  "name": "Algebra.IsLocalIso.iff_of_algEquiv",
+  "leverage": 1175.6,
+  "statement_cone": 7,
+  "proof_cone": 8229,
+  "new": 8222,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Algebra.IsLocalIso.of_algEquiv",
+   "Algebra.IsLocalIso.trans",
+   "Algebra.IsLocalIso.of_span_range_eq_top",
+   "Algebra.IsStandardOpenImmersion.of_isPushout",
+   "PrimeSpectrum.localization_away_comap_range"
+  ]
+ },
+ {
+  "name": "UniqueProds.toIsCancelMul",
+  "leverage": 1163.0,
+  "statement_cone": 3,
+  "proof_cone": 3489,
+  "new": 3486,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "MulEquiv.uniqueProds_iff",
+   "UniqueProds.of_injective_mulHom",
+   "UniqueProds.of_mulHom",
+   "Finset.Nonempty.image",
+   "Finset.image_nonempty"
+  ]
+ },
+ {
+  "name": "UniqueSums.toIsCancelAdd",
+  "leverage": 1161.3,
+  "statement_cone": 3,
+  "proof_cone": 3484,
+  "new": 3481,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "AddEquiv.uniqueSums_iff",
+   "UniqueSums.of_injective_addHom",
+   "UniqueSums.of_addHom",
+   "Finset.Nonempty.image",
+   "Finset.image_nonempty"
+  ]
+ },
+ {
+  "name": "CategoryTheory.Limits.has_colimits_of_finite_and_filtered",
+  "leverage": 1142.5,
+  "statement_cone": 4,
+  "proof_cone": 4570,
+  "new": 4566,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "List.toFinset_cons",
+   "Multiset.nodup_dedup",
+   "List.Perm.dedup",
+   "List.count_eq_one_of_mem",
+   "List.nodup_iff_count_eq_one"
+  ]
+ },
+ {
+  "name": "CategoryTheory.preservesFiniteColimits_of_coflat",
+  "leverage": 1140.8,
+  "statement_cone": 4,
+  "proof_cone": 4563,
+  "new": 4559,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "CategoryTheory.preservesFiniteLimits_of_flat",
+   "CategoryTheory.PreservesFiniteLimitsOfFlat.uniq",
+   "CategoryTheory.PreservesFiniteLimitsOfFlat.fac",
+   "CategoryTheory.IsCofiltered.cone_nonempty",
+   "List.toFinset_cons"
+  ]
+ },
+ {
+  "name": "NormOneClass.nontrivial",
+  "leverage": 1138.7,
+  "statement_cone": 6,
+  "proof_cone": 6832,
+  "new": 6826,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Real.mk_le_of_forall_le",
+   "Real.le_mk_of_forall_le",
+   "Real.ofCauchy_div",
+   "Real.mk_le",
+   "Real.zero_lt_one"
+  ]
+ },
+ {
+  "name": "UniformSpace.metrizable_uniformity",
+  "leverage": 1136.8,
+  "statement_cone": 10,
+  "proof_cone": 11368,
+  "new": 11358,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "PseudoMetricSpace.le_two_mul_dist_ofPreNNDist",
+   "PseudoMetricSpace.dist_ofPreNNDist",
+   "NNReal.mul_iInf",
+   "NNReal.iInf_mul",
+   "NNReal.le_iInf_add_iInf"
+  ]
+ },
+ {
+  "name": "EMetricSpace.ext",
+  "leverage": 1135.7,
+  "statement_cone": 6,
+  "proof_cone": 6814,
+  "new": 6808,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "PseudoEMetricSpace.ext",
+   "Real.mk_le",
+   "Real.zero_lt_one",
+   "Real.ratCast_lt",
+   "Real.mk_add"
+  ]
+ },
+ {
+  "name": "Northcott.comp_of_finite_fibers",
+  "leverage": 1133.2,
+  "statement_cone": 4,
+  "proof_cone": 4533,
+  "new": 4529,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Set.Finite.of_finite_fibers",
+   "Set.Finite.biUnion",
+   "Set.Finite.biUnion'",
+   "Set.finite_iUnion",
+   "Finset.mem_biUnion"
+  ]
+ },
+ {
+  "name": "loc_compact_t2_tot_disc_iff_tot_sep",
+  "leverage": 1124.7,
+  "statement_cone": 6,
+  "proof_cone": 6748,
+  "new": 6742,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "loc_compact_Haus_tot_disc_of_zero_dim",
+   "compact_exists_isClopen_in_isOpen",
+   "isTopologicalBasis_isClopen",
+   "nhds_basis_clopen",
+   "connectedComponent_eq_iInter_isClopen"
+  ]
+ },
+ {
+  "name": "WeakEMetricSpace.ext_iff",
+  "leverage": 1123.9,
+  "statement_cone": 8,
+  "proof_cone": 8991,
+  "new": 8983,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "WeakEMetricSpace.ext",
+   "WeakPseudoEMetricSpace.ext",
+   "ENNReal.half_pos",
+   "ENNReal.div_pos",
+   "ENNReal.inv_ne_zero"
+  ]
+ },
+ {
+  "name": "Polynomial.nontrivial_iff",
+  "leverage": 1119.5,
+  "statement_cone": 4,
+  "proof_cone": 4478,
+  "new": 4474,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Polynomial.Nontrivial.of_polynomial_ne",
+   "AddMonoidAlgebra.sum_coeff_single",
+   "Finsupp.sum_single",
+   "Finsupp.liftAddHom_singleAddHom",
+   "Finsupp.sum_sum_index"
+  ]
+ },
+ {
+  "name": "isProperMap_of_comp_of_t2",
+  "leverage": 1116.2,
+  "statement_cone": 5,
+  "proof_cone": 5581,
+  "new": 5576,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "isProperMap_iff_ultrafilter_of_t2",
+   "tendsto_nhds_unique",
+   "t1Space_iff_t0Space_and_r0Space",
+   "t1Space_iff_disjoint_pure_nhds",
+   "t1Space_TFAE"
+  ]
+ },
+ {
+  "name": "PreconnectedSpace.infinite",
+  "leverage": 1110.6,
+  "statement_cone": 5,
+  "proof_cone": 5553,
+  "new": 5548,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "IsPreconnected.infinite_of_nontrivial",
+   "Topology.IsEmbedding.t1Space",
+   "t1Space_of_injective_of_continuous",
+   "Specializes.eq",
+   "t1Space_iff_specializes_imp_eq"
+  ]
+ },
+ {
+  "name": "Std.Http.URI.Host.ipv6.inj",
+  "leverage": 1109.2,
+  "statement_cone": 4,
+  "proof_cone": 4437,
+  "new": 4433,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "String.remainingBytes_pastModify",
+   "String.remainingBytes_pastSet",
+   "String.Pos.splits_pastSet",
+   "String.Pos.offset_pastSet",
+   "String.Pos.Raw.isValid_add_char_set"
+  ]
+ },
+ {
+  "name": "Std.Http.URI.Host.ipv4.inj",
+  "leverage": 1109.2,
+  "statement_cone": 4,
+  "proof_cone": 4437,
+  "new": 4433,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "String.remainingBytes_pastModify",
+   "String.remainingBytes_pastSet",
+   "String.Pos.splits_pastSet",
+   "String.Pos.offset_pastSet",
+   "String.Pos.Raw.isValid_add_char_set"
+  ]
+ },
+ {
+  "name": "Sylow.finite_of_finiteIndex",
+  "leverage": 1107.0,
+  "statement_cone": 7,
+  "proof_cone": 7749,
+  "new": 7742,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Subgroup.finiteIndex_of_finite_quotient",
+   "Subgroup.index_ne_zero_of_finite",
+   "Nat.card_pos",
+   "Nat.finite_of_card_ne_zero",
+   "Nat.card_pos_iff"
+  ]
+ },
+ {
+  "name": "Matroid.not_rankInfinite_iff",
+  "leverage": 1102.2,
+  "statement_cone": 6,
+  "proof_cone": 6613,
+  "new": 6607,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Matroid.not_rankFinite_iff",
+   "Matroid.not_rankInfinite",
+   "Matroid.not_rankFinite",
+   "Matroid.IsBase.infinite",
+   "Matroid.IsBase.finite"
+  ]
+ },
+ {
+  "name": "Matroid.not_rankFinite_iff",
+  "leverage": 1102.0,
+  "statement_cone": 6,
+  "proof_cone": 6612,
+  "new": 6606,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Matroid.not_rankInfinite",
+   "Matroid.not_rankFinite",
+   "Matroid.IsBase.infinite",
+   "Matroid.IsBase.finite",
+   "Matroid.IsBase.infinite_of_infinite"
+  ]
+ },
+ {
+  "name": "Module.finite_iff_finite",
+  "leverage": 1093.2,
+  "statement_cone": 6,
+  "proof_cone": 6559,
+  "new": 6553,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Module.finite_of_finite",
+   "Module.Finite.exists_fin'",
+   "Submodule.fg_iff_exists_fin_linearMap",
+   "Module.Basis.constr_range",
+   "Module.Basis.constr_def"
+  ]
+ },
+ {
+  "name": "IsClosed.pathComponent",
+  "leverage": 1091.2,
+  "statement_cone": 9,
+  "proof_cone": 9821,
+  "new": 9812,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "IsPathConnected.joinedIn",
+   "JoinedIn.trans",
+   "JoinedIn.symm",
+   "Joined.trans",
+   "joinedIn_iff_joined"
+  ]
+ },
+ {
+  "name": "nonempty_denumerable",
+  "leverage": 1090.5,
+  "statement_cone": 4,
+  "proof_cone": 4362,
+  "new": 4358,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Nat.Subtype.ofNat_surjective",
+   "Nat.Subtype.lt_succ_iff_le",
+   "Nat.Subtype.succ_le_of_lt",
+   "Nat.Subtype.lt_succ_self",
+   "Nat.Subtype.le_succ_of_forall_lt_le"
+  ]
+ },
+ {
+  "name": "isProperMap_const_iff",
+  "leverage": 1088.0,
+  "statement_cone": 5,
+  "proof_cone": 5440,
+  "new": 5435,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Set.Finite.isCompact",
+   "Set.Finite.isCompact_biUnion",
+   "Ultrafilter.finite_biUnion_mem_iff",
+   "isProperMap_iff_isClosedMap_and_compact_fibers",
+   "Set.Finite.image"
+  ]
+ },
+ {
+  "name": "CategoryTheory.preservesFiniteLimits_of_flat",
+  "leverage": 1087.0,
+  "statement_cone": 4,
+  "proof_cone": 4348,
+  "new": 4344,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "CategoryTheory.PreservesFiniteLimitsOfFlat.uniq",
+   "CategoryTheory.PreservesFiniteLimitsOfFlat.fac",
+   "CategoryTheory.IsCofiltered.cone_nonempty",
+   "List.toFinset_cons",
+   "Finset.mem_biUnion"
+  ]
+ },
+ {
+  "name": "not_preirreducible_nontrivial_t2",
+  "leverage": 1071.2,
+  "statement_cone": 5,
+  "proof_cone": 5356,
+  "new": 5351,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "IsPreirreducible.subsingleton",
+   "isPreirreducible_iff_subsingleton",
+   "t1Space_iff_disjoint_pure_nhds",
+   "t1Space_TFAE",
+   "CofiniteTopology.isClosed_iff"
+  ]
+ },
+ {
+  "name": "MeasureTheory.measurableSet_range_of_continuous_injective",
+  "leverage": 1068.7,
+  "statement_cone": 14,
+  "proof_cone": 14962,
+  "new": 14948,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "IsOpen.analyticSet_image",
+   "MeasureTheory.analyticSet_range_of_polishSpace",
+   "PolishSpace.exists_nat_nat_continuous_surjective",
+   "IsOpen.polishSpace",
+   "exists_nat_nat_continuous_surjective_of_completeSpace"
+  ]
+ },
+ {
+  "name": "R1Space.t2Space_iff_t0Space",
+  "leverage": 1064.0,
+  "statement_cone": 5,
+  "proof_cone": 5320,
+  "new": 5315,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "t1Space_iff_t0Space_and_r0Space",
+   "t1Space_iff_disjoint_pure_nhds",
+   "t1Space_TFAE",
+   "CofiniteTopology.isClosed_iff",
+   "CofiniteTopology.isOpen_iff'"
+  ]
+ },
+ {
+  "name": "CategoryTheory.Equivalence.preregular",
+  "leverage": 1061.0,
+  "statement_cone": 3,
+  "proof_cone": 3183,
+  "new": 3180,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Fintype.finite",
+   "Finset.mem_univ_val",
+   "List.idxOf_lt_length_iff",
+   "List.findIdx_lt_length",
+   "Multiset.Nodup.ext"
+  ]
+ },
+ {
+  "name": "t1Space_of_injective_of_continuous",
+  "leverage": 1059.2,
+  "statement_cone": 5,
+  "proof_cone": 5296,
+  "new": 5291,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Specializes.eq",
+   "t1Space_iff_specializes_imp_eq",
+   "t1Space_TFAE",
+   "CofiniteTopology.isClosed_iff",
+   "CofiniteTopology.isOpen_iff'"
+  ]
+ },
+ {
+  "name": "Algebra.FiniteType.small",
+  "leverage": 1058.8,
+  "statement_cone": 6,
+  "proof_cone": 6353,
+  "new": 6347,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Subalgebra.FG.small",
+   "Algebra.adjoin_eq_range",
+   "Algebra.adjoin_range_eq_range_aeval",
+   "MvPolynomial.eval\u2082_mul",
+   "MvPolynomial.eval\u2082_mul_C"
+  ]
+ },
+ {
+  "name": "CategoryTheory.Equivalence.precoherent",
+  "leverage": 1054.0,
+  "statement_cone": 3,
+  "proof_cone": 3162,
+  "new": 3159,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "CategoryTheory.Functor.reflects_precoherent",
+   "Fintype.finite",
+   "Finset.mem_univ_val",
+   "List.idxOf_lt_length_iff",
+   "List.findIdx_lt_length"
+  ]
+ },
+ {
+  "name": "Filter.tendstoCofinite_of_injective",
+  "leverage": 1052.7,
+  "statement_cone": 3,
+  "proof_cone": 3158,
+  "new": 3155,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "Function.Injective.tendsto_cofinite",
+   "Set.Finite.preimage",
+   "Set.Finite.subset",
+   "Set.Finite.union",
+   "Finite.Set.subset"
+  ]
+ },
+ {
+  "name": "NormedAddGroupHom.coe_injective",
+  "leverage": 1046.8,
+  "statement_cone": 5,
+  "proof_cone": 5234,
+  "new": 5229,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "NormedAddGroupHom.coe_inj",
+   "Rat.num_div_den",
+   "Rat.lt_iff_le_not_ge",
+   "Rat.le_total",
+   "Rat.le_antisymm"
+  ]
+ },
+ {
+  "name": "BoundedContinuousFunction.eq_of_empty",
+  "leverage": 1046.8,
+  "statement_cone": 5,
+  "proof_cone": 5234,
+  "new": 5229,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "BoundedContinuousFunction.ext",
+   "Rat.num_div_den",
+   "Rat.lt_iff_le_not_ge",
+   "Rat.le_total",
+   "Rat.le_antisymm"
+  ]
+ },
+ {
+  "name": "Dilation.isUniformInducing",
+  "leverage": 1045.6,
+  "statement_cone": 9,
+  "proof_cone": 9410,
+  "new": 9401,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "Dilation.antilipschitz",
+   "Dilation.lipschitz",
+   "LipschitzWith.uniformContinuous",
+   "AntilipschitzWith.isUniformInducing",
+   "Dilation.ratio_ne_zero"
+  ]
+ },
+ {
+  "name": "UpperHalfPlane.ext_iff'",
+  "leverage": 1044.2,
+  "statement_cone": 5,
+  "proof_cone": 5221,
+  "new": 5216,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "UpperHalfPlane.coe_inj",
+   "UpperHalfPlane.ext_iff",
+   "UpperHalfPlane.ext",
+   "Rat.num_div_den",
+   "Rat.lt_iff_le_not_ge"
+  ]
+ },
+ {
+  "name": "UpperHalfPlane.coe_inj",
+  "leverage": 1044.0,
+  "statement_cone": 5,
+  "proof_cone": 5220,
+  "new": 5215,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "UpperHalfPlane.ext_iff",
+   "UpperHalfPlane.ext",
+   "Rat.num_div_den",
+   "Rat.lt_iff_le_not_ge",
+   "Rat.le_total"
+  ]
+ },
+ {
+  "name": "UpperHalfPlane.ext_iff",
+  "leverage": 1043.8,
+  "statement_cone": 5,
+  "proof_cone": 5219,
+  "new": 5214,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "UpperHalfPlane.ext",
+   "Rat.num_div_den",
+   "Rat.lt_iff_le_not_ge",
+   "Rat.le_total",
+   "Rat.le_antisymm"
+  ]
+ },
+ {
+  "name": "UpperHalfPlane.coe_injective",
+  "leverage": 1043.8,
+  "statement_cone": 5,
+  "proof_cone": 5219,
+  "new": 5214,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "UpperHalfPlane.ext",
+   "Rat.num_div_den",
+   "Rat.lt_iff_le_not_ge",
+   "Rat.le_total",
+   "Rat.le_antisymm"
+  ]
+ },
+ {
+  "name": "MetricSpace.ext_iff",
+  "leverage": 1041.9,
+  "statement_cone": 7,
+  "proof_cone": 7293,
+  "new": 7286,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "MetricSpace.ext",
+   "PseudoMetricSpace.ext",
+   "Real.mk_le",
+   "Real.mk_lt",
+   "Real.mk_sup"
+  ]
+ },
+ {
+  "name": "Std.Http.Header.Name.ext",
+  "leverage": 1040.0,
+  "statement_cone": 4,
+  "proof_cone": 4160,
+  "new": 4156,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "String.remainingBytes_pastModify",
+   "String.remainingBytes_pastSet",
+   "String.Pos.splits_pastSet",
+   "String.Pos.offset_pastSet",
+   "String.Pos.Raw.isValid_add_char_set"
+  ]
+ },
+ {
+  "name": "IsAzumaya.of_AlgEquiv",
+  "leverage": 1031.3,
+  "statement_cone": 7,
+  "proof_cone": 7219,
+  "new": 7212,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "Module.Finite.equiv",
+   "IsAzumaya.mulLeftRight_comp_congr",
+   "Module.Finite.of_surjective",
+   "Module.Projective.of_equiv",
+   "Set.Finite.image"
+  ]
+ },
+ {
+  "name": "Algebra.IsLocalIso.trans",
+  "leverage": 1026.9,
+  "statement_cone": 8,
+  "proof_cone": 8215,
+  "new": 8207,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "Algebra.IsLocalIso.of_span_range_eq_top",
+   "Algebra.IsStandardOpenImmersion.of_isPushout",
+   "PrimeSpectrum.localization_away_comap_range",
+   "PrimeSpectrum.localization_comap_range",
+   "IsLocalization.isPrime_of_isPrime_disjoint"
+  ]
+ },
+ {
+  "name": "Monoid.fg_of_finite",
+  "leverage": 1019.3,
+  "statement_cone": 3,
+  "proof_cone": 3058,
+  "new": 3055,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "Submonoid.closure_univ",
+   "Submonoid.closure_eq",
+   "Submonoid.closure_le",
+   "nonempty_fintype",
+   "Finset.coe_univ"
+  ]
+ },
+ {
+  "name": "AddMonoid.fg_of_finite",
+  "leverage": 1018.0,
+  "statement_cone": 3,
+  "proof_cone": 3054,
+  "new": 3051,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "AddSubmonoid.closure_univ",
+   "AddSubmonoid.closure_eq",
+   "AddSubmonoid.closure_le",
+   "nonempty_fintype",
+   "Finset.coe_univ"
+  ]
+ },
+ {
+  "name": "Infinite.nonempty",
+  "leverage": 1014.5,
+  "statement_cone": 2,
+  "proof_cone": 2029,
+  "new": 2027,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "Infinite.exists_notMem_finset",
+   "Fintype.false",
+   "Fintype.finite",
+   "Finset.mem_univ_val",
+   "List.idxOf_lt_length_iff"
+  ]
+ },
+ {
+  "name": "BoxIntegral.Prepartition.injective_boxes",
+  "leverage": 1009.7,
+  "statement_cone": 6,
+  "proof_cone": 6058,
+  "new": 6052,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "Real.mk_le",
+   "Real.mk_lt",
+   "Real.mk_eq",
+   "Real.lt_cauchy",
+   "Real.ext_cauchy_iff"
+  ]
+ },
+ {
+  "name": "Module.Finite.of_basis",
+  "leverage": 999.3,
+  "statement_cone": 6,
+  "proof_cone": 5996,
+  "new": 5990,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "Module.Basis.span_eq",
+   "Module.Basis.mem_span",
+   "Module.Basis.mem_span_repr_support",
+   "Module.Basis.linearCombination_repr",
+   "Module.Basis.coe_repr_symm"
+  ]
+ },
+ {
+  "name": "MulEquiv.twoUniqueProds_iff",
+  "leverage": 996.0,
+  "statement_cone": 4,
+  "proof_cone": 3984,
+  "new": 3980,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "TwoUniqueProds.of_injective_mulHom",
+   "TwoUniqueProds.of_mulHom",
+   "UniqueMul.of_mulHom_image",
+   "Finset.mem_image_of_mem",
+   "Finset.mem_image"
+  ]
+ },
+ {
+  "name": "AddEquiv.twoUniqueSums_iff",
+  "leverage": 994.5,
+  "statement_cone": 4,
+  "proof_cone": 3978,
+  "new": 3974,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "TwoUniqueSums.of_injective_addHom",
+   "TwoUniqueSums.of_addHom",
+   "UniqueAdd.of_addHom_image",
+   "Finset.mem_image_of_mem",
+   "Finset.mem_image"
+  ]
+ },
+ {
+  "name": "Fintype.finite",
+  "leverage": 987.5,
+  "statement_cone": 2,
+  "proof_cone": 1975,
+  "new": 1973,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "Finset.mem_univ_val",
+   "List.idxOf_lt_length_iff",
+   "List.findIdx_lt_length",
+   "Multiset.Nodup.ext",
+   "List.perm_ext_iff_of_nodup"
+  ]
+ },
+ {
+  "name": "IsOpen.pathComponent",
+  "leverage": 983.1,
+  "statement_cone": 10,
+  "proof_cone": 9831,
+  "new": 9821,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "IsOpen.pathComponentIn",
+   "IsPathConnected.subset_pathComponentIn",
+   "IsPathConnected.joinedIn",
+   "pathComponentIn_congr",
+   "JoinedIn.trans"
+  ]
+ },
+ {
+  "name": "EMetricSpace.ext_iff",
+  "leverage": 973.6,
+  "statement_cone": 7,
+  "proof_cone": 6815,
+  "new": 6808,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "EMetricSpace.ext",
+   "PseudoEMetricSpace.ext",
+   "Real.mk_le",
+   "Real.zero_lt_one",
+   "Real.ratCast_lt"
+  ]
+ },
+ {
+  "name": "MeasureTheory.IsHahnDecomposition.compl",
+  "leverage": 971.9,
+  "statement_cone": 17,
+  "proof_cone": 16523,
+  "new": 16506,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "MeasureTheory.le_toOuterMeasure_caratheodory",
+   "MeasureTheory.measure_inter_add_sdiff",
+   "MeasureTheory.measure_inter_add_sdiff\u2080",
+   "MeasureTheory.measure_union\u2080_aux",
+   "MeasureTheory.measure_iUnion\u2080"
+  ]
+ },
+ {
+  "name": "CategoryTheory.Functor.isContinuous_iff_coverPreserving",
+  "leverage": 970.0,
+  "statement_cone": 7,
+  "proof_cone": 6790,
+  "new": 6783,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "CategoryTheory.compatiblePreservingOfFlat",
+   "CategoryTheory.IsCofiltered.cone_nonempty",
+   "Finset.mem_biUnion",
+   "Finset.mem_image",
+   "Multiset.mem_dedup"
+  ]
+ },
+ {
+  "name": "DFunLike.finite",
+  "leverage": 963.3,
+  "statement_cone": 3,
+  "proof_cone": 2890,
+  "new": 2887,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "Fintype.mem_piFinset",
+   "Finset.mem_pi",
+   "Multiset.Nodup.pi",
+   "Multiset.mem_pi",
+   "Finite.of_injective"
+  ]
+ },
+ {
+  "name": "SimpleGraph.IsAcyclic.of_subsingleton",
+  "leverage": 962.3,
+  "statement_cone": 7,
+  "proof_cone": 6736,
+  "new": 6730,
+  "new_share": 0.9991,
+  "top_math_moves": [
+   "SimpleGraph.IsAcyclic.of_card_le_two",
+   "List.Nodup.length_le_enatCard",
+   "ENat.card_eq_coe_natCard",
+   "List.Nodup.length_le_natCard",
+   "Fintype.card_eq_nat_card"
+  ]
+ },
+ {
+  "name": "FirstOrder.Language.Structure.cg_iff_countable",
+  "leverage": 960.4,
+  "statement_cone": 8,
+  "proof_cone": 7683,
+  "new": 7675,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "FirstOrder.Language.Substructure.cg_iff_countable",
+   "Set.Countable.substructure_closure",
+   "FirstOrder.Language.Term.card_le",
+   "Cardinal.mk_list_le_max",
+   "Cardinal.mk_list_eq_mk"
+  ]
+ },
+ {
+  "name": "Module.Projective.of_basis",
+  "leverage": 959.6,
+  "statement_cone": 5,
+  "proof_cone": 4798,
+  "new": 4793,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "Module.Basis.constr_apply",
+   "Module.Basis.ext",
+   "Module.Basis.linearCombination_repr",
+   "Module.Basis.coe_repr_symm",
+   "Module.Basis.repr_symm_apply"
+  ]
+ },
+ {
+  "name": "CategoryTheory.coflat_of_preservesFiniteColimits",
+  "leverage": 958.2,
+  "statement_cone": 5,
+  "proof_cone": 4791,
+  "new": 4786,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "CategoryTheory.flat_of_preservesFiniteLimits",
+   "CategoryTheory.IsCofiltered.of_hasFiniteLimits",
+   "CategoryTheory.IsCofiltered.of_cone_nonempty",
+   "List.toFinset_cons",
+   "Multiset.nodup_dedup"
+  ]
+ },
+ {
+  "name": "EMetric.subsingleton_iff_indiscreteTopology",
+  "leverage": 956.6,
+  "statement_cone": 10,
+  "proof_cone": 9566,
+  "new": 9556,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "EMetric.nontrivial_iff_nontrivialTopology",
+   "EMetric.inseparable_iff",
+   "Metric.isOpen_eball",
+   "EMetric.isOpen_iff",
+   "EMetric.mem_closure_iff"
+  ]
+ },
+ {
+  "name": "EMetric.nontrivial_iff_nontrivialTopology",
+  "leverage": 956.2,
+  "statement_cone": 10,
+  "proof_cone": 9562,
+  "new": 9552,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "EMetric.inseparable_iff",
+   "Metric.isOpen_eball",
+   "EMetric.isOpen_iff",
+   "EMetric.mem_closure_iff",
+   "EMetric.mem_nhds_iff"
+  ]
+ },
+ {
+  "name": "Module.Free.of_subsingleton'",
+  "leverage": 954.8,
+  "statement_cone": 5,
+  "proof_cone": 4774,
+  "new": 4769,
+  "new_share": 0.999,
+  "top_math_moves": [
+   "Module.Free.of_basis",
+   "Module.free_def",
+   "Finsupp.mapDomain_smul",
+   "Finsupp.domCongr_apply",
+   "Finsupp.mapDomain_mapRange"
+  ]
+ },
+ {
+  "name": "Module.Free.of_basis",
+  "leverage": 950.6,
+  "statement_cone": 5,
+  "proof_cone": 4753,
+  "new": 4748,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "Module.free_def",
+   "Finsupp.mapDomain_smul",
+   "Finsupp.domCongr_apply",
+   "Finsupp.mapDomain_mapRange",
+   "Module.Basis.repr_injective"
+  ]
+ },
+ {
+  "name": "exists_opensMeasurableSpace_of_countablySeparated",
+  "leverage": 945.9,
+  "statement_cone": 8,
+  "proof_cone": 7567,
+  "new": 7559,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "exists_borelSpace_of_countablyGenerated_of_separatesPoints",
+   "Homeomorph.t4Space",
+   "Topology.IsClosedEmbedding.t4Space",
+   "Topology.IsEmbedding.t1Space",
+   "t1Space_of_injective_of_continuous"
+  ]
+ },
+ {
+  "name": "not_countable_complex",
+  "leverage": 945.4,
+  "statement_cone": 17,
+  "proof_cone": 16072,
+  "new": 16055,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "Cardinal.mk_univ_complex",
+   "Cardinal.mk_complex",
+   "Cardinal.mk_real",
+   "Cardinal.cantorFunction_injective",
+   "Cardinal.increasing_cantorFunction"
+  ]
+ },
+ {
+  "name": "Cardinal.not_countable_real",
+  "leverage": 944.6,
+  "statement_cone": 17,
+  "proof_cone": 16058,
+  "new": 16041,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "Cardinal.mk_real",
+   "Cardinal.cantorFunction_injective",
+   "Cardinal.increasing_cantorFunction",
+   "Cardinal.cantorFunction_le",
+   "Cardinal.cantorFunction_succ"
+  ]
+ },
+ {
+  "name": "String.eq_empty_iff_forall_eq",
+  "leverage": 941.2,
+  "statement_cone": 4,
+  "proof_cone": 3765,
+  "new": 3761,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "String.Pos.toSlice_inj",
+   "String.Pos.ofToSlice_inj",
+   "String.Pos.ofToSlice_toSlice",
+   "String.Slice.Pos.toSlice_ofToSlice",
+   "String.Pos.offset_toSlice"
+  ]
+ },
+ {
+  "name": "Dilation.injective",
+  "leverage": 937.3,
+  "statement_cone": 10,
+  "proof_cone": 9373,
+  "new": 9363,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "Dilation.antilipschitz",
+   "Dilation.ratio_ne_zero",
+   "Dilation.edist_eq",
+   "AntilipschitzWith.injective",
+   "Metric.isOpen_eball"
+  ]
+ },
+ {
+  "name": "PrespectralSpace.of_isClosedEmbedding",
+  "leverage": 930.3,
+  "statement_cone": 3,
+  "proof_cone": 2791,
+  "new": 2788,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "Topology.IsClosedEmbedding.isProperMap",
+   "isProperMap_of_isClosedMap_of_inj",
+   "isProperMap_iff_isClosedMap_of_inj",
+   "isProperMap_iff_isClosedMap_and_compact_fibers",
+   "IsProperMap.isSpectralMap"
+  ]
+ },
+ {
+  "name": "Topology.IsEmbedding.metrizableSpace",
+  "leverage": 922.0,
+  "statement_cone": 3,
+  "proof_cone": 2766,
+  "new": 2763,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "Topology.IsEmbedding.t0Space",
+   "t0Space_of_injective_of_continuous",
+   "Inseparable.map",
+   "Inseparable.map_of_continuousAt",
+   "Inseparable.map_of_continuousWithinAt"
+  ]
+ },
+ {
+  "name": "Measurable.measurableEmbedding",
+  "leverage": 920.1,
+  "statement_cone": 18,
+  "proof_cone": 16562,
+  "new": 16544,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "MeasurableSet.image_of_measurable_injOn",
+   "MeasurableSet.image_of_continuousOn_injOn",
+   "IsClosed.measurableSet_image_of_continuousOn_injOn",
+   "Measurable.exists_continuous",
+   "MeasurableSet.isClopenable"
+  ]
+ },
+ {
+  "name": "Algebra.FiniteType.equiv",
+  "leverage": 915.0,
+  "statement_cone": 5,
+  "proof_cone": 4575,
+  "new": 4570,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "Algebra.FiniteType.of_surjective",
+   "Subalgebra.FG.map",
+   "Finset.coe_image",
+   "Finset.mem_image",
+   "Algebra.map_top"
+  ]
+ },
+ {
+  "name": "FirstOrder.Language.Equiv.fg_iff",
+  "leverage": 910.8,
+  "statement_cone": 5,
+  "proof_cone": 4554,
+  "new": 4549,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "FirstOrder.Language.Structure.FG.map_of_surjective",
+   "FirstOrder.Language.Structure.FG.range",
+   "FirstOrder.Language.Substructure.FG.map",
+   "Set.Finite.image",
+   "Finset.mem_image"
+  ]
+ },
+ {
+  "name": "CategoryTheory.IsSifted.of_final_functor_from_sifted'",
+  "leverage": 910.6,
+  "statement_cone": 5,
+  "proof_cone": 4553,
+  "new": 4548,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "CategoryTheory.Limits.PreservesFiniteProducts.of_preserves_binary_and_terminal",
+   "CategoryTheory.preservesFinOfPreservesBinaryAndTerminal",
+   "CategoryTheory.IsSifted.of_colim_preservesFiniteProducts",
+   "CategoryTheory.IsSifted.isSiftedOrEmpty_of_colim_preservesFiniteProducts",
+   "CategoryTheory.IsSifted.nonempty_of_colim_preservesLimitsOfShapeFinZero"
+  ]
+ },
+ {
+  "name": "ProperSpace.of_locallyCompactSpace",
+  "leverage": 907.6,
+  "statement_cone": 13,
+  "proof_cone": 11799,
+  "new": 11786,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "Metric.exists_isCompact_closedBall",
+   "Metric.eventually_isCompact_closedBall",
+   "ProperSpace.of_seq_closedBall",
+   "Metric.isClosed_closedBall",
+   "Continuous.dist"
+  ]
+ },
+ {
+  "name": "Topology.IsClosedEmbedding.isProperMap",
+  "leverage": 905.0,
+  "statement_cone": 3,
+  "proof_cone": 2715,
+  "new": 2712,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "isProperMap_of_isClosedMap_of_inj",
+   "isProperMap_iff_isClosedMap_of_inj",
+   "isProperMap_iff_isClosedMap_and_compact_fibers",
+   "IsClosedMap.mapClusterPt_iff_lift'_closure",
+   "IsProperMap.isCompact_preimage"
+  ]
+ },
+ {
+  "name": "isProperMap_id",
+  "leverage": 903.0,
+  "statement_cone": 3,
+  "proof_cone": 2709,
+  "new": 2706,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "IsHomeomorph.isProperMap",
+   "isProperMap_of_isClosedMap_of_inj",
+   "isProperMap_iff_isClosedMap_of_inj",
+   "isProperMap_iff_isClosedMap_and_compact_fibers",
+   "IsClosedMap.mapClusterPt_iff_lift'_closure"
+  ]
+ },
+ {
+  "name": "ErgodicVAdd.trans_isMinimal",
+  "leverage": 901.9,
+  "statement_cone": 19,
+  "proof_cone": 17137,
+  "new": 17118,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "aeconst_of_dense_setOfPred_preimage_vadd_ae",
+   "MeasureTheory.isClosed_setOfPred_preimage_ae_eq",
+   "MeasureTheory.tendsto_measure_symmDiff_preimage_nhds_zero",
+   "MeasureTheory.NullMeasurableSet.exists_isOpen_symmDiff_lt",
+   "MeasureTheory.Measure.InnerRegularCompactLTTop.map_of_continuous"
+  ]
+ },
+ {
+  "name": "ErgodicSMul.trans_isMinimal",
+  "leverage": 901.6,
+  "statement_cone": 19,
+  "proof_cone": 17130,
+  "new": 17111,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "aeconst_of_dense_setOfPred_preimage_smul_ae",
+   "MeasureTheory.isClosed_setOfPred_preimage_ae_eq",
+   "MeasureTheory.tendsto_measure_symmDiff_preimage_nhds_zero",
+   "MeasureTheory.NullMeasurableSet.exists_isOpen_symmDiff_lt",
+   "MeasureTheory.Measure.InnerRegularCompactLTTop.map_of_continuous"
+  ]
+ },
+ {
+  "name": "IsHomeomorph.isProperMap",
+  "leverage": 901.3,
+  "statement_cone": 3,
+  "proof_cone": 2704,
+  "new": 2701,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "isProperMap_of_isClosedMap_of_inj",
+   "isProperMap_iff_isClosedMap_of_inj",
+   "isProperMap_iff_isClosedMap_and_compact_fibers",
+   "IsClosedMap.mapClusterPt_iff_lift'_closure",
+   "IsProperMap.isCompact_preimage"
+  ]
+ },
+ {
+  "name": "Metric.PiNatEmbed.TopologicalSpace.MetrizableSpace.of_countable_separating",
+  "leverage": 900.6,
+  "statement_cone": 17,
+  "proof_cone": 15311,
+  "new": 15294,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "Metric.PiNatEmbed.isHomeomorph_toPiNat",
+   "Metric.PiNatEmbed.continuous_toPiNat",
+   "continuous_tsum",
+   "continuousOn_tsum",
+   "tendstoUniformlyOn_tsum"
+  ]
+ },
+ {
+  "name": "CompletelyRegularSpace.of_isTopologicalBasis_clopens",
+  "leverage": 900.2,
+  "statement_cone": 10,
+  "proof_cone": 9002,
+  "new": 8992,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "UniformSpace.ofDist_aux",
+   "ENNReal.coe_nnreal_eq",
+   "Real.toNNReal_coe",
+   "Real.mk_le_of_forall_le",
+   "Real.le_mk_of_forall_le"
+  ]
+ },
+ {
+  "name": "FirstOrder.Language.Structure.FG.countable_embedding",
+  "leverage": 899.2,
+  "statement_cone": 5,
+  "proof_cone": 4496,
+  "new": 4491,
+  "new_share": 0.9989,
+  "top_math_moves": [
+   "FirstOrder.Language.Structure.FG.countable_hom",
+   "FirstOrder.Language.Structure.fg_iff",
+   "FirstOrder.Language.Hom.eq_of_eqOn_dense",
+   "FirstOrder.Language.Substructure.fg_def",
+   "FirstOrder.Language.Structure.fg_def"
+  ]
+ }
+]

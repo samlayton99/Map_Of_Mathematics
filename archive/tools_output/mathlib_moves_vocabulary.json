@@ -1,0 +1,3246 @@
+{
+ "by_depth_band": {
+  "logic-glue": [
+   {
+    "name": "Iff.refl",
+    "depth": 2,
+    "times_as_new_move": 44194,
+    "times_in_proof_cones": 235126
+   },
+   {
+    "name": "iff_self",
+    "depth": 4,
+    "times_as_new_move": 43667,
+    "times_in_proof_cones": 204365
+   },
+   {
+    "name": "Classical.choose_spec",
+    "depth": 7,
+    "times_as_new_move": 43283,
+    "times_in_proof_cones": 203775
+   },
+   {
+    "name": "Classical.em",
+    "depth": 9,
+    "times_as_new_move": 42612,
+    "times_in_proof_cones": 201393
+   },
+   {
+    "name": "Iff.symm",
+    "depth": 2,
+    "times_as_new_move": 42184,
+    "times_in_proof_cones": 214024
+   },
+   {
+    "name": "mt",
+    "depth": 2,
+    "times_as_new_move": 41587,
+    "times_in_proof_cones": 211833
+   },
+   {
+    "name": "iff_false",
+    "depth": 3,
+    "times_as_new_move": 41550,
+    "times_in_proof_cones": 208792
+   },
+   {
+    "name": "heq_of_eq",
+    "depth": 5,
+    "times_as_new_move": 40876,
+    "times_in_proof_cones": 202498
+   },
+   {
+    "name": "forall_congr",
+    "depth": 5,
+    "times_as_new_move": 40664,
+    "times_in_proof_cones": 215450
+   },
+   {
+    "name": "not_true_eq_false",
+    "depth": 8,
+    "times_as_new_move": 40655,
+    "times_in_proof_cones": 211283
+   },
+   {
+    "name": "congrFun'",
+    "depth": 3,
+    "times_as_new_move": 40318,
+    "times_in_proof_cones": 247758
+   },
+   {
+    "name": "iff_iff_eq",
+    "depth": 5,
+    "times_as_new_move": 39691,
+    "times_in_proof_cones": 208305
+   },
+   {
+    "name": "eq_iff_iff",
+    "depth": 6,
+    "times_as_new_move": 39645,
+    "times_in_proof_cones": 208139
+   },
+   {
+    "name": "forall_exists_index",
+    "depth": 5,
+    "times_as_new_move": 39111,
+    "times_in_proof_cones": 152475
+   },
+   {
+    "name": "Decidable.byContradiction",
+    "depth": 7,
+    "times_as_new_move": 38781,
+    "times_in_proof_cones": 199444
+   },
+   {
+    "name": "eq_true",
+    "depth": 3,
+    "times_as_new_move": 38775,
+    "times_in_proof_cones": 253598
+   },
+   {
+    "name": "trivial",
+    "depth": 2,
+    "times_as_new_move": 38764,
+    "times_in_proof_cones": 254488
+   },
+   {
+    "name": "Iff.of_eq",
+    "depth": 4,
+    "times_as_new_move": 38691,
+    "times_in_proof_cones": 210629
+   },
+   {
+    "name": "of_eq_true",
+    "depth": 4,
+    "times_as_new_move": 38603,
+    "times_in_proof_cones": 253781
+   },
+   {
+    "name": "Iff.trans",
+    "depth": 2,
+    "times_as_new_move": 38496,
+    "times_in_proof_cones": 170451
+   },
+   {
+    "name": "eq_self",
+    "depth": 4,
+    "times_as_new_move": 38307,
+    "times_in_proof_cones": 245703
+   },
+   {
+    "name": "or_true",
+    "depth": 4,
+    "times_as_new_move": 38302,
+    "times_in_proof_cones": 169950
+   },
+   {
+    "name": "true_and",
+    "depth": 3,
+    "times_as_new_move": 38045,
+    "times_in_proof_cones": 178161
+   },
+   {
+    "name": "Decidable.not_imp_symm",
+    "depth": 8,
+    "times_as_new_move": 37979,
+    "times_in_proof_cones": 135067
+   },
+   {
+    "name": "not_forall_of_exists_not",
+    "depth": 5,
+    "times_as_new_move": 37657,
+    "times_in_proof_cones": 133706
+   }
+  ],
+  "data-arithmetic": [
+   {
+    "name": "Nat.div_eq",
+    "depth": 20,
+    "times_as_new_move": 29961,
+    "times_in_proof_cones": 179776
+   },
+   {
+    "name": "List.getElem?_eq_getElem",
+    "depth": 37,
+    "times_as_new_move": 29675,
+    "times_in_proof_cones": 140638
+   },
+   {
+    "name": "List.getElem?_eq_none_iff",
+    "depth": 39,
+    "times_as_new_move": 29667,
+    "times_in_proof_cones": 140630
+   },
+   {
+    "name": "Nat.bitwise_rec_lemma",
+    "depth": 23,
+    "times_as_new_move": 29523,
+    "times_in_proof_cones": 173743
+   },
+   {
+    "name": "Nat.div_lt_self",
+    "depth": 22,
+    "times_as_new_move": 29515,
+    "times_in_proof_cones": 173799
+   },
+   {
+    "name": "Nat.div_le_self",
+    "depth": 21,
+    "times_as_new_move": 29497,
+    "times_in_proof_cones": 173873
+   },
+   {
+    "name": "Int.mul_add",
+    "depth": 22,
+    "times_as_new_move": 29287,
+    "times_in_proof_cones": 146220
+   },
+   {
+    "name": "Int.neg_eq_of_add_eq_zero",
+    "depth": 25,
+    "times_as_new_move": 29241,
+    "times_in_proof_cones": 146174
+   },
+   {
+    "name": "Int.subNatNat_add_add",
+    "depth": 20,
+    "times_as_new_move": 29161,
+    "times_in_proof_cones": 147328
+   },
+   {
+    "name": "Int.subNatNat_add",
+    "depth": 21,
+    "times_as_new_move": 29158,
+    "times_in_proof_cones": 147325
+   },
+   {
+    "name": "Int.subNatNat_sub",
+    "depth": 21,
+    "times_as_new_move": 29142,
+    "times_in_proof_cones": 147309
+   },
+   {
+    "name": "Int.subNatNat_add_negSucc",
+    "depth": 22,
+    "times_as_new_move": 29141,
+    "times_in_proof_cones": 147308
+   },
+   {
+    "name": "Int.add_assoc",
+    "depth": 24,
+    "times_as_new_move": 29140,
+    "times_in_proof_cones": 147307
+   },
+   {
+    "name": "Int.add_mul",
+    "depth": 23,
+    "times_as_new_move": 29112,
+    "times_in_proof_cones": 146045
+   },
+   {
+    "name": "Int.add_left_neg",
+    "depth": 21,
+    "times_as_new_move": 29107,
+    "times_in_proof_cones": 147274
+   },
+   {
+    "name": "Int.add_right_neg",
+    "depth": 22,
+    "times_as_new_move": 29093,
+    "times_in_proof_cones": 147234
+   },
+   {
+    "name": "Int.neg_mul_eq_neg_mul",
+    "depth": 26,
+    "times_as_new_move": 29072,
+    "times_in_proof_cones": 146005
+   },
+   {
+    "name": "Int.neg_mul",
+    "depth": 27,
+    "times_as_new_move": 29070,
+    "times_in_proof_cones": 146003
+   },
+   {
+    "name": "Int.le_max_left",
+    "depth": 28,
+    "times_as_new_move": 28942,
+    "times_in_proof_cones": 129666
+   },
+   {
+    "name": "Int.neg_add_cancel_right",
+    "depth": 25,
+    "times_as_new_move": 28939,
+    "times_in_proof_cones": 144681
+   },
+   {
+    "name": "Int.min_comm",
+    "depth": 29,
+    "times_as_new_move": 28910,
+    "times_in_proof_cones": 129626
+   },
+   {
+    "name": "Int.le_max_right",
+    "depth": 30,
+    "times_as_new_move": 28909,
+    "times_in_proof_cones": 129625
+   },
+   {
+    "name": "Int.min_le_right",
+    "depth": 28,
+    "times_as_new_move": 28909,
+    "times_in_proof_cones": 129625
+   },
+   {
+    "name": "Int.min_le_left",
+    "depth": 30,
+    "times_as_new_move": 28908,
+    "times_in_proof_cones": 129624
+   },
+   {
+    "name": "Int.max_le",
+    "depth": 31,
+    "times_as_new_move": 28907,
+    "times_in_proof_cones": 129623
+   }
+  ],
+  "algebra-combinatorics": [
+   {
+    "name": "Multiset.mem_dedup",
+    "depth": 71,
+    "times_as_new_move": 19740,
+    "times_in_proof_cones": 68264
+   },
+   {
+    "name": "Finset.mem_image",
+    "depth": 74,
+    "times_as_new_move": 19001,
+    "times_in_proof_cones": 59475
+   },
+   {
+    "name": "List.nodup_iff_count_eq_one",
+    "depth": 66,
+    "times_as_new_move": 18480,
+    "times_in_proof_cones": 70750
+   },
+   {
+    "name": "List.count_eq_one_of_mem",
+    "depth": 67,
+    "times_as_new_move": 18467,
+    "times_in_proof_cones": 70731
+   },
+   {
+    "name": "Multiset.nodup_dedup",
+    "depth": 71,
+    "times_as_new_move": 18432,
+    "times_in_proof_cones": 70627
+   },
+   {
+    "name": "List.Perm.dedup",
+    "depth": 68,
+    "times_as_new_move": 18423,
+    "times_in_proof_cones": 70660
+   },
+   {
+    "name": "Multiset.mem_product",
+    "depth": 60,
+    "times_as_new_move": 13579,
+    "times_in_proof_cones": 46489
+   },
+   {
+    "name": "Finset.mem_product",
+    "depth": 61,
+    "times_as_new_move": 13578,
+    "times_in_proof_cones": 46488
+   },
+   {
+    "name": "Finite.of_injective",
+    "depth": 61,
+    "times_as_new_move": 13377,
+    "times_in_proof_cones": 49061
+   },
+   {
+    "name": "finite_iff_nonempty_fintype",
+    "depth": 61,
+    "times_as_new_move": 13356,
+    "times_in_proof_cones": 59308
+   },
+   {
+    "name": "Set.finite_def",
+    "depth": 62,
+    "times_as_new_move": 13355,
+    "times_in_proof_cones": 59307
+   },
+   {
+    "name": "Set.Finite.nonempty_fintype",
+    "depth": 63,
+    "times_as_new_move": 13347,
+    "times_in_proof_cones": 59293
+   },
+   {
+    "name": "Multiset.add_inter_distrib",
+    "depth": 60,
+    "times_as_new_move": 13236,
+    "times_in_proof_cones": 58640
+   },
+   {
+    "name": "Multiset.union_add_inter",
+    "depth": 61,
+    "times_as_new_move": 13235,
+    "times_in_proof_cones": 58639
+   },
+   {
+    "name": "Multiset.ndinter_eq_inter",
+    "depth": 60,
+    "times_as_new_move": 13218,
+    "times_in_proof_cones": 58622
+   },
+   {
+    "name": "Finset.inter_val",
+    "depth": 61,
+    "times_as_new_move": 13216,
+    "times_in_proof_cones": 58620
+   },
+   {
+    "name": "Finset.fold_union_inter",
+    "depth": 62,
+    "times_as_new_move": 13214,
+    "times_in_proof_cones": 58618
+   },
+   {
+    "name": "Finite.Set.subset",
+    "depth": 62,
+    "times_as_new_move": 12926,
+    "times_in_proof_cones": 53838
+   },
+   {
+    "name": "Set.Finite.subset",
+    "depth": 63,
+    "times_as_new_move": 12913,
+    "times_in_proof_cones": 53825
+   },
+   {
+    "name": "Finset.finite_toSet",
+    "depth": 61,
+    "times_as_new_move": 12839,
+    "times_in_proof_cones": 44077
+   },
+   {
+    "name": "Multiset.dedup_eq_self",
+    "depth": 72,
+    "times_as_new_move": 12764,
+    "times_in_proof_cones": 36653
+   },
+   {
+    "name": "Multiset.Nodup.dedup",
+    "depth": 73,
+    "times_as_new_move": 12730,
+    "times_in_proof_cones": 36616
+   },
+   {
+    "name": "Set.Finite.exists_finset_coe",
+    "depth": 64,
+    "times_as_new_move": 12667,
+    "times_in_proof_cones": 55413
+   },
+   {
+    "name": "Finset.sum_eq_single_of_mem",
+    "depth": 68,
+    "times_as_new_move": 12637,
+    "times_in_proof_cones": 31975
+   },
+   {
+    "name": "Set.Finite.mem_toFinset",
+    "depth": 65,
+    "times_as_new_move": 12591,
+    "times_in_proof_cones": 34446
+   }
+  ],
+  "analysis-topology": [
+   {
+    "name": "nndist_zero_right",
+    "depth": 115,
+    "times_as_new_move": 9377,
+    "times_in_proof_cones": 11910
+   },
+   {
+    "name": "edist_zero_right",
+    "depth": 141,
+    "times_as_new_move": 9373,
+    "times_in_proof_cones": 11906
+   },
+   {
+    "name": "ENNReal.coe_strictMono",
+    "depth": 106,
+    "times_as_new_move": 8843,
+    "times_in_proof_cones": 24376
+   },
+   {
+    "name": "ENNReal.range_coe'",
+    "depth": 103,
+    "times_as_new_move": 8843,
+    "times_in_proof_cones": 24376
+   },
+   {
+    "name": "ENNReal.isEmbedding_coe",
+    "depth": 122,
+    "times_as_new_move": 8842,
+    "times_in_proof_cones": 24375
+   },
+   {
+    "name": "abs_dist_sub_le",
+    "depth": 106,
+    "times_as_new_move": 8830,
+    "times_in_proof_cones": 27855
+   },
+   {
+    "name": "dist_dist_dist_le_left",
+    "depth": 107,
+    "times_as_new_move": 8666,
+    "times_in_proof_cones": 27690
+   },
+   {
+    "name": "dist_dist_dist_le_right",
+    "depth": 114,
+    "times_as_new_move": 8662,
+    "times_in_proof_cones": 27686
+   },
+   {
+    "name": "dist_dist_dist_le",
+    "depth": 115,
+    "times_as_new_move": 8661,
+    "times_in_proof_cones": 27685
+   },
+   {
+    "name": "uniformContinuous_dist",
+    "depth": 146,
+    "times_as_new_move": 8660,
+    "times_in_proof_cones": 27684
+   },
+   {
+    "name": "continuous_dist",
+    "depth": 147,
+    "times_as_new_move": 8649,
+    "times_in_proof_cones": 27662
+   },
+   {
+    "name": "ENNReal.inv_le_inv",
+    "depth": 132,
+    "times_as_new_move": 8456,
+    "times_in_proof_cones": 19289
+   },
+   {
+    "name": "Continuous.dist",
+    "depth": 148,
+    "times_as_new_move": 8383,
+    "times_in_proof_cones": 27025
+   },
+   {
+    "name": "Asymptotics.IsLittleO_def",
+    "depth": 103,
+    "times_as_new_move": 8378,
+    "times_in_proof_cones": 11628
+   },
+   {
+    "name": "Asymptotics.isLittleOTVS_iff",
+    "depth": 125,
+    "times_as_new_move": 8330,
+    "times_in_proof_cones": 10638
+   },
+   {
+    "name": "Metric.mem_eball_self",
+    "depth": 108,
+    "times_as_new_move": 8330,
+    "times_in_proof_cones": 11791
+   },
+   {
+    "name": "coe_nnnorm",
+    "depth": 114,
+    "times_as_new_move": 8308,
+    "times_in_proof_cones": 15250
+   },
+   {
+    "name": "Metric.eball_mem_nhds",
+    "depth": 139,
+    "times_as_new_move": 8302,
+    "times_in_proof_cones": 11761
+   },
+   {
+    "name": "norm_norm",
+    "depth": 113,
+    "times_as_new_move": 8273,
+    "times_in_proof_cones": 14248
+   },
+   {
+    "name": "Asymptotics.isLittleO_iff",
+    "depth": 104,
+    "times_as_new_move": 8261,
+    "times_in_proof_cones": 11511
+   },
+   {
+    "name": "NNReal.coe_mono",
+    "depth": 103,
+    "times_as_new_move": 8242,
+    "times_in_proof_cones": 11893
+   },
+   {
+    "name": "Asymptotics.IsBigO_def",
+    "depth": 103,
+    "times_as_new_move": 8211,
+    "times_in_proof_cones": 11408
+   },
+   {
+    "name": "Asymptotics.isBigOWith_iff",
+    "depth": 100,
+    "times_as_new_move": 8206,
+    "times_in_proof_cones": 11439
+   },
+   {
+    "name": "continuous_norm",
+    "depth": 149,
+    "times_as_new_move": 8204,
+    "times_in_proof_cones": 19916
+   },
+   {
+    "name": "ENNReal.nhds_coe",
+    "depth": 124,
+    "times_as_new_move": 8183,
+    "times_in_proof_cones": 15577
+   }
+  ]
+ },
+ "tactic_certificate_lemmas": [
+  {
+   "name": "Lean.injEq_helper",
+   "depth": 5,
+   "times_as_new_move": 34538,
+   "times_in_proof_cones": 173325
+  },
+  {
+   "name": "Lean.Grind.iff_eq",
+   "depth": 12,
+   "times_as_new_move": 29791,
+   "times_in_proof_cones": 121480
+  },
+  {
+   "name": "Lean.Grind.of_eq_eq_true",
+   "depth": 12,
+   "times_as_new_move": 29786,
+   "times_in_proof_cones": 116206
+  },
+  {
+   "name": "Lean.Grind.eq_false_of_not_eq_true",
+   "depth": 8,
+   "times_as_new_move": 29599,
+   "times_in_proof_cones": 118252
+  },
+  {
+   "name": "Lean.Grind.not_eq_prop",
+   "depth": 12,
+   "times_as_new_move": 29430,
+   "times_in_proof_cones": 117437
+  },
+  {
+   "name": "Lean.Data.AC.insert_nonEmpty",
+   "depth": 19,
+   "times_as_new_move": 29359,
+   "times_in_proof_cones": 138068
+  },
+  {
+   "name": "Lean.Data.AC.Context.evalList_insert",
+   "depth": 39,
+   "times_as_new_move": 29358,
+   "times_in_proof_cones": 138067
+  },
+  {
+   "name": "Lean.Data.AC.Context.evalList_sort_congr",
+   "depth": 40,
+   "times_as_new_move": 29357,
+   "times_in_proof_cones": 138066
+  },
+  {
+   "name": "Lean.Data.AC.Context.evalList_sort_loop_swap",
+   "depth": 41,
+   "times_as_new_move": 29356,
+   "times_in_proof_cones": 138065
+  },
+  {
+   "name": "Lean.Data.AC.Context.unwrap_isNeutral",
+   "depth": 39,
+   "times_as_new_move": 29355,
+   "times_in_proof_cones": 138064
+  },
+  {
+   "name": "Lean.Data.AC.Context.mergeIdem_nonEmpty",
+   "depth": 15,
+   "times_as_new_move": 29355,
+   "times_in_proof_cones": 138064
+  },
+  {
+   "name": "Lean.Data.AC.Context.mergeIdem_head",
+   "depth": 15,
+   "times_as_new_move": 29355,
+   "times_in_proof_cones": 138064
+  },
+  {
+   "name": "Lean.Data.AC.Context.mergeIdem_head2",
+   "depth": 15,
+   "times_as_new_move": 29355,
+   "times_in_proof_cones": 138064
+  },
+  {
+   "name": "Lean.Data.AC.Context.sort_loop_nonEmpty",
+   "depth": 21,
+   "times_as_new_move": 29355,
+   "times_in_proof_cones": 138064
+  },
+  {
+   "name": "Lean.Data.AC.Context.evalList_sort_cons",
+   "depth": 42,
+   "times_as_new_move": 29355,
+   "times_in_proof_cones": 138064
+  },
+  {
+   "name": "Lean.Data.AC.Context.evalList_append",
+   "depth": 39,
+   "times_as_new_move": 29355,
+   "times_in_proof_cones": 138064
+  },
+  {
+   "name": "Lean.Data.AC.Context.toList_nonEmpty",
+   "depth": 10,
+   "times_as_new_move": 29355,
+   "times_in_proof_cones": 138064
+  },
+  {
+   "name": "Lean.Data.AC.Context.evalList_removeNeutrals",
+   "depth": 40,
+   "times_as_new_move": 29354,
+   "times_in_proof_cones": 138063
+  },
+  {
+   "name": "Lean.Data.AC.Context.evalList_mergeIdem",
+   "depth": 39,
+   "times_as_new_move": 29354,
+   "times_in_proof_cones": 138063
+  },
+  {
+   "name": "Lean.Data.AC.Context.evalList_sort",
+   "depth": 43,
+   "times_as_new_move": 29354,
+   "times_in_proof_cones": 138063
+  },
+  {
+   "name": "Lean.Data.AC.Context.eval_toList",
+   "depth": 40,
+   "times_as_new_move": 29354,
+   "times_in_proof_cones": 138063
+  },
+  {
+   "name": "Lean.Data.AC.Context.eval_norm",
+   "depth": 44,
+   "times_as_new_move": 29353,
+   "times_in_proof_cones": 138062
+  },
+  {
+   "name": "Lean.Data.AC.Context.eq_of_norm",
+   "depth": 45,
+   "times_as_new_move": 29352,
+   "times_in_proof_cones": 138061
+  },
+  {
+   "name": "Lean.Omega.LinearCombo.coordinate_eval_2",
+   "depth": 45,
+   "times_as_new_move": 28917,
+   "times_in_proof_cones": 122365
+  },
+  {
+   "name": "Lean.Omega.Constraint.combine_sat",
+   "depth": 33,
+   "times_as_new_move": 28905,
+   "times_in_proof_cones": 129621
+  }
+ ],
+ "by_namespace": {
+  "Nat": [
+   {
+    "name": "Nat.not_le_of_gt",
+    "depth": 14,
+    "times_as_new_move": 31405,
+    "times_in_proof_cones": 160530
+   },
+   {
+    "name": "Nat.lt_trans",
+    "depth": 8,
+    "times_as_new_move": 31373,
+    "times_in_proof_cones": 185085
+   },
+   {
+    "name": "Nat.le.dest",
+    "depth": 13,
+    "times_as_new_move": 31167,
+    "times_in_proof_cones": 184686
+   },
+   {
+    "name": "Nat.zero_add",
+    "depth": 9,
+    "times_as_new_move": 30983,
+    "times_in_proof_cones": 191584
+   },
+   {
+    "name": "Nat.succ_le_of_lt",
+    "depth": 4,
+    "times_as_new_move": 30940,
+    "times_in_proof_cones": 179642
+   },
+   {
+    "name": "Nat.lt_of_succ_le",
+    "depth": 3,
+    "times_as_new_move": 30914,
+    "times_in_proof_cones": 179173
+   },
+   {
+    "name": "Nat.add_lt_add_left",
+    "depth": 15,
+    "times_as_new_move": 30906,
+    "times_in_proof_cones": 179071
+   },
+   {
+    "name": "Nat.lt_of_succ_lt_succ",
+    "depth": 10,
+    "times_as_new_move": 30873,
+    "times_in_proof_cones": 184773
+   },
+   {
+    "name": "Nat.add_comm",
+    "depth": 11,
+    "times_as_new_move": 30862,
+    "times_in_proof_cones": 189517
+   },
+   {
+    "name": "Nat.add_le_add_left",
+    "depth": 14,
+    "times_as_new_move": 30841,
+    "times_in_proof_cones": 180023
+   }
+  ],
+  "List": [
+   {
+    "name": "List.cons.inj",
+    "depth": 7,
+    "times_as_new_move": 33494,
+    "times_in_proof_cones": 169189
+   },
+   {
+    "name": "List.brecOn.eq",
+    "depth": 6,
+    "times_as_new_move": 32942,
+    "times_in_proof_cones": 168756
+   },
+   {
+    "name": "List.mem_map",
+    "depth": 14,
+    "times_as_new_move": 30308,
+    "times_in_proof_cones": 107936
+   },
+   {
+    "name": "List.getElem?_eq_getElem",
+    "depth": 37,
+    "times_as_new_move": 29675,
+    "times_in_proof_cones": 140638
+   },
+   {
+    "name": "List.getElem?_eq_none_iff",
+    "depth": 39,
+    "times_as_new_move": 29667,
+    "times_in_proof_cones": 140630
+   },
+   {
+    "name": "List.Sublist.refl",
+    "depth": 6,
+    "times_as_new_move": 29341,
+    "times_in_proof_cones": 105536
+   },
+   {
+    "name": "List.nil_sublist",
+    "depth": 6,
+    "times_as_new_move": 29332,
+    "times_in_proof_cones": 105568
+   },
+   {
+    "name": "List.Sublist.trans",
+    "depth": 7,
+    "times_as_new_move": 29289,
+    "times_in_proof_cones": 105483
+   },
+   {
+    "name": "List.nil_eq",
+    "depth": 10,
+    "times_as_new_move": 29108,
+    "times_in_proof_cones": 91632
+   },
+   {
+    "name": "List.map_cons",
+    "depth": 7,
+    "times_as_new_move": 29086,
+    "times_in_proof_cones": 145445
+   }
+  ],
+  "Int": [
+   {
+    "name": "Int.neg_ofNat_succ",
+    "depth": 8,
+    "times_as_new_move": 29388,
+    "times_in_proof_cones": 146338
+   },
+   {
+    "name": "Int.mul_zero",
+    "depth": 12,
+    "times_as_new_move": 29316,
+    "times_in_proof_cones": 146249
+   },
+   {
+    "name": "Int.negSucc_mul_ofNat",
+    "depth": 12,
+    "times_as_new_move": 29310,
+    "times_in_proof_cones": 146245
+   },
+   {
+    "name": "Int.zero_mul",
+    "depth": 17,
+    "times_as_new_move": 29305,
+    "times_in_proof_cones": 146238
+   },
+   {
+    "name": "Int.subNatNat_self",
+    "depth": 13,
+    "times_as_new_move": 29290,
+    "times_in_proof_cones": 146223
+   },
+   {
+    "name": "Int.ofNat_mul_subNatNat",
+    "depth": 18,
+    "times_as_new_move": 29288,
+    "times_in_proof_cones": 146221
+   },
+   {
+    "name": "Int.negOfNat_add",
+    "depth": 12,
+    "times_as_new_move": 29288,
+    "times_in_proof_cones": 146221
+   },
+   {
+    "name": "Int.negSucc_mul_subNatNat",
+    "depth": 18,
+    "times_as_new_move": 29288,
+    "times_in_proof_cones": 146221
+   },
+   {
+    "name": "Int.negOfNat_eq_subNatNat_zero",
+    "depth": 10,
+    "times_as_new_move": 29288,
+    "times_in_proof_cones": 146221
+   },
+   {
+    "name": "Int.mul_add",
+    "depth": 22,
+    "times_as_new_move": 29287,
+    "times_in_proof_cones": 146220
+   }
+  ],
+  "Set": [
+   {
+    "name": "Set.mem_image",
+    "depth": 5,
+    "times_as_new_move": 25539,
+    "times_in_proof_cones": 108066
+   },
+   {
+    "name": "Set.mem_singleton_iff",
+    "depth": 4,
+    "times_as_new_move": 24542,
+    "times_in_proof_cones": 101503
+   },
+   {
+    "name": "Set.mem_range",
+    "depth": 4,
+    "times_as_new_move": 24450,
+    "times_in_proof_cones": 106004
+   },
+   {
+    "name": "Set.mem_univ",
+    "depth": 3,
+    "times_as_new_move": 22895,
+    "times_in_proof_cones": 105104
+   },
+   {
+    "name": "Set.ext",
+    "depth": 5,
+    "times_as_new_move": 22552,
+    "times_in_proof_cones": 139360
+   },
+   {
+    "name": "Set.forall_mem_image",
+    "depth": 7,
+    "times_as_new_move": 22389,
+    "times_in_proof_cones": 97401
+   },
+   {
+    "name": "Set.mem_insert_iff",
+    "depth": 6,
+    "times_as_new_move": 22186,
+    "times_in_proof_cones": 82362
+   },
+   {
+    "name": "Set.forall_mem_range",
+    "depth": 10,
+    "times_as_new_move": 21542,
+    "times_in_proof_cones": 78092
+   },
+   {
+    "name": "Set.mem_empty_iff_false",
+    "depth": 4,
+    "times_as_new_move": 21484,
+    "times_in_proof_cones": 87198
+   },
+   {
+    "name": "Set.eq_of_mem_singleton",
+    "depth": 4,
+    "times_as_new_move": 21482,
+    "times_in_proof_cones": 91362
+   }
+  ],
+  "Filter": [
+   {
+    "name": "Filter.univ_mem'",
+    "depth": 7,
+    "times_as_new_move": 15473,
+    "times_in_proof_cones": 61962
+   },
+   {
+    "name": "Filter.mem_inf_of_right",
+    "depth": 21,
+    "times_as_new_move": 14761,
+    "times_in_proof_cones": 61059
+   },
+   {
+    "name": "Filter.mem_inf_of_left",
+    "depth": 21,
+    "times_as_new_move": 14743,
+    "times_in_proof_cones": 61041
+   },
+   {
+    "name": "Filter.sSup_lowerBounds",
+    "depth": 15,
+    "times_as_new_move": 14741,
+    "times_in_proof_cones": 61039
+   },
+   {
+    "name": "Filter.isLUB_sSup",
+    "depth": 13,
+    "times_as_new_move": 14741,
+    "times_in_proof_cones": 61039
+   },
+   {
+    "name": "Filter.isGLB_sInf",
+    "depth": 16,
+    "times_as_new_move": 14740,
+    "times_in_proof_cones": 61038
+   },
+   {
+    "name": "Filter.mem_pure",
+    "depth": 12,
+    "times_as_new_move": 14673,
+    "times_in_proof_cones": 61081
+   },
+   {
+    "name": "Filter.mem_sSup",
+    "depth": 10,
+    "times_as_new_move": 14368,
+    "times_in_proof_cones": 61109
+   },
+   {
+    "name": "Filter.le_principal_iff",
+    "depth": 13,
+    "times_as_new_move": 14148,
+    "times_in_proof_cones": 60222
+   },
+   {
+    "name": "Filter.ext",
+    "depth": 11,
+    "times_as_new_move": 14135,
+    "times_in_proof_cones": 57028
+   }
+  ],
+  "Finset": [
+   {
+    "name": "Finset.mem_def",
+    "depth": 54,
+    "times_as_new_move": 19913,
+    "times_in_proof_cones": 83492
+   },
+   {
+    "name": "Finset.mem_map",
+    "depth": 16,
+    "times_as_new_move": 19409,
+    "times_in_proof_cones": 74084
+   },
+   {
+    "name": "Finset.mem_image",
+    "depth": 74,
+    "times_as_new_move": 19001,
+    "times_in_proof_cones": 59475
+   },
+   {
+    "name": "Finset.mem_coe",
+    "depth": 54,
+    "times_as_new_move": 18140,
+    "times_in_proof_cones": 78292
+   },
+   {
+    "name": "Finset.mem_singleton",
+    "depth": 18,
+    "times_as_new_move": 17990,
+    "times_in_proof_cones": 80528
+   },
+   {
+    "name": "Finset.mem_univ",
+    "depth": 2,
+    "times_as_new_move": 17958,
+    "times_in_proof_cones": 72975
+   },
+   {
+    "name": "Finset.eq_of_veq",
+    "depth": 27,
+    "times_as_new_move": 17634,
+    "times_in_proof_cones": 95823
+   },
+   {
+    "name": "Finset.notMem_empty",
+    "depth": 56,
+    "times_as_new_move": 17624,
+    "times_in_proof_cones": 80533
+   },
+   {
+    "name": "Finset.val_injective",
+    "depth": 28,
+    "times_as_new_move": 17604,
+    "times_in_proof_cones": 95793
+   },
+   {
+    "name": "Finset.val_inj",
+    "depth": 29,
+    "times_as_new_move": 17600,
+    "times_in_proof_cones": 95789
+   }
+  ],
+  "MeasureTheory": [
+   {
+    "name": "MeasureTheory.OuterMeasure.top_apply",
+    "depth": 136,
+    "times_as_new_move": 5208,
+    "times_in_proof_cones": 8047
+   },
+   {
+    "name": "MeasureTheory.Measure.toOuterMeasure_le",
+    "depth": 120,
+    "times_as_new_move": 5198,
+    "times_in_proof_cones": 8039
+   },
+   {
+    "name": "MeasureTheory.Measure.sInf_apply",
+    "depth": 183,
+    "times_as_new_move": 5197,
+    "times_in_proof_cones": 8038
+   },
+   {
+    "name": "MeasureTheory.OuterMeasure.sInf_eq_boundedBy_sInfGen",
+    "depth": 158,
+    "times_as_new_move": 5195,
+    "times_in_proof_cones": 8055
+   },
+   {
+    "name": "MeasureTheory.OuterMeasure.le_boundedBy",
+    "depth": 157,
+    "times_as_new_move": 5190,
+    "times_in_proof_cones": 8168
+   },
+   {
+    "name": "MeasureTheory.OuterMeasure.boundedBy_le",
+    "depth": 155,
+    "times_as_new_move": 5187,
+    "times_in_proof_cones": 8165
+   },
+   {
+    "name": "MeasureTheory.measure_eq_iInf",
+    "depth": 165,
+    "times_as_new_move": 5185,
+    "times_in_proof_cones": 8045
+   },
+   {
+    "name": "MeasureTheory.OuterMeasure.sInfGen_def",
+    "depth": 122,
+    "times_as_new_move": 5181,
+    "times_in_proof_cones": 8041
+   },
+   {
+    "name": "MeasureTheory.Measure.sInf_caratheodory",
+    "depth": 182,
+    "times_as_new_move": 5180,
+    "times_in_proof_cones": 8040
+   },
+   {
+    "name": "MeasureTheory.Measure.measure_univ_eq_zero",
+    "depth": 189,
+    "times_as_new_move": 5154,
+    "times_in_proof_cones": 7980
+   }
+  ],
+  "Multiset": [
+   {
+    "name": "Multiset.mem_map",
+    "depth": 15,
+    "times_as_new_move": 23850,
+    "times_in_proof_cones": 81232
+   },
+   {
+    "name": "Multiset.notMem_zero",
+    "depth": 12,
+    "times_as_new_move": 20717,
+    "times_in_proof_cones": 87894
+   },
+   {
+    "name": "Multiset.mem_cons",
+    "depth": 15,
+    "times_as_new_move": 20709,
+    "times_in_proof_cones": 87386
+   },
+   {
+    "name": "Multiset.induction",
+    "depth": 12,
+    "times_as_new_move": 19770,
+    "times_in_proof_cones": 81958
+   },
+   {
+    "name": "Multiset.mem_dedup",
+    "depth": 71,
+    "times_as_new_move": 19740,
+    "times_in_proof_cones": 68264
+   },
+   {
+    "name": "Multiset.induction_on",
+    "depth": 13,
+    "times_as_new_move": 19493,
+    "times_in_proof_cones": 73169
+   },
+   {
+    "name": "Multiset.foldr_cons",
+    "depth": 11,
+    "times_as_new_move": 19173,
+    "times_in_proof_cones": 73684
+   },
+   {
+    "name": "Multiset.Nodup.map_on",
+    "depth": 23,
+    "times_as_new_move": 18906,
+    "times_in_proof_cones": 78228
+   },
+   {
+    "name": "Multiset.mem_singleton",
+    "depth": 17,
+    "times_as_new_move": 18495,
+    "times_in_proof_cones": 83241
+   },
+   {
+    "name": "Multiset.nodup_dedup",
+    "depth": 71,
+    "times_as_new_move": 18432,
+    "times_in_proof_cones": 70627
+   }
+  ],
+  "Std": [
+   {
+    "name": "Std.le_refl",
+    "depth": 5,
+    "times_as_new_move": 28687,
+    "times_in_proof_cones": 154492
+   },
+   {
+    "name": "Std.IsPreorder.of_le",
+    "depth": 3,
+    "times_as_new_move": 24705,
+    "times_in_proof_cones": 105086
+   },
+   {
+    "name": "Std.IsLinearPreorder.of_le",
+    "depth": 7,
+    "times_as_new_move": 24703,
+    "times_in_proof_cones": 105084
+   },
+   {
+    "name": "Std.IsLinearOrder.of_le",
+    "depth": 8,
+    "times_as_new_move": 24702,
+    "times_in_proof_cones": 105083
+   },
+   {
+    "name": "Std.ge_refl",
+    "depth": 3,
+    "times_as_new_move": 23029,
+    "times_in_proof_cones": 120994
+   },
+   {
+    "name": "Std.le_of_lt",
+    "depth": 4,
+    "times_as_new_move": 21163,
+    "times_in_proof_cones": 76672
+   },
+   {
+    "name": "Std.lt_of_lt_of_le",
+    "depth": 5,
+    "times_as_new_move": 20703,
+    "times_in_proof_cones": 75980
+   },
+   {
+    "name": "Std.lt_iff_le_and_not_ge",
+    "depth": 3,
+    "times_as_new_move": 19344,
+    "times_in_proof_cones": 90556
+   },
+   {
+    "name": "Std.le_trans",
+    "depth": 3,
+    "times_as_new_move": 19324,
+    "times_in_proof_cones": 90570
+   },
+   {
+    "name": "Std.Symm.iff",
+    "depth": 4,
+    "times_as_new_move": 11088,
+    "times_in_proof_cones": 36841
+   }
+  ],
+  "Function": [
+   {
+    "name": "Function.id_comp",
+    "depth": 3,
+    "times_as_new_move": 23020,
+    "times_in_proof_cones": 147154
+   },
+   {
+    "name": "Function.LeftInverse.comp_eq_id",
+    "depth": 5,
+    "times_as_new_move": 22950,
+    "times_in_proof_cones": 147074
+   },
+   {
+    "name": "Function.comp_id",
+    "depth": 3,
+    "times_as_new_move": 22943,
+    "times_in_proof_cones": 147081
+   },
+   {
+    "name": "Function.comp_assoc",
+    "depth": 3,
+    "times_as_new_move": 22932,
+    "times_in_proof_cones": 147067
+   },
+   {
+    "name": "Function.RightInverse.comp_eq_id",
+    "depth": 5,
+    "times_as_new_move": 22925,
+    "times_in_proof_cones": 147047
+   },
+   {
+    "name": "Function.LeftInverse.eq_rightInverse",
+    "depth": 6,
+    "times_as_new_move": 22921,
+    "times_in_proof_cones": 147041
+   },
+   {
+    "name": "Function.Injective.eq_iff",
+    "depth": 4,
+    "times_as_new_move": 22134,
+    "times_in_proof_cones": 124820
+   },
+   {
+    "name": "Function.LeftInverse.injective",
+    "depth": 4,
+    "times_as_new_move": 21024,
+    "times_in_proof_cones": 116585
+   },
+   {
+    "name": "Function.RightInverse.surjective",
+    "depth": 3,
+    "times_as_new_move": 20581,
+    "times_in_proof_cones": 91569
+   },
+   {
+    "name": "Function.injective_id",
+    "depth": 1,
+    "times_as_new_move": 18029,
+    "times_in_proof_cones": 65492
+   }
+  ],
+  "ENNReal": [
+   {
+    "name": "ENNReal.coe_strictMono",
+    "depth": 106,
+    "times_as_new_move": 8843,
+    "times_in_proof_cones": 24376
+   },
+   {
+    "name": "ENNReal.range_coe'",
+    "depth": 103,
+    "times_as_new_move": 8843,
+    "times_in_proof_cones": 24376
+   },
+   {
+    "name": "ENNReal.isEmbedding_coe",
+    "depth": 122,
+    "times_as_new_move": 8842,
+    "times_in_proof_cones": 24375
+   },
+   {
+    "name": "ENNReal.inv_le_inv",
+    "depth": 132,
+    "times_as_new_move": 8456,
+    "times_in_proof_cones": 19289
+   },
+   {
+    "name": "ENNReal.nhds_coe",
+    "depth": 124,
+    "times_as_new_move": 8183,
+    "times_in_proof_cones": 15577
+   },
+   {
+    "name": "ENNReal.isOpenEmbedding_coe",
+    "depth": 123,
+    "times_as_new_move": 8158,
+    "times_in_proof_cones": 23483
+   },
+   {
+    "name": "ENNReal.continuous_coe",
+    "depth": 123,
+    "times_as_new_move": 7959,
+    "times_in_proof_cones": 15585
+   },
+   {
+    "name": "ENNReal.coe_zero",
+    "depth": 104,
+    "times_as_new_move": 7836,
+    "times_in_proof_cones": 24228
+   },
+   {
+    "name": "ENNReal.coe_ne_zero",
+    "depth": 104,
+    "times_as_new_move": 7605,
+    "times_in_proof_cones": 30250
+   },
+   {
+    "name": "ENNReal.div_top",
+    "depth": 124,
+    "times_as_new_move": 7585,
+    "times_in_proof_cones": 30192
+   }
+  ],
+  "Polynomial": [
+   {
+    "name": "Polynomial.C_mul_X_pow_eq_monomial",
+    "depth": 94,
+    "times_as_new_move": 7242,
+    "times_in_proof_cones": 15145
+   },
+   {
+    "name": "Polynomial.coeff_ofFinsupp",
+    "depth": 61,
+    "times_as_new_move": 7191,
+    "times_in_proof_cones": 15017
+   },
+   {
+    "name": "Polynomial.support_ofFinsupp",
+    "depth": 14,
+    "times_as_new_move": 7183,
+    "times_in_proof_cones": 14989
+   },
+   {
+    "name": "Polynomial.mem_support_iff",
+    "depth": 62,
+    "times_as_new_move": 7180,
+    "times_in_proof_cones": 14986
+   },
+   {
+    "name": "Polynomial.ofFinsupp.inj",
+    "depth": 8,
+    "times_as_new_move": 7141,
+    "times_in_proof_cones": 15839
+   },
+   {
+    "name": "Polynomial.coeff_monomial",
+    "depth": 90,
+    "times_as_new_move": 6830,
+    "times_in_proof_cones": 14738
+   },
+   {
+    "name": "Polynomial.ofFinsupp_inj",
+    "depth": 10,
+    "times_as_new_move": 6756,
+    "times_in_proof_cones": 14330
+   },
+   {
+    "name": "Polynomial.ofFinsupp_zero",
+    "depth": 81,
+    "times_as_new_move": 6755,
+    "times_in_proof_cones": 14329
+   },
+   {
+    "name": "Polynomial.ofFinsupp_eq_zero",
+    "depth": 82,
+    "times_as_new_move": 6754,
+    "times_in_proof_cones": 14328
+   },
+   {
+    "name": "Polynomial.support_eq_empty",
+    "depth": 84,
+    "times_as_new_move": 6750,
+    "times_in_proof_cones": 14324
+   }
+  ],
+  "Finsupp": [
+   {
+    "name": "Finsupp.add_apply",
+    "depth": 63,
+    "times_as_new_move": 12013,
+    "times_in_proof_cones": 27265
+   },
+   {
+    "name": "Finsupp.zero_apply",
+    "depth": 59,
+    "times_as_new_move": 11519,
+    "times_in_proof_cones": 26638
+   },
+   {
+    "name": "Finsupp.finsetSum_apply",
+    "depth": 67,
+    "times_as_new_move": 11308,
+    "times_in_proof_cones": 26195
+   },
+   {
+    "name": "Finsupp.sum_apply",
+    "depth": 68,
+    "times_as_new_move": 11300,
+    "times_in_proof_cones": 26187
+   },
+   {
+    "name": "Finsupp.sum_eq_single",
+    "depth": 70,
+    "times_as_new_move": 10380,
+    "times_in_proof_cones": 24565
+   },
+   {
+    "name": "Finsupp.linearCombination_single",
+    "depth": 77,
+    "times_as_new_move": 9910,
+    "times_in_proof_cones": 20319
+   },
+   {
+    "name": "Finsupp.single_apply",
+    "depth": 60,
+    "times_as_new_move": 9861,
+    "times_in_proof_cones": 33643
+   },
+   {
+    "name": "Finsupp.single_eq_same",
+    "depth": 12,
+    "times_as_new_move": 9823,
+    "times_in_proof_cones": 33424
+   },
+   {
+    "name": "Finsupp.notMem_support_iff",
+    "depth": 59,
+    "times_as_new_move": 9743,
+    "times_in_proof_cones": 33775
+   },
+   {
+    "name": "Finsupp.support_single_subset",
+    "depth": 62,
+    "times_as_new_move": 9619,
+    "times_in_proof_cones": 32770
+   }
+  ],
+  "Submodule": [
+   {
+    "name": "Submodule.span_le",
+    "depth": 23,
+    "times_as_new_move": 13288,
+    "times_in_proof_cones": 29011
+   },
+   {
+    "name": "Submodule.mem_span",
+    "depth": 13,
+    "times_as_new_move": 13224,
+    "times_in_proof_cones": 29212
+   },
+   {
+    "name": "Submodule.subset_span",
+    "depth": 18,
+    "times_as_new_move": 13221,
+    "times_in_proof_cones": 29209
+   },
+   {
+    "name": "Submodule.mem_bot",
+    "depth": 6,
+    "times_as_new_move": 11394,
+    "times_in_proof_cones": 27922
+   },
+   {
+    "name": "Submodule.ext",
+    "depth": 13,
+    "times_as_new_move": 11034,
+    "times_in_proof_cones": 24728
+   },
+   {
+    "name": "Submodule.zero_mem",
+    "depth": 14,
+    "times_as_new_move": 11003,
+    "times_in_proof_cones": 27313
+   },
+   {
+    "name": "Submodule.span_eq_of_le",
+    "depth": 24,
+    "times_as_new_move": 10826,
+    "times_in_proof_cones": 24147
+   },
+   {
+    "name": "Submodule.smul_mem",
+    "depth": 13,
+    "times_as_new_move": 10775,
+    "times_in_proof_cones": 34372
+   },
+   {
+    "name": "Submodule.add_mem",
+    "depth": 14,
+    "times_as_new_move": 10709,
+    "times_in_proof_cones": 26229
+   },
+   {
+    "name": "Submodule.span_induction",
+    "depth": 24,
+    "times_as_new_move": 10611,
+    "times_in_proof_cones": 24527
+   }
+  ],
+  "Real": [
+   {
+    "name": "Real.le_coe_toNNReal",
+    "depth": 106,
+    "times_as_new_move": 7374,
+    "times_in_proof_cones": 24466
+   },
+   {
+    "name": "Real.sSup_empty",
+    "depth": 112,
+    "times_as_new_move": 7062,
+    "times_in_proof_cones": 19963
+   },
+   {
+    "name": "Real.toNNReal_monotone",
+    "depth": 106,
+    "times_as_new_move": 6971,
+    "times_in_proof_cones": 34599
+   },
+   {
+    "name": "Real.toNNReal_mono",
+    "depth": 107,
+    "times_as_new_move": 6851,
+    "times_in_proof_cones": 34402
+   },
+   {
+    "name": "Real.toNNReal_le_toNNReal",
+    "depth": 108,
+    "times_as_new_move": 6844,
+    "times_in_proof_cones": 34395
+   },
+   {
+    "name": "Real.sInf_empty",
+    "depth": 114,
+    "times_as_new_move": 6840,
+    "times_in_proof_cones": 19317
+   },
+   {
+    "name": "Real.le_sInf",
+    "depth": 117,
+    "times_as_new_move": 6727,
+    "times_in_proof_cones": 19193
+   },
+   {
+    "name": "Real.sInf_nonneg",
+    "depth": 118,
+    "times_as_new_move": 6703,
+    "times_in_proof_cones": 19156
+   },
+   {
+    "name": "Real.toNNReal_eq_toNNReal_iff",
+    "depth": 108,
+    "times_as_new_move": 6578,
+    "times_in_proof_cones": 34386
+   },
+   {
+    "name": "Real.toNNReal_pos",
+    "depth": 108,
+    "times_as_new_move": 6345,
+    "times_in_proof_cones": 35309
+   }
+  ],
+  "Fin": [
+   {
+    "name": "Fin.mk.congr_simp",
+    "depth": 5,
+    "times_as_new_move": 17357,
+    "times_in_proof_cones": 71360
+   },
+   {
+    "name": "Fin.val_eq_of_eq",
+    "depth": 3,
+    "times_as_new_move": 17318,
+    "times_in_proof_cones": 77930
+   },
+   {
+    "name": "Fin.is_lt",
+    "depth": 3,
+    "times_as_new_move": 17173,
+    "times_in_proof_cones": 73755
+   },
+   {
+    "name": "Fin.val_lt_of_le",
+    "depth": 9,
+    "times_as_new_move": 16738,
+    "times_in_proof_cones": 72858
+   },
+   {
+    "name": "Fin.succ_lt_succ_iff",
+    "depth": 12,
+    "times_as_new_move": 16707,
+    "times_in_proof_cones": 71957
+   },
+   {
+    "name": "Fin.succ_pos",
+    "depth": 25,
+    "times_as_new_move": 16680,
+    "times_in_proof_cones": 71920
+   },
+   {
+    "name": "Fin.mk_lt_mk",
+    "depth": 5,
+    "times_as_new_move": 16615,
+    "times_in_proof_cones": 71906
+   },
+   {
+    "name": "Fin.foldr.loop.congr_simp",
+    "depth": 12,
+    "times_as_new_move": 16598,
+    "times_in_proof_cones": 71755
+   },
+   {
+    "name": "Fin.foldr_succ",
+    "depth": 26,
+    "times_as_new_move": 16597,
+    "times_in_proof_cones": 71754
+   },
+   {
+    "name": "Fin.foldr_zero",
+    "depth": 14,
+    "times_as_new_move": 16568,
+    "times_in_proof_cones": 71722
+   }
+  ],
+  "Cardinal": [
+   {
+    "name": "Cardinal.lift_mk_eq",
+    "depth": 19,
+    "times_as_new_move": 8441,
+    "times_in_proof_cones": 26894
+   },
+   {
+    "name": "Cardinal.lift_lift",
+    "depth": 22,
+    "times_as_new_move": 8185,
+    "times_in_proof_cones": 26544
+   },
+   {
+    "name": "Cardinal.lift_mk_eq'",
+    "depth": 20,
+    "times_as_new_move": 8005,
+    "times_in_proof_cones": 26457
+   },
+   {
+    "name": "Cardinal.lift_aleph0",
+    "depth": 23,
+    "times_as_new_move": 7997,
+    "times_in_proof_cones": 26352
+   },
+   {
+    "name": "Cardinal.lift_le",
+    "depth": 68,
+    "times_as_new_move": 7961,
+    "times_in_proof_cones": 26382
+   },
+   {
+    "name": "Cardinal.mk_eq_nat_iff",
+    "depth": 24,
+    "times_as_new_move": 7908,
+    "times_in_proof_cones": 26360
+   },
+   {
+    "name": "Cardinal.lt_aleph0_iff_finite",
+    "depth": 82,
+    "times_as_new_move": 7907,
+    "times_in_proof_cones": 26359
+   },
+   {
+    "name": "Cardinal.mk_eq_zero_iff",
+    "depth": 23,
+    "times_as_new_move": 7826,
+    "times_in_proof_cones": 26206
+   },
+   {
+    "name": "Cardinal.toNat_ofENat",
+    "depth": 88,
+    "times_as_new_move": 7800,
+    "times_in_proof_cones": 15065
+   },
+   {
+    "name": "Cardinal.toNat_natCast",
+    "depth": 89,
+    "times_as_new_move": 7799,
+    "times_in_proof_cones": 15064
+   }
+  ],
+  "CategoryTheory": [
+   {
+    "name": "CategoryTheory.Category.assoc'",
+    "depth": 4,
+    "times_as_new_move": 4065,
+    "times_in_proof_cones": 18328
+   },
+   {
+    "name": "CategoryTheory.Iso.hom_inv_id_assoc",
+    "depth": 6,
+    "times_as_new_move": 3762,
+    "times_in_proof_cones": 16306
+   },
+   {
+    "name": "CategoryTheory.Iso.inv_hom_id_assoc",
+    "depth": 6,
+    "times_as_new_move": 3661,
+    "times_in_proof_cones": 18947
+   },
+   {
+    "name": "CategoryTheory.NatTrans.naturality'",
+    "depth": 4,
+    "times_as_new_move": 3524,
+    "times_in_proof_cones": 15616
+   },
+   {
+    "name": "CategoryTheory.Iso.map_hom_inv_id",
+    "depth": 14,
+    "times_as_new_move": 3504,
+    "times_in_proof_cones": 15292
+   },
+   {
+    "name": "CategoryTheory.Iso.map_inv_hom_id",
+    "depth": 14,
+    "times_as_new_move": 3498,
+    "times_in_proof_cones": 15216
+   },
+   {
+    "name": "CategoryTheory.IsIso.inv_hom_id",
+    "depth": 8,
+    "times_as_new_move": 3430,
+    "times_in_proof_cones": 13975
+   },
+   {
+    "name": "CategoryTheory.IsIso.hom_inv_id",
+    "depth": 8,
+    "times_as_new_move": 3423,
+    "times_in_proof_cones": 13842
+   },
+   {
+    "name": "CategoryTheory.Iso.mk.hcongr_8",
+    "depth": 10,
+    "times_as_new_move": 3287,
+    "times_in_proof_cones": 13231
+   },
+   {
+    "name": "CategoryTheory.Iso.ext",
+    "depth": 14,
+    "times_as_new_move": 3286,
+    "times_in_proof_cones": 13230
+   }
+  ],
+  "Asymptotics": [
+   {
+    "name": "Asymptotics.IsBigOWith_def",
+    "depth": 99,
+    "times_as_new_move": 8950,
+    "times_in_proof_cones": 12220
+   },
+   {
+    "name": "Asymptotics.IsLittleO_def",
+    "depth": 103,
+    "times_as_new_move": 8378,
+    "times_in_proof_cones": 11628
+   },
+   {
+    "name": "Asymptotics.isLittleOTVS_iff",
+    "depth": 125,
+    "times_as_new_move": 8330,
+    "times_in_proof_cones": 10638
+   },
+   {
+    "name": "Asymptotics.isLittleO_iff",
+    "depth": 104,
+    "times_as_new_move": 8261,
+    "times_in_proof_cones": 11511
+   },
+   {
+    "name": "Asymptotics.IsBigO_def",
+    "depth": 103,
+    "times_as_new_move": 8211,
+    "times_in_proof_cones": 11408
+   },
+   {
+    "name": "Asymptotics.isBigOWith_iff",
+    "depth": 100,
+    "times_as_new_move": 8206,
+    "times_in_proof_cones": 11439
+   },
+   {
+    "name": "Asymptotics.isBigOWith_congr",
+    "depth": 100,
+    "times_as_new_move": 8094,
+    "times_in_proof_cones": 11274
+   },
+   {
+    "name": "Asymptotics.IsBigOWith.of_bound",
+    "depth": 101,
+    "times_as_new_move": 8081,
+    "times_in_proof_cones": 11259
+   },
+   {
+    "name": "Asymptotics.IsBigOWith.bound",
+    "depth": 101,
+    "times_as_new_move": 8048,
+    "times_in_proof_cones": 11208
+   },
+   {
+    "name": "Asymptotics.isBigO_iff_isBigOWith",
+    "depth": 104,
+    "times_as_new_move": 8026,
+    "times_in_proof_cones": 11204
+   }
+  ],
+  "Equiv": [
+   {
+    "name": "Equiv.surjective",
+    "depth": 14,
+    "times_as_new_move": 18070,
+    "times_in_proof_cones": 71556
+   },
+   {
+    "name": "Equiv.bijective",
+    "depth": 14,
+    "times_as_new_move": 16526,
+    "times_in_proof_cones": 81111
+   },
+   {
+    "name": "Equiv.injective",
+    "depth": 14,
+    "times_as_new_move": 15178,
+    "times_in_proof_cones": 95028
+   },
+   {
+    "name": "Equiv.apply_symm_apply",
+    "depth": 2,
+    "times_as_new_move": 14817,
+    "times_in_proof_cones": 97524
+   },
+   {
+    "name": "Equiv.symm_apply_apply",
+    "depth": 2,
+    "times_as_new_move": 12888,
+    "times_in_proof_cones": 94207
+   },
+   {
+    "name": "Equiv.self_comp_symm",
+    "depth": 14,
+    "times_as_new_move": 11914,
+    "times_in_proof_cones": 59050
+   },
+   {
+    "name": "Equiv.ext",
+    "depth": 14,
+    "times_as_new_move": 11500,
+    "times_in_proof_cones": 38290
+   },
+   {
+    "name": "Equiv.image_symm_eq_preimage",
+    "depth": 14,
+    "times_as_new_move": 11269,
+    "times_in_proof_cones": 52234
+   },
+   {
+    "name": "Equiv.exists_congr_right",
+    "depth": 15,
+    "times_as_new_move": 11150,
+    "times_in_proof_cones": 26723
+   },
+   {
+    "name": "Equiv.coe_fn_injective",
+    "depth": 14,
+    "times_as_new_move": 10771,
+    "times_in_proof_cones": 88141
+   }
+  ],
+  "Bool": [
+   {
+    "name": "Bool.false_eq_true",
+    "depth": 10,
+    "times_as_new_move": 31789,
+    "times_in_proof_cones": 140264
+   },
+   {
+    "name": "Bool.true_and",
+    "depth": 6,
+    "times_as_new_move": 31031,
+    "times_in_proof_cones": 147160
+   },
+   {
+    "name": "Bool.not_eq_true",
+    "depth": 8,
+    "times_as_new_move": 29505,
+    "times_in_proof_cones": 130602
+   },
+   {
+    "name": "Bool.and_eq_true",
+    "depth": 8,
+    "times_as_new_move": 28834,
+    "times_in_proof_cones": 156098
+   },
+   {
+    "name": "Bool.cond_eq_ite",
+    "depth": 11,
+    "times_as_new_move": 28580,
+    "times_in_proof_cones": 105718
+   },
+   {
+    "name": "Bool.true_eq_false",
+    "depth": 10,
+    "times_as_new_move": 28430,
+    "times_in_proof_cones": 102533
+   },
+   {
+    "name": "Bool.eq_iff_iff",
+    "depth": 10,
+    "times_as_new_move": 28379,
+    "times_in_proof_cones": 100381
+   },
+   {
+    "name": "Bool.or_eq_true",
+    "depth": 8,
+    "times_as_new_move": 26515,
+    "times_in_proof_cones": 114936
+   },
+   {
+    "name": "Bool.of_not_eq_true",
+    "depth": 5,
+    "times_as_new_move": 26180,
+    "times_in_proof_cones": 143781
+   },
+   {
+    "name": "Bool.coe_iff_coe",
+    "depth": 8,
+    "times_as_new_move": 26151,
+    "times_in_proof_cones": 110545
+   }
+  ],
+  "LinearMap": [
+   {
+    "name": "LinearMap.ext",
+    "depth": 21,
+    "times_as_new_move": 13303,
+    "times_in_proof_cones": 45502
+   },
+   {
+    "name": "LinearMap.map_smul\u209b\u2097",
+    "depth": 22,
+    "times_as_new_move": 12783,
+    "times_in_proof_cones": 47467
+   },
+   {
+    "name": "LinearMap.map_zero",
+    "depth": 22,
+    "times_as_new_move": 11918,
+    "times_in_proof_cones": 42974
+   },
+   {
+    "name": "LinearMap.map_smul",
+    "depth": 22,
+    "times_as_new_move": 11339,
+    "times_in_proof_cones": 26958
+   },
+   {
+    "name": "LinearMap.map_add",
+    "depth": 22,
+    "times_as_new_move": 11162,
+    "times_in_proof_cones": 44393
+   },
+   {
+    "name": "LinearMap.congr_fun",
+    "depth": 21,
+    "times_as_new_move": 10922,
+    "times_in_proof_cones": 35989
+   },
+   {
+    "name": "LinearMap.ext_ring",
+    "depth": 23,
+    "times_as_new_move": 10789,
+    "times_in_proof_cones": 24636
+   },
+   {
+    "name": "LinearMap.mem_range",
+    "depth": 26,
+    "times_as_new_move": 10355,
+    "times_in_proof_cones": 22994
+   },
+   {
+    "name": "LinearMap.coe_range",
+    "depth": 26,
+    "times_as_new_move": 9466,
+    "times_in_proof_cones": 21053
+   },
+   {
+    "name": "LinearMap.mem_ker",
+    "depth": 21,
+    "times_as_new_move": 9396,
+    "times_in_proof_cones": 20437
+   }
+  ],
+  "Complex": [
+   {
+    "name": "Complex.normSq_eq_norm_sq",
+    "depth": 126,
+    "times_as_new_move": 4552,
+    "times_in_proof_cones": 13202
+   },
+   {
+    "name": "Complex.cos_add_sin_I",
+    "depth": 142,
+    "times_as_new_move": 4057,
+    "times_in_proof_cones": 12234
+   },
+   {
+    "name": "Complex.exp_mul_I",
+    "depth": 143,
+    "times_as_new_move": 4052,
+    "times_in_proof_cones": 12229
+   },
+   {
+    "name": "Complex.ofReal_re",
+    "depth": 87,
+    "times_as_new_move": 3939,
+    "times_in_proof_cones": 13677
+   },
+   {
+    "name": "Complex.exp_add_mul_I",
+    "depth": 144,
+    "times_as_new_move": 3853,
+    "times_in_proof_cones": 11896
+   },
+   {
+    "name": "Complex.sin_zero",
+    "depth": 142,
+    "times_as_new_move": 3722,
+    "times_in_proof_cones": 12948
+   },
+   {
+    "name": "Complex.sq_norm",
+    "depth": 127,
+    "times_as_new_move": 3694,
+    "times_in_proof_cones": 11426
+   },
+   {
+    "name": "Complex.sq_norm_sub_sq_re",
+    "depth": 128,
+    "times_as_new_move": 3661,
+    "times_in_proof_cones": 11387
+   },
+   {
+    "name": "Complex.sq_norm_sub_sq_im",
+    "depth": 129,
+    "times_as_new_move": 3660,
+    "times_in_proof_cones": 11386
+   },
+   {
+    "name": "Complex.abs_im_div_norm_le_one",
+    "depth": 133,
+    "times_as_new_move": 3660,
+    "times_in_proof_cones": 11386
+   }
+  ],
+  "Ordinal": [
+   {
+    "name": "Ordinal.card_le_card",
+    "depth": 32,
+    "times_as_new_move": 5711,
+    "times_in_proof_cones": 12023
+   },
+   {
+    "name": "Ordinal.typein_enum",
+    "depth": 33,
+    "times_as_new_move": 5678,
+    "times_in_proof_cones": 12033
+   },
+   {
+    "name": "Ordinal.inductionOn\u2083",
+    "depth": 26,
+    "times_as_new_move": 5643,
+    "times_in_proof_cones": 11883
+   },
+   {
+    "name": "Ordinal.type_preimage",
+    "depth": 27,
+    "times_as_new_move": 5588,
+    "times_in_proof_cones": 12099
+   },
+   {
+    "name": "Ordinal.typein_lt_type",
+    "depth": 33,
+    "times_as_new_move": 5553,
+    "times_in_proof_cones": 12002
+   },
+   {
+    "name": "Ordinal.typein_top",
+    "depth": 27,
+    "times_as_new_move": 5506,
+    "times_in_proof_cones": 11857
+   },
+   {
+    "name": "Ordinal.enum_type",
+    "depth": 34,
+    "times_as_new_move": 5505,
+    "times_in_proof_cones": 11856
+   },
+   {
+    "name": "Ordinal.enum_typein",
+    "depth": 35,
+    "times_as_new_move": 5502,
+    "times_in_proof_cones": 11853
+   },
+   {
+    "name": "Ordinal.inductionOn\u2082",
+    "depth": 26,
+    "times_as_new_move": 5493,
+    "times_in_proof_cones": 12282
+   },
+   {
+    "name": "Ordinal.lift_id'",
+    "depth": 28,
+    "times_as_new_move": 5445,
+    "times_in_proof_cones": 11529
+   }
+  ],
+  "Rat": [
+   {
+    "name": "Rat.den_intCast",
+    "depth": 38,
+    "times_as_new_move": 6218,
+    "times_in_proof_cones": 47014
+   },
+   {
+    "name": "Rat.floor_def",
+    "depth": 26,
+    "times_as_new_move": 6138,
+    "times_in_proof_cones": 46811
+   },
+   {
+    "name": "Rat.num_intCast",
+    "depth": 38,
+    "times_as_new_move": 6136,
+    "times_in_proof_cones": 47049
+   },
+   {
+    "name": "Rat.floor_le",
+    "depth": 68,
+    "times_as_new_move": 6130,
+    "times_in_proof_cones": 46802
+   },
+   {
+    "name": "Rat.intCast_le_intCast",
+    "depth": 69,
+    "times_as_new_move": 6130,
+    "times_in_proof_cones": 46802
+   },
+   {
+    "name": "Rat.floor_monotone",
+    "depth": 68,
+    "times_as_new_move": 6124,
+    "times_in_proof_cones": 46796
+   },
+   {
+    "name": "Rat.floor_intCast",
+    "depth": 38,
+    "times_as_new_move": 6124,
+    "times_in_proof_cones": 46796
+   },
+   {
+    "name": "Rat.le_floor_iff",
+    "depth": 70,
+    "times_as_new_move": 6123,
+    "times_in_proof_cones": 46795
+   },
+   {
+    "name": "Rat.den_dvd",
+    "depth": 66,
+    "times_as_new_move": 6038,
+    "times_in_proof_cones": 46813
+   },
+   {
+    "name": "Rat.pos",
+    "depth": 13,
+    "times_as_new_move": 6002,
+    "times_in_proof_cones": 46759
+   }
+  ],
+  "WithTop": [
+   {
+    "name": "WithTop.add_top",
+    "depth": 9,
+    "times_as_new_move": 10991,
+    "times_in_proof_cones": 53521
+   },
+   {
+    "name": "WithTop.coe_eq_coe",
+    "depth": 11,
+    "times_as_new_move": 10883,
+    "times_in_proof_cones": 53566
+   },
+   {
+    "name": "WithTop.coe_inj",
+    "depth": 10,
+    "times_as_new_move": 10806,
+    "times_in_proof_cones": 56117
+   },
+   {
+    "name": "WithTop.coe_untop",
+    "depth": 6,
+    "times_as_new_move": 10685,
+    "times_in_proof_cones": 51663
+   },
+   {
+    "name": "WithTop.map\u2082_coe_right",
+    "depth": 8,
+    "times_as_new_move": 10190,
+    "times_in_proof_cones": 52499
+   },
+   {
+    "name": "WithTop.map\u2082_top_right",
+    "depth": 8,
+    "times_as_new_move": 10190,
+    "times_in_proof_cones": 52499
+   },
+   {
+    "name": "WithTop.coe_ne_top",
+    "depth": 11,
+    "times_as_new_move": 10146,
+    "times_in_proof_cones": 55112
+   },
+   {
+    "name": "WithTop.coe_eq_zero",
+    "depth": 12,
+    "times_as_new_move": 10027,
+    "times_in_proof_cones": 51207
+   },
+   {
+    "name": "WithTop.top_ne_coe",
+    "depth": 11,
+    "times_as_new_move": 10024,
+    "times_in_proof_cones": 54998
+   },
+   {
+    "name": "WithTop.top_ne_zero",
+    "depth": 12,
+    "times_as_new_move": 10015,
+    "times_in_proof_cones": 51192
+   }
+  ],
+  "Decidable": [
+   {
+    "name": "Decidable.byContradiction",
+    "depth": 7,
+    "times_as_new_move": 38781,
+    "times_in_proof_cones": 199444
+   },
+   {
+    "name": "Decidable.not_imp_symm",
+    "depth": 8,
+    "times_as_new_move": 37979,
+    "times_in_proof_cones": 135067
+   },
+   {
+    "name": "Decidable.not_forall",
+    "depth": 9,
+    "times_as_new_move": 37652,
+    "times_in_proof_cones": 133701
+   },
+   {
+    "name": "Decidable.not_not",
+    "depth": 9,
+    "times_as_new_move": 36795,
+    "times_in_proof_cones": 162536
+   },
+   {
+    "name": "Decidable.of_not_not",
+    "depth": 8,
+    "times_as_new_move": 35830,
+    "times_in_proof_cones": 163049
+   },
+   {
+    "name": "Decidable.em",
+    "depth": 7,
+    "times_as_new_move": 30960,
+    "times_in_proof_cones": 192676
+   },
+   {
+    "name": "Decidable.decide.congr_simp",
+    "depth": 7,
+    "times_as_new_move": 30662,
+    "times_in_proof_cones": 172782
+   },
+   {
+    "name": "Decidable.of_not_imp",
+    "depth": 8,
+    "times_as_new_move": 28128,
+    "times_in_proof_cones": 107666
+   },
+   {
+    "name": "Decidable.not_imp_iff_and_not",
+    "depth": 9,
+    "times_as_new_move": 28126,
+    "times_in_proof_cones": 107664
+   },
+   {
+    "name": "Decidable.not_or_of_imp",
+    "depth": 6,
+    "times_as_new_move": 22524,
+    "times_in_proof_cones": 109511
+   }
+  ],
+  "Matrix": [
+   {
+    "name": "Matrix.empty_eq",
+    "depth": 10,
+    "times_as_new_move": 5873,
+    "times_in_proof_cones": 8571
+   },
+   {
+    "name": "Matrix.zero_empty",
+    "depth": 11,
+    "times_as_new_move": 5589,
+    "times_in_proof_cones": 7971
+   },
+   {
+    "name": "Matrix.ext_iff",
+    "depth": 6,
+    "times_as_new_move": 3983,
+    "times_in_proof_cones": 10258
+   },
+   {
+    "name": "Matrix.ext",
+    "depth": 7,
+    "times_as_new_move": 3939,
+    "times_in_proof_cones": 10210
+   },
+   {
+    "name": "Matrix.diagonal_apply_ne",
+    "depth": 15,
+    "times_as_new_move": 3828,
+    "times_in_proof_cones": 8542
+   },
+   {
+    "name": "Matrix.diagonal_apply_ne'",
+    "depth": 16,
+    "times_as_new_move": 3661,
+    "times_in_proof_cones": 8369
+   },
+   {
+    "name": "Matrix.diagonal.congr_simp",
+    "depth": 15,
+    "times_as_new_move": 3638,
+    "times_in_proof_cones": 8348
+   },
+   {
+    "name": "Matrix.diagonal_transpose",
+    "depth": 16,
+    "times_as_new_move": 3611,
+    "times_in_proof_cones": 8317
+   },
+   {
+    "name": "Matrix.smul_eq_diagonal_mul",
+    "depth": 72,
+    "times_as_new_move": 3608,
+    "times_in_proof_cones": 7397
+   },
+   {
+    "name": "Matrix.updateRow.congr_simp",
+    "depth": 15,
+    "times_as_new_move": 3604,
+    "times_in_proof_cones": 6807
+   }
+  ],
+  "Metric": [
+   {
+    "name": "Metric.mem_closedBall",
+    "depth": 96,
+    "times_as_new_move": 8389,
+    "times_in_proof_cones": 28217
+   },
+   {
+    "name": "Metric.mem_eball_self",
+    "depth": 108,
+    "times_as_new_move": 8330,
+    "times_in_proof_cones": 11791
+   },
+   {
+    "name": "Metric.eball_mem_nhds",
+    "depth": 139,
+    "times_as_new_move": 8302,
+    "times_in_proof_cones": 11761
+   },
+   {
+    "name": "Metric.uniformContinuous_iff",
+    "depth": 114,
+    "times_as_new_move": 7981,
+    "times_in_proof_cones": 32876
+   },
+   {
+    "name": "Metric.mem_closure_iff",
+    "depth": 115,
+    "times_as_new_move": 7705,
+    "times_in_proof_cones": 17812
+   },
+   {
+    "name": "Metric.inseparable_iff_nndist",
+    "depth": 142,
+    "times_as_new_move": 7688,
+    "times_in_proof_cones": 32350
+   },
+   {
+    "name": "Metric.inseparable_iff",
+    "depth": 143,
+    "times_as_new_move": 7654,
+    "times_in_proof_cones": 32316
+   },
+   {
+    "name": "Metric.mem_ball",
+    "depth": 91,
+    "times_as_new_move": 7630,
+    "times_in_proof_cones": 27789
+   },
+   {
+    "name": "Metric.uniformContinuousOn_iff_le",
+    "depth": 116,
+    "times_as_new_move": 7079,
+    "times_in_proof_cones": 22909
+   },
+   {
+    "name": "Metric.isBounded_closedBall",
+    "depth": 103,
+    "times_as_new_move": 6981,
+    "times_in_proof_cones": 19796
+   }
+  ],
+  "Topology": [
+   {
+    "name": "Topology.IsEmbedding.isInducing",
+    "depth": 3,
+    "times_as_new_move": 10677,
+    "times_in_proof_cones": 32008
+   },
+   {
+    "name": "Topology.IsEmbedding.continuous",
+    "depth": 75,
+    "times_as_new_move": 10279,
+    "times_in_proof_cones": 23070
+   },
+   {
+    "name": "Topology.IsInducing.tendsto_nhds_iff",
+    "depth": 71,
+    "times_as_new_move": 9443,
+    "times_in_proof_cones": 38735
+   },
+   {
+    "name": "Topology.IsInducing.subtypeVal",
+    "depth": 65,
+    "times_as_new_move": 9373,
+    "times_in_proof_cones": 29666
+   },
+   {
+    "name": "Topology.IsInducing.continuousAt_iff",
+    "depth": 72,
+    "times_as_new_move": 8969,
+    "times_in_proof_cones": 38231
+   },
+   {
+    "name": "Topology.IsInducing.continuous_iff",
+    "depth": 73,
+    "times_as_new_move": 8954,
+    "times_in_proof_cones": 38211
+   },
+   {
+    "name": "Topology.isCoinducing_iff'",
+    "depth": 67,
+    "times_as_new_move": 8906,
+    "times_in_proof_cones": 24385
+   },
+   {
+    "name": "Topology.isCoinducing_iff",
+    "depth": 68,
+    "times_as_new_move": 8905,
+    "times_in_proof_cones": 24384
+   },
+   {
+    "name": "Topology.IsInducing.continuous",
+    "depth": 74,
+    "times_as_new_move": 8883,
+    "times_in_proof_cones": 37678
+   },
+   {
+    "name": "Topology.IsCoinducing.isOpen_preimage",
+    "depth": 69,
+    "times_as_new_move": 8862,
+    "times_in_proof_cones": 24341
+   }
+  ],
+  "Module": [
+   {
+    "name": "Module.Basis.repr_symm_single_one",
+    "depth": 72,
+    "times_as_new_move": 8423,
+    "times_in_proof_cones": 16999
+   },
+   {
+    "name": "Module.Basis.repr_symm_single",
+    "depth": 78,
+    "times_as_new_move": 8422,
+    "times_in_proof_cones": 16998
+   },
+   {
+    "name": "Module.Basis.repr_symm_apply",
+    "depth": 79,
+    "times_as_new_move": 8421,
+    "times_in_proof_cones": 16997
+   },
+   {
+    "name": "Module.Basis.coe_repr_symm",
+    "depth": 80,
+    "times_as_new_move": 8296,
+    "times_in_proof_cones": 16840
+   },
+   {
+    "name": "Module.Basis.linearCombination_repr",
+    "depth": 81,
+    "times_as_new_move": 8207,
+    "times_in_proof_cones": 16710
+   },
+   {
+    "name": "Module.subsingleton",
+    "depth": 7,
+    "times_as_new_move": 8206,
+    "times_in_proof_cones": 15952
+   },
+   {
+    "name": "Module.Basis.repr_injective",
+    "depth": 75,
+    "times_as_new_move": 8165,
+    "times_in_proof_cones": 17611
+   },
+   {
+    "name": "Module.Basis.repr_self",
+    "depth": 72,
+    "times_as_new_move": 8115,
+    "times_in_proof_cones": 15107
+   },
+   {
+    "name": "Module.Basis.ext",
+    "depth": 82,
+    "times_as_new_move": 7927,
+    "times_in_proof_cones": 16346
+   },
+   {
+    "name": "Module.Basis.injective",
+    "depth": 72,
+    "times_as_new_move": 7472,
+    "times_in_proof_cones": 14736
+   }
+  ],
+  "CauSeq": [
+   {
+    "name": "CauSeq.le_total",
+    "depth": 66,
+    "times_as_new_move": 5988,
+    "times_in_proof_cones": 47485
+   },
+   {
+    "name": "CauSeq.Completion.inv_mul_cancel",
+    "depth": 73,
+    "times_as_new_move": 5977,
+    "times_in_proof_cones": 46930
+   },
+   {
+    "name": "CauSeq.mul_pos",
+    "depth": 57,
+    "times_as_new_move": 5931,
+    "times_in_proof_cones": 47447
+   },
+   {
+    "name": "CauSeq.const_pos",
+    "depth": 49,
+    "times_as_new_move": 5831,
+    "times_in_proof_cones": 47593
+   },
+   {
+    "name": "CauSeq.const_lt",
+    "depth": 58,
+    "times_as_new_move": 5830,
+    "times_in_proof_cones": 47592
+   },
+   {
+    "name": "CauSeq.sub_apply",
+    "depth": 58,
+    "times_as_new_move": 5822,
+    "times_in_proof_cones": 46447
+   },
+   {
+    "name": "CauSeq.trichotomy",
+    "depth": 56,
+    "times_as_new_move": 5703,
+    "times_in_proof_cones": 47553
+   },
+   {
+    "name": "CauSeq.lt_total",
+    "depth": 65,
+    "times_as_new_move": 5702,
+    "times_in_proof_cones": 47552
+   },
+   {
+    "name": "CauSeq.le_of_exists",
+    "depth": 66,
+    "times_as_new_move": 5700,
+    "times_in_proof_cones": 47550
+   },
+   {
+    "name": "CauSeq.sup_idem",
+    "depth": 59,
+    "times_as_new_move": 5699,
+    "times_in_proof_cones": 47549
+   }
+  ],
+  "ContinuousLinearMap": [
+   {
+    "name": "ContinuousLinearMap.ext",
+    "depth": 23,
+    "times_as_new_move": 7125,
+    "times_in_proof_cones": 14885
+   },
+   {
+    "name": "ContinuousLinearMap.opNorm_zero_iff",
+    "depth": 159,
+    "times_as_new_move": 7093,
+    "times_in_proof_cones": 11065
+   },
+   {
+    "name": "ContinuousLinearMap.le_of_opNorm_le",
+    "depth": 160,
+    "times_as_new_move": 7016,
+    "times_in_proof_cones": 10775
+   },
+   {
+    "name": "ContinuousLinearMap.isBigOTVS_id",
+    "depth": 153,
+    "times_as_new_move": 6986,
+    "times_in_proof_cones": 8875
+   },
+   {
+    "name": "ContinuousLinearMap.isBigOTVS_comp",
+    "depth": 156,
+    "times_as_new_move": 6985,
+    "times_in_proof_cones": 8874
+   },
+   {
+    "name": "ContinuousLinearMap.coe_injective",
+    "depth": 16,
+    "times_as_new_move": 6717,
+    "times_in_proof_cones": 20266
+   },
+   {
+    "name": "ContinuousLinearMap.map_sub",
+    "depth": 24,
+    "times_as_new_move": 6370,
+    "times_in_proof_cones": 8315
+   },
+   {
+    "name": "ContinuousLinearMap.continuous",
+    "depth": 13,
+    "times_as_new_move": 6338,
+    "times_in_proof_cones": 22224
+   },
+   {
+    "name": "ContinuousLinearMap.coe_inj",
+    "depth": 17,
+    "times_as_new_move": 6267,
+    "times_in_proof_cones": 9314
+   },
+   {
+    "name": "ContinuousLinearMap.map_smul\u209b\u2097",
+    "depth": 23,
+    "times_as_new_move": 6198,
+    "times_in_proof_cones": 9578
+   }
+  ],
+  "Option": [
+   {
+    "name": "Option.some.inj",
+    "depth": 7,
+    "times_as_new_move": 27714,
+    "times_in_proof_cones": 133428
+   },
+   {
+    "name": "Option.some_inj",
+    "depth": 9,
+    "times_as_new_move": 20592,
+    "times_in_proof_cones": 77670
+   },
+   {
+    "name": "Option.mem_def",
+    "depth": 4,
+    "times_as_new_move": 13677,
+    "times_in_proof_cones": 59741
+   },
+   {
+    "name": "Option.some_injective",
+    "depth": 10,
+    "times_as_new_move": 11553,
+    "times_in_proof_cones": 54661
+   },
+   {
+    "name": "Option.map\u2082_some_some",
+    "depth": 7,
+    "times_as_new_move": 11018,
+    "times_in_proof_cones": 53864
+   },
+   {
+    "name": "Option.map\u2082_none_left",
+    "depth": 7,
+    "times_as_new_move": 11006,
+    "times_in_proof_cones": 53882
+   },
+   {
+    "name": "Option.map\u2082_none_right",
+    "depth": 7,
+    "times_as_new_move": 11004,
+    "times_in_proof_cones": 53880
+   },
+   {
+    "name": "Option.map\u2082_right_identity",
+    "depth": 14,
+    "times_as_new_move": 10972,
+    "times_in_proof_cones": 53751
+   },
+   {
+    "name": "Option.map\u2082_left_identity",
+    "depth": 14,
+    "times_as_new_move": 10972,
+    "times_in_proof_cones": 53751
+   },
+   {
+    "name": "Option.map\u2082_assoc",
+    "depth": 14,
+    "times_as_new_move": 10921,
+    "times_in_proof_cones": 53612
+   }
+  ],
+  "Order": [
+   {
+    "name": "Order.succ_eq_add_one",
+    "depth": 3,
+    "times_as_new_move": 11958,
+    "times_in_proof_cones": 22744
+   },
+   {
+    "name": "Order.le_succ",
+    "depth": 3,
+    "times_as_new_move": 11485,
+    "times_in_proof_cones": 36768
+   },
+   {
+    "name": "Order.succ_le_iff_of_not_isMax",
+    "depth": 9,
+    "times_as_new_move": 11447,
+    "times_in_proof_cones": 36270
+   },
+   {
+    "name": "Order.max_of_succ_le",
+    "depth": 3,
+    "times_as_new_move": 11446,
+    "times_in_proof_cones": 36707
+   },
+   {
+    "name": "Order.succ_le_of_lt",
+    "depth": 3,
+    "times_as_new_move": 11418,
+    "times_in_proof_cones": 36671
+   },
+   {
+    "name": "Order.lt_succ_iff_not_isMax",
+    "depth": 7,
+    "times_as_new_move": 11389,
+    "times_in_proof_cones": 36633
+   },
+   {
+    "name": "Order.lt_succ_of_not_isMax",
+    "depth": 8,
+    "times_as_new_move": 11384,
+    "times_in_proof_cones": 36628
+   },
+   {
+    "name": "Order.lt_succ_iff_of_not_isMax",
+    "depth": 16,
+    "times_as_new_move": 11017,
+    "times_in_proof_cones": 20580
+   },
+   {
+    "name": "Order.lt_add_one_iff_of_not_isMax",
+    "depth": 17,
+    "times_as_new_move": 8548,
+    "times_in_proof_cones": 17095
+   },
+   {
+    "name": "Order.lt_add_one_iff",
+    "depth": 18,
+    "times_as_new_move": 8455,
+    "times_in_proof_cones": 17002
+   }
+  ],
+  "NNReal": [
+   {
+    "name": "NNReal.coe_pos",
+    "depth": 96,
+    "times_as_new_move": 8276,
+    "times_in_proof_cones": 17163
+   },
+   {
+    "name": "NNReal.coe_mono",
+    "depth": 103,
+    "times_as_new_move": 8242,
+    "times_in_proof_cones": 11893
+   },
+   {
+    "name": "NNReal.coe_eq_zero",
+    "depth": 105,
+    "times_as_new_move": 7913,
+    "times_in_proof_cones": 32720
+   },
+   {
+    "name": "NNReal.coe_lt_coe",
+    "depth": 96,
+    "times_as_new_move": 6602,
+    "times_in_proof_cones": 35668
+   },
+   {
+    "name": "NNReal.coe_one",
+    "depth": 104,
+    "times_as_new_move": 6501,
+    "times_in_proof_cones": 32608
+   },
+   {
+    "name": "NNReal.coe_mul",
+    "depth": 107,
+    "times_as_new_move": 6371,
+    "times_in_proof_cones": 32449
+   },
+   {
+    "name": "NNReal.coe_add",
+    "depth": 107,
+    "times_as_new_move": 6359,
+    "times_in_proof_cones": 32437
+   },
+   {
+    "name": "NNReal.abs_eq",
+    "depth": 105,
+    "times_as_new_move": 6218,
+    "times_in_proof_cones": 8292
+   },
+   {
+    "name": "NNReal.inv_le",
+    "depth": 112,
+    "times_as_new_move": 6145,
+    "times_in_proof_cones": 40680
+   },
+   {
+    "name": "NNReal.inv_le_of_le_mul",
+    "depth": 114,
+    "times_as_new_move": 6144,
+    "times_in_proof_cones": 40679
+   }
+  ],
+  "UniformSpace": [
+   {
+    "name": "UniformSpace.mem_nhds_iff_symm",
+    "depth": 76,
+    "times_as_new_move": 8969,
+    "times_in_proof_cones": 26533
+   },
+   {
+    "name": "UniformSpace.hasBasis_nhds",
+    "depth": 78,
+    "times_as_new_move": 8968,
+    "times_in_proof_cones": 26532
+   },
+   {
+    "name": "UniformSpace.ball_inter_right",
+    "depth": 8,
+    "times_as_new_move": 8958,
+    "times_in_proof_cones": 26520
+   },
+   {
+    "name": "UniformSpace.ball_inter_left",
+    "depth": 8,
+    "times_as_new_move": 8958,
+    "times_in_proof_cones": 26520
+   },
+   {
+    "name": "UniformSpace.mem_comp_comp",
+    "depth": 7,
+    "times_as_new_move": 8957,
+    "times_in_proof_cones": 26519
+   },
+   {
+    "name": "UniformSpace.hasBasis_nhds_prod",
+    "depth": 79,
+    "times_as_new_move": 8957,
+    "times_in_proof_cones": 26519
+   },
+   {
+    "name": "UniformSpace.isClosed_ball",
+    "depth": 73,
+    "times_as_new_move": 8904,
+    "times_in_proof_cones": 26466
+   },
+   {
+    "name": "UniformSpace.mem_ball_symmetry",
+    "depth": 6,
+    "times_as_new_move": 7860,
+    "times_in_proof_cones": 31782
+   },
+   {
+    "name": "UniformSpace.ball_mono",
+    "depth": 7,
+    "times_as_new_move": 7331,
+    "times_in_proof_cones": 32356
+   },
+   {
+    "name": "UniformSpace.ext_iff",
+    "depth": 68,
+    "times_as_new_move": 7164,
+    "times_in_proof_cones": 22438
+   }
+  ],
+  "Subtype": [
+   {
+    "name": "Subtype.exists",
+    "depth": 5,
+    "times_as_new_move": 25662,
+    "times_in_proof_cones": 92809
+   },
+   {
+    "name": "Subtype.ext",
+    "depth": 6,
+    "times_as_new_move": 23151,
+    "times_in_proof_cones": 111516
+   },
+   {
+    "name": "Subtype.forall",
+    "depth": 5,
+    "times_as_new_move": 21703,
+    "times_in_proof_cones": 73265
+   },
+   {
+    "name": "Subtype.mk.congr_simp",
+    "depth": 4,
+    "times_as_new_move": 19484,
+    "times_in_proof_cones": 57870
+   },
+   {
+    "name": "Subtype.mk.inj",
+    "depth": 7,
+    "times_as_new_move": 17424,
+    "times_in_proof_cones": 36490
+   },
+   {
+    "name": "Subtype.ext_iff",
+    "depth": 7,
+    "times_as_new_move": 15952,
+    "times_in_proof_cones": 67988
+   },
+   {
+    "name": "Subtype.coe_image",
+    "depth": 6,
+    "times_as_new_move": 15712,
+    "times_in_proof_cones": 74141
+   },
+   {
+    "name": "Subtype.range_coe",
+    "depth": 17,
+    "times_as_new_move": 15709,
+    "times_in_proof_cones": 74138
+   },
+   {
+    "name": "Subtype.prop",
+    "depth": 2,
+    "times_as_new_move": 15208,
+    "times_in_proof_cones": 79760
+   },
+   {
+    "name": "Subtype.coe_injective",
+    "depth": 7,
+    "times_as_new_move": 12783,
+    "times_in_proof_cones": 85208
+   }
+  ],
+  "Ideal": [
+   {
+    "name": "Ideal.subset_span",
+    "depth": 19,
+    "times_as_new_move": 6811,
+    "times_in_proof_cones": 16600
+   },
+   {
+    "name": "Ideal.mul_mem_left",
+    "depth": 15,
+    "times_as_new_move": 6776,
+    "times_in_proof_cones": 19047
+   },
+   {
+    "name": "Ideal.span_singleton_one",
+    "depth": 26,
+    "times_as_new_move": 6582,
+    "times_in_proof_cones": 14878
+   },
+   {
+    "name": "Ideal.eq_top_iff_one",
+    "depth": 25,
+    "times_as_new_move": 6524,
+    "times_in_proof_cones": 16461
+   },
+   {
+    "name": "Ideal.eq_top_of_unit_mem",
+    "depth": 24,
+    "times_as_new_move": 6382,
+    "times_in_proof_cones": 16620
+   },
+   {
+    "name": "Ideal.mul_mem_right",
+    "depth": 17,
+    "times_as_new_move": 6025,
+    "times_in_proof_cones": 16544
+   },
+   {
+    "name": "Ideal.add_mem",
+    "depth": 15,
+    "times_as_new_move": 5765,
+    "times_in_proof_cones": 15933
+   },
+   {
+    "name": "Ideal.mem_span_singleton'",
+    "depth": 26,
+    "times_as_new_move": 5733,
+    "times_in_proof_cones": 13533
+   },
+   {
+    "name": "Ideal.span_le",
+    "depth": 24,
+    "times_as_new_move": 5659,
+    "times_in_proof_cones": 13894
+   },
+   {
+    "name": "Ideal.zero_mem",
+    "depth": 15,
+    "times_as_new_move": 5636,
+    "times_in_proof_cones": 14766
+   }
+  ],
+  "Continuous": [
+   {
+    "name": "Continuous.tendsto",
+    "depth": 58,
+    "times_as_new_move": 10763,
+    "times_in_proof_cones": 48855
+   },
+   {
+    "name": "Continuous.subtype_mk",
+    "depth": 70,
+    "times_as_new_move": 9974,
+    "times_in_proof_cones": 28303
+   },
+   {
+    "name": "Continuous.prodMk",
+    "depth": 71,
+    "times_as_new_move": 9089,
+    "times_in_proof_cones": 47189
+   },
+   {
+    "name": "Continuous.prodMk_right",
+    "depth": 72,
+    "times_as_new_move": 8896,
+    "times_in_proof_cones": 27305
+   },
+   {
+    "name": "Continuous.dist",
+    "depth": 148,
+    "times_as_new_move": 8383,
+    "times_in_proof_cones": 27025
+   },
+   {
+    "name": "Continuous.continuousOn",
+    "depth": 69,
+    "times_as_new_move": 8107,
+    "times_in_proof_cones": 26396
+   },
+   {
+    "name": "Continuous.comp",
+    "depth": 7,
+    "times_as_new_move": 7775,
+    "times_in_proof_cones": 45864
+   },
+   {
+    "name": "Continuous.snd",
+    "depth": 72,
+    "times_as_new_move": 7684,
+    "times_in_proof_cones": 22307
+   },
+   {
+    "name": "Continuous.fst",
+    "depth": 72,
+    "times_as_new_move": 7573,
+    "times_in_proof_cones": 22114
+   },
+   {
+    "name": "Continuous.comp\u2082",
+    "depth": 72,
+    "times_as_new_move": 7435,
+    "times_in_proof_cones": 39735
+   }
+  ]
+ }
+}

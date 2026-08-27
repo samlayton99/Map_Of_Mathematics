@@ -1,0 +1,257 @@
+{
+ "pools": {
+  "n_goal_heads": 3138,
+  "goal_weighted_pool": {
+   "median": 323662,
+   "mean": 187409.0,
+   "p90": 323662,
+   "max": 323662
+  },
+  "top_goal_heads": [
+   {
+    "head": "Eq",
+    "goals": 159849,
+    "pool": 323662
+   },
+   {
+    "head": "Iff",
+    "goals": 39982,
+    "pool": 42800
+   },
+   {
+    "head": "LE.le",
+    "goals": 13812,
+    "pool": 20973
+   },
+   {
+    "head": "Exists",
+    "goals": 4933,
+    "pool": 6767
+   },
+   {
+    "head": "Membership.mem",
+    "goals": 3886,
+    "pool": 8572
+   },
+   {
+    "head": "LT.lt",
+    "goals": 3521,
+    "pool": 8288
+   },
+   {
+    "head": "And",
+    "goals": 2588,
+    "pool": 3763
+   },
+   {
+    "head": "Function.Injective",
+    "goals": 1773,
+    "pool": 2238
+   },
+   {
+    "head": "Ne",
+    "goals": 1659,
+    "pool": 2331
+   },
+   {
+    "head": "Not",
+    "goals": 1583,
+    "pool": 3115
+   },
+   {
+    "head": "Filter.Tendsto",
+    "goals": 1533,
+    "pool": 1694
+   },
+   {
+    "head": "VAR",
+    "goals": 1280,
+    "pool": 2037
+   },
+   {
+    "head": "Continuous",
+    "goals": 1134,
+    "pool": 2365
+   },
+   {
+    "head": "Or",
+    "goals": 894,
+    "pool": 1474
+   },
+   {
+    "head": "Filter.EventuallyEq",
+    "goals": 778,
+    "pool": 792
+   },
+   {
+    "head": "Dvd.dvd",
+    "goals": 774,
+    "pool": 904
+   },
+   {
+    "head": "Filter.Eventually",
+    "goals": 744,
+    "pool": 825
+   },
+   {
+    "head": "Function.Surjective",
+    "goals": 742,
+    "pool": 855
+   },
+   {
+    "head": "Monotone",
+    "goals": 638,
+    "pool": 779
+   },
+   {
+    "head": "Measurable",
+    "goals": 599,
+    "pool": 793
+   }
+  ],
+  "refined_goal_weighted_pool": {
+   "median": 167,
+   "mean": 3975.4,
+   "p90": 20304,
+   "max": 26224,
+   "note": "Eq/Iff/order goals additionally keyed by LHS head"
+  }
+ },
+ "top_move_census": {
+  "kinds": {
+   "OTHER_CONST": 169787,
+   "MATH_THEOREM": 105387,
+   "LET": 11110,
+   "VAR": 952,
+   "LAM": 200,
+   "PROJ": 38,
+   "OTHER": 2
+  },
+  "top_move_constants": [
+   {
+    "name": "Eq.mpr",
+    "count": 38368
+   },
+   {
+    "name": "rfl",
+    "count": 24800
+   },
+   {
+    "name": "of_eq_true",
+    "count": 19627
+   },
+   {
+    "name": "Eq.refl",
+    "count": 19279
+   },
+   {
+    "name": "Iff.intro",
+    "count": 10577
+   },
+   {
+    "name": "id",
+    "count": 9861
+   },
+   {
+    "name": "Eq.rec",
+    "count": 5423
+   },
+   {
+    "name": "Iff.mpr",
+    "count": 4997
+   },
+   {
+    "name": "Exists.casesOn",
+    "count": 4498
+   },
+   {
+    "name": "Iff.mp",
+    "count": 3722
+   },
+   {
+    "name": "Eq.mp",
+    "count": 3302
+   },
+   {
+    "name": "Or.casesOn",
+    "count": 2661
+   },
+   {
+    "name": "dite",
+    "count": 2530
+   },
+   {
+    "name": "Iff.rfl",
+    "count": 2244
+   },
+   {
+    "name": "funext",
+    "count": 1655
+   },
+   {
+    "name": "Iff.trans",
+    "count": 1590
+   },
+   {
+    "name": "Exists.intro",
+    "count": 1368
+   },
+   {
+    "name": "Set.ext",
+    "count": 1316
+   },
+   {
+    "name": "Eq.symm",
+    "count": 1190
+   },
+   {
+    "name": "And.intro",
+    "count": 1183
+   },
+   {
+    "name": "Eq.ndrec",
+    "count": 1133
+   },
+   {
+    "name": "le_antisymm",
+    "count": 1129
+   },
+   {
+    "name": "Nat.recAux",
+    "count": 1100
+   },
+   {
+    "name": "List.rec",
+    "count": 1032
+   },
+   {
+    "name": "Eq.trans",
+    "count": 944
+   }
+  ]
+ },
+ "head_match": {
+  "const_top_moves_checked": 275174,
+  "head_match_rate": 0.5208,
+  "math_theorem_top_moves": 105387,
+  "head_match_rate_math": 0.6961
+ },
+ "next_move_frequency_baseline": {
+  "eval_theorems": 2894,
+  "recall_at": {
+   "1": 0.0318,
+   "8": 0.112,
+   "16": 0.1379,
+   "64": 0.2104,
+   "256": 0.2747
+  },
+  "recall_at_refined": {
+   "1": 0.0477,
+   "8": 0.1406,
+   "16": 0.19,
+   "64": 0.2588,
+   "256": 0.3169
+  },
+  "note": "candidates restricted to conclusion-head match (coarse) or head+LHS-head match (refined); ranked by global citation count"
+ }
+}

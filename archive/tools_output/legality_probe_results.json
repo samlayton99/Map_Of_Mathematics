@@ -1,0 +1,57 @@
+{
+ "n_goals": 892,
+ "legal_actions_per_goal": {
+  "median": 1,
+  "mean": 2.7,
+  "p90": 5,
+  "zero": 114
+ },
+ "structural_pool_vs_legal": {
+  "pool_median": 61,
+  "legal_median": 0,
+  "legality_rate_struct": 0.013
+ },
+ "legality_rate_by_source": {
+  "struct": {
+   "tried": 88183,
+   "legal": 1142,
+   "rate": 0.013
+  },
+  "peers": {
+   "tried": 48460,
+   "legal": 1130,
+   "rate": 0.0233
+  },
+  "target": {
+   "tried": 4433,
+   "legal": 384,
+   "rate": 0.0866
+  }
+ },
+ "root_backward_representability": {
+  "goals_with_cited_premise_legal_at_root": 345,
+  "share": 0.3868,
+  "note": "cited premises NOT legal at the root were used forward, in rewrites, or on later subgoals - this bounds how much of proving is root-level backward application"
+ },
+ "hyperedge_arity_distribution": {
+  "0": 125,
+  "1": 1316,
+  "2": 862,
+  "3": 77,
+  "4": 19,
+  "5": 3,
+  "6": 2,
+  "7": 1,
+  "9": 1
+ },
+ "open_instance_goals_distribution": {
+  "0": 1945,
+  "1": 288,
+  "2": 85,
+  "3": 48,
+  "4": 27,
+  "5": 7,
+  "6": 3,
+  "7": 1
+ }
+}

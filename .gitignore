@@ -13,3 +13,9 @@ learning/cpp/cpp_intro
 __pycache__/
 *.pyc
 .DS_Store
+bigdata/
+
+# test/analysis caches and generated outputs
+.pytest_cache/
+tools/output/
+viz/data.js

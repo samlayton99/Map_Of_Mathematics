@@ -1,0 +1,367 @@
+{
+ "s": {
+  "n": 80,
+  "solved": 0,
+  "solve_rate": 0.0,
+  "verified": 0,
+  "median_calls_when_solved": null,
+  "solve_rate_by_budget": {
+   "25": 0.0,
+   "50": 0.0,
+   "100": 0.0,
+   "200": 0.0,
+   "300": 0.0,
+   "400": 0.0
+  },
+  "legality_census": {
+   "structural": {
+    "attempts": 1778,
+    "legal": 741,
+    "rate": 0.4168
+   }
+  },
+  "expansions": 821,
+  "duplicate_children": 0,
+  "proof_path_bank_usage": {},
+  "median_proof_length": null,
+  "example_proofs": []
+ },
+ "sb": {
+  "n": 80,
+  "solved": 7,
+  "solve_rate": 0.0875,
+  "verified": 7,
+  "median_calls_when_solved": 68,
+  "solve_rate_by_budget": {
+   "25": 0.0,
+   "50": 0.0125,
+   "100": 0.0625,
+   "200": 0.0875,
+   "300": 0.0875,
+   "400": 0.0875
+  },
+  "legality_census": {
+   "backward": {
+    "attempts": 12422,
+    "legal": 2338,
+    "rate": 0.1882
+   },
+   "structural": {
+    "attempts": 4054,
+    "legal": 1151,
+    "rate": 0.2839
+   }
+  },
+  "expansions": 1701,
+  "duplicate_children": 419,
+  "proof_path_bank_usage": {
+   "structural": 49,
+   "backward": 7
+  },
+  "median_proof_length": 8,
+  "example_proofs": [
+   {
+    "n": "Subgroup.mem_map_equiv",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "apply Set.mem_image_equiv"
+    ],
+    "calls": 40
+   },
+   {
+    "n": "SkewPolynomial.coeff_C_ne_zero",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "apply Finsupp.single_eq_of_ne",
+     "assumption"
+    ],
+    "calls": 126
+   },
+   {
+    "n": "equivShrink_symm_add",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "apply Equiv.symm_apply_apply"
+    ],
+    "calls": 64
+   },
+   {
+    "n": "Preorder.frestrictLe_updateFinset_of_le",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "apply Function.restrict_updateFinset_of_subset"
+    ],
+    "calls": 74
+   },
+   {
+    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "apply Subsingleton.elim"
+    ],
+    "calls": 60
+   },
+   {
+    "n": "CFC.negPart_eq_zero_of_not_isSelfAdjoint",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "apply cfc\u2099_apply_of_not_predicate",
+     "assumption"
+    ],
+    "calls": 138
+   },
+   {
+    "n": "conjneg_sub",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "apply map_sub"
+    ],
+    "calls": 68
+   }
+  ]
+ },
+ "sbr": {
+  "n": 80,
+  "solved": 4,
+  "solve_rate": 0.05,
+  "verified": 4,
+  "median_calls_when_solved": 170,
+  "solve_rate_by_budget": {
+   "25": 0.0,
+   "50": 0.0,
+   "100": 0.0,
+   "200": 0.05,
+   "300": 0.05,
+   "400": 0.05
+  },
+  "legality_census": {
+   "backward": {
+    "attempts": 5118,
+    "legal": 821,
+    "rate": 0.1604
+   },
+   "rewrite": {
+    "attempts": 14552,
+    "legal": 1199,
+    "rate": 0.0824
+   },
+   "structural": {
+    "attempts": 2786,
+    "legal": 968,
+    "rate": 0.3475
+   }
+  },
+  "expansions": 1226,
+  "duplicate_children": 247,
+  "proof_path_bank_usage": {
+   "structural": 22,
+   "backward": 4
+  },
+  "median_proof_length": 7,
+  "example_proofs": [
+   {
+    "n": "Subgroup.mem_map_equiv",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "apply Set.mem_image_equiv"
+    ],
+    "calls": 168
+   },
+   {
+    "n": "equivShrink_symm_add",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "apply Equiv.symm_apply_apply"
+    ],
+    "calls": 196
+   },
+   {
+    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "apply Subsingleton.elim"
+    ],
+    "calls": 120
+   },
+   {
+    "n": "conjneg_sub",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "apply map_sub"
+    ],
+    "calls": 172
+   }
+  ]
+ },
+ "sbrp": {
+  "n": 80,
+  "solved": 15,
+  "solve_rate": 0.1875,
+  "verified": 15,
+  "median_calls_when_solved": 100,
+  "solve_rate_by_budget": {
+   "25": 0.0125,
+   "50": 0.0375,
+   "100": 0.1,
+   "200": 0.1875,
+   "300": 0.1875,
+   "400": 0.1875
+  },
+  "legality_census": {
+   "automation": {
+    "attempts": 1040,
+    "legal": 278,
+    "rate": 0.2673
+   },
+   "backward": {
+    "attempts": 3492,
+    "legal": 592,
+    "rate": 0.1695
+   },
+   "rewrite": {
+    "attempts": 13350,
+    "legal": 895,
+    "rate": 0.067
+   },
+   "structural": {
+    "attempts": 2425,
+    "legal": 919,
+    "rate": 0.379
+   }
+  },
+  "expansions": 1100,
+  "duplicate_children": 294,
+  "proof_path_bank_usage": {
+   "automation": 15,
+   "structural": 15
+  },
+  "median_proof_length": 1,
+  "example_proofs": [
+   {
+    "n": "AffineMap.lineMap_apply_one_sub",
+    "path": [
+     "simp"
+    ],
+    "calls": 108
+   },
+   {
+    "n": "Order.wcovBy_add_one",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "simp"
+    ],
+    "calls": 180
+   },
+   {
+    "n": "equivShrink_symm_add",
+    "path": [
+     "simp"
+    ],
+    "calls": 100
+   },
+   {
+    "n": "Function.support_neg",
+    "path": [
+     "simp"
+    ],
+    "calls": 132
+   },
+   {
+    "n": "conjneg_injective",
+    "path": [
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "intro",
+     "simp"
+    ],
+    "calls": 99
+   },
+   {
+    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
+    "path": [
+     "simp"
+    ],
+    "calls": 124
+   },
+   {
+    "n": "ULift.forall",
+    "path": [
+     "simp"
+    ],
+    "calls": 29
+   },
+   {
+    "n": "Action.hom_inv_hom",
+    "path": [
+     "simp"
+    ],
+    "calls": 48
+   }
+  ]
+ }
+}

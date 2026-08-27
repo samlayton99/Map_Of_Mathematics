@@ -1,20 +1,27 @@
-# Current Research Direction
+# Current Research Direction — Typed Proof Search (study-paths)
 
-As of 2026-08-19, governed by the Phase 3 handoff (`handoff/phase3/`, ADR-0003). The research notebook (`handoff/notebook/`) remains non-authoritative reference; v5 execution docs are archived (`archive/handoff_v5_phase2/`).
+*Supersedes the phase-3 structural-separability direction (archived at `archive/handoff_phase3/`). Written 2026-08-27.*
 
-## Current phase — Phase 3: Structural Role and Landmark Separability
+## Thesis
 
-- **Question A:** can graph structure — no declaration names, source text, docstrings, or semantic content — identify formal machinery (the existing P3 classes) in the raw exact record? Class-by-class, after controlling for degree, extraction boundary, and domain.
-- **Question B:** treating machinery as a probabilistic, context-sensitive role (not deleted), does topology improve ranking of the mathematical landmarks inside individual proofs?
-- Review evidence: compact user vibe-check packet + independent agent review passes + explicitly-marked formal proxies. **No human expert gate.**
-- Methods discipline: primary graphs from raw P1/P0 (P3 only as labels/strata/baselines); strict topology-only and typed-structure tracks; automated leakage tests; interpretable models first, no GNN; grouped file/domain holdouts; degree-matched controls; reversible filtering only.
+Proof search over Lean proof states is graph construction: a state is a partially built proof term with typed holes (metavariables); a move fills a hole by unifying a constant's conclusion with it, spawning argument holes; success is a kernel-checked term. Human-written Mathlib proofs — stored as elaborated proof terms — are certified witness paths through exactly this graph. They serve three roles, never consulted at inference time: failure attribution (oracle ladders), engine conformance testing (replay), and unbiased training data (per-node decisions with Lean-verified alternatives).
 
-## Architectural invariants (settled for this phase)
+## Established results (all on the 80-theorem module-holdout benchmark unless noted)
 
-One heterogeneous typed relational verified structure beneath all task-specific views; dynamic Lean-checked applicability (no permanent global applicability edges); workspace / experience-corpus / semantic sidecars kept separate from the verified core; definition generation broader than internal compression; time-indexed evolving map; long-term application-domain navigation preserved; raw evidence survives every view.
+1. **Engine conformance is a solved gate.** Exact replay 100% (380 theorems / 8,252 nodes); guided execution with the exact route (G1) 80/80, audit-clean. Every past G1 failure was a nameable engine defect (dedup slots, context binding, deferred-data divergence, instance-synthesis preemption, elaborator-vs-kernel defeq incompleteness) — fixed by general mechanisms, catalogued in the cycle reports.
+2. **The action generator is near-complete and the space stays sparse.** First-order visibility of reference heads 74.7%; + mechanical higher-order operators (motive-from-goal, positional diff-congruence, argument abstraction, conclusion deferral) → 88.4%. Median legal actions/state: 5.
+3. **Kernel certificate grain ≠ search decision grain.** Machine-generated simp/congruence certificates (congrArg/Eq.mpr chains) are multiplicatively fragile to reconstruct node-by-node but compress to single rewrite actions parameterized by ~2 facts (semantic traces: 0.38–0.44 action/node ratio). The stable search IR is: semantic action → exact expandable certificate.
+4. **Semantic ladder.** Representability (regions by exact expansion) 80/80; mechanical execution via `simp only` with extracted facts: 67 with residual-data oracle, 64 without, 69–73 with node-grain fallback; free search with the semantic action ranked first: 65 vs 30 budget-matched control (node-grain hint: 30). Fabrication gap (C−D) = 3 theorems.
+5. **Per-decision ranking is learnable.** LGBMRanker v3 on the complete higher-order-visible decision space (29,585 train / 1,046 held-out): top-1 0.645, top-3 0.915, MRR 0.786 vs 0.353 best hand baseline.
+6. **Inference-shadow tiers** (25,768 data-argument occurrences): 62% immediately inferable, 33% inferable after sibling constraints, 5.2% genuine fabrication (mostly lambdas/motives).
 
-## Status ledger
+## Architecture invariants
 
-- Gates 0–1 (PASS, 2026-08-18): exact record validated; kernel-recheckable, deterministic, alpha-invariant.
-- Phase 2A/2B (executed 2026-08-18): six-file Mathlib corpus characterized; use events 72% attribution / 82.5% tactic-theorem coverage. **Three corrections apply: `reports/PHASE2_ERRATA.md`** (P5⊆P2 not universal; 68.9% term proofs, not 76%; P4 result-inference 61.4%, not overwhelming). No human validation occurred; no primary representation was selected.
-- Phase 3 (executed 2026-08-19): Question A succeeded (typed-track machinery detection AUC 0.80 under domain holdout; typeclass-instance 0.97), Question B failed its strict pre-registered condition (soft downweighting lost to P4-route; the hybrid won agent review at 4.1/5). Verdict: topology = calibrated soft infrastructure prior + diagnostic. Outputs: `studies/phase3_structural_separability/`. Pending: 12-proof user review packet. Nothing promoted to schema without a further ADR.
+- Two-layer action representation: stable semantic actions (apply/intro/have/rewrite-with-explicit-set/cases/constructor/exact) expanding to exact kernel certificates. Explicit fact sets, never live global simp state, define canonical edges.
+- State identity is structural (local context + goal types), never mvar-id-based.
+- Success requires kernel verification + source-accessibility audit (no target auxiliaries, no forbidden module constants); dirty proofs are normalized (forbidden-constant unfolding) or rejected.
+- Every capability claim rides an oracle-ladder condition with budget-matched controls; solved-set dominance is checked.
+
+## Where the program is heading
+
+Learned hierarchical policy over semantic actions (family, then parameter — retrieval-style for rewrite sets), plugged into best-first search; expert iteration only after per-decision quality is established. See `NEXT_RECOMMENDATION.md` for the immediate step.
