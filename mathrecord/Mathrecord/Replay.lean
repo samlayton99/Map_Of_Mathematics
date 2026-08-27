@@ -118,8 +118,10 @@ def legalHeads (cands : Array (Name × Expr)) (t : Expr) :
   for (cn, cty) in cands do
     let ok ← withoutModifyingState do
       try
-        let (_, _, ccl) ← forallMetaTelescope cty
-        isDefEq ccl t
+        Core.withCurrHeartbeats do
+          withOptions (fun o => o.set `maxHeartbeats (8000 : Nat)) do
+            let (_, _, ccl) ← forallMetaTelescope cty
+            isDefEq ccl t
       catch _ => pure false
     if ok then legal := legal.push (toString cn)
   pure legal

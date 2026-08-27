@@ -38,7 +38,11 @@ def decisions(trace_fn, tasks):
     out, cover = [], Counter()
     with open(BIG / trace_fn) as f:
         for line in f:
-            r = json.loads(line)
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:
+                cover["torn_line"] += 1   # file may still be being written
+                continue
             if "error" in r or not r.get("nodes"):
                 continue
             t = tasks.get(r["n"])
