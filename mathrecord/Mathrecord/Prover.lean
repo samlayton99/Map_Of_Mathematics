@@ -166,6 +166,14 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
   let rwCands := prepRw env task.rw
   let simpThms ← Meta.getSimpTheorems
   let simprocs ← Simp.getSimprocs
+  -- 'q': source-safe simp built ONLY from the supplied support lemmas -
+  -- no global [simp] set, no simprocs
+  let restricted ← if banks.contains 'q' then do
+      let mut st : SimpTheorems := {}
+      for c in task.bw ++ task.rw do
+        try st ← st.addConst c catch _ => pure ()
+      pure (some st)
+    else pure none
   let root ← mkFreshExprMVar ci.type
   -- enter binders once: the search works on the telescoped goal
   let goals0 := [root.mvarId!]
@@ -268,6 +276,17 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
             acts := acts.push ("structural", s!"ctor {ctor}", 0.5,
               do g.applyConst ctor)
       | _ => pure ()
+    if banks.contains 'h' then
+      -- head refinement with local hypotheses: apply any hypothesis, with
+      -- argument holes (assumption covers only the zero-argument case)
+      let decls ← try
+        g.withContext do
+          pure ((← getLCtx).decls.toList.filterMap id
+            |>.filter (fun d => !d.isImplementationDetail))
+      catch _ => pure []
+      for d in decls do
+        acts := acts.push ("hyp", s!"apply hyp {d.userName}", 0.6,
+          do g.apply (mkFVar d.fvarId))
     if banks.contains 'b' then
       let mut nb := 0
       for c in bwCands do
@@ -296,6 +315,16 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
         match res with
         | none => pure []
         | some (_, g') => pure [g'])
+    match restricted with
+    | some st =>
+      acts := acts.push ("automation", "simp_restricted", 1.2, do
+        let ctx ← Simp.mkContext (simpTheorems := #[st])
+                    (congrTheorems := ← Meta.getSimpCongrTheorems)
+        let (res, _) ← simpGoal g ctx (simprocs := #[])
+        match res with
+        | none => pure []
+        | some (_, g') => pure [g'])
+    | none => pure ()
 
     -- execute attempts
     for (bank, label, acost, act) in acts do
