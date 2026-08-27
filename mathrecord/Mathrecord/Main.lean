@@ -193,6 +193,9 @@ unsafe def main (args : List String) : IO UInt32 := do
   | ["hodiag", file] => do
     Mathrecord.Prover.hoDiag file
     return 0
+  | ["semtrace", file, inp, out] => do
+    Mathrecord.Semantic.semtrace file inp out
+    return 0
   | ["replay", file, inp, out] => do
     Mathrecord.Replay.replay file inp out
     return 0

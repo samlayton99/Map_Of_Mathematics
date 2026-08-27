@@ -1,5 +1,6 @@
 import Mathrecord.HeadDump
 import Mathrecord.Ho
+import Mathrecord.Semantic
 
 /-! The first closed-loop dynamic prover: best-first search over live proof
 states inside the elaborator.
@@ -264,6 +265,41 @@ partial def deAux (env : Environment) (selfStr : String) (e : Expr)
     | _ => none
   if e' == e then e else deAux env selfStr e' (fuel - 1)
 
+/-- Recursively delta-unfold every constant satisfying `bad` that has an
+accessible body.  The audit's own forbid predicate is the normalization
+criterion: a completed proof citing forbidden constants is rewritten to
+cite only their (accessible) definitions, then re-verified. -/
+partial def unfoldForbidden (env : Environment) (bad : Name → Bool)
+    (e : Expr) (fuel : Nat := 12) : Expr :=
+  if fuel == 0 then e else
+  let e' := e.replace fun sub =>
+    match sub with
+    | .const c lvls =>
+      if bad c then
+        match env.find? c with
+        | some ci =>
+          match ci.value? (allowOpaque := true) with
+          | some v => some (v.instantiateLevelParams ci.levelParams lvls)
+          | none => none
+        | none => none
+      else none
+    | _ => none
+  if e' == e then e else unfoldForbidden env bad e' (fuel - 1)
+
+/-- First structurally divergent subterm pair of two instantiated
+expressions, as an application-spine path plus short prints. -/
+partial def firstDiff (a b : Expr) (path : String := "·") : String :=
+  if a == b then "" else
+  match a, b with
+  | .app fa aa, .app fb ab =>
+    let d := firstDiff fa fb (path ++ "f")
+    if d != "" then d else
+    let d2 := firstDiff aa ab (path ++ "a")
+    if d2 != "" then d2 else
+      s!"{path}: app-eq-parts-but-neq"
+  | _, _ =>
+    s!"{path}: ⟦{((toString a).take 90).toString}⟧ vs ⟦{((toString b).take 90).toString}⟧"
+
 /-- Backward application with mechanical higher-order fallback: ordinary
 `apply` first; on failure, a fresh telescope whose failed first-order
 conclusion unification is retried with motive synthesis (kabstract) and
@@ -313,6 +349,7 @@ partial def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
     (g : MVarId) (e : Expr) (assignData : Bool) (fuel : Nat := 48) :
     MetaM (List MVarId) :=
     g.withContext do
+  let s0 ← Meta.saveState
   let fn := e.getAppFn.consumeMData
   let args := e.getAppArgs
   let hType ← inferType fn
@@ -376,12 +413,43 @@ partial def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
       cOk := true
       deferLeft := lo
     | _ => s.restore
-  let finalOk ← if cOk then pure true else
+  -- GOAL-TIME GUIDE ASSIGNMENT: a goal type still containing deferred
+  -- data metavariables (registered in the guide but not yet oracle
+  -- assigned - conclusion deferral recursion reaches nested nodes before
+  -- the search loop's data-goal selection does) is concretized from the
+  -- guide, then the conclusion is retried
+  let mut cOk2 := cOk
+  if !cOk2 then
+    let gT ← instantiateMVars (← g.getType)
+    let mvarsIn := (gT.collectMVars {}).result
+    let gm ← guide.get
+    let mut assignedAny := false
+    for m in mvarsIn do
+      if let some ref := gm.get? m.name then
+        let okA ← try isDefEq (mkMVar m) ref catch _ => pure false
+        if okA then assignedAny := true
+    if assignedAny then
+      let curT ← instantiateMVars curType
+      let gT2 ← instantiateMVars (← g.getType)
+      let r1 ← isDefEq curT gT2
+      cOk2 ← if r1 then pure true else Mathrecord.Ho.tryMotiveSynth curT gT2
+  let finalOk ← if cOk2 then pure true else
     -- composed search states can render defeq-but-unification-hard forms;
     -- escalate transparency before giving up
-    withTransparency TransparencyMode.all
-      (isDefEq (← instantiateMVars curType) (← instantiateMVars (← g.getType)))
-  unless finalOk do
+    Core.withCurrHeartbeats do
+      withOptions (fun o => o.set `maxHeartbeats (800000 : Nat)) do
+        withTransparency TransparencyMode.all
+          (isDefEq (← instantiateMVars curType) (← instantiateMVars (← g.getType)))
+  -- CONCLUSION-FIRST RETRY: core `apply` unifies the conclusion before
+  -- committing argument assignments; an in-place data commitment can block
+  -- a unifier the reverse order finds.  Standard-arity heads only (the
+  -- over-applied family needs assignment-driven re-telescoping, which the
+  -- primary order already handles).  Reference-free mechanism.
+  let mut fMvs := allMvs
+  let mut fDefer := deferLeft
+  let mut okAll := finalOk
+  if !finalOk then
+    -- capture diagnostics from the primary attempt before restoring
     let fnStr := match fn with
       | .const c _ => c.toString
       | _ => "?"
@@ -402,21 +470,107 @@ partial def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
       | _ => do
         let why ← try Mathrecord.Ho.congrFromDiffDbg curType gType
                   catch _ => pure "dbg_exception"
-        pure s!" [congrDbg={why}]"
-    throwError "guided conclusion mismatch {fnStr} ⟦{((toString curType).take 110).toString}⟧ vs ⟦{((toString gType).take 110).toString}⟧{extra}"
-  for mv in allMvs do
+        let curI ← instantiateMVars curType
+        let gI ← instantiateMVars gType
+        -- per-mvar anatomy of the goal's open metavariables
+        let gm ← guide.get
+        let mut mvinfo := ""
+        for m in (gI.collectMVars {}).result do
+          let hasG := (gm.get? m.name).isSome
+          let asg ← try m.isAssignable catch _ => pure false
+          let dly ← try m.isDelayedAssigned catch _ => pure false
+          let k ← try
+            let d ← m.getDecl
+            pure (match d.kind with
+              | .natural => "nat" | .synthetic => "syn"
+              | .syntheticOpaque => "synO")
+          catch _ => pure "?"
+          mvinfo := mvinfo ++ s!" {m.name}(guide={hasG},asg={asg},dly={dly},k={k})"
+        -- which data arguments of THIS application were deferred
+        let mut defIdx := ""
+        for i in [0:allMvs.size] do
+          let m := allMvs[i]!.mvarId!
+          unless ← m.isAssigned do
+            defIdx := defIdx ++ s!" {i}:{(gm.get? m.name).isSome}"
+        pure s!" [congrDbg={why} diff={firstDiff curI gI} gmvars={mvinfo} openargs={defIdx}]"
+    let emsg := s!"guided conclusion mismatch {fnStr} ⟦{((toString curType).take 110).toString}⟧ vs ⟦{((toString gType).take 110).toString}⟧{extra}"
+    s0.restore
+    let attempt ← try
+      let (mvs, _, concl) ← forallMetaBoundedTelescope hType args.size
+      if mvs.size != args.size then pure none else do
+        let gT ← instantiateMVars (← g.getType)
+        let c1 ← isDefEq concl gT
+        let c2 ← if c1 then pure true else Mathrecord.Ho.tryMotiveSynth concl gT
+        let c3 ← if c2 then pure true else
+          withTransparency TransparencyMode.all
+            (isDefEq (← instantiateMVars concl) (← instantiateMVars gT))
+        if !c3 then pure none else do
+          for i in [0:mvs.size] do
+            let a := args[i]!
+            let aP ← try Meta.isProp (← inferType a) catch _ => pure false
+            if aP then
+              guide.modify (·.insert mvs[i]!.mvarId!.name a)
+            else if assignData then
+              let sA ← Meta.saveState
+              let okA ← try isDefEq mvs[i]! a catch _ => pure false
+              unless okA do
+                sA.restore
+                guide.modify (·.insert mvs[i]!.mvarId!.name a)
+            else
+              guide.modify (·.insert mvs[i]!.mvarId!.name a)
+          pure (some mvs)
+    catch _ => pure none
+    match attempt with
+    | some mvs =>
+      fMvs := mvs
+      fDefer := []
+      okAll := true
+    | none =>
+      -- DIFFERENTIAL: does the exact reference subterm check in this
+      -- guided state?  yes => incremental application defect;
+      -- no => guided state diverged from the reference state.
+      s0.restore
+      let exDef ← try
+        withoutModifyingState (isDefEq (mkMVar g) e)
+      catch _ => pure false
+      let exAll ← if exDef then pure true else try
+        withoutModifyingState
+          (withTransparency TransparencyMode.all (isDefEq (mkMVar g) e))
+      catch _ => pure false
+      -- distinguish type-level from term-level failure: does the exact
+      -- reference subterm's TYPE unify with the goal type?
+      let exTy ← try
+        withoutModifyingState
+          (isDefEq (← instantiateMVars (← inferType e))
+                   (← instantiateMVars (← g.getType)))
+      catch _ => pure false
+      let refTyStr ← try
+        pure (((toString (← instantiateMVars (← inferType e))).take 220).toString)
+      catch _ => pure "?"
+      let goalStr ← try
+        pure (((toString (← instantiateMVars (← g.getType))).take 220).toString)
+      catch _ => pure "?"
+      throwError "{emsg} [retry=failed exactRefDefault={exDef} exactRefAll={exAll} exactRefTy={exTy} refTy=⟦{refTyStr}⟧ goalTy=⟦{goalStr}⟧]"
+  let _ := okAll
+  -- instance synthesis for residual class holes - but NEVER for a hole
+  -- with a guide entry: the registered exact argument must not be
+  -- preempted by an engine-synthesized instance (whose derivation chain
+  -- can cite source-forbidden constants)
+  let gm ← guide.get
+  for mv in fMvs do
     let m := mv.mvarId!
     unless ← m.isAssigned do
-      let τ ← instantiateMVars (← m.getType)
-      let isCls ← try pure (← Meta.isClass? τ).isSome catch _ => pure false
-      if isCls && !τ.hasExprMVar then
-        try m.assign (← synthInstance τ) catch _ => pure ()
-  g.assign (mkAppN fn allMvs)
+      if (gm.get? m.name).isNone then
+        let τ ← instantiateMVars (← m.getType)
+        let isCls ← try pure (← Meta.isClass? τ).isSome catch _ => pure false
+        if isCls && !τ.hasExprMVar then
+          try m.assign (← synthInstance τ) catch _ => pure ()
+  g.assign (mkAppN fn fMvs)
   let mut out : List MVarId := []
-  for mv in allMvs.reverse do
+  for mv in fMvs.reverse do
     let m := mv.mvarId!
     unless ← m.isAssigned do out := m :: out
-  for m in deferLeft do
+  for m in fDefer do
     unless ← m.isAssigned do out := out ++ [m]
   pure out
 
@@ -514,9 +668,16 @@ def searchCore (env : Environment) (task : Task) (banks : String)
   -- guided modes: '1' exact heads + oracle data (G1), '2' exact heads
   -- only (G2), '3' reference head as top-priority hint (G3), 'c'
   -- occurrence-specific data oracle (Condition C)
+  -- semantic-grain modes: 'S' certificate regions by exact expansion
+  -- (representability), 'X' regions as simp-only actions + data oracle
+  -- (Gate C), 'Y' regions as simp-only actions, mechanical data only
+  -- (Gate D), 'Z' free search + semantic action prepended (Gate E)
   let gmode : Char :=
     if banks.contains '1' then '1' else if banks.contains '2' then '2'
-    else if banks.contains '3' then '3' else if banks.contains 'c' then 'c'
+    else if banks.contains '3' then '3'
+    else if banks.contains 'S' then 'S' else if banks.contains 'X' then 'X'
+    else if banks.contains 'Y' then 'Y' else if banks.contains 'Z' then 'Z'
+    else if banks.contains 'c' then 'c'
     else ' '
   let guide ← IO.mkRef ({} : Std.HashMap Name Expr)
   let gerrs ← IO.mkRef (#[] : Array String)
@@ -577,13 +738,14 @@ def searchCore (env : Environment) (task : Task) (banks : String)
       let allowedMod := match ownIdx with
         | some o => allowedModules env o
         | none => #[]
-      let dirty := usedNames.any fun c =>
+      let badPred : Name → Bool := fun c =>
         c == task.name || (c.toString).startsWith (selfStr ++ ".") ||
         forbidSet.contains c ||
         (match ownIdx, env.getModuleIdxFor? c with
          | some o, some m =>
            m.toNat != o && !((allowedMod[m.toNat]?).getD true)
          | _, _ => false)
+      let dirty := usedNames.any badPred
       if ok && !dirty then
         return { solved := true, verified := ok, path := node.path.reverse,
                  callsUsed := calls, stats, frontierLeft := frontier.size,
@@ -592,6 +754,33 @@ def searchCore (env : Environment) (task : Task) (banks : String)
                  partsData := dparts.map (fun e => ((toString e).take 300).toString),
                  partsProp := pparts.map (fun e => ((toString e).take 300).toString),
                  guidedErrs := ← gerrs.get }
+      -- ARTIFACT NORMALIZATION: a verified proof citing forbidden constants
+      -- (auxiliaries embedded in verbatim data terms) is normalized by
+      -- recursively delta-unfolding every forbidden constant with an
+      -- accessible body - the audit predicate itself is the criterion -
+      -- then re-verified and re-audited.  No name special cases.
+      if ok && dirty then
+        let proof2 := unfoldForbidden env badPred proof
+        let ok2 ← try
+          Meta.check proof2
+          isDefEq (← inferType proof2) ci.type
+        catch _ => pure false
+        let used2 := proof2.getUsedConstantsAsSet.toArray
+        let remBad := used2.filter badPred
+        unless ok2 && remBad.isEmpty do
+          gerrs.modify (fun a =>
+            if a.size < 24 then
+              a.push s!"NORMFAIL check={ok2} residual_bad={remBad.map toString}"
+            else a)
+        if ok2 && !used2.any badPred then
+          stats := { stats with attempts := bump stats.attempts "normalized_accept" }
+          return { solved := true, verified := true, path := node.path.reverse,
+                   callsUsed := calls, stats, frontierLeft := frontier.size,
+                   usedConsts := used2.map toString,
+                   goalHeads := node.heads.reverse,
+                   partsData := dparts.map (fun e => ((toString e).take 300).toString),
+                   partsProp := pparts.map (fun e => ((toString e).take 300).toString),
+                   guidedErrs := ← gerrs.get }
       stats := { stats with attempts := bump stats.attempts "dirty_rejected" }
       continue
     stats := { stats with expansions := stats.expansions + 1 }
@@ -599,7 +788,7 @@ def searchCore (env : Environment) (task : Task) (banks : String)
     -- (later goals can be easy or instantiate shared metavariables)
     let (g, rest) ← do
       let arr0 := live.toArray
-      if gmode == '2' then
+      if gmode == '2' || gmode == 'Y' then
         -- exact-head rung without a data oracle: expand PROOF goals
         -- first, so metavariable coupling can determine the data holes
         let mut pidx : Option Nat := none
@@ -789,7 +978,7 @@ def searchCore (env : Environment) (task : Task) (banks : String)
         catch ex =>
           let msg ← try ex.toMessageData.toString catch _ => pure "?"
           gerrs.modify (fun a =>
-            if a.size < 24 then a.push s!"{ghead}: {(msg.take 340).toString}" else a)
+            if a.size < 24 then a.push s!"{ghead}: {(msg.take 1600).toString}" else a)
           throw ex
       if gmode == '1' then
         if gIsProp then
@@ -818,6 +1007,53 @@ def searchCore (env : Environment) (task : Task) (banks : String)
           acts := #[(("guided", "guided_pri", 0.05,
             guidedAct guide env selfStr g e false) :
               String × String × Float × Attempt)] ++ acts
+      else if gmode == 'S' then
+        -- S1 REPRESENTABILITY: certificate regions are single actions
+        -- whose execution is the exact expansion; everything else is
+        -- exact-head + exact-data guided descent
+        if gIsProp then
+          if Mathrecord.Semantic.certRegionRoot e then
+            acts := #[("guided", "sem_exact", 0.1, oracleAssign g e)]
+          else
+            acts := #[("guided", "guided", 0.1, logged true)]
+        else
+          acts := #[("guided", "oracle_data", 0.1, oracleAssign g e)]
+      else if gmode == 'X' || gmode == 'Y' then
+        -- GATES C/D: certificate regions executed as ONE mechanical
+        -- simp-only action from exactly the extracted fact leaves; the
+        -- internal certificate nodes are never reconstructed.  'X' keeps
+        -- the residual-data oracle; 'Y' is mechanical-only.
+        if gIsProp then
+          if Mathrecord.Semantic.certRegionRoot e then
+            let semAct : Attempt := do
+              try Mathrecord.Semantic.semSimpAct guide g e simprocs
+              catch ex =>
+                let msg ← try ex.toMessageData.toString catch _ => pure "?"
+                gerrs.modify (fun a =>
+                  if a.size < 24 then
+                    a.push s!"SEM {ghead}: {(msg.take 400).toString}" else a)
+                throw ex
+            if banks.contains 'f' then
+              acts := #[("guided", "sem_simp", 0.1, semAct),
+                        ("guided", "guided", 0.2, logged (gmode == 'X'))]
+            else
+              acts := #[("guided", "sem_simp", 0.1, semAct)]
+          else
+            acts := #[("guided", "guided", 0.1, logged (gmode == 'X'))]
+        else if gmode == 'X' || banks.contains 'o' then
+          acts := #[("guided", "oracle_data", 0.1, oracleAssign g e)]
+      else if gmode == 'Z' then
+        -- GATE E: free search with the reference SEMANTIC action
+        -- prepended at top priority, executed mechanically
+        if gIsProp then
+          if Mathrecord.Semantic.certRegionRoot e then
+            acts := #[(("guided", "sem_simp_pri", 0.05,
+              Mathrecord.Semantic.semSimpAct guide g e simprocs) :
+                String × String × Float × Attempt)] ++ acts
+          else
+            acts := #[(("guided", "guided_pri", 0.05,
+              guidedAct guide env selfStr g e false) :
+                String × String × Float × Attempt)] ++ acts
       else if gmode == 'c' then
         if !gIsProp then
           acts := #[(("guided", "oracle_data", 0.05,
@@ -825,7 +1061,8 @@ def searchCore (env : Environment) (task : Task) (banks : String)
 
     -- guided-exact diagnostics: a node dying with no action is a
     -- correspondence loss - record where and what kind of goal
-    if (gmode == '1' || gmode == '2') && acts.isEmpty then
+    if (gmode == '1' || gmode == '2' || gmode == 'S' || gmode == 'X' ||
+        gmode == 'Y') && acts.isEmpty then
       let kind := if gIsProp then "P" else "D"
       let hasE := if gEntry.isSome then "entry" else "noentry"
       stats := { stats with
