@@ -1,417 +1,36 @@
 {
- "prover_out_v2_sbrp.jsonl": {
+ "prover_out_v2_cT2nb.jsonl": {
   "attempted": 80,
-  "solved_raw": 18,
-  "solved_clean": 2,
-  "clean_rate": 0.025,
+  "solved_raw": 12,
+  "solved_clean": 12,
+  "clean_rate": 0.15,
   "proofs": [
    {
-    "n": "limsup_eq_bot",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 39
-   },
-   {
-    "n": "AffineMap.lineMap_apply_one_sub",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 34
-   },
-   {
-    "n": "Order.wcovBy_add_one",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 15
-   },
-   {
-    "n": "equivShrink_symm_add",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 22
-   },
-   {
-    "n": "Function.support_neg",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 19
-   },
-   {
-    "n": "Preorder.frestrictLe_updateFinset_of_le",
+    "n": "Subgroup.mem_map_equiv",
     "clean": true,
     "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 14
-   },
-   {
-    "n": "conjneg_injective",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "conjneg_inj._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 17
-   },
-   {
-    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "AddSubgroup.addSubgroupOf_eq_top._simp_1"
-    ],
-    "not_imported": [
-     "CompleteLattice.toCompletePartialOrder",
-     "CompletePartialOrder.toOrderBot"
-    ],
-    "unmapped": [],
-    "n_consts": 27
-   },
-   {
-    "n": "ULift.forall",
-    "clean": false,
-    "self_use": true,
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
     "n_consts": 12
    },
    {
-    "n": "Action.hom_inv_hom",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 24
-   },
-   {
-    "n": "CFC.negPart_eq_zero_of_not_isSelfAdjoint",
+    "n": "SkewPolynomial.coeff_C_ne_zero",
     "clean": true,
     "self_use": false,
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 53
-   },
-   {
-    "n": "Perfection.coeffMonoidHom_symm_powMulEquiv",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 35
-   },
-   {
-    "n": "TotallyBounded.neg",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "totallyBounded_neg._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 20
-   },
-   {
-    "n": "Int.associated_natAbs",
-    "clean": false,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [
-     "Int.instIsStrictOrderedRing",
-     "Int.cast_abs",
-     "associated_abs_right_iff._simp_1",
-     "Nat.cast_natAbs"
-    ],
-    "unmapped": [],
-    "n_consts": 32
-   },
-   {
-    "n": "SimpleGraph.deleteUniversalVerts_adj",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 20
-   },
-   {
-    "n": "conjneg_sub",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 27
-   },
-   {
-    "n": "FirstOrder.Language.withConstants_funMap_sumInr",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 24
-   },
-   {
-    "n": "Metric.AreSeparated.finset_iUnion_left",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "Metric.AreSeparated.finset_iUnion_left_iff._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 17
-   }
-  ]
- },
- "prover_out_v2_sp.jsonl": {
-  "attempted": 80,
-  "solved_raw": 17,
-  "solved_clean": 1,
-  "clean_rate": 0.0125,
-  "proofs": [
-   {
-    "n": "limsup_eq_bot",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 39
-   },
-   {
-    "n": "AffineMap.lineMap_apply_one_sub",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 34
-   },
-   {
-    "n": "Order.wcovBy_add_one",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 15
+    "n_consts": 21
    },
    {
     "n": "equivShrink_symm_add",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 22
-   },
-   {
-    "n": "Function.support_neg",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 19
-   },
-   {
-    "n": "conjneg_injective",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "conjneg_inj._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 17
-   },
-   {
-    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "AddSubgroup.addSubgroupOf_eq_top._simp_1"
-    ],
-    "not_imported": [
-     "CompleteLattice.toCompletePartialOrder",
-     "CompletePartialOrder.toOrderBot"
-    ],
-    "unmapped": [],
-    "n_consts": 27
-   },
-   {
-    "n": "ULift.forall",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 12
-   },
-   {
-    "n": "Action.hom_inv_hom",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 24
-   },
-   {
-    "n": "Perfection.coeffMonoidHom_symm_powMulEquiv",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 35
-   },
-   {
-    "n": "TotallyBounded.neg",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "totallyBounded_neg._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 20
-   },
-   {
-    "n": "Matrix.charpoly.univ_natDegree",
     "clean": true,
     "self_use": false,
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 31
-   },
-   {
-    "n": "Int.associated_natAbs",
-    "clean": false,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [
-     "Int.instIsStrictOrderedRing",
-     "Int.cast_abs",
-     "associated_abs_right_iff._simp_1",
-     "Nat.cast_natAbs"
-    ],
-    "unmapped": [],
-    "n_consts": 32
-   },
-   {
-    "n": "SimpleGraph.deleteUniversalVerts_adj",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 20
-   },
-   {
-    "n": "conjneg_sub",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 27
-   },
-   {
-    "n": "FirstOrder.Language.withConstants_funMap_sumInr",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 24
-   },
-   {
-    "n": "Metric.AreSeparated.finset_iUnion_left",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "Metric.AreSeparated.finset_iUnion_left_iff._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 17
-   }
-  ]
- },
- "prover_out_v2_T2.jsonl": {
-  "attempted": 80,
-  "solved_raw": 22,
-  "solved_clean": 6,
-  "clean_rate": 0.075,
-  "proofs": [
-   {
-    "n": "limsup_eq_bot",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 39
-   },
-   {
-    "n": "AffineMap.lineMap_apply_one_sub",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 34
-   },
-   {
-    "n": "Order.wcovBy_add_one",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 15
-   },
-   {
-    "n": "equivShrink_symm_add",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 22
-   },
-   {
-    "n": "Function.support_neg",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 19
+    "n_consts": 9
    },
    {
     "n": "Finset.card_le_univ",
@@ -432,38 +51,13 @@
     "n_consts": 14
    },
    {
-    "n": "conjneg_injective",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "conjneg_inj._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 17
-   },
-   {
     "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
-    "clean": false,
+    "clean": true,
     "self_use": false,
-    "same_module": [
-     "AddSubgroup.addSubgroupOf_eq_top._simp_1"
-    ],
-    "not_imported": [
-     "CompleteLattice.toCompletePartialOrder",
-     "CompletePartialOrder.toOrderBot"
-    ],
-    "unmapped": [],
-    "n_consts": 27
-   },
-   {
-    "n": "ULift.forall",
-    "clean": false,
-    "self_use": true,
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 12
+    "n_consts": 16
    },
    {
     "n": "DirectSum.sum_support_of",
@@ -475,15 +69,6 @@
     "n_consts": 12
    },
    {
-    "n": "Action.hom_inv_hom",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 24
-   },
-   {
     "n": "CFC.negPart_eq_zero_of_not_isSelfAdjoint",
     "clean": true,
     "self_use": false,
@@ -491,26 +76,6 @@
     "not_imported": [],
     "unmapped": [],
     "n_consts": 53
-   },
-   {
-    "n": "Perfection.coeffMonoidHom_symm_powMulEquiv",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 35
-   },
-   {
-    "n": "TotallyBounded.neg",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "totallyBounded_neg._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 20
    },
    {
     "n": "Set.vadd_subset_vadd",
@@ -531,246 +96,26 @@
     "n_consts": 5
    },
    {
-    "n": "Int.associated_natAbs",
-    "clean": false,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [
-     "Int.instIsStrictOrderedRing",
-     "Int.cast_abs",
-     "associated_abs_right_iff._simp_1",
-     "Nat.cast_natAbs"
-    ],
-    "unmapped": [],
-    "n_consts": 32
-   },
-   {
-    "n": "SimpleGraph.deleteUniversalVerts_adj",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 20
-   },
-   {
     "n": "conjneg_sub",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 27
-   },
-   {
-    "n": "FirstOrder.Language.withConstants_funMap_sumInr",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 24
-   },
-   {
-    "n": "Metric.AreSeparated.finset_iUnion_left",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "Metric.AreSeparated.finset_iUnion_left_iff._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 17
-   }
-  ]
- },
- "prover_out_v2_gsel.jsonl": {
-  "attempted": 80,
-  "solved_raw": 18,
-  "solved_clean": 2,
-  "clean_rate": 0.025,
-  "proofs": [
-   {
-    "n": "limsup_eq_bot",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 39
-   },
-   {
-    "n": "AffineMap.lineMap_apply_one_sub",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 34
-   },
-   {
-    "n": "Order.wcovBy_add_one",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 15
-   },
-   {
-    "n": "equivShrink_symm_add",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 22
-   },
-   {
-    "n": "Function.support_neg",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 19
-   },
-   {
-    "n": "Preorder.frestrictLe_updateFinset_of_le",
     "clean": true,
     "self_use": false,
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 14
+    "n_consts": 33
    },
    {
-    "n": "conjneg_injective",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "conjneg_inj._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 17
-   },
-   {
-    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "AddSubgroup.addSubgroupOf_eq_top._simp_1"
-    ],
-    "not_imported": [
-     "CompleteLattice.toCompletePartialOrder",
-     "CompletePartialOrder.toOrderBot"
-    ],
-    "unmapped": [],
-    "n_consts": 27
-   },
-   {
-    "n": "ULift.forall",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 12
-   },
-   {
-    "n": "Action.hom_inv_hom",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 24
-   },
-   {
-    "n": "CFC.negPart_eq_zero_of_not_isSelfAdjoint",
+    "n": "Set.infs_subset_left",
     "clean": true,
     "self_use": false,
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 53
-   },
-   {
-    "n": "Perfection.coeffMonoidHom_symm_powMulEquiv",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 35
-   },
-   {
-    "n": "TotallyBounded.neg",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "totallyBounded_neg._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 20
-   },
-   {
-    "n": "Int.associated_natAbs",
-    "clean": false,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [
-     "Int.instIsStrictOrderedRing",
-     "Int.cast_abs",
-     "associated_abs_right_iff._simp_1",
-     "Nat.cast_natAbs"
-    ],
-    "unmapped": [],
-    "n_consts": 32
-   },
-   {
-    "n": "SimpleGraph.deleteUniversalVerts_adj",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 20
-   },
-   {
-    "n": "conjneg_sub",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 27
-   },
-   {
-    "n": "FirstOrder.Language.withConstants_funMap_sumInr",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 24
-   },
-   {
-    "n": "Metric.AreSeparated.finset_iUnion_left",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "Metric.AreSeparated.finset_iUnion_left_iff._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 17
+    "n_consts": 7
    }
   ]
  },
- "prover_out_v2_sbr.jsonl": {
+ "prover_out_v2_csbr.jsonl": {
   "attempted": 80,
   "solved_raw": 7,
   "solved_clean": 7,
@@ -838,183 +183,6 @@
     "not_imported": [],
     "unmapped": [],
     "n_consts": 33
-   }
-  ]
- },
- "prover_out_v2_T3.jsonl": {
-  "attempted": 80,
-  "solved_raw": 17,
-  "solved_clean": 1,
-  "clean_rate": 0.0125,
-  "proofs": [
-   {
-    "n": "limsup_eq_bot",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 39
-   },
-   {
-    "n": "AffineMap.lineMap_apply_one_sub",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 34
-   },
-   {
-    "n": "Order.wcovBy_add_one",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 15
-   },
-   {
-    "n": "equivShrink_symm_add",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 22
-   },
-   {
-    "n": "Function.support_neg",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 19
-   },
-   {
-    "n": "Preorder.frestrictLe_updateFinset_of_le",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 14
-   },
-   {
-    "n": "conjneg_injective",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "conjneg_inj._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 17
-   },
-   {
-    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "AddSubgroup.addSubgroupOf_eq_top._simp_1"
-    ],
-    "not_imported": [
-     "CompleteLattice.toCompletePartialOrder",
-     "CompletePartialOrder.toOrderBot"
-    ],
-    "unmapped": [],
-    "n_consts": 27
-   },
-   {
-    "n": "ULift.forall",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 12
-   },
-   {
-    "n": "Action.hom_inv_hom",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 24
-   },
-   {
-    "n": "Perfection.coeffMonoidHom_symm_powMulEquiv",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 35
-   },
-   {
-    "n": "TotallyBounded.neg",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "totallyBounded_neg._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 20
-   },
-   {
-    "n": "Int.associated_natAbs",
-    "clean": false,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [
-     "Int.instIsStrictOrderedRing",
-     "Int.cast_abs",
-     "associated_abs_right_iff._simp_1",
-     "Nat.cast_natAbs"
-    ],
-    "unmapped": [],
-    "n_consts": 32
-   },
-   {
-    "n": "SimpleGraph.deleteUniversalVerts_adj",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 20
-   },
-   {
-    "n": "conjneg_sub",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 27
-   },
-   {
-    "n": "FirstOrder.Language.withConstants_funMap_sumInr",
-    "clean": false,
-    "self_use": true,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 24
-   },
-   {
-    "n": "Metric.AreSeparated.finset_iUnion_left",
-    "clean": false,
-    "self_use": false,
-    "same_module": [
-     "Metric.AreSeparated.finset_iUnion_left_iff._simp_1"
-    ],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 17
    }
   ]
  }
