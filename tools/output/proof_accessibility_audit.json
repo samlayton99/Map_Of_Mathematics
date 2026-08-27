@@ -1,9 +1,269 @@
 {
- "prover_out_v2_g1d.jsonl": {
+ "prover_out_v2_a2.jsonl": {
   "attempted": 80,
-  "solved_raw": 74,
-  "solved_clean": 74,
-  "clean_rate": 0.925,
+  "solved_raw": 28,
+  "solved_clean": 28,
+  "clean_rate": 0.35,
+  "proofs": [
+   {
+    "n": "Perfection.extMonoid_iff",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 23
+   },
+   {
+    "n": "Subgroup.mem_map_equiv",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 12
+   },
+   {
+    "n": "SkewPolynomial.coeff_C_ne_zero",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 31
+   },
+   {
+    "n": "equivShrink_symm_add",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 9
+   },
+   {
+    "n": "Function.support_neg",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 2
+   },
+   {
+    "n": "Finset.card_le_univ",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 5
+   },
+   {
+    "n": "Preorder.frestrictLe_updateFinset_of_le",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 14
+   },
+   {
+    "n": "conjneg_injective",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 9
+   },
+   {
+    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 16
+   },
+   {
+    "n": "ULift.forall",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 4
+   },
+   {
+    "n": "DirectSum.sum_support_of",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 12
+   },
+   {
+    "n": "CFC.negPart_eq_zero_of_not_isSelfAdjoint",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 53
+   },
+   {
+    "n": "Ordinal.principal_add_omega0_opow",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 2
+   },
+   {
+    "n": "Ideal.IsDedekindDomain.emultiplicity_map_eq_ramificationIdx_mul",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 20
+   },
+   {
+    "n": "Matrix.charpoly.univ_natDegree",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 17
+   },
+   {
+    "n": "ContDiffAt.inv",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 28
+   },
+   {
+    "n": "AntisymmRel.trans_le",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 5
+   },
+   {
+    "n": "Set.vadd_subset_vadd",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 7
+   },
+   {
+    "n": "Set.iUnion_image_sup_right",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 5
+   },
+   {
+    "n": "not_bddAbove_iff_isCofinal",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 21
+   },
+   {
+    "n": "Int.associated_natAbs",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 30
+   },
+   {
+    "n": "conjneg_sub",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 33
+   },
+   {
+    "n": "FirstOrder.Language.withConstants_funMap_sumInr",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 18
+   },
+   {
+    "n": "Ideal.le_comap_of_ramificationIdx_ne_zero",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 11
+   },
+   {
+    "n": "Graph.IsSubgraph.compatible'",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 6
+   },
+   {
+    "n": "Set.infs_subset_left",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 7
+   },
+   {
+    "n": "CategoryTheory.Limits.reflectsLimitsOfShape_of_rightOp",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 10
+   },
+   {
+    "n": "Metric.AreSeparated.finset_iUnion_left",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 14
+   }
+  ]
+ },
+ "prover_out_v2_g1e.jsonl": {
+  "attempted": 80,
+  "solved_raw": 75,
+  "solved_clean": 75,
+  "clean_rate": 0.9375,
   "proofs": [
    {
     "n": "AddConstMapClass.map_add_int'",
@@ -39,7 +299,7 @@
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 123
+    "n_consts": 124
    },
    {
     "n": "Perfection.extMonoid_iff",
@@ -102,7 +362,16 @@
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 117
+    "n_consts": 119
+   },
+   {
+    "n": "Real.log_list_prod",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 94
    },
    {
     "n": "Function.support_neg",
@@ -300,7 +569,7 @@
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 48
+    "n_consts": 50
    },
    {
     "n": "Real.smoothTransition.contDiff",
@@ -552,7 +821,7 @@
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 26
+    "n_consts": 43
    },
    {
     "n": "Ideal.le_comap_of_ramificationIdx_ne_zero",
@@ -673,7 +942,7 @@
    }
   ]
  },
- "prover_out_v2_g2d.jsonl": {
+ "prover_out_v2_g2e.jsonl": {
   "attempted": 80,
   "solved_raw": 30,
   "solved_clean": 30,
@@ -951,7 +1220,312 @@
    }
   ]
  },
- "prover_out_v2_g3c.jsonl": {
+ "prover_out_v2_g2a.jsonl": {
+  "attempted": 80,
+  "solved_raw": 33,
+  "solved_clean": 33,
+  "clean_rate": 0.4125,
+  "proofs": [
+   {
+    "n": "Subgroup.mem_map_equiv",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 12
+   },
+   {
+    "n": "SmoothBumpFunction.contMDiff",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 59
+   },
+   {
+    "n": "Function.support_neg",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 2
+   },
+   {
+    "n": "tsum_smul_tsum",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 30
+   },
+   {
+    "n": "Finset.card_le_univ",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 5
+   },
+   {
+    "n": "Preorder.frestrictLe_updateFinset_of_le",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 14
+   },
+   {
+    "n": "conjneg_injective",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 9
+   },
+   {
+    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 16
+   },
+   {
+    "n": "CategoryTheory.Adjunction.isIso_map_unit_of_isLeftAdjoint_comp",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 60
+   },
+   {
+    "n": "ULift.forall",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 4
+   },
+   {
+    "n": "DirectSum.sum_support_of",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 12
+   },
+   {
+    "n": "CFC.negPart_eq_zero_of_not_isSelfAdjoint",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 53
+   },
+   {
+    "n": "CategoryTheory.ShortComplex.Splitting.shortExact",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 10
+   },
+   {
+    "n": "Manifold.IsSmoothEmbedding.prodMap",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 26
+   },
+   {
+    "n": "Ordinal.principal_add_omega0_opow",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 2
+   },
+   {
+    "n": "IsMulTorsionFree.pow_right_injective\u2080",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 19
+   },
+   {
+    "n": "Ideal.IsDedekindDomain.emultiplicity_map_eq_ramificationIdx_mul",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 20
+   },
+   {
+    "n": "Matrix.charpoly.univ_natDegree",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 17
+   },
+   {
+    "n": "ThreeAPFree.image",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 13
+   },
+   {
+    "n": "ContDiffAt.inv",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 28
+   },
+   {
+    "n": "AntisymmRel.trans_le",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 5
+   },
+   {
+    "n": "Set.vadd_subset_vadd",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 7
+   },
+   {
+    "n": "Set.iUnion_image_sup_right",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 5
+   },
+   {
+    "n": "not_bddAbove_iff_isCofinal",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 17
+   },
+   {
+    "n": "Int.associated_natAbs",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 26
+   },
+   {
+    "n": "AddConstMapClass.map_sub_nsmul",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 32
+   },
+   {
+    "n": "CategoryTheory.Limits.reflectsFiniteCoproducts_op",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 18
+   },
+   {
+    "n": "Ideal.le_comap_of_ramificationIdx_ne_zero",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 11
+   },
+   {
+    "n": "Graph.IsSubgraph.compatible'",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 6
+   },
+   {
+    "n": "Set.infs_subset_left",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 7
+   },
+   {
+    "n": "MeasureTheory.MeasurePreserving.smulInvariantMeasure_iterateMulAct",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 19
+   },
+   {
+    "n": "CategoryTheory.Limits.reflectsLimitsOfShape_of_rightOp",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 10
+   },
+   {
+    "n": "Metric.AreSeparated.finset_iUnion_left",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 10
+   }
+  ]
+ },
+ "prover_out_v2_g3d.jsonl": {
   "attempted": 80,
   "solved_raw": 30,
   "solved_clean": 30,
@@ -964,7 +1538,7 @@
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 18
+    "n_consts": 23
    },
    {
     "n": "Subgroup.mem_map_equiv",
@@ -1229,21 +1803,12 @@
    }
   ]
  },
- "prover_out_v2_condcc.jsonl": {
+ "prover_out_v2_condcd.jsonl": {
   "attempted": 80,
-  "solved_raw": 30,
-  "solved_clean": 30,
-  "clean_rate": 0.375,
+  "solved_raw": 27,
+  "solved_clean": 27,
+  "clean_rate": 0.3375,
   "proofs": [
-   {
-    "n": "Perfection.extMonoid_iff",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 18
-   },
    {
     "n": "Order.wcovBy_add_one",
     "clean": true,
@@ -1344,15 +1909,6 @@
     "n_consts": 12
    },
    {
-    "n": "Action.hom_inv_hom",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 20
-   },
-   {
     "n": "CFC.negPart_eq_zero_of_not_isSelfAdjoint",
     "clean": true,
     "self_use": false,
@@ -1369,15 +1925,6 @@
     "not_imported": [],
     "unmapped": [],
     "n_consts": 2
-   },
-   {
-    "n": "IsMulTorsionFree.pow_right_injective\u2080",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 19
    },
    {
     "n": "Ideal.IsDedekindDomain.emultiplicity_map_eq_ramificationIdx_mul",

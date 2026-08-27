@@ -1,4 +1,5 @@
 import Mathrecord.HeadDump
+import Mathrecord.Ho
 
 /-! The first closed-loop dynamic prover: best-first search over live proof
 states inside the elaborator.
@@ -67,12 +68,26 @@ def parseTasks (j : Json) : Except String (Array Task) := do
            rw := ← rw.mapM (fun c => do pure (String.toName (← c.getStr?))),
            forbid := fb.filterMap (fun c => (c.getStr?).toOption.map String.toName) }
 
-/-- Canonical-ish key for a state: sorted rendered goal types. -/
+/-- Canonical-ish key for a state: per goal, the sorted rendered local
+context (non-implementation hypotheses) plus the rendered target -
+goals differing only in their hypotheses are distinct states. -/
 def stateKey (goals : List MVarId) : MetaM String := do
   let mut parts : Array String := #[]
   for g in goals do
-    let t ← instantiateMVars (← g.getType)
-    parts := parts.push (toString t)
+    let s ← try
+      g.withContext do
+        let mut hs : Array String := #[]
+        for d? in (← getLCtx).decls do
+          match d? with
+          | some d =>
+            if !d.isImplementationDetail then
+              hs := hs.push (toString (← instantiateMVars d.type))
+          | none => pure ()
+        let t ← instantiateMVars (← g.getType)
+        pure (String.intercalate ";" (hs.qsort (· < ·)).toList
+              ++ "⊢" ++ toString t)
+    catch _ => pure "?"
+    parts := parts.push s
   pure (String.intercalate "|" (parts.qsort (· < ·)).toList)
 
 def goalHead (g : MVarId) : MetaM String := do
@@ -226,6 +241,57 @@ def oracleAssign (g : MVarId) (e : Expr) : Attempt := g.withContext do
   if ← isDefEq (mkMVar g) e then pure []
   else throwError "oracle data mismatch"
 
+/-- Delta-unfold every target-attached auxiliary (plain `T.*` or private
+`_private.….T.*` form) inside a reference term, so guided proofs and the
+data terms they assign verbatim never cite them. -/
+partial def deAux (env : Environment) (selfStr : String) (e : Expr)
+    (fuel : Nat := 8) : Expr :=
+  if fuel == 0 then e else
+  let isAuxName (s : String) : Bool :=
+    s.startsWith (selfStr ++ ".") ||
+    (s.startsWith "_private." && (s.splitOn ("." ++ selfStr ++ ".")).length > 1)
+  let e' := e.replace fun sub =>
+    match sub with
+    | .const c lvls =>
+      if isAuxName c.toString then
+        match env.find? c with
+        | some ci =>
+          match ci.value? (allowOpaque := true) with
+          | some v => some (v.instantiateLevelParams ci.levelParams lvls)
+          | none => none
+        | none => none
+      else none
+    | _ => none
+  if e' == e then e else deAux env selfStr e' (fuel - 1)
+
+/-- Backward application with mechanical higher-order fallback: ordinary
+`apply` first; on failure, a fresh telescope whose failed first-order
+conclusion unification is retried with motive synthesis (kabstract) and
+congruence decomposition.  No reference information is consulted. -/
+def hoApply (g : MVarId) (cn : Name) : MetaM (List MVarId) := do
+  try g.apply (← mkConstWithFreshMVarLevels cn)
+  catch _ =>
+    g.withContext do
+      let ce ← mkConstWithFreshMVarLevels cn
+      let hType ← inferType ce
+      let (mvs, _, concl) ← forallMetaTelescope hType
+      let gType ← instantiateMVars (← g.getType)
+      unless ← Mathrecord.Ho.tryMotiveSynth concl gType do
+        throwError "hoApply: no unifier"
+      for mv in mvs do
+        let m := mv.mvarId!
+        unless ← m.isAssigned do
+          let τ ← instantiateMVars (← m.getType)
+          let isCls ← try pure (← Meta.isClass? τ).isSome catch _ => pure false
+          if isCls && !τ.hasExprMVar then
+            try m.assign (← synthInstance τ) catch _ => pure ()
+      g.assign (mkAppN ce mvs)
+      let mut out : List MVarId := []
+      for mv in mvs.reverse do
+        let m := mv.mvarId!
+        unless ← m.isAssigned do out := m :: out
+      pure out
+
 /-- GUIDED DESCENT.  Apply the head of reference application `e` at `g`
 through the engine's own unification: iterative bounded metavariable
 telescope (over-applied heads re-telescoped after each assignment round),
@@ -268,12 +334,27 @@ def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
     idx := idx + mvs.size
   let gType ← g.getType
   let cOk ← isDefEq curType gType
+  -- mechanical higher-order fallback (motive synthesis / congruence
+  -- decomposition) - consults ONLY the goal, never the reference
+  let cOk ← if cOk then pure true else
+    Mathrecord.Ho.tryMotiveSynth curType gType
   let cOk ← if cOk then pure true else
     -- composed search states can render defeq-but-unification-hard forms;
     -- escalate transparency before giving up
     withTransparency TransparencyMode.all (isDefEq curType gType)
   unless cOk do
-    throwError "guided conclusion mismatch"
+    let fnStr := match fn with
+      | .const c _ => c.toString
+      | _ => "?"
+    let extra ← match gType with
+      | .mvar m => do
+        let d ← m.getDecl
+        let k := match d.kind with
+          | .natural => "natural" | .synthetic => "synthetic"
+          | .syntheticOpaque => "synOpaque"
+        pure s!" [goal mvar kind={k} depth={d.depth} mctx={(← getMCtx).depth} assignable={← m.isAssignable}]"
+      | _ => pure ""
+    throwError "guided conclusion mismatch {fnStr} ⟦{((toString curType).take 110).toString}⟧ vs ⟦{((toString gType).take 110).toString}⟧{extra}"
   for mv in allMvs do
     let m := mv.mvarId!
     unless ← m.isAssigned do
@@ -361,7 +442,10 @@ def searchCore (env : Environment) (task : Task) (banks : String)
   let gerrs ← IO.mkRef (#[] : Array String)
   if gmode != ' ' then
     if let some val := ci.value? (allowOpaque := true) then
-      guide.modify (·.insert root.mvarId!.name (val.beta xs))
+      -- auxiliaries are unfolded THROUGHOUT the reference (heads and
+      -- inside data terms alike) so no guided proof can cite them
+      guide.modify (·.insert root.mvarId!.name
+        (deAux env selfStr (val.beta xs)))
   -- oracle custom parts ('w'/'v'): read the reference proof ONLY here
   let (dparts, pparts) ←
     if banks.contains 'w' || banks.contains 'v' then
@@ -509,6 +593,11 @@ def searchCore (env : Environment) (task : Task) (banks : String)
       if ghead == "Iff" then
         acts := acts.push ("structural", "iff_rfl", 0.2,
           do g.applyConst ``Iff.rfl)
+      if ghead == "Eq" || ghead == "HEq" || ghead == "Iff" then
+        -- mechanical congruence step (core congrN): decomposes f a = f b
+        -- style goals the way `congr 1` does
+        acts := acts.push ("structural", "congr1", 0.7,
+          g.congrN 1 (closePre := true) (closePost := false))
       -- constructors of the goal-head inductive (small arity only)
       match env.find? (String.toName ghead) with
       | some (.inductInfo iv) =>
@@ -565,7 +654,7 @@ def searchCore (env : Environment) (task : Task) (banks : String)
               guidedApply guide g ((gEntry.getD default).consumeMData) false)
           else
             acts := acts.push ("backward", s!"apply {c.name}", 1.0,
-              do g.apply (← mkConstWithFreshMVarLevels c.name))
+              hoApply g c.name)
     if banks.contains 'r' && gIsProp then
       -- rewrite v2: forward (simp) orientation only, tight cap - the v1
       -- bidirectional bank was measured net-negative at fixed budget
@@ -620,7 +709,7 @@ def searchCore (env : Environment) (task : Task) (banks : String)
         catch ex =>
           let msg ← try ex.toMessageData.toString catch _ => pure "?"
           gerrs.modify (fun a =>
-            if a.size < 24 then a.push s!"{ghead}: {(msg.take 160).toString}" else a)
+            if a.size < 24 then a.push s!"{ghead}: {(msg.take 340).toString}" else a)
           throw ex
       if gmode == '1' then
         if gIsProp then
@@ -630,6 +719,10 @@ def searchCore (env : Environment) (task : Task) (banks : String)
       else if gmode == '2' then
         if gIsProp then
           acts := #[("guided", "guided", 0.1, logged false)]
+        else if banks.contains 'o' then
+          -- G2a: mechanical synthesis first-class, oracle only for the
+          -- RESIDUAL data holes that survive it
+          acts := #[("guided", "oracle_data", 0.1, oracleAssign g e)]
       else if gmode == '3' then
         if gIsProp then
           -- PREPEND: the guided child must claim the duplicate-state key

@@ -115,12 +115,16 @@ the head-selection dataset. -/
 def legalHeads (cands : Array (Name × Expr)) (t : Expr) :
     MetaM (Array String) := do
   let mut legal : Array String := #[]
-  for (cn, cty) in cands do
+  for (cn, _) in cands do
     let ok ← withoutModifyingState do
       try
         Core.withCurrHeartbeats do
           withOptions (fun o => o.set `maxHeartbeats (8000 : Nat)) do
-            let (_, _, ccl) ← forallMetaTelescope cty
+            -- fresh universe METAVARIABLES, exactly like the backward
+            -- bank's mkConstWithFreshMVarLevels - a raw declaration type
+            -- has RIGID universe params and understates legality
+            let ce ← mkConstWithFreshMVarLevels cn
+            let (_, _, ccl) ← forallMetaTelescope (← inferType ce)
             isDefEq ccl t
       catch _ => pure false
     if ok then legal := legal.push (toString cn)
