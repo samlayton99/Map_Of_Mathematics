@@ -42,6 +42,7 @@ structure Node where
   cost  : Float
   depth : Nat
   path  : List String
+  heads : List String := []   -- head of the goal each action attacked
 
 structure Stats where
   attempts : Std.HashMap String Nat := {}
@@ -158,10 +159,70 @@ structure RunResult where
   stats : Stats := {}
   frontierLeft : Nat := 0
   usedConsts : Array String := #[]   -- constants in the discovered proof term
+  goalHeads : List String := []      -- per-decision goal heads (winning path)
+  partsData : Array String := #[]    -- oracle data parts provided (custom runs)
+  partsProp : Array String := #[]
 
-def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
+/-- Extract ORACLE CUSTOM PARTS from a reference proof body: data-typed
+subterms (witnesses, functions, motives - never proof-typed subterms, which
+would leak assembly) and Prop-typed binders of lets/beta-redexes (the
+intermediate `have` statements).  Binders of the theorem are instantiated
+with the search telescope `xs`, so parts remain valid in every search
+state.  Closed subterms only (no loose bound variables) - a documented
+under-collection. -/
+def collectCustomParts (xs : Array Expr) (val? : Option Expr) :
+    MetaM (Array Expr × Array Expr) := do
+  let some val := val? | return (#[], #[])
+  let body := val.beta xs
+  let mut data : Array Expr := #[]
+  let mut props : Array Expr := #[]
+  let mut stack : Array Expr := #[body]
+  let mut fuel := 30000
+  while stack.size > 0 && fuel > 0 do
+    fuel := fuel - 1
+    let e := (stack.back!).consumeMData
+    stack := stack.pop
+    match e with
+    | .app .. =>
+      let fn := e.getAppFn.consumeMData
+      if let .lam _ t _ _ := fn then   -- beta-redex: `have`-style intermediate
+        if !t.hasLooseBVars && props.size < 16 && !props.contains t then
+          if ← (try Meta.isProp t catch _ => pure false) then
+            props := props.push t
+      -- `have h : P := v; b` elaborates to `letFun P _ v fun h => b`
+      if fn.isConstOf ``letFun then
+        let args := e.getAppArgs
+        if args.size >= 1 then
+          let t := args[0]!.consumeMData
+          if !t.hasLooseBVars && props.size < 16 && !props.contains t then
+            if ← (try Meta.isProp t catch _ => pure false) then
+              props := props.push t
+      stack := stack.push fn
+      for a in e.getAppArgs do
+        stack := stack.push a
+        let c := a.consumeMData
+        if !c.hasLooseBVars && !c.isFVar && !c.isConst && !c.isSort &&
+           !c.isMVar && data.size < 24 && !data.contains c then
+          let isData ← try
+            let τ ← instantiateMVars (← inferType c)
+            -- custom part = not a proof, not typeclass-instance plumbing
+            pure (!(← Meta.isProp τ) && (← Meta.isClass? τ).isNone)
+          catch _ => pure false
+          if isData then
+            data := data.push c
+    | .lam _ _ b _ => stack := stack.push b
+    | .letE _ t v b _ =>
+      if !t.hasLooseBVars && props.size < 16 && !props.contains t then
+        if ← (try Meta.isProp t catch _ => pure false) then
+          props := props.push t
+      stack := (stack.push v).push b
+    | .proj _ _ s => stack := stack.push s
+    | _ => pure ()
+  return (data, props)
+
+def searchCore (env : Environment) (task : Task) (banks : String)
+    (budget : Nat) (ci : ConstantInfo) (xs : Array Expr) (concl : Expr) :
     MetaM RunResult := do
-  let some ci := env.find? task.name | return {}
   let bwCands := prepCands env task.bw
   let rwCands := prepRw env task.rw
   let simpThms ← Meta.getSimpTheorems
@@ -174,8 +235,12 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
         try st ← st.addConst c catch _ => pure ()
       pure (some st)
     else pure none
-  let root ← mkFreshExprMVar ci.type
-  -- enter binders once: the search works on the telescoped goal
+  let root ← mkFreshExprMVar concl
+  -- oracle custom parts ('w'/'v'): read the reference proof ONLY here
+  let (dparts, pparts) ←
+    if banks.contains 'w' || banks.contains 'v' then
+      collectCustomParts xs (ci.value? (allowOpaque := true))
+    else pure (#[], #[])
   let goals0 := [root.mvarId!]
   let saved0 ← Meta.saveState
   let mut frontier : Array Node :=
@@ -202,7 +267,7 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
       -- own-module facts is REJECTED and the search continues (dirty
       -- proofs must not shadow clean ones)
       node.saved.restore
-      let proof ← instantiateMVars root
+      let proof ← mkLambdaFVars xs (← instantiateMVars root)
       let ok ← try
         Meta.check proof
         isDefEq (← inferType proof) ci.type
@@ -225,7 +290,10 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
       if ok && !dirty then
         return { solved := true, verified := ok, path := node.path.reverse,
                  callsUsed := calls, stats, frontierLeft := frontier.size,
-                 usedConsts := usedNames.map toString }
+                 usedConsts := usedNames.map toString,
+                 goalHeads := node.heads.reverse,
+                 partsData := dparts.map (fun e => ((toString e).take 300).toString),
+                 partsProp := pparts.map (fun e => ((toString e).take 300).toString) }
       stats := { stats with attempts := bump stats.attempts "dirty_rejected" }
       continue
     stats := { stats with expansions := stats.expansions + 1 }
@@ -315,6 +383,22 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
         match res with
         | none => pure []
         | some (_, g') => pure [g'])
+    if banks.contains 'w' then
+      -- oracle data parts: fill any hole a part's type unifies with
+      for i in [0:dparts.size] do
+        let p := dparts[i]!
+        acts := acts.push ("part", s!"part {i}", 0.8,
+          do if ← isDefEq (mkMVar g) p then pure []
+             else throwError "part mismatch")
+    if banks.contains 'v' then
+      -- oracle intermediate propositions: assert as a `have`
+      for i in [0:pparts.size] do
+        let p := pparts[i]!
+        acts := acts.push ("have", s!"have {i}", 0.9, do
+          let pm ← mkFreshExprMVar p
+          let g2 ← g.assert (Name.mkSimple s!"hp{i}") p pm
+          let (_, g3) ← g2.intro1P
+          pure [pm.mvarId!, g3])
     match restricted with
     | some st =>
       acts := acts.push ("automation", "simp_restricted", 1.2, do
@@ -346,9 +430,34 @@ def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
           frontier := frontier.push
             { saved := childSaved, goals := goals',
               cost := node.cost + acost, depth := node.depth + 1,
-              path := label :: node.path }
+              path := label :: node.path, heads := ghead :: node.heads }
   return { solved := false, callsUsed := calls, stats,
-           frontierLeft := frontier.size }
+           frontierLeft := frontier.size,
+           partsData := dparts.map (fun e => ((toString e).take 300).toString),
+           partsProp := pparts.map (fun e => ((toString e).take 300).toString) }
+
+def search (env : Environment) (task : Task) (banks : String) (budget : Nat) :
+    MetaM RunResult := do
+  let some ci := env.find? task.name | return {}
+  Meta.forallTelescope ci.type fun xs concl =>
+    searchCore env task banks budget ci xs concl
+
+/-- Diagnostic: run custom-part extraction for comma-separated theorem
+names and print counts plus samples. -/
+def partsDiag (path : System.FilePath) (namesArg : String) : IO Unit := do
+  let pf ← Mathrecord.processFile path Mathrecord.Study.mathlibOptions
+  let env := pf.env
+  let coreCtx : Core.Context := { fileName := pf.fileName, fileMap := default }
+  for nm in (namesArg.splitOn ",") do
+    let n := String.toName nm.trim
+    let act : MetaM Unit := do
+      let some ci := env.find? n | IO.println s!"{nm}: NOT FOUND"
+      Meta.forallTelescope ci.type fun xs _ => do
+        let (d, p) ← collectCustomParts xs (ci.value? (allowOpaque := true))
+        IO.println s!"{nm}: data={d.size} props={p.size} hasVal={(ci.value?).isSome} tele={xs.size}"
+        for e in d do IO.println s!"  DATA: {((toString e).take 160).toString}"
+        for e in p do IO.println s!"  PROP: {((toString e).take 160).toString}"
+    let _ ← (act.run' {} {}).toIO coreCtx { env }
 
 def statsJson (s : Stats) : Json :=
   Json.mkObj [
@@ -385,6 +494,9 @@ def prove (path : System.FilePath) (inp : System.FilePath)
       ("path", Json.arr (res.path.toArray.map Json.str)),
       ("frontier_left", toJson res.frontierLeft),
       ("used_consts", Json.arr (res.usedConsts.map Json.str)),
+      ("goal_heads", Json.arr (res.goalHeads.toArray.map Json.str)),
+      ("parts_data", Json.arr (res.partsData.map Json.str)),
+      ("parts_prop", Json.arr (res.partsProp.map Json.str)),
       ("stats", statsJson res.stats)]
     h.putStrLn row.compress
     count := count + 1

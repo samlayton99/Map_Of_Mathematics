@@ -186,6 +186,9 @@ unsafe def main (args : List String) : IO UInt32 := do
   | ["prove", file, inp, out, banks, budget] => do
     Mathrecord.Prover.prove file inp out banks (budget.toNat!)
     return 0
+  | ["parts", file, names] => do
+    Mathrecord.Prover.partsDiag file names
+    return 0
   | ["alpha", a, b] => alpha a b
   | ["inspect", recordPath, declName] => inspect recordPath declName
   | _ => do
