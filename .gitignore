@@ -19,3 +19,6 @@ bigdata/
 .pytest_cache/
 tools/output/
 viz/data.js
+
+# Loose CLI study outputs (regenerable: mathrecord study <file> <out>)
+studies/*.study.json
