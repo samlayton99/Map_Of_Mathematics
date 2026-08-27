@@ -1,0 +1,11 @@
+{
+ "regime": "clean, retrieval-only (csbr) vs oracle (cT2nb)",
+ "n_failures": 73,
+ "share": {
+  "J_needs_same_module": 0.658,
+  "A_premise_absent_from_toolkit": 0.685,
+  "E_frontier_exhausted": 0.123,
+  "BUDGET_exhausted": 0.877,
+  "RETRIEVAL_oracle_fixes": 0.068
+ }
+}

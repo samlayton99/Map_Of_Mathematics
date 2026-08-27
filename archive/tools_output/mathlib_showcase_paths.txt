@@ -1,0 +1,1293 @@
+== Nat.exists_infinite_primes
+   statement cone 171 | proof cone 2,961 | new 2,790 (94% of proof)
+
+-- statement path (understand these, shallow to deep)
+   d  0  Add, And, Array, CommMonoid, Eq, Exists  (+20 more)
+   d  1  Add.mk, Array.mk, HAdd, HMul, HPow, Irreducible  (+21 more)
+   d  2  Array.emptyWithCapacity, HAdd.mk, HMul.mk, HPow.mk, Lean.Name.mkStr1, Lean.Name.mkStr4  (+5 more)
+   d  3  congrFun', eq_true
+   d  4  Array.empty, CommMonoid.mk, List.brecOn.go, Nat.brecOn.go, Semigroup.mk, eq_self  (+1 more)
+   d  6  List.concat, Nat.add
+   d  7  Array.push
+   d  8  Nat.add_succ, Nat.mul, Nat.recAux
+   d  9  Monoid.mk, Nat.add_assoc, Nat.succ_add, Nat.zero_add
+   d 10  Nat.mul_one, Nat.mul_succ, Nat.mul_zero, Nat.pow
+   d 11  Nat.add_comm
+   d 12  Nat.add_left_comm, Nat.add_right_comm, Nat.pow_zero, Nat.zero_mul
+   d 13  Nat.succ_mul
+   d 14  Nat.left_distrib
+   d 15  Nat.mul_comm
+   d 16  Nat.mul_assoc, Nat.one_mul
+   d 19  Nat.Prime
+
+-- proof moves (new facts the proof pulls in, deepest first)
+   d 71  Nat.minFac_pos
+   d 70  Nat.minFac_dvd
+   d 70  Nat.minFac_prime
+   d 69  Nat.minFac_has_prop
+   d 68  Nat.minFacAux_has_prop
+   d 67  Nat.prime_def_le_sqrt
+   d 66  Nat.sqrt_lt_self
+   d 64  Lean.Grind.CommRing.le_norm_expr
+   d 63  Lean.Grind.CommRing.Expr.denote_toPoly
+   d 62  Lean.Grind.CommRing.Poly.denote_pow
+   d 61  Lean.Grind.CommRing.Poly.denote_mul
+   d 60  Lean.Grind.CommRing.Poly.denote_mul_go
+   [+9 machinery/glue moves in top 40]
+   [machinery hidden from statement path; full cones: A_S 171, A_P 2,961]
+
+== irrational_sqrt_two
+   statement cone 10,664 | proof cone 10,903 | new 239 (2% of proof)
+
+-- statement path (understand these, shallow to deep)
+   d  0  Acc, Add, AddCancelCommMonoid, AddCancelMonoid, AddCommGroup, AddCommGroupWithOne  (+251 more)
+   d  1  AbsoluteValue, Acc.intro, Add.mk, AddEquiv, AddLeftReflectLE, AddMonoidHom  (+301 more)
+   d  2  AddCancelCommMonoid.mk, AddCancelMonoid.mk, AddLeftCancelMonoid.mk, AddLeftCancelSemigroup.mk, And.imp, Antitone  (+251 more)
+   d  3  AbsoluteValue.add_le, AbsoluteValue.eq_zero, AbsoluteValue.nonneg, AddHomClass, AddMonoidHom.map_add, AddMonoidHomClass  (+204 more)
+   d  4  Acc.inv, AddCommGroup.mk, AddCommMagma.mk, AddCommMonoid.mk, AddCommMonoidWithOne.mk, AddCommSemigroup.mk  (+323 more)
+   d  5  And.symm, BddAbove, BddBelow, Bool.and, Bool.dcond, Bool.not  (+255 more)
+   d  6  AddUnits.mk, And.comm, Archimedean.mk, Bool.and_self, Bool.and_true, Bool.decEq  (+333 more)
+   d  7  AddMonoidHom.mulLeft, Array.push, Bool.and'_eq_and, Bool.cond_false, Bool.cond_neg, Bool.cond_pos  (+228 more)
+   d  8  AddUnits.add_neg_cancel_left, AddUnits.add_neg_cancel_right, AddUnits.neg_add_cancel_left, AddUnits.neg_add_cancel_right, Antitone.directed_ge, Bool.and_eq_false_imp  (+216 more)
+   d  9  AddCommGroupWithOne.mk, AddGroupWithOne.mk, AddMonoid.mk, AddMonoidWithOne.mk, Bool.and_eq_true_iff, BooleanAlgebra.mk  (+196 more)
+   d 10  AddUnits.addLeft, AddUnits.addRight, AddUnits.val_injective, Array.size, Bool.eq_iff_iff, Bool.false_eq_true  (+148 more)
+   d 11  AddMonoidHom.ext, AddUnits.ext, Bool.cond_eq_ite, ByteArray.size, Classical.propDecidable, Equiv.neg  (+135 more)
+   d 12  AbsoluteValue.map_mul, AbsoluteValue.mk, AddGroup.covariant_iff_contravariant, AddGroup.covariant_swap_iff_contravariant_swap, BitVec.ofFin, BitVec.toNat  (+189 more)
+   d 13  BitVec.ofNatLT, Commute.div_mul_div_comm, Equiv.subLeft, Filter.Eventually.filter_mono, Filter.Frequently.exists, Filter.HasBasis.ge_iff  (+129 more)
+   d 14  Equiv.bijective, Equiv.coe_fn_injective, Equiv.image_symm_eq_preimage, Equiv.injective, Equiv.self_comp_symm, Equiv.subLeft_apply  (+150 more)
+   d 15  Char.mk, Equiv.iInf_congr, Equiv.image_eq_preimage_symm, Equiv.ofInjective, Equiv.toEmbedding, Equiv.trans  (+121 more)
+   d 16  Bool.range_eq, Equiv.image_preimage, Equiv.subtypeEquiv, Filter.isGLB_sInf, Filter.lift', Filter.mem_top_iff_forall  (+106 more)
+   d 17  AbsoluteValue.map_one_of_isLeftRegular, AbsoluteValue.map_zero, AbsoluteValue.ne_zero_iff, DistribLattice.ofInfSupLe, Equiv.addLeft, Equiv.addRight  (+104 more)
+   d 18  AbsoluteValue.ne_zero, AbsoluteValue.pos_iff, Commute.mul_self_sub_mul_self_eq, Equiv.mulLeft₀, Equiv.mulRight₀, Equiv.setCongr  (+90 more)
+   d 19  AbsoluteValue.pos, AddMonoidHom.mul, Char.ofNatAux, Commute.mul_self_eq_mul_self_iff, ContinuousAt, Function.Injective.addGroupWithOne  (+48 more)
+   d 20  Char.ofNat, ContinuousInv₀.mk, Disjoint.inter_eq, Finset.mem_attach, Function.Injective.ring, Function.Surjective.addGroupWithOne  (+42 more)
+   d 21  AbsoluteValue.map_neg, Filter.mem_inf_of_left, Filter.mem_inf_of_right, FloorSemiring.mk, FloorSemiring.natCast_mono, Int.add_left_neg  (+49 more)
+   d 22  AbsoluteValue.map_sub, Filter.mem_top, Fin.Internal.ofNat, FloorSemiring.natCast_nonneg, Int.add_right_neg, Int.cast_add  (+49 more)
+   d 23  BitVec.ofNat, EquivLike.range_eq_univ, Fin.ofNat, Finset.mk, Function.Surjective.range_eq, Int.add_mul  (+46 more)
+   d 24  AddMonoidWithOne.toCharZero, Finset.empty, Finset.mk_cons, Int.add_assoc, Int.emod_zero, Int.neg_tdiv_neg  (+40 more)
+   d 25  Commute.div_add_div, Fin.succ_pos, Finset.filter, Finset.mem_union, Int.Internal.Linear.Poly.denote_addConst, Int.add_left_comm  (+33 more)
+   d 26  Fin.foldr_succ, Finset.map, Int.Internal.Linear.Poly.denote_insert, Int.add_le_add_left, Int.add_left_cancel, Int.add_sub_cancel  (+32 more)
+   d 27  ByteArray.IsValidUTF8.intro, Finset.eq_of_veq, Int.Internal.Linear.Poly.denote_norm, Int.add_le_add_right, Int.le_antisymm, Int.le_of_add_le_add_left  (+34 more)
+   d 28  Finset.val_injective, Int.add_le_add, Int.dvd_neg, Int.eq_iff_le_and_ge, Int.induction_on, Int.le_max_left  (+45 more)
+   d 29  BddBelow.neg, Finset.val_inj, Int.Internal.Linear.Expr.denote_toPoly'_go, Int.add_le_add_iff_right, Int.add_nonneg, Int.dvd_natAbs  (+38 more)
+   d 30  Int.Internal.Linear.Expr.denote_norm, Int.add_lt_add_left, Int.dvd_iff_dvd_of_dvd_sub, Int.emod_add_mul_ediv, Int.le_iff_lt_add_one, Int.le_max_right  (+27 more)
+   d 31  AbsoluteValue.abs, Int.Internal.Linear.Poly.isValidLe, Int.add_lt_add_right, Int.dvd_iff_dvd_of_dvd_add, Int.emod_def, Int.eq_neg_natAbs_of_nonpos  (+34 more)
+   d 32  Int.Internal.Linear.le_eq_true, Int.dvd_of_emod_eq_zero, Int.ediv_mul_cancel_of_emod_eq_zero, Int.ediv_mul_le, Int.ediv_mul_self, Int.emod_neg  (+38 more)
+   d 33  FloorRing.mk, Int.floor_le, Int.le_floor, Int.lt_of_le_of_lt, Int.lt_of_lt_of_le, Int.lt_of_neg_lt_neg  (+28 more)
+   d 34  FloorRing.ofFloor, Int.abs_eq_natAbs, Int.add_mul_ediv_right, Int.eq_negSucc_of_lt_zero, Int.floor_lt, Int.floor_nonneg  (+30 more)
+   d 35  Int.add_ediv_of_dvd_right, Int.add_mul_ediv_left, Int.add_mul_emod_self_right, Int.le_iff_eq_or_lt, Int.leastOfBdd, Int.lt_or_gt_of_ne  (+21 more)
+   d 36  FloorSemiring.natCast_strictMono, Int.add_ediv_of_dvd_left, Int.add_mul_emod_self_left, Int.ediv_nonneg_iff_of_pos, Int.le_iff_lt_or_eq, Int.le_toNat  (+14 more)
+   d 37  Int.cast_mul, Int.ediv_lt_of_lt_mul, Int.emod_add_emod, Int.emod_emod_of_dvd, Int.emod_lt_of_pos, Int.emod_self  (+15 more)
+   d 38  Int.add_emod_emod, Int.emod_eq_zero_of_dvd, Int.le_of_mul_le_mul_right, Int.lt_ediv_add_one_mul_self, Int.lt_ediv_mul, Int.lt_of_mul_lt_mul_left  (+12 more)
+   d 39  Int.add_emod, Int.cast_nonneg_iff, Int.dvd_iff_emod_eq_zero, Int.ediv_mul_cancel, Int.greatestOfBdd, Int.lt_of_mul_lt_mul_right  (+16 more)
+   d 40  Int.cast_le, Int.emod_pos_of_not_dvd, Int.exists_greatest_of_bdd, Int.le_ediv_of_mul_le, Int.mul_lt_mul_right, Int.mul_nonneg_iff_of_pos_right  (+13 more)
+   d 41  Int.cast_strictMono, Int.lt_mul_of_ediv_lt, Lean.Data.AC.Context.evalList_sort_loop_swap, Lean.Grind.CommRing.Mon.grevlex, Lean.Grind.CommRing.Mon.revlexFuel.induct_unfolding, Lean.Grind.CommRing.Mon.revlex_k_eq_revlex  (+3 more)
+   d 42  Int.cast_lt, Int.ediv_lt_iff_lt_mul, Lean.Data.AC.Context.evalList_sort_cons, Lean.Grind.CommRing.Mon.eq_of_revlexFuel, Lean.Omega.Coeffs.gcd_dvd_dot_left, Lean.Omega.IntList.get_cons_zero  (+4 more)
+   d 43  DivisionRing.mk, DivisionSemiring.mk, Field.mk, Int.cast_pos, Lean.Data.AC.Context.evalList_sort, Lean.Grind.CommRing.Mon.eq_of_revlex  (+6 more)
+   d 44  Lean.Data.AC.Context.eval_norm, Lean.Grind.CommRing.Mon.eq_of_grevlex, Lean.Grind.CommRing.Poly.combine, Lean.Omega.LinearCombo.coordinate_eval, Lean.Omega.normalize_sat, List.getElem?_eq_some_iff
+   d 45  FloorRing.ofBounded, Function.Injective.divisionSemiring, IsAbsoluteValue.abv_inv, IsCauSeq, IsCauSeq.const, IsTopologicalDivisionRing.mk  (+21 more)
+   d 46  Archimedean.floorRing, CauSeq, CauSeq.const, IsCauSeq.bounded, Lean.Grind.CommRing.Poly.mul.go, Lean.Grind.Linarith.Poly.denote_insert  (+8 more)
+   d 47  CauSeq.LimZero, CauSeq.Pos, CauSeq.cauchy, CauSeq.const.congr_simp, CauSeq.const_mul, CauSeq.const_sub  (+22 more)
+   d 48  CauSeq.bounded', CauSeq.zero_limZero, Filter.mem_inf_iff, Filter.mem_inf_of_inter, Int.blt'_eq_false, Lean.Grind.CommRing.Poly.mul.go.induct_unfolding  (+10 more)
+   d 49  CauSeq.const_limZero, CauSeq.const_pos, CauSeq.not_limZero_of_pos, CauSeq.ofEq, Int.natCast_dvd_natCast, Lean.Grind.CommRing.Poly.combine_k_eq_combine  (+16 more)
+   d 50  Filter.HasBasis.inf', Lean.Grind.CommRing.Expr.toPoly_k, Lean.Grind.Linarith.Poly.combine.induct_unfolding, Lean.Grind.Ring.neg_eq_mul_neg_one, Lean.Grind.Ring.neg_eq_neg_one_mul, Lean.Grind.Ring.ofNat_sub  (+5 more)
+   d 51  Filter.HasBasis.inf, Filter.NeBot.mono, Filter.empty_mem_iff_bot, Filter.eq_sInf_of_mem_iff_exists_mem, Filter.inf_principal, Filter.lift'_mono'  (+21 more)
+   d 52  Filter.OrderBot.atBot_eq, Filter.eq_iInf_of_mem_iff_exists_mem, Filter.mem_atBot, Filter.mem_atTop, Filter.neBot_of_le, Filter.nonempty_of_mem  (+16 more)
+   d 53  Filter.eq_biInf_of_mem_iff_exists_mem, Filter.eventually_ge_atTop, Filter.eventually_le_atBot, Filter.forall_mem_nonempty_iff_neBot, Filter.iInf_sets_eq, Filter.tendsto_atTop  (+9 more)
+   d 54  CauSeq.cauchy₃, Filter.HasBasis.eq_biInf, Filter.HasBasis.neBot_iff, Filter.mem_iInf_of_directed, Filter.tendsto_atTop_mono', Finset.attach  (+16 more)
+   d 55  CauSeq.abv_pos_of_not_limZero, Filter.mem_biInf_of_directed, Filter.tendsto_pow_atTop, Finset.cons, Finset.mem_univ_val, Fintype.subtype  (+9 more)
+   d 56  CauSeq.coe_neg, CauSeq.inv_aux, CauSeq.rat_sup_continuous_lemma, CauSeq.trichotomy, Filter.hasBasis_biInf_principal, Finset.cons_induction  (+15 more)
+   d 57  CauSeq.add_limZero, CauSeq.add_pos, CauSeq.coe_add, CauSeq.coe_mul, CauSeq.inv, CauSeq.mul_limZero_left  (+32 more)
+   d 58  CauSeq.coe_smul, CauSeq.coe_sub, CauSeq.const_equiv, CauSeq.const_lt, CauSeq.inv_mul_cancel, CauSeq.mul_inv_cancel  (+20 more)
+   d 59  CauSeq.coe_pow, CauSeq.sup_comm, CauSeq.sup_idem, CauSeq.sup_lt, Filter.Eventually.frequently, Filter.HasAntitoneBasis.mk  (+34 more)
+   d 60  CauSeq.inf_comm, CauSeq.inf_idem, CauSeq.lt_inf, CauSeq.sup_inf_distrib_left, Filter.Eventually.exists, Filter.HasAntitoneBasis.iInf_principal  (+36 more)
+   d 61  CauSeq.lt_irrefl, CauSeq.lt_trans, CauSeq.neg_limZero, Filter.comap_lift'_eq2, Filter.gc_map_comap, Filter.hasAntitoneBasis_atTop  (+28 more)
+   d 62  Filter.HasBasis.comap, Filter.Tendsto.le_comap, Filter.atTop_basis, Filter.comap_iInf, Filter.comap_inf, Filter.comap_mono  (+23 more)
+   d 63  Filter.Eventually.self_of_nhdsWithin, Filter.Frequently.mem_closure, Filter.HasBasis.prod, Filter.Tendsto.mono_left, Filter.atBot_basis, Filter.comap_lift_eq  (+34 more)
+   d 64  Filter.cofinite, Filter.comap_lift'_eq, Filter.compl_mem_comap, Filter.map_eq_map_iff_of_injOn, Filter.tendsto_comap_iff, Filter.tendsto_fst  (+16 more)
+   d 65  Bornology.mk, CauSeq.Completion.Cauchy, CauSeq.Completion.mk, CauSeq.Completion.mk_eq, CauSeq.add_equiv_add, CauSeq.inf_equiv_inf  (+36 more)
+   d 66  CauSeq.Completion.inv_mk, CauSeq.Completion.inv_zero, CauSeq.Completion.ofRat, CauSeq.Completion.ofRat_inv, CauSeq.Completion.ofRat_mul, CauSeq.inf_eq_right  (+35 more)
+   d 67  CauSeq.Completion.mk_add, CauSeq.Completion.mk_mul, CauSeq.Completion.mk_neg, CauSeq.Completion.ofRat_injective, CauSeq.Completion.ofRat_intCast, CauSeq.Completion.ofRat_natCast  (+26 more)
+   d 68  CauSeq.Completion.mk_eq_zero, CauSeq.Completion.mk_pow, CauSeq.Completion.mk_smul, CauSeq.Completion.mk_sub, CauSeq.lt_of_eq_of_lt, CauSeq.lt_of_lt_of_eq  (+21 more)
+   d 69  CauSeq.le_of_eq_of_le, CauSeq.le_of_le_of_eq, Filter.HasBasis.prod_nhds, Filter.Tendsto.prodMk_nhds, Filter.le_cofinite_iff_eventually_ne, Filter.map_equiv_symm  (+19 more)
+   d 70  Filter.Tendsto.add, Filter.comap_cofinite_le, Filter.map_eq_comap_of_inverse, Homeomorph.isEmbedding, Rat.add_le_add_right, Rat.cast_add  (+13 more)
+   d 71  Bornology.ofBounded, CauSeq.le_antisymm, CauSeq.le_inf, CauSeq.sup_le, Continuous.prodMk, Filter.Eventually.prod_nhds  (+8 more)
+   d 72  Bornology.induced, Continuous.comp₂, Continuous.smul, Continuous.vadd, Homeomorph.comap_nhds_eq, Rat.lt_iff_le_not_ge  (+10 more)
+   d 73  CauSeq.Completion.inv_mul_cancel, CauSeq.Completion.mul_inv_cancel, Continuous.add, Continuous.fun_smul, Continuous.fun_vadd, Continuous.mul  (+6 more)
+   d 74  ContinuousInv₀.of_nhds_one, Rat.cast_sub_of_ne_zero, Rat.num_pos, TFAE_mem_nhdsGE, TFAE_mem_nhdsGT, Topology.IsInducing.continuous  (+4 more)
+   d 75  CauSeq.Completion.ofRat_div, Ioo_mem_nhds, Rat.cast_pos_of_pos, Rat.cast_sub, Rat.num_div_den, TFAE_mem_nhdsLE  (+7 more)
+   d 76  Continuous.pow, Topology.IsInducing.continuousAdd, Topology.IsInducing.continuousMul, map_add_left_nhds_zero, mem_nhdsLE_iff_exists_Ioc_subset'
+   d 77  IsLUB.frequently_mem, Rat.castHom, continuousAdd_induced, continuousMul_induced, continuous_of_continuousAt_zero₂
+   d 78  IsLUB.frequently_nhds_mem, IsTopologicalRing.of_addGroup_of_nhds_zero, Rat.cast_strictMono
+   d 79  IsLUB.mem_closure, IsTopologicalRing.of_norm, Rat.castOrderEmbedding, Rat.cast_div, Rat.cast_inv, Rat.cast_lt
+   d 80  Rat.cast_le, Rat.cast_natCast, csSup_mem_closure
+   d 81  IsClosed.Icc_subset_of_forall_mem_nhdsGT_of_Icc_subset, Rat.cast_le_natCast, Real.ofCauchy
+   d 82  IsClosed.Icc_subset_of_forall_mem_nhdsWithin, Real.mk, Real.ofCauchy_intCast, Real.ofCauchy_natCast, Real.ofCauchy_nnratCast, Real.ofCauchy_ratCast
+   d 83  Irrational, Real.mk_const, archimedean_iff_rat_lt, isPreconnected_Icc_aux
+   d 84  Real.ind_mk, archimedean_iff_rat_le, isPreconnected_Icc
+   d 85  isPreconnected_uIcc
+   d 86  Real.cauchy_one, Real.cauchy_zero, Real.ofCauchy_one, Real.ofCauchy_zero, Set.OrdConnected.isPreconnected
+   d 87  Real.mk_zero, Real.ofCauchy.inj
+   d 88  Continuous.surjective
+   d 89  Real.ext_cauchy_iff
+   d 90  Metric.ball, Real.cauchy_add, Real.cauchy_mul, Real.cauchy_neg, Real.ext_cauchy, Real.lt_cauchy  (+7 more)
+   d 91  Real.mk_inf, Real.mk_lt, Real.mk_sup
+   d 92  Real.mk_add, Real.mk_mul, Real.mk_neg, Real.mk_pos, Real.ratCast_lt
+   d 93  Real.zero_lt_one
+   d 95  Metric.isBounded_iff, NNReal, NNReal.mk, NNReal.toReal
+   d 96  ENNReal, ENNReal.ofNNReal, NNReal.eq
+   d 97  Real.mk_le
+   d 98  Real.ofCauchy_div
+   d104  NNReal.coe_one, NNReal.coe_zero
+   d106  Real.le_mk_of_forall_le
+   d107  Bornology.ofDist, NNReal.coe_add, NNReal.coe_mul, Real.mk_le_of_forall_le, Real.toNNReal
+   d108  ENNReal.ofReal, NNReal.toRealHom, Real.toNNReal_coe
+   d109  PseudoMetricSpace.mk
+   d110  ENNReal.coe_nnreal_eq, Real.exists_isLUB, UniformSpace.ofDist_aux
+   d111  UniformSpace.ofDist
+   d112  Metric.toUniformSpace_eq
+   d113  Metric.uniformity_basis_dist, Real.isLUB_sSup
+   d114  Metric.nhds_basis_ball, Real.sInf_def
+   d115  Real.isGLB_sInf
+   d121  NNReal.powOrderIso
+   d122  NNReal.sqrt
+   d123  Real.sqrt
+
+-- proof moves (new facts the proof pulls in, deepest first)
+   d130  Nat.Prime.irrational_sqrt
+   d129  irrational_sqrt_natCast_iff
+   d128  irrational_sqrt_ratCast_iff_of_nonneg
+   d127  Real.sqrt_mul_self_eq_abs
+   d126  Real.sqrt_mul_self
+   d125  Real.mul_self_sqrt
+   d124  NNReal.mul_self_sqrt
+   d124  Real.sqrt_nonneg
+   d123  NNReal.sq_sqrt
+   d106  Real.coe_toNNReal
+   d 96  NNReal.coe_nonneg
+   d 82  Rat.cast_nonneg
+   [+7 machinery/glue moves in top 40]
+   [machinery hidden from statement path; full cones: A_S 10,664, A_P 10,903]
+
+== Complex.exp_pi_mul_I
+   statement cone 15,714 | proof cone 15,747 | new 33 (0% of proof)
+
+-- statement path (understand these, shallow to deep)
+   d  0  Acc, Add, AddCancelCommMonoid, AddCancelMonoid, AddCommGroup, AddCommGroupWithOne  (+300 more)
+   d  1  AbsoluteValue, Acc.intro, Add.mk, AddAction, AddEquiv, AddGroupNorm  (+381 more)
+   d  2  AddCancelCommMonoid.mk, AddCancelMonoid.mk, AddEquivClass, AddLeftCancelMonoid.mk, AddLeftCancelSemigroup.mk, AddMemClass  (+305 more)
+   d  3  AbsoluteValue.add_le, AbsoluteValue.eq_zero, AbsoluteValue.nonneg, AddGroupNormClass, AddGroupSeminormClass, AddHomClass  (+268 more)
+   d  4  Acc.inv, AddCommGroup.mk, AddCommMagma.mk, AddCommMonoid.mk, AddCommMonoidWithOne.mk, AddCommSemigroup.mk  (+397 more)
+   d  5  AddHomClass.toAddHom, AddMemClass.mk, AddMonoidHom.id, AddSubmonoid.mem_bot, And.symm, BddAbove  (+342 more)
+   d  6  AddAction.mk, AddUnits.mk, And.comm, Archimedean.mk, Bool.and_self, Bool.and_true  (+427 more)
+   d  7  AddMonoidHom.mulLeft, AddMonoidHom.mulRight, AddMonoidHomClass.toAddMonoidHom, Array.push, Bool.and'_eq_and, Bool.cond_false  (+317 more)
+   d  8  AddLECancellable.le_add_tsub_swap, AddLECancellable.le_tsub_of_add_le_left, AddSubmonoid.toSubsemigroup_injective, AddUnits.add_neg_cancel_left, AddUnits.add_neg_cancel_right, AddUnits.neg_add_cancel_left  (+299 more)
+   d  9  AddCommGroupWithOne.mk, AddEquivClass.mk, AddGroupWithOne.mk, AddLECancellable.le_add_tsub, AddMonoid.mk, AddMonoidWithOne.mk  (+265 more)
+   d 10  AddLECancellable.tsub_eq_of_eq_add, AddOpposite.opEquiv, AddUnits.addLeft, AddUnits.addRight, AddUnits.val_injective, Array.size  (+208 more)
+   d 11  AddLECancellable.add_tsub_cancel_left, AddLECancellable.add_tsub_cancel_right, AddLECancellable.eq_tsub_of_add_eq, AddMonoidHom.ext, AddMonoidHom.id_apply, AddSubmonoid.ext  (+205 more)
+   d 12  AbsoluteValue.map_mul, AbsoluteValue.mk, AddGroup.covariant_iff_contravariant, AddGroup.covariant_swap_iff_contravariant_swap, AddGroupNormClass.mk, AddGroupSeminormClass.mk  (+294 more)
+   d 13  AddLECancellable.tsub_eq_iff_eq_add_of_le, AddMonoidHom.comp, BitVec.ofNatLT, CanonicallyOrderedAdd.toIsOrderedRing, Classical.by_cases, Commute.div_eq_div_iff_of_isUnit  (+209 more)
+   d 14  AddSubmonoid.map, Equiv.bijective, Equiv.coe_fn_injective, Equiv.image_symm_eq_preimage, Equiv.injective, Equiv.self_comp_symm  (+223 more)
+   d 15  AddOpposite.unop_bijective, AddSubmonoid.closure, Char.mk, DistribMulAction.compHom, Equiv.iInf_congr, Equiv.image_eq_preimage_symm  (+182 more)
+   d 16  AddOpposite.unop_injective, AddSubmonoid.subset_closure, AlgHom.mk, AlgHomClass.mk, Algebra.algebraMap_eq_smul_one, Algebra.mk  (+184 more)
+   d 17  AbsoluteValue.map_one_of_isLeftRegular, AbsoluteValue.map_zero, AbsoluteValue.ne_zero_iff, Commute.sub_left, DistribLattice.ofInfSupLe, Equiv.addLeft  (+156 more)
+   d 18  AbsoluteValue.ne_zero, AbsoluteValue.pos_iff, AbsoluteValue.sum_le, AddEquiv.map_zero, AddMonoidHom.ext_nat, AddMonoidHom.mrange  (+143 more)
+   d 19  AbsoluteValue.map_one, AbsoluteValue.pos, AddEquiv.toAddMonoidHom, AddMonoidHom.mem_mrange, AddMonoidHom.mul, Char.ofNatAux  (+91 more)
+   d 20  Algebra.compHom, Char.ofNat, Commute.inv_left₀, ContinuousInv₀.mk, Disjoint.inter_eq, Finset.mem_attach  (+81 more)
+   d 21  AbsoluteValue.map_neg, AbsoluteValue.toMonoidWithZeroHom, Algebra.restrictScalars, Commute.div_left, Disjoint.notMem_of_mem_left, Filter.countable_biInf_eq_iInf_seq  (+74 more)
+   d 22  AbsoluteValue.map_sub, AbsoluteValue.toMonoidHom, Algebra.ofId, Filter.mem_top, Fin.Internal.ofNat, Finset.mem_range  (+71 more)
+   d 23  AbsoluteValue.map_pow, AlgHom.toLinearMap, BitVec.ofNat, EquivLike.range_eq_univ, Even.neg_pow, Fin.ofNat  (+72 more)
+   d 24  AddMonoidWithOne.toCharZero, Commute.div_eq_div_iff, Finset.empty, Finset.mk_cons, Int.add_assoc, Int.emod_zero  (+63 more)
+   d 25  Commute.div_add_div, Fin.succ_pos, Finset.filter, Finset.fold_singleton, Finset.mem_union, Int.Internal.Linear.Poly.denote_addConst  (+52 more)
+   d 26  Fin.foldr_succ, Finset.insert_val, Finset.map, Finset.sum_empty, Finset.sum_singleton, Int.Internal.Linear.Poly.denote_append  (+50 more)
+   d 27  ByteArray.IsValidUTF8.intro, Filter.countable_biInf_eq_iInf_seq', Finset.eq_of_veq, Finset.map_val, Int.Internal.Linear.Poly.denote_combine_mul_k, Int.Internal.Linear.Poly.denote_norm  (+48 more)
+   d 28  AddCommGroup.toDistribLattice, Finset.sum_map, Finset.val_injective, Int.add_le_add, Int.dvd_neg, Int.eq_iff_le_and_ge  (+57 more)
+   d 29  BddBelow.neg, Finset.val_inj, Int.Internal.Linear.Expr.denote_toPoly'_go, Int.Internal.Linear.natCast_sub, Int.add_le_add_iff_right, Int.add_nonneg  (+49 more)
+   d 30  Int.Internal.Linear.Expr.denote_norm, Int.add_lt_add_left, Int.dvd_iff_dvd_of_dvd_sub, Int.emod_add_mul_ediv, Int.le_iff_lt_add_one, Int.le_max_right  (+37 more)
+   d 31  AbsoluteValue.abs, Int.Internal.Linear.Poly.isUnsatLe, Int.Internal.Linear.Poly.isValidLe, Int.Internal.Linear.Poly.leadCoeff, Int.add_lt_add_right, Int.dvd_iff_dvd_of_dvd_add  (+46 more)
+   d 32  Int.Internal.Linear.le_combine_cert, Int.Internal.Linear.le_eq_true, Int.dvd_of_emod_eq_zero, Int.ediv_mul_cancel_of_emod_eq_zero, Int.ediv_mul_le, Int.ediv_mul_self  (+44 more)
+   d 33  FloorRing.mk, Int.add_lt_add_iff_right, Int.cast_mono, Int.floor_le, Int.le_floor, Int.lt_of_le_of_lt  (+33 more)
+   d 34  FloorRing.ofFloor, Int.abs_eq_natAbs, Int.add_mul_ediv_right, Int.eq_negSucc_of_lt_zero, Int.floor_lt, Int.floor_nonneg  (+31 more)
+   d 35  Int.add_ediv_of_dvd_right, Int.add_mul_ediv_left, Int.add_mul_emod_self_right, Int.le_iff_eq_or_lt, Int.leastOfBdd, Int.lt_or_gt_of_ne  (+23 more)
+   d 36  FloorSemiring.natCast_strictMono, Int.add_ediv_of_dvd_left, Int.add_mul_emod_self_left, Int.ediv_nonneg_iff_of_pos, Int.le_iff_lt_or_eq, Int.le_toNat  (+16 more)
+   d 37  Int.cast_mul, Int.ediv_lt_of_lt_mul, Int.emod_add_emod, Int.emod_emod_of_dvd, Int.emod_lt_of_pos, Int.emod_self  (+19 more)
+   d 38  Int.add_emod_emod, Int.emod_eq_zero_of_dvd, Int.le_of_mul_le_mul_right, Int.lt_ediv_add_one_mul_self, Int.lt_ediv_mul, Int.lt_of_mul_lt_mul_left  (+17 more)
+   d 39  Int.add_emod, Int.cast_nonneg_iff, Int.dvd_iff_emod_eq_zero, Int.ediv_mul_cancel, Int.greatestOfBdd, Int.lt_of_mul_lt_mul_right  (+17 more)
+   d 40  Int.cast_le, Int.emod_pos_of_not_dvd, Int.exists_greatest_of_bdd, Int.le_ediv_of_mul_le, Int.mul_lt_mul_right, Int.mul_nonneg_iff_of_pos_right  (+15 more)
+   d 41  Int.cast_strictMono, Int.lt_mul_of_ediv_lt, Lean.Data.AC.Context.evalList_sort_loop_swap, Lean.Grind.CommRing.Mon.grevlex, Lean.Grind.CommRing.Mon.revlexFuel.induct_unfolding, Lean.Grind.CommRing.Mon.revlex_k_eq_revlex  (+4 more)
+   d 42  Int.cast_lt, Int.ediv_lt_iff_lt_mul, Lean.Data.AC.Context.evalList_sort_cons, Lean.Grind.CommRing.Mon.eq_of_revlexFuel, Lean.Omega.Coeffs.gcd_dvd_dot_left, Lean.Omega.IntList.get_cons_zero  (+8 more)
+   d 43  DivisionRing.mk, DivisionSemiring.mk, Field.mk, Int.cast_pos, Lean.Data.AC.Context.evalList_sort, Lean.Grind.CommRing.Mon.eq_of_revlex  (+8 more)
+   d 44  Lean.Data.AC.Context.eval_norm, Lean.Grind.CommRing.Mon.eq_of_grevlex, Lean.Grind.CommRing.Poly.combine, Lean.Omega.LinearCombo.coordinate_eval, Lean.Omega.normalize_sat, List.getElem?_eq_some_iff
+   d 45  CauSeq.IsComplete, FloorRing.ofBounded, Function.Injective.divisionSemiring, IsAbsoluteValue.abv_inv, IsCauSeq, IsCauSeq.const  (+23 more)
+   d 46  Archimedean.floorRing, CauSeq, CauSeq.const, Int.Internal.Linear.Poly.denote'_go_eq_denote, IsCauSeq.bounded, IsCauSeq.congr_simp  (+15 more)
+   d 47  CauSeq.LimZero, CauSeq.Pos, CauSeq.bounded, CauSeq.cauchy, CauSeq.complete, CauSeq.const.congr_simp  (+33 more)
+   d 48  CauSeq.bounded', CauSeq.zero_limZero, ClusterPt, Filter.mem_inf_iff, Filter.mem_inf_of_inter, Int.Internal.Linear.Expr.eq_of_norm_eq  (+32 more)
+   d 49  CauSeq.const_limZero, CauSeq.const_pos, CauSeq.not_limZero_of_pos, CauSeq.ofEq, ContinuousWithinAt, Int.Internal.Linear.eq_norm_expr  (+26 more)
+   d 50  ContinuousOn, Filter.HasBasis.inf', Lean.Grind.CommRing.Expr.toPoly_k, Lean.Grind.Linarith.Poly.combine.induct_unfolding, Lean.Grind.OrderedRing.le_of_intCast_le_intCast, Lean.Grind.Ring.neg_eq_mul_neg_one  (+13 more)
+   d 51  Filter.HasBasis.inf, Filter.NeBot.mono, Filter.empty_mem_iff_bot, Filter.eq_sInf_of_mem_iff_exists_mem, Filter.generate_eq_biInf, Filter.inf_principal  (+41 more)
+   d 52  Filter.OrderBot.atBot_eq, Filter.countable_biInf_principal_eq_seq_iInf, Filter.eq_iInf_of_mem_iff_exists_mem, Filter.filter_eq_bot_of_isEmpty, Filter.isCountablyGenerated_seq, Filter.le_lift'  (+32 more)
+   d 53  Filter.NeBot.nonempty_of_mem, Filter.eq_biInf_of_mem_iff_exists_mem, Filter.eventually_ge_atTop, Filter.eventually_le_atBot, Filter.forall_mem_nonempty_iff_neBot, Filter.iInf_sets_eq  (+19 more)
+   d 54  CauSeq.cauchy₃, Filter.HasBasis.eq_biInf, Filter.HasBasis.neBot_iff, Filter.mem_iInf_of_directed, Filter.tendsto_atTop_mono', Finset.attach  (+35 more)
+   d 55  CauSeq.abv_pos_of_not_limZero, Filter.HasBasis.eq_iInf, Filter.HasBasis.inf_basis_neBot_iff, Filter.mem_biInf_of_directed, Filter.tendsto_pow_atTop, Finset.Ico_union_Ico_eq_Ico  (+26 more)
+   d 56  CauSeq.coe_neg, CauSeq.inv_aux, CauSeq.rat_sup_continuous_lemma, CauSeq.trichotomy, Filter.HasBasis.clusterPt_iff, Filter.hasBasis_biInf_principal  (+24 more)
+   d 57  CauSeq.add_limZero, CauSeq.add_pos, CauSeq.coe_add, CauSeq.coe_mul, CauSeq.inv, CauSeq.mul_limZero_left  (+50 more)
+   d 58  CauSeq.coe_smul, CauSeq.coe_sub, CauSeq.const_equiv, CauSeq.const_lt, CauSeq.inv_mul_cancel, CauSeq.mul_inv_cancel  (+31 more)
+   d 59  CauSeq.coe_pow, CauSeq.exists_gt, CauSeq.sup_comm, CauSeq.sup_idem, CauSeq.sup_lt, CompletelyNormalSpace.mk  (+72 more)
+   d 60  CauSeq.inf_comm, CauSeq.inf_idem, CauSeq.lt_inf, CauSeq.sup_inf_distrib_left, Cauchy, Filter.Eventually.exists  (+58 more)
+   d 61  CauSeq.lt_irrefl, CauSeq.lt_trans, CauSeq.neg_limZero, CauchySeq, CompleteSpace.mk, Filter.HasBasis.exists_antitone_subbasis  (+54 more)
+   d 62  AddSubmonoid.closure_le, Filter.HasBasis.comap, Filter.HasBasis.lift'_closure_eq_self, Filter.Tendsto.le_comap, Filter.atTop_basis, Filter.comap_iInf  (+42 more)
+   d 63  AddSubmonoid.closure_eq_of_le, AddSubmonoid.closure_mono, Filter.Eventually.self_of_nhdsWithin, Filter.Frequently.mem_closure, Filter.HasBasis.prod, Filter.HasBasis.prod_pprod  (+53 more)
+   d 64  AddSubmonoid.closure_singleton_eq, CauSeq.exists_lt, ContinuousOn.mono, Filter.HasBasis.prod_same_index, Filter.Tendsto.inf, Filter.Tendsto.of_smallSets  (+43 more)
+   d 65  AddSubmonoid.mem_closure_singleton, Bornology.mk, CauSeq.Completion.Cauchy, CauSeq.Completion.mk, CauSeq.Completion.mk_eq, CauSeq.IsComplete.mk  (+56 more)
+   d 66  CauSeq.Completion.inv_mk, CauSeq.Completion.inv_zero, CauSeq.Completion.ofRat, CauSeq.Completion.ofRat_inv, CauSeq.Completion.ofRat_mul, CauSeq.const_le  (+51 more)
+   d 67  Bornology.isBounded_image_fst_and_snd, CauSeq.Completion.mk_add, CauSeq.Completion.mk_mul, CauSeq.Completion.mk_neg, CauSeq.Completion.ofRat_injective, CauSeq.Completion.ofRat_intCast  (+44 more)
+   d 68  CauSeq.Completion.mk_eq_zero, CauSeq.Completion.mk_pow, CauSeq.Completion.mk_smul, CauSeq.Completion.mk_sub, CauSeq.lim_const, CauSeq.lim_eq_lim_of_equiv  (+39 more)
+   d 69  CauSeq.le_of_eq_of_le, CauSeq.le_of_le_of_eq, Commute.geom_sum₂_mul, Continuous.continuousOn, Filter.HasBasis.prod_nhds, Filter.Tendsto.prodMk_nhds  (+33 more)
+   d 70  CauSeq.lim_le, Filter.HasBasis.cauchySeq_iff, Filter.Tendsto.add, Filter.Tendsto.mul, Filter.Tendsto.sub, Filter.comap_cofinite_le  (+36 more)
+   d 71  Bornology.ofBounded, CauSeq.le_antisymm, CauSeq.le_inf, CauSeq.sup_le, Commute.add_pow, Continuous.prodMk  (+30 more)
+   d 72  Bornology.induced, Continuous.comp₂, Continuous.prodMk_right, Continuous.smul, Continuous.vadd, Filter.disjoint_principal_left  (+25 more)
+   d 73  CauSeq.Completion.inv_mul_cancel, CauSeq.Completion.mul_inv_cancel, Complex.sum_div_factorial_le, Continuous.add, Continuous.fun_smul, Continuous.fun_vadd  (+18 more)
+   d 74  ContinuousInv₀.of_nhds_one, Filter.HasBasis.disjoint_iff_left, Finset.mem_image, IsCauSeq.series_ratio_test, Rat.cast_sub_of_ne_zero, Rat.mul_lt_mul_of_pos_left  (+18 more)
+   d 75  CauSeq.Completion.ofRat_div, Filter.HasBasis.disjoint_iff_right, Ioo_mem_nhds, Rat.cast_pos_of_pos, Rat.cast_sub, Rat.le_of_mul_le_mul_left  (+17 more)
+   d 76  Continuous.pow, IsPreconnected.image, Rat.lt_of_mul_lt_mul_left, Topology.IsInducing.continuousAdd, Topology.IsInducing.continuousMul, UniformSpace.complete_of_cauchySeq_tendsto  (+7 more)
+   d 77  IsLUB.frequently_mem, Rat.castHom, Rat.inv_pos, RegularSpace.of_lift'_closure, Topology.IsInducing.isPreconnected_image, UniformSpace.completelyNormalSpace_of_hasAntitoneBasis  (+8 more)
+   d 78  IsLUB.frequently_nhds_mem, IsTopologicalRing.of_addGroup_of_nhds_zero, Rat.cast_strictMono, RegularSpace.of_hasBasis, Subtype.preconnectedSpace, UniformSpace.hasBasis_nhds  (+2 more)
+   d 79  IsLUB.mem_closure, IsPreconnected.intermediate_value₂, IsTopologicalRing.of_norm, Rat.castOrderEmbedding, Rat.cast_div, Rat.cast_inv  (+6 more)
+   d 80  IsPreconnected.intermediate_value, Rat.cast_le, Rat.cast_natCast, Rat.div_nonneg, Rat.zpow_nonneg, Set.Finite.isOpen_biInter  (+4 more)
+   d 81  CofiniteTopology.isOpen_iff, IsClosed.Icc_subset_of_forall_mem_nhdsGT_of_Icc_subset, Rat.cast_le_natCast, Real.ofCauchy, Set.Finite.isClosed_biUnion, uniformity_hasBasis_closed
+   d 82  Filter.coprod_cofinite, IsClosed.Icc_subset_of_forall_mem_nhdsWithin, NNRat.add_def, NNRat.coe_eq_zero, NNRat.coe_natCast, NNRat.mul_def  (+6 more)
+   d 83  CofiniteTopology.isOpen_iff', NNRat.coe_div, Real.mk_const, archimedean_iff_rat_lt, isPreconnected_Icc_aux
+   d 84  NNRat.num_div_den, Real.ind_mk, archimedean_iff_rat_le, isPreconnected_Icc
+   d 85  CofiniteTopology.isClosed_iff, intermediate_value_Icc', isPreconnected_uIcc
+   d 86  AddGroupNorm.mk, Complex.I, Complex.ofReal, MetricSpace.mk, NormOneClass.mk, Real.cauchy_one  (+6 more)
+   d 87  Complex.ofReal_inj, Complex.ofReal_injective, Complex.ofReal_natCast, Complex.ofReal_one, Complex.ofReal_zero, NNRat.cast_add_of_ne_zero  (+6 more)
+   d 88  Complex.ofReal_eq_zero, Continuous.surjective, NNRat.cast_add, NNRat.cast_mul, NNRat.cast_one, NNRat.cast_zero  (+2 more)
+   d 89  NNRat.castHom, Real.ext_cauchy_iff
+   d 90  Metric.ball, NormMulClass.mk, NormSMulClass.mk, NormedDivisionRing.mk, NormedField.mk, Real.cauchy_add  (+11 more)
+   d 91  Complex.add_re, Complex.mulAux, Metric.mem_ball, Real.mk_inf, Real.mk_lt, Real.mk_sup
+   d 92  Complex.SMul.instSMulRealComplex, Metric.mem_ball_self, Real.mk_add, Real.mk_mul, Real.mk_neg, Real.mk_pos  (+2 more)
+   d 93  Complex.mul_im, Complex.mul_re, Complex.real_smul, Real.zero_lt_one
+   d 95  AddGroupSeminorm.mk, Complex.I_mul_I, Complex.ofReal_add, Complex.ofReal_mul, Complex.ofReal_sub, Complex.re_add_im  (+20 more)
+   d 96  ENNReal, ENNReal.coe_injective, ENNReal.coe_ne_top, ENNReal.ofNNReal, ENNReal.top_ne_coe, Metric.mem_closedBall  (+6 more)
+   d 97  EDist.mk, ENNReal.coe_inj, IsBoundedSMul.of_norm_smul_le, Real.mk_le
+   d 98  ENNReal.recTopCoe, Real.ofCauchy_div, normHom
+   d102  Metric.ball_subset_closedBall
+   d103  ENNReal.coe_le_coe, ENNReal.coe_le_iff, ENNReal.coe_lt_coe, norm_add_le_of_le
+   d104  Complex.I_sq, Complex.ofRealHom, Complex.ofReal_pow, ENNReal.coe_eq_zero, ENNReal.coe_ne_zero, ENNReal.coe_one  (+5 more)
+   d105  Complex.conj_I, Complex.conj_ofReal, Complex.normSq, EMetricSpace.mk, ENNReal.coe_toNNReal, NNReal.coe_eq_zero
+   d106  Complex.conj_eq_iff_real, Complex.conj_neg_I, Complex.mul_conj, Complex.normSq_I, Complex.normSq_add, Complex.normSq_apply  (+16 more)
+   d107  Bornology.ofDist, Complex.conj_eq_iff_re, Complex.inv_def, Complex.normSq_eq_zero, Complex.normSq_natCast, ENNReal.coe_add  (+12 more)
+   d108  Complex.inv_im, Complex.inv_re, Complex.mul_inv_cancel, ENNReal.add_lt_add_left, ENNReal.lt_iff_exists_nnreal_btwn, ENNReal.ofNat_ne_top  (+14 more)
+   d109  Complex.div_im, Complex.div_re, Complex.ofRealAm, Complex.ofReal_inv, ENNReal.mul_top, ENNReal.ofReal_le_ofReal  (+7 more)
+   d110  Complex.inv_zero, Complex.reLm, ENNReal.add_lt_add, ENNReal.coe_lt_natCast, ENNReal.coe_nnreal_eq, ENNReal.ofReal_add  (+6 more)
+   d111  ENNReal.exists_nat_gt, ENNReal.mul_pos_iff, ENNReal.ofReal_coe_nnreal, Metric.eball_subset, UniformSpace.ofDist, dist_nonneg
+   d112  Complex.normSq_div, Complex.ofReal_div, ENNReal.mul_left_strictMono, ENNReal.mul_pos, Metric.toUniformSpace_eq, NNReal.inv_le  (+4 more)
+   d113  AddGroupSeminorm.toSeminormedAddGroup, Metric.uniformity_basis_dist, Real.isLUB_sSup, Real.toNNReal_inv, abs_norm, dist_le_zero  (+1 more)
+   d114  ENNReal.ofReal_eq_zero, Metric.cauchySeq_iff', Metric.mem_uniformity_dist, Metric.mk_uniformity_basis_le, Metric.nhds_basis_ball, Metric.uniformContinuous_iff  (+7 more)
+   d115  AddGroupNorm.toNormedAddGroup, Metric.mem_nhds_iff, Metric.uniformity_basis_dist_le, NormedAddGroup.nhds_basis_norm_lt, Real.isGLB_sInf, dist_dist_dist_le  (+2 more)
+   d116  AddGroupNorm.toNormedAddCommGroup, Metric.uniformContinuousOn_iff_le, Metric.uniformity_eq_comap_nhds_zero, NormedAddGroup.nhds_zero_basis_norm_lt, squeeze_zero'
+   d117  Metric.isOpen_iff, Real.cauSeq_converges, nhds_comap_dist, norm_inv, squeeze_zero
+   d118  Metric.isOpen_ball, NormedDivisionRing.toNormSMulClass, tendsto_iff_dist_tendsto_zero, uniformContinuousOn_inv₀
+   d119  Metric.ball_mem_nhds, tendsto_iff_norm_sub_tendsto_zero
+   d120  Metric.closedBall_mem_nhds, norm_algebraMap
+   d121  ENNReal.coe_inv_le, ENNReal.inv_zero, NNReal.powOrderIso, norm_algebraMap'
+   d122  ENNReal.coe_inv, ENNReal.inv_top, ENNReal.mul_le_mul_iff_left, ENNReal.ofReal_max, ENNReal.zero_div, Metric.exists_eball_subset_eball  (+1 more)
+   d123  NNReal.sq_sqrt, NNReal.sqrt_eq_iff_eq_sq, NNReal.sqrt_le_sqrt, Real.sqrt
+   d124  ENNReal.div_top, ENNReal.div_zero, ENNReal.mul_inv_cancel, NNReal.mul_self_sqrt, NNReal.sqrt_mul, NormedSpace.restrictScalars  (+1 more)
+   d125  Complex.norm_def, Complex.norm_nonneg, ENNReal.div_self, ENNReal.inv_eq_top, ENNReal.inv_eq_zero, ENNReal.inv_mul_cancel  (+6 more)
+   d126  Complex.norm_conj, Complex.norm_mul, Complex.norm_mul_self_eq_normSq, Complex.norm_neg', ENNReal.inv_mul_cancel_right', ENNReal.inv_two_add_inv_two  (+1 more)
+   d127  Complex.abs_re_le_norm, Complex.isCauSeq_conj, ENNReal.add_halves, ENNReal.div_eq_zero_iff, ENNReal.div_mul_cancel', ENNReal.inv_ne_top  (+5 more)
+   d128  Complex.cauSeqConj, Complex.isCauSeq_re, Complex.norm_real, Complex.re_le_norm, ENNReal.div_mul_cancel, ENNReal.div_pos  (+5 more)
+   d129  Complex.cauSeqRe, Complex.norm_I, Complex.norm_add_le', Complex.norm_of_nonneg, ENNReal.div_pos_iff, ENNReal.half_pos  (+5 more)
+   d130  Complex.abs_im_le_norm, Complex.norm_eq_zero_iff, Complex.norm_natCast, ENNReal.div_le_iff_le_mul, Real.sqrt_inv
+   d131  Complex.isCauSeq_im, Complex.norm_map_zero', Complex.norm_ofNat, ENNReal.div_le_of_le_mul, ENNReal.inv_strictAnti, Real.sqrt_div  (+1 more)
+   d132  Complex.cauSeqIm, Complex.norm_div, ENNReal.inv_lt_inv, ENNReal.mul_lt_of_lt_div, WeakPseudoEMetricSpace.mk, uniformSpace_edist
+   d133  Complex.isCauSeq_norm, Complex.isCauSeq_norm_exp, Complex.limAux, Complex.norm_le_abs_re_add_abs_im, ENNReal.mul_lt_of_lt_div', uniformity_basis_edist
+   d134  Complex.equiv_limAux, Complex.isCauSeq_exp, Complex.norm_pow, EMetric.mk_uniformity_basis, EMetric.uniformContinuous_iff, ENNReal.exists_inv_nat_lt  (+1 more)
+   d135  Complex.cauSeqNorm, Complex.exp', EMetric.mem_closure_iff, EMetric.mem_nhds_iff, uniformity_basis_edist_inv_nat
+   d136  Complex.lim_eq_lim_im_add_lim_re
+   d137  Complex.lim_im, Complex.lim_norm, Complex.lim_re, EMetric.complete_of_cauchySeq_tendsto, EMetric.isOpen_iff
+   d138  Complex.lim_conj, Metric.complete_of_cauchySeq_tendsto, Metric.isOpen_eball
+   d139  Complex.exp
+   d140  Complex.cos, Complex.cosh, Complex.exp_def, Complex.sin, Complex.sinh, Complex.two_cos  (+3 more)
+   d141  Complex.cosh_add_sinh, Complex.cosh_mul_I, Complex.cosh_sub_sinh, Complex.exp_add, Complex.exp_bound, Complex.exp_conj  (+9 more)
+   d142  Complex.cos_bound, Complex.cosh_add, Complex.cosh_conj, Complex.cosh_sq_sub_sinh_sq, Complex.exp_ne_zero, Complex.norm_exp_sub_one_sub_id_le  (+13 more)
+   d143  Complex.cos_add, Complex.exp_bound_sq, Complex.sin_sq_add_cos_sq, EMetricSpace.ofT0PseudoEMetricSpace, LipschitzWith.of_dist_le_mul, LipschitzWith.uniformContinuous  (+2 more)
+   d144  Complex.cos_two_mul', Complex.exp_neg, Complex.locally_lipschitz_exp, LipschitzWith.continuous, LipschitzWith.of_dist_le', isometry_iff_dist_eq  (+1 more)
+   d145  AddMonoidHomClass.isometry_iff_norm, AddMonoidHomClass.lipschitz_of_bound, Complex.cos_two_mul, Complex.cosh_neg, Isometry.continuous, Isometry.dist_eq  (+3 more)
+   d146  AddMonoidHomClass.continuous_of_bound, AddMonoidHomClass.isometry_of_norm, Complex.cos_conj, Isometry.norm_map_of_map_zero, dist_vadd, uniformContinuous_dist
+   d147  Complex.ofReal_cos_ofReal_re, SemilinearIsometryClass.isometry, continuous_dist, dist_add_left, dist_add_right, norm_map
+   d148  Complex.ofReal_cos, Continuous.dist, Filter.Tendsto.dist, LinearMap.mkContinuous
+   d149  LinearIsometry.norm_map, Metric.isClosed_closedBall, Real.cos_two_mul, continuousAt_of_locally_lipschitz, dist_add_add_le, lipschitzWith_neg_iff  (+1 more)
+   d150  Complex.continuous_exp, Filter.Tendsto.norm, LinearIsometry.isometry, LipschitzWith.neg, Real.cos_bound, nndist_add_add_le
+   d151  Complex.reCLM, Filter.Tendsto.cexp, LinearIsometry.continuous, RCLike.mk, Real.cos_one_le, Real.cos_pos_of_le_one  (+2 more)
+   d152  ContinuousAt.cexp, LipschitzOnWith.add, Real.cos_one_pos, continuous_negPart
+   d153  Continuous.cexp, LipschitzWith.add, Real.cos_two_neg, isClosed_nonneg
+   d154  LipschitzWith.sub
+   d157  Complex.continuous_re, Complex.ofRealLI
+   d158  Complex.continuous_ofReal
+   d160  Complex.continuous_cos
+   d161  Real.continuous_cos
+   d162  Real.continuousOn_cos
+   d163  Real.exists_cos_eq_zero
+   d164  Real.pi
+
+-- proof moves (new facts the proof pulls in, deepest first)
+   d169  Complex.exp_antiperiodic
+   d168  Complex.cos_pi
+   d168  Complex.sin_pi
+   d167  Real.cos_pi
+   d167  Real.sin_pi
+   d166  Real.cos_pi_div_two
+   d149  Real.sin_add
+   d148  Complex.ofReal_sin
+   d147  Complex.ofReal_sin_ofReal_re
+   d146  Complex.sin_conj
+   d145  Complex.sinh_neg
+   d143  Complex.exp_mul_I
+   [+6 machinery/glue moves in top 33]
+   [machinery hidden from statement path; full cones: A_S 15,714, A_P 15,747]
+
+== legendreSym.quadratic_reciprocity
+   statement cone 14,587 | proof cone 35,568 | new 20,981 (59% of proof)
+
+-- statement path (understand these, shallow to deep)
+   d  0  Acc, Add, AddCancelCommMonoid, AddCancelMonoid, AddCommGroup, AddCommGroupWithOne  (+268 more)
+   d  1  Acc.intro, Add.mk, AddAction, AddCon, AddEquiv, AddHom  (+328 more)
+   d  2  AddCancelCommMonoid.mk, AddCancelMonoid.mk, AddEquivClass, AddLeftCancelMonoid.mk, AddLeftCancelSemigroup.mk, AddMemClass  (+292 more)
+   d  3  AddCon.Quotient, AddCon.add, AddCon.refl, AddCon.symm, AddEquiv.apply_symm_apply, AddEquiv.symm_apply_apply  (+252 more)
+   d  4  Acc.inv, AddAction.mem_orbit, AddAction.orbit, AddCommGroup.mk, AddCommMagma.mk, AddCommMonoid.mk  (+397 more)
+   d  5  AddEquiv.toAddHom, AddHomClass.toAddHom, AddMemClass.mk, AddMonoidHom.id, AddOpposite.unop_add, AddSubmonoid.mem_bot  (+343 more)
+   d  6  AddAction.mem_orbit_self, AddAction.mk, AddCon.induction_on₂, AddSubgroupClass.mk, AddUnits.mk, And.comm  (+381 more)
+   d  7  AddAction.stabilizerAddSubmonoid, AddMonoidHom.mulLeft, AddMonoidHom.mulRight, AddMonoidHomClass.toAddMonoidHom, Array.push, Bool.and'_eq_and  (+270 more)
+   d  8  AddCon.ker, AddLECancellable.le_add_tsub_swap, AddSubmonoid.toSubsemigroup_injective, AddUnits.val_neg_eq_neg_val, Bool.and_eq_true, Bool.coe_iff_coe  (+261 more)
+   d  9  AddCommGroupWithOne.mk, AddCon.ext', AddCon.ker_rel, AddCon.liftOn, AddCon.rel_mk, AddEquivClass.mk  (+255 more)
+   d 10  AddCon.ext, AddCon.le_def, AddLECancellable.tsub_eq_of_eq_add, AddOpposite.opEquiv, AddUnits.val_injective, Additive.ofMul  (+200 more)
+   d 11  AddAction.isPeriodicPt_vadd_iff, AddCon.nsmul, AddHom.inverse, AddLECancellable.add_tsub_cancel_left, AddLECancellable.add_tsub_cancel_right, AddMonoidHom.ext  (+197 more)
+   d 12  AddAction.orbit_vadd_subset, AddEquiv.ofBijective, AddLECancellable.add_tsub_assoc_of_le, AddMonoidAlgebra.ofCoeff, AddMonoidHom.eq_of_eqOn_topM, AddMonoidHom.map_neg  (+258 more)
+   d 13  AddAction.stabilizer, AddCon.eq, AddLECancellable.tsub_add_eq_add_tsub, AddMonoidHom.comp, AddMonoidHom.eqLocusM, BitVec.ofNatLT  (+199 more)
+   d 14  AddCon.lift, AddEquiv.symm_map_add, AddMonoidAlgebra.coeffEquiv, AddMonoidHom.map_multiset_sum, AddMonoidHom.mk', AddOpposite.opEquiv_apply  (+216 more)
+   d 15  AddCon.map_of_add_left_rel_zero, AddEquiv.symm, AddMonoidAlgebra.coeff_injective, AddOpposite.op_bijective, AddOpposite.unop_bijective, AddSubmonoid.closure  (+178 more)
+   d 16  AddCon.neg, AddMonoidAlgebra.coeff_inj, AddMonoidHom.mker, AddOpposite.op_injective, AddOpposite.op_surjective, AddOpposite.unop_injective  (+164 more)
+   d 17  AddAction.mem_stabilizer_iff, AddCon.sub, AddCon.zsmul, AddEquiv.injective, AddEquiv.opOp, AddMonoidAlgebra.ext  (+166 more)
+   d 18  AddCon.addSubgroup, AddEquiv.coe_addMonoidHom_comp_coe_addMonoidHom_symm, AddEquiv.coe_addMonoidHom_symm_comp_coe_addMonoidHom, AddEquiv.map_zero, AddMonoidAlgebra.ext_iff, AddMonoidHom.ext_nat  (+152 more)
+   d 19  AddAction.period, AddCon.mem_addSubgroup_iff, AddEquiv.toAddMonoidHom, AddEquiv.trans, AddMonoidHom.eq_iff, Cardinal.inductionOn  (+102 more)
+   d 20  AddAction.period_eq_minimalPeriod, Cardinal.lift_mk_eq', Cardinal.map, Cardinal.map₂, Cardinal.mk_eq_zero, Char.ofNat  (+67 more)
+   d 21  AddEquiv.toMultiplicative, AddSubgroup.comap, Cardinal.le_def, Cardinal.lift, Cardinal.lift_zero, CharP.charP_to_charZero  (+77 more)
+   d 22  AddSubgroup.mem_comap, Cardinal.aleph0, Cardinal.le_mk_iff_exists_set, Cardinal.lift_add, Cardinal.lift_id', Cardinal.lift_lift  (+79 more)
+   d 23  BitVec.ofNat, Cardinal.lift_aleph0, Cardinal.lift_id, Cardinal.lift_mk_le, Cardinal.lift_uzero, Cardinal.mk_eq_zero_iff  (+79 more)
+   d 24  Cardinal.mk_eq_nat_iff, Cardinal.mk_ne_zero_iff, ENat.toNat_eq_iff, Fin.NatCast.instNatCast, Fin.add, Fin.intCast  (+83 more)
+   d 25  Cardinal.mk_ne_zero, Fin.cast_val_eq_self, Fin.mul_zero, Fin.subsingleton_iff_le_one, Fin.succ_pos, Fin.val_natCast  (+72 more)
+   d 26  AddSubgroup.op, Fin.add_zero, Fin.foldr_succ, Fin.mul_def, Fin.val_add, Fin.val_mul  (+60 more)
+   d 27  AddSubgroup.equivOp, ByteArray.IsValidUTF8.intro, Cardinal.le_one_iff_subsingleton, Fin.mul_comm, Fin.mul_one, Finset.eq_of_veq  (+48 more)
+   d 28  ENat.mul_top, Fin.one_mul, Finset.map_map, Finset.sum_map, Finset.val_injective, Int.add_le_add  (+51 more)
+   d 29  Cardinal.mk_eq_one, Cardinal.power_one, ENat.toNatHom, ENat.top_ne_zero, Finset.val_inj, Fintype.card_fin  (+47 more)
+   d 30  Cardinal.lift_one, Cardinal.mk_option, Cardinal.power_zero, CharP.exists, FiniteMultiplicity.not_pow_dvd_of_multiplicity_lt, Finset.val_eq_zero  (+37 more)
+   d 31  CharP.existsUnique, Fin.natCast_eq_zero, Finset.card_eq_one, Finset.card_eq_zero, Finset.nonempty_of_ne_empty, Function.isPeriodicPt_iff_minimalPeriod_dvd  (+52 more)
+   d 32  AddAction.nsmul_vadd_eq_iff_period_dvd, AddSubgroup.zmultiples, FiniteMultiplicity.pow_dvd_iff_le_multiplicity, Finset.mem_sdiff, Int.Internal.Linear.ediv_emod, Int.Internal.Linear.le_combine_cert  (+40 more)
+   d 33  Int.add_lt_add_iff_right, Int.lt_of_le_of_lt, Int.lt_of_lt_of_le, Int.lt_trichotomy, Int.mul_lt_mul_of_pos_left, Int.mul_lt_mul_of_pos_right  (+24 more)
+   d 34  Fin.instAddMonoidWithOne, Int.add_mul_ediv_right, Int.mul_le_mul_of_nonneg_left, Int.mul_neg_of_pos_of_neg, Int.ne_iff_lt_or_gt, Int.negSucc_not_nonneg  (+13 more)
+   d 35  Finset.disjSum, Function.minimalPeriod_iterate_eq_div_gcd', Int.add_ediv_of_dvd_right, Int.add_mul_emod_self_right, Int.lt_or_gt_of_ne, Int.mem_zmultiples_iff  (+11 more)
+   d 36  CharP.ringChar_ne_one, Int.add_ediv_of_dvd_left, Int.add_mul_emod_self_left, Int.ediv_nonneg_iff_of_pos, Int.mul_ediv_cancel_left, Int.mul_emod_left  (+8 more)
+   d 37  Int.cast_mul, Int.emod_add_emod, Int.emod_emod_of_dvd, Int.emod_lt_of_pos, Int.emod_self, Int.mul_ediv_assoc  (+13 more)
+   d 38  Int.add_emod_emod, Int.add_emod_eq_add_emod_right, Int.emod_eq_zero_of_dvd, Int.lt_mul_ediv_self_add, Int.mul_ediv_assoc', Int.sub_ediv_of_dvd  (+4 more)
+   d 39  Int.add_emod, Int.dvd_iff_emod_eq_zero, Int.emod_add_cancel_right, Int.ofNatHom, Lean.Data.AC.Context.evalList_append, Lean.Data.AC.Context.evalList_insert  (+10 more)
+   d 40  AddMonoidHom.ext_int, Int.emod_sub_cancel_right, Int.modEq_zero_iff_dvd, Lean.Data.AC.Context.evalList_removeNeutrals, Lean.Data.AC.Context.evalList_sort_congr, Lean.Data.AC.Context.eval_toList  (+7 more)
+   d 41  Int.emod_eq_emod_iff_emod_sub_eq_zero, Lean.Data.AC.Context.evalList_sort_loop_swap, Lean.Grind.CommRing.Mon.grevlex, Lean.Grind.CommRing.Mon.revlexFuel.induct_unfolding, Lean.Grind.CommRing.Mon.revlex_k_eq_revlex, Lean.Omega.IntList.gcd_dvd_dot_left
+   d 42  Lean.Data.AC.Context.evalList_sort_cons, Lean.Grind.CommRing.Mon.eq_of_revlexFuel, Lean.Omega.Coeffs.gcd_dvd_dot_left, Lean.Omega.IntList.get_cons_zero, List.getElem?_cons, NNRat.den  (+3 more)
+   d 43  DivisionRing.mk, DivisionSemiring.mk, Field.mk, Int.modEq_iff_dvd, Lean.Data.AC.Context.evalList_sort, Lean.Grind.CommRing.Mon.eq_of_revlex  (+8 more)
+   d 44  Lean.Data.AC.Context.eval_norm, Lean.Grind.CommRing.Mon.eq_of_grevlex, Lean.Grind.CommRing.Poly.combine, Lean.Omega.LinearCombo.coordinate_eval, Lean.Omega.normalize_sat, List.getElem?_eq_some_iff  (+3 more)
+   d 45  Lean.Data.AC.Context.eq_of_norm, Lean.Grind.CommRing.Poly.combine.go.induct_unfolding, Lean.Omega.LinearCombo.coordinate_eval_0, Lean.Omega.LinearCombo.coordinate_eval_1, Lean.Omega.LinearCombo.coordinate_eval_2, Lean.Omega.LinearCombo.coordinate_eval_3  (+9 more)
+   d 46  Int.Internal.Linear.Poly.denote'_go_eq_denote, Lean.Grind.CommRing.Poly.mul.go, List.TFAE.out, Nat.ModEq.mul_right, pow_eq_pow_iff_modEq, sdiff_inf_sdiff
+   d 47  Int.Internal.Linear.Poly.denote'_eq_denote, Int.Nonneg.toPoly, Int.ble'_eq_true, Int.blt'_eq_true, Int.natCast_eq_zero, Int.natCast_ne_zero_iff_pos  (+25 more)
+   d 48  Int.Internal.Linear.Expr.eq_of_norm_eq, Int.Internal.Linear.diseq_coeff, Int.Internal.Linear.diseq_norm_poly, Int.Internal.Linear.diseq_unsat, Int.Internal.Linear.eq_def', Int.Internal.Linear.eq_def'_norm  (+29 more)
+   d 49  FiniteMultiplicity.mul_iff, Int.Internal.Linear.eq_norm_expr, Int.Internal.Linear.le_norm_expr, Int.natCast_dvd_natCast, IsOfFinOrder.powers_eq_zpowers, Lean.Grind.CommRing.Poly.combine_k_eq_combine  (+14 more)
+   d 50  AddAction.zsmul_vadd_eq_iff_period_dvd, CharP.intCast_eq_zero_iff, Lean.Grind.CommRing.Expr.toPoly_k, Lean.Grind.OrderedRing.le_of_intCast_le_intCast, Lean.Grind.Ring.neg_eq_mul_neg_one, Lean.Grind.Ring.neg_eq_neg_one_mul  (+9 more)
+   d 51  AddAction.zsmul_vadd_eq_iff_minimalPeriod_dvd, CharP.intCast_eq_intCast, Lean.Grind.CommRing.Expr.toPoly, Lean.Grind.CommRing.Poly.pow.induct_unfolding, Lean.Grind.CommRing.norm_cnstr_cert, Lean.Grind.CommRing.norm_int_cert  (+14 more)
+   d 52  Lean.Grind.CommRing.Expr.toPoly_k_eq_toPoly, Lean.Grind.Order.le_eq_false_of_le_k, Lean.Grind.Ring.intCast_mul, Lean.Grind.Ring.zsmul_eq_intCast_mul, List.Nat.nodup_antidiagonal, List.Perm.bagInter_right  (+13 more)
+   d 53  Finset.range, Lean.Grind.CommRing.Expr.toPoly.induct_unfolding, Lean.Grind.Ring.intCast_pow, List.Perm.bagInter, Multiset.Nat.nodup_antidiagonal, Multiset.eq_union_left  (+7 more)
+   d 54  Fin.instCommRing, Finset.HasAntidiagonal.mk, Finset.Nonempty, Finset.attach, Finset.card_cons, Finset.coe_Icc  (+44 more)
+   d 55  Finset.Subset.antisymm, Finset.attach_val, Finset.card_le_card, Finset.card_lt_card, Finset.coe_injective, Finset.coe_univ  (+45 more)
+   d 56  Finset.Ico_succ_right_eq_Icc, Finset.card_filter_le, Finset.card_le_univ, Finset.card_lt_univ_of_notMem, Finset.coe_insert, Finset.coe_map  (+39 more)
+   d 57  Disjoint.of_image, Finset.Ico_add_one_right_eq_Icc, Finset.coe_cons, Finset.cons_eq_insert, Finset.cons_induction_on, Finset.disjoint_iff_inter_eq_empty  (+60 more)
+   d 58  Equiv.Set.union, Equiv.Set.union_apply_left, Equiv.Set.union_apply_right, Finset.Iio_eq_Ico, Finset.Nonempty.ne_empty, Finset.coe_eq_empty  (+49 more)
+   d 59  AddAction.orbit_vadd, AddMonoidAlgebra.coeff_eq_zero, ChainClosure.succ, Finset.Ico_eq_empty_iff, Finset.Ico_insert_right, Finset.Ioo_insert_left  (+66 more)
+   d 60  AddAction.orbit_eq_iff, AddMonoidAlgebra.single, AddSubmonoid.coe_iInf, Finset.Icc_eq_cons_Ico, Finset.Ico_eq_cons_Ioo, Finset.Ico_eq_empty  (+58 more)
+   d 61  AddAction.mem_orbit_symm, AddMonoidAlgebra.map, Cardinal.mk_fintype, Finite.of_injective, Finset.Ico_eq_empty_of_le, Finset.card_pos  (+48 more)
+   d 62  AddMonoidAlgebra.erase, AddMonoidAlgebra.map_id, AddMonoidAlgebra.map_map, AddSubmonoid.closure_le, Finite.Set.subset, Finset.card_le_one  (+42 more)
+   d 63  AddMonoidAlgebra.coeffAddEquiv, AddMonoidHom.eqOn_closureM, ChainClosure.succ_fixpoint, ChainClosure.total, CharP.char_ne_zero_of_finite, Finset.card_le_one_iff_subset_singleton  (+33 more)
+   d 64  AddAction.orbitRel, AddMonoidAlgebra.sup_support_coeff_add_le, AddMonoidHom.eq_of_eqOn_denseM, ChainClosure.isChain, ChainClosure.succ_fixpoint_iff, Disjoint.of_span  (+34 more)
+   d 65  AddSubgroup.closure, Disjoint.of_span₀, Finset.disjiUnion_filter_eq_of_maps_to, Finset.inf'_congr, Finset.sum_filter_add_sum_filter_not, Finset.sum_finset_product'  (+28 more)
+   d 66  AddMonoidAlgebra.single_inj, AddSubgroup.subset_closure, Cardinal.add_one_le_of_lt, CharP.char_is_prime_of_two_le, Finset.card_le_one_iff, Finset.card_union_add_card_inter  (+34 more)
+   d 67  AddMonoidAlgebra.single_right_inj, Cardinal.liftInitialSeg, CharP.char_is_prime_or_zero, Finset.card_eq_sum_card_fiberwise, Finset.card_union_eq_card_add_card, Finset.isLeast_min'  (+27 more)
+   d 68  AddMonoidAlgebra.mapDomain, AddMonoidAlgebra.single_right_injective, AddMonoidAlgebra.single_zero, AddMonoidHom.ker_eq_bot_iff, AddSubgroup.closure_le, Cardinal.lift_injective  (+29 more)
+   d 69  AddCon.addSubgroup_quotientAddGroupCon, AddMonoidAlgebra.coeff_finsuppSum, AddMonoidAlgebra.coeff_mapDomain, AddMonoidAlgebra.erase_add_single, AddMonoidAlgebra.map_add, AddMonoidAlgebra.mul'  (+26 more)
+   d 70  AddMonoidAlgebra.singleAddHom, AddMonoidAlgebra.single_neg, AddSubgroup.mem_closure_singleton, Finset.min'_lt_max', Finset.sum_range_succ', Finsupp.addHom_ext  (+19 more)
+   d 71  AddMonoidAlgebra.liftNC_single, AddMonoidAlgebra.mul_def, AddMonoidAlgebra.singleAddHom_apply, AddSubgroup.zmultiples_eq_closure, Cardinal.lt_wf, Cardinal.toENatAux_nat  (+23 more)
+   d 72  AddMonoidAlgebra.coeff_mul, AddMonoidAlgebra.single_mul_single, AddSubgroup.orderIsoAddCon, AddSubgroup.zmultiples_le, Cardinal.toENatAux_zero, Finsupp.embDomain_eq_mapDomain  (+19 more)
+   d 73  AddMonoidAlgebra.coeff_mul_add_of_uniqueAdd, AddMonoidAlgebra.coeff_mul_antidiag, AddMonoidAlgebra.coeff_mul_single_eq_coeff_mul, AddMonoidAlgebra.coeff_single_mul_eq_mul_coeff, Finset.biUnion, Finset.image  (+13 more)
+   d 74  AddMonoidAlgebra.coeff_mul_single_zero, AddMonoidAlgebra.coeff_single_zero_mul, AddMonoidAlgebra.liftNC, AddMonoidAlgebra.mapAddEquiv, Finset.dedup_eq_self, Finset.disjiUnion_eq_biUnion  (+13 more)
+   d 75  AddMonoidAlgebra.mapDomainAddEquiv, Cardinal.succ_natCast, Finset.add, Finset.attach_image_val, Finset.card_image_of_injOn, Finset.fold_image  (+10 more)
+   d 76  AddMonoidAlgebra.coeff_mapDomainAddEquiv, AddMonoidAlgebra.sum_coeff_single, Cardinal.natCast_add_one_le_iff, Cardinal.succ_zero, Finset.biUnion_subset, Finset.card_biUnion  (+15 more)
+   d 77  AddMonoidAlgebra.liftNC_mul, Cardinal.natCast_lt_aleph0, Cardinal.one_le_iff_pos, Finite.surjective_of_injective, Finset.card_bij, Finset.coe_image₂  (+19 more)
+   d 78  AddMonoidAlgebra.support_coeff_mul_subset, Cardinal.ofENat_strictMono, Cardinal.one_le_iff_ne_zero, Cardinal.toENatAux_eq_top, Finite.injective_iff_surjective, Finset.add_mem_add  (+23 more)
+   d 79  AddMonoidAlgebra.opRingEquiv, Cardinal.eq_one_iff_unique, Cardinal.ofENat_le_ofENat, Cardinal.toENatAux_ofENat, Finite.injective_iff_surjective_of_equiv, Finset.Nonempty.image  (+17 more)
+   d 80  AddMonoidAlgebra.singleZeroRingHom, Cardinal.lt_aleph0, Cardinal.ofENat_le_aleph0, Cardinal.toENat_ofENat, Finset.Nonempty.add, Finset.sum_ite  (+12 more)
+   d 81  AddMonoidAlgebra.sup_support_coeff_mul_le, Cardinal.ofENat_le_nat, Finset.natCast_card_filter, Fintype.bijective_iff_injective_and_card, Fintype.card_le_one_iff, LinearIndependent.comp  (+9 more)
+   d 82  AddEquiv.uniqueSums_iff, Cardinal.lt_aleph0_iff_finite, Cardinal.range_ofENat, Cardinal.toENatAux_le_nat, Finset.sum_boole, Fintype.card_le_one_iff_subsingleton  (+18 more)
+   d 83  AddAction.zmultiplesQuotientStabilizerEquiv, Cardinal.infinite_iff, Cardinal.toENatAux_gc, Fintype.one_lt_card_iff_nontrivial, LinearIndependent.repr_eq, LinearIndependent.sum_type  (+7 more)
+   d 84  Cardinal.aleph0_le_mk, Cardinal.aleph0_le_mk_iff, Cardinal.enat_gc, Cardinal.toENatAux_eq_nat, LinearIndepOn.singleton, LinearIndepOn.union  (+8 more)
+   d 85  Cardinal.toENatAux_eq_zero, Cardinal.toENat_eq_natCast, LinearIndepOn.insert, Module.Basis.mk, MulAction.orbitZPowersEquiv, Nat.Prime.emultiplicity_choose'  (+6 more)
+   d 86  Cardinal.mk_lt_aleph0_iff, Cardinal.toENat_eq_zero, Nat.Prime.emultiplicity_choose, Polynomial.Monic.ne_zero_of_polynomial_ne, Polynomial.degree_eq_natDegree, Polynomial.degree_ne_bot  (+3 more)
+   d 87  Cardinal.toENat, LinearIndepOn.extend, Nat.Prime.emultiplicity_choose_prime_pow_add_emultiplicity, Polynomial.coeff_eq_zero_of_natDegree_lt, Polynomial.degree_erase_lt, Polynomial.degree_le_degree  (+5 more)
+   d 88  Cardinal.toENat_eq_top, Cardinal.toNat, Cardinal.toNat_ofENat, Cardinal.toNat_toENat, LinearIndepOn.image_subset_span_image_extend, LinearIndepOn.linearIndepOn_extend  (+8 more)
+   d 89  Cardinal.toENat_lift, Cardinal.toNat_eq_iff, Cardinal.toNat_eq_zero, Cardinal.toNat_natCast, Commute.add_pow_prime_pow_eq', LinearIndepOn.subset_span_extend  (+9 more)
+   d 90  Cardinal.mk_toNat_eq_card, Cardinal.toNat_eq_one, Cardinal.toNat_lift, Commute.add_pow_prime_pow_eq, Polynomial.Monic.mul, Polynomial.Monic.not_dvd_of_natDegree_lt  (+12 more)
+   d 91  Cardinal.mk_toNat_of_infinite, Cardinal.toNat_congr, Cardinal.toNat_eq_one_iff_unique, Cardinal.toNat_ne_zero, Commute.add_pow_prime_eq, Commute.exists_add_pow_prime_pow_eq  (+8 more)
+   d 92  Cardinal.toNat_pos, Commute.exists_add_pow_prime_eq, Finite.one_lt_card_iff_nontrivial, Module.Basis.extend, Nat.card_congr, Nat.card_eq_one_iff_unique  (+9 more)
+   d 93  Finite.one_lt_card, Module.Basis.ofVectorSpace, Nat.card_ne_zero, Nat.card_zmod, Polynomial.C_0, Polynomial.C_1  (+18 more)
+   d 94  Nat.card_pos_iff, Nat.card_unique, Nat.card_zpowers, Nat.finite_of_card_ne_zero, Polynomial.C_mul_X_pow_eq_monomial, Polynomial.X_pow_eq_monomial  (+14 more)
+   d 95  FiniteField.card, Nat.card_pos, Nat.card_units, Polynomial.coeff_C_mul_X_pow, Polynomial.degree_C_mul_X_pow, Polynomial.degree_C_mul_X_pow_le  (+14 more)
+   d 96  FiniteField.even_card_iff_char_two, Fintype.card_units, Polynomial.degree_X_pow_add_C, Polynomial.degree_X_pow_le, Polynomial.degree_X_sub_C, Polynomial.eq_C_of_natDegree_eq_zero  (+8 more)
+   d 97  FiniteField.odd_card_of_char_ne_two, FiniteField.pow_card_sub_one_eq_one, Polynomial.X_pow_add_C_ne_zero, Polynomial.coeff_X_pow, Polynomial.degree_X_pow_sub_C, Polynomial.eq_one_of_monic_natDegree_zero  (+5 more)
+   d 98  FiniteField.pow_dichotomy, Polynomial.Monic.natDegree_eq_zero, Polynomial.X_pow_sub_C_ne_zero, Polynomial.eq_zero_of_mul_eq_zero_of_smul, Polynomial.eval_pow, Polynomial.leadingCoeff_monomial  (+3 more)
+   d 99  Polynomial.Monic.degree_le_zero_iff_eq_one, Polynomial.X_sub_C_ne_zero, Polynomial.leadingCoeff_C, Polynomial.leadingCoeff_C_mul_X_pow, Polynomial.monic_X_pow_add_C, Polynomial.notMem_nonZeroDivisors_iff  (+2 more)
+   d100  FiniteField.isSquare_of_char_two, Polynomial.Monic.mul_left_ne_zero, Polynomial.leadingCoeff_X_pow, Polynomial.mem_nonZeroDivisors_iff, Polynomial.monic_X_add_C, Polynomial.monic_one  (+1 more)
+   d101  Polynomial.mem_nonzeroDivisors_of_coeff_mem, Polynomial.monic_X_pow, Polynomial.monic_X_sub_C, isCyclic_of_card_pow_eq_one_le, quadraticCharFun_eq_one_of_char_two
+   d102  Polynomial.Monic.mem_nonZeroDivisors, Polynomial.Monic.pow, Polynomial.leadingCoeff_mul_X_pow, Polynomial.leadingCoeff_pow'
+   d103  Polynomial.div_wf_lemma
+   d104  Polynomial.degree_pow'
+   d105  Polynomial.divModByMonicAux, Polynomial.natDegree_pow'
+   d106  Polynomial.divByMonic, Polynomial.divByMonic_eq_of_not_monic, Polynomial.finiteMultiplicity_of_degree_pos_of_monic, Polynomial.modByMonic, Polynomial.modByMonic_eq_of_not_monic
+   d107  Polynomial.finiteMultiplicity_X_sub_C
+   d108  Polynomial.rootMultiplicity, Polynomial.rootMultiplicity_zero
+   d109  Polynomial.le_rootMultiplicity_iff, Polynomial.modByMonic_eq_sub_mul_div, Polynomial.rootMultiplicity_eq_multiplicity
+   d110  Polynomial.degree_modByMonic_lt, Polynomial.modByMonic_add_div, Polynomial.pow_rootMultiplicity_dvd, Polynomial.rootMultiplicity_C, Polynomial.rootMultiplicity_le_iff
+   d111  Polynomial.modByMonic_X_sub_C_eq_C_eval, Polynomial.modByMonic_eq_self_iff, Polynomial.modByMonic_eq_zero_iff_dvd, Polynomial.pow_rootMultiplicity_not_dvd
+   d112  Polynomial.divByMonic_eq_zero_iff, Polynomial.mul_divByMonic_eq_iff_isRoot, Polynomial.rootMultiplicity_mul_X_sub_C_pow
+   d113  Polynomial.degree_add_divByMonic, Polynomial.dvd_iff_isRoot, Polynomial.rootMultiplicity_X_sub_C_pow
+   d114  Polynomial.degree_divByMonic_lt, Polynomial.rootMultiplicity_X_sub_C_self
+   d115  Polynomial.prime_X_sub_C, Polynomial.rootMultiplicity_eq_zero_iff
+   d116  Polynomial.rootMultiplicity_eq_zero, Polynomial.rootMultiplicity_mul, Polynomial.rootMultiplicity_pos'
+   d117  Polynomial.rootMultiplicity_X_sub_C
+   d119  Polynomial.exists_multiset_roots
+   d121  Polynomial.roots, Polynomial.roots_zero
+   d122  Polynomial.card_roots, Polynomial.nthRoots, Polynomial.roots.congr_simp, Polynomial.roots_def
+   d123  Polynomial.card_nthRoots, Polynomial.count_roots
+   d124  Polynomial.mem_roots'
+   d125  Polynomial.mem_roots
+   d126  Polynomial.mem_nthRoots
+   d128  card_nthRoots_subgroup_units
+   d129  isCyclic_of_injective_ringHom
+   d131  FiniteField.unit_isSquare_iff
+   d132  FiniteField.isSquare_iff
+   d133  quadraticCharFun_eq_pow_of_char_ne_two
+   d134  quadraticCharFun_mul
+   d135  quadraticChar
+   d136  legendreSym
+
+-- proof moves (new facts the proof pulls in, deepest first)
+   d210  quadraticChar_odd_prime
+   d209  quadraticChar_card_card
+   d208  Char.card_pow_card
+   d202  Polynomial.isRoot_cyclotomic_iff
+   d201  IsCyclotomicExtension.adjoin_roots_cyclotomic_eq_adjoin_nth_roots
+   d200  IsPrimitiveRoot.isRoot_cyclotomic
+   d199  Polynomial.cyclotomic_eq_prod_X_sub_primitiveRoots
+   d198  Polynomial.cyclotomic_eq_X_pow_sub_one_div
+   d198  isRoot_of_unity_iff
+   d197  Polynomial.cyclotomic_ne_zero
+   d197  Polynomial.degree_cyclotomic_pos
+   d197  Polynomial.prod_cyclotomic_eq_X_pow_sub_one
+   [+20 machinery/glue moves in top 40]
+   [machinery hidden from statement path; full cones: A_S 14,587, A_P 35,568]
+
+== intervalIntegral.integral_deriv_eq_sub
+   statement cone 32,145 | proof cone 36,212 | new 4,067 (11% of proof)
+
+-- statement path (understand these, shallow to deep)
+   d  0  Acc, Add, AddCancelCommMonoid, AddCancelMonoid, AddCommGroup, AddCommGroupWithOne  (+349 more)
+   d  1  AbsoluteValue, Acc.intro, Add.mk, AddAction, AddAction.IsPretransitive, AddCon  (+558 more)
+   d  2  AddAction.QuotientAction, AddCancelCommMonoid.mk, AddCancelMonoid.mk, AddEquivClass, AddLeftCancelMonoid.mk, AddLeftCancelSemigroup.mk  (+439 more)
+   d  3  AbsoluteValue.add_le, AbsoluteValue.eq_zero, AbsoluteValue.nonneg, AddAction.exists_vadd_eq, AddCon.Quotient, AddCon.add  (+446 more)
+   d  4  Acc.inv, Acc.of_subrel, AddAction.IsPretransitive.mk, AddAction.mem_orbit, AddAction.orbit, AddCommGroup.mk  (+582 more)
+   d  5  AddCommute, AddEquiv.toAddHom, AddHomClass.toAddHom, AddMemClass.mk, AddMonoidHom.id, AddMonoidHom.toAddHom  (+532 more)
+   d  6  Absorbs, AddAction.mem_orbit_self, AddAction.mk, AddCommMagma.IsLeftCancelAdd.toIsRightCancelAdd, AddCommute.eq, AddCon.induction_on₂  (+681 more)
+   d  7  Absorbs.empty, AddMonoidHom.mulLeft, AddMonoidHom.mulRight, AddMonoidHomClass.toAddMonoidHom, Array.push, BddAbove.mono  (+502 more)
+   d  8  AddCon.ker, AddLECancellable.le_add_tsub_swap, AddLECancellable.le_tsub_of_add_le_left, AddLeftCancelMonoid.eq_zero_of_add_right, AddSubmonoid.toSubsemigroup_injective, AddUnits.add_neg_cancel_left  (+450 more)
+   d  9  AddCommGroupWithOne.mk, AddCon.ext', AddCon.ker_rel, AddCon.liftOn, AddCon.rel_mk, AddEquivClass.mk  (+432 more)
+   d 10  AddCon.ext, AddCon.le_def, AddHom.copy, AddLECancellable.tsub_eq_of_eq_add, AddLeftCancelMonoid.add_eq_zero, AddOpposite.opEquiv  (+390 more)
+   d 11  AddCon.nsmul, AddHom.inverse, AddLECancellable.add_tsub_cancel_left, AddLECancellable.add_tsub_cancel_right, AddLECancellable.eq_tsub_of_add_eq, AddMonoidHom.ext  (+390 more)
+   d 12  AbsoluteValue.map_mul, AbsoluteValue.mk, AddAction.orbit_vadd_subset, AddAction.toPerm, AddEquiv.prodComm, AddGroup.covariant_iff_contravariant  (+489 more)
+   d 13  AddCon.eq, AddLECancellable.tsub_eq_iff_eq_add_of_le, AddMonoidHom.comp, AddMonoidHom.eqLocusM, AddMonoidHom.map_zsmul, BitVec.ofNatLT  (+381 more)
+   d 14  AddCon.lift, AddEquiv.symm_map_add, AddMonoidAlgebra.coeffEquiv, AddMonoidHom.add_apply, AddMonoidHom.comp_assoc, AddMonoidHom.comp_id  (+398 more)
+   d 15  AddCon.map_of_add_left_rel_zero, AddEquiv.symm, AddMonoidAlgebra.coeffEquiv_apply, AddMonoidAlgebra.coeff_injective, AddOpposite.unop_bijective, AddSubmonoid.closure  (+359 more)
+   d 16  AddCon.neg, AddMonoidAlgebra.coeff_inj, AddMonoidHom.mker, AddOpposite.unop_injective, AddSubmonoid.subset_closure, AddSubmonoidClass.coe_multiset_sum  (+373 more)
+   d 17  AbsoluteValue.map_one_of_isLeftRegular, AbsoluteValue.map_zero, AbsoluteValue.ne_zero_iff, AddAction.QuotientAction.mk, AddCon.sub, AddCon.zsmul  (+330 more)
+   d 18  AbsoluteValue.ne_zero, AbsoluteValue.pos_iff, AbsoluteValue.sum_le, AddCon.addSubgroup, AddEquiv.map_eq_zero_iff, AddEquiv.map_zero  (+284 more)
+   d 19  AbsoluteValue.map_one, AbsoluteValue.pos, AddCon.mem_addSubgroup_iff, AddEquiv.arrowCongr, AddEquiv.piCongrRight, AddEquiv.prodCongr  (+203 more)
+   d 20  AddMonoidHom.flip, AddSubgroup.map, AddSubgroup.subtype, Algebra.compHom, Bornology.isVonNBounded_union, Cardinal.lift_mk_eq'  (+166 more)
+   d 21  AbsoluteValue.map_neg, AbsoluteValue.toMonoidWithZeroHom, AddEquiv.toLinearEquiv, AlgHom.coe_fn_injective, AlgHom.ext, AlgHom.range  (+166 more)
+   d 22  AbsoluteValue.map_sub, AbsoluteValue.toMonoidHom, AlgEquiv.trans, AlgHom.coe_ringHom_injective, AlgHom.ext_iff, Algebra.ofId  (+151 more)
+   d 23  AbsoluteValue.map_pow, AddSubgroup.toAddSubmonoid_le, AlgHom.comp, AlgHom.toLinearMap, Algebra.ext_id, BitVec.ofNat  (+145 more)
+   d 24  AddMonoidWithOne.toCharZero, Cardinal.le_sum, Cardinal.lift_mk_le', Cardinal.mk_eq_nat_iff, Cardinal.mk_iUnion_le_sum_mk, Cardinal.mk_image_le_lift  (+156 more)
+   d 25  AlgEquiv.ofAlgHom, Cardinal.mk_le_aleph0_iff, Cardinal.mk_ne_zero, Cardinal.mk_preimage_of_injective, Commute.div_add_div, CovBy.Ioi_eq  (+120 more)
+   d 26  AddSubgroup.op, Cardinal.aleph0_ne_zero, Cardinal.mk_le_aleph0, Fin.foldr_succ, Fin.induction.go, Fin.pred  (+121 more)
+   d 27  AddSubgroup.equivOp, AddSubmonoid.neg_le, ByteArray.IsValidUTF8.intro, Cardinal.le_one_iff_subsingleton, ContinuousLinearEquiv.symm, Filter.countable_biInf_eq_iInf_seq'  (+107 more)
+   d 28  AddCommGroup.toDistribLattice, Cardinal.mk_le_one_iff_set_subsingleton, ContinuousLinearEquiv.self_comp_symm, ENat.mul_top, Fin.cases, Fin.pred_succAbove  (+111 more)
+   d 29  BddBelow.neg, Cardinal.mk_eq_one, Cardinal.mk_toType, Cardinal.power_one, Commute.pow_add_mul_le_add_pow_of_sq_nonneg, ENat.toNatHom  (+82 more)
+   d 30  Cardinal.lift_one, Cardinal.mk_option, Cardinal.mk_punit, Cardinal.mk_singleton, Cardinal.power_zero, CompleteLattice.IsSupClosedCompact.wellFoundedGT  (+65 more)
+   d 31  AbsoluteValue.abs, CharP.cast_eq_iff_mod_eq, Fin.insertNth, Finset.card_eq_zero, Finset.nonempty_of_ne_empty, Int.Internal.Linear.Poly.isUnsatEq  (+71 more)
+   d 32  Fin.insertNth_apply_same, Finset.mem_sdiff, Int.Internal.Linear.le_combine_cert, Int.Internal.Linear.le_eq_true, Int.dvd_of_emod_eq_zero, Int.ediv_mul_cancel_of_emod_eq_zero  (+72 more)
+   d 33  FloorRing.mk, Int.add_lt_add_iff_right, Int.cast_mono, Int.emod_abs, Int.floor_le, Int.le_floor  (+46 more)
+   d 34  FloorRing.ofFloor, Int.abs_eq_natAbs, Int.add_mul_ediv_right, Int.cast_max, Int.eq_negSucc_of_lt_zero, Int.floor_lt  (+41 more)
+   d 35  Finset.disjSum, Int.add_ediv_of_dvd_right, Int.add_mul_ediv_left, Int.add_mul_emod_self_right, Int.cast_abs, Int.le_iff_eq_or_lt  (+33 more)
+   d 36  FloorSemiring.natCast_strictMono, Int.add_ediv_of_dvd_left, Int.add_mul_emod_self_left, Int.ediv_nonneg_iff_of_pos, Int.le_iff_lt_or_eq, Int.le_toNat  (+23 more)
+   d 37  Cardinal.ord_le_type, Int.cast_mul, Int.ediv_lt_of_lt_mul, Int.emod_add_emod, Int.emod_emod_of_dvd, Int.emod_lt_of_pos  (+26 more)
+   d 38  Cardinal.ord, Equiv.boolProdNatEquivNat, Int.add_emod_emod, Int.add_emod_eq_add_emod_right, Int.emod_emod, Int.emod_eq_zero_of_dvd  (+25 more)
+   d 39  Equiv.natSumNatEquivNat, Int.add_emod, Int.castRingHom, Int.cast_nonneg_iff, Int.dvd_iff_emod_eq_zero, Int.ediv_mul_cancel  (+27 more)
+   d 40  AddMonoidHom.ext_int, Cardinal.mk_Iio_ordinal, Equiv.intEquivNat, Int.cast_le, Int.cast_smul_eq_zsmul, Int.emod_pos_of_not_dvd  (+29 more)
+   d 41  AddMonoidHom.eq_intCastAddHom, Int.cast_strictMono, Int.emod_eq_emod_iff_emod_sub_eq_zero, Int.lt_mul_of_ediv_lt, Lean.Data.AC.Context.evalList_sort_loop_swap, Lean.Grind.CommRing.Mon.grevlex  (+12 more)
+   d 42  Int.cast_lt, Int.ediv_lt_iff_lt_mul, Lean.Data.AC.Context.evalList_sort_cons, Lean.Grind.CommRing.Mon.eq_of_revlexFuel, Lean.Omega.Coeffs.gcd_dvd_dot_left, Lean.Omega.IntList.get_cons_zero  (+14 more)
+   d 43  DivisionRing.mk, DivisionSemiring.mk, Field.mk, Int.cast_pos, Lean.Data.AC.Context.evalList_sort, Lean.Grind.CommRing.Mon.eq_of_revlex  (+13 more)
+   d 44  Lean.Data.AC.Context.eval_norm, Lean.Grind.CommRing.Mon.eq_of_grevlex, Lean.Grind.CommRing.Poly.combine, Lean.Grind.CommRing.Poly.insert, Lean.Omega.LinearCombo.coordinate_eval, Lean.Omega.normalize_sat  (+3 more)
+   d 45  CauSeq.IsComplete, FiniteDimensional, Finset.centerMass, FloorRing.ofBounded, Function.Injective.divisionSemiring, HasFDerivAtFilter  (+57 more)
+   d 46  Archimedean.floorRing, CauSeq, CauSeq.const, Int.Internal.Linear.Poly.denote'_go_eq_denote, IsCauSeq.bounded, IsCauSeq.congr_simp  (+32 more)
+   d 47  CauSeq.LimZero, CauSeq.Pos, CauSeq.bounded, CauSeq.cauchy, CauSeq.complete, CauSeq.const.congr_simp  (+53 more)
+   d 48  CauSeq.bounded', CauSeq.zero_limZero, ClusterPt, Filter.mem_inf_iff, Filter.mem_inf_of_inter, Int.Internal.Linear.Expr.eq_of_norm_eq  (+50 more)
+   d 49  CauSeq.const_limZero, CauSeq.const_pos, CauSeq.not_limZero_of_pos, CauSeq.ofEq, ClusterPt.neBot, ContinuousWithinAt  (+50 more)
+   d 50  CompactIccSpace.mk, ContinuousOn, ContinuousWithinAt.tendsto, Filter.HasBasis.inf', Filter.eventually_inf, IsCompact.exists_clusterPt  (+33 more)
+   d 51  ClusterPt.of_le_nhds, Equiv.vectorEquivFin, Filter.EventuallyEq.congr_continuousWithinAt, Filter.HasBasis.inf, Filter.NeBot.mono, Filter.empty_mem_iff_bot  (+61 more)
+   d 52  ClusterPt.mono, ClusterPt.of_le_nhds', ContinuousWithinAt.congr_of_eventuallyEq, Filter.OrderBot.atBot_eq, Filter.OrderTop.atTop_eq, Filter.atTop_eq_generate_Ici  (+62 more)
+   d 53  ContinuousWithinAt.congr, Filter.Ioi_mem_atTop, Filter.NeBot.nonempty_of_mem, Filter.atTop_eq_generate_of_forall_exists_le, Filter.atTop_eq_pure_of_isTop, Filter.empty_notMem  (+43 more)
+   d 54  AddSubmonoid.FG, CauSeq.cauchy₃, CompleteLattice.IsSupFiniteCompact, Filter.HasBasis.eq_biInf, Filter.HasBasis.neBot_iff, Filter.Tendsto.atTop_of_add_const  (+87 more)
+   d 55  AddMonoid.FG.mk, CauSeq.abv_pos_of_not_limZero, Filter.HasBasis.eq_bot_iff, Filter.HasBasis.eq_iInf, Filter.HasBasis.inf_basis_neBot_iff, Filter.Tendsto.atTop_of_add_isBoundedUnder_le  (+96 more)
+   d 56  AddMonoid.fg_def, CauSeq.coe_neg, CauSeq.inv_aux, CauSeq.rat_sup_continuous_lemma, CauSeq.trichotomy, Filter.HasBasis.clusterPt_iff  (+83 more)
+   d 57  Bornology.isBounded_compl_iff, CauSeq.add_limZero, CauSeq.add_pos, CauSeq.coe_add, CauSeq.coe_mul, CauSeq.inv  (+136 more)
+   d 58  Bornology.IsBounded.subset, Bornology.IsCobounded.compl, Bornology.isBounded_union, CauSeq.coe_smul, CauSeq.coe_sub, CauSeq.const_equiv  (+87 more)
+   d 59  Absorbs.mono_left, Absorbs.mono_right, AddAction.orbit_vadd, AddMonoidAlgebra.coeff_eq_zero, Bornology.IsBounded.union, Bornology.comap_cobounded_le_iff  (+199 more)
+   d 60  AddAction.orbit_eq_iff, AddMonoidAlgebra.single, AddSubmonoid.coe_iInf, CauSeq.inf_comm, CauSeq.inf_idem, CauSeq.lt_inf  (+145 more)
+   d 61  AddAction.mem_orbit_symm, Cardinal.mk_fintype, CauSeq.lt_irrefl, CauSeq.lt_trans, CauSeq.neg_limZero, CauchySeq  (+148 more)
+   d 62  AddMonoidAlgebra.erase, AddSubmonoid.closure_le, Continuous.borel_measurable, ConvexOn.map_centerMass_le, CovBy.nhdsGT, CovBy.nhdsLT  (+132 more)
+   d 63  AddMonoidAlgebra.coeffAddEquiv, AddMonoidHom.eqOn_closureM, AddSubmonoid.closure_eq_of_le, AddSubmonoid.closure_induction, AddSubmonoid.closure_mono, AddSubmonoid.closure_neg  (+156 more)
+   d 64  AddAction.orbitRel, AddMonoidAlgebra.sup_support_coeff_add_le, AddMonoidHom.eq_of_eqOn_denseM, AddSubmonoid.closure_eq, AddSubmonoid.closure_iUnion, AddSubmonoid.closure_singleton_eq  (+138 more)
+   d 65  AddAction.quotient_preimage_image_eq_union_add, AddSubgroup.closure, AddSubgroup.coe_iInf, AddSubmonoid.mem_closure_singleton, AddSubmonoid.mem_iSup_of_directed, Bornology.mk  (+142 more)
+   d 66  AddSubgroup.FG, AddSubgroup.subset_closure, AddSubmonoid.coe_iSup_of_directed, AddSubmonoid.fg_iff, Algebra.adjoin, Cardinal.add_one_le_of_lt  (+146 more)
+   d 67  AddGroup.FG.mk, AddSubgroup.neg_subset_closure, Algebra.gc, Bornology.forall_isBounded_image_eval_iff, Bornology.isBounded_image_fst_and_snd, Bornology.isBounded_singleton  (+154 more)
+   d 68  AddGroup.fg_def, AddMonoidAlgebra.mapDomain, AddMonoidAlgebra.single_zero, AddSubgroup.closure_le, Algebra.adjoin_le, Algebra.adjoin_le_iff  (+147 more)
+   d 69  AddCon.addSubgroup_quotientAddGroupCon, AddMonoidAlgebra.coeffAddEquiv_apply, AddMonoidAlgebra.coeffAddEquiv_symm_apply, AddMonoidAlgebra.coeff_finsuppSum, AddMonoidAlgebra.coeff_mapDomain, AddMonoidAlgebra.induction  (+143 more)
+   d 70  AddMonoidAlgebra.mapDomain_zero, AddMonoidAlgebra.singleAddHom, AddMonoidAlgebra.single_neg, AddSubgroup.closure_toAddSubmonoid, AddSubgroup.mem_closure_singleton, Algebra.adjoin_image  (+123 more)
+   d 71  AddMonoidAlgebra.addMonoidHom_ext, AddMonoidAlgebra.induction_linear, AddMonoidAlgebra.liftNC_single, AddMonoidAlgebra.mapDomain_single, AddMonoidAlgebra.mul_def, AddMonoidAlgebra.singleAddHom_apply  (+105 more)
+   d 72  AddMonoidAlgebra.coeffLinearEquiv, AddMonoidAlgebra.coeff_mul, AddMonoidAlgebra.mapDomain_add, AddMonoidAlgebra.mapDomain_one, AddMonoidAlgebra.single_mul_single, AddSubgroup.orderIsoAddCon  (+100 more)
+   d 73  AddMonoidAlgebra.coeff_mul_antidiag, AddMonoidAlgebra.coeff_mul_single_eq_coeff_mul, AddMonoidAlgebra.coeff_single_mul_eq_mul_coeff, AddMonoidAlgebra.ofMagma, AddMonoidHom.functions_ext, CauSeq.Completion.inv_mul_cancel  (+91 more)
+   d 74  AddMonoidAlgebra.coeff_mul_single_zero, AddMonoidAlgebra.coeff_single_zero_mul, AddMonoidAlgebra.liftNC, AddMonoidAlgebra.lsingle, AddMonoidAlgebra.mapDomain_sum, Cardinal.sInf_empty  (+96 more)
+   d 75  AddMonoidAlgebra.mapDomain_mul, Cardinal.lift_sInf, Cardinal.lift_sSup, Cardinal.succ_natCast, Cardinal.sum_le_lift_mk_mul_iSup_lift, CauSeq.Completion.ofRat_div  (+102 more)
+   d 76  AddAction.isOpenQuotientMap_quotientMk, AddMonoidAlgebra.sum_coeff_single, Cardinal.exists_ord_eq, Cardinal.lift_iInf, Cardinal.lift_iSup, Cardinal.lt_natCast_add_one_iff  (+94 more)
+   d 77  AddMonoidAlgebra.liftNC_mul, Cardinal.card_ord, Cardinal.exists_ord_eq_type_lt, Cardinal.gc_ord_card, Cardinal.le_one_iff, Cardinal.natCast_lt_aleph0  (+80 more)
+   d 78  AddAction.IsPretransitive.t1Space_iff, AddMonoidAlgebra.support_coeff_mul_subset, Cardinal.bddAbove_ord_image_iff, Cardinal.lt_ord, Cardinal.ofENat_strictMono, Cardinal.one_le_iff_ne_zero  (+88 more)
+   d 79  AddMonoidAlgebra.mapDomainRingHom, AddMonoidAlgebra.of, AddMonoidAlgebra.ringHom_ext, Cardinal.card_le_iff, Cardinal.card_typein_lt, Cardinal.eq_one_iff_unique  (+81 more)
+   d 80  AddMonoidAlgebra.mapDomainRingHom_apply, AddMonoidAlgebra.singleZeroRingHom, Cardinal.lt_aleph0, Cardinal.mk_Iio_lt, Cardinal.mk_set_eq_one_iff, Cardinal.ofENat_le_aleph0  (+78 more)
+   d 81  AddMonoidAlgebra.ringHom_ext', AddMonoidAlgebra.singleZeroRingHom_apply, AddMonoidAlgebra.sup_support_coeff_mul_le, Cardinal.isNormal_ord, Cardinal.mul_lt_aleph0, Cardinal.ofENat_le_nat  (+70 more)
+   d 82  AddMonoidAlgebra.single_pow, AddMonoidAlgebra.uniqueRingEquiv, Cardinal.lt_aleph0_iff_finite, Cardinal.ord_eq_zero, Cardinal.ord_inj, Cardinal.range_natCast  (+82 more)
+   d 83  AddSubgroup.fg_iff_addSubmonoid_fg, Cardinal.IsRegular.mk, Cardinal.infinite_iff, Cardinal.lt_aleph0_iff_fintype, Cardinal.lt_aleph0_iff_set_finite, Cardinal.ord_natCast  (+66 more)
+   d 84  AddGroup.fg_iff_addMonoid_fg, AddMonoidAlgebra.mapDomainAlgHom, AddMonoidAlgebra.singleZeroAlgHom, Cardinal.aleph0_le_mk, Cardinal.aleph0_le_mk_iff, Cardinal.enat_gc  (+62 more)
+   d 85  AddMonoidAlgebra.mapDomainAlgHom_apply, AddMonoidAlgebra.singleZeroAlgHom_apply, Cardinal.mk_eq_aleph0, Cardinal.toENatAux_eq_zero, Cardinal.toENat_eq_natCast, CofiniteTopology.isClosed_iff  (+48 more)
+   d 86  AddGroupNorm.mk, AddMonoidAlgebra.algHom_ext, Cardinal.IsRegular.cof_ord, Cardinal.mk_lt_aleph0_iff, Cardinal.toENat_eq_zero, Complex.I  (+51 more)
+   d 87  AddMonoidAlgebra.algHom_ext', AddMonoidAlgebra.mapDomainAlgHom_comp, AddMonoidAlgebra.mapDomainAlgHom_id, Cardinal.toENat, Complex.I_re, Complex.ofReal_im  (+53 more)
+   d 88  Cardinal.preAleph, Cardinal.toENat_eq_top, Cardinal.toNat, Cardinal.toNat_ofENat, Complex.ofReal_eq_zero, Complex.zero_im  (+46 more)
+   d 89  Cardinal.aleph, Cardinal.ord_preAleph, Cardinal.succ_preAleph, Cardinal.toENat_lift, Cardinal.toNat_natCast, Complex.ofReal_ne_zero  (+26 more)
+   d 90  Cardinal.aleph_eq_preAleph, Cardinal.cast_toNat_of_lt_aleph0, Cardinal.iSup_lt_of_lt_cof_ord, Cardinal.mk_toNat_eq_card, Cardinal.ord_aleph, Cardinal.toENat_congr  (+51 more)
+   d 91  Cardinal.succ_aleph, Cardinal.toNat_monotoneOn, Complex.add_im, Complex.add_re, Complex.mulAux, ENat.card_congr  (+23 more)
+   d 92  Cardinal.toNat_le_toNat, Complex.SMul.instSMulRealComplex, Complex.equivRealProdAddHom, Filter.Tendsto.limUnder_eq, HasSum.tsum_eq, Homeomorph.piUnique  (+21 more)
+   d 93  Complex.equivRealProdAddHom_apply, Complex.mul_im, Complex.mul_re, Complex.real_smul, IsDenseInducing.extend_eq_of_tendsto, Module.Basis.coe_extend  (+18 more)
+   d 94  Algebra.adjoin_range_eq_range_aeval, ContinuousLinearEquiv.piUnique, IsDenseInducing.extend_eq_at, LinearIndependent.finite_of_le_span_finite, Module.Basis.ofVectorSpace_apply_self, Module.Basis.range_extend  (+11 more)
+   d 95  AddGroupSeminorm.mk, Algebra.adjoin_eq_range, Balanced, Complex.I_mul_I, Complex.im_ofReal_mul, Complex.mk_eq_add_mul_I  (+50 more)
+   d 96  Balanced.smul_mem, Balanced.subset_balancedCore_of_subset, Cardinal.preAleph_omega0, ContinuousLinearMap.bounds_bddBelow, ENNReal, ENNReal.coe_injective  (+33 more)
+   d 97  Cardinal.add_one_of_aleph0_le, Cardinal.aleph_zero, ContinuousLinearMap.extend, EDist.mk, ENNReal.coe_inj, ENorm.mk  (+19 more)
+   d 98  Cardinal.isSuccLimit_ord, Cardinal.succ_aleph0, ENNReal.recTopCoe, Ideal.is_fg_degreeLE, Ideal.leadingCoeffNth, LinearMap.leftInverse_comp_of_inj  (+16 more)
+   d 99  Cardinal.mul_eq_self, Ideal.mem_leadingCoeffNth, LinearMap.leftInverse_apply_of_inj, MeasureTheory.measure_empty, MeasureTheory.measure_mono, Module.finrank_eq_rank  (+8 more)
+   d100  Cardinal.mul_eq_max, Cardinal.mul_lt_of_lt, Cardinal.pow_le, Complex.reAddGroupHom, LinearIndependent.lt_aleph0_of_finite, MvPolynomial.optionEquivLeft  (+9 more)
+   d101  Cardinal.aleph0_mul_eq, Cardinal.infinite_pigeonhole, Cardinal.isRegular_aleph0, LinearIndependent.setFinite, Metric.ball_union_sphere, MvPolynomial.finSuccEquiv  (+6 more)
+   d102  Cardinal.infinite_pigeonhole_card, Cardinal.mk_list_eq_mk, MeasureTheory.Measure.haar.addHaarProduct, Metric.ball_subset_closedBall, Metric.closedBall_subset_ball, Metric.closedBall_subset_closedBall  (+10 more)
+   d103  AddGroupSeminorm.comp, Cardinal.isRegular_succ, Cardinal.mk_finset_of_infinite, ENNReal.coe_le_coe, ENNReal.coe_le_iff, ENNReal.coe_lt_coe  (+10 more)
+   d104  Cardinal.infinite_pigeonhole_card_lt, Complex.I_ne_zero, Complex.I_sq, Complex.ofRealHom, Complex.ofReal_pow, ContinuousLinearMap.hasBasis_nhds_zero_of_basis  (+23 more)
+   d105  Bornology.IsBounded.subset_closedBall, Cardinal.exists_infinite_fiber, Complex.conj_I, Complex.conj_ofReal, Complex.normSq, Complex.re_sum  (+20 more)
+   d106  Cardinal.exists_infinite_fiber', Complex.conj_eq_iff_real, Complex.conj_neg_I, Complex.mul_conj, Complex.normSq_I, Complex.normSq_add  (+31 more)
+   d107  Bornology.ofDist, Complex.conj_eq_iff_re, Complex.inv_def, Complex.normSq_eq_zero, Complex.normSq_natCast, ContinuousENorm.mk  (+33 more)
+   d108  Complex.inv_im, Complex.inv_re, Complex.mul_inv_cancel, Complex.normSq_pos, Complex.partialOrder, ENNReal.add_lt_add_left  (+34 more)
+   d109  Complex.div_im, Complex.div_re, Complex.ofRealAm, Complex.ofReal_inv, ENNReal.add_ne_top, ENNReal.iInf_ne_top  (+32 more)
+   d110  Bornology.IsBounded.subset_ball_lt, Complex.equivRealProdLm, Complex.imLm, Complex.inv_zero, Complex.reLm, ENNReal.addLECancellable_iff_ne  (+40 more)
+   d111  Bornology.IsBounded.subset_ball, ENNReal.cancel_of_ne, ENNReal.exists_nat_gt, ENNReal.lt_add_right, ENNReal.lt_top_of_mul_ne_top_left, ENNReal.lt_top_of_sum_ne_top  (+23 more)
+   d112  Complex.normSq_div, Complex.ofReal_div, Complex.ofReal_sum, Complex.ofReal_zpow, ENNReal.coe_indicator, ENNReal.dichotomy  (+35 more)
+   d113  AddGroupSeminorm.toSeminormedAddGroup, ENNReal.tendsto_nhds_top, ENNReal.toNNReal_sum, ENNReal.toReal_mul, ENNReal.toReal_pos_iff_ne_top, MeasureTheory.Content.empty  (+23 more)
+   d114  AddGroupSeminorm.toSeminormedAddCommGroup, ContinuousLinearMap.opNorm, ENNReal.ofReal_eq_zero, ENNReal.ofReal_sum_of_nonneg, ENNReal.tendsto_nat_nhds_top, ENNReal.toReal_sum  (+36 more)
+   d115  AddGroupNorm.toNormedAddGroup, Int.dist_eq, Metric.dist_mem_uniformity, Metric.mem_closure_iff, Metric.mem_nhds_iff, Metric.tendsto_atTop  (+16 more)
+   d116  AddGroupNorm.toNormedAddCommGroup, Filter.HasBasis.cobounded_of_norm, Int.pairwise_one_le_dist, IsCompact.isBounded, LinearMap.finrank_range_add_finrank_ker, Metric.isUniformEmbedding_bot_of_pairwise_le_dist  (+10 more)
+   d117  Absorbs.exists_pos, ContinuousLinearMap.opNorm_le_bound, MeasureTheory.Measure.coe_toOuterMeasure, MeasureTheory.Measure.haar.nonempty_iInter_clAddPrehaar, MeasureTheory.OuterMeasure.IsCaratheodory, MeasureTheory.OuterMeasure.coe_fn_injective  (+20 more)
+   d118  Absorbs.of_norm, ContinuousLinearMap.norm_id_le, MeasureTheory.Measure.haar.addCHaar, MeasureTheory.Measure.haar.addCHaar_mem_addHaarProduct, MeasureTheory.Measure.haar.addCHaar_mem_clAddPrehaar, MeasureTheory.OuterMeasure.isCaratheodory_compl_iff  (+23 more)
+   d119  ContinuousLinearMap.opNorm_nonneg, IsUniformEmbedding.comapMetricSpace, Measurable.coe_nnreal_real, MeasureTheory.Measure.haar.addCHaar_mono, MeasureTheory.Measure.haar.addCHaar_nonneg, MeasureTheory.Measure.haar.addCHaar_sup_le  (+14 more)
+   d120  ContinuousLinearMap.opNorm_zero, MeasureTheory.OuterMeasure.isCaratheodory_sdiff, MeasureTheory.OuterMeasure.isCaratheodory_sum, Metric.closedBall_mem_nhds, NNReal.coe_iInf, NNReal.coe_iSup  (+7 more)
+   d121  ENNReal.coe_inv_le, ENNReal.iInf_add, ENNReal.iSup_eq_zero, ENNReal.inv_zero, MeasureTheory.Content.innerContent, MeasureTheory.Content.innerContent_mono  (+13 more)
+   d122  ENNReal.coe_inv, ENNReal.hasSum, ENNReal.inv_top, ENNReal.isEmbedding_coe, ENNReal.le_of_forall_pos_le_add, ENNReal.le_of_top_imp_top_of_toNNReal_le  (+16 more)
+   d123  ENNReal.add_iSup, ENNReal.continuous_coe, ENNReal.iSup_zero, ENNReal.isOpenEmbedding_coe, ENNReal.ofReal_inv_of_pos, ENNReal.summable  (+14 more)
+   d124  ENNReal.add_biSup', ENNReal.coe_div, ENNReal.div_eq_inv_mul, ENNReal.div_top, ENNReal.div_zero, ENNReal.iSup_add  (+23 more)
+   d125  Complex.norm_def, Complex.norm_nonneg, Continuous.sqrt, ENNReal.biSup_add', ENNReal.div_self, ENNReal.eq_inv_of_mul_eq_one_left  (+23 more)
+   d126  Complex.normSq_eq_norm_sq, Complex.norm_conj, Complex.norm_mul, Complex.norm_mul_self_eq_normSq, Complex.norm_neg', ENNReal.biSup_add_biSup_le'  (+18 more)
+   d127  Complex.abs_re_le_norm, Complex.isCauSeq_conj, Complex.sq_norm, ENNReal.add_halves, ENNReal.div_eq_zero_iff, ENNReal.div_mul_cancel'  (+15 more)
+   d128  Complex.cauSeqConj, Complex.isCauSeq_re, Complex.norm_le_sqrt_two_mul_max, Complex.norm_real, Complex.re_le_norm, Complex.sq_norm_sub_sq_re  (+16 more)
+   d129  Complex.cauSeqRe, Complex.norm_I, Complex.norm_add_le', Complex.norm_of_nonneg, Complex.sq_norm_sub_sq_im, ENNReal.div_pos_iff  (+21 more)
+   d130  Complex.abs_im_le_norm, Complex.norm_eq_zero_iff, Complex.norm_natCast, ENNReal.Tendsto.mul, ENNReal.div_le_iff_le_mul, ENNReal.div_lt_iff  (+5 more)
+   d131  Complex.isCauSeq_im, Complex.norm_map_zero', Complex.norm_ofNat, ENNReal.Tendsto.const_mul, ENNReal.div_le_of_le_mul, ENNReal.exists_nat_pos_mul_gt  (+8 more)
+   d132  Complex.cauSeqIm, Complex.equivRealProd_apply_le, Complex.norm_div, ENNReal.Tendsto.mul_const, ENNReal.exists_nat_mul_gt, ENNReal.inv_le_inv  (+8 more)
+   d133  Complex.abs_im_div_norm_le_one, Complex.equivRealProd_apply_le', Complex.isCauSeq_norm, Complex.isCauSeq_norm_exp, Complex.limAux, Complex.norm_le_abs_re_add_abs_im  (+12 more)
+   d134  Complex.equiv_limAux, Complex.isCauSeq_exp, Complex.norm_pow, EMetric.mk_uniformity_basis, EMetric.mk_uniformity_basis_le, EMetric.uniformContinuous_iff  (+10 more)
+   d135  Complex.cauSeqNorm, Complex.exp', EMetric.mem_closure_iff, EMetric.mem_nhds_iff, ENNReal.tendsto_inv_nat_nhds_zero, MeasureTheory.OuterMeasure.caratheodory  (+4 more)
+   d136  Complex.lim_eq_lim_im_add_lim_re, ENNReal.orderIsoIicOneBirational, ENNReal.tsum_set_const, MeasureTheory.OuterMeasure.iUnion_eq_of_caratheodory
+   d137  Complex.lim_im, Complex.lim_norm, Complex.lim_re, EMetric.complete_of_cauchySeq_tendsto, EMetric.isOpen_iff, EMetric.subset_countable_closure_of_almost_dense_set  (+3 more)
+   d138  Complex.lim_conj, MeasureTheory.ae_eq_set_compl, Metric.complete_of_cauchySeq_tendsto, Metric.isOpen_eball
+   d139  Complex.exp
+   d140  Complex.cos, Complex.cosh, Complex.exp_def, Complex.sin, Complex.sinh, Complex.two_cos  (+4 more)
+   d141  AntilipschitzWith, Complex.cosh_add_sinh, Complex.cosh_mul_I, Complex.cosh_sub_sinh, Complex.exp_add, Complex.exp_bound  (+17 more)
+   d142  AntilipschitzWith.comap_uniformity_le, AntilipschitzWith.injective, Complex.cos_add_sin_I, Complex.cos_bound, Complex.cosh_add, Complex.cosh_conj  (+35 more)
+   d143  AntilipschitzWith.isUniformInducing, Complex.cos_add, Complex.exp_bound_sq, Complex.exp_mul_I, Complex.exp_nat_mul, Complex.exp_ofReal_im  (+16 more)
+   d144  AntilipschitzWith.isUniformEmbedding, Complex.cos_two_mul', Complex.exp_add_mul_I, Complex.exp_neg, Complex.locally_lipschitz_exp, Complex.sin_two_mul  (+13 more)
+   d145  AddMonoidHomClass.isometry_iff_norm, AddMonoidHomClass.lipschitz_of_bound, AntilipschitzWith.ediam_preimage_le, AntilipschitzWith.of_le_mul_dist, Complex.cos_neg, Complex.cos_two_mul  (+14 more)
+   d146  AddMonoidHomClass.antilipschitz_of_bound, AddMonoidHomClass.continuous_of_bound, AddMonoidHomClass.isometry_of_norm, AddMonoidHomClass.lipschitz_of_bound_nnnorm, Complex.cos_conj, Complex.sin_conj  (+20 more)
+   d147  Bornology.IsBounded.ediam_ne_top, Bornology.IsBounded.uniformContinuousOn_smul, Complex.ofReal_cos_ofReal_re, Complex.ofReal_sin_ofReal_re, Complex.sin_sub_sin, IsClosed.mem_iff_infDist_zero  (+14 more)
+   d148  AntilipschitzWith.isBounded_preimage, Complex.cos_ofReal_im, Complex.norm_exp_ofReal, Complex.ofReal_cos, Complex.ofReal_sin, Complex.sin_ofReal_im  (+13 more)
+   d149  AntilipschitzWith.tendsto_cobounded, Complex.exp_ofReal_mul_I_im, Complex.exp_ofReal_mul_I_re, ENNReal.limsup_add_le, ENNReal.measurable_toNNReal, LinearIsometry.norm_map  (+22 more)
+   d150  AntilipschitzWith.properSpace, Complex.continuous_exp, Complex.norm_cos_add_sin_mul_I, Continuous.norm, ENNReal.ennrealEquivSum, Filter.Tendsto.norm  (+20 more)
+   d151  Complex.antilipschitz_equivRealProd, Complex.equivRealProdCLM, Complex.imCLM, Complex.lipschitz_equivRealProd, Complex.measurable_exp, Complex.norm_exp  (+31 more)
+   d152  Complex.isUniformEmbedding_equivRealProd, ContinuousAt.cexp, ENNReal.measurable_of_measurable_nnreal_nnreal, LipschitzOnWith.add, Measurable.cexp, Metric.continuous_infNndist_pt  (+18 more)
+   d153  Continuous.cexp, ContinuousLinearMap.opNorm_le_bound', LipschitzWith.add, NNReal.measurable_of_tendsto', RCLike.conj_ofReal, RCLike.ext  (+15 more)
+   d154  ContinuousLinearMap.opNorm_le_of_shell, LipschitzWith.sub, Measurable.infNndist, MeasureTheory.OuterMeasure.ofFunction, RCLike.conj_eq_re_sub_im, RCLike.mul_conj  (+8 more)
+   d155  ContinuousLinearMap.bound, Finsupp.inner_sum, MeasureTheory.OuterMeasure.le_ofFunction, MeasureTheory.OuterMeasure.ofFunction_eq, MeasureTheory.inducedOuterMeasure, RCLike.add_conj  (+9 more)
+   d156  ContinuousLinearMap.bounds_nonempty, MeasureTheory.Content.outerMeasure, MeasureTheory.OuterMeasure.trim, MeasureTheory.inducedOuterMeasure.congr_simp, MeasureTheory.inducedOuterMeasure_eq_extend, MeasureTheory.inducedOuterMeasure_eq_extend'  (+7 more)
+   d157  Complex.continuous_im, Complex.continuous_re, Complex.ofRealLI, ContinuousLinearMap.isLeast_opNorm, ContinuousLinearMap.opNorm_neg, InnerProductSpace.rclikeToReal  (+12 more)
+   d158  Complex.continuous_ofReal, Complex.measurable_im, Complex.measurable_re, ContinuousLinearMap.le_opNorm, LinearMap.continuous_of_isClosed_ker, MeasureTheory.Content.outerMeasure_opens  (+7 more)
+   d159  Complex.measurable_ofReal, ContinuousLinearMap.le_of_opNorm_le_of_le, ContinuousLinearMap.le_opNNNorm, ContinuousLinearMap.opNorm_add_le, ContinuousLinearMap.opNorm_smul_le, Measurable.complex_ofReal  (+12 more)
+   d160  Complex.continuous_cos, Complex.continuous_sin, MeasureTheory.Content.outerMeasure_caratheodory, MeasureTheory.Measure.outerMeasure_le_iff, MeasureTheory.OuterMeasure.exists_measurable_superset_eq_trim, inner_self_eq_norm_sq_to_K  (+1 more)
+   d161  ContinuousLinearMap.seminorm, LinearMap.continuous_of_finiteDimensional, MeasureTheory.Content.borel_le_caratheodory, MeasureTheory.Measure.le_iff, MeasureTheory.Measure.ofMeasurable, MeasureTheory.Measure.toOuterMeasure_injective  (+6 more)
+   d162  MeasureTheory.Measure.zero_toOuterMeasure, MeasureTheory.OuterMeasure.toMeasure, MeasureTheory.OuterMeasure.trim_binop, Orthonormal.comp, Orthonormal.inner_left_sum, Orthonormal.inner_right_finsupp  (+8 more)
+   d163  LinearEquiv.toContinuousLinearEquiv, MeasureTheory.Content.measure, MeasureTheory.OuterMeasure.toMeasure.congr_simp, MeasureTheory.OuterMeasure.trim_add, MeasureTheory.OuterMeasure.trim_op, Module.Basis.equivFunL  (+8 more)
+   d164  ContinuousLinearEquiv.ofFinrankEq, MeasureTheory.AEDisjoint, MeasureTheory.FinMeasAdditive, MeasureTheory.Measure.AbsolutelyContinuous, MeasureTheory.Measure.ext, MeasureTheory.Measure.real  (+14 more)
+   d165  AEMeasurable, ENNReal.essSup_add_le, ENNReal.essSup_const_mul, ENNReal.essSup_eq_zero_iff, FiniteDimensional.complete, Measurable.aemeasurable  (+26 more)
+   d166  AEMeasurable.ae_eq_mk, AEMeasurable.measurable_mk, AEMeasurable.mk, ContinuousLinearMap.lipschitz, Disjoint.aedisjoint, MeasureTheory.AEDisjoint.symm  (+25 more)
+   d167  AEMeasurable.prodMk, Continuous.comp_aestronglyMeasurable, ContinuousLinearEquiv.lipschitz, Measurable.comp_aemeasurable, MeasureTheory.AEStronglyMeasurable.add, MeasureTheory.AEStronglyMeasurable.aemeasurable  (+29 more)
+   d168  AEMeasurable.add, AEMeasurable.const_mul, AEMeasurable.mul, AEMeasurable.mul_const, AEMeasurable.pow, Complex.cos_pi  (+30 more)
+   d169  AEMeasurable.fun_mul, AEMeasurable.pow_const, Complex.cos_antiperiodic, Complex.sin_antiperiodic, FiniteDimensional.proper, LE.le.absolutelyContinuous  (+22 more)
+   d170  Complex.cos_periodic, Complex.sin_periodic, MeasureTheory.AEEqFun.cast, MeasureTheory.AEEqFun.comp, MeasureTheory.AEEqFun.induction_on₂, MeasureTheory.AEEqFun.mk_toGerm  (+10 more)
+   d171  AEMeasurable.nullMeasurable, Complex.cos_add_int_mul_two_pi, Complex.sin_add_int_mul_two_pi, FiniteDimensional.proper_rclike, MeasureTheory.AEEqFun.comp_mk, MeasureTheory.AEEqFun.comp_toGerm  (+10 more)
+   d172  MeasureTheory.AEEqFun.aestronglyMeasurable, MeasureTheory.AEEqFun.comp₂_eq_pair, MeasureTheory.AEEqFun.comp₂_toGerm, MeasureTheory.AEEqFun.neg_toGerm, MeasureTheory.AEEqFun.smul_mk, MeasureTheory.AEEqFun.smul_toGerm  (+10 more)
+   d173  MeasureTheory.AEEqFun.add_toGerm, MeasureTheory.AEEqFun.mk_coeFn, MeasureTheory.AEEqFun.sub_toGerm, MeasureTheory.HasFiniteIntegral.congr, MeasureTheory.NullMeasurableSet.exists_measurable_superset_ae_eq, MeasureTheory.exists_null_pairwise_disjoint_sdiff  (+3 more)
+   d174  MeasureTheory.AEEqFun.coeFn_mk, MeasureTheory.AEEqFun.comp_eq_mk, MeasureTheory.AEEqFun.ext, MeasureTheory.AEEqFun.pair_eq_mk, MeasureTheory.AEEqFun.toGerm_eq, MeasureTheory.Integrable.congr  (+4 more)
+   d175  MeasureTheory.AEEqFun.coeFn_comp, MeasureTheory.AEEqFun.coeFn_const, MeasureTheory.AEEqFun.comp₂_eq_mk, MeasureTheory.AEEqFun.toGerm_injective, MeasureTheory.NullMeasurableSet.compl_toMeasurable_compl_ae_eq, MeasureTheory.integrable_congr  (+1 more)
+   d176  MeasureTheory.AEEqFun.coeFn_comp₂, MeasureTheory.AEEqFun.coeFn_neg, MeasureTheory.AEEqFun.coeFn_smul, MeasureTheory.AEEqFun.coeFn_zero, MeasureTheory.NullMeasurableSet.exists_measurable_subset_ae_eq, Real.injOn_sin
+   d177  MeasureTheory.AEEqFun.coeFn_add, MeasureTheory.AEEqFun.coeFn_sub, MeasureTheory.AEEqFun.toGermAddMonoidHom, MeasureTheory.exists_subordinate_pairwise_disjoint, MeasureTheory.toMeasure_apply₀, Real.bijOn_sin
+   d178  MeasureTheory.Measure.liftLinear_apply₀, MeasureTheory.measure_iUnion₀
+   d179  MeasureTheory.measure_biUnion₀, MeasureTheory.measure_union₀_aux, Real.sinOrderIso
+   d180  MeasureTheory.measure_biUnion_finset₀, MeasureTheory.measure_inter_add_sdiff₀, Real.arcsin, Real.arcsin_mem_Icc, Real.continuous_arcsin
+   d181  Complex.arg, MeasureTheory.measure_biUnion_finset, MeasureTheory.measure_inter_add_sdiff, MeasureTheory.measure_union_add_inter₀, Real.arcsin_le_pi_div_two, Real.measurable_arcsin  (+2 more)
+   d182  Complex.log, Complex.measurable_arg, MeasureTheory.le_toOuterMeasure_caratheodory, MeasureTheory.measure_union₀, MeasureTheory.sum_measure_preimage_singleton, Real.arcsin_eq_of_sin_eq  (+3 more)
+   d183  Complex.cpow, Complex.cpow_def_of_ne_zero, Complex.log_im, Complex.log_re, Complex.measurable_log, MeasureTheory.SimpleFunc.sum_measure_preimage_singleton  (+6 more)
+   d184  Complex.arg_neg_one, Complex.arg_ofReal_of_nonneg, Complex.arg_one, Complex.arg_zero, Measurable.clog, MeasureTheory.Measure.restrictₗ  (+6 more)
+   d185  Complex.arg_mul_cos_add_sin_mul_I, Complex.cpow_def, Complex.cpow_neg, Complex.cpow_zero, Complex.log_one, Complex.log_zero  (+12 more)
+   d186  Complex.cos_arg, Complex.cpow_int_mul, Complex.log_exp, Complex.one_cpow, Complex.sin_arg, MeasureTheory.IntegrableOn  (+5 more)
+   d187  Complex.cpow_mul, Complex.exp_log, Complex.norm_mul_exp_arg_mul_I, IntervalIntegrable, MeasureTheory.Measure.restrict_apply₀, MeasureTheory.SimpleFunc.lintegral_eq_lintegral  (+9 more)
+   d188  Complex.cpow_one, Complex.norm_mul_cos_add_sin_mul_I, Complex.ofReal_cpow, MeasureTheory.Measure.restrict_apply, MeasureTheory.ae_restrict_iff₀, MeasureTheory.lintegral_const  (+8 more)
+   d189  Complex.arg_mem_Ioc, Complex.cpow_intCast, MeasureTheory.Measure.restrict_apply_univ, MeasureTheory.Measure.restrict_le_self, MeasureTheory.SimpleFunc.const_lintegral_restrict, MeasureTheory.SimpleFunc.lintegral_restrict  (+12 more)
+   d190  Complex.arg_real_mul, MeasureTheory.SimpleFunc.restrict_lintegral_eq_lintegral_restrict, MeasureTheory.ae_restrict_of_ae, MeasureTheory.exists_measurable_le_lintegral_eq, MeasureTheory.iSup_lintegral_le, MeasureTheory.lintegral_eq_zero_of_ae_eq_zero  (+13 more)
+   d191  AEMeasurable.restrict, Complex.arg_eq_pi_iff, Complex.log_ofReal_mul, Directed.measure_iUnion, MeasureTheory.SimpleFunc.restrict_const_lintegral, MeasureTheory.setLIntegral_mono_ae  (+4 more)
+   d192  Complex.arg_ofReal_of_neg, Complex.log_mul_ofReal, ENNReal.rpow, MeasureTheory.lintegral_eq_nnreal, MeasureTheory.lintegral_eq_zero_iff', Monotone.measure_iUnion  (+15 more)
+   d193  Complex.arg_conj, MeasureTheory.lintegral_iSup, NNReal.geom_mean_le_arith_mean2_weighted, NNReal.mul_rpow, NNReal.rpow_eq_zero_iff, NNReal.rpow_le_one  (+6 more)
+   d194  Complex.log_conj_eq_ite, ENNReal.LpAddConst, ENNReal.coe_rpow_of_ne_zero, ENNReal.funMulInvSnorm, ENNReal.rpow_one, ENNReal.rpow_zero  (+11 more)
+   d195  Complex.log_inv_eq_ite, ENNReal.coe_rpow_of_nonneg, ENNReal.ofReal_rpow_of_pos, ENNReal.one_rpow, ENNReal.rpow_add, ENNReal.rpow_eq_top_iff  (+15 more)
+   d196  Complex.inv_cpow_eq_ite, ENNReal.LpAddConst_of_one_le, ENNReal.ofReal_rpow_of_nonneg, ENNReal.rpow_mul, ENNReal.rpow_sub, ENNReal.strictMono_rpow_of_pos  (+10 more)
+   d197  ENNReal.fun_eq_funMulInvSnorm_mul_eLpNorm, ENNReal.lintegral_mul_le_Lp_mul_Lq_of_ne_zero_of_eq_top, ENNReal.monotone_rpow_of_nonneg, ENNReal.mul_rpow_eq_ite, ENNReal.rpow_eq_top_iff_of_pos, ENNReal.rpow_eq_top_of_nonneg  (+19 more)
+   d198  ENNReal.le_rpow_inv_iff, ENNReal.mul_rpow_of_ne_zero, ENNReal.mul_rpow_of_nonneg, ENNReal.rpow_le_rpow, ENNReal.rpow_ne_top_of_nonneg, ENNReal.rpow_pos_of_nonneg  (+7 more)
+   d199  ENNReal.ae_eq_zero_of_lintegral_rpow_eq_zero, ENNReal.inv_rpow, ENNReal.lintegral_mul_le_one_of_lintegral_rpow_eq_one, ENNReal.rpow_lt_top_of_nonneg, MeasureTheory.eLpNorm'_le_nnreal_smul_eLpNorm'_of_ae_le_mul, MeasureTheory.eLpNorm'_mono_enorm_ae  (+3 more)
+   d200  ENNReal.LpAddConst_lt_top, ENNReal.funMulInvSnorm_rpow, ENNReal.lintegral_mul_eq_zero_of_lintegral_rpow_eq_zero, MeasureTheory.SimpleFunc.memLp_of_finite_measure_preimage, MeasureTheory.eLpNorm_le_nnreal_smul_eLpNorm_of_ae_le_mul, MeasureTheory.eLpNorm_mono_enorm_ae  (+3 more)
+   d201  ENNReal.lintegral_rpow_funMulInvSnorm_eq_one, MeasureTheory.eLpNorm_congr_enorm_ae, MeasureTheory.eLpNorm_const_smul_le, MeasureTheory.lintegral_rpow_enorm_lt_top_of_eLpNorm_lt_top, NNReal.add_rpow_le_rpow_add, NNReal.inner_le_Lp_mul_Lq  (+1 more)
+   d202  ENNReal.add_rpow_le_rpow_add, ENNReal.lintegral_mul_le_Lp_mul_Lq_of_ne_zero_of_ne_top, MeasureTheory.SimpleFunc.measure_preimage_lt_top_of_memLp, MeasureTheory.eLpNorm_congr_ae, NNReal.isGreatest_Lp, Real.rpow_arith_mean_le_arith_mean_rpow
+   d203  ENNReal.lintegral_mul_le_Lp_mul_Lq, ENNReal.rpow_add_rpow_le_add, MeasureTheory.SimpleFunc.memLp_iff, MeasureTheory.eLpNorm_aeeqFun, MeasureTheory.memLp_congr_ae, NNReal.Lp_add_le  (+1 more)
+   d204  ENNReal.Lp_add_le, ENNReal.lintegral_mul_rpow_le_lintegral_rpow_mul_lintegral_rpow, ENNReal.rpow_add_rpow_le, ENNReal.rpow_arith_mean_le_arith_mean_rpow, MeasureTheory.MemLp.ae_eq, MeasureTheory.MemLp.eLpNorm_mk_lt_top  (+1 more)
+   d205  ENNReal.lintegral_rpow_add_le_add_eLpNorm_mul_lintegral_rpow_add, ENNReal.rpow_add_le_add_rpow, ENNReal.rpow_arith_mean_le_arith_mean2_rpow, MeasureTheory.SimpleFunc.integrable_iff_finMeasSupp, MeasureTheory.SimpleFunc.measure_preimage_lt_top_of_integrable
+   d206  ENNReal.rpow_add_le_mul_rpow_add_rpow, MeasureTheory.SimpleFunc.map_setToSimpleFunc, MeasureTheory.SimpleFunc.norm_setToSimpleFunc_le_sum_mul_norm_of_integrable
+   d207  ENNReal.lintegral_Lp_add_le_of_le_one, ENNReal.lintegral_rpow_add_lt_top_of_lintegral_rpow_lt_top, MeasureTheory.SimpleFunc.integrable_pair, MeasureTheory.SimpleFunc.map_integral, MeasureTheory.SimpleFunc.setToSimpleFunc_smul, PiLp.pseudoEmetricAux
+   d208  ENNReal.lintegral_Lp_add_le, MeasureTheory.SimpleFunc.norm_setToSimpleFunc_le_integral_norm, MeasureTheory.SimpleFunc.setToSimpleFunc_add, MeasureTheory.SimpleFunc.setToSimpleFunc_congr', MeasureTheory.eLpNorm'_add_le_of_le_one
+   d209  MeasureTheory.SimpleFunc.norm_integral_le_integral_norm, MeasureTheory.SimpleFunc.setToSimpleFunc_congr, MeasureTheory.eLpNorm'_add_le, PiLp.pseudoMetricAux
+   d210  MeasureTheory.eLpNorm_add_le
+   d211  MeasureTheory.eLpNorm_add_le'
+   d212  MeasureTheory.eLpNorm_add_lt_top
+   d214  MeasureTheory.Lp
+   d215  MeasureTheory.Lp.aestronglyMeasurable, MeasureTheory.Lp.coeFn_add, MeasureTheory.Lp.coeFn_neg, MeasureTheory.Lp.coeFn_sub, MeasureTheory.Lp.eLpNorm_lt_top, MeasureTheory.Lp.ext  (+7 more)
+   d216  LinearIsometryEquiv.piLpCongrLeft, MeasureTheory.Integrable.toL1, MeasureTheory.Lp.eLpNorm_ne_top, MeasureTheory.Lp.edist_eq_eLpNorm_neg_add, MeasureTheory.Lp.ext_iff, MeasureTheory.Lp.norm_def  (+4 more)
+   d217  MeasureTheory.Lp.const_smul_mem_Lp, MeasureTheory.Lp.dist_eq_eLpNorm_neg_add, MeasureTheory.Lp.edist_def, MeasureTheory.Lp.enorm_def, MeasureTheory.Lp.eq_zero_iff_ae_eq_zero, MeasureTheory.Lp.mem_Lp_iff_memLp  (+5 more)
+   d218  MeasureTheory.Lp.dist_def, MeasureTheory.Lp.nnnorm_neg, MeasureTheory.Lp.nnnorm_zero, MeasureTheory.Lp.simpleFunc.norm_toLp, MeasureTheory.Lp.simpleFunc.toSimpleFunc, OrthonormalBasis.repr_injective
+   d219  MeasureTheory.L1.SimpleFunc.integral, MeasureTheory.L1.SimpleFunc.setToL1S, MeasureTheory.Lp.LpSubmodule, MeasureTheory.Lp.edist_dist, MeasureTheory.Lp.nnnorm_eq_zero_iff, MeasureTheory.Lp.norm_neg  (+2 more)
+   d220  MeasureTheory.Lp.coeFn_smul, MeasureTheory.Lp.norm_eq_zero_iff, MeasureTheory.Lp.simpleFunc.add_toSimpleFunc, MeasureTheory.Lp.simpleFunc.memLp
+   d221  MeasureTheory.L1.SimpleFunc.integrable, MeasureTheory.Lp.simpleFunc.toLp_toSimpleFunc
+   d222  MeasureTheory.L1.SimpleFunc.setToL1S_add, Module.Basis.toOrthonormalBasis
+   d223  MeasureTheory.L1.SimpleFunc.integral_add, MeasureTheory.Lp.simpleFunc.norm_toSimpleFunc, MeasureTheory.Lp.simpleFunc.smul, Module.Basis.toBasis_toOrthonormalBasis, OrthonormalBasis.mk
+   d224  MeasureTheory.L1.SimpleFunc.norm_eq_sum_mul, Module.Basis.coe_toOrthonormalBasis, OrthonormalBasis.mkOfOrthogonalEqBot
+   d225  MeasureTheory.L1.SimpleFunc.norm_eq_integral, MeasureTheory.Lp.simpleFunc.module, OrthonormalBasis.coe_mk
+   d226  MeasureTheory.L1.SimpleFunc.norm_integral_le_norm, MeasureTheory.Lp.simpleFunc.smul_toSimpleFunc, OrthonormalBasis.coe_of_orthogonal_eq_bot_mk
+   d227  MeasureTheory.L1.SimpleFunc.setToL1S_smul, MeasureTheory.Lp.simpleFunc.coeToLp, Orthonormal.exists_orthonormalBasis_extension
+   d228  MeasureTheory.L1.SimpleFunc.integral_smul, exists_orthonormalBasis
+   d230  MeasureTheory.L1.SimpleFunc.integralCLM'
+   d231  MeasureTheory.L1.integralCLM'
+   d232  MeasureTheory.L1.integralCLM
+   d234  stdOrthonormalBasis
+   d236  MeasureTheory.L1.integral
+   d240  MeasureTheory.integral
+   d241  intervalIntegral
+
+-- proof moves (new facts the proof pulls in, deepest first)
+   d258  intervalIntegral.integral_eq_sub_of_hasDerivAt
+   d257  intervalIntegral.integral_eq_sub_of_hasDeriv_right
+   d256  intervalIntegral.integral_eq_sub_of_hasDeriv_right_of_le
+   d255  intervalIntegral.integral_eq_sub_of_hasDeriv_right_of_le_real
+   d254  intervalIntegral.integral_le_sub_of_hasDeriv_right_of_le
+   d253  intervalIntegral.sub_le_integral_of_hasDeriv_right_of_le
+   d252  intervalIntegral.continuousOn_primitive_interval_left
+   d252  intervalIntegral.sub_le_integral_of_hasDeriv_right_of_le_Ico
+   d251  ContinuousLinearMap.intervalIntegral_comp_comm
+   d251  intervalIntegral.continuousOn_primitive_interval
+   d250  ContinuousLinearMap.integral_comp_comm
+   d250  intervalIntegral.continuousOn_primitive_interval'
+   [+1 machinery/glue moves in top 40]
+   [machinery hidden from statement path; full cones: A_S 32,145, A_P 36,212]
+
+== norm_inner_le_norm
+   statement cone 5,236 | proof cone 13,228 | new 7,992 (60% of proof)
+
+-- statement path (understand these, shallow to deep)
+   d  0  Acc, Add, AddCancelCommMonoid, AddCancelMonoid, AddCommGroup, AddCommMagma  (+185 more)
+   d  1  AbsoluteValue, Acc.intro, Add.mk, AddEquiv, AddLeftReflectLE, AddRightReflectLE  (+184 more)
+   d  2  AddCancelCommMonoid.mk, AddCancelMonoid.mk, AddLeftCancelMonoid.mk, AddLeftCancelSemigroup.mk, And.imp, Array.emptyWithCapacity  (+156 more)
+   d  3  AbsoluteValue.add_le, AbsoluteValue.eq_zero, AbsoluteValue.nonneg, AddUnits.add_neg, AddUnits.neg_add, BEq.rfl  (+94 more)
+   d  4  Acc.inv, AddCommGroup.mk, AddCommMagma.mk, AddCommMonoid.mk, AddCommMonoidWithOne.mk, AddCommSemigroup.mk  (+185 more)
+   d  5  And.symm, Bool.and, Bool.dcond, Bool.not, Bool.of_not_eq_true, Bool.or  (+113 more)
+   d  6  AddUnits.mk, And.comm, Bool.and_true, Bool.decEq, Bool.false_and, Bool.false_or  (+155 more)
+   d  7  Array.push, Bool.and'_eq_and, Bool.cond_neg, Bool.cond_pos, Classical.choose, Classical.choose_spec  (+86 more)
+   d  8  AddUnits.add_neg_cancel_left, AddUnits.add_neg_cancel_right, AddUnits.neg_add_cancel_left, AddUnits.neg_add_cancel_right, Bool.and_eq_false_imp, Bool.and_eq_true  (+94 more)
+   d  9  AddGroupWithOne.mk, AddMonoid.mk, AddMonoidWithOne.mk, Bool.and_eq_true_iff, Classical.em, CommGroupWithZero.mk  (+78 more)
+   d 10  AddUnits.addLeft, AddUnits.addRight, AddUnits.val_injective, Array.size, Bool.false_eq_true, Bool.if_false_left  (+66 more)
+   d 11  AddUnits.ext, Bool.cond_eq_ite, ByteArray.size, Classical.propDecidable, Function.Injective.addCommMonoid, Function.Injective.monoidWithZero  (+49 more)
+   d 12  AbsoluteValue.map_mul, AbsoluteValue.mk, AddGroup.covariant_iff_contravariant, AddGroup.covariant_swap_iff_contravariant_swap, BitVec.ofFin, BitVec.toNat  (+94 more)
+   d 13  BitVec.ofNatLT, Function.Injective.addMonoidWithOne, Function.Injective.nonUnitalSemiring, Function.Injective.subNegMonoid, Int.cast_neg, Int.dvd_zero  (+57 more)
+   d 14  Equiv.coe_fn_injective, Equiv.injective, Function.Injective.nonAssocSemiring, Int.le, Int.negSucc_sub_one, Int.one_ne_zero  (+65 more)
+   d 15  Char.mk, Equiv.toEmbedding, Function.Injective.semiring, Int.beq'_eq_beq, Int.ofNat_sub, Int.subNatNat_add_left  (+48 more)
+   d 16  Function.Injective.addGroup, Int.le.dest_sub, Int.le_def, Int.lt, Int.mul_comm, Int.natAbs_pos  (+43 more)
+   d 17  AbsoluteValue.map_zero, AbsoluteValue.ne_zero_iff, Equiv.addLeft, Equiv.addRight, Function.Injective.addCommGroup, Int.dvd_mul_left  (+45 more)
+   d 18  AbsoluteValue.pos_iff, Commute.mul_self_sub_mul_self_eq, Int.add_one_le_of_lt, Int.eq_natAbs_of_nonneg, Int.le.intro_sub, Int.lt_iff_add_one_le  (+48 more)
+   d 19  AbsoluteValue.pos, Char.ofNatAux, Commute.mul_self_eq_mul_self_iff, Function.Injective.addGroupWithOne, Int.dvd_refl, Int.dvd_trans  (+22 more)
+   d 20  Char.ofNat, Function.Injective.ring, Int.ediv, Int.natCast_ediv, Int.subNatNat_add_add, Int.tdiv  (+11 more)
+   d 21  AbsoluteValue.map_neg, Int.add_left_neg, Int.emod, Int.natCast_emod, Int.pow, Int.subNatNat_add  (+21 more)
+   d 22  AbsoluteValue.map_sub, Fin.Internal.ofNat, Int.add_right_neg, Int.divExact, Int.div_def, Int.ediv_neg  (+27 more)
+   d 23  BitVec.ofNat, Int.add_mul, Int.dvd_add, Int.neg_tdiv, Int.ofNat_mod_ofNat, Int.pow_zero  (+18 more)
+   d 24  AddMonoidWithOne.toCharZero, Int.add_assoc, Int.emod_zero, Int.neg_tdiv_neg, Int.sub_eq_zero_of_eq, Int.tmod_zero  (+19 more)
+   d 25  Int.add_left_comm, Int.add_neg_cancel_right, Int.add_right_comm, Int.ediv_one, Int.le.dest, Int.le.intro  (+15 more)
+   d 26  Int.add_le_add_left, Int.add_left_cancel, Int.add_sub_cancel, Int.eq_succ_of_zero_lt, Int.le_refl, Int.le_trans  (+17 more)
+   d 27  ByteArray.IsValidUTF8.intro, Int.add_le_add_right, Int.le_antisymm, Int.le_of_add_le_add_left, Int.le_of_lt, Int.lt.intro  (+21 more)
+   d 28  Int.add_le_add, Int.dvd_neg, Int.eq_iff_le_and_ge, Int.le_max_left, Int.le_of_add_le_add_right, Int.le_of_sub_nonneg  (+36 more)
+   d 29  Int.add_le_add_iff_right, Int.add_nonneg, Int.dvd_natAbs, Int.dvd_sub, Int.emod_nonneg, Int.le_of_neg_le_neg  (+28 more)
+   d 30  Int.add_lt_add_left, Int.dvd_iff_dvd_of_dvd_sub, Int.emod_add_mul_ediv, Int.le_max_right, Int.lt_iff_le_and_not_ge, Int.min_le_left  (+17 more)
+   d 31  AbsoluteValue.abs, Int.add_lt_add_right, Int.dvd_iff_dvd_of_dvd_add, Int.emod_def, Int.eq_neg_natAbs_of_nonpos, Int.le_min  (+28 more)
+   d 32  Int.dvd_of_emod_eq_zero, Int.ediv_mul_cancel_of_emod_eq_zero, Int.emod_neg, Int.lt_of_sub_pos, Int.neg_lt_neg, Int.not_le  (+26 more)
+   d 33  Int.lt_of_lt_of_le, Int.lt_trichotomy, Int.mul_lt_mul_of_pos_left, Int.mul_lt_mul_of_pos_right, Int.natAbs_pow, Int.negSucc_lt_zero  (+20 more)
+   d 34  Int.abs_eq_natAbs, Int.add_mul_ediv_right, Int.eq_negSucc_of_lt_zero, Int.mul_le_mul_of_nonneg_left, Int.mul_neg_of_neg_of_pos, Int.ne_iff_lt_or_gt  (+18 more)
+   d 35  Int.add_ediv_of_dvd_right, Int.add_mul_ediv_left, Int.add_mul_emod_self_right, Int.lt_or_gt_of_ne, Int.mul_ediv_cancel, Int.mul_le_mul_of_nonneg_right  (+15 more)
+   d 36  Int.add_ediv_of_dvd_left, Int.add_mul_emod_self_left, Int.ediv_nonneg_iff_of_pos, Int.mul_add_ediv_left, Int.mul_ediv_cancel_left, Int.mul_emod_left  (+9 more)
+   d 37  Int.emod_add_emod, Int.emod_emod_of_dvd, Int.emod_lt_of_pos, Int.emod_self, Int.le_of_mul_le_mul_left, Int.mul_ediv_assoc  (+11 more)
+   d 38  Int.add_emod_emod, Int.emod_eq_zero_of_dvd, Int.le_of_mul_le_mul_right, Int.mul_ediv_assoc', Int.sub_ediv_of_dvd, Lean.Grind.CommRing.Mon.revlex_k  (+6 more)
+   d 39  Int.add_emod, Int.dvd_iff_emod_eq_zero, Int.ediv_mul_cancel, Int.mul_ediv_cancel_of_dvd, Int.mul_le_mul_iff_of_pos_right, Lean.Grind.CommRing.Mon.grevlex_k  (+9 more)
+   d 40  Int.emod_pos_of_not_dvd, Int.mul_nonneg_iff_of_pos_right, Lean.Grind.CommRing.Mon.eq_of_revlexWF, Lean.Grind.CommRing.Mon.revlex, Lean.Grind.CommRing.Poly.combine_k, Lean.Omega.Coeffs.dot_sdiv_left  (+4 more)
+   d 41  Lean.Grind.CommRing.Mon.grevlex, Lean.Grind.CommRing.Mon.revlexFuel.induct_unfolding, Lean.Grind.CommRing.Mon.revlex_k_eq_revlex, Lean.Grind.CommRing.Stepwise.simp_cert, Lean.Omega.IntList.gcd_dvd_dot_left, Rat.nonneg_total
+   d 42  Lean.Grind.CommRing.Mon.eq_of_revlexFuel, Lean.Omega.Coeffs.gcd_dvd_dot_left, Lean.Omega.IntList.get_cons_zero, List.getElem?_cons, NNRat.den, NNRat.den_coe  (+1 more)
+   d 43  DivisionRing.mk, DivisionSemiring.mk, Field.mk, Lean.Grind.CommRing.Mon.eq_of_revlex, Lean.Grind.CommRing.Poly.combine.go, Lean.Omega.Constraint.div_sat'  (+3 more)
+   d 44  Lean.Grind.CommRing.Mon.eq_of_grevlex, Lean.Grind.CommRing.Poly.combine, Lean.Omega.LinearCombo.coordinate_eval, Lean.Omega.normalize_sat, List.getElem?_eq_some_iff
+   d 45  IsCauSeq, IsCauSeq.const, Lean.Grind.CommRing.Poly.combine.go.induct_unfolding, Lean.Omega.LinearCombo.coordinate_eval_0, Lean.Omega.LinearCombo.coordinate_eval_1, Lean.Omega.LinearCombo.coordinate_eval_2  (+9 more)
+   d 46  CauSeq, CauSeq.const, IsCauSeq.bounded, Lean.Grind.CommRing.Poly.mul.go, List.TFAE.out, rat_add_continuous_lemma  (+1 more)
+   d 47  CauSeq.LimZero, CauSeq.Pos, CauSeq.cauchy, Int.blt'_eq_true, Int.emod_lt_of_neg, Int.natCast_eq_zero  (+9 more)
+   d 48  CauSeq.bounded', CauSeq.zero_limZero, Int.blt'_eq_false, Lean.Grind.CommRing.Poly.mul.go.induct_unfolding, Lean.Grind.Ring.intCast_add, Nat.div_le_iff_le_mul  (+2 more)
+   d 49  CauSeq.ofEq, Lean.Grind.CommRing.Poly.combine_k_eq_combine, Lean.Grind.CommRing.Poly.pow, Lean.Grind.CommRing.denoteInt_eq, Lean.Grind.Ring.intCast_sub, Nat.div_eq_iff  (+2 more)
+   d 50  Lean.Grind.CommRing.Expr.toPoly_k, Lean.Grind.Ring.neg_eq_mul_neg_one, Lean.Grind.Ring.neg_eq_neg_one_mul, Lean.Grind.Ring.ofNat_sub, Nat.lt_of_div_eq_zero, Nat.succ_div_of_not_dvd
+   d 51  Lean.Grind.CommRing.Expr.toPoly, Lean.Grind.CommRing.Poly.pow.induct_unfolding, Lean.Grind.CommRing.Stepwise.core_cert, Lean.Grind.Ring.mul_neg, Lean.Grind.Ring.neg_mul, Lean.Grind.Ring.neg_ofNat_sub  (+4 more)
+   d 52  Int.ediv_eq_neg_one_of_neg_of_le, Int.ediv_eq_one_of_neg_of_le, Int.tdiv_eq_ediv, IsCauSeq.cauchy₂, Lean.Grind.CommRing.Expr.toPoly_k_eq_toPoly, Lean.Grind.IsCharP.mk'  (+3 more)
+   d 53  Int.ediv_eq_tdiv, Int.neg_ediv, Int.tdiv_eq_ediv_of_dvd, IsCauSeq.cauchy₃, IsCauSeq.neg, Lean.Grind.CommRing.Expr.toPoly.induct_unfolding  (+3 more)
+   d 54  Int.divExact_eq_tdiv, Int.mul_tdiv_cancel, Int.natAbs_ediv, Int.neg_emod, IsCauSeq.add, IsCauSeq.mul  (+1 more)
+   d 55  Int.mul_tmod_left, Int.natAbs_ediv_of_dvd, Lean.Grind.IsCharP.intCast_eq_zero_iff, Rat.zpow_natCast
+   d 56  CauSeq.coe_neg, Int.mul_tmod_right, Lean.Grind.CommRing.Poly.denote, Lean.Grind.CommRing.inv_int_eq, Rat.mul, Rat.normalize.reduced
+   d 57  CauSeq.add_limZero, CauSeq.coe_add, CauSeq.coe_mul, CauSeq.mul_limZero_left, CauSeq.mul_limZero_right, Int.tmod_eq_zero_of_dvd  (+6 more)
+   d 58  CauSeq.coe_smul, CauSeq.coe_sub, Int.tdiv_mul_cancel, Lean.Grind.CommRing.Poly.denote_concat, Lean.Grind.CommRing.Poly.denote_mulMon, Lean.Grind.CommRing.Poly.denote_ofVar  (+2 more)
+   d 59  CauSeq.coe_pow, Lean.Grind.CommRing.Poly.denote_combine, Rat.normalize.congr_simp, Rat.normalize_eq, Rat.normalize_zero, mkRat
+   d 60  Lean.Grind.CommRing.Poly.denote_mul_go, Lean.Grind.CommRing.Stepwise.simp, Rat.divInt, Rat.divInt_ofNat, Rat.div_def, Rat.mkRat_zero  (+5 more)
+   d 61  CauSeq.neg_limZero, Lean.Grind.CommRing.Poly.denote_mul, Rat.divInt_one, Rat.divInt_zero, Rat.mk_eq_mkRat, Rat.neg_divInt_neg  (+4 more)
+   d 62  Lean.Grind.CommRing.Poly.denote_pow, Rat.divInt_neg', Rat.divInt_one_one, Rat.maybeNormalize_eq_normalize, Rat.mkRat_num_den, Rat.mkRat_self  (+3 more)
+   d 63  Lean.Grind.CommRing.Expr.denote_toPoly, Rat.add_def, Rat.divInt_num_den, Rat.intCast_eq_divInt, Rat.mkRat_eq_iff, Rat.mul_comm  (+9 more)
+   d 64  Lean.Grind.CommRing.Stepwise.core, Rat.add_comm, Rat.add_def', Rat.intCast_add, Rat.inv_def, Rat.mkRat_mul_mkRat  (+3 more)
+   d 65  CauSeq.Completion.Cauchy, CauSeq.mul_equiv_mul, Rat.add_zero, Rat.divInt_eq_divInt_iff, Rat.divInt_mul_divInt, Rat.mkRat_add_mkRat  (+6 more)
+   d 66  Rat.add_neg_cancel, Rat.divInt_add_divInt, Rat.divInt_eq_zero, Rat.divInt_mul_left, Rat.divInt_nonneg_iff_of_pos_right, Rat.lt_iff  (+3 more)
+   d 67  CauSeq.pos_add_limZero, Rat.add_assoc, Rat.divInt_mul_right, Rat.divInt_ne_zero, Rat.le_iff
+   d 68  CauSeq.lt_of_eq_of_lt, CauSeq.lt_of_lt_of_eq, Rat.add_left_comm, Rat.add_mul, Rat.add_nonneg, Rat.add_right_cancel  (+5 more)
+   d 69  Rat.add_le_add_left, Rat.divInt_eq_div, Rat.le_refl, Rat.le_trans, Rat.mul_add, Rat.mul_inv_cancel  (+1 more)
+   d 70  Rat.add_le_add_right, Rat.le_antisymm, Rat.le_total, Rat.neg_mul
+   d 72  Rat.lt_iff_le_not_ge
+   d 75  Rat.num_div_den
+   d 81  Real.ofCauchy
+
+-- proof moves (new facts the proof pulls in, deepest first)
+   d160  InnerProductSpace.Core.norm_inner_le_norm
+   d159  InnerProductSpace.Core.inner_mul_inner_self_le
+   d158  InnerProductSpace.Core.norm_inner_symm
+   d157  RCLike.norm_conj
+   d156  InnerProductSpace.Core.cauchy_schwarz_aux'
+   d155  InnerProductSpace.Core.re_inner_smul_ofReal_smul_self
+   d155  RCLike.normSq_conj
+   d155  RCLike.sqrt_normSq_eq_norm
+   d154  InnerProductSpace.Core.inner_smul_ofReal_left
+   d154  RCLike.mul_conj
+   d153  InnerProductSpace.Core.inner_add_add_self
+   d153  RCLike.conj_ofReal
+   [+15 machinery/glue moves in top 40]
+   [machinery hidden from statement path; full cones: A_S 5,236, A_P 13,228]
+
+== Real.log_mul
+   statement cone 15,725 | proof cone 15,732 | new 7 (0% of proof)
+
+-- statement path (understand these, shallow to deep)
+   d  0  Acc, Add, AddCancelCommMonoid, AddCancelMonoid, AddCommGroup, AddCommGroupWithOne  (+300 more)
+   d  1  AbsoluteValue, Acc.intro, Add.mk, AddAction, AddEquiv, AddGroupNorm  (+380 more)
+   d  2  AddCancelCommMonoid.mk, AddCancelMonoid.mk, AddEquivClass, AddLeftCancelMonoid.mk, AddLeftCancelSemigroup.mk, AddMemClass  (+305 more)
+   d  3  AbsoluteValue.add_le, AbsoluteValue.eq_zero, AbsoluteValue.nonneg, AddGroupNormClass, AddGroupSeminormClass, AddHomClass  (+272 more)
+   d  4  Acc.inv, AddCommGroup.mk, AddCommMagma.mk, AddCommMonoid.mk, AddCommMonoidWithOne.mk, AddCommSemigroup.mk  (+408 more)
+   d  5  AddHomClass.toAddHom, AddMemClass.mk, AddMonoidHom.id, AddSubmonoid.mem_bot, And.symm, BddAbove  (+341 more)
+   d  6  AddAction.mk, AddUnits.mk, And.comm, Archimedean.mk, Bool.and_self, Bool.and_true  (+432 more)
+   d  7  AddMonoidHom.mulLeft, AddMonoidHom.mulRight, AddMonoidHomClass.toAddMonoidHom, Array.push, Bool.and'_eq_and, Bool.cond_false  (+315 more)
+   d  8  AddLECancellable.le_add_tsub_swap, AddLECancellable.le_tsub_of_add_le_left, AddSubmonoid.toSubsemigroup_injective, AddUnits.add_neg_cancel_left, AddUnits.add_neg_cancel_right, AddUnits.neg_add_cancel_left  (+297 more)
+   d  9  AddCommGroupWithOne.mk, AddEquivClass.mk, AddGroupWithOne.mk, AddLECancellable.le_add_tsub, AddMonoid.mk, AddMonoidWithOne.mk  (+268 more)
+   d 10  AddLECancellable.tsub_eq_of_eq_add, AddOpposite.opEquiv, AddUnits.addLeft, AddUnits.addRight, AddUnits.val_injective, Array.size  (+208 more)
+   d 11  AddLECancellable.add_tsub_cancel_left, AddLECancellable.add_tsub_cancel_right, AddLECancellable.eq_tsub_of_add_eq, AddMonoidHom.ext, AddMonoidHom.id_apply, AddSubmonoid.ext  (+209 more)
+   d 12  AbsoluteValue.map_mul, AbsoluteValue.mk, AddGroup.covariant_iff_contravariant, AddGroup.covariant_swap_iff_contravariant_swap, AddGroupNormClass.mk, AddGroupSeminormClass.mk  (+303 more)
+   d 13  AddLECancellable.tsub_eq_iff_eq_add_of_le, AddMonoidHom.comp, BitVec.ofNatLT, CanonicallyOrderedAdd.toIsOrderedRing, Classical.by_cases, Commute.div_eq_div_iff_of_isUnit  (+209 more)
+   d 14  AddSubmonoid.map, Equiv.bijective, Equiv.coe_fn_injective, Equiv.image_symm_eq_preimage, Equiv.injective, Equiv.self_comp_symm  (+227 more)
+   d 15  AddOpposite.unop_bijective, AddSubmonoid.closure, Char.mk, DistribMulAction.compHom, Equiv.iInf_congr, Equiv.image_eq_preimage_symm  (+187 more)
+   d 16  AddOpposite.unop_injective, AddSubmonoid.subset_closure, AlgHom.mk, AlgHomClass.mk, Algebra.algebraMap_eq_smul_one, Algebra.mk  (+191 more)
+   d 17  AbsoluteValue.map_one_of_isLeftRegular, AbsoluteValue.map_zero, AbsoluteValue.ne_zero_iff, Commute.sub_left, DistribLattice.ofInfSupLe, Equiv.addLeft  (+158 more)
+   d 18  AbsoluteValue.ne_zero, AbsoluteValue.pos_iff, AbsoluteValue.sum_le, AddEquiv.map_zero, AddMonoidHom.ext_nat, AddMonoidHom.mrange  (+141 more)
+   d 19  AbsoluteValue.map_one, AbsoluteValue.pos, AddEquiv.toAddMonoidHom, AddMonoidHom.mem_mrange, AddMonoidHom.mul, Char.ofNatAux  (+92 more)
+   d 20  Algebra.compHom, Char.ofNat, Commute.inv_left₀, ContinuousInv₀.mk, Disjoint.inter_eq, Finset.mem_attach  (+79 more)
+   d 21  AbsoluteValue.map_neg, AbsoluteValue.toMonoidWithZeroHom, Algebra.restrictScalars, Commute.div_left, Disjoint.notMem_of_mem_left, Filter.countable_biInf_eq_iInf_seq  (+72 more)
+   d 22  AbsoluteValue.map_sub, AbsoluteValue.toMonoidHom, Algebra.ofId, Filter.mem_top, Fin.Internal.ofNat, Finset.mem_range  (+71 more)
+   d 23  AbsoluteValue.map_pow, AlgHom.toLinearMap, BitVec.ofNat, EquivLike.range_eq_univ, Fin.ofNat, Finset.mem_insert  (+70 more)
+   d 24  AddMonoidWithOne.toCharZero, Commute.div_eq_div_iff, Finset.empty, Finset.mk_cons, Int.add_assoc, Int.emod_zero  (+65 more)
+   d 25  Commute.div_add_div, Fin.succ_pos, Finset.filter, Finset.fold_singleton, Finset.mem_union, Int.Internal.Linear.Poly.denote_addConst  (+54 more)
+   d 26  Fin.foldr_succ, Finset.insert_val, Finset.map, Finset.sum_empty, Finset.sum_singleton, Int.Internal.Linear.Poly.denote_append  (+51 more)
+   d 27  ByteArray.IsValidUTF8.intro, Filter.countable_biInf_eq_iInf_seq', Finset.eq_of_veq, Finset.map_val, Int.Internal.Linear.Poly.denote_combine_mul_k, Int.Internal.Linear.Poly.denote_norm  (+48 more)
+   d 28  AddCommGroup.toDistribLattice, Finset.sum_map, Finset.val_injective, Int.add_le_add, Int.dvd_neg, Int.eq_iff_le_and_ge  (+56 more)
+   d 29  BddBelow.neg, Finset.val_inj, Int.Internal.Linear.Expr.denote_toPoly'_go, Int.Internal.Linear.natCast_sub, Int.add_le_add_iff_right, Int.add_nonneg  (+44 more)
+   d 30  Int.Internal.Linear.Expr.denote_norm, Int.add_lt_add_left, Int.dvd_iff_dvd_of_dvd_sub, Int.emod_add_mul_ediv, Int.le_iff_lt_add_one, Int.le_max_right  (+33 more)
+   d 31  AbsoluteValue.abs, Int.Internal.Linear.Poly.isUnsatLe, Int.Internal.Linear.Poly.isValidLe, Int.Internal.Linear.Poly.leadCoeff, Int.add_lt_add_right, Int.dvd_iff_dvd_of_dvd_add  (+45 more)
+   d 32  Finset.mem_sdiff, Int.Internal.Linear.le_combine_cert, Int.Internal.Linear.le_eq_true, Int.dvd_of_emod_eq_zero, Int.ediv_mul_cancel_of_emod_eq_zero, Int.ediv_mul_le  (+44 more)
+   d 33  FloorRing.mk, Int.add_lt_add_iff_right, Int.cast_mono, Int.floor_le, Int.le_floor, Int.lt_of_le_of_lt  (+33 more)
+   d 34  FloorRing.ofFloor, Int.abs_eq_natAbs, Int.add_mul_ediv_right, Int.eq_negSucc_of_lt_zero, Int.floor_lt, Int.floor_nonneg  (+31 more)
+   d 35  Int.add_ediv_of_dvd_right, Int.add_mul_ediv_left, Int.add_mul_emod_self_right, Int.le_iff_eq_or_lt, Int.leastOfBdd, Int.lt_or_gt_of_ne  (+23 more)
+   d 36  FloorSemiring.natCast_strictMono, Int.add_ediv_of_dvd_left, Int.add_mul_emod_self_left, Int.ediv_nonneg_iff_of_pos, Int.le_iff_lt_or_eq, Int.le_toNat  (+16 more)
+   d 37  Int.cast_mul, Int.ediv_lt_of_lt_mul, Int.emod_add_emod, Int.emod_emod_of_dvd, Int.emod_lt_of_pos, Int.emod_self  (+19 more)
+   d 38  Int.add_emod_emod, Int.emod_eq_zero_of_dvd, Int.le_of_mul_le_mul_right, Int.lt_ediv_add_one_mul_self, Int.lt_ediv_mul, Int.lt_of_mul_lt_mul_left  (+15 more)
+   d 39  Int.add_emod, Int.cast_nonneg_iff, Int.dvd_iff_emod_eq_zero, Int.ediv_mul_cancel, Int.greatestOfBdd, Int.lt_of_mul_lt_mul_right  (+16 more)
+   d 40  Int.cast_le, Int.emod_pos_of_not_dvd, Int.exists_greatest_of_bdd, Int.le_ediv_of_mul_le, Int.mul_lt_mul_right, Int.mul_nonneg_iff_of_pos_right  (+15 more)
+   d 41  Int.cast_strictMono, Int.lt_mul_of_ediv_lt, Lean.Data.AC.Context.evalList_sort_loop_swap, Lean.Grind.CommRing.Mon.grevlex, Lean.Grind.CommRing.Mon.revlexFuel.induct_unfolding, Lean.Grind.CommRing.Mon.revlex_k_eq_revlex  (+4 more)
+   d 42  Int.cast_lt, Int.ediv_lt_iff_lt_mul, Lean.Data.AC.Context.evalList_sort_cons, Lean.Grind.CommRing.Mon.eq_of_revlexFuel, Lean.Omega.Coeffs.gcd_dvd_dot_left, Lean.Omega.IntList.get_cons_zero  (+7 more)
+   d 43  DivisionRing.mk, DivisionSemiring.mk, Field.mk, Int.cast_pos, Lean.Data.AC.Context.evalList_sort, Lean.Grind.CommRing.Mon.eq_of_revlex  (+8 more)
+   d 44  Lean.Data.AC.Context.eval_norm, Lean.Grind.CommRing.Mon.eq_of_grevlex, Lean.Grind.CommRing.Poly.combine, Lean.Omega.LinearCombo.coordinate_eval, Lean.Omega.normalize_sat, List.getElem?_eq_some_iff
+   d 45  CauSeq.IsComplete, FloorRing.ofBounded, Function.Injective.divisionSemiring, IsAbsoluteValue.abv_inv, IsCauSeq, IsCauSeq.const  (+26 more)
+   d 46  Archimedean.floorRing, CauSeq, CauSeq.const, Int.Internal.Linear.Poly.denote'_go_eq_denote, IsCauSeq.bounded, IsCauSeq.congr_simp  (+11 more)
+   d 47  CauSeq.LimZero, CauSeq.Pos, CauSeq.bounded, CauSeq.cauchy, CauSeq.complete, CauSeq.const.congr_simp  (+33 more)
+   d 48  CauSeq.bounded', CauSeq.zero_limZero, ClusterPt, Filter.mem_inf_iff, Filter.mem_inf_of_inter, Int.Internal.Linear.Expr.eq_of_norm_eq  (+31 more)
+   d 49  CauSeq.const_limZero, CauSeq.const_pos, CauSeq.not_limZero_of_pos, CauSeq.ofEq, Int.Internal.Linear.eq_norm_expr, Int.Internal.Linear.le_norm_expr  (+23 more)
+   d 50  Filter.HasBasis.inf', Lean.Grind.CommRing.Expr.toPoly_k, Lean.Grind.Linarith.Poly.combine.induct_unfolding, Lean.Grind.OrderedRing.le_of_intCast_le_intCast, Lean.Grind.Ring.neg_eq_mul_neg_one, Lean.Grind.Ring.neg_eq_neg_one_mul  (+8 more)
+   d 51  Filter.HasBasis.inf, Filter.NeBot.mono, Filter.empty_mem_iff_bot, Filter.eq_sInf_of_mem_iff_exists_mem, Filter.generate_eq_biInf, Filter.inf_principal  (+35 more)
+   d 52  Filter.OrderBot.atBot_eq, Filter.countable_biInf_principal_eq_seq_iInf, Filter.eq_iInf_of_mem_iff_exists_mem, Filter.filter_eq_bot_of_isEmpty, Filter.isCountablyGenerated_seq, Filter.le_lift'  (+30 more)
+   d 53  Filter.NeBot.nonempty_of_mem, Filter.eq_biInf_of_mem_iff_exists_mem, Filter.eventually_ge_atTop, Filter.eventually_le_atBot, Filter.forall_mem_nonempty_iff_neBot, Filter.iInf_sets_eq  (+17 more)
+   d 54  CauSeq.cauchy₃, Filter.HasBasis.eq_biInf, Filter.HasBasis.neBot_iff, Filter.Tendsto.atTop_of_add_const, Filter.mem_iInf_of_directed, Filter.tendsto_atTop_mono'  (+36 more)
+   d 55  CauSeq.abv_pos_of_not_limZero, Filter.HasBasis.eq_iInf, Filter.HasBasis.inf_basis_neBot_iff, Filter.Tendsto.atTop_of_add_isBoundedUnder_le, Filter.mem_biInf_of_directed, Filter.tendsto_pow_atTop  (+28 more)
+   d 56  CauSeq.coe_neg, CauSeq.inv_aux, CauSeq.rat_sup_continuous_lemma, CauSeq.trichotomy, Filter.HasBasis.clusterPt_iff, Filter.hasBasis_biInf_principal  (+25 more)
+   d 57  CauSeq.add_limZero, CauSeq.add_pos, CauSeq.coe_add, CauSeq.coe_mul, CauSeq.inv, CauSeq.mul_limZero_left  (+53 more)
+   d 58  CauSeq.coe_smul, CauSeq.coe_sub, CauSeq.const_equiv, CauSeq.const_lt, CauSeq.inv_mul_cancel, CauSeq.mul_inv_cancel  (+31 more)
+   d 59  CauSeq.coe_pow, CauSeq.exists_gt, CauSeq.sup_comm, CauSeq.sup_idem, CauSeq.sup_lt, CompletelyNormalSpace.mk  (+74 more)
+   d 60  CauSeq.inf_comm, CauSeq.inf_idem, CauSeq.lt_inf, CauSeq.sup_inf_distrib_left, Cauchy, Filter.Eventually.exists  (+59 more)
+   d 61  CauSeq.lt_irrefl, CauSeq.lt_trans, CauSeq.neg_limZero, CauchySeq, CompleteSpace.mk, Filter.HasBasis.exists_antitone_subbasis  (+55 more)
+   d 62  AddSubmonoid.closure_le, Filter.HasBasis.comap, Filter.HasBasis.lift'_closure_eq_self, Filter.Tendsto.le_comap, Filter.atTop_basis, Filter.comap_iInf  (+42 more)
+   d 63  AddSubmonoid.closure_eq_of_le, AddSubmonoid.closure_mono, Filter.Eventually.self_of_nhdsWithin, Filter.Frequently.mem_closure, Filter.HasBasis.prod, Filter.HasBasis.prod_pprod  (+56 more)
+   d 64  AddSubmonoid.closure_singleton_eq, CauSeq.exists_lt, Filter.HasBasis.prod_same_index, Filter.Tendsto.inf, Filter.Tendsto.of_smallSets, Filter.atTop_basis_Ioi'  (+43 more)
+   d 65  AddSubmonoid.mem_closure_singleton, Bornology.mk, CauSeq.Completion.Cauchy, CauSeq.Completion.mk, CauSeq.Completion.mk_eq, CauSeq.IsComplete.mk  (+55 more)
+   d 66  CauSeq.Completion.inv_mk, CauSeq.Completion.inv_zero, CauSeq.Completion.ofRat, CauSeq.Completion.ofRat_inv, CauSeq.Completion.ofRat_mul, CauSeq.const_le  (+52 more)
+   d 67  Bornology.isBounded_image_fst_and_snd, CauSeq.Completion.mk_add, CauSeq.Completion.mk_mul, CauSeq.Completion.mk_neg, CauSeq.Completion.ofRat_injective, CauSeq.Completion.ofRat_intCast  (+44 more)
+   d 68  CauSeq.Completion.mk_eq_zero, CauSeq.Completion.mk_pow, CauSeq.Completion.mk_smul, CauSeq.Completion.mk_sub, CauSeq.lim_const, CauSeq.lim_eq_lim_of_equiv  (+36 more)
+   d 69  CauSeq.le_of_eq_of_le, CauSeq.le_of_le_of_eq, Commute.geom_sum₂_mul, Filter.HasBasis.prod_nhds, Filter.Tendsto.prodMk_nhds, Filter.inf_principal_neBot_iff  (+32 more)
+   d 70  CauSeq.le_lim, CauSeq.lim_le, Continuous.subtype_mk, Filter.HasBasis.cauchySeq_iff, Filter.Tendsto.add, Filter.comap_cofinite_le  (+35 more)
+   d 71  Bornology.ofBounded, CauSeq.le_antisymm, CauSeq.le_inf, CauSeq.sup_le, Commute.add_pow, Continuous.prodMk  (+29 more)
+   d 72  Bornology.induced, Continuous.comp₂, Continuous.fst', Continuous.prodMk_right, Continuous.smul, Continuous.snd'  (+26 more)
+   d 73  CauSeq.Completion.inv_mul_cancel, CauSeq.Completion.mul_inv_cancel, Complex.sum_div_factorial_le, Continuous.add, Continuous.fun_smul, Continuous.fun_vadd  (+17 more)
+   d 74  ContinuousInv₀.of_nhds_one, Filter.HasBasis.disjoint_iff_left, Finset.mem_image, IsCauSeq.series_ratio_test, Rat.cast_sub_of_ne_zero, Rat.mul_lt_mul_of_pos_left  (+17 more)
+   d 75  CauSeq.Completion.ofRat_div, Filter.HasBasis.disjoint_iff_right, Ioo_mem_nhds, Rat.cast_pos_of_pos, Rat.cast_sub, Rat.le_of_mul_le_mul_left  (+16 more)
+   d 76  Continuous.pow, Rat.lt_of_mul_lt_mul_left, Topology.IsInducing.continuousAdd, Topology.IsInducing.continuousMul, UniformSpace.complete_of_cauchySeq_tendsto, UniformSpace.hasBasis_symmetric  (+8 more)
+   d 77  IsLUB.frequently_mem, Rat.castHom, Rat.inv_pos, RegularSpace.of_lift'_closure, UniformSpace.completelyNormalSpace_of_hasAntitoneBasis, UniformSpace.has_seq_basis  (+9 more)
+   d 78  IsLUB.frequently_nhds_mem, IsTopologicalRing.of_addGroup_of_nhds_zero, Rat.cast_strictMono, RegularSpace.of_hasBasis, UniformSpace.hasBasis_nhds, closed_nhds_basis  (+3 more)
+   d 79  IsLUB.mem_closure, IsTopologicalRing.of_norm, Rat.castOrderEmbedding, Rat.cast_div, Rat.cast_inv, Rat.cast_lt  (+7 more)
+   d 80  Rat.cast_le, Rat.cast_natCast, Rat.div_nonneg, Rat.zpow_nonneg, Set.Finite.isOpen_biInter, Set.finite_image_fst_and_snd_iff  (+5 more)
+   d 81  CofiniteTopology.isOpen_iff, IsClosed.Icc_subset_of_forall_mem_nhdsGT_of_Icc_subset, Rat.cast_le_natCast, Real.ofCauchy, Set.Finite.isClosed_biUnion, comap_coe_Ioi_nhdsGT  (+1 more)
+   d 82  Filter.coprod_cofinite, IsClosed.Icc_subset_of_forall_mem_nhdsWithin, NNRat.add_def, NNRat.coe_eq_zero, NNRat.coe_natCast, NNRat.mul_def  (+7 more)
+   d 83  CofiniteTopology.isOpen_iff', NNRat.coe_div, Real.mk_const, archimedean_iff_rat_lt, isPreconnected_Icc_aux
+   d 84  NNRat.num_div_den, Real.ind_mk, archimedean_iff_rat_le, isPreconnected_Icc
+   d 85  CofiniteTopology.isClosed_iff, isPreconnected_uIcc
+   d 86  AddGroupNorm.mk, Complex.I, Complex.ofReal, MetricSpace.mk, NormOneClass.mk, Real.cauchy_one  (+6 more)
+   d 87  Complex.ofReal_im, Complex.ofReal_inj, Complex.ofReal_injective, Complex.ofReal_natCast, Complex.ofReal_one, Complex.ofReal_zero  (+7 more)
+   d 88  Complex.ofReal_eq_zero, Complex.zero_re, Continuous.surjective, NNRat.cast_add, NNRat.cast_mul, NNRat.cast_one  (+3 more)
+   d 89  NNRat.castHom, Real.ext_cauchy_iff
+   d 90  Metric.ball, NormMulClass.mk, NormSMulClass.mk, NormedDivisionRing.mk, NormedField.mk, Real.cauchy_add  (+11 more)
+   d 91  Complex.add_re, Complex.mulAux, Metric.mem_ball, Real.mk_inf, Real.mk_lt, Real.mk_sup
+   d 92  Complex.SMul.instSMulRealComplex, Metric.mem_ball_self, Real.mk_add, Real.mk_mul, Real.mk_neg, Real.mk_pos  (+1 more)
+   d 93  Complex.mul_im, Complex.mul_re, Complex.real_smul, Real.zero_lt_one
+   d 95  AddGroupSeminorm.mk, Complex.ofReal_add, Complex.ofReal_mul, Complex.ofReal_neg, Complex.ofReal_sub, Complex.re_add_im  (+19 more)
+   d 96  ENNReal, ENNReal.coe_injective, ENNReal.coe_ne_top, ENNReal.ofNNReal, ENNReal.top_ne_coe, NNDist.mk  (+5 more)
+   d 97  EDist.mk, ENNReal.coe_inj, IsBoundedSMul.of_norm_smul_le, Real.mk_le
+   d 98  ENNReal.recTopCoe, Real.ofCauchy_div, normHom
+   d100  Complex.reAddGroupHom
+   d103  ENNReal.coe_le_coe, ENNReal.coe_le_iff, ENNReal.coe_lt_coe
+   d104  Complex.ofRealHom, Complex.ofReal_pow, ENNReal.coe_eq_zero, ENNReal.coe_ne_zero, ENNReal.coe_one, ENNReal.coe_pos  (+4 more)
+   d105  Complex.conj_ofReal, Complex.normSq, Complex.re_sum, EMetricSpace.mk, ENNReal.coe_toNNReal, NNReal.coe_eq_zero
+   d106  Complex.conj_eq_iff_real, Complex.mul_conj, Complex.normSq_I, Complex.normSq_add, Complex.normSq_apply, Complex.normSq_conj  (+15 more)
+   d107  Bornology.ofDist, Complex.conj_eq_iff_re, Complex.inv_def, Complex.normSq_eq_zero, Complex.normSq_natCast, ENNReal.coe_add  (+12 more)
+   d108  Complex.inv_im, Complex.inv_re, Complex.mul_inv_cancel, ENNReal.add_lt_add_left, ENNReal.lt_iff_exists_nnreal_btwn, ENNReal.ofNat_ne_top  (+14 more)
+   d109  Complex.div_im, Complex.div_re, Complex.ofRealAm, Complex.ofReal_inv, ENNReal.mul_top, ENNReal.ofReal_le_ofReal  (+7 more)
+   d110  Complex.inv_zero, Complex.reLm, ENNReal.add_lt_add, ENNReal.coe_lt_natCast, ENNReal.coe_nnreal_eq, ENNReal.ofReal_add  (+6 more)
+   d111  ENNReal.exists_nat_gt, ENNReal.mul_pos_iff, ENNReal.ofReal_coe_nnreal, Metric.eball_subset, UniformSpace.ofDist, dist_nonneg
+   d112  Complex.normSq_div, Complex.ofReal_div, Complex.ofReal_sum, ENNReal.mul_left_strictMono, ENNReal.mul_pos, Metric.toUniformSpace_eq  (+5 more)
+   d113  AddGroupSeminorm.toSeminormedAddGroup, Metric.uniformity_basis_dist, Real.isLUB_sSup, Real.toNNReal_inv, abs_norm, dist_le_zero  (+1 more)
+   d114  ENNReal.ofReal_eq_zero, Metric.cauchySeq_iff', Metric.mem_uniformity_dist, Metric.nhds_basis_ball, Metric.uniformContinuous_iff, Metric.uniformity_edist  (+6 more)
+   d115  AddGroupNorm.toNormedAddGroup, Metric.mem_nhds_iff, Real.isGLB_sInf, dist_dist_dist_le, norm_eq_zero, norm_pos_iff
+   d116  AddGroupNorm.toNormedAddCommGroup, Metric.uniformity_eq_comap_nhds_zero, squeeze_zero'
+   d117  Metric.isOpen_iff, Real.cauSeq_converges, nhds_comap_dist, norm_inv
+   d118  Metric.isOpen_ball, NormedDivisionRing.toNormSMulClass, tendsto_iff_dist_tendsto_zero
+   d119  Metric.ball_mem_nhds
+   d120  norm_algebraMap
+   d121  ENNReal.coe_inv_le, ENNReal.inv_zero, NNReal.powOrderIso, norm_algebraMap'
+   d122  ENNReal.coe_inv, ENNReal.inv_top, ENNReal.mul_le_mul_iff_left, ENNReal.ofReal_max, ENNReal.zero_div, Metric.exists_eball_subset_eball  (+1 more)
+   d123  NNReal.sq_sqrt, NNReal.sqrt_eq_iff_eq_sq, NNReal.sqrt_le_sqrt, Real.sqrt
+   d124  ENNReal.div_top, ENNReal.div_zero, ENNReal.mul_inv_cancel, NNReal.mul_self_sqrt, NNReal.sqrt_mul, NormedSpace.restrictScalars  (+1 more)
+   d125  Complex.norm_def, Complex.norm_nonneg, ENNReal.div_self, ENNReal.inv_eq_top, ENNReal.inv_eq_zero, ENNReal.inv_mul_cancel  (+6 more)
+   d126  Complex.norm_conj, Complex.norm_mul, Complex.norm_mul_self_eq_normSq, Complex.norm_neg', ENNReal.inv_mul_cancel_right', ENNReal.inv_two_add_inv_two  (+1 more)
+   d127  Complex.abs_re_le_norm, Complex.isCauSeq_conj, ENNReal.add_halves, ENNReal.div_eq_zero_iff, ENNReal.div_mul_cancel', ENNReal.inv_ne_top  (+5 more)
+   d128  Complex.cauSeqConj, Complex.isCauSeq_re, Complex.norm_real, Complex.re_le_norm, ENNReal.div_mul_cancel, ENNReal.div_pos  (+5 more)
+   d129  Complex.cauSeqRe, Complex.norm_I, Complex.norm_add_le', Complex.norm_of_nonneg, ENNReal.div_pos_iff, ENNReal.half_pos  (+5 more)
+   d130  Complex.abs_im_le_norm, Complex.norm_eq_zero_iff, Complex.norm_natCast, ENNReal.div_le_iff_le_mul, Real.sqrt_inv
+   d131  Complex.isCauSeq_im, Complex.norm_map_zero', ENNReal.div_le_of_le_mul, ENNReal.inv_strictAnti, Real.sqrt_div, uniformSpaceOfEDist
+   d132  Complex.cauSeqIm, Complex.norm_div, ENNReal.inv_lt_inv, ENNReal.mul_lt_of_lt_div, WeakPseudoEMetricSpace.mk, uniformSpace_edist
+   d133  Complex.isCauSeq_norm, Complex.isCauSeq_norm_exp, Complex.limAux, Complex.norm_le_abs_re_add_abs_im, ENNReal.mul_lt_of_lt_div', uniformity_basis_edist
+   d134  Complex.equiv_limAux, Complex.isCauSeq_exp, Complex.norm_pow, EMetric.mk_uniformity_basis, EMetric.uniformContinuous_iff, ENNReal.exists_inv_nat_lt  (+1 more)
+   d135  Complex.cauSeqNorm, Complex.exp', EMetric.mem_closure_iff, EMetric.mem_nhds_iff, uniformity_basis_edist_inv_nat
+   d136  Complex.lim_eq_lim_im_add_lim_re
+   d137  Complex.lim_im, Complex.lim_norm, Complex.lim_re, EMetric.complete_of_cauchySeq_tendsto, EMetric.isOpen_iff
+   d138  Complex.lim_conj, Metric.complete_of_cauchySeq_tendsto, Metric.isOpen_eball
+   d139  Complex.exp
+   d140  Complex.exp_def, Real.exp
+   d141  Complex.exp_add, Complex.exp_bound, Complex.exp_conj, Complex.exp_zero, EMetric.inseparable_iff, Isometry  (+4 more)
+   d142  Complex.exp_ne_zero, Complex.norm_exp_sub_one_sub_id_le, Complex.ofReal_exp_ofReal_re, IsIsometricVAdd.mk, Isometry.lipschitz, IsometryClass.mk  (+12 more)
+   d143  Complex.exp_bound_sq, Complex.exp_ofReal_im, Complex.ofReal_exp, EMetricSpace.ofT0PseudoEMetricSpace, LipschitzWith.of_dist_le_mul, LipschitzWith.uniformContinuous  (+3 more)
+   d144  Complex.exp_neg, Complex.locally_lipschitz_exp, LipschitzWith.continuous, LipschitzWith.of_dist_le', Real.exp_add, isometry_iff_dist_eq  (+1 more)
+   d145  AddMonoidHomClass.isometry_iff_norm, AddMonoidHomClass.lipschitz_of_bound, Isometry.continuous, Isometry.dist_eq, Isometry.of_dist_eq, MetricSpace.ofT0PseudoMetricSpace  (+3 more)
+   d146  AddMonoidHomClass.continuous_of_bound, AddMonoidHomClass.isometry_of_norm, Isometry.norm_map_of_map_zero, Real.exp_bound', Real.one_le_exp, dist_vadd  (+1 more)
+   d147  Real.exp_bound_div_one_sub_of_interval', Real.exp_pos, SemilinearIsometryClass.isometry, continuous_dist, dist_add_left, dist_add_right  (+1 more)
+   d148  Continuous.dist, LinearMap.mkContinuous, Real.add_one_lt_exp, Real.exp_strictMono
+   d149  LinearIsometry.norm_map, Real.add_one_le_exp, continuousAt_of_locally_lipschitz, dist_add_add_le, lipschitzWith_neg_iff
+   d150  Complex.continuous_exp, LinearIsometry.isometry, LipschitzWith.neg, Real.tendsto_exp_atTop, nndist_add_add_le
+   d151  Complex.reCLM, Filter.Tendsto.cexp, LinearIsometry.continuous, RCLike.mk, Real.tendsto_exp_neg_atTop_nhds_zero, edist_add_add_le  (+1 more)
+   d152  ContinuousAt.cexp, LipschitzOnWith.add, Real.tendsto_exp_atBot, continuous_negPart
+   d153  Continuous.cexp, LipschitzWith.add, Real.tendsto_exp_atBot_nhdsGT, isClosed_nonneg
+   d154  LipschitzWith.sub
+   d157  Complex.continuous_re, Complex.ofRealLI
+   d158  Complex.continuous_ofReal
+   d159  Real.continuous_exp
+   d161  Real.expOrderIso
+   d162  Real.log
+
+-- proof moves (new facts the proof pulls in, deepest first)
+   d163  Real.exp_log_eq_abs
+   d162  Real.coe_expOrderIso_apply
+   d162  Real.log_of_ne_zero
+   d149  Real.exp_injective
+   d  3  Subtype.coe_mk
+   [+2 machinery/glue moves in top 7]
+   [machinery hidden from statement path; full cones: A_S 15,725, A_P 15,732]
+
+== CompactIccSpace.isCompact_Icc
+   statement cone 1,001 | proof cone 3 | new 0 (0% of proof)
+
+-- statement path (understand these, shallow to deep)
+   d  0  Acc, Add, And, Append, Array, BEq  (+68 more)
+   d  1  Acc.intro, Add.mk, Append.mk, Array.mk, BEq.mk, BitVec  (+80 more)
+   d  2  And.imp, Array.emptyWithCapacity, Decidable.isFalse, Eq.propIntro, Filter.univ_mem, GE.ge  (+51 more)
+   d  3  BEq.rfl, DistribLattice.mk, LE.le.antisymm, Nat.le.below.refl, Nat.le.below.step, Nat.le_refl  (+16 more)
+   d  4  Acc.inv, Array.empty, Bool.ctorIdx, Fin.mk, Iff.of_eq, Lean.Data.AC.Expr.brecOn.go  (+29 more)
+   d  5  And.symm, Bool.and, ByteArray.emptyWithCapacity, Decidable.decide, Filter.inter_mem, Lean.Data.AC.List.two_step_induction  (+18 more)
+   d  6  And.comm, Bool.decEq, Bool.true_and, ByteArray.empty, Decidable.byCases, Filter.mem_of_superset  (+33 more)
+   d  7  Array.push, Decidable.decide.congr_simp, Decidable.em, Filter.principal, List.beq, List.cons.inj  (+10 more)
+   d  8  Bool.and_eq_true, ByteArray.push, Filter.join, Lean.Data.AC.Expr.toList, List.flatten, Nat.add_succ  (+15 more)
+   d  9  List.flatMap, List.length, Nat.add_assoc, Nat.eq_of_beq_eq_true, Nat.le_add_right, Nat.le_of_succ_le_succ  (+14 more)
+   d 10  Filter.filter_eq, Lean.Data.AC.Context.toList_nonEmpty, List.toByteArray.loop, Nat.add_pos_right, Nat.decEq, Nat.le.intro  (+7 more)
+   d 11  List.toByteArray, Nat.add_comm, Nat.eq_or_lt_of_le, Nat.mul_pos, Nat.not_succ_le_self
+   d 12  BitVec.ofFin, BitVec.toNat, List.get, Nat.add_left_comm, Nat.ble_succ_eq_true, Nat.le_of_ble_eq_true  (+2 more)
+   d 13  BitVec.ofNatLT, Filter.sInf, Lean.Data.AC.mergeIdem.loop, Nat.ble_eq_true_of_le, Nat.le.dest, Nat.lt_or_ge  (+5 more)
+   d 14  Lean.Data.AC.mergeIdem, Nat.add_le_add_left, Nat.div_rec_lemma, Nat.lt_of_not_le, Nat.not_le_of_not_ble_eq_true, Nat.strongRecOn  (+2 more)
+   d 15  Char.mk, Lean.Data.AC.Context.mergeIdem_head, Lean.Data.AC.Context.mergeIdem_head2, Lean.Data.AC.Context.mergeIdem_nonEmpty, Nat.add_lt_add_left, Nat.add_sub_of_le  (+1 more)
+   d 16  Nat.sub_add_cancel
+   d 17  Nat.div.go, Nat.eq_add_of_sub_eq, Nat.modCore.go
+   d 18  Lean.Data.AC.insert, Nat.add_le_of_le_sub, Nat.div, Nat.modCore, Nat.modCoreGo_lt, nhds
+   d 19  Char.ofNatAux, Lean.Data.AC.insert_nonEmpty, Nat.mod, Nat.modCore_lt
+   d 20  Char.ofNat, Lean.Data.AC.sort.loop, Nat.div_eq, Set.inter_union_distrib_right, Set.union_eq_right
+   d 21  Lean.Data.AC.Context.sort_loop_nonEmpty, Lean.Data.AC.sort, Nat.digitChar, Nat.div_le_self, Nat.mod_lt, Nat.shiftRight  (+1 more)
+   d 22  Fin.Internal.ofNat, Nat.div_lt_self
+   d 23  BitVec.ofNat, Nat.bitwise_rec_lemma, Nat.toDigitsCore
+   d 24  Nat.toDigits, UInt8.ofNat
+   d 25  String.utf8EncodeChar
+   d 26  List.utf8Encode, Nat.bitwise
+   d 27  ByteArray.IsValidUTF8.intro, Nat.land
+   d 28  Nat.hasNotBit
+   d 29  String.ofList
+   d 30  Nat.repr
+   d 31  Lean.Data.AC.removeNeutrals
+   d 32  Lean.Data.AC.evalList, Lean.Data.AC.norm, List.get?Internal, mkPanicMessageWithDecl
+   d 33  panicWithPosWithDecl
+   d 35  List.get!Internal
+   d 37  Lean.Data.AC.Context.var
+   d 39  Lean.Data.AC.Context.evalList_append, Lean.Data.AC.Context.evalList_insert, Lean.Data.AC.Context.evalList_mergeIdem, Lean.Data.AC.Context.unwrap_isNeutral
+   d 40  Lean.Data.AC.Context.evalList_removeNeutrals, Lean.Data.AC.Context.evalList_sort_congr, Lean.Data.AC.Context.eval_toList
+   d 41  Lean.Data.AC.Context.evalList_sort_loop_swap
+   d 42  Lean.Data.AC.Context.evalList_sort_cons
+   d 43  Lean.Data.AC.Context.evalList_sort
+   d 44  Lean.Data.AC.Context.eval_norm
+   d 45  Lean.Data.AC.Context.eq_of_norm
+   d 48  ClusterPt
+   d 49  IsCompact
+
+-- proof moves (new facts the proof pulls in, deepest first)
+   [machinery hidden from statement path; full cones: A_S 1,001, A_P 3]
+
+== Nat.Prime.dvd_mul
+   statement cone 170 | proof cone 2,967 | new 2,797 (94% of proof)
+
+-- statement path (understand these, shallow to deep)
+   d  0  Add, Array, CommMonoid, Dvd, Eq, Exists  (+20 more)
+   d  1  Add.mk, Array.mk, Dvd.mk, HAdd, HMul, HPow  (+20 more)
+   d  2  Array.emptyWithCapacity, HAdd.mk, HMul.mk, HPow.mk, Lean.Name.mkStr1, Lean.Name.mkStr4  (+5 more)
+   d  3  congrFun', eq_true
+   d  4  Array.empty, CommMonoid.mk, List.brecOn.go, Nat.brecOn.go, Semigroup.mk, eq_self  (+1 more)
+   d  6  List.concat, Nat.add
+   d  7  Array.push
+   d  8  Nat.add_succ, Nat.mul, Nat.recAux
+   d  9  Monoid.mk, Nat.add_assoc, Nat.succ_add, Nat.zero_add
+   d 10  Nat.mul_one, Nat.mul_succ, Nat.mul_zero, Nat.pow
+   d 11  Nat.add_comm
+   d 12  Nat.add_left_comm, Nat.add_right_comm, Nat.pow_zero, Nat.zero_mul
+   d 13  Nat.succ_mul
+   d 14  Nat.left_distrib
+   d 15  Nat.mul_comm
+   d 16  Nat.mul_assoc, Nat.one_mul
+   d 19  Nat.Prime
+
+-- proof moves (new facts the proof pulls in, deepest first)
+   d 73  Nat.Prime.coprime_iff_not_dvd
+   d 72  Nat.coprime_of_dvd
+   d 71  Nat.exists_prime_and_dvd
+   d 70  Nat.minFac_dvd
+   d 70  Nat.minFac_prime
+   d 69  Nat.minFac_has_prop
+   d 68  Nat.minFacAux_has_prop
+   d 67  Nat.prime_def_le_sqrt
+   d 66  Nat.sqrt_lt_self
+   d 64  Lean.Grind.CommRing.le_norm_expr
+   d 63  Lean.Grind.CommRing.Expr.denote_toPoly
+   d 62  Lean.Grind.CommRing.Poly.denote_pow
+   [+9 machinery/glue moves in top 40]
+   [machinery hidden from statement path; full cones: A_S 170, A_P 2,967]
+
+== Real.tendsto_sum_pi_div_four
+   statement cone 15,714 | proof cone 42,088 | new 26,374 (63% of proof)
+
+-- statement path (understand these, shallow to deep)
+   d  0  Acc, Add, AddCancelCommMonoid, AddCancelMonoid, AddCommGroup, AddCommGroupWithOne  (+300 more)
+   d  1  AbsoluteValue, Acc.intro, Add.mk, AddAction, AddEquiv, AddGroupNorm  (+381 more)
+   d  2  AddCancelCommMonoid.mk, AddCancelMonoid.mk, AddEquivClass, AddLeftCancelMonoid.mk, AddLeftCancelSemigroup.mk, AddMemClass  (+305 more)
+   d  3  AbsoluteValue.add_le, AbsoluteValue.eq_zero, AbsoluteValue.nonneg, AddGroupNormClass, AddGroupSeminormClass, AddHomClass  (+268 more)
+   d  4  Acc.inv, AddCommGroup.mk, AddCommMagma.mk, AddCommMonoid.mk, AddCommMonoidWithOne.mk, AddCommSemigroup.mk  (+397 more)
+   d  5  AddHomClass.toAddHom, AddMemClass.mk, AddMonoidHom.id, AddSubmonoid.mem_bot, And.symm, BddAbove  (+342 more)
+   d  6  AddAction.mk, AddUnits.mk, And.comm, Archimedean.mk, Bool.and_self, Bool.and_true  (+427 more)
+   d  7  AddMonoidHom.mulLeft, AddMonoidHom.mulRight, AddMonoidHomClass.toAddMonoidHom, Array.push, Bool.and'_eq_and, Bool.cond_false  (+317 more)
+   d  8  AddLECancellable.le_add_tsub_swap, AddLECancellable.le_tsub_of_add_le_left, AddSubmonoid.toSubsemigroup_injective, AddUnits.add_neg_cancel_left, AddUnits.add_neg_cancel_right, AddUnits.neg_add_cancel_left  (+299 more)
+   d  9  AddCommGroupWithOne.mk, AddEquivClass.mk, AddGroupWithOne.mk, AddLECancellable.le_add_tsub, AddMonoid.mk, AddMonoidWithOne.mk  (+265 more)
+   d 10  AddLECancellable.tsub_eq_of_eq_add, AddOpposite.opEquiv, AddUnits.addLeft, AddUnits.addRight, AddUnits.val_injective, Array.size  (+208 more)
+   d 11  AddLECancellable.add_tsub_cancel_left, AddLECancellable.add_tsub_cancel_right, AddLECancellable.eq_tsub_of_add_eq, AddMonoidHom.ext, AddMonoidHom.id_apply, AddSubmonoid.ext  (+205 more)
+   d 12  AbsoluteValue.map_mul, AbsoluteValue.mk, AddGroup.covariant_iff_contravariant, AddGroup.covariant_swap_iff_contravariant_swap, AddGroupNormClass.mk, AddGroupSeminormClass.mk  (+294 more)
+   d 13  AddLECancellable.tsub_eq_iff_eq_add_of_le, AddMonoidHom.comp, BitVec.ofNatLT, CanonicallyOrderedAdd.toIsOrderedRing, Classical.by_cases, Commute.div_eq_div_iff_of_isUnit  (+209 more)
+   d 14  AddSubmonoid.map, Equiv.bijective, Equiv.coe_fn_injective, Equiv.image_symm_eq_preimage, Equiv.injective, Equiv.self_comp_symm  (+223 more)
+   d 15  AddOpposite.unop_bijective, AddSubmonoid.closure, Char.mk, DistribMulAction.compHom, Equiv.iInf_congr, Equiv.image_eq_preimage_symm  (+182 more)
+   d 16  AddOpposite.unop_injective, AddSubmonoid.subset_closure, AlgHom.mk, AlgHomClass.mk, Algebra.algebraMap_eq_smul_one, Algebra.mk  (+184 more)
+   d 17  AbsoluteValue.map_one_of_isLeftRegular, AbsoluteValue.map_zero, AbsoluteValue.ne_zero_iff, Commute.sub_left, DistribLattice.ofInfSupLe, Equiv.addLeft  (+156 more)
+   d 18  AbsoluteValue.ne_zero, AbsoluteValue.pos_iff, AbsoluteValue.sum_le, AddEquiv.map_zero, AddMonoidHom.ext_nat, AddMonoidHom.mrange  (+143 more)
+   d 19  AbsoluteValue.map_one, AbsoluteValue.pos, AddEquiv.toAddMonoidHom, AddMonoidHom.mem_mrange, AddMonoidHom.mul, Char.ofNatAux  (+91 more)
+   d 20  Algebra.compHom, Char.ofNat, Commute.inv_left₀, ContinuousInv₀.mk, Disjoint.inter_eq, Finset.mem_attach  (+81 more)
+   d 21  AbsoluteValue.map_neg, AbsoluteValue.toMonoidWithZeroHom, Algebra.restrictScalars, Commute.div_left, Disjoint.notMem_of_mem_left, Filter.countable_biInf_eq_iInf_seq  (+74 more)
+   d 22  AbsoluteValue.map_sub, AbsoluteValue.toMonoidHom, Algebra.ofId, Filter.mem_top, Fin.Internal.ofNat, Finset.mem_range  (+71 more)
+   d 23  AbsoluteValue.map_pow, AlgHom.toLinearMap, BitVec.ofNat, EquivLike.range_eq_univ, Even.neg_pow, Fin.ofNat  (+72 more)
+   d 24  AddMonoidWithOne.toCharZero, Commute.div_eq_div_iff, Finset.empty, Finset.mk_cons, Int.add_assoc, Int.emod_zero  (+63 more)
+   d 25  Commute.div_add_div, Fin.succ_pos, Finset.filter, Finset.fold_singleton, Finset.mem_union, Int.Internal.Linear.Poly.denote_addConst  (+52 more)
+   d 26  Fin.foldr_succ, Finset.insert_val, Finset.map, Finset.sum_empty, Finset.sum_singleton, Int.Internal.Linear.Poly.denote_append  (+50 more)
+   d 27  ByteArray.IsValidUTF8.intro, Filter.countable_biInf_eq_iInf_seq', Finset.eq_of_veq, Finset.map_val, Int.Internal.Linear.Poly.denote_combine_mul_k, Int.Internal.Linear.Poly.denote_norm  (+48 more)
+   d 28  AddCommGroup.toDistribLattice, Finset.sum_map, Finset.val_injective, Int.add_le_add, Int.dvd_neg, Int.eq_iff_le_and_ge  (+57 more)
+   d 29  BddBelow.neg, Finset.val_inj, Int.Internal.Linear.Expr.denote_toPoly'_go, Int.Internal.Linear.natCast_sub, Int.add_le_add_iff_right, Int.add_nonneg  (+49 more)
+   d 30  Int.Internal.Linear.Expr.denote_norm, Int.add_lt_add_left, Int.dvd_iff_dvd_of_dvd_sub, Int.emod_add_mul_ediv, Int.le_iff_lt_add_one, Int.le_max_right  (+37 more)
+   d 31  AbsoluteValue.abs, Int.Internal.Linear.Poly.isUnsatLe, Int.Internal.Linear.Poly.isValidLe, Int.Internal.Linear.Poly.leadCoeff, Int.add_lt_add_right, Int.dvd_iff_dvd_of_dvd_add  (+46 more)
+   d 32  Int.Internal.Linear.le_combine_cert, Int.Internal.Linear.le_eq_true, Int.dvd_of_emod_eq_zero, Int.ediv_mul_cancel_of_emod_eq_zero, Int.ediv_mul_le, Int.ediv_mul_self  (+44 more)
+   d 33  FloorRing.mk, Int.add_lt_add_iff_right, Int.cast_mono, Int.floor_le, Int.le_floor, Int.lt_of_le_of_lt  (+33 more)
+   d 34  FloorRing.ofFloor, Int.abs_eq_natAbs, Int.add_mul_ediv_right, Int.eq_negSucc_of_lt_zero, Int.floor_lt, Int.floor_nonneg  (+31 more)
+   d 35  Int.add_ediv_of_dvd_right, Int.add_mul_ediv_left, Int.add_mul_emod_self_right, Int.le_iff_eq_or_lt, Int.leastOfBdd, Int.lt_or_gt_of_ne  (+23 more)
+   d 36  FloorSemiring.natCast_strictMono, Int.add_ediv_of_dvd_left, Int.add_mul_emod_self_left, Int.ediv_nonneg_iff_of_pos, Int.le_iff_lt_or_eq, Int.le_toNat  (+16 more)
+   d 37  Int.cast_mul, Int.ediv_lt_of_lt_mul, Int.emod_add_emod, Int.emod_emod_of_dvd, Int.emod_lt_of_pos, Int.emod_self  (+19 more)
+   d 38  Int.add_emod_emod, Int.emod_eq_zero_of_dvd, Int.le_of_mul_le_mul_right, Int.lt_ediv_add_one_mul_self, Int.lt_ediv_mul, Int.lt_of_mul_lt_mul_left  (+17 more)
+   d 39  Int.add_emod, Int.cast_nonneg_iff, Int.dvd_iff_emod_eq_zero, Int.ediv_mul_cancel, Int.greatestOfBdd, Int.lt_of_mul_lt_mul_right  (+17 more)
+   d 40  Int.cast_le, Int.emod_pos_of_not_dvd, Int.exists_greatest_of_bdd, Int.le_ediv_of_mul_le, Int.mul_lt_mul_right, Int.mul_nonneg_iff_of_pos_right  (+15 more)
+   d 41  Int.cast_strictMono, Int.lt_mul_of_ediv_lt, Lean.Data.AC.Context.evalList_sort_loop_swap, Lean.Grind.CommRing.Mon.grevlex, Lean.Grind.CommRing.Mon.revlexFuel.induct_unfolding, Lean.Grind.CommRing.Mon.revlex_k_eq_revlex  (+4 more)
+   d 42  Int.cast_lt, Int.ediv_lt_iff_lt_mul, Lean.Data.AC.Context.evalList_sort_cons, Lean.Grind.CommRing.Mon.eq_of_revlexFuel, Lean.Omega.Coeffs.gcd_dvd_dot_left, Lean.Omega.IntList.get_cons_zero  (+8 more)
+   d 43  DivisionRing.mk, DivisionSemiring.mk, Field.mk, Int.cast_pos, Lean.Data.AC.Context.evalList_sort, Lean.Grind.CommRing.Mon.eq_of_revlex  (+8 more)
+   d 44  Lean.Data.AC.Context.eval_norm, Lean.Grind.CommRing.Mon.eq_of_grevlex, Lean.Grind.CommRing.Poly.combine, Lean.Omega.LinearCombo.coordinate_eval, Lean.Omega.normalize_sat, List.getElem?_eq_some_iff
+   d 45  CauSeq.IsComplete, FloorRing.ofBounded, Function.Injective.divisionSemiring, IsAbsoluteValue.abv_inv, IsCauSeq, IsCauSeq.const  (+23 more)
+   d 46  Archimedean.floorRing, CauSeq, CauSeq.const, Int.Internal.Linear.Poly.denote'_go_eq_denote, IsCauSeq.bounded, IsCauSeq.congr_simp  (+15 more)
+   d 47  CauSeq.LimZero, CauSeq.Pos, CauSeq.bounded, CauSeq.cauchy, CauSeq.complete, CauSeq.const.congr_simp  (+33 more)
+   d 48  CauSeq.bounded', CauSeq.zero_limZero, ClusterPt, Filter.mem_inf_iff, Filter.mem_inf_of_inter, Int.Internal.Linear.Expr.eq_of_norm_eq  (+32 more)
+   d 49  CauSeq.const_limZero, CauSeq.const_pos, CauSeq.not_limZero_of_pos, CauSeq.ofEq, ContinuousWithinAt, Int.Internal.Linear.eq_norm_expr  (+26 more)
+   d 50  ContinuousOn, Filter.HasBasis.inf', Lean.Grind.CommRing.Expr.toPoly_k, Lean.Grind.Linarith.Poly.combine.induct_unfolding, Lean.Grind.OrderedRing.le_of_intCast_le_intCast, Lean.Grind.Ring.neg_eq_mul_neg_one  (+13 more)
+   d 51  Filter.HasBasis.inf, Filter.NeBot.mono, Filter.empty_mem_iff_bot, Filter.eq_sInf_of_mem_iff_exists_mem, Filter.generate_eq_biInf, Filter.inf_principal  (+41 more)
+   d 52  Filter.OrderBot.atBot_eq, Filter.countable_biInf_principal_eq_seq_iInf, Filter.eq_iInf_of_mem_iff_exists_mem, Filter.filter_eq_bot_of_isEmpty, Filter.isCountablyGenerated_seq, Filter.le_lift'  (+32 more)
+   d 53  Filter.NeBot.nonempty_of_mem, Filter.eq_biInf_of_mem_iff_exists_mem, Filter.eventually_ge_atTop, Filter.eventually_le_atBot, Filter.forall_mem_nonempty_iff_neBot, Filter.iInf_sets_eq  (+19 more)
+   d 54  CauSeq.cauchy₃, Filter.HasBasis.eq_biInf, Filter.HasBasis.neBot_iff, Filter.mem_iInf_of_directed, Filter.tendsto_atTop_mono', Finset.attach  (+35 more)
+   d 55  CauSeq.abv_pos_of_not_limZero, Filter.HasBasis.eq_iInf, Filter.HasBasis.inf_basis_neBot_iff, Filter.mem_biInf_of_directed, Filter.tendsto_pow_atTop, Finset.Ico_union_Ico_eq_Ico  (+26 more)
+   d 56  CauSeq.coe_neg, CauSeq.inv_aux, CauSeq.rat_sup_continuous_lemma, CauSeq.trichotomy, Filter.HasBasis.clusterPt_iff, Filter.hasBasis_biInf_principal  (+24 more)
+   d 57  CauSeq.add_limZero, CauSeq.add_pos, CauSeq.coe_add, CauSeq.coe_mul, CauSeq.inv, CauSeq.mul_limZero_left  (+50 more)
+   d 58  CauSeq.coe_smul, CauSeq.coe_sub, CauSeq.const_equiv, CauSeq.const_lt, CauSeq.inv_mul_cancel, CauSeq.mul_inv_cancel  (+31 more)
+   d 59  CauSeq.coe_pow, CauSeq.exists_gt, CauSeq.sup_comm, CauSeq.sup_idem, CauSeq.sup_lt, CompletelyNormalSpace.mk  (+72 more)
+   d 60  CauSeq.inf_comm, CauSeq.inf_idem, CauSeq.lt_inf, CauSeq.sup_inf_distrib_left, Cauchy, Filter.Eventually.exists  (+58 more)
+   d 61  CauSeq.lt_irrefl, CauSeq.lt_trans, CauSeq.neg_limZero, CauchySeq, CompleteSpace.mk, Filter.HasBasis.exists_antitone_subbasis  (+54 more)
+   d 62  AddSubmonoid.closure_le, Filter.HasBasis.comap, Filter.HasBasis.lift'_closure_eq_self, Filter.Tendsto.le_comap, Filter.atTop_basis, Filter.comap_iInf  (+42 more)
+   d 63  AddSubmonoid.closure_eq_of_le, AddSubmonoid.closure_mono, Filter.Eventually.self_of_nhdsWithin, Filter.Frequently.mem_closure, Filter.HasBasis.prod, Filter.HasBasis.prod_pprod  (+53 more)
+   d 64  AddSubmonoid.closure_singleton_eq, CauSeq.exists_lt, ContinuousOn.mono, Filter.HasBasis.prod_same_index, Filter.Tendsto.inf, Filter.Tendsto.of_smallSets  (+43 more)
+   d 65  AddSubmonoid.mem_closure_singleton, Bornology.mk, CauSeq.Completion.Cauchy, CauSeq.Completion.mk, CauSeq.Completion.mk_eq, CauSeq.IsComplete.mk  (+56 more)
+   d 66  CauSeq.Completion.inv_mk, CauSeq.Completion.inv_zero, CauSeq.Completion.ofRat, CauSeq.Completion.ofRat_inv, CauSeq.Completion.ofRat_mul, CauSeq.const_le  (+51 more)
+   d 67  Bornology.isBounded_image_fst_and_snd, CauSeq.Completion.mk_add, CauSeq.Completion.mk_mul, CauSeq.Completion.mk_neg, CauSeq.Completion.ofRat_injective, CauSeq.Completion.ofRat_intCast  (+44 more)
+   d 68  CauSeq.Completion.mk_eq_zero, CauSeq.Completion.mk_pow, CauSeq.Completion.mk_smul, CauSeq.Completion.mk_sub, CauSeq.lim_const, CauSeq.lim_eq_lim_of_equiv  (+39 more)
+   d 69  CauSeq.le_of_eq_of_le, CauSeq.le_of_le_of_eq, Commute.geom_sum₂_mul, Continuous.continuousOn, Filter.HasBasis.prod_nhds, Filter.Tendsto.prodMk_nhds  (+33 more)
+   d 70  CauSeq.lim_le, Filter.HasBasis.cauchySeq_iff, Filter.Tendsto.add, Filter.Tendsto.mul, Filter.Tendsto.sub, Filter.comap_cofinite_le  (+36 more)
+   d 71  Bornology.ofBounded, CauSeq.le_antisymm, CauSeq.le_inf, CauSeq.sup_le, Commute.add_pow, Continuous.prodMk  (+30 more)
+   d 72  Bornology.induced, Continuous.comp₂, Continuous.prodMk_right, Continuous.smul, Continuous.vadd, Filter.disjoint_principal_left  (+25 more)
+   d 73  CauSeq.Completion.inv_mul_cancel, CauSeq.Completion.mul_inv_cancel, Complex.sum_div_factorial_le, Continuous.add, Continuous.fun_smul, Continuous.fun_vadd  (+18 more)
+   d 74  ContinuousInv₀.of_nhds_one, Filter.HasBasis.disjoint_iff_left, Finset.mem_image, IsCauSeq.series_ratio_test, Rat.cast_sub_of_ne_zero, Rat.mul_lt_mul_of_pos_left  (+18 more)
+   d 75  CauSeq.Completion.ofRat_div, Filter.HasBasis.disjoint_iff_right, Ioo_mem_nhds, Rat.cast_pos_of_pos, Rat.cast_sub, Rat.le_of_mul_le_mul_left  (+17 more)
+   d 76  Continuous.pow, IsPreconnected.image, Rat.lt_of_mul_lt_mul_left, Topology.IsInducing.continuousAdd, Topology.IsInducing.continuousMul, UniformSpace.complete_of_cauchySeq_tendsto  (+7 more)
+   d 77  IsLUB.frequently_mem, Rat.castHom, Rat.inv_pos, RegularSpace.of_lift'_closure, Topology.IsInducing.isPreconnected_image, UniformSpace.completelyNormalSpace_of_hasAntitoneBasis  (+8 more)
+   d 78  IsLUB.frequently_nhds_mem, IsTopologicalRing.of_addGroup_of_nhds_zero, Rat.cast_strictMono, RegularSpace.of_hasBasis, Subtype.preconnectedSpace, UniformSpace.hasBasis_nhds  (+2 more)
+   d 79  IsLUB.mem_closure, IsPreconnected.intermediate_value₂, IsTopologicalRing.of_norm, Rat.castOrderEmbedding, Rat.cast_div, Rat.cast_inv  (+6 more)
+   d 80  IsPreconnected.intermediate_value, Rat.cast_le, Rat.cast_natCast, Rat.div_nonneg, Rat.zpow_nonneg, Set.Finite.isOpen_biInter  (+4 more)
+   d 81  CofiniteTopology.isOpen_iff, IsClosed.Icc_subset_of_forall_mem_nhdsGT_of_Icc_subset, Rat.cast_le_natCast, Real.ofCauchy, Set.Finite.isClosed_biUnion, uniformity_hasBasis_closed
+   d 82  Filter.coprod_cofinite, IsClosed.Icc_subset_of_forall_mem_nhdsWithin, NNRat.add_def, NNRat.coe_eq_zero, NNRat.coe_natCast, NNRat.mul_def  (+6 more)
+   d 83  CofiniteTopology.isOpen_iff', NNRat.coe_div, Real.mk_const, archimedean_iff_rat_lt, isPreconnected_Icc_aux
+   d 84  NNRat.num_div_den, Real.ind_mk, archimedean_iff_rat_le, isPreconnected_Icc
+   d 85  CofiniteTopology.isClosed_iff, intermediate_value_Icc', isPreconnected_uIcc
+   d 86  AddGroupNorm.mk, Complex.I, Complex.ofReal, MetricSpace.mk, NormOneClass.mk, Real.cauchy_one  (+6 more)
+   d 87  Complex.ofReal_inj, Complex.ofReal_injective, Complex.ofReal_natCast, Complex.ofReal_one, Complex.ofReal_zero, NNRat.cast_add_of_ne_zero  (+6 more)
+   d 88  Complex.ofReal_eq_zero, Continuous.surjective, NNRat.cast_add, NNRat.cast_mul, NNRat.cast_one, NNRat.cast_zero  (+2 more)
+   d 89  NNRat.castHom, Real.ext_cauchy_iff
+   d 90  Metric.ball, NormMulClass.mk, NormSMulClass.mk, NormedDivisionRing.mk, NormedField.mk, Real.cauchy_add  (+11 more)
+   d 91  Complex.add_re, Complex.mulAux, Metric.mem_ball, Real.mk_inf, Real.mk_lt, Real.mk_sup
+   d 92  Complex.SMul.instSMulRealComplex, Metric.mem_ball_self, Real.mk_add, Real.mk_mul, Real.mk_neg, Real.mk_pos  (+2 more)
+   d 93  Complex.mul_im, Complex.mul_re, Complex.real_smul, Real.zero_lt_one
+   d 95  AddGroupSeminorm.mk, Complex.I_mul_I, Complex.ofReal_add, Complex.ofReal_mul, Complex.ofReal_sub, Complex.re_add_im  (+20 more)
+   d 96  ENNReal, ENNReal.coe_injective, ENNReal.coe_ne_top, ENNReal.ofNNReal, ENNReal.top_ne_coe, Metric.mem_closedBall  (+6 more)
+   d 97  EDist.mk, ENNReal.coe_inj, IsBoundedSMul.of_norm_smul_le, Real.mk_le
+   d 98  ENNReal.recTopCoe, Real.ofCauchy_div, normHom
+   d102  Metric.ball_subset_closedBall
+   d103  ENNReal.coe_le_coe, ENNReal.coe_le_iff, ENNReal.coe_lt_coe, norm_add_le_of_le
+   d104  Complex.I_sq, Complex.ofRealHom, Complex.ofReal_pow, ENNReal.coe_eq_zero, ENNReal.coe_ne_zero, ENNReal.coe_one  (+5 more)
+   d105  Complex.conj_I, Complex.conj_ofReal, Complex.normSq, EMetricSpace.mk, ENNReal.coe_toNNReal, NNReal.coe_eq_zero
+   d106  Complex.conj_eq_iff_real, Complex.conj_neg_I, Complex.mul_conj, Complex.normSq_I, Complex.normSq_add, Complex.normSq_apply  (+16 more)
+   d107  Bornology.ofDist, Complex.conj_eq_iff_re, Complex.inv_def, Complex.normSq_eq_zero, Complex.normSq_natCast, ENNReal.coe_add  (+12 more)
+   d108  Complex.inv_im, Complex.inv_re, Complex.mul_inv_cancel, ENNReal.add_lt_add_left, ENNReal.lt_iff_exists_nnreal_btwn, ENNReal.ofNat_ne_top  (+14 more)
+   d109  Complex.div_im, Complex.div_re, Complex.ofRealAm, Complex.ofReal_inv, ENNReal.mul_top, ENNReal.ofReal_le_ofReal  (+7 more)
+   d110  Complex.inv_zero, Complex.reLm, ENNReal.add_lt_add, ENNReal.coe_lt_natCast, ENNReal.coe_nnreal_eq, ENNReal.ofReal_add  (+6 more)
+   d111  ENNReal.exists_nat_gt, ENNReal.mul_pos_iff, ENNReal.ofReal_coe_nnreal, Metric.eball_subset, UniformSpace.ofDist, dist_nonneg
+   d112  Complex.normSq_div, Complex.ofReal_div, ENNReal.mul_left_strictMono, ENNReal.mul_pos, Metric.toUniformSpace_eq, NNReal.inv_le  (+4 more)
+   d113  AddGroupSeminorm.toSeminormedAddGroup, Metric.uniformity_basis_dist, Real.isLUB_sSup, Real.toNNReal_inv, abs_norm, dist_le_zero  (+1 more)
+   d114  ENNReal.ofReal_eq_zero, Metric.cauchySeq_iff', Metric.mem_uniformity_dist, Metric.mk_uniformity_basis_le, Metric.nhds_basis_ball, Metric.uniformContinuous_iff  (+7 more)
+   d115  AddGroupNorm.toNormedAddGroup, Metric.mem_nhds_iff, Metric.uniformity_basis_dist_le, NormedAddGroup.nhds_basis_norm_lt, Real.isGLB_sInf, dist_dist_dist_le  (+2 more)
+   d116  AddGroupNorm.toNormedAddCommGroup, Metric.uniformContinuousOn_iff_le, Metric.uniformity_eq_comap_nhds_zero, NormedAddGroup.nhds_zero_basis_norm_lt, squeeze_zero'
+   d117  Metric.isOpen_iff, Real.cauSeq_converges, nhds_comap_dist, norm_inv, squeeze_zero
+   d118  Metric.isOpen_ball, NormedDivisionRing.toNormSMulClass, tendsto_iff_dist_tendsto_zero, uniformContinuousOn_inv₀
+   d119  Metric.ball_mem_nhds, tendsto_iff_norm_sub_tendsto_zero
+   d120  Metric.closedBall_mem_nhds, norm_algebraMap
+   d121  ENNReal.coe_inv_le, ENNReal.inv_zero, NNReal.powOrderIso, norm_algebraMap'
+   d122  ENNReal.coe_inv, ENNReal.inv_top, ENNReal.mul_le_mul_iff_left, ENNReal.ofReal_max, ENNReal.zero_div, Metric.exists_eball_subset_eball  (+1 more)
+   d123  NNReal.sq_sqrt, NNReal.sqrt_eq_iff_eq_sq, NNReal.sqrt_le_sqrt, Real.sqrt
+   d124  ENNReal.div_top, ENNReal.div_zero, ENNReal.mul_inv_cancel, NNReal.mul_self_sqrt, NNReal.sqrt_mul, NormedSpace.restrictScalars  (+1 more)
+   d125  Complex.norm_def, Complex.norm_nonneg, ENNReal.div_self, ENNReal.inv_eq_top, ENNReal.inv_eq_zero, ENNReal.inv_mul_cancel  (+6 more)
+   d126  Complex.norm_conj, Complex.norm_mul, Complex.norm_mul_self_eq_normSq, Complex.norm_neg', ENNReal.inv_mul_cancel_right', ENNReal.inv_two_add_inv_two  (+1 more)
+   d127  Complex.abs_re_le_norm, Complex.isCauSeq_conj, ENNReal.add_halves, ENNReal.div_eq_zero_iff, ENNReal.div_mul_cancel', ENNReal.inv_ne_top  (+5 more)
+   d128  Complex.cauSeqConj, Complex.isCauSeq_re, Complex.norm_real, Complex.re_le_norm, ENNReal.div_mul_cancel, ENNReal.div_pos  (+5 more)
+   d129  Complex.cauSeqRe, Complex.norm_I, Complex.norm_add_le', Complex.norm_of_nonneg, ENNReal.div_pos_iff, ENNReal.half_pos  (+5 more)
+   d130  Complex.abs_im_le_norm, Complex.norm_eq_zero_iff, Complex.norm_natCast, ENNReal.div_le_iff_le_mul, Real.sqrt_inv
+   d131  Complex.isCauSeq_im, Complex.norm_map_zero', Complex.norm_ofNat, ENNReal.div_le_of_le_mul, ENNReal.inv_strictAnti, Real.sqrt_div  (+1 more)
+   d132  Complex.cauSeqIm, Complex.norm_div, ENNReal.inv_lt_inv, ENNReal.mul_lt_of_lt_div, WeakPseudoEMetricSpace.mk, uniformSpace_edist
+   d133  Complex.isCauSeq_norm, Complex.isCauSeq_norm_exp, Complex.limAux, Complex.norm_le_abs_re_add_abs_im, ENNReal.mul_lt_of_lt_div', uniformity_basis_edist
+   d134  Complex.equiv_limAux, Complex.isCauSeq_exp, Complex.norm_pow, EMetric.mk_uniformity_basis, EMetric.uniformContinuous_iff, ENNReal.exists_inv_nat_lt  (+1 more)
+   d135  Complex.cauSeqNorm, Complex.exp', EMetric.mem_closure_iff, EMetric.mem_nhds_iff, uniformity_basis_edist_inv_nat
+   d136  Complex.lim_eq_lim_im_add_lim_re
+   d137  Complex.lim_im, Complex.lim_norm, Complex.lim_re, EMetric.complete_of_cauchySeq_tendsto, EMetric.isOpen_iff
+   d138  Complex.lim_conj, Metric.complete_of_cauchySeq_tendsto, Metric.isOpen_eball
+   d139  Complex.exp
+   d140  Complex.cos, Complex.cosh, Complex.exp_def, Complex.sin, Complex.sinh, Complex.two_cos  (+3 more)
+   d141  Complex.cosh_add_sinh, Complex.cosh_mul_I, Complex.cosh_sub_sinh, Complex.exp_add, Complex.exp_bound, Complex.exp_conj  (+9 more)
+   d142  Complex.cos_bound, Complex.cosh_add, Complex.cosh_conj, Complex.cosh_sq_sub_sinh_sq, Complex.exp_ne_zero, Complex.norm_exp_sub_one_sub_id_le  (+13 more)
+   d143  Complex.cos_add, Complex.exp_bound_sq, Complex.sin_sq_add_cos_sq, EMetricSpace.ofT0PseudoEMetricSpace, LipschitzWith.of_dist_le_mul, LipschitzWith.uniformContinuous  (+2 more)
+   d144  Complex.cos_two_mul', Complex.exp_neg, Complex.locally_lipschitz_exp, LipschitzWith.continuous, LipschitzWith.of_dist_le', isometry_iff_dist_eq  (+1 more)
+   d145  AddMonoidHomClass.isometry_iff_norm, AddMonoidHomClass.lipschitz_of_bound, Complex.cos_two_mul, Complex.cosh_neg, Isometry.continuous, Isometry.dist_eq  (+3 more)
+   d146  AddMonoidHomClass.continuous_of_bound, AddMonoidHomClass.isometry_of_norm, Complex.cos_conj, Isometry.norm_map_of_map_zero, dist_vadd, uniformContinuous_dist
+   d147  Complex.ofReal_cos_ofReal_re, SemilinearIsometryClass.isometry, continuous_dist, dist_add_left, dist_add_right, norm_map
+   d148  Complex.ofReal_cos, Continuous.dist, Filter.Tendsto.dist, LinearMap.mkContinuous
+   d149  LinearIsometry.norm_map, Metric.isClosed_closedBall, Real.cos_two_mul, continuousAt_of_locally_lipschitz, dist_add_add_le, lipschitzWith_neg_iff  (+1 more)
+   d150  Complex.continuous_exp, Filter.Tendsto.norm, LinearIsometry.isometry, LipschitzWith.neg, Real.cos_bound, nndist_add_add_le
+   d151  Complex.reCLM, Filter.Tendsto.cexp, LinearIsometry.continuous, RCLike.mk, Real.cos_one_le, Real.cos_pos_of_le_one  (+2 more)
+   d152  ContinuousAt.cexp, LipschitzOnWith.add, Real.cos_one_pos, continuous_negPart
+   d153  Continuous.cexp, LipschitzWith.add, Real.cos_two_neg, isClosed_nonneg
+   d154  LipschitzWith.sub
+   d157  Complex.continuous_re, Complex.ofRealLI
+   d158  Complex.continuous_ofReal
+   d160  Complex.continuous_cos
+   d161  Real.continuous_cos
+   d162  Real.continuousOn_cos
+   d163  Real.exists_cos_eq_zero
+   d164  Real.pi
+
+-- proof moves (new facts the proof pulls in, deepest first)
+   d267  Real.hasSum_arctan
+   d266  Complex.hasSum_arctan
+   d265  Complex.hasSum_taylorSeries_neg_log
+   d264  Complex.hasSum_taylorSeries_log
+   d263  Complex.norm_log_sub_logTaylor_le
+   d262  integral_pow
+   d261  integral_zpow
+   d260  integral_rpow
+   d259  integral_cpow
+   d259  intervalIntegral.integral_unitInterval_deriv_eq_sub
+   d258  intervalIntegral.integral_eq_sub_of_hasDerivAt
+   d258  intervalIntegral.intervalIntegrable_cpow'
+   [machinery hidden from statement path; full cones: A_S 15,714, A_P 42,088]

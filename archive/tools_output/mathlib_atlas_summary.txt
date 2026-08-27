@@ -1,0 +1,7 @@
+FULL-MATHLIB MOVES INDEX: SUMMARY
+theorem roots indexed: 287,476
+interface theorems (proof stays inside statement cone): 51,811 (18.0%)
+new-share: median 0.113, p90 0.860
+statement cone: median 1,044, p90 14,159
+proof cone: median 2,034, p90 16,268
+constants appearing as a new move at least once: 387,408

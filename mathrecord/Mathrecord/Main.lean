@@ -3,6 +3,11 @@ import Mathrecord.Validate
 import Mathrecord.Study
 import Mathrecord.DepDump
 import Mathrecord.HierDump
+import Mathrecord.HeadDump
+import Mathrecord.ModDump
+import Mathrecord.LegalityProbe
+import Mathrecord.Prover
+import Mathrecord.Replay
 import Mathrecord.Provenance
 import Mathrecord.Modules
 import Mathrecord.EnvFacts
@@ -198,6 +203,33 @@ unsafe def main (args : List String) : IO UInt32 := do
     return 0
   | ["defcheck", namesFile, envProbe, out] => do
     Mathrecord.DefCheck.defcheck namesFile envProbe out
+    return 0
+  | ["headdump", file, out] => do
+    Mathrecord.HeadDump.headDump file out
+    return 0
+  | ["moddump", file, out] => do
+    Mathrecord.ModDump.modDump file out
+    return 0
+  | ["probe", file, inp, out] => do
+    Mathrecord.LegalityProbe.probe file inp out
+    return 0
+  | ["prove", file, inp, out, banks, budget] => do
+    Mathrecord.Prover.prove file inp out banks (budget.toNat!)
+    return 0
+  | ["parts", file, names] => do
+    Mathrecord.Prover.partsDiag file names
+    return 0
+  | ["hodiag", file] => do
+    Mathrecord.Prover.hoDiag file
+    return 0
+  | ["semtrace", file, inp, out] => do
+    Mathrecord.Semantic.semtrace file inp out
+    return 0
+  | ["replay", file, inp, out] => do
+    Mathrecord.Replay.replay file inp out
+    return 0
+  | ["replay", file, inp, out, mode] => do
+    Mathrecord.Replay.replay file inp out mode
     return 0
   | ["alpha", a, b] => alpha a b
   | ["inspect", recordPath, declName] => inspect recordPath declName

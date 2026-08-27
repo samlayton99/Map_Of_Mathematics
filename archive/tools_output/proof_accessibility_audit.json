@@ -1,0 +1,669 @@
+{
+ "prover_out_v2_sem_xf.jsonl": {
+  "attempted": 80,
+  "solved_raw": 73,
+  "solved_clean": 73,
+  "clean_rate": 0.9125,
+  "proofs": [
+   {
+    "n": "AddConstMapClass.map_add_int'",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 33
+   },
+   {
+    "n": "limsup_eq_bot",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 49
+   },
+   {
+    "n": "DualNumber.isMaximal_span_singleton_eps",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 124
+   },
+   {
+    "n": "Perfection.extMonoid_iff",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 22
+   },
+   {
+    "n": "Order.wcovBy_add_one",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 18
+   },
+   {
+    "n": "Subgroup.mem_map_equiv",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 12
+   },
+   {
+    "n": "SkewPolynomial.coeff_C_ne_zero",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 34
+   },
+   {
+    "n": "SmoothBumpFunction.contMDiff",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 61
+   },
+   {
+    "n": "WittVector.mem_span_p_iff_coeff_zero_eq_zero",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 121
+   },
+   {
+    "n": "Real.log_list_prod",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 94
+   },
+   {
+    "n": "CategoryTheory.MorphismProperty.hasOfPostcompProperty_iff_le_diagonal",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 77
+   },
+   {
+    "n": "Function.support_neg",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 2
+   },
+   {
+    "n": "tsum_smul_tsum",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 30
+   },
+   {
+    "n": "Finset.card_le_univ",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 5
+   },
+   {
+    "n": "Preorder.frestrictLe_updateFinset_of_le",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 14
+   },
+   {
+    "n": "conjneg_injective",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 9
+   },
+   {
+    "n": "Complex.IsConservativeOn.eventually_nhds_wedgeIntegral_sub_wedgeIntegral",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 227
+   },
+   {
+    "n": "four_functions_theorem",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 153
+   },
+   {
+    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 16
+   },
+   {
+    "n": "iteratedDerivWithin_comp_neg",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 86
+   },
+   {
+    "n": "CategoryTheory.Adjunction.isIso_map_unit_of_isLeftAdjoint_comp",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 60
+   },
+   {
+    "n": "CategoryTheory.Subobject.isIso_iff_mk_eq_top",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 32
+   },
+   {
+    "n": "ULift.forall",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 4
+   },
+   {
+    "n": "DirectSum.sum_support_of",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 12
+   },
+   {
+    "n": "Action.hom_inv_hom",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 28
+   },
+   {
+    "n": "CFC.negPart_eq_zero_of_not_isSelfAdjoint",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 53
+   },
+   {
+    "n": "Perfection.coeffMonoidHom_symm_powMulEquiv",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 35
+   },
+   {
+    "n": "CategoryTheory.ShortComplex.Splitting.shortExact",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 10
+   },
+   {
+    "n": "Graph.eq_bot_or_vertexSet_nonempty",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 47
+   },
+   {
+    "n": "Manifold.IsSmoothEmbedding.prodMap",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 26
+   },
+   {
+    "n": "Ordinal.principal_add_omega0_opow",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 2
+   },
+   {
+    "n": "CategoryTheory.IsFiltered.coeq_condition_assoc",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [
+     "_simp_1"
+    ],
+    "n_consts": 18
+   },
+   {
+    "n": "IsOpen.ite",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 22
+   },
+   {
+    "n": "ZMod.eq_one_or_isUnit_sub_one",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 133
+   },
+   {
+    "n": "Ring.exists_maximal_of_not_isField",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 50
+   },
+   {
+    "n": "Real.smoothTransition.contDiff",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 30
+   },
+   {
+    "n": "IsMulTorsionFree.pow_right_injective\u2080",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 19
+   },
+   {
+    "n": "TotallyBounded.neg",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 19
+   },
+   {
+    "n": "Ideal.IsDedekindDomain.emultiplicity_map_eq_ramificationIdx_mul",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 20
+   },
+   {
+    "n": "IsMulFreimanHom.threeGPFree",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 22
+   },
+   {
+    "n": "continuous_if",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 28
+   },
+   {
+    "n": "SSet.\u03b4_comp_\u03b4_self'_apply",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 27
+   },
+   {
+    "n": "CategoryTheory.MorphismProperty.LeftFraction.rightFraction_fac",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 18
+   },
+   {
+    "n": "UniformCauchySeqOn.sub",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 27
+   },
+   {
+    "n": "Matrix.charpoly.univ_natDegree",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 17
+   },
+   {
+    "n": "ThreeAPFree.image",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 13
+   },
+   {
+    "n": "ContDiffAt.inv",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 28
+   },
+   {
+    "n": "AntisymmRel.trans_le",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 5
+   },
+   {
+    "n": "Set.vadd_subset_vadd",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 7
+   },
+   {
+    "n": "Set.iUnion_image_sup_right",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 5
+   },
+   {
+    "n": "not_bddAbove_iff_isCofinal",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 17
+   },
+   {
+    "n": "MeasureTheory.lintegral_add_mul_meas_add_le_le_lintegral",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 108
+   },
+   {
+    "n": "Int.associated_natAbs",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 23
+   },
+   {
+    "n": "MeasureTheory.SimpleFunc.setToSimpleFunc_smul_left'",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 99
+   },
+   {
+    "n": "Matroid.finitary_iff_forall_isCircuit_finite",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 36
+   },
+   {
+    "n": "conjneg_sub",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 43
+   },
+   {
+    "n": "Nat.Primrec'.add",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 40
+   },
+   {
+    "n": "FirstOrder.Language.withConstants_funMap_sumInr",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 25
+   },
+   {
+    "n": "AddConstMapClass.map_sub_nsmul",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 32
+   },
+   {
+    "n": "CategoryTheory.Limits.reflectsFiniteCoproducts_op",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 18
+   },
+   {
+    "n": "Nat.ofDigits_lt_base_pow_length",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 43
+   },
+   {
+    "n": "Ideal.le_comap_of_ramificationIdx_ne_zero",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 11
+   },
+   {
+    "n": "Graph.IsSubgraph.compatible'",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 6
+   },
+   {
+    "n": "Set.infs_subset_left",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 7
+   },
+   {
+    "n": "MeasureTheory.MeasurePreserving.smulInvariantMeasure_iterateMulAct",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 18
+   },
+   {
+    "n": "Graph.Inc.mono",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 11
+   },
+   {
+    "n": "CategoryTheory.Limits.reflectsLimitsOfShape_of_rightOp",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 10
+   },
+   {
+    "n": "indicator_cthickening_eventually_eq_indicator_closure",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 43
+   },
+   {
+    "n": "Metric.AreSeparated.finset_iUnion_left",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 10
+   },
+   {
+    "n": "Set.Finite.preimage'",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 15
+   },
+   {
+    "n": "NormedDivisionRing.toNormSMulClass",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 118
+   },
+   {
+    "n": "bddBelow_smul_iff_of_pos",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 21
+   },
+   {
+    "n": "Polynomial.nodup_of_separable_prod",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 59
+   }
+  ]
+ }
+}

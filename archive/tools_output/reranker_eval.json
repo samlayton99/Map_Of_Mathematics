@@ -1,0 +1,44 @@
+{
+ "n_eval": 1200,
+ "pool_recall_ceiling": 0.3214,
+ "reranker_recall": {
+  "8": 0.0314,
+  "16": 0.0459,
+  "64": 0.1037,
+  "256": 0.2376
+ },
+ "structural_baseline_recall": {
+  "8": 0.004,
+  "16": 0.0342,
+  "64": 0.137,
+  "256": 0.2816
+ },
+ "reranker_recall_novel_premise": {
+  "8": 0.0154,
+  "16": 0.0216,
+  "64": 0.0651,
+  "256": 0.1645
+ },
+ "n_novel": 591,
+ "features": [
+  "log_prior",
+  "log_cousage",
+  "log_peers",
+  "refined_key_match",
+  "head_match",
+  "depth",
+  "depth_gap",
+  "same_namespace"
+ ],
+ "coefs": [
+  -0.953,
+  0.1205,
+  0.7944,
+  -0.2778,
+  2.4679,
+  1.3571,
+  -0.1106,
+  -0.2107
+ ],
+ "train_pairs": 214196
+}
