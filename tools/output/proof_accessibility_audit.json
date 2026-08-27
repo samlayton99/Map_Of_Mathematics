@@ -1,9 +1,9 @@
 {
- "prover_out_v2_cT2nb.jsonl": {
+ "prover_out_v2_oS1_d3b.jsonl": {
   "attempted": 80,
-  "solved_raw": 12,
-  "solved_clean": 12,
-  "clean_rate": 0.15,
+  "solved_raw": 28,
+  "solved_clean": 28,
+  "clean_rate": 0.35,
   "proofs": [
    {
     "n": "Subgroup.mem_map_equiv",
@@ -21,7 +21,7 @@
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 21
+    "n_consts": 35
    },
    {
     "n": "equivShrink_symm_add",
@@ -31,6 +31,15 @@
     "not_imported": [],
     "unmapped": [],
     "n_consts": 9
+   },
+   {
+    "n": "Function.support_neg",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 2
    },
    {
     "n": "Finset.card_le_univ",
@@ -51,6 +60,18 @@
     "n_consts": 14
    },
    {
+    "n": "conjneg_injective",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [
+     "_simp_2",
+     "_simp_1"
+    ],
+    "n_consts": 12
+   },
+   {
     "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
     "clean": true,
     "self_use": false,
@@ -58,6 +79,15 @@
     "not_imported": [],
     "unmapped": [],
     "n_consts": 16
+   },
+   {
+    "n": "ULift.forall",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 4
    },
    {
     "n": "DirectSum.sum_support_of",
@@ -78,6 +108,51 @@
     "n_consts": 53
    },
    {
+    "n": "Ordinal.principal_add_omega0_opow",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 2
+   },
+   {
+    "n": "IsMulTorsionFree.pow_right_injective\u2080",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 19
+   },
+   {
+    "n": "Ideal.IsDedekindDomain.emultiplicity_map_eq_ramificationIdx_mul",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 20
+   },
+   {
+    "n": "Matrix.charpoly.univ_natDegree",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 17
+   },
+   {
+    "n": "ThreeAPFree.image",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 17
+   },
+   {
     "n": "Set.vadd_subset_vadd",
     "clean": true,
     "self_use": false,
@@ -96,6 +171,29 @@
     "n_consts": 5
    },
    {
+    "n": "not_bddAbove_iff_isCofinal",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 21
+   },
+   {
+    "n": "Int.associated_natAbs",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [
+     "_simp_5",
+     "_simp_3",
+     "_simp_4",
+     "_simp_1"
+    ],
+    "n_consts": 27
+   },
+   {
     "n": "conjneg_sub",
     "clean": true,
     "self_use": false,
@@ -103,6 +201,33 @@
     "not_imported": [],
     "unmapped": [],
     "n_consts": 33
+   },
+   {
+    "n": "FirstOrder.Language.withConstants_funMap_sumInr",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 18
+   },
+   {
+    "n": "Ideal.le_comap_of_ramificationIdx_ne_zero",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 11
+   },
+   {
+    "n": "Graph.IsSubgraph.compatible'",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 6
    },
    {
     "n": "Set.infs_subset_left",
@@ -112,77 +237,35 @@
     "not_imported": [],
     "unmapped": [],
     "n_consts": 7
-   }
-  ]
- },
- "prover_out_v2_csbr.jsonl": {
-  "attempted": 80,
-  "solved_raw": 7,
-  "solved_clean": 7,
-  "clean_rate": 0.0875,
-  "proofs": [
-   {
-    "n": "Subgroup.mem_map_equiv",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 12
    },
    {
-    "n": "SkewPolynomial.coeff_C_ne_zero",
+    "n": "MeasureTheory.MeasurePreserving.smulInvariantMeasure_iterateMulAct",
     "clean": true,
     "self_use": false,
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 21
+    "n_consts": 19
    },
    {
-    "n": "equivShrink_symm_add",
+    "n": "CategoryTheory.Limits.reflectsLimitsOfShape_of_rightOp",
     "clean": true,
     "self_use": false,
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 9
+    "n_consts": 10
    },
    {
-    "n": "Preorder.frestrictLe_updateFinset_of_le",
+    "n": "Metric.AreSeparated.finset_iUnion_left",
     "clean": true,
     "self_use": false,
     "same_module": [],
     "not_imported": [],
-    "unmapped": [],
-    "n_consts": 14
-   },
-   {
-    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 16
-   },
-   {
-    "n": "CFC.negPart_eq_zero_of_not_isSelfAdjoint",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 53
-   },
-   {
-    "n": "conjneg_sub",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 33
+    "unmapped": [
+     "_simp_1"
+    ],
+    "n_consts": 15
    }
   ]
  }

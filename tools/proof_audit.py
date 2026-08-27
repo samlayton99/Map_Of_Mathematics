@@ -34,12 +34,20 @@ def log(msg):
 
 
 def main():
+    # args: out.jsonl[:tasks.json] ... - a tasks file marks its bw/rw support
+    # as certified-prior (the reference proof compiled at source time), so
+    # those constants are legal even when same-module
     files = sys.argv[1:] or ["prover_out_v2_sbrp.jsonl"]
     log("loading atlas + accessibility...")
     a = load_dump()
     acc = Accessibility(a)
     report = {}
-    for fn in files:
+    for spec in files:
+        fn, _, taskfn = spec.partition(":")
+        certified = {}
+        if taskfn:
+            for t in json.load(open(BIG / taskfn))["tasks"]:
+                certified[t["n"]] = set(t["bw"]) | set(t.get("rw", []))
         path = BIG / fn
         if not path.exists():
             continue
@@ -57,11 +65,14 @@ def main():
             # statement-referenced constants are given by the problem itself:
             # anything in the statement's dependency closure is legitimate.
             stmt_ok = a.cone_from(a.type_deps(t))
+            cert = certified.get(r["n"], set())
             viol_same, viol_future, viol_unmapped, self_use = [], [], [], False
             for cn in r.get("used_consts", []):
                 # the target and its derived auxiliaries are always forbidden
                 if cn == r["n"] or cn.startswith(r["n"] + "."):
                     self_use = True
+                    continue
+                if cn in cert:
                     continue
                 ci = a.idx.get(cn)
                 if ci is None:
