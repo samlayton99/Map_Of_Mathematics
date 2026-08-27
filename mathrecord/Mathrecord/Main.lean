@@ -190,6 +190,9 @@ unsafe def main (args : List String) : IO UInt32 := do
   | ["parts", file, names] => do
     Mathrecord.Prover.partsDiag file names
     return 0
+  | ["hodiag", file] => do
+    Mathrecord.Prover.hoDiag file
+    return 0
   | ["replay", file, inp, out] => do
     Mathrecord.Replay.replay file inp out
     return 0

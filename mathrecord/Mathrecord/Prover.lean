@@ -292,6 +292,8 @@ def hoApply (g : MVarId) (cn : Name) : MetaM (List MVarId) := do
         unless ← m.isAssigned do out := m :: out
       pure out
 
+mutual
+
 /-- GUIDED DESCENT.  Apply the head of reference application `e` at `g`
 through the engine's own unification: iterative bounded metavariable
 telescope (over-applied heads re-telescoped after each assignment round),
@@ -299,15 +301,24 @@ conclusion unified last.  Proof-argument metavariables become new goals,
 registered in the guide map with their reference subterms; data-argument
 metavariables are assigned from the reference when `assignData`, else
 registered (for the occurrence-oracle mode) and left to unification, with
-a synthesis attempt for closed class-typed holes (mirroring `apply`). -/
-def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
-    (g : MVarId) (e : Expr) (assignData : Bool) : MetaM (List MVarId) :=
+a synthesis attempt for closed class-typed holes (mirroring `apply`).
+
+CONCLUSION DEFERRAL: when eager conclusion unification fails because the
+goal's endpoints are still undetermined (they are owned by a child
+equation - the T2 phenomenon at the conclusion level), the guided proof
+children are executed first and the conclusion is retried against the
+then-concrete goal, including the mechanical synthesis fallback. -/
+partial def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
+    (env : Environment) (selfStr : String)
+    (g : MVarId) (e : Expr) (assignData : Bool) (fuel : Nat := 48) :
+    MetaM (List MVarId) :=
     g.withContext do
   let fn := e.getAppFn.consumeMData
   let args := e.getAppArgs
   let hType ← inferType fn
   let mut curType := hType
   let mut allMvs : Array Expr := #[]
+  let mut proofPairs : Array (MVarId × Expr) := #[]
   let mut idx := 0
   for _ in [0:args.size] do
     if idx ≥ args.size then break
@@ -318,6 +329,7 @@ def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
       let aP ← try Meta.isProp (← inferType a) catch _ => pure false
       if aP then
         guide.modify (·.insert mvs[i]!.mvarId!.name a)
+        proofPairs := proofPairs.push (mvs[i]!.mvarId!, a)
       else if assignData then
         -- checkpointed assignment: an argument whose in-place unification
         -- fails (open sibling proof metavariables in its expected type)
@@ -332,17 +344,44 @@ def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
     allMvs := allMvs ++ mvs
     curType ← instantiateMVars concl
     idx := idx + mvs.size
-  let gType ← g.getType
-  let cOk ← isDefEq curType gType
+  -- INSTANTIATE: by the time this step runs, the goal's type metavariable
+  -- may have been assigned through sibling coupling - the raw alias hides
+  -- the concrete goal from the mechanical-synthesis pattern matches
+  let gType ← instantiateMVars (← g.getType)
+  let firstOk ← isDefEq curType gType
   -- mechanical higher-order fallback (motive synthesis / congruence
   -- decomposition) - consults ONLY the goal, never the reference
-  let cOk ← if cOk then pure true else
+  let synthOk ← if firstOk then pure true else
     Mathrecord.Ho.tryMotiveSynth curType gType
-  let cOk ← if cOk then pure true else
+  -- CONCLUSION DEFERRAL: run the guided proof children first when the
+  -- eager conclusion fails (open endpoints owned by a child equation),
+  -- then retry against the concretized goal
+  let mut cOk := synthOk
+  let mut deferLeft : List MVarId := []
+  if !cOk && fuel > 0 then
+    let s ← Meta.saveState
+    let r ← try
+      let mut lo : List MVarId := []
+      for (pm, ref) in proofPairs do
+        unless ← pm.isAssigned do
+          lo := lo ++ (← solveGuidedRec guide env selfStr pm ref assignData (fuel - 1))
+      let curT ← instantiateMVars curType
+      let gT ← instantiateMVars (← g.getType)
+      let r1 ← isDefEq curT gT
+      let r2 ← if r1 then pure true else Mathrecord.Ho.tryMotiveSynth curT gT
+      pure (some (r2, lo))
+    catch _ => pure none
+    match r with
+    | some (true, lo) =>
+      cOk := true
+      deferLeft := lo
+    | _ => s.restore
+  let finalOk ← if cOk then pure true else
     -- composed search states can render defeq-but-unification-hard forms;
     -- escalate transparency before giving up
-    withTransparency TransparencyMode.all (isDefEq curType gType)
-  unless cOk do
+    withTransparency TransparencyMode.all
+      (isDefEq (← instantiateMVars curType) (← instantiateMVars (← g.getType)))
+  unless finalOk do
     let fnStr := match fn with
       | .const c _ => c.toString
       | _ => "?"
@@ -352,7 +391,14 @@ def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
         let k := match d.kind with
           | .natural => "natural" | .synthetic => "synthetic"
           | .syntheticOpaque => "synOpaque"
-        pure s!" [goal mvar kind={k} depth={d.depth} mctx={(← getMCtx).depth} assignable={← m.isAssignable}]"
+        let rev ← try isDefEq gType curType catch _ => pure false
+        let occ ← try occursCheck m curType catch _ => pure false
+        let freshOk ← try
+          withoutModifyingState do
+            let fr ← mkFreshExprMVar (← inferType curType)
+            isDefEq fr curType
+        catch _ => pure false
+        pure s!" [kind={k} assignable={← m.isAssignable} rev={rev} occurs={occ} freshAssign={freshOk}]"
       | _ => pure ""
     throwError "guided conclusion mismatch {fnStr} ⟦{((toString curType).take 110).toString}⟧ vs ⟦{((toString gType).take 110).toString}⟧{extra}"
   for mv in allMvs do
@@ -367,6 +413,8 @@ def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
   for mv in allMvs.reverse do
     let m := mv.mvarId!
     unless ← m.isAssigned do out := m :: out
+  for m in deferLeft do
+    unless ← m.isAssigned do out := out ++ [m]
   pure out
 
 /-- One guided step at goal `g` whose reference subterm is `e`: lambda ->
@@ -376,7 +424,8 @@ Target-attached auxiliaries (`T._proof_*` etc.) are delta-unfolded first,
 so the constructed proof never cites them. -/
 partial def guidedAct (guide : IO.Ref (Std.HashMap Name Expr))
     (env : Environment) (selfStr : String)
-    (g : MVarId) (e : Expr) (assignData : Bool) : MetaM (List MVarId) :=
+    (g : MVarId) (e : Expr) (assignData : Bool) (fuel : Nat := 48) :
+    MetaM (List MVarId) :=
     g.withContext do
   let e := e.consumeMData
   let fn0 := e.getAppFn.consumeMData
@@ -391,7 +440,7 @@ partial def guidedAct (guide : IO.Ref (Std.HashMap Name Expr))
       if let some ci := env.find? c then
         if let some v := ci.value? (allowOpaque := true) then
           let v := v.instantiateLevelParams ci.levelParams lvls
-          return ← guidedAct guide env selfStr g (v.beta e.getAppArgs) assignData
+          return ← guidedAct guide env selfStr g (v.beta e.getAppArgs) assignData fuel
   match e with
   | .lam _ _ b _ =>
     let (fv, g') ← g.intro1P
@@ -407,12 +456,40 @@ partial def guidedAct (guide : IO.Ref (Std.HashMap Name Expr))
   | .app .. =>
     let fn := e.getAppFn.consumeMData
     if fn.isConst || fn.isFVar then
-      guidedApply guide g e assignData
+      guidedApply guide env selfStr g e assignData fuel
     else if ← isDefEq (mkMVar g) e then pure []
     else throwError "guided direct-assign failed"
   | _ =>
     if ← isDefEq (mkMVar g) e then pure []
     else throwError "guided direct-assign failed"
+
+/-- Fully execute the guided subtree rooted at `g`, children-first,
+returning the unresolved leftover goals (open data holes). -/
+partial def solveGuidedRec (guide : IO.Ref (Std.HashMap Name Expr))
+    (env : Environment) (selfStr : String)
+    (g : MVarId) (e : Expr) (assignData : Bool) (fuel : Nat) :
+    MetaM (List MVarId) := do
+  if fuel == 0 then throwError "guided descent out of fuel"
+  let gs ← guidedAct guide env selfStr g e assignData fuel
+  let mut leftover : List MVarId := []
+  for g' in gs do
+    unless ← g'.isAssigned do
+      match (← guide.get).get? g'.name with
+      | some r =>
+        let isP ← try
+          Meta.isProp (← instantiateMVars (← g'.getType))
+        catch _ => pure false
+        if isP then
+          leftover := leftover ++
+            (← solveGuidedRec guide env selfStr g' r assignData (fuel - 1))
+        else if assignData then
+          leftover := leftover ++ (← try oracleAssign g' r catch _ => pure [g'])
+        else
+          leftover := leftover ++ [g']
+      | none => leftover := leftover ++ [g']
+  pure leftover
+
+end
 
 def searchCore (env : Environment) (task : Task) (banks : String)
     (budget : Nat) (ci : ConstantInfo) (xs : Array Expr) (concl : Expr) :
@@ -610,7 +687,7 @@ def searchCore (env : Environment) (task : Task) (banks : String)
                | none => false)
             if guidedCtor then
               acts := acts.push ("structural", s!"ctor {ctor} (guided)", 0.5,
-                guidedApply guide g ((gEntry.getD default).consumeMData) false)
+                guidedApply guide env selfStr g ((gEntry.getD default).consumeMData) false)
             else
               acts := acts.push ("structural", s!"ctor {ctor}", 0.5,
                 do g.applyConst ctor)
@@ -630,7 +707,7 @@ def searchCore (env : Environment) (task : Task) (banks : String)
            | none => false)
         if guidedHyp then
           acts := acts.push ("hyp", s!"apply hyp {d.userName} (guided)", 0.6,
-            guidedApply guide g ((gEntry.getD default).consumeMData) false)
+            guidedApply guide env selfStr g ((gEntry.getD default).consumeMData) false)
         else
           acts := acts.push ("hyp", s!"apply hyp {d.userName}", 0.6,
             do g.apply (mkFVar d.fvarId))
@@ -651,7 +728,7 @@ def searchCore (env : Environment) (task : Task) (banks : String)
             -- applied through guidedApply so its argument holes acquire
             -- occurrence-specific reference terms (same cost, same slot)
             acts := acts.push ("backward", s!"apply {c.name} (guided)", 1.0,
-              guidedApply guide g ((gEntry.getD default).consumeMData) false)
+              guidedApply guide env selfStr g ((gEntry.getD default).consumeMData) false)
           else
             acts := acts.push ("backward", s!"apply {c.name}", 1.0,
               hoApply g c.name)
@@ -797,6 +874,39 @@ def partsDiag (path : System.FilePath) (namesArg : String) : IO Unit := do
         for e in d do IO.println s!"  DATA: {((toString e).take 160).toString}"
         for e in p do IO.println s!"  PROP: {((toString e).take 160).toString}"
     let _ ← (act.run' {} {}).toIO coreCtx { env }
+
+/-- Standalone reproduction of the G2 congrArg-vs-flex-goal unification
+refusal: telescope congrArg's real type, unify its conclusion with a bare
+Sort-mvar goal, print each stage. -/
+def hoDiag (path : System.FilePath) : IO Unit := do
+  let pf ← Mathrecord.processFile path Mathrecord.Study.mathlibOptions
+  let env := pf.env
+  let coreCtx : Core.Context := { fileName := pf.fileName, fileMap := default }
+  let act : MetaM Unit := do
+    let ce ← mkConstWithFreshMVarLevels ``congrArg
+    let hType ← inferType ce
+    let (mvs, _, concl) ← forallMetaBoundedTelescope hType 6
+    IO.println s!"telescope: {mvs.size} mvars, concl={← instantiateMVars concl}"
+    let u ← mkFreshLevelMVar
+    let gT ← mkFreshExprMVar (mkSort u)
+    IO.println s!"goal type: {gT} : Sort {u}"
+    let r1 ← isDefEq concl gT
+    IO.println s!"isDefEq concl gT = {r1}"
+    unless r1 do
+      let r2 ← isDefEq gT concl
+      IO.println s!"reversed: isDefEq gT concl = {r2}"
+      let ct ← inferType concl
+      IO.println s!"type of concl: {ct}"
+      let r3 ← isDefEq (mkSort u) ct
+      IO.println s!"sort unify: {r3}"
+    -- variant: goal type created BEFORE the telescope (parent-first order,
+    -- as in the real search)
+    let u2 ← mkFreshLevelMVar
+    let gT2 ← mkFreshExprMVar (mkSort u2)
+    let ce2 ← mkConstWithFreshMVarLevels ``congrArg
+    let (_, _, concl2) ← forallMetaBoundedTelescope (← inferType ce2) 6
+    IO.println s!"parent-first: isDefEq concl2 gT2 = {← isDefEq concl2 gT2}"
+  let _ ← (act.run' {} {}).toIO coreCtx { env }
 
 def statsJson (s : Stats) : Json :=
   Json.mkObj [

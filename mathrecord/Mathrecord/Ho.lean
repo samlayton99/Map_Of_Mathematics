@@ -21,28 +21,52 @@ namespace Mathrecord.Ho
 
 open Lean Meta
 
-/-- Structural diff of two expressions: the single consistent differing
-subterm pair, descending through equal application spines.  Returns none
-when the sides are equal or the difference is not a single consistent
-pair. -/
-partial def diffPair (A B : Expr) : Option (Expr × Expr) :=
-  if A == B then none
-  else
-    let fa := A.getAppFn
-    let fb := B.getAppFn
-    let as := A.getAppArgs
-    let bs := B.getAppArgs
-    if fa == fb && as.size == bs.size && as.size > 0 then
-      let diffs := (as.zip bs).filterMap
-        (fun (x, y) => if x == y then none else some (x, y))
-      match diffs with
-      | #[(x, y)] => (diffPair x y).orElse (fun _ => some (x, y))
-      | _ =>
-        -- several args differ: consistent only if all share one pair
-        if diffs.size > 1 && diffs.all (fun d => d == diffs[0]!) then
-          some diffs[0]!
-        else some (A, B)
-    else some (A, B)
+/-- Positional structural diff-abstraction: rebuild `A` with every
+position at which it differs from `B` replaced by a loose bound variable
+(index = binders crossed), provided all differing positions carry the
+SAME (a, b) pair of closed subterms.  Unlike `kabstract`, this abstracts
+exactly the changed occurrences - `a + a = b + a` yields `fun x => x + a`,
+not `fun x => x + x`.  Returns (body-with-loose-bvars, a, b). -/
+partial def diffAbstract (A B : Expr) : Option (Expr × Expr × Expr) :=
+  match go (A.consumeMData) (B.consumeMData) 0 with
+  | some (body, some (a, b)) => some (body, a, b)
+  | _ => none
+where
+  leaf (A B : Expr) (d : Nat) : Option (Expr × Option (Expr × Expr)) :=
+    if A.hasLooseBVars || B.hasLooseBVars then none
+    else some (.bvar d, some (A, B))
+  merge : Option (Expr × Expr) → Option (Expr × Expr) →
+      Option (Option (Expr × Expr))
+    | some p, some q => if p == q then some (some p) else none
+    | some p, none => some (some p)
+    | none, some q => some (some q)
+    | none, none => some none
+  go (A B : Expr) (d : Nat) : Option (Expr × Option (Expr × Expr)) :=
+    let A := A.consumeMData
+    let B := B.consumeMData
+    if A == B then some (A, none)
+    else
+      match A, B with
+      | .app fa aa, .app fb ab =>
+        match go fa fb d, go aa ab d with
+        | some (f', pf), some (a', pa) =>
+          match merge pf pa with
+          | some p => some (.app f' a', p)
+          | none => leaf A B d
+        | _, _ => leaf A B d
+      | .lam n t b i, .lam _ t' b' _ =>
+        if t == t' then
+          match go b b' (d + 1) with
+          | some (b2, p) => some (.lam n t b2 i, p)
+          | none => leaf A B d
+        else leaf A B d
+      | .forallE n t b i, .forallE _ t' b' _ =>
+        if t == t' then
+          match go b b' (d + 1) with
+          | some (b2, p) => some (.forallE n t b2 i, p)
+          | none => leaf A B d
+        else leaf A B d
+      | _, _ => leaf A B d
 
 /-- Mechanical motive synthesis, case 1: the conclusion is a flex
 application `?m a₁ … aₖ` whose arguments are concrete.  Build the motive
@@ -75,10 +99,10 @@ def congrFromDiff (concl gType : Expr) : MetaM Bool := do
          cl.appFn! == cr.appFn! do return false
   let A := gType.getAppArgs[1]!
   let B := gType.getAppArgs[2]!
-  let some (a, b) := diffPair A B | return false
+  let some (fBody, a, b) := diffAbstract A B | return false
+  -- an open side admits only the vacuous identity decomposition
+  if a.consumeMData.isMVar || b.consumeMData.isMVar then return false
   let τa ← inferType a
-  let fBody ← kabstract A a
-  if !fBody.hasLooseBVars then return false
   let f := mkLambda `x .default τa fBody
   -- validate the decomposition on BOTH sides before assigning
   unless ← isDefEq (mkApp f a) A do return false
@@ -91,7 +115,8 @@ def congrFromDiff (concl gType : Expr) : MetaM Bool := do
 /-- Combined mechanical fallback for a failed first-order conclusion
 unification.  Side effects on success: the relevant metavariables are
 assigned. -/
-def tryMotiveSynth (concl gType : Expr) : MetaM Bool := do
+def tryMotiveSynth (concl gType₀ : Expr) : MetaM Bool := do
+  let gType ← instantiateMVars gType₀   -- never match on a raw mvar alias
   if ← (try motiveFromGoal concl gType catch _ => pure false) then
     return true
   try congrFromDiff concl gType catch _ => pure false
