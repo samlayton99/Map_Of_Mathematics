@@ -1,0 +1,12 @@
+{
+ "n_decisions": 121,
+ "n_rows": 265,
+ "coefs": {
+  "log_cite": -0.281,
+  "depth": -0.462,
+  "depth_gap": -0.273,
+  "eqiff": -0.781,
+  "same_ns": 0.264,
+  "inv_rank": -0.743
+ }
+}
