@@ -1,10 +1,19 @@
 {
- "prover_out_v2_a_custom2.jsonl": {
+ "prover_out_v2_b_stock.jsonl": {
   "attempted": 80,
-  "solved_raw": 27,
-  "solved_clean": 27,
-  "clean_rate": 0.3375,
+  "solved_raw": 29,
+  "solved_clean": 29,
+  "clean_rate": 0.3625,
   "proofs": [
+   {
+    "n": "Perfection.extMonoid_iff",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 18
+   },
    {
     "n": "Subgroup.mem_map_equiv",
     "clean": true,
@@ -141,6 +150,24 @@
     "n_consts": 17
    },
    {
+    "n": "ContDiffAt.inv",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 28
+   },
+   {
+    "n": "AntisymmRel.trans_le",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 5
+   },
+   {
     "n": "Set.vadd_subset_vadd",
     "clean": true,
     "self_use": false,
@@ -222,15 +249,6 @@
     "n_consts": 7
    },
    {
-    "n": "MeasureTheory.MeasurePreserving.smulInvariantMeasure_iterateMulAct",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 19
-   },
-   {
     "n": "CategoryTheory.Limits.reflectsLimitsOfShape_of_rightOp",
     "clean": true,
     "self_use": false,
@@ -250,7 +268,7 @@
    }
   ]
  },
- "prover_out_v2_a_custom2_1k.jsonl": {
+ "prover_out_v2_b_custom.jsonl": {
   "attempted": 80,
   "solved_raw": 28,
   "solved_clean": 28,
@@ -392,13 +410,22 @@
     "n_consts": 17
    },
    {
-    "n": "ThreeAPFree.image",
+    "n": "ContDiffAt.inv",
     "clean": true,
     "self_use": false,
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 17
+    "n_consts": 28
+   },
+   {
+    "n": "AntisymmRel.trans_le",
+    "clean": true,
+    "self_use": false,
+    "same_module": [],
+    "not_imported": [],
+    "unmapped": [],
+    "n_consts": 5
    },
    {
     "n": "Set.vadd_subset_vadd",
@@ -426,15 +453,6 @@
     "not_imported": [],
     "unmapped": [],
     "n_consts": 21
-   },
-   {
-    "n": "Int.associated_natAbs",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 30
    },
    {
     "n": "conjneg_sub",
@@ -482,13 +500,13 @@
     "n_consts": 7
    },
    {
-    "n": "MeasureTheory.MeasurePreserving.smulInvariantMeasure_iterateMulAct",
+    "n": "Graph.Inc.mono",
     "clean": true,
     "self_use": false,
     "same_module": [],
     "not_imported": [],
     "unmapped": [],
-    "n_consts": 19
+    "n_consts": 11
    },
    {
     "n": "CategoryTheory.Limits.reflectsLimitsOfShape_of_rightOp",
@@ -507,148 +525,6 @@
     "not_imported": [],
     "unmapped": [],
     "n_consts": 14
-   }
-  ]
- },
- "prover_out_v2_a_retr.jsonl": {
-  "attempted": 80,
-  "solved_raw": 7,
-  "solved_clean": 7,
-  "clean_rate": 0.0875,
-  "proofs": [
-   {
-    "n": "Subgroup.mem_map_equiv",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 12
-   },
-   {
-    "n": "SkewPolynomial.coeff_C_ne_zero",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 21
-   },
-   {
-    "n": "equivShrink_symm_add",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 9
-   },
-   {
-    "n": "Preorder.frestrictLe_updateFinset_of_le",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 14
-   },
-   {
-    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 16
-   },
-   {
-    "n": "CFC.negPart_eq_zero_of_not_isSelfAdjoint",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 53
-   },
-   {
-    "n": "conjneg_sub",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 33
-   }
-  ]
- },
- "prover_out_v2_a_learned.jsonl": {
-  "attempted": 80,
-  "solved_raw": 7,
-  "solved_clean": 7,
-  "clean_rate": 0.0875,
-  "proofs": [
-   {
-    "n": "Subgroup.mem_map_equiv",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 12
-   },
-   {
-    "n": "SkewPolynomial.coeff_C_ne_zero",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 21
-   },
-   {
-    "n": "equivShrink_symm_add",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 9
-   },
-   {
-    "n": "Preorder.frestrictLe_updateFinset_of_le",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 14
-   },
-   {
-    "n": "AddSubgroup.addSubgroupOf_bot_eq_top",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 16
-   },
-   {
-    "n": "CFC.negPart_eq_zero_of_not_isSelfAdjoint",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 53
-   },
-   {
-    "n": "conjneg_sub",
-    "clean": true,
-    "self_use": false,
-    "same_module": [],
-    "not_imported": [],
-    "unmapped": [],
-    "n_consts": 33
    }
   ]
  }
