@@ -6,6 +6,7 @@ import Mathrecord.HeadDump
 import Mathrecord.ModDump
 import Mathrecord.LegalityProbe
 import Mathrecord.Prover
+import Mathrecord.Replay
 
 /-! MathRecord CLI.
 
@@ -188,6 +189,9 @@ unsafe def main (args : List String) : IO UInt32 := do
     return 0
   | ["parts", file, names] => do
     Mathrecord.Prover.partsDiag file names
+    return 0
+  | ["replay", file, inp, out] => do
+    Mathrecord.Replay.replay file inp out
     return 0
   | ["alpha", a, b] => alpha a b
   | ["inspect", recordPath, declName] => inspect recordPath declName

@@ -301,7 +301,21 @@ def searchCore (env : Environment) (task : Task) (banks : String)
     -- goal selection: with 'g', expand the syntactically smallest goal
     -- (later goals can be easy or instantiate shared metavariables)
     let (g, rest) ← do
-      if banks.contains 'g' && node.goals.length > 1 then
+      -- FIRST-CLASS DATA HOLES: non-proof goals are fabrication holes;
+      -- resolve them first - they are cheap and unlock proof goals
+      let arr0 := node.goals.toArray
+      let mut dataIdx : Option Nat := none
+      for i in [0:arr0.size] do
+        if dataIdx.isNone then
+          let isP ← try
+            Meta.isProp (← instantiateMVars (← arr0[i]!.getType))
+          catch _ => pure true
+          if !isP then dataIdx := some i
+      if let some di := dataIdx then
+        let rest := (List.range arr0.size).filterMap
+          (fun i => if i == di then none else arr0[i]?)
+        pure (arr0[di]!, rest)
+      else if banks.contains 'g' && node.goals.length > 1 then
         let arr := node.goals.toArray
         let mut bi := 0
         let mut bsz := 1000000
@@ -318,6 +332,9 @@ def searchCore (env : Environment) (task : Task) (banks : String)
       else
         pure (node.goals.head!, node.goals.tail!)
     let ghead ← try goalHead g catch _ => pure "?"
+    let gIsProp ← try
+      Meta.isProp (← instantiateMVars (← g.getType))
+    catch _ => pure true
     let gconsts ← try
       pure (← instantiateMVars (← g.getType)).getUsedConstantsAsSet
     catch _ => pure default
@@ -339,7 +356,7 @@ def searchCore (env : Environment) (task : Task) (banks : String)
       -- constructors of the goal-head inductive (small arity only)
       match env.find? (String.toName ghead) with
       | some (.inductInfo iv) =>
-        if iv.ctors.length ≤ 4 then
+        if gIsProp && iv.ctors.length ≤ 4 then
           for ctor in iv.ctors do
             acts := acts.push ("structural", s!"ctor {ctor}", 0.5,
               do g.applyConst ctor)
@@ -355,14 +372,16 @@ def searchCore (env : Environment) (task : Task) (banks : String)
       for d in decls do
         acts := acts.push ("hyp", s!"apply hyp {d.userName}", 0.6,
           do g.apply (mkFVar d.fvarId))
-    if banks.contains 'b' then
+    if banks.contains 'b' && gIsProp then
+      let small := bwCands.size ≤ 48   -- oracle supports: try everything
       let mut nb := 0
       for c in bwCands do
-        if nb < 50 && c.concl == ghead && c.name.toString != task.name.toString then
+        if nb < 50 && (small || c.concl == ghead) &&
+           c.name.toString != task.name.toString then
           nb := nb + 1
           acts := acts.push ("backward", s!"apply {c.name}", 1.0,
             do g.apply (← mkConstWithFreshMVarLevels c.name))
-    if banks.contains 'r' then
+    if banks.contains 'r' && gIsProp then
       -- rewrite v2: forward (simp) orientation only, tight cap - the v1
       -- bidirectional bank was measured net-negative at fixed budget
       let mut nr := 0
@@ -375,7 +394,7 @@ def searchCore (env : Environment) (task : Task) (banks : String)
                         (← mkConstWithFreshMVarLevels c.name) false
               let g' ← g.replaceTargetEq r.eNew r.eqProof
               pure (g' :: r.mvarIds))
-    if banks.contains 'p' then
+    if banks.contains 'p' && gIsProp then
       acts := acts.push ("automation", "simp", 1.5, do
         let ctx ← Simp.mkContext (simpTheorems := #[simpThms])
                     (congrTheorems := ← Meta.getSimpCongrTheorems)
@@ -383,8 +402,8 @@ def searchCore (env : Environment) (task : Task) (banks : String)
         match res with
         | none => pure []
         | some (_, g') => pure [g'])
-    if banks.contains 'w' then
-      -- oracle data parts: fill any hole a part's type unifies with
+    if banks.contains 'w' && !gIsProp then
+      -- oracle data parts offered ONLY at fabrication holes
       for i in [0:dparts.size] do
         let p := dparts[i]!
         acts := acts.push ("part", s!"part {i}", 0.8,
