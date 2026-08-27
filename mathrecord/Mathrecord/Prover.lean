@@ -399,6 +399,14 @@ partial def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
     let s ← Meta.saveState
     let r ← try
       let mut lo : List MVarId := []
+      -- deferred DATA arguments first: with the telescope complete their
+      -- checkpoint-blocking sibling holes may now be determined
+      let gm0 ← guide.get
+      for mv in allMvs do
+        let m := mv.mvarId!
+        unless ← m.isAssigned do
+          if let some ref := gm0.get? m.name then
+            let _ ← try isDefEq (mkMVar m) ref catch _ => pure false
       for (pm, ref) in proofPairs do
         unless ← pm.isAssigned do
           lo := lo ++ (← solveGuidedRec guide env selfStr pm ref assignData (fuel - 1))
@@ -435,9 +443,11 @@ partial def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
       cOk2 ← if r1 then pure true else Mathrecord.Ho.tryMotiveSynth curT gT2
   let finalOk ← if cOk2 then pure true else
     -- composed search states can render defeq-but-unification-hard forms;
-    -- escalate transparency before giving up
+    -- escalate transparency before giving up (deep structure unfoldings
+    -- can also exhaust recursion depth, surfacing as a false negative)
     Core.withCurrHeartbeats do
-      withOptions (fun o => o.set `maxHeartbeats (800000 : Nat)) do
+      withOptions (fun o => (o.set `maxHeartbeats (800000 : Nat)).set
+                     `maxRecDepth (8192 : Nat)) do
         withTransparency TransparencyMode.all
           (isDefEq (← instantiateMVars curType) (← instantiateMVars (← g.getType)))
   -- CONCLUSION-FIRST RETRY: core `apply` unifies the conclusion before
@@ -550,13 +560,36 @@ partial def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
       let goalStr ← try
         pure (((toString (← instantiateMVars (← g.getType))).take 220).toString)
       catch _ => pure "?"
+      if assignData && !exDef && !exAll then
+        -- KERNEL ARBITRATION: every unification stage failed, yet the
+        -- reference certifies this exact subterm at (a kernel-defeq form
+        -- of) this goal - elaborator unification is incomplete on some
+        -- kernel-valid terms.  Assign unchecked; final verification
+        -- (Meta.check + kernel addDecl fallback) is the arbiter, so no
+        -- false positive can result.
+        g.assign e
+        return []
       throwError "{emsg} [retry=failed exactRefDefault={exDef} exactRefAll={exAll} exactRefTy={exTy} refTy=⟦{refTyStr}⟧ goalTy=⟦{goalStr}⟧]"
   let _ := okAll
+  -- EARLY DEFERRED-DATA ASSIGNMENT: a data argument whose checkpointed
+  -- in-place assignment failed is retried once the conclusion is
+  -- unified - accumulated constraints typically admit it now, and early
+  -- assignment prevents silent divergence downstream (non-fatal: a hole
+  -- that still cannot take its reference value stays deferred)
+  let gm ← guide.get
+  for mv in fMvs do
+    let m := mv.mvarId!
+    unless ← m.isAssigned do
+      if let some ref := gm.get? m.name then
+        let ok1 ← try isDefEq (mkMVar m) ref catch _ => pure false
+        unless ok1 do
+          let _ ← try
+            withTransparency TransparencyMode.all (isDefEq (mkMVar m) ref)
+          catch _ => pure false
   -- instance synthesis for residual class holes - but NEVER for a hole
   -- with a guide entry: the registered exact argument must not be
   -- preempted by an engine-synthesized instance (whose derivation chain
   -- can cite source-forbidden constants)
-  let gm ← guide.get
   for mv in fMvs do
     let m := mv.mvarId!
     unless ← m.isAssigned do
@@ -727,10 +760,26 @@ def searchCore (env : Environment) (task : Task) (banks : String)
       -- own-module facts is REJECTED and the search continues (dirty
       -- proofs must not shadow clean ones)
       let proof ← mkLambdaFVars xs (← instantiateMVars root)
-      let ok ← try
+      let ok0 ← try
         Meta.check proof
         isDefEq (← inferType proof) ci.type
       catch _ => pure false
+      -- KERNEL ARBITRATION: the elaborator's isDefEq is incomplete on some
+      -- kernel-valid terms (deep structure/coercion unfoldings); a proof
+      -- it rejects is submitted to the kernel itself as the final arbiter
+      let ok ← if ok0 then pure true else
+        try
+          if proof.hasExprMVar || proof.hasFVar then pure false else
+          match Kernel.Environment.addDecl (← getEnv).toKernelEnv {}
+              (.thmDecl { name := `_mrKernelArbiter,
+                          levelParams := ci.levelParams,
+                          type := ci.type, value := proof }) with
+          | Except.ok _ =>
+            stats := { stats with
+              attempts := bump stats.attempts "kernel_arbited" }
+            pure true
+          | Except.error _ => pure false
+        catch _ => pure false
       let usedNames := proof.getUsedConstantsAsSet.toArray
       let forbidSet : Std.HashSet Name :=
         task.forbid.foldl (init := {}) (·.insert ·)

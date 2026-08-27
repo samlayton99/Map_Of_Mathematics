@@ -156,42 +156,68 @@ def semSimpAct (guide : IO.Ref (Std.HashMap Name Expr))
     (simprocs : Simp.Simprocs) : MetaM (List MVarId) := g.withContext do
   let (leaves, conts, _) ← regionParts e
   if leaves.isEmpty && conts.isEmpty then throwError "sem: empty region"
-  let mut thms : SimpTheorems := {}
-  let mut i := 0
-  for l in leaves do
-    let added ← try
-      match l.term.consumeMData with
-      | .const c _ => do thms ← thms.addConst c; pure true
-      | t => do
-        if l.generalized then
-          match t.getAppFn.consumeMData with
-          | .const c _ => do thms ← thms.addConst c; pure true
-          | .fvar f => do thms ← thms.add (.fvar f) #[] (mkFVar f); pure true
-          | _ => pure false
-        else do
-          thms ← thms.add (.other (Name.mkSimple s!"semfact{i}")) #[] t
-          pure true
-    catch _ => pure false
-    let _ := added
-    i := i + 1
-  let ctx ← Simp.mkContext (simpTheorems := #[thms])
-              (congrTheorems := ← Meta.getSimpCongrTheorems)
-  let (res, _) ← simpGoal g ctx (simprocs := #[simprocs])
-  match res with
-  | none => pure []
-  | some (_, g') => do
-    -- the open goal should be a rewritten form owned by a continuation
-    let g'T ← instantiateMVars (← g'.getType)
-    for c in conts do
-      let cT ← try instantiateMVars (← inferType c) catch _ => pure default
-      let okC ← try isDefEq g'T cT catch _ => pure false
-      if okC then
-        guide.modify (·.insert g'.name c)
-        return [g']
-    try g'.refl; pure []
+  let buildThms (inv : Bool) : MetaM SimpTheorems := do
+    let mut thms : SimpTheorems := {}
+    let mut i := 0
+    for l in leaves do
+      let added ← try
+        match l.term.consumeMData with
+        | .const c _ => do thms ← thms.addConst c (inv := inv); pure true
+        | t => do
+          if l.generalized then
+            match t.getAppFn.consumeMData with
+            | .const c _ => do thms ← thms.addConst c (inv := inv); pure true
+            | .fvar f => do thms ← thms.add (.fvar f) #[] (mkFVar f); pure true
+            | _ => pure false
+          else do
+            let t ← if inv then
+                try Meta.mkEqSymm t catch _ => pure t
+              else pure t
+            thms ← thms.add (.other (Name.mkSimple s!"semfact{i}")) #[] t
+            pure true
+      catch _ => pure false
+      let _ := added
+      i := i + 1
+    pure thms
+  let run (thms : SimpTheorems) : MetaM (List MVarId) := do
+    let ctx ← Simp.mkContext (simpTheorems := #[thms])
+                (congrTheorems := ← Meta.getSimpCongrTheorems)
+    let (res, _) ← simpGoal g ctx (simprocs := #[simprocs])
+    match res with
+    | none => pure []
+    | some (_, g') => do
+      -- the open goal should be a rewritten form owned by a continuation
+      let g'T ← instantiateMVars (← g'.getType)
+      for c in conts do
+        let cT ← try instantiateMVars (← inferType c) catch _ => pure default
+        let okC ← try isDefEq g'T cT catch _ => pure false
+        if okC then
+          guide.modify (·.insert g'.name c)
+          return [g']
+      try g'.refl; pure []
+      catch _ =>
+        if ← g'.assumptionCore then pure []
+        else throwError "sem simp residual goal ({conts.size} conts unmatched)"
+  -- a reference rewrite compiled from right-to-left uses (`← l`); the
+  -- extracted fact set carries no direction, so retry inverted on failure
+  let s ← Meta.saveState
+  try run (← buildThms false)
+  catch ex =>
+    s.restore
+    try run (← buildThms true)
     catch _ =>
-      if ← g'.assumptionCore then pure []
-      else throwError "sem simp residual goal ({conts.size} conts unmatched)"
+      s.restore
+      -- mixed-direction final attempt: forward set + inverted set
+      try
+        let f ← buildThms false
+        let b ← buildThms true
+        let ctx ← Simp.mkContext (simpTheorems := #[f, b])
+                    (congrTheorems := ← Meta.getSimpCongrTheorems)
+        let (res, _) ← simpGoal g ctx (simprocs := #[simprocs])
+        match res with
+        | none => pure []
+        | some _ => throw ex
+      catch _ => throw ex
 
 /-- Head-name based family classification for non-certificate nodes. -/
 def elimFamily (c : Name) : Bool :=
