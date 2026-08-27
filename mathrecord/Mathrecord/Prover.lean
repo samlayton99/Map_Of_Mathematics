@@ -399,7 +399,10 @@ partial def guidedApply (guide : IO.Ref (Std.HashMap Name Expr))
             isDefEq fr curType
         catch _ => pure false
         pure s!" [kind={k} assignable={← m.isAssignable} rev={rev} occurs={occ} freshAssign={freshOk}]"
-      | _ => pure ""
+      | _ => do
+        let why ← try Mathrecord.Ho.congrFromDiffDbg curType gType
+                  catch _ => pure "dbg_exception"
+        pure s!" [congrDbg={why}]"
     throwError "guided conclusion mismatch {fnStr} ⟦{((toString curType).take 110).toString}⟧ vs ⟦{((toString gType).take 110).toString}⟧{extra}"
   for mv in allMvs do
     let m := mv.mvarId!
