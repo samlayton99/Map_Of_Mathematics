@@ -897,8 +897,10 @@ partial def chainSearch (ctx : ExCtx)
     (budget : IO.Ref Nat) (anyDepth : IO.Ref Bool)
     (cur : MVarId) (remaining : List Nat) (steps : Array Fact) :
     MetaM (Option (Array Fact × Option MVarId)) := do
-  if steps.size > 0 then
-    if ← residOk cur then return some (steps, some cur)
+  -- 0-step success is legitimate: a region can be pure transport
+  -- (`Eq.mpr (rfl-grade cert) h`) whose goal already IS a continuation's
+  -- or leaf's statement, or closes by a promoted terminal outright
+  if ← residOk cur then return some (steps, some cur)
   if remaining.isEmpty then return none
   for i in remaining do
     for md in #[true, false] do
