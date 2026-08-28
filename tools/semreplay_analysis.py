@@ -85,9 +85,27 @@ def main(argv=None):
     if reasons:
         print("EXTRACTION failures by mechanism "
               "(missing IR expressivity; count = actions, thms = theorems)")
+        print("  NOTE: read the THEOREM column for 'how often does this "
+              "mechanism block a proof'.  The action column is dominated by "
+              "a few proofs with enormous machine-generated certificate "
+              "trees (decision-procedure output), so action-weighting "
+              "overstates whatever those particular proofs happen to hit.")
         for k, c in reasons.most_common():
             print(f"  {k:<34s} {c:5d} actions   {len(thms_per_reason[k]):3d} thms")
         print()
+        # concentration: how much of the action count is a handful of proofs
+        per_thm = collections.Counter()
+        for r in rows:
+            per_thm[r["n"]] = len(r.get("unsupported", []))
+        tot_act = sum(per_thm.values())
+        if tot_act:
+            top = per_thm.most_common(5)
+            share = sum(c for _, c in top) / tot_act
+            print(f"  ACTION CONCENTRATION: the 5 most action-heavy failing "
+                  f"proofs hold {share*100:.0f}% of all unsupported actions")
+            for nm, c in top:
+                print(f"      {c:5d}  {nm[:60]}")
+            print()
 
     # ---- replay failures: executor defects, localized to one action
     disc = collections.Counter()

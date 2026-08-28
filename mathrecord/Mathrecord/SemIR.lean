@@ -450,14 +450,19 @@ def execHead (n : IRNode) (g : MVarId) (unchecked : IO.Ref Nat) :
       pure (mkFVar fv)
   let hType ← inferType fn
   let fvs ← lctxFVars g
-  -- a recorded term abstracted over a LONGER context than replay rebuilt
-  -- would instantiate to a loose bound variable ("unexpected bound
-  -- variable #0"); name the drift instead of failing obscurely
-  for (_, e) in n.dataArgs do
-    if (e.instantiateRev fvs).hasLooseBVars then
-      throwError "irexec: local-context drift (recorded term needs a deeper context than replay rebuilt)"
-  let dataMap : Std.HashMap Nat Expr :=
-    n.dataArgs.foldl (fun m (i, e) => m.insert i (e.instantiateRev fvs)) {}
+  -- A recorded term abstracted over a DEEPER local context than replay
+  -- rebuilt instantiates to a loose bound variable ("unexpected bound
+  -- variable #0").  SKIP those arguments rather than failing the action:
+  -- an unassigned data hole is often still determined by the conclusion
+  -- or by instance synthesis, and refusing outright loses actions that
+  -- would have succeeded.  Drift is only reported if the conclusion then
+  -- fails, where it is the actual explanation.
+  let mut drifted := 0
+  let mut dataMap : Std.HashMap Nat Expr := {}
+  for (i, e) in n.dataArgs do
+    let inst := e.instantiateRev fvs
+    if inst.hasLooseBVars then drifted := drifted + 1
+    else dataMap := dataMap.insert i inst
   let arity := n.nArgs
   let mut curType := hType
   let mut allMvs : Array Expr := #[]
@@ -494,6 +499,9 @@ def execHead (n : IRNode) (g : MVarId) (unchecked : IO.Ref Nat) :
   unless ok1 do
     let ok2 ← tryConcl
     unless ok2 do
+      if drifted > 0 then
+        throwError "irexec: local-context drift ({drifted} recorded data args need a deeper context than replay rebuilt)"
+
       -- ELABORATOR INCOMPLETENESS vs REAL MISMATCH.  `isDefEq` is
       -- incomplete on some kernel-valid coercion forms (SetLike.coe vs
       -- DFunLike.coe of a bundled structure): it returns false at full
@@ -1250,7 +1258,24 @@ partial def extractHead (ctx : ExCtx) (g : MVarId) (e : Expr) :
   let ok ← if ok then pure true else
     try Mathrecord.Ho.tryMotiveSynth curType gType catch _ => pure false
   unless ok do
-    return { fam := .unsupported, reason := s!"head_conclusion_mismatch:{head.render}" }
+    -- DIAGNOSTIC for the dominant hard-proof class: is this an eliminator
+    -- (where the motive is a genuine-fabrication argument), how many data
+    -- arguments are lambda-shaped (motives), and do the two sides even
+    -- share a head symbol - shape mismatch vs deep unification failure?
+    let nLam := dataArgs.foldl (fun a (_, e) => if e.isLambda then a + 1 else a) 0
+    let isElim := match fn.consumeMData with
+      | .const c _ => (elimRecursive? ctx.env c).isSome
+      | _ => false
+    let hd (e : Expr) : String :=
+      match e.getForallBody.consumeMData.getAppFn.consumeMData with
+      | .const c _ => toString c
+      | .fvar _ => "FVAR" | .mvar _ => "MVAR" | .sort _ => "SORT" | _ => "OTHER"
+    let cH := hd (← instantiateMVars curType)
+    let gH := hd gType
+    return { fam := .unsupported,
+             reason := s!"head_conclusion_mismatch:{head.render}"
+                       ++ s!"|elim={isElim}|lam={nLam}|concl={cH}|goal={gH}"
+                       ++ (if cH == gH then "|samehead" else "|diffhead") }
   -- DEFERRED DATA ASSIGNMENT (the guided engine's fix, replicated): a data
   -- argument whose eager unification failed on open sibling holes usually
   -- unifies once the conclusion has bound the telescope.  Left open, its
