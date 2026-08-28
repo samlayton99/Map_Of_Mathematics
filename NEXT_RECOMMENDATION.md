@@ -1,11 +1,13 @@
-# Next Recommendation (2026-08-27)
+# Next Recommendation (2026-08-27, semantic-conformance cycle)
 
-Prior gates closed: G1 80/80 audit-clean; semantic ladder run (see README and `docs/CURRENT_RESEARCH_DIRECTION.md`). The next cycle, in priority order:
+**The 80 benchmark is now DEV80 - a development/conformance set, not a clean test set.** Gate C/E numbers (67/80, 65/80) are oracle results (reference-derived actions inside budgeted search); make no generalization claims from them. Data splits are in `bigdata/splits.json` (`tools/splits.py`): TRAIN / DEV-LARGE (DEV80 ⊂, module-granular) / SEALED-MODULE (388 modules sharing none with DEV80; never used to modify IR or executor).
 
-1. **Semantic-grain decision dataset + hierarchical policy.** Convert reference traces (`bigdata/semtrace{80b,300,3k}.jsonl`) into per-decision training examples at the semantic grain: π(family|state) · π(parameter|family,state). The certificate-grain ranker v3 (top-1 0.645) is not the final surface; rewrite-set selection is.
-2. **Close the Gate C mechanical gap (67→80).** Failure modes are enumerated in the cycle report: `simp made no progress` (direction/conditional-rewrite cases), residual-goal/continuation mismatches, 7 uncaptured. Each is an executor defect, not search difficulty.
-3. **Remaining invisible action classes**: `congr` (119), `Eq.ndrec` (78), `id` (63), `Exists.casesOn` (51), `And.casesOn` (33), `Eq.rec` (31) — extend the mechanical operator family.
-4. **Connect ranker to best-first search** only after per-decision metrics exist on the semantic action space; then measure end-to-end at fixed budget vs the A″/G3 controls.
-5. **Durability** (not yet executed): second Lean/Mathlib snapshot, metamorphic source refactorings, per-family semantic branching-factor measurement.
+The immediate gate is **semantic conformance, not solve rate**:
 
-Do not start value learning / MCTS / expert iteration before 1–4.
+1. **Deterministic semantic replay** (`mathrecord semreplay`, `Mathrecord/SemIR.lean`): extraction records IR v1 actions (family + parameters, orientation/mode/order determined by bounded trial); replay executes the record with no search, no budget, no ranker, no reference access; kernel verification arbitrates. Every failure carries a named mechanism (`tools/semreplay_analysis.py`); "dead end/budget" is impossible by construction. Current DEV80: extract 65/80, replay 64/80, verified 64/80, zero fallback.
+2. **Drive DEV80 toward 80/80 with general mechanisms only** - a new IR field/mechanism requires the same failure class in multiple theorems (check at 300/3k scale first). Unrepresentable actions stay UNSUPPORTED, never raw-node fallback.
+3. **Scale conformance measurement**: 300 (running), 3k (`bigdata/dev3k_tasks.json`, DEV-LARGE only). Report per-action and per-theorem success, family distribution, failures by mechanism, compression ratio, horizon, fallback %.
+4. **Freeze semantic IR v1** once DEV80 ~80/80 and 3k coverage is high; after freeze, SEALED-MODULE failures must not motivate IR changes while the set keeps that name.
+5. Only then: semantic-grain decision dataset (family + parameter labels, source-accessible env only, no certificate-grain congrArg/Eq.mpr decisions), supervised hierarchical policy P(family|state)*P(params|family,state), then autonomous search on SEALED-MODULE.
+
+Do not start value learning / MCTS / expert iteration / RL before all of the above.

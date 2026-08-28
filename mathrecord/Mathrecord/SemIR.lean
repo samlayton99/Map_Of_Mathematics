@@ -111,14 +111,14 @@ partial def elimRecursive? (env : Environment) (c : Name) (fuel : Nat := 6) :
                 | some (.inductInfo iv) => some iv.isRec
                 | _ => some false
     | none => some false
-  | some ci =>
-    -- `casesOn`/`recOn`/`ndrec` are definitions that unfold to `.rec`
-    match ci.value? (allowOpaque := true) with
-    | some v => match headConstOfBody v with
-                | some c' => if c' == c then none else elimRecursive? env c' (fuel - 1)
-                | none => none
-    | none => none
-  | none => none
+  | some (.defnInfo d) =>
+    -- `casesOn`/`recOn`/`ndrec` are DEFINITIONS that unfold to `.rec`.
+    -- Chase definitions only: a THEOREM's proof body may well end in an
+    -- eliminator, but the theorem itself is an ordinary APPLY head.
+    (match headConstOfBody d.value with
+     | some c' => if c' == c then none else elimRecursive? env c' (fuel - 1)
+     | none => none)
+  | _ => none
 
 /-! ## Parameters -/
 
@@ -464,11 +464,27 @@ def execHead (n : IRNode) (g : MVarId) : MetaM (List MVarId) := g.withContext do
     allMvs := allMvs ++ mvs
     curType ← instantiateMVars concl
     idx := idx + mvs.size
-  let gType ← instantiateMVars (← g.getType)
-  let ok ← isDefEq curType gType
-  let ok ← if ok then pure true else Mathrecord.Ho.tryMotiveSynth curType gType
-  unless ok do
-    throwError "irexec: conclusion mismatch for {h.render}"
+  let tryConcl : MetaM Bool := do
+    let cT ← instantiateMVars curType
+    let gType ← instantiateMVars (← g.getType)
+    let ok ← try isDefEq cT gType catch _ => pure false
+    if ok then pure true else
+      try Mathrecord.Ho.tryMotiveSynth cT gType catch _ => pure false
+  let ok1 ← tryConcl
+  unless ok1 do
+    -- deferred data assignment (mirror of extraction): an argument whose
+    -- eager unification failed on open sibling holes usually unifies once
+    -- the telescope is complete; without it the conclusion cannot bind
+    for mv in allMvs do
+      let m := mv.mvarId!
+      unless ← m.isAssigned do
+        let j := allMvs.findIdx? (fun x => x == mv) |>.getD 0
+        if let some a := dataMap.get? j then
+          let s ← Meta.saveState
+          unless ← (try isDefEq mv a catch _ => pure false) do s.restore
+    let ok2 ← tryConcl
+    unless ok2 do
+      throwError "irexec: conclusion mismatch for {h.render}"
   -- synthesize class-typed holes, exactly as the prover's apply does
   for mv in allMvs do
     let m := mv.mvarId!
