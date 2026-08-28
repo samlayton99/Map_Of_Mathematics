@@ -1311,8 +1311,14 @@ def semreplay (path : System.FilePath) (inp : System.FilePath)
   -- options set by `withOptions`: a runaway simp inside one certificate
   -- region otherwise aborts the whole theorem before it can be classified.
   let coreCtx : Core.Context :=
+    -- maxHeartbeats := 0 is UNLIMITED at the theorem level.  Trials
+    -- rebase their own check but their consumption still counts against
+    -- the enclosing scope, so a finite theorem budget is spent by the
+    -- search itself and every later action in a hard proof times out -
+    -- an instrument limit masquerading as mathematical difficulty.  Total
+    -- work stays bounded by (DFS budget) x (per-trial 20k heartbeats).
     { fileName := pf.fileName, fileMap := default, maxRecDepth := 8000,
-      maxHeartbeats := 4000000 }
+      maxHeartbeats := 0 }
   let mut count := 0
   let mut extractClean := 0
   let mut replayOk := 0
