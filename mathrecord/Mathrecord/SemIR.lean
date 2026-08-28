@@ -174,12 +174,18 @@ inductive ExactKind where
   | hypothesis (idx : Nat) (user : Name)
   | constant (n : Name)
   | rfl
+  /-- ATOMIC LEAF: the reference subterm, recorded context-abstracted.
+  This is the base case that makes representation TOTAL - every
+  proof-typed subterm is assignable, so extraction can always terminate
+  without an unsupported node. -/
+  | supplied (e : Expr)
   deriving Inhabited
 
 def ExactKind.render : ExactKind → String
   | .hypothesis i u => s!"hyp:{i}:{u}"
   | .constant n => s!"const:{n}"
   | .rfl => "rfl"
+  | .supplied _ => "supplied"
 
 /-! ## The action -/
 
@@ -218,8 +224,21 @@ structure IRNode where
   exact?  : Option ExactKind := none
   -- HAVE
   haveTy? : Option Expr := none
-  -- UNSUPPORTED
+  /-- Local-context depth at which this node's terms were abstracted.
+  `Expr.abstract xs` is inverted by `instantiateRev ys` ONLY when the two
+  arrays have equal length: with a deeper replay context, instantiateRev
+  silently binds SHIFTED variables instead of failing.  Replay therefore
+  instantiates against the first `ctxLen` fvars, which correspond
+  positionally because both descents introduce the same binders in the
+  same order. -/
+  ctxLen  : Nat := 0
+  -- UNSUPPORTED (must now be unreachable: any occurrence is a bug)
   reason  : String := ""
+  /-- Set when semantic compression was abandoned HERE and the subtree
+  below is atomic.  The value is the mechanism that failed, so the whole
+  mechanism histogram survives the fallback: representability stops being
+  a pass/fail gate and semantic coverage becomes the quality metric. -/
+  atomReason : String := ""
   -- structure
   kids    : Array IRNode := #[]
   /-- certificate nodes this one action covers (compression numerator). -/
@@ -246,6 +265,18 @@ partial def IRNode.unsupportedReasons (n : IRNode) : Array String :=
   let here := if n.fam == .unsupported then #[n.reason] else #[]
   n.kids.foldl (fun acc k => acc ++ k.unsupportedReasons) here
 
+/-- Mechanisms abandoned to the atomic fallback.  These are NOT failures of
+representation - they are the compression misses, and the histogram is the
+research signal. -/
+partial def IRNode.atomReasons (n : IRNode) : Array String :=
+  let here := if n.atomReason == "" then #[] else #[n.atomReason]
+  n.kids.foldl (fun acc k => acc ++ k.atomReasons) here
+
+/-- Actions sitting under an atomic-fallback root (uncompressed). -/
+partial def IRNode.atomActions (n : IRNode) : Nat :=
+  if n.atomReason != "" then n.size
+  else n.kids.foldl (fun acc k => acc + k.atomActions) 0
+
 partial def IRNode.toJson (n : IRNode) : Json :=
   let base : List (String × Json) :=
     [("f", Json.str n.fam.toStr), ("cov", Lean.toJson n.covers)]
@@ -267,6 +298,8 @@ partial def IRNode.toJson (n : IRNode) : Json :=
      ("ndatalam", Lean.toJson
         (n.dataArgs.foldl (fun a (_, e) => if e.isLambda then a + 1 else a) 0))])
   let base := base ++ (if n.reason == "" then [] else [("why", Json.str n.reason)])
+  let base := base ++ (if n.atomReason == "" then [] else
+    [("atom", Json.str n.atomReason)])
   let base := base ++ (if n.kids.isEmpty then [] else
     [("kids", Json.arr (n.kids.map IRNode.toJson))])
   Json.mkObj base
@@ -314,6 +347,14 @@ def lctxFVars (g : MVarId) : MetaM (Array Expr) := g.withContext do
 def absLocal (g : MVarId) (e : Expr) : MetaM Expr := do
   pure (e.abstract (← lctxFVars g))
 
+/-- Re-instantiate a recorded term against the replay goal's context,
+using exactly the depth it was recorded at. -/
+def instLocalAt (g : MVarId) (n : Nat) (e : Expr) : MetaM Expr := do
+  let fvs ← lctxFVars g
+  if fvs.size < n then
+    throwError "irexec: replay context shallower ({fvs.size}) than recorded ({n})"
+  pure (e.instantiateRev (fvs.extract 0 n))
+
 /-- Re-instantiate a recorded term against the replay goal's context. -/
 def instLocal (g : MVarId) (e : Expr) : MetaM Expr := do
   pure (e.instantiateRev (← lctxFVars g))
@@ -339,7 +380,8 @@ def mkSymmAny (e : Expr) : MetaM Expr := do
 
 /-- Build the simp theorem set from recorded facts, honouring each fact's
 recorded orientation.  No forward/backward retry: `inverted` is data. -/
-def buildFactSet (g : MVarId) (facts : Array Fact) : MetaM SimpTheorems :=
+def buildFactSet (g : MVarId) (facts : Array Fact) (ctxLen : Nat := 0) :
+    MetaM SimpTheorems :=
   g.withContext do
     let mut thms : SimpTheorems := {}
     let mut i := 0
@@ -355,7 +397,8 @@ def buildFactSet (g : MVarId) (facts : Array Fact) : MetaM SimpTheorems :=
         else
           thms ← thms.add (.fvar fv) #[] (mkFVar fv)
       | .inst e0 =>
-        let e := e0.instantiateRev (← lctxFVars g)
+        let depth ← if ctxLen == 0 then do pure (← lctxFVars g).size else pure ctxLen
+        let e ← instLocalAt g depth e0
         -- an HEq-typed fact is not a rewrite rule; when its endpoints'
         -- types agree it converts to Eq (generic `eq_of_heq`, no name cases)
         let e ← do
@@ -377,7 +420,9 @@ def factProof (g : MVarId) (r : FactRef) : MetaM Expr := g.withContext do
     let some fv ← resolveHyp g idx user
       | throwError "irfact: hypothesis {idx}/{user} not in context"
     pure (mkFVar fv)
-  | .inst e => pure (e.instantiateRev (← lctxFVars g))
+  | .inst e => do
+    let fvs ← lctxFVars g
+    pure (e.instantiateRev fvs)
 
 /-- One `rw`-style step: kabstract every current occurrence, rewrite once,
 never re-iterate.  Loop-free where simp's keyed matching is not. -/
@@ -409,7 +454,7 @@ def execRewrite (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs) :
         let f := n.facts[i]!
         let res ← if f.rw then rwStep cur f
           else do
-            let thms ← buildFactSet cur #[f]
+            let thms ← buildFactSet cur #[f] n.ctxLen
             let ctx ← Simp.mkContext (simpTheorems := #[thms])
                         (congrTheorems := ← Meta.getSimpCongrTheorems)
             let (r, _) ← simpGoal cur ctx (simprocs := #[simprocs])
@@ -424,7 +469,7 @@ def execRewrite (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs) :
           cur := g'
       pure (if closed then none else some (#[], cur))
     else do
-      let thms ← buildFactSet g n.facts
+      let thms ← buildFactSet g n.facts n.ctxLen
       let ctx ← Simp.mkContext (simpTheorems := #[thms])
                   (congrTheorems := ← Meta.getSimpCongrTheorems)
       let (res, _) ← simpGoal g ctx (simprocs := #[simprocs])
@@ -449,14 +494,11 @@ def execHead (n : IRNode) (g : MVarId) (unchecked : IO.Ref Nat) :
         | throwError "irexec: head hypothesis {idx}/{user} not in context"
       pure (mkFVar fv)
   let hType ← inferType fn
-  let fvs ← lctxFVars g
-  -- A recorded term abstracted over a DEEPER local context than replay
-  -- rebuilt instantiates to a loose bound variable ("unexpected bound
-  -- variable #0").  SKIP those arguments rather than failing the action:
-  -- an unassigned data hole is often still determined by the conclusion
-  -- or by instance synthesis, and refusing outright loses actions that
-  -- would have succeeded.  Drift is only reported if the conclusion then
-  -- fails, where it is the actual explanation.
+  -- instantiate at the RECORDED depth (see IRNode.ctxLen): using the full
+  -- replay context would shift the variable mapping whenever the contexts
+  -- differ in depth, silently binding the wrong variables.
+  let fvsAll ← lctxFVars g
+  let fvs := if n.ctxLen == 0 then fvsAll else fvsAll.extract 0 (min n.ctxLen fvsAll.size)
   let mut drifted := 0
   let mut dataMap : Std.HashMap Nat Expr := {}
   for (i, e) in n.dataArgs do
@@ -544,6 +586,17 @@ def execExact (n : IRNode) (g : MVarId) : MetaM (List MVarId) := g.withContext d
     unless ← isDefEq (mkMVar g) e do
       throwError "irexec: exact constant {c} does not close the goal"
     pure []
+  | .supplied e0 => do
+    -- atomic leaf: assign the recorded subterm, re-instantiated at the
+    -- depth it was recorded at.  Kernel verification still arbitrates.
+    let depth ← if n.ctxLen == 0 then do pure (← lctxFVars g).size else pure n.ctxLen
+    let e ← instLocalAt g depth e0
+    if e.hasLooseBVars then
+      throwError "irexec: supplied term needs a deeper context than replay rebuilt"
+    unless ← (try isDefEq (mkMVar g) e catch _ => pure false) do
+      unless ← (try (do g.assign e; pure true) catch _ => pure false) do
+        throwError "irexec: supplied term does not fit the goal"
+    pure []
 
 /-- Execute one node and recurse positionally into `kids`.  A mismatch
 between the subgoals produced and the recorded children is the named
@@ -576,14 +629,14 @@ partial def execNode (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs)
       | .exact => execExact n g
       | .have_ => do
         let some t0 := n.haveTy? | throwError "irexec: no have type recorded"
-        let t ← instLocal g t0
+        let t ← instLocalAt g n.ctxLen t0
         let pm ← mkFreshExprMVar t
         let g2 ← g.assert `hir t pm
         let (_, g3) ← g2.intro1P
         pure [pm.mvarId!, g3]
       | .change => do
         let some t0 := n.haveTy? | throwError "irexec: no change type recorded"
-        let g' ← g.change (← instLocal g t0)
+        let g' ← g.change (← instLocalAt g n.ctxLen t0)
         pure [g']
       | .apply | .ctor | .cases | .induct => execHead n g unchecked
       | .unsupported => throwError "unreachable"
@@ -850,25 +903,26 @@ mutual
 /-- Extract the IR for the reference subterm `e` at goal `g`, executing as
 it goes.  Never throws: an unparameterizable step becomes an
 `unsupported` node carrying its reason. -/
-partial def extract (ctx : ExCtx) (g : MVarId) (e : Expr) : MetaM IRNode := do
+partial def extract (ctx : ExCtx) (g : MVarId) (e : Expr)
+    (allowRegion : Bool := true) : MetaM IRNode := do
   if (← ctx.fuel.get) == 0 then
-    return { fam := .unsupported, reason := "fuel_exhausted" }
+    return ← atomLeaf ctx g e "fuel_exhausted"
   ctx.fuel.modify (· - 1)
   -- NOTE: a per-node reset budget was tried here and COST 3 DEV80
   -- theorems (66 -> 63).  Extraction's expensive work is the chain
   -- search, already bounded per-trial (80k, reset) and by the DFS budget;
   -- capping the node on top of that only truncates legitimate work.
-  tryCatchRuntimeEx (extractCore ctx g e)
+  tryCatchRuntimeEx (extractCore ctx g e allowRegion)
     (fun ex => do
       let msg ← try ex.toMessageData.toString catch _ => pure "?"
       let isTimeout := (msg.splitOn "heartbeat").length > 1
                        || (msg.splitOn "timeout").length > 1
-      pure { fam := .unsupported,
-             reason := (if isTimeout then "instrument_timeout:" else "extract_exception:")
-                       ++ (msg.take 120).toString })
+      atomLeaf ctx g e
+        ((if isTimeout then "instrument_timeout:" else "extract_exception:")
+         ++ (msg.take 120).toString))
 
-partial def extractCore (ctx : ExCtx) (g : MVarId) (e : Expr) :
-    MetaM IRNode := g.withContext do
+partial def extractCore (ctx : ExCtx) (g : MVarId) (e : Expr)
+    (allowRegion : Bool := true) : MetaM IRNode := g.withContext do
   let e := e.consumeMData
   -- REWRITE: a maximal certificate region is ONE action - EXCEPT when the
   -- root is an extensionality coercion (funext/propext).  Those roots hide
@@ -880,8 +934,17 @@ partial def extractCore (ctx : ExCtx) (g : MVarId) (e : Expr) :
   let extRoot := match rootHead with
     | .const c _ => c == ``funext || c == ``propext
     | _ => false
-  if Semantic.certRegionRoot e && !extRoot then
-    return ← extractRewrite ctx g e
+  if Semantic.certRegionRoot e && !extRoot && allowRegion then
+    let r ← extractRewrite ctx g e
+    if r.fam != .unsupported then return r
+    -- TOTALITY: a region that will not compress is NOT unsupported.  Drop
+    -- the region treatment and walk into the certificate as ordinary
+    -- kernel-grammar nodes - the atomic grain `Replay.reconstruct` already
+    -- executes at 8,252/8,252.  The failed mechanism is retained as
+    -- `atomReason`, so semantic coverage stays measurable while
+    -- representability stops being able to fail.
+    let atom ← extractCore ctx g e (allowRegion := false)
+    return { atom with atomReason := r.reason }
   match e with
   | .lam .. =>
     -- The reference term may bind more lambdas than the goal currently
@@ -896,36 +959,37 @@ partial def extractCore (ctx : ExCtx) (g : MVarId) (e : Expr) :
         cur := cur.bindingBody!
       pure k
     match ← introUpTo g nWant with
-    | none => pure { fam := .unsupported, reason := "intro_no_binder_available" }
+    | none => atomLeaf ctx g e "intro_no_binder_available"
     | some (k, fvs, g') =>
       let body := e.beta (fvs.map mkFVar)
-      let kid ← extract ctx g' body
+      let kid ← extract ctx g' body allowRegion
       pure { fam := .intro, nIntro := k, kids := #[kid] }
   | .letE nm ty val body _ => do
     let pm ← mkFreshExprMVar ty
     let g2 ← g.assert nm ty pm
     let (fv, g3) ← g2.intro1P
-    let k1 ← extract ctx pm.mvarId! val
-    let k2 ← extract ctx g3 (body.instantiate1 (mkFVar fv))
-    pure { fam := .have_, haveTy? := some (← absLocal g ty), kids := #[k1, k2] }
-  | .app .. => extractHead ctx g e
+    let k1 ← extract ctx pm.mvarId! val allowRegion
+    let k2 ← extract ctx g3 (body.instantiate1 (mkFVar fv)) allowRegion
+    pure { fam := .have_, haveTy? := some (← absLocal g ty), kids := #[k1, k2],
+           ctxLen := (← lctxFVars g).size }
+  | .app .. => extractHead ctx g e allowRegion
   | .fvar f => do
     match ← lctxIndexOf g f with
     | some (i, u) =>
       unless ← isDefEq (mkMVar g) e do
-        return { fam := .unsupported, reason := "exact_hyp_mismatch" }
+        return ← atomLeaf ctx g e "exact_hyp_mismatch"
       pure { fam := .exact, exact? := some (.hypothesis i u) }
-    | none => pure { fam := .unsupported, reason := "exact_hyp_not_in_context" }
+    | none => atomLeaf ctx g e "exact_hyp_not_in_context"
   | .const c _ => do
     unless ← isDefEq (mkMVar g) e do
-      return { fam := .unsupported, reason := "exact_const_mismatch" }
+      return ← atomLeaf ctx g e "exact_const_mismatch"
     pure { fam := .exact, exact? := some (.constant c) }
   | _ => do
     -- definitional-only step: the goal changes, the proof does not
     if ← (try isDefEq (mkMVar g) e catch _ => pure false) then
       pure { fam := .exact, exact? := some .rfl }
     else
-      pure { fam := .unsupported, reason := "unclassified_term" }
+      atomLeaf ctx g e "unclassified_term"
 
 /-- Bounded backtracking search over a rewrite chain: which facts, in
 which order, each in which direction and mode.  Greedy (leaf order,
@@ -977,6 +1041,28 @@ partial def chainSearch (ctx : ExCtx)
             | none => snap.restore
   pure none
 
+/-- ATOMIC LEAF - the base case that makes representation TOTAL.
+
+Records the reference subterm itself, context-abstracted, as a `supplied`
+EXACT action.  Every proof-typed subterm is assignable, so this branch
+cannot fail on a well-typed reference proof; therefore extraction is a
+total function and `Family.unsupported` becomes unreachable from any path
+that has a reference subterm in hand.
+
+`why` is the semantic mechanism that was abandoned here, retained so the
+mechanism histogram survives and semantic coverage stays measurable. -/
+partial def atomLeaf (ctx : ExCtx) (g : MVarId) (e : Expr) (why : String) :
+    MetaM IRNode := g.withContext do
+  let _ := ctx
+  let abs ← try absLocal g e catch _ => pure e
+  -- assign now so the surrounding descent continues from a closed goal
+  let _ ← try
+      (do unless ← isDefEq (mkMVar g) e do
+            (try g.assign e catch _ => pure ()))
+    catch _ => pure ()
+  pure { fam := .exact, exact? := some (.supplied abs), atomReason := why,
+         ctxLen := (← lctxFVars g).size }
+
 /-- REWRITE region: extract the fact set, DETERMINE each fact's
 orientation by bounded trial, and record it. -/
 partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
@@ -984,7 +1070,8 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
   let (leaves, conts, nStruct) ←
     try regionPartsIR e catch _ => pure (#[], #[], 0)
   if leaves.isEmpty && conts.isEmpty then
-    return { fam := .unsupported, reason := "empty_region" }
+    return ← atomLeaf ctx g e "empty_region"
+  let rwDepth := (← lctxFVars g).size
   let refs ← leafFacts g leaves
   -- INFERRED orientation first (per fact, from endpoint occurrence), then
   -- the two uniform vectors `semSimpAct` used to retry, then - only for
@@ -1006,7 +1093,7 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
     | none => snap.restore; continue
     | some none =>
       -- closed outright
-      return { fam := .rewrite, facts, loc := .goal, contIdx := none,
+      return { fam := .rewrite, ctxLen := rwDepth, facts, loc := .goal, contIdx := none,
                covers := nStruct + 1, kids := #[] }
     | some (some g') =>
       -- one residual: does a region continuation own it?
@@ -1021,14 +1108,14 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
       match owner with
       | some i =>
         let kid ← extract ctx g' conts[i]!
-        return { fam := .rewrite, facts, loc := .goal, contIdx := some i,
+        return { fam := .rewrite, ctxLen := rwDepth, facts, loc := .goal, contIdx := some i,
                  covers := nStruct + 1, kids := #[kid] }
       | none =>
         -- promoted terminal (the old silent `refl` / `assumptionCore`)
         match ← promoteTerminal g' with
         | some t =>
           let _ ← try execExact t g' catch _ => pure []
-          return { fam := .rewrite, facts, loc := .goal, contIdx := none,
+          return { fam := .rewrite, ctxLen := rwDepth, facts, loc := .goal, contIdx := none,
                    covers := nStruct + 1, kids := #[t] }
         | none => snap.restore; continue
   -- ORDERED MODE: the certificate is an `Eq.trans` CHAIN; when the
@@ -1061,7 +1148,7 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
   if ← depthRef.get then anyDepth := true
   match dfsRes with
   | some (steps, none) =>
-    return { fam := .rewrite, facts := steps, ordered := true, loc := .goal,
+    return { fam := .rewrite, ctxLen := rwDepth, facts := steps, ordered := true, loc := .goal,
              contIdx := none, covers := nStruct + 1, kids := #[] }
   | some (steps, some cur) => do
     -- resolve the residual: region continuation, promoted terminal, or
@@ -1078,13 +1165,13 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
     match owner with
     | some i =>
       let kid ← extract ctx cur conts[i]!
-      return { fam := .rewrite, facts := steps, ordered := true, loc := .goal,
+      return { fam := .rewrite, ctxLen := rwDepth, facts := steps, ordered := true, loc := .goal,
                contIdx := some i, covers := nStruct + 1, kids := #[kid] }
     | none =>
       match ← promoteTerminal cur with
       | some t =>
         let _ ← try execExact t cur catch _ => pure []
-        return { fam := .rewrite, facts := steps, ordered := true, loc := .goal,
+        return { fam := .rewrite, ctxLen := rwDepth, facts := steps, ordered := true, loc := .goal,
                  contIdx := none, covers := nStruct + 1, kids := #[t] }
       | none => do
         let mut leafKid : Option IRNode := none
@@ -1096,7 +1183,7 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
               leafKid := some (← extract ctx cur l.term)
         match leafKid with
         | some kid =>
-          return { fam := .rewrite, facts := steps, ordered := true,
+          return { fam := .rewrite, ctxLen := rwDepth, facts := steps, ordered := true,
                    loc := .goal, contIdx := none,
                    covers := nStruct + 1, kids := #[kid] }
         | none => do
@@ -1160,6 +1247,7 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
           let newTy ← g2.withContext do
             pure (← absLocal g2 (← instantiateMVars (← g2.getType)))
           return { fam := .change, haveTy? := some newTy,
+                   ctxLen := (← lctxFVars g2).size,
                    covers := 1, kids := #[inner] }
         else chSnap.restore
       | none => chSnap.restore
@@ -1212,8 +1300,8 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
 /-- APPLY / CONSTRUCTOR / CASES / INDUCT: record the head, split the
 arguments into recorded data and proof children, execute, and extract each
 child against its own successor goal. -/
-partial def extractHead (ctx : ExCtx) (g : MVarId) (e : Expr) :
-    MetaM IRNode := do
+partial def extractHead (ctx : ExCtx) (g : MVarId) (e : Expr)
+    (allowRegion : Bool := true) : MetaM IRNode := do
   let fn := e.getAppFn.consumeMData
   let args := e.getAppArgs
   if fn.isLambda then
@@ -1228,8 +1316,11 @@ partial def extractHead (ctx : ExCtx) (g : MVarId) (e : Expr) :
       | none => pure none
     | _ => pure none
   let some head := head?
-    | return { fam := .unsupported, reason := "head_not_referenceable" }
+    | return ← atomLeaf ctx g e "head_not_referenceable"
   let fam := headFamily ctx.env fn
+  -- depth captured BEFORE any child descent, matching where dataArgs are
+  -- abstracted (absLocal g a below)
+  let ctxDepth := (← lctxFVars g).size
   let hType ← inferType fn
   let mut curType := hType
   let mut allMvs : Array Expr := #[]
@@ -1240,7 +1331,7 @@ partial def extractHead (ctx : ExCtx) (g : MVarId) (e : Expr) :
     if idx ≥ args.size then break
     let (mvs, _, concl) ← forallMetaBoundedTelescope curType (args.size - idx)
     if mvs.size == 0 then
-      return { fam := .unsupported, reason := "head_telescope_stalled" }
+      return ← atomLeaf ctx g e "head_telescope_stalled"
     for i in [0:mvs.size] do
       let j := idx + i
       let a := args[j]!
@@ -1272,10 +1363,10 @@ partial def extractHead (ctx : ExCtx) (g : MVarId) (e : Expr) :
       | .fvar _ => "FVAR" | .mvar _ => "MVAR" | .sort _ => "SORT" | _ => "OTHER"
     let cH := hd (← instantiateMVars curType)
     let gH := hd gType
-    return { fam := .unsupported,
-             reason := s!"head_conclusion_mismatch:{head.render}"
-                       ++ s!"|elim={isElim}|lam={nLam}|concl={cH}|goal={gH}"
-                       ++ (if cH == gH then "|samehead" else "|diffhead") }
+    return ← atomLeaf ctx g e
+      (s!"head_conclusion_mismatch:{head.render}"
+       ++ s!"|elim={isElim}|lam={nLam}|concl={cH}|goal={gH}"
+       ++ (if cH == gH then "|samehead" else "|diffhead"))
   -- DEFERRED DATA ASSIGNMENT (the guided engine's fix, replicated): a data
   -- argument whose eager unification failed on open sibling holes usually
   -- unifies once the conclusion has bound the telescope.  Left open, its
@@ -1313,12 +1404,13 @@ partial def extractHead (ctx : ExCtx) (g : MVarId) (e : Expr) :
   for i in openIdx do
     let m := allMvs[i]!.mvarId!
     if ← m.isAssigned then
-      kids := kids.push { fam := .unsupported, reason := "sibling_assigned_child" }
+      kids := kids.push { fam := .unsupported, reason := "noref_sibling_assigned" }
     else
       match proofRef.get? i with
-      | some r => kids := kids.push (← extract ctx m r)
-      | none => kids := kids.push { fam := .unsupported, reason := "open_data_hole" }
-  pure { fam, head? := some head, nArgs := args.size, dataArgs, kids }
+      | some r => kids := kids.push (← extract ctx m r allowRegion)
+      | none => kids := kids.push { fam := .unsupported, reason := "noref_open_data_hole" }
+  pure { fam, head? := some head, nArgs := args.size, dataArgs, kids,
+         ctxLen := ctxDepth }
 
 end
 
@@ -1363,6 +1455,7 @@ def semreplay (path : System.FilePath) (inp : System.FilePath)
       maxHeartbeats := 0 }
   let mut count := 0
   let mut extractClean := 0
+  let mut reprFail := 0
   let mut replayOk := 0
   let mut verifiedN := 0
   for tj in ts do
@@ -1392,7 +1485,7 @@ def semreplay (path : System.FilePath) (inp : System.FilePath)
             (fun ex => do
               let m ← try ex.toMessageData.toString catch _ => pure "?"
               pure { fam := .unsupported,
-                     reason := s!"pass1_escape:{(m.take 100).toString}" })
+                     reason := s!"noref_pass1_escape:{(m.take 100).toString}" })
         let reasons := ir.unsupportedReasons
         -- PASS 2: replay from the IR ALONE, on a fresh goal
         let trace ← IO.mkRef (#[] : Array Json)
@@ -1481,10 +1574,16 @@ def semreplay (path : System.FilePath) (inp : System.FilePath)
             pure (false, s!"assemble:{(m.take 160).toString}")
         let tr ← trace.get
         let tally := ir.tally
+        let atoms := ir.atomReasons
         return Json.mkObj [
           ("n", Json.str nm),
-          ("extract_clean", Lean.toJson reasons.isEmpty),
+          -- REPRESENTABLE: no node lacked an IR encoding.  Must be true for
+          -- every theorem; a false is a totality bug, not a research result.
+          ("representable", Lean.toJson reasons.isEmpty),
+          ("extract_clean", Lean.toJson (reasons.isEmpty && atoms.isEmpty)),
           ("unsupported", Json.arr (reasons.map Json.str)),
+          ("atom_reasons", Json.arr (atoms.map Json.str)),
+          ("n_atom_actions", Lean.toJson ir.atomActions),
           ("replay_ok", Lean.toJson replayErr.isNone),
           ("verified", Lean.toJson verified),
           ("verify_why", Json.str vwhy),
@@ -1507,6 +1606,8 @@ def semreplay (path : System.FilePath) (inp : System.FilePath)
                         ("error", Json.str ((toString e).take 200).toString)])
     if (row.getObjValAs? Bool "extract_clean").toOption == some true then
       extractClean := extractClean + 1
+    if (row.getObjValAs? Bool "representable").toOption != some true then
+      reprFail := reprFail + 1
     if (row.getObjValAs? Bool "replay_ok").toOption == some true then
       replayOk := replayOk + 1
     if (row.getObjValAs? Bool "verified").toOption == some true then
@@ -1516,7 +1617,8 @@ def semreplay (path : System.FilePath) (inp : System.FilePath)
     if count % 10 == 0 then
       IO.println s!"  {count}/{ts.size}: extract-clean {extractClean}, replay {replayOk}, verified {verifiedN}"
       h.flush
-  IO.println s!"done: {count} theorems; extract-clean {extractClean}; replay-ok {replayOk}; verified {verifiedN}"
+  IO.println s!"done: {count} theorems; fully-semantic {extractClean}; replay-ok {replayOk}; verified {verifiedN}"
+  IO.println s!"REPRESENTABILITY: {count - reprFail}/{count} ({reprFail} with a node lacking any reference term - must be 0)"
   h.flush
 
 end Mathrecord.SemIR
