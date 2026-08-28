@@ -145,6 +145,16 @@ structure Fact where
   equations, which self-loop under simp's keyed matching.  `false`:
   iterated simp-only rewriting.  Recorded per step in ordered mode. -/
   rw       : Bool := false
+  /-- POSITION, read off the certificate's congruence structure.
+
+  `congrArg motive h` says the fact was applied at exactly the position
+  the motive's bound variable marks.  Search can recover the fact, the
+  direction and the order, but NOT the position: rewriting "wherever the
+  pattern matches" is a different transformation from rewriting at one
+  marked occurrence, and single-fact regions fail for exactly this reason.
+  Recorded context-abstracted; `none` means the fact applies at the root
+  and no motive is needed. -/
+  motive   : Option Expr := none
   deriving Inhabited
 
 /-- Where a rewrite acts. v1 records goal vs a named hypothesis; occurrence
@@ -426,14 +436,35 @@ def factProof (g : MVarId) (r : FactRef) : MetaM Expr := g.withContext do
 
 /-- One `rw`-style step: kabstract every current occurrence, rewrite once,
 never re-iterate.  Loop-free where simp's keyed matching is not. -/
-def rwStep (g : MVarId) (f : Fact) : MetaM (Option MVarId) := g.withContext do
+def rwStep (g : MVarId) (f : Fact) (ctxLen : Nat := 0) :
+    MetaM (Option MVarId) := g.withContext do
   let prf0 ← factProof g f.ref
   let prf ← if f.inverted then mkSymmAny prf0 else pure prf0
-  let r ← g.rewrite (← g.getType) prf
-  let g' ← g.replaceTargetEq r.eNew r.eqProof
-  unless r.mvarIds.isEmpty do
-    throwError "irexec: rw step left side-goals"
-  pure (some g')
+  match f.motive with
+  | some mot0 =>
+    -- POSITION-EXACT: build the transformation the certificate specifies
+    -- (`congrArg motive fact` then `Eq.mpr`) instead of asking `rewrite`
+    -- to find a match.  First-match is a different transformation, which
+    -- is why single-fact regions failed.
+    let fvs ← lctxFVars g
+    let n := if ctxLen == 0 then fvs.size else min ctxLen fvs.size
+    let mot := mot0.instantiateRev (fvs.extract 0 n)
+    if mot.hasLooseBVars then throwError "irexec: motive context drift"
+    let eqp ← mkCongrArg mot prf
+    let ty ← instantiateMVars (← inferType eqp)
+    let some (_, lhs, rhs) := ty.eq? | throwError "irexec: motive gave no equation"
+    let gT ← instantiateMVars (← g.getType)
+    unless ← isDefEq lhs gT do
+      throwError "irexec: motive position does not match the goal"
+    let g' ← mkFreshExprMVar rhs
+    g.assign (← mkEqMPR eqp g')
+    pure (some g'.mvarId!)
+  | none =>
+    let r ← g.rewrite (← g.getType) prf
+    let g' ← g.replaceTargetEq r.eNew r.eqProof
+    unless r.mvarIds.isEmpty do
+      throwError "irexec: rw step left side-goals"
+    pure (some g')
 
 /-- Execute a REWRITE action: one `simp only` over exactly the recorded
 facts at the recorded location.  `contIdx = none` means the action must
@@ -452,7 +483,7 @@ def execRewrite (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs) :
         if closed then
           throwError "irexec: ordered rewrite closed early at step {i}"
         let f := n.facts[i]!
-        let res ← if f.rw then rwStep cur f
+        let res ← if f.rw || f.motive.isSome then rwStep cur f n.ctxLen
           else do
             let thms ← buildFactSet cur #[f] n.ctxLen
             let ctx ← Simp.mkContext (simpTheorems := #[thms])
@@ -562,10 +593,14 @@ def execHead (n : IRNode) (g : MVarId) (unchecked : IO.Ref Nat) :
         if (← Meta.isClass? τ).isSome then
           try m.assign (← synthInstance τ) catch _ => pure ()
   g.assign (mkAppN fn allMvs)
+  -- proof obligations only, matching extractHead's kid selection
   let mut out : List MVarId := []
   for mv in allMvs.reverse do
     let m := mv.mvarId!
-    unless ← m.isAssigned do out := m :: out
+    unless ← m.isAssigned do
+      let isP ← try Meta.isProp (← instantiateMVars (← m.getType))
+                catch _ => pure false
+      if isP then out := m :: out
   pure out
 
 /-- Execute a terminal EXACT. -/
@@ -898,6 +933,159 @@ def promoteTerminal (g : MVarId) : MetaM (Option IRNode) := g.withContext do
       i := i + 1
   pure none
 
+/-! ## Structural certificate reading
+
+A certificate region is not an opaque blob to be reverse-engineered: it is
+an EQUALITY-DERIVATION TREE over a closed combinator vocabulary.
+
+    Eq.trans e1 e2      sequential composition
+    Eq.symm  e          direction reversal
+    congrArg f e        descent into an argument position
+    congrFun / congr    descent into function/argument positions
+    forall_congr'       descent under a binder
+    propext / eq_true   Prop-level coercions
+    leaf h : a = b      a base rewrite fact
+
+The derivation therefore already states WHICH facts were used, in WHAT
+ORDER, and in WHICH DIRECTION.  `Semantic.regionParts` collects the leaves
+but discards the tree, after which those three parameters have to be
+recovered by searching (fact x direction x mode) - a combinatorial search
+that necessarily degrades as certificates grow.
+
+`parseEqChain` folds the tree instead: one linear pass, no search, and the
+answer is correct by construction because the tree IS a proof that this
+exact sequence works.  Search survives only as a fallback for combinators
+outside the vocabulary. -/
+
+/-- Compose congruence positions: `outer : β → γ` around `inner : α → β`
+gives `fun x : α => outer (inner x)`.
+
+Nested `congrArg`s mean the fact applies at the COMPOSITE position, not at
+the innermost one.  Keeping only the inner motive made the rebuilt
+`congrArg motive fact` prove an equation about a subterm while the goal was
+the whole proposition - "motive position does not match the goal". -/
+def composeMotive (outer inner : Expr) : MetaM Expr := do
+  let ity ← whnf (← inferType inner)
+  match ity with
+  | .forallE _ dom _ _ =>
+    withLocalDeclD `x dom fun x => do
+      -- beta-reduce: both motives are lambdas, so the naive composite is a
+      -- nest of redexes and downstream projections fail on it
+      let body := (mkApp outer ((mkApp inner x).headBeta)).headBeta
+      mkLambdaFVars #[x] body
+  | _ => throwError "composeMotive: inner motive is not a function"
+
+/-- Fold an equality-proof term into its ordered, directed base facts.
+
+STRUCTURE, NOT POSITIONS.  Earlier versions hard-coded which argument of
+each combinator held the sub-proof (`args.back?`, `args[size-2]`).  That is
+the same mistake as discarding the tree: it encodes assumptions about the
+vocabulary instead of reading the term.  Wrong picks walked into data
+arguments and recorded them as facts.
+
+The rule is uniform and needs no per-combinator table: for ANY certificate
+combinator, recurse into exactly its PROOF-typed arguments, in order.
+`Eq.symm` additionally flips polarity.  Argument order already gives
+`Eq.trans` its sequencing, and it handles `Eq.ndrec`, `Eq.casesOn`,
+`of_eq_true`, `eq_false`, `funext`, `forall_congr'` and `id` without any
+of them being named.
+
+`congrArg` is the one combinator whose DATA argument matters: its function
+argument is the POSITION at which the fact applies, so it is captured as
+the motive.
+
+`none` means the term left the vocabulary, so the caller falls back rather
+than trusting a partial read. -/
+partial def parseEqChain (g : MVarId) (e : Expr) (inv : Bool) (fuel : Nat)
+    (blocker : IO.Ref String) : MetaM (Option (Array Fact)) := g.withContext do
+  if fuel == 0 then do blocker.set "fuel"; return none
+  let e := e.consumeMData
+  match e with
+  | .lam .. => lambdaTelescope e fun _ b => parseEqChain g b inv (fuel - 1) blocker
+  | _ =>
+  let fn := e.getAppFn.consumeMData
+  let args := e.getAppArgs
+  let isCert := match fn with
+    | .const c _ => Semantic.isCertVocab c
+    | _ => false
+  if !isCert then
+    -- BASE FACT, recorded as the certificate instantiated it, and
+    -- validated: a leaf must really be a proof of an equality-family
+    -- proposition, or the parse has left the proof skeleton.
+    let ty ← try instantiateMVars (← inferType e) catch _ => pure default
+    let isP ← try Meta.isProp ty catch _ => pure false
+    unless isP do blocker.set "leaf_not_proof"; return none
+    unless Semantic.isEqFamilyProp ty do
+      blocker.set "leaf_not_equality"; return none
+    match e with
+    | .fvar f =>
+      match ← lctxIndexOf g f with
+      | some (i, u) => return some #[{ ref := .hyp i u, inverted := inv }]
+      | none => return some #[{ ref := .inst (← absLocal g e), inverted := inv }]
+    | _ => return some #[{ ref := .inst (← absLocal g e), inverted := inv }]
+  let cname := match fn with | .const c _ => c | _ => Name.anonymous
+  -- reflexivity contributes no step
+  if cname == ``Eq.refl || cname == ``rfl || cname == ``Iff.refl
+     || cname == ``HEq.refl then return some #[]
+  let flip := cname == ``Eq.symm || cname == ``Iff.symm || cname == ``HEq.symm
+  let inv' := if flip then !inv else inv
+  -- `congrArg f h`: the function argument is the POSITION
+  -- kept RAW here; abstraction happens once at the call site, because
+  -- composing already-abstracted motives would be meaningless
+  let motive? :=
+    if cname == ``congrArg && args.size >= 2 then some args[args.size - 2]!
+    else none
+  let mut out : Array Fact := #[]
+  for a in args do
+    let aP ← try Meta.isProp (← inferType a) catch _ => pure false
+    if aP then
+      let some sub ← parseEqChain g a inv' (fuel - 1) blocker | return none
+      out := if inv' then sub ++ out else out ++ sub
+  match motive? with
+  | some mot =>
+    return some (← out.mapM fun f =>
+      match f.motive with
+      | none => pure { f with motive := some mot }
+      | some inner => do
+        -- COMPOSITE position: this congrArg wraps an inner one
+        match ← (try (do pure (some (← composeMotive mot inner)))
+                 catch _ => pure none) with
+        | some c => pure { f with motive := some c }
+        | none => pure f)
+  | none => return some out
+
+/-- The equality proof a transport-shaped region root carries, plus its
+continuation.  `Eq.mpr h body` transports the goal along `h` and proves
+the transported goal with `body`. -/
+partial def transportParts (e : Expr) (fuel : Nat := 8) :
+    Option (Expr × Option Expr) :=
+  if fuel == 0 then none else
+  let e := e.consumeMData
+  let fn := e.getAppFn.consumeMData
+  let args := e.getAppArgs
+  match fn with
+  | .const c _ =>
+    -- `id h` is pure glue: unwrap and retry
+    if c == ``id && args.size >= 2 then transportParts args[1]! (fuel - 1)
+    -- goal transport along an equality proof, continuation is the body
+    else if (c == ``Eq.mpr || c == ``Eq.mp) && args.size >= 2 then
+      some (args[args.size - 2]!, some args[args.size - 1]!)
+    -- `of_eq_true h`/`eq_false h`: the region closes the goal outright
+    else if (c == ``of_eq_true || c == ``eq_false) && args.size >= 1 then
+      some (args[args.size - 1]!, none)
+    -- ELIMINATOR-SHAPED TRANSPORT.  These carry the same content as
+    -- `Eq.mpr` in a different argument order, and they were the single
+    -- largest reason the structural read never fired:
+    --   Eq.ndrec {α} {a} {motive} (m : motive a) {b} (h : a = b) : motive b
+    --   Eq.rec   {α} {a} {motive} (refl)          {b} (h)
+    --   Eq.casesOn {α} {a} {motive} {b} (h) (refl)
+    else if (c == ``Eq.ndrec || c == ``Eq.rec) && args.size >= 6 then
+      some (args[5]!, some args[3]!)
+    else if c == ``Eq.casesOn && args.size >= 6 then
+      some (args[4]!, some args[5]!)
+    else none
+  | _ => none
+
 mutual
 
 /-- Extract the IR for the reference subterm `e` at goal `g`, executing as
@@ -1041,6 +1229,33 @@ partial def chainSearch (ctx : ExCtx)
             | none => snap.restore
   pure none
 
+/-- Compact structural skeleton of a term: head symbol and argument
+shapes, depth-limited.  Diagnostic only - used to test whether certificate
+regions carry recoverable rewrite structure (motive, direction, order)
+that the fact-set search is currently discarding and re-deriving. -/
+partial def skeleton (e : Expr) (d : Nat) : String :=
+  if d == 0 then "_" else
+  match e.consumeMData with
+  | .lam _ _ b _ => "LAM[" ++ skeleton b (d-1) ++ "]"
+  | .forallE .. => "PI"
+  | .letE _ _ v b _ => "LET(" ++ skeleton v (d-1) ++ "," ++ skeleton b (d-1) ++ ")"
+  | .const c _ => toString c
+  | .fvar _ => "h"
+  | .mvar _ => "?m"
+  | .sort _ => "Sort"
+  | .lit _ => "lit"
+  | .proj _ i _ => s!"proj{i}"
+  | .bvar i => s!"#{i}"
+  | e2 =>
+    let fn := e2.getAppFn.consumeMData
+    let args := e2.getAppArgs
+    let hd := match fn with
+      | .const c _ => toString c
+      | .fvar _ => "h"
+      | _ => "?"
+    let inner := ",".intercalate ((args.map (fun a => skeleton a (d-1))).toList)
+    hd ++ "(" ++ inner ++ ")"
+
 /-- ATOMIC LEAF - the base case that makes representation TOTAL.
 
 Records the reference subterm itself, context-abstracted, as a `supplied`
@@ -1067,11 +1282,61 @@ partial def atomLeaf (ctx : ExCtx) (g : MVarId) (e : Expr) (why : String) :
 orientation by bounded trial, and record it. -/
 partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
     (allowChange : Bool := true) : MetaM IRNode := do
+  let rwDepth := (← lctxFVars g).size
   let (leaves, conts, nStruct) ←
     try regionPartsIR e catch _ => pure (#[], #[], 0)
   if leaves.isEmpty && conts.isEmpty then
     return ← atomLeaf ctx g e "empty_region"
-  let rwDepth := (← lctxFVars g).size
+
+  -- ============ STRUCTURAL READ (primary path) ============
+  -- The region root transports the goal along an equality PROOF.  That
+  -- proof is a derivation tree whose fold yields the facts already in
+  -- order and already directed - no search, linear in certificate size,
+  -- correct by construction.  The search below survives only for
+  -- combinators outside the vocabulary.
+  let blocker ← IO.mkRef ""
+  if let some (eqProof, cont?) := transportParts e then
+    if let some steps0 ← (try parseEqChain g eqProof false 200 blocker
+                          catch _ => pure none) then
+      let steps ← steps0.mapM fun f =>
+        match f.motive with
+        | none => pure f
+        | some m => do pure { f with motive := some (← absLocal g m) }
+      if !steps.isEmpty then
+        let snap ← Meta.saveState
+        let node : IRNode :=
+          { fam := .rewrite, ctxLen := rwDepth, facts := steps,
+            ordered := true, loc := .goal, contIdx := none,
+            covers := nStruct + 1 }
+        let ok ← tryCatchRuntimeEx
+          (withTrialDepth do
+            let subs ← execRewrite node g ctx.simprocs
+            pure (some subs))
+          (fun ex => do
+            let m ← try ex.toMessageData.toString catch _ => pure "?"
+            blocker.set s!"EXEC[{(m.take 90).toString}]"
+            pure none)
+        match ok with
+        | some [] =>
+          if cont?.isNone then return node
+          else do blocker.set s!"parsed{steps.size}_closed_but_cont_expected"; snap.restore
+        | some [g'] => do
+          match cont? with
+          | some c =>
+            let kid ← extract ctx g' c
+            return { node with contIdx := some 0, kids := #[kid] }
+          | none =>
+            match ← promoteTerminal g' with
+            | some t =>
+              let _ ← try execExact t g' catch _ => pure []
+              return { node with kids := #[t] }
+            | none => do
+              blocker.set s!"parsed{steps.size}_residual_unowned"; snap.restore
+        | _ => do
+          if !((← blocker.get).startsWith "EXEC[") then
+            blocker.set s!"parsed{steps.size}_wrong_arity"
+          snap.restore
+      else blocker.set "parsed_empty"
   let refs ← leafFacts g leaves
   -- INFERRED orientation first (per fact, from endpoint occurrence), then
   -- the two uniform vectors `semSimpAct` used to retry, then - only for
@@ -1079,6 +1344,11 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
   let inferred ← refs.mapM fun r => inferOrientation g r
   let vectors := #[inferred] ++ orientVectors refs.size ctx.orientCap
   let wide := refs.size > ctx.orientCap
+  if (← blocker.get) == "" then
+    let rh := match e.consumeMData.getAppFn.consumeMData with
+      | .const c _ => toString c
+      | .fvar _ => "FVAR" | .lam .. => "LAM" | _ => "OTHER"
+    blocker.set s!"root_not_transport:{rh}:{e.getAppNumArgs}"
   let mut anyDepth := false
   for v in vectors do
     let facts := (Array.range refs.size).map fun i =>
@@ -1295,6 +1565,7 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
                     else "rewrite_no_orientation")
                    ++ (if anyOcc then "_occ" else "_noocc")
                    ++ s!":{refs.size}facts:{conts.size}conts:{nGen}gen"
+                   ++ s!"|PARSE={← blocker.get}"
                    ++ ordNote ++ s!"|goal={gHead}|{fdesc}" }
 
 /-- APPLY / CONSTRUCTOR / CASES / INDUCT: record the head, split the
@@ -1395,10 +1666,19 @@ partial def extractHead (ctx : ExCtx) (g : MVarId) (e : Expr)
   -- children in the SAME order `execHead` will produce them.  The open
   -- list must be taken EAGERLY: extracting a child assigns metavariables,
   -- so a lazily-tested list is shorter than the one replay will see.
+  -- KIDS ARE PROOF OBLIGATIONS ONLY.  An open DATA metavariable is not an
+  -- action: it is a hole for the fabricator layer, left to unification or
+  -- instance synthesis.  Treating it as a kid both invented a bogus action
+  -- and made the theorem unrepresentable when the reference supplied no
+  -- subterm for it.  `execHead` filters identically, so the positional
+  -- correspondence holds.
   let mut openIdx : Array Nat := #[]
   let mut j := 0
   for mv in allMvs do
-    unless ← mv.mvarId!.isAssigned do openIdx := openIdx.push j
+    unless ← mv.mvarId!.isAssigned do
+      let isP ← try Meta.isProp (← instantiateMVars (← mv.mvarId!.getType))
+                catch _ => pure false
+      if isP then openIdx := openIdx.push j
     j := j + 1
   let mut kids : Array IRNode := #[]
   for i in openIdx do
