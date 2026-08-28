@@ -234,6 +234,11 @@ structure IRNode where
   exact?  : Option ExactKind := none
   -- HAVE
   haveTy? : Option Expr := none
+  /-- The binder name the reference `have` used.  Replay must reuse it:
+  hypothesis references are resolved by (index, userName), so asserting
+  under a different name makes every later lookup of that hypothesis miss
+  even when the context depth is correct. -/
+  haveName : Name := `this
   /-- Local-context depth at which this node's terms were abstracted.
   `Expr.abstract xs` is inverted by `instantiateRev ys` ONLY when the two
   arrays have equal length: with a deeper replay context, instantiateRev
@@ -641,8 +646,15 @@ partial def execNode (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs)
     (depth : Nat := 0) : MetaM Unit := do
   let before ← try pure ((toString (← instantiateMVars (← g.getType))).take 200).toString
                catch _ => pure "?"
+  -- DRIFT PROBE: compare replay's context depth with the depth extraction
+  -- recorded, at every node, so the family that diverges is named rather
+  -- than inferred from a downstream instantiation failure.
+  let depthNow := (← lctxFVars g).size
+  let drift := if n.ctxLen == 0 then 0 else (Int.ofNat depthNow) - (Int.ofNat n.ctxLen)
   let record (status : String) (detail : String) : MetaM Unit :=
     trace.modify (·.push (Json.mkObj [
+      ("drift", Lean.toJson (toString drift)),
+      ("depth_now", Lean.toJson depthNow), ("depth_rec", Lean.toJson n.ctxLen),
       ("d", Lean.toJson depth), ("f", Json.str n.fam.toStr),
       ("before", Json.str before), ("status", Json.str status),
       ("detail", Json.str (detail.take 300).toString)]))
@@ -657,19 +669,25 @@ partial def execNode (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs)
       withTheReader Core.Context
         (fun c => { c with maxRecDepth := 4000, maxHeartbeats := 400000 }) <|
       match n.fam with
-      | .intro => do
+      | .intro => g.withContext do
         let (_, g') ← g.introNP n.nIntro
         pure [g']
       | .rewrite => execRewrite n g simprocs
       | .exact => execExact n g
-      | .have_ => do
+      | .have_ => g.withContext do
+        -- `g.withContext` is load-bearing: `mkFreshExprMVar` takes the
+        -- AMBIENT local context, and extractCore runs its whole body under
+        -- `g.withContext` while execNode did not.  Replay's `have` goal was
+        -- therefore built in the theorem telescope rather than in `g`,
+        -- losing every binder introduced since - a deficit that compounds
+        -- one level per nested have.
         let some t0 := n.haveTy? | throwError "irexec: no have type recorded"
         let t ← instLocalAt g n.ctxLen t0
         let pm ← mkFreshExprMVar t
-        let g2 ← g.assert `hir t pm
+        let g2 ← g.assert n.haveName t pm
         let (_, g3) ← g2.intro1P
         pure [pm.mvarId!, g3]
-      | .change => do
+      | .change => g.withContext do
         let some t0 := n.haveTy? | throwError "irexec: no change type recorded"
         let g' ← g.change (← instLocalAt g n.ctxLen t0)
         pure [g']
@@ -1159,7 +1177,7 @@ partial def extractCore (ctx : ExCtx) (g : MVarId) (e : Expr)
     let k1 ← extract ctx pm.mvarId! val allowRegion
     let k2 ← extract ctx g3 (body.instantiate1 (mkFVar fv)) allowRegion
     pure { fam := .have_, haveTy? := some (← absLocal g ty), kids := #[k1, k2],
-           ctxLen := (← lctxFVars g).size }
+           haveName := nm, ctxLen := (← lctxFVars g).size }
   | .app .. => extractHead ctx g e allowRegion
   | .fvar f => do
     match ← lctxIndexOf g f with
