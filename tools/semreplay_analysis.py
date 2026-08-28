@@ -22,6 +22,14 @@ import statistics
 import sys
 
 
+def _count_lam(node):
+    """Lambda-shaped data-oracle arguments in an IR subtree (motives)."""
+    n = node.get("ndatalam", 0) or 0
+    for k in node.get("kids", []):
+        n += _count_lam(k)
+    return n
+
+
 def pct(a, b):
     return f"{100.0 * a / b:.1f}%" if b else "n/a"
 
@@ -135,6 +143,45 @@ def main(argv=None):
     print()
     print("FALLBACK                 0.0%  (semantic replay has no "
           "certificate-grain fallback path)")
+
+    # ---- difficulty stratification -------------------------------
+    def band(r):
+        n = r.get("n_raw") or 0
+        if n <= 3:   return "1 trivial  (<=3)"
+        if n <= 12:  return "2 small    (4-12)"
+        if n <= 28:  return "3 medium   (13-28)"
+        if n <= 71:  return "4 large    (29-71)"
+        if n <= 200: return "5 hard     (72-200)"
+        return           "6 very hard (>200)"
+
+    g = collections.defaultdict(list)
+    for r in rows:
+        if r.get("n_raw"):
+            g[band(r)].append(r)
+    if g:
+        print()
+        print("DIFFICULTY STRATIFICATION (band by certificate-node count of "
+              "the reference proof)")
+        print(f"  {'band':<20s} {'n':>5s} {'extract':>8s} {'replay':>8s} "
+              f"{'verified':>9s} {'act-fail':>9s} {'timeout':>8s} {'oracle-lam':>11s}")
+        for k in sorted(g):
+            v = g[k]
+            n = len(v)
+            e = sum(1 for r in v if r["extract_clean"])
+            rp = sum(1 for r in v if r["replay_ok"])
+            ve = sum(1 for r in v if r["verified"])
+            acts = sum(r["n_actions"] for r in v) or 1
+            uns = sum(len(r.get("unsupported", [])) for r in v)
+            tmo = sum(1 for r in v for u in r.get("unsupported", [])
+                      if u.startswith("instrument_timeout"))
+            lam = sum(_count_lam(r["ir"]) for r in v)
+            print(f"  {k:<20s} {n:5d} {e/n*100:7.1f}% {rp/n*100:7.1f}% "
+                  f"{ve/n*100:8.1f}% {uns/acts*100:8.2f}% {tmo:8d} {lam:11d}")
+        print("  act-fail = share of ACTIONS with no IR parameterization; "
+              "timeout = instrument-limit actions (must be ~0 to read the "
+              "band as mathematics); oracle-lam = lambda-shaped data "
+              "arguments replay consumes from the reference (motives - "
+              "the genuine-fabrication class, not yet synthesized).")
 
     if args.ir:
         bad = next((r for r in rows if not r["replay_ok"] or not r["extract_clean"]),

@@ -263,7 +263,9 @@ partial def IRNode.toJson (n : IRNode) : Json :=
   let base := base ++ (match n.exact? with
     | some k => [("exact", Json.str k.render)] | none => [])
   let base := base ++ (if n.dataArgs.isEmpty then [] else
-    [("ndata", Lean.toJson n.dataArgs.size)])
+    [("ndata", Lean.toJson n.dataArgs.size),
+     ("ndatalam", Lean.toJson
+        (n.dataArgs.foldl (fun a (_, e) => if e.isLambda then a + 1 else a) 0))])
   let base := base ++ (if n.reason == "" then [] else [("why", Json.str n.reason)])
   let base := base ++ (if n.kids.isEmpty then [] else
     [("kids", Json.arr (n.kids.map IRNode.toJson))])
@@ -437,7 +439,8 @@ def execRewrite (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs) :
 /-- Execute APPLY / CONSTRUCTOR / CASES / INDUCT: instantiate the recorded
 head, assign the recorded data arguments positionally, unify the conclusion
 with the goal, and return the open PROOF metavariables in order. -/
-def execHead (n : IRNode) (g : MVarId) : MetaM (List MVarId) := g.withContext do
+def execHead (n : IRNode) (g : MVarId) (unchecked : IO.Ref Nat) :
+    MetaM (List MVarId) := g.withContext do
   let some h := n.head? | throwError "irexec: no head recorded"
   let fn ← match h with
     | .cnst c => mkConstWithFreshMVarLevels c
@@ -484,7 +487,15 @@ def execHead (n : IRNode) (g : MVarId) : MetaM (List MVarId) := g.withContext do
           unless ← (try isDefEq mv a catch _ => pure false) do s.restore
     let ok2 ← tryConcl
     unless ok2 do
-      throwError "irexec: conclusion mismatch for {h.render}"
+      -- ELABORATOR INCOMPLETENESS vs REAL MISMATCH.  `isDefEq` is
+      -- incomplete on some kernel-valid coercion forms (SetLike.coe vs
+      -- DFunLike.coe of a bundled structure): it returns false at full
+      -- transparency for terms the KERNEL accepts.  Refusing here would
+      -- report an extraction-expressivity gap that does not exist.
+      -- Assign unchecked and let kernel verification arbitrate - sound,
+      -- because verification gates every success, so a genuinely wrong
+      -- action cannot become a false positive.  Counted and reported.
+      unchecked.modify (fun k => k + 1)
   -- synthesize class-typed holes, exactly as the prover's apply does
   for mv in allMvs do
     let m := mv.mvarId!
@@ -523,7 +534,8 @@ def execExact (n : IRNode) (g : MVarId) : MetaM (List MVarId) := g.withContext d
 between the subgoals produced and the recorded children is the named
 `arity` discrepancy, never silently absorbed. -/
 partial def execNode (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs)
-    (trace : IO.Ref (Array Json)) (depth : Nat := 0) : MetaM Unit := do
+    (trace : IO.Ref (Array Json)) (unchecked : IO.Ref Nat)
+    (depth : Nat := 0) : MetaM Unit := do
   let before ← try pure ((toString (← instantiateMVars (← g.getType))).take 200).toString
                catch _ => pure "?"
   let record (status : String) (detail : String) : MetaM Unit :=
@@ -552,7 +564,7 @@ partial def execNode (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs)
         let some t0 := n.haveTy? | throwError "irexec: no change type recorded"
         let g' ← g.change (← instLocal g t0)
         pure [g']
-      | .apply | .ctor | .cases | .induct => execHead n g
+      | .apply | .ctor | .cases | .induct => execHead n g unchecked
       | .unsupported => throwError "unreachable"
     catch ex => do
       let msg ← try ex.toMessageData.toString catch _ => pure "?"
@@ -564,7 +576,7 @@ partial def execNode (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs)
   record "ok" ""
   for (g', k) in subs.zip n.kids.toList do
     unless ← g'.isAssigned do
-      execNode k g' simprocs trace (depth + 1)
+      execNode k g' simprocs trace unchecked (depth + 1)
 
 
 /-! ## Extraction
@@ -674,7 +686,13 @@ REAL stack before the counter fires - and a hardware overflow is not
 catchable in MetaM, so it aborts the whole theorem.  Trials run shallow;
 only a committed action gets the full depth. -/
 def withTrialDepth (x : MetaM α) : MetaM α :=
-  withTheReader Core.Context (fun c => { c with maxRecDepth := 2000 }) x
+  -- `withCurrHeartbeats` RESETS the counter for this trial: without it a
+  -- single runaway simp consumes the theorem's whole budget and every
+  -- later action in that proof fails as a timeout - which reads as
+  -- "hard proofs fail" when it is really "one bad trial poisoned the rest".
+  Core.withCurrHeartbeats <|
+    withTheReader Core.Context
+      (fun c => { c with maxRecDepth := 2000, maxHeartbeats := 80000 }) x
 
 /-- Try one orientation vector at goal `g`.  Returns (result, depth-hit):
 result is the residual goal (if any) on success; depth-hit marks a trial
@@ -818,8 +836,11 @@ partial def extract (ctx : ExCtx) (g : MVarId) (e : Expr) : MetaM IRNode := do
   tryCatchRuntimeEx (extractCore ctx g e)
     (fun ex => do
       let msg ← try ex.toMessageData.toString catch _ => pure "?"
+      let isTimeout := (msg.splitOn "heartbeat").length > 1
+                       || (msg.splitOn "timeout").length > 1
       pure { fam := .unsupported,
-             reason := s!"extract_exception:{(msg.take 120).toString}" })
+             reason := (if isTimeout then "instrument_timeout:" else "extract_exception:")
+                       ++ (msg.take 120).toString })
 
 partial def extractCore (ctx : ExCtx) (g : MVarId) (e : Expr) :
     MetaM IRNode := g.withContext do
@@ -996,7 +1017,7 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
   let ordSnap ← Meta.saveState
   let mut ordNote := ""
   let depthRef ← IO.mkRef anyDepth
-  let dfsBudget ← IO.mkRef 240
+  let dfsBudget ← IO.mkRef (min 2000 (240 + 60 * refs.size))
   -- success test for intermediate chain states; pure (leak-free): a defeq
   -- test here must not commit assignments the final resolution would
   -- disagree with
@@ -1290,7 +1311,8 @@ def semreplay (path : System.FilePath) (inp : System.FilePath)
   -- options set by `withOptions`: a runaway simp inside one certificate
   -- region otherwise aborts the whole theorem before it can be classified.
   let coreCtx : Core.Context :=
-    { fileName := pf.fileName, fileMap := default, maxRecDepth := 8000 }
+    { fileName := pf.fileName, fileMap := default, maxRecDepth := 8000,
+      maxHeartbeats := 4000000 }
   let mut count := 0
   let mut extractClean := 0
   let mut replayOk := 0
@@ -1326,9 +1348,10 @@ def semreplay (path : System.FilePath) (inp : System.FilePath)
         let reasons := ir.unsupportedReasons
         -- PASS 2: replay from the IR ALONE, on a fresh goal
         let trace ← IO.mkRef (#[] : Array Json)
+        let unchecked ← IO.mkRef 0
         let root ← mkFreshExprMVar concl
         let replayErr ← tryCatchRuntimeEx
-            (do execNode ir root.mvarId! simprocs trace
+            (do execNode ir root.mvarId! simprocs trace unchecked
                 pure (none : Option String))
             (fun ex => do
               let msg ← try ex.toMessageData.toString catch _ => pure "?"
@@ -1417,6 +1440,7 @@ def semreplay (path : System.FilePath) (inp : System.FilePath)
           ("replay_ok", Lean.toJson replayErr.isNone),
           ("verified", Lean.toJson verified),
           ("verify_why", Json.str vwhy),
+          ("n_unchecked", Lean.toJson (← unchecked.get)),
           ("replay_err", match replayErr with
              | some m => Json.str m | none => Json.null),
           ("first_discrepancy", (firstDiscrepancy tr).getD Json.null),
