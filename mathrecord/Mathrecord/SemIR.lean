@@ -445,31 +445,42 @@ def rwStep (g : MVarId) (f : Fact) (ctxLen : Nat := 0) :
     MetaM (Option MVarId) := g.withContext do
   let prf0 ← factProof g f.ref
   let prf ← if f.inverted then mkSymmAny prf0 else pure prf0
-  match f.motive with
-  | some mot0 =>
-    -- POSITION-EXACT: build the transformation the certificate specifies
-    -- (`congrArg motive fact` then `Eq.mpr`) instead of asking `rewrite`
-    -- to find a match.  First-match is a different transformation, which
-    -- is why single-fact regions failed.
-    let fvs ← lctxFVars g
-    let n := if ctxLen == 0 then fvs.size else min ctxLen fvs.size
-    let mot := mot0.instantiateRev (fvs.extract 0 n)
-    if mot.hasLooseBVars then throwError "irexec: motive context drift"
-    let eqp ← mkCongrArg mot prf
-    let ty ← instantiateMVars (← inferType eqp)
-    let some (_, lhs, rhs) := ty.eq? | throwError "irexec: motive gave no equation"
-    let gT ← instantiateMVars (← g.getType)
-    unless ← isDefEq lhs gT do
-      throwError "irexec: motive position does not match the goal"
-    let g' ← mkFreshExprMVar rhs
-    g.assign (← mkEqMPR eqp g')
-    pure (some g'.mvarId!)
-  | none =>
+  -- position-free execution, used directly and as the fallback below
+  let plain : MetaM (Option MVarId) := do
     let r ← g.rewrite (← g.getType) prf
     let g' ← g.replaceTargetEq r.eNew r.eqProof
     unless r.mvarIds.isEmpty do
       throwError "irexec: rw step left side-goals"
     pure (some g')
+  match f.motive with
+  | some mot0 => do
+    -- POSITION is a PRECISION device, not a precondition.  A composite
+    -- position that does not line up (nested congruences this reader does
+    -- not yet compose exactly) should degrade to position-free rewriting
+    -- for that step, not abandon the whole region to the atomic fallback.
+    let snap ← Meta.saveState
+    -- POSITION-EXACT: build the transformation the certificate specifies
+    -- (`congrArg motive fact` then `Eq.mpr`) instead of asking `rewrite`
+    -- to find a match.  First-match is a different transformation, which
+    -- is why single-fact regions failed.
+    let exact : MetaM (Option MVarId) := do
+      let fvs ← lctxFVars g
+      let n := if ctxLen == 0 then fvs.size else min ctxLen fvs.size
+      let mot := mot0.instantiateRev (fvs.extract 0 n)
+      if mot.hasLooseBVars then throwError "irexec: motive context drift"
+      let eqp ← mkCongrArg mot prf
+      let ty ← instantiateMVars (← inferType eqp)
+      let some (_, lhs, rhs) := ty.eq? | throwError "irexec: motive gave no equation"
+      let gT ← instantiateMVars (← g.getType)
+      unless ← isDefEq lhs gT do
+        throwError "irexec: motive position does not match the goal"
+      let g' ← mkFreshExprMVar rhs
+      g.assign (← mkEqMPR eqp g')
+      pure (some g'.mvarId!)
+    match ← (try exact catch _ => do snap.restore; pure none) with
+    | some r => pure (some r)
+    | none => do snap.restore; plain
+  | none => plain
 
 /-- Execute a REWRITE action: one `simp only` over exactly the recorded
 facts at the recorded location.  `contIdx = none` means the action must
@@ -500,9 +511,11 @@ def execRewrite (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs) :
         | none => closed := true
         | some g' => do
           let after ← instantiateMVars (← g'.getType)
-          if after == before then
-            throwError "irexec: ordered rewrite step {i} made no progress"
-          cur := g'
+          -- A no-op step is not a failure.  The derivation records the
+          -- steps the certificate took; an earlier step may already have
+          -- normalized what a later one targets, and the end state is
+          -- what the continuation/terminal check validates.
+          if after != before then cur := g'
       pure (if closed then none else some (#[], cur))
     else do
       let thms ← buildFactSet g n.facts n.ctxLen
