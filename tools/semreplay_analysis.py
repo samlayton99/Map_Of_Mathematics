@@ -61,14 +61,22 @@ def main(argv=None):
         print("no usable rows", file=sys.stderr)
         return 1
 
+    representable = [r for r in rows if r.get("representable", not r.get("unsupported"))]
     clean = [r for r in rows if r["extract_clean"]]
     replayed = [r for r in rows if r["replay_ok"]]
     verified = [r for r in rows if r["verified"]]
 
+    tot_act = sum(r.get("n_actions", 0) for r in rows) or 1
+    atom_act = sum(r.get("n_atom_actions", 0) for r in rows)
     print(f"theorems                 {n}"
           + (f"  (+{len(errored)} harness errors)" if errored else ""))
-    print(f"extraction clean         {len(clean):3d}/{n}  {pct(len(clean), n)}"
-          "   (an IR v1 parameterization exists for every step)")
+    print(f"REPRESENTABLE            {len(representable):4d}/{n}  "
+          f"{pct(len(representable), n)}   "
+          "<- must be 100%: totality is a property of the interface")
+    print(f"fully semantic           {len(clean):4d}/{n}  {pct(len(clean), n)}"
+          "   (no atomic fallback anywhere in the proof)")
+    print(f"semantic coverage        {pct(tot_act - atom_act, tot_act)}"
+          f" of actions   ({atom_act}/{tot_act} under atomic fallback)")
     print(f"semantic replay ok       {len(replayed):3d}/{n}  {pct(len(replayed), n)}"
           "   (recorded IR executed, no reference term)")
     print(f"kernel verified          {len(verified):3d}/{n}  {pct(len(verified), n)}")
