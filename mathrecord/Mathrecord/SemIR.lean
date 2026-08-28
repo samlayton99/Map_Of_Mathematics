@@ -450,6 +450,12 @@ def execHead (n : IRNode) (g : MVarId) (unchecked : IO.Ref Nat) :
       pure (mkFVar fv)
   let hType ← inferType fn
   let fvs ← lctxFVars g
+  -- a recorded term abstracted over a LONGER context than replay rebuilt
+  -- would instantiate to a loose bound variable ("unexpected bound
+  -- variable #0"); name the drift instead of failing obscurely
+  for (_, e) in n.dataArgs do
+    if (e.instantiateRev fvs).hasLooseBVars then
+      throwError "irexec: local-context drift (recorded term needs a deeper context than replay rebuilt)"
   let dataMap : Std.HashMap Nat Expr :=
     n.dataArgs.foldl (fun m (i, e) => m.insert i (e.instantiateRev fvs)) {}
   let arity := n.nArgs
@@ -473,18 +479,19 @@ def execHead (n : IRNode) (g : MVarId) (unchecked : IO.Ref Nat) :
     let ok ← try isDefEq cT gType catch _ => pure false
     if ok then pure true else
       try Mathrecord.Ho.tryMotiveSynth cT gType catch _ => pure false
+  -- DEFERRED DATA ASSIGNMENT, UNCONDITIONAL - exactly as extractHead does
+  -- it.  Running it only on conclusion failure leaves replay with a
+  -- different open-metavariable set than extraction recorded kids for,
+  -- which surfaces as an arity mismatch rather than as anything real.
+  let mut jj := 0
+  for mv in allMvs do
+    unless ← mv.mvarId!.isAssigned do
+      if let some a := dataMap.get? jj then
+        let s ← Meta.saveState
+        unless ← (try isDefEq mv a catch _ => pure false) do s.restore
+    jj := jj + 1
   let ok1 ← tryConcl
   unless ok1 do
-    -- deferred data assignment (mirror of extraction): an argument whose
-    -- eager unification failed on open sibling holes usually unifies once
-    -- the telescope is complete; without it the conclusion cannot bind
-    for mv in allMvs do
-      let m := mv.mvarId!
-      unless ← m.isAssigned do
-        let j := allMvs.findIdx? (fun x => x == mv) |>.getD 0
-        if let some a := dataMap.get? j then
-          let s ← Meta.saveState
-          unless ← (try isDefEq mv a catch _ => pure false) do s.restore
     let ok2 ← tryConcl
     unless ok2 do
       -- ELABORATOR INCOMPLETENESS vs REAL MISMATCH.  `isDefEq` is
@@ -546,7 +553,13 @@ partial def execNode (n : IRNode) (g : MVarId) (simprocs : Simp.Simprocs)
   if n.fam == .unsupported then
     record "unsupported" n.reason
     throwError "irexec: unsupported semantic family ({n.reason})"
+  -- Each replay action gets its OWN reset budget: a single expensive
+  -- action must fail as a named per-action discrepancy, never abort the
+  -- theorem and take every later action with it.
   let subs ← try
+      Core.withCurrHeartbeats <|
+      withTheReader Core.Context
+        (fun c => { c with maxRecDepth := 4000, maxHeartbeats := 400000 }) <|
       match n.fam with
       | .intro => do
         let (_, g') ← g.introNP n.nIntro
@@ -833,6 +846,10 @@ partial def extract (ctx : ExCtx) (g : MVarId) (e : Expr) : MetaM IRNode := do
   if (← ctx.fuel.get) == 0 then
     return { fam := .unsupported, reason := "fuel_exhausted" }
   ctx.fuel.modify (· - 1)
+  -- NOTE: a per-node reset budget was tried here and COST 3 DEV80
+  -- theorems (66 -> 63).  Extraction's expensive work is the chain
+  -- search, already bounded per-trial (80k, reset) and by the DFS budget;
+  -- capping the node on top of that only truncates legitimate work.
   tryCatchRuntimeEx (extractCore ctx g e)
     (fun ex => do
       let msg ← try ex.toMessageData.toString catch _ => pure "?"
