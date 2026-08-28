@@ -799,11 +799,11 @@ partial def extract (ctx : ExCtx) (g : MVarId) (e : Expr) : MetaM IRNode := do
   if (← ctx.fuel.get) == 0 then
     return { fam := .unsupported, reason := "fuel_exhausted" }
   ctx.fuel.modify (· - 1)
-  try extractCore ctx g e
-  catch ex =>
-    let msg ← try ex.toMessageData.toString catch _ => pure "?"
-    pure { fam := .unsupported,
-           reason := s!"extract_exception:{(msg.take 120).toString}" }
+  tryCatchRuntimeEx (extractCore ctx g e)
+    (fun ex => do
+      let msg ← try ex.toMessageData.toString catch _ => pure "?"
+      pure { fam := .unsupported,
+             reason := s!"extract_exception:{(msg.take 120).toString}" })
 
 partial def extractCore (ctx : ExCtx) (g : MVarId) (e : Expr) :
     MetaM IRNode := g.withContext do
@@ -1315,6 +1315,39 @@ def semreplay (path : System.FilePath) (inp : System.FilePath)
             (fun ex => do
               let msg ← try ex.toMessageData.toString catch _ => pure "?"
               pure (some ("pass2:" ++ (msg.take 200).toString)))
+        -- SIDE-HOLE DISCHARGE: motive synthesis (congruence bridging in
+        -- conclusion unification) can mint proof obligations outside the
+        -- head telescope - typically instance-path bridges (`1 < b` at
+        -- Preorder.toLT vs the context's instLTNat hypothesis).  They are
+        -- defeq-trivial in their own contexts: close them mechanically
+        -- (assumption, refl) - deterministic, no reference consultation.
+        -- Anything that survives still fails verification honestly.
+        if replayErr.isNone then
+          for _round in [0:3] do
+            let proof0 ← instantiateMVars root
+            -- worklist through DELAYED assignments: the unassigned leaves
+            -- live inside pending values, invisible to a surface collect
+            let mut work := (Lean.Expr.collectMVars {} proof0).result
+            let mut seen : Std.HashSet Name := {}
+            let mut fuel := 200
+            while !work.isEmpty && fuel > 0 do
+              fuel := fuel - 1
+              let m := work.back!
+              work := work.pop
+              unless seen.contains m.name do
+                seen := seen.insert m.name
+                if ← m.isDelayedAssigned then
+                  if let some d ← getDelayedMVarAssignment? m then
+                    let v ← instantiateMVars (mkMVar d.mvarIdPending)
+                    work := work ++ (Lean.Expr.collectMVars {} v).result
+                else unless ← m.isAssigned do
+                  let τ ← try instantiateMVars (← m.getType) catch _ => pure default
+                  let isP ← try Meta.isProp τ catch _ => pure false
+                  if isP then
+                    let closed ← try m.assumptionCore catch _ => pure false
+                    unless closed do
+                      try m.refl catch _ =>
+                        try m.applyRfl catch _ => pure ()
         -- verification of what replay actually built
         let (verified, vwhy) ← if replayErr.isSome then pure (false, "replay_failed") else
           try
@@ -1324,9 +1357,21 @@ def semreplay (path : System.FilePath) (inp : System.FilePath)
               -- instances, motives, or plain values
               let st := Lean.Expr.collectMVars {} proof
               let mut tys : Array String := #[]
-              for m in st.result.toList.take 3 do
+              for m0 in st.result.toList.take 3 do
+                -- chase the delayed chain to the truly unassigned leaf
+                let mut m := m0
+                let mut hops := 0
+                while (← m.isDelayedAssigned) && hops < 10 do
+                  match ← getDelayedMVarAssignment? m with
+                  | some d =>
+                    let v ← instantiateMVars (mkMVar d.mvarIdPending)
+                    match (Lean.Expr.collectMVars {} v).result.toList.head? with
+                    | some nxt => m := nxt; hops := hops + 1
+                    | none => hops := 99
+                  | none => hops := 99
                 let τ ← try instantiateMVars (← m.getType) catch _ => pure default
-                tys := tys.push (((toString τ).take 70).toString)
+                tys := tys.push (s!"hops={hops} dly={← m.isDelayedAssigned} asg={← m.isAssigned} "
+                  ++ ((toString τ).take 90).toString)
               pure (false, s!"open_mvars:{st.result.size}:" ++ " ;; ".intercalate tys.toList)
             else
             let ok0 ← try
