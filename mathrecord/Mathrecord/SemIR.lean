@@ -323,6 +323,18 @@ which the reference proof term could reach it, and it performs no retry:
 one recorded parameterization, executed once.  Any failure throws with a
 named reason that becomes the replay discrepancy class. -/
 
+/-- Symmetry by statement family: `Eq.symm` / `Iff.symm` / `HEq.symm`.
+`mkEqSymm` alone throws on Iff facts, silently killing every inverted-Iff
+trial. -/
+def mkSymmAny (e : Expr) : MetaM Expr := do
+  let t ← instantiateMVars (← inferType e)
+  match t.getForallBody.consumeMData.getAppFn.consumeMData with
+  | .const c _ =>
+    if c == ``Iff then mkAppM ``Iff.symm #[e]
+    else if c == ``HEq then mkAppM ``HEq.symm #[e]
+    else Meta.mkEqSymm e
+  | _ => Meta.mkEqSymm e
+
 /-- Build the simp theorem set from recorded facts, honouring each fact's
 recorded orientation.  No forward/backward retry: `inverted` is data. -/
 def buildFactSet (g : MVarId) (facts : Array Fact) : MetaM SimpTheorems :=
@@ -336,7 +348,7 @@ def buildFactSet (g : MVarId) (facts : Array Fact) : MetaM SimpTheorems :=
         let some fv ← resolveHyp g idx user
           | throwError "irfact: hypothesis {idx}/{user} not in context"
         if f.inverted then
-          let t ← Meta.mkEqSymm (mkFVar fv)
+          let t ← mkSymmAny (mkFVar fv)
           thms ← thms.add (.other (Name.mkSimple s!"irfact{i}")) #[] t
         else
           thms ← thms.add (.fvar fv) #[] (mkFVar fv)
@@ -350,7 +362,7 @@ def buildFactSet (g : MVarId) (facts : Array Fact) : MetaM SimpTheorems :=
               .const ``HEq _ then
             try Meta.mkEqOfHEq e catch _ => pure e
           else pure e
-        let t ← if f.inverted then Meta.mkEqSymm e else pure e
+        let t ← if f.inverted then mkSymmAny e else pure e
         thms ← thms.add (.other (Name.mkSimple s!"irfact{i}")) #[] t
       i := i + 1
     pure thms
@@ -369,7 +381,7 @@ def factProof (g : MVarId) (r : FactRef) : MetaM Expr := g.withContext do
 never re-iterate.  Loop-free where simp's keyed matching is not. -/
 def rwStep (g : MVarId) (f : Fact) : MetaM (Option MVarId) := g.withContext do
   let prf0 ← factProof g f.ref
-  let prf ← if f.inverted then Meta.mkEqSymm prf0 else pure prf0
+  let prf ← if f.inverted then mkSymmAny prf0 else pure prf0
   let r ← g.rewrite (← g.getType) prf
   let g' ← g.replaceTargetEq r.eNew r.eqProof
   unless r.mvarIds.isEmpty do
@@ -618,7 +630,7 @@ def inferOrientation (g : MVarId) (r : FactRef) : MetaM Bool := g.withContext do
   try
     forallTelescopeReducing t fun _ concl => do
       let some (lhs, rhs) := eqEndpoints concl | return false
-      let gT ← instantiateMVars (← g.getType)
+      let gT := (← instantiateMVars (← g.getType)).consumeMData
       if ← occursIn lhs gT then return false
       if ← occursIn rhs gT then return true
       return false
@@ -671,6 +683,71 @@ def tryOrient (ctx : ExCtx) (g : MVarId) (facts : Array Fact) :
       let m ← try ex.toMessageData.toString catch _ => pure ""
       pure (none, (m.splitOn "recursion depth").length > 1))
 
+/-- SemIR's region walk: identical traversal to `Semantic.regionParts`,
+with one semantic upgrade - a leaf that mentions region-bound variables is
+LAMBDA-ABSTRACTED over exactly the binders it uses (while they are still
+in scope) instead of being generalized to its bare head.  A pointwise
+sub-derivation `d a : P a = Q a` under a `funext`/`forall_congr'` binder
+becomes the closed fact `fun a => d a : forall a, P a = Q a` - the shape
+the simplifier re-instantiates - rather than the meaningless bare head.
+Non-equality closed leaves are kept too: simp uses propositional facts to
+discharge conditional-rewrite hypotheses. -/
+partial def regionPartsIR (e : Expr) :
+    MetaM (Array Semantic.Leaf × Array Expr × Nat) := do
+  let leaves ← IO.mkRef (#[] : Array Semantic.Leaf)
+  let conts ← IO.mkRef (#[] : Array Expr)
+  let nStruct ← IO.mkRef 0
+  let rec pushLeaf (a : Expr) (bound : Array FVarId) : MetaM Unit := do
+    let fn := a.getAppFn.consumeMData
+    let used := bound.filter fun f => a.containsFVar f
+    let (term, generalized) ←
+      if used.isEmpty then pure (a, false)
+      else do
+        let closed ← try mkLambdaFVars (used.map mkFVar) a
+                     catch _ => pure fn
+        pure (closed, true)
+    let (head, kind) := match fn with
+      | .const c _ => (toString c, "const")
+      | .fvar _ => ("FVAR", "fvar")
+      | _ => ("OTHER", "other")
+    leaves.modify (fun arr => arr.push { term, head, kind, generalized })
+  let rec go (e : Expr) (bound : Array FVarId) : MetaM Unit := do
+    let e := e.consumeMData
+    match e with
+    | .lam .. =>
+      lambdaTelescope e fun xs b =>
+        go b (bound ++ xs.map (fun x => x.fvarId!))
+    | .letE nm ty val body _ => do
+      let vP ← try Meta.isProp (← inferType val) catch _ => pure false
+      if vP then go val bound
+      withLetDecl nm ty val fun x => go (body.instantiate1 x) (bound.push x.fvarId!)
+    | _ =>
+      let fn := e.getAppFn.consumeMData
+      let inVocab := match fn with
+        | .const c _ => Semantic.isCertVocab c
+        | _ => false
+      if inVocab && e.isApp then
+        nStruct.modify (fun n => n + 1)
+        for a in e.getAppArgs do
+          let aP ← try Meta.isProp (← inferType a) catch _ => pure false
+          if aP then
+            let a' := a.consumeMData
+            let aFn := a'.getAppFn.consumeMData
+            let aCert := match aFn with
+              | .const c _ => Semantic.isCertVocab c
+              | _ => false
+            if a'.isLambda || (aCert && a'.isApp) then go a' bound
+            else
+              let aT ← try instantiateMVars (← inferType a') catch _ => pure default
+              if Semantic.isEqFamilyProp aT then pushLeaf a' bound
+              else if bound.any (fun f => a'.containsFVar f) then
+                pushLeaf a' bound
+              else conts.modify (fun arr => arr.push a')
+      else
+        pushLeaf e bound
+  go e #[]
+  pure (← leaves.get, ← conts.get, ← nStruct.get)
+
 /-- Turn a certificate region's boundary leaves into `FactRef`s. -/
 def leafFacts (g : MVarId) (leaves : Array Semantic.Leaf) :
     MetaM (Array FactRef) := g.withContext do
@@ -684,15 +761,9 @@ def leafFacts (g : MVarId) (leaves : Array Semantic.Leaf) :
       | some (i, u) => out := out.push (.hyp i u)
       | none => out := out.push (.inst (← absLocal g t))
     | _ =>
-      if l.generalized then
-        match t.getAppFn.consumeMData with
-        | .const c _ => out := out.push (.cnst c)
-        | .fvar f =>
-          match ← lctxIndexOf g f with
-          | some (i, u) => out := out.push (.hyp i u)
-          | none => out := out.push (.inst (← absLocal g t))
-        | _ => out := out.push (.inst (← absLocal g t))
-      else out := out.push (.inst (← absLocal g t))
+      -- generalized leaves are now CLOSED lambda-abstractions (regionPartsIR):
+      -- record the full term; the simplifier re-instantiates the binders
+      out := out.push (.inst (← absLocal g t))
   pure out
 
 /-- Terminal promotion: the residual goal that `semSimpAct` used to close
@@ -737,8 +808,17 @@ partial def extract (ctx : ExCtx) (g : MVarId) (e : Expr) : MetaM IRNode := do
 partial def extractCore (ctx : ExCtx) (g : MVarId) (e : Expr) :
     MetaM IRNode := g.withContext do
   let e := e.consumeMData
-  -- REWRITE: a maximal certificate region is ONE action
-  if Semantic.certRegionRoot e then
+  -- REWRITE: a maximal certificate region is ONE action - EXCEPT when the
+  -- root is an extensionality coercion (funext/propext).  Those roots hide
+  -- a structurally different child goal (the pointwise forall, the Iff):
+  -- swallowing them into the region leaves pointwise facts that cannot
+  -- fire on the function-level goal.  Route them through APPLY so the
+  -- inner region is extracted at the goal its facts match.
+  let rootHead := e.getAppFn.consumeMData
+  let extRoot := match rootHead with
+    | .const c _ => c == ``funext || c == ``propext
+    | _ => false
+  if Semantic.certRegionRoot e && !extRoot then
     return ← extractRewrite ctx g e
   match e with
   | .lam .. =>
@@ -785,12 +865,60 @@ partial def extractCore (ctx : ExCtx) (g : MVarId) (e : Expr) :
     else
       pure { fam := .unsupported, reason := "unclassified_term" }
 
+/-- Bounded backtracking search over a rewrite chain: which facts, in
+which order, each in which direction and mode.  Greedy (leaf order,
+inferred orientation, rw before simp) is the FIRST branch explored, so
+this strictly subsumes the greedy chain; backtracking recovers the cases
+where an early fact fires in a direction that derails the certificate's
+path, and the per-node `residOk` test recovers the cases where the chain
+should STOP before consuming every leaf (duplicate or instance-variant
+leaves).  Returns the recorded steps plus the residual goal (`none` =
+closed); the caller resolves the residual against continuations, leaves,
+and promoted terminals. -/
+partial def chainSearch (ctx : ExCtx)
+    (refs : Array FactRef) (inferred : Array Bool)
+    (residOk : MVarId → MetaM Bool)
+    (budget : IO.Ref Nat) (anyDepth : IO.Ref Bool)
+    (cur : MVarId) (remaining : List Nat) (steps : Array Fact) :
+    MetaM (Option (Array Fact × Option MVarId)) := do
+  if steps.size > 0 then
+    if ← residOk cur then return some (steps, some cur)
+  if remaining.isEmpty then return none
+  for i in remaining do
+    for md in #[true, false] do
+      for inv in #[inferred[i]?.getD false, !(inferred[i]?.getD false)] do
+        if (← budget.get) == 0 then return none
+        budget.modify (fun b => b - 1)
+        let f : Fact := { ref := refs[i]!, inverted := inv, rw := md }
+        let snap ← Meta.saveState
+        let before ← cur.withContext do
+          pure (← instantiateMVars (← cur.getType)).consumeMData
+        let (r, dh) ← if md then
+            tryCatchRuntimeEx
+              (withTrialDepth do pure (some (← rwStep cur f), false))
+              (fun _ => do snap.restore; pure (none, false))
+          else tryOrient ctx cur #[f]
+        if dh then anyDepth.set true
+        match r with
+        | none => snap.restore
+        | some none => return some (steps.push f, none)
+        | some (some g') => do
+          let after ← g'.withContext do
+            pure (← instantiateMVars (← g'.getType)).consumeMData
+          if after == before then snap.restore
+          else
+            match ← chainSearch ctx refs inferred residOk budget anyDepth
+                g' (remaining.filter (fun j => j != i)) (steps.push f) with
+            | some res => return some res
+            | none => snap.restore
+  pure none
+
 /-- REWRITE region: extract the fact set, DETERMINE each fact's
 orientation by bounded trial, and record it. -/
-partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr) :
-    MetaM IRNode := do
+partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr)
+    (allowChange : Bool := true) : MetaM IRNode := do
   let (leaves, conts, nStruct) ←
-    try Semantic.regionParts e catch _ => pure (#[], #[], 0)
+    try regionPartsIR e catch _ => pure (#[], #[], 0)
   if leaves.isEmpty && conts.isEmpty then
     return { fam := .unsupported, reason := "empty_region" }
   let refs ← leafFacts g leaves
@@ -849,42 +977,32 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr) :
   -- continuation owning the residual, or a promoted terminal.
   let ordSnap ← Meta.saveState
   let mut ordNote := ""
-  let ordResult ← do
-    let mut cur := g
-    let mut steps : Array Fact := #[]
-    let mut closed := false
-    for i in [0:refs.size] do
-      if !closed then
-        let mut fired := false
-        -- rw-mode first: single-pass, loop-free (instance-bridge safe);
-        -- simp-mode second: iterated, catches conditional rewrites
-        for md in #[true, false] do
-          for inv in #[inferred[i]?.getD false, !(inferred[i]?.getD false)] do
-            if !fired then
-              let f : Fact := { ref := refs[i]!, inverted := inv, rw := md }
-              let stepSnap ← Meta.saveState
-              let before ← cur.withContext do instantiateMVars (← cur.getType)
-              let (r, dh) ← if md then
-                  tryCatchRuntimeEx
-                    (withTrialDepth do pure (some (← rwStep cur f), false))
-                    (fun _ => do stepSnap.restore; pure (none, false))
-                else tryOrient ctx cur #[f]
-              if dh then anyDepth := true
-              match r with
-              | none => stepSnap.restore
-              | some none =>
-                steps := steps.push f; closed := true; fired := true
-              | some (some g') => do
-                let after ← g'.withContext do instantiateMVars (← g'.getType)
-                if after == before then stepSnap.restore
-                else
-                  steps := steps.push f; cur := g'; fired := true
-    pure (if steps.isEmpty then none else some (steps, closed, cur))
-  match ordResult with
-  | some (steps, true, _) =>
+  let depthRef ← IO.mkRef anyDepth
+  let dfsBudget ← IO.mkRef 240
+  -- success test for intermediate chain states; pure (leak-free): a defeq
+  -- test here must not commit assignments the final resolution would
+  -- disagree with
+  let residOk : MVarId → MetaM Bool := fun g' => withoutModifyingState do
+    g'.withContext do
+      let gT ← instantiateMVars (← g'.getType)
+      for c in conts do
+        let cT ← try instantiateMVars (← inferType c) catch _ => pure default
+        if ← (try isDefEq gT cT catch _ => pure false) then return true
+      for l in leaves do
+        let lT ← try instantiateMVars (← inferType l.term) catch _ => pure default
+        if ← (try isDefEq gT lT catch _ => pure false) then return true
+      pure (← promoteTerminal g').isSome
+  let dfsRes ← chainSearch ctx refs inferred residOk dfsBudget depthRef
+      g (List.range refs.size) #[]
+  if ← depthRef.get then anyDepth := true
+  match dfsRes with
+  | some (steps, none) =>
     return { fam := .rewrite, facts := steps, ordered := true, loc := .goal,
              contIdx := none, covers := nStruct + 1, kids := #[] }
-  | some (steps, false, cur) => do
+  | some (steps, some cur) => do
+    -- resolve the residual: region continuation, promoted terminal, or
+    -- leaf continuation (a leaf whose statement IS the rewritten goal -
+    -- its derivation is extracted recursively, never an opaque payload)
     let g'T ← cur.withContext do instantiateMVars (← cur.getType)
     let mut owner : Option Nat := none
     let mut oi := 0
@@ -905,13 +1023,82 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr) :
         return { fam := .rewrite, facts := steps, ordered := true, loc := .goal,
                  contIdx := none, covers := nStruct + 1, kids := #[t] }
       | none => do
-        let resid ← cur.withContext do
-          pure (((toString (← instantiateMVars (← cur.getType))).take 80).toString)
-        ordNote := s!"|ord={steps.size}/{refs.size}fired,resid={resid}"
-        ordSnap.restore
+        let mut leafKid : Option IRNode := none
+        for l in leaves do
+          if leafKid.isNone then
+            let lT ← try instantiateMVars (← inferType l.term)
+                     catch _ => pure default
+            if ← (try isDefEq g'T lT catch _ => pure false) then
+              leafKid := some (← extract ctx cur l.term)
+        match leafKid with
+        | some kid =>
+          return { fam := .rewrite, facts := steps, ordered := true,
+                   loc := .goal, contIdx := none,
+                   covers := nStruct + 1, kids := #[kid] }
+        | none => do
+          let resid ← cur.withContext do
+            pure (((toString (← instantiateMVars (← cur.getType))).take 80).toString)
+          ordNote := s!"|ord=residual_unresolved,resid={resid}"
+          ordSnap.restore
   | none => do
-    ordNote := s!"|ord=0/{refs.size}fired"
+    ordNote := s!"|ord=dfs_exhausted,budget_left={← dfsBudget.get}"
     ordSnap.restore
+
+  -- DEFINITIONAL VIEW (the CHANGE family): a fact whose pattern head is
+  -- hidden behind a definitional unfolding in the goal can never fire
+  -- (`conjneg x` in the goal vs `DFunLike.coe (RingHom ...)` in the fact).
+  -- Determine the unfolding by bounded trial over the goal's def-heads:
+  -- one CHANGE node exposing the view, then re-extract the region there.
+  if allowChange then
+    let gT0 ← g.withContext do instantiateMVars (← g.getType)
+    -- app-head def constants of the goal, bounded
+    let heads := Id.run do
+      let mut acc : Array Name := #[]
+      let mut stack : Array Expr := #[gT0]
+      let mut fuel := 400
+      while stack.size > 0 && fuel > 0 do
+        fuel := fuel - 1
+        let x := stack.back!.consumeMData
+        stack := stack.pop
+        match x.getAppFn.consumeMData with
+        | .const c _ =>
+          match ctx.env.find? c with
+          | some (.defnInfo _) =>
+            unless acc.contains c || acc.size ≥ 8 do acc := acc.push c
+          | _ => pure ()
+        | _ => pure ()
+        for a in x.getAppArgs do stack := stack.push a
+        if x.isForall || x.isLambda then stack := stack.push x.bindingBody!
+      pure acc
+    for c in heads do
+      let chSnap ← Meta.saveState
+      let attempt ← tryCatchRuntimeEx
+        (withTrialDepth do
+          let g2 ← Meta.unfoldTarget g c
+          -- does the view expose a fact endpoint that was hidden?
+          let mut helps := false
+          for r in refs do
+            if !helps then
+              if let some t ← factType g2 r then
+                let occ ← try
+                  forallTelescopeReducing t fun _ concl => do
+                    let some (lhs, rhs) := eqEndpoints concl | pure false
+                    let g2T := (← instantiateMVars (← g2.getType)).consumeMData
+                    pure ((← occursIn lhs g2T) || (← occursIn rhs g2T))
+                  catch _ => pure false
+                if occ then helps := true
+          if helps then pure (some g2) else pure none)
+        (fun _ => pure none)
+      match attempt with
+      | some g2 => do
+        let inner ← extractRewrite ctx g2 e (allowChange := false)
+        if inner.fam == .rewrite then
+          let newTy ← g2.withContext do
+            pure (← absLocal g2 (← instantiateMVars (← g2.getType)))
+          return { fam := .change, haveTy? := some newTy,
+                   covers := 1, kids := #[inner] }
+        else chSnap.restore
+      | none => chSnap.restore
 
   -- DIAGNOSTIC: does either endpoint of each fact occur in the goal at
   -- all?  `occ` = at least one fact is applicable and the failure is about
@@ -929,6 +1116,16 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr) :
           catch _ => pure false
         if occ then anyOcc := true
   let nGen := leaves.foldl (fun acc l => if l.generalized then acc + 1 else acc) 0
+  -- a leaf whose statement is not equality-family (e.g. a binder-captured
+  -- continuation regionParts pushed as a leaf) makes the region NOT a
+  -- pure rewrite: name that mechanism instead of blaming orientation
+  let mut nNonEq := 0
+  for r in refs do
+    let isEqF ← do
+      match ← factType g r with
+      | some t => pure (Semantic.isEqFamilyProp t)
+      | none => pure false
+    unless isEqF do nNonEq := nNonEq + 1
   let gHead ← g.withContext do
     let gT ← instantiateMVars (← g.getType)
     pure ((toString gT).take 100).toString
@@ -940,7 +1137,8 @@ partial def extractRewrite (ctx : ExCtx) (g : MVarId) (e : Expr) :
     fdescs := fdescs.push s!"{r.render}={td}"
   let fdesc := " ;; ".intercalate fdescs.toList
   pure { fam := .unsupported,
-         reason := (if anyDepth then "rewrite_depth_overflow"
+         reason := (if nNonEq > 0 then s!"region_nonfact_leaves_{nNonEq}"
+                    else if anyDepth then "rewrite_depth_overflow"
                     else if wide then "orient_search_too_wide"
                     else "rewrite_no_orientation")
                    ++ (if anyOcc then "_occ" else "_noocc")
@@ -955,7 +1153,9 @@ partial def extractHead (ctx : ExCtx) (g : MVarId) (e : Expr) :
   let fn := e.getAppFn.consumeMData
   let args := e.getAppArgs
   if fn.isLambda then
-    return { fam := .unsupported, reason := "beta_redex_head" }
+    -- beta-redex: inline it (the elaborated `have` structure is preserved
+    -- separately by the letE branch; a raw redex is just a substitution)
+    return ← extract ctx g e.headBeta
   let head? : Option HeadRef ← match fn with
     | .const c _ => pure (some (.cnst c))
     | .fvar f => do
