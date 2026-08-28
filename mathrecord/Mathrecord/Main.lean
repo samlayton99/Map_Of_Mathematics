@@ -8,6 +8,7 @@ import Mathrecord.ModDump
 import Mathrecord.LegalityProbe
 import Mathrecord.Prover
 import Mathrecord.Replay
+import Mathrecord.SemIR
 import Mathrecord.Provenance
 import Mathrecord.Modules
 import Mathrecord.EnvFacts
@@ -224,6 +225,9 @@ unsafe def main (args : List String) : IO UInt32 := do
     return 0
   | ["semtrace", file, inp, out] => do
     Mathrecord.Semantic.semtrace file inp out
+    return 0
+  | ["semreplay", file, inp, out] => do
+    Mathrecord.SemIR.semreplay file inp out
     return 0
   | ["replay", file, inp, out] => do
     Mathrecord.Replay.replay file inp out
